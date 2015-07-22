@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */; };
+		48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */; };
+		48FDEA9C1B5F8CEC00C5AFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */; };
+		48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */; };
+		48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */; };
+		48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48FDEAA71B5F8CEC00C5AFE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48FDEA891B5F8CEC00C5AFE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48FDEA901B5F8CEC00C5AFE6;
+			remoteInfo = "Sandvik 365";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48FDEA911B5F8CEC00C5AFE6 /* Sandvik 365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sandvik 365.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FDEA951B5F8CEC00C5AFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48FDEA9B1B5F8CEC00C5AFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		48FDEAA01B5F8CEC00C5AFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		48FDEAA61B5F8CEC00C5AFE6 /* Sandvik 365Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sandvik 365Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FDEAAB1B5F8CEC00C5AFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sandvik_365Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48FDEA8E1B5F8CEC00C5AFE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48FDEAA31B5F8CEC00C5AFE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48FDEA881B5F8CEC00C5AFE6 = {
+			isa = PBXGroup;
+			children = (
+				48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */,
+				48FDEAA91B5F8CEC00C5AFE6 /* Sandvik 365Tests */,
+				48FDEA921B5F8CEC00C5AFE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48FDEA921B5F8CEC00C5AFE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48FDEA911B5F8CEC00C5AFE6 /* Sandvik 365.app */,
+				48FDEAA61B5F8CEC00C5AFE6 /* Sandvik 365Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */ = {
+			isa = PBXGroup;
+			children = (
+				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
+				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
+				48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */,
+				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
+				48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */,
+				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
+			);
+			path = "Sandvik 365";
+			sourceTree = "<group>";
+		};
+		48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48FDEA951B5F8CEC00C5AFE6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48FDEAA91B5F8CEC00C5AFE6 /* Sandvik 365Tests */ = {
+			isa = PBXGroup;
+			children = (
+				48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */,
+				48FDEAAA1B5F8CEC00C5AFE6 /* Supporting Files */,
+			);
+			path = "Sandvik 365Tests";
+			sourceTree = "<group>";
+		};
+		48FDEAAA1B5F8CEC00C5AFE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48FDEAAB1B5F8CEC00C5AFE6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48FDEA901B5F8CEC00C5AFE6 /* Sandvik 365 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48FDEAB01B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365" */;
+			buildPhases = (
+				48FDEA8D1B5F8CEC00C5AFE6 /* Sources */,
+				48FDEA8E1B5F8CEC00C5AFE6 /* Frameworks */,
+				48FDEA8F1B5F8CEC00C5AFE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sandvik 365";
+			productName = "Sandvik 365";
+			productReference = 48FDEA911B5F8CEC00C5AFE6 /* Sandvik 365.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48FDEAA51B5F8CEC00C5AFE6 /* Sandvik 365Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48FDEAB31B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365Tests" */;
+			buildPhases = (
+				48FDEAA21B5F8CEC00C5AFE6 /* Sources */,
+				48FDEAA31B5F8CEC00C5AFE6 /* Frameworks */,
+				48FDEAA41B5F8CEC00C5AFE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48FDEAA81B5F8CEC00C5AFE6 /* PBXTargetDependency */,
+			);
+			name = "Sandvik 365Tests";
+			productName = "Sandvik 365Tests";
+			productReference = 48FDEAA61B5F8CEC00C5AFE6 /* Sandvik 365Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48FDEA891B5F8CEC00C5AFE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Commind;
+				TargetAttributes = {
+					48FDEA901B5F8CEC00C5AFE6 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					48FDEAA51B5F8CEC00C5AFE6 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 48FDEA901B5F8CEC00C5AFE6;
+					};
+				};
+			};
+			buildConfigurationList = 48FDEA8C1B5F8CEC00C5AFE6 /* Build configuration list for PBXProject "Sandvik 365" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48FDEA881B5F8CEC00C5AFE6;
+			productRefGroup = 48FDEA921B5F8CEC00C5AFE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48FDEA901B5F8CEC00C5AFE6 /* Sandvik 365 */,
+				48FDEAA51B5F8CEC00C5AFE6 /* Sandvik 365Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48FDEA8F1B5F8CEC00C5AFE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48FDEA9C1B5F8CEC00C5AFE6 /* Main.storyboard in Resources */,
+				48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */,
+				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48FDEAA41B5F8CEC00C5AFE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48FDEA8D1B5F8CEC00C5AFE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
+				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48FDEAA21B5F8CEC00C5AFE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48FDEAA81B5F8CEC00C5AFE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48FDEA901B5F8CEC00C5AFE6 /* Sandvik 365 */;
+			targetProxy = 48FDEAA71B5F8CEC00C5AFE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48FDEA9B1B5F8CEC00C5AFE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48FDEAA01B5F8CEC00C5AFE6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48FDEAAE1B5F8CEC00C5AFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		48FDEAAF1B5F8CEC00C5AFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48FDEAB11B5F8CEC00C5AFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sandvik 365/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48FDEAB21B5F8CEC00C5AFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sandvik 365/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		48FDEAB41B5F8CEC00C5AFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sandvik 365Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sandvik 365.app/Sandvik 365";
+			};
+			name = Debug;
+		};
+		48FDEAB51B5F8CEC00C5AFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sandvik 365Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sandvik 365.app/Sandvik 365";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48FDEA8C1B5F8CEC00C5AFE6 /* Build configuration list for PBXProject "Sandvik 365" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48FDEAAE1B5F8CEC00C5AFE6 /* Debug */,
+				48FDEAAF1B5F8CEC00C5AFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48FDEAB01B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48FDEAB11B5F8CEC00C5AFE6 /* Debug */,
+				48FDEAB21B5F8CEC00C5AFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		48FDEAB31B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48FDEAB41B5F8CEC00C5AFE6 /* Debug */,
+				48FDEAB51B5F8CEC00C5AFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48FDEA891B5F8CEC00C5AFE6 /* Project object */;
+}
