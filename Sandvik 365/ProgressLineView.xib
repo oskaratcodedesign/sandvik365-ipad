@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressLineView" customModule="Sandvik_365" customModuleProvider="target">
+            <connections>
+                <outlet property="circle" destination="X0i-vc-daj" id="0Vq-DC-nKQ"/>
+                <outlet property="leadingConstraint" destination="IOt-oA-nKY" id="kO8-nq-E2J"/>
+                <outlet property="line" destination="aA0-UE-zbT" id="Cpk-cr-fdf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-UE-zbT" userLabel="line">
+                    <rect key="frame" x="20" y="300" width="560" height="2"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="AI7-Rz-25U"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-vc-daj" userLabel="circle">
+                    <rect key="frame" x="0.0" y="280" width="40" height="40"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="2Rp-UI-c9r"/>
+                        <constraint firstAttribute="height" constant="40" id="opA-Ee-PF7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aA0-UE-zbT" secondAttribute="trailing" constant="20" id="BDt-2j-WKi"/>
+                <constraint firstAttribute="centerY" secondItem="aA0-UE-zbT" secondAttribute="centerY" id="Gfj-ic-cmr"/>
+                <constraint firstItem="X0i-vc-daj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IOt-oA-nKY"/>
+                <constraint firstAttribute="centerY" secondItem="X0i-vc-daj" secondAttribute="centerY" id="NOw-tz-6Lh"/>
+                <constraint firstItem="aA0-UE-zbT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Zy6-iB-Ng8"/>
+                <constraint firstItem="X0i-vc-daj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aEJ-nH-LSK"/>
+                <constraint firstAttribute="trailing" secondItem="X0i-vc-daj" secondAttribute="trailing" id="wVW-9n-lQT"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aEJ-nH-LSK"/>
+                    <exclude reference="wVW-9n-lQT"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="317" y="708"/>
+        </view>
+    </objects>
+</document>
