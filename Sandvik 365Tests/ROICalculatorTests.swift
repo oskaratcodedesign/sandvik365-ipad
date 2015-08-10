@@ -30,6 +30,5 @@ class ROICalculatorTests: XCTestCase {
         input.price = 30
         let profit = ROICalculator(input: input, services: []).originalProfit()
         XCTAssert(profit.count == 10)
-        XCTAssert(true, "Pass")
     }
 }

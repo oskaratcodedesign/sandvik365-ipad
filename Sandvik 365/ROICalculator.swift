@@ -39,11 +39,13 @@ class ROICalculator {
     
     func originalProfit() -> [UInt] {
         
-        return []
+        // TEMP
+        return [0, 0, 0, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
     }
     
     func calculatedProfit() -> [UInt] {
         
-        return []
+        // TEMP
+        return [0, 0, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500]
     }
 }
