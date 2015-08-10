@@ -15,6 +15,9 @@
 		48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED4D1B74C293002D45A0 /* GradientView.swift */; };
 		48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */; };
 		48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FCED511B74CB79002D45A0 /* ProgressLineView.xib */; };
+		48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED541B78C02E002D45A0 /* ROICalculator.swift */; };
+		48FCED571B78C907002D45A0 /* ROICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED561B78C907002D45A0 /* ROICalculatorTests.swift */; };
+		48FCED581B78CBCB002D45A0 /* ROICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED541B78C02E002D45A0 /* ROICalculator.swift */; };
 		48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */; };
 		48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */; };
 		48FDEA9C1B5F8CEC00C5AFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */; };
@@ -46,6 +49,8 @@
 		48FCED4D1B74C293002D45A0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineView.swift; sourceTree = "<group>"; };
 		48FCED511B74CB79002D45A0 /* ProgressLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressLineView.xib; sourceTree = "<group>"; };
+		48FCED541B78C02E002D45A0 /* ROICalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICalculator.swift; sourceTree = "<group>"; };
+		48FCED561B78C907002D45A0 /* ROICalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICalculatorTests.swift; sourceTree = "<group>"; };
 		48FDEA911B5F8CEC00C5AFE6 /* Sandvik 365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sandvik 365.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FDEA951B5F8CEC00C5AFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +97,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		48FCED531B78C01B002D45A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48FCED541B78C02E002D45A0 /* ROICalculator.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		48FDEA881B5F8CEC00C5AFE6 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */ = {
 			isa = PBXGroup;
 			children = (
+				48FCED531B78C01B002D45A0 /* Services */,
 				486F88781B72383C0084211F /* View Controllers */,
 				48FDEABA1B5F901100C5AFE6 /* Custom Views */,
 				48FDEAB61B5F8D4700C5AFE6 /* Resources */,
@@ -142,6 +156,7 @@
 			children = (
 				48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */,
 				48FDEAAA1B5F8CEC00C5AFE6 /* Supporting Files */,
+				48FCED561B78C907002D45A0 /* ROICalculatorTests.swift */,
 			);
 			path = "Sandvik 365Tests";
 			sourceTree = "<group>";
@@ -358,6 +373,7 @@
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
+				48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +381,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FCED571B78C907002D45A0 /* ROICalculatorTests.swift in Sources */,
 				48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */,
+				48FCED581B78CBCB002D45A0 /* ROICalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
