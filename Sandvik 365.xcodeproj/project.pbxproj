@@ -20,12 +20,12 @@
 		48FCED581B78CBCB002D45A0 /* ROICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED541B78C02E002D45A0 /* ROICalculator.swift */; };
 		48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */; };
 		48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */; };
-		48FDEA9C1B5F8CEC00C5AFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */; };
 		48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */; };
 		48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */; };
 		48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */; };
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
+		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		48FDEA951B5F8CEC00C5AFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		48FDEA9B1B5F8CEC00C5AFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		48FDEAA01B5F8CEC00C5AFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		48FDEAA61B5F8CEC00C5AFE6 /* Sandvik 365Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sandvik 365Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +66,7 @@
 		48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
+		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +128,13 @@
 		48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */ = {
 			isa = PBXGroup;
 			children = (
+				F7227B8C1B7A04F5002354B1 /* Storyboards */,
 				48FCED531B78C01B002D45A0 /* Services */,
 				486F88781B72383C0084211F /* View Controllers */,
 				48FDEABA1B5F901100C5AFE6 /* Custom Views */,
 				48FDEAB61B5F8D4700C5AFE6 /* Resources */,
 				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
 				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
-				48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */,
 				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
 				48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
@@ -208,6 +208,14 @@
 				215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7227B8C1B7A04F5002354B1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FDEA9C1B5F8CEC00C5AFE6 /* Main.storyboard in Resources */,
+				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
 				48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
@@ -398,14 +406,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		48FDEA9A1B5F8CEC00C5AFE6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48FDEA9B1B5F8CEC00C5AFE6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
