@@ -26,6 +26,9 @@
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
+		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
+		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
+		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
+		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
+		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,8 @@
 			children = (
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
+				F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */,
+				F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
+				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -307,6 +316,7 @@
 				48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
+				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,9 +383,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
+				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
