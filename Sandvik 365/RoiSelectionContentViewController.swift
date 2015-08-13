@@ -11,14 +11,58 @@ import UIKit
 class RoiSelectionContentViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var itemIndex: Int = 0
+    var selectedROICalculator: ROICalculator?
+    var roiContentView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let pagesScrollViewSize = scrollView.frame.size
+        var noOfPages = 1
+        
+        /*if itemIndex >= 0{
+            noOfPages = 100
+        }*/
 
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(noOfPages),
+            height: pagesScrollViewSize.height)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        if roiContentView != nil {
+            return
+        }
+        
+        if itemIndex == 0 {
+            //load products
+            if let product = selectedROICalculator?.input.product {
+                
+            }
+        }
+        else {
+            let numberView = RoiNumberView(frame: self.scrollView.bounds)
+            scrollView.addSubview(numberView)
+            numberView.loadNumber(itemIndex, roiInput: selectedROICalculator?.input)
+            roiContentView = numberView;
+        }
     }
 
+    @IBAction func toggleLeft(sender: UIButton) {
+        if let numberView = roiContentView as? RoiNumberView {
+            numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
+        }
+    }
+    
+    @IBAction func toggleRight(sender: UIButton) {
+        if let numberView = roiContentView as? RoiNumberView {
+            numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

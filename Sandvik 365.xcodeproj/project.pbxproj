@@ -29,6 +29,8 @@
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
+		F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */; };
+		F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
+		F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiNumberView.swift; sourceTree = "<group>"; };
+		F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiNumberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,8 @@
 				48FCED4D1B74C293002D45A0 /* GradientView.swift */,
 				48FCED511B74CB79002D45A0 /* ProgressLineView.xib */,
 				48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */,
+				F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */,
+				F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
 				48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */,
@@ -391,6 +398,7 @@
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
+				F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */,

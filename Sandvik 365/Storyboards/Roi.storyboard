@@ -2,7 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Roi Selection View Controller-->
         <scene sceneID="kTk-dj-n60">
@@ -53,15 +62,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F67-v3-Poi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F67-v3-Poi">
                                 <rect key="frame" x="279" y="116" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-uV-aIC">
+                                <rect key="frame" x="16" y="257" width="54" height="85"/>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchUpInside" id="GIO-4n-YJO"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69H-An-xwY">
+                                <rect key="frame" x="98" y="180" width="404" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="5ka-LD-GU0"/>
+                                    <constraint firstAttribute="width" constant="454" id="tEI-l5-Jff"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5ka-LD-GU0"/>
+                                        <exclude reference="tEI-l5-Jff"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-fi-92p">
+                                <rect key="frame" x="530" y="257" width="38" height="85"/>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchUpInside" id="APj-gB-qeY"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="69H-An-xwY" secondAttribute="centerY" id="2Re-HD-AmY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="69H-An-xwY" secondAttribute="trailing" constant="28" id="2jP-gF-VRg"/>
+                            <constraint firstItem="vhU-fi-92p" firstAttribute="baseline" secondItem="wG8-uV-aIC" secondAttribute="firstBaseline" id="3NE-1v-1Yk"/>
+                            <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="69H-An-xwY" secondAttribute="bottom" constant="180" id="446-mp-eh7"/>
+                            <constraint firstAttribute="centerX" secondItem="69H-An-xwY" secondAttribute="centerX" id="62M-2q-fXi"/>
+                            <constraint firstAttribute="centerY" secondItem="69H-An-xwY" secondAttribute="centerY" id="AS4-Va-Ovh"/>
+                            <constraint firstItem="vhU-fi-92p" firstAttribute="top" secondItem="wG8-uV-aIC" secondAttribute="top" id="Alm-zK-nSI"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="96" id="B0d-1T-ZX0"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="leading" secondItem="wG8-uV-aIC" secondAttribute="trailing" constant="28" id="Bfx-6W-CA2"/>
+                            <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="vhU-fi-92p" secondAttribute="bottom" constant="248" id="E6W-9I-wc1"/>
+                            <constraint firstAttribute="centerY" secondItem="vhU-fi-92p" secondAttribute="centerY" id="JBB-dF-ifu"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="96" id="KSm-a8-IEM"/>
+                            <constraint firstAttribute="centerX" secondItem="F67-v3-Poi" secondAttribute="centerX" id="MTo-Yj-Kpc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vhU-fi-92p" secondAttribute="trailing" constant="16" id="MYV-z5-Qxw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vhU-fi-92p" secondAttribute="trailing" constant="-10" id="MdM-ga-vg9"/>
+                            <constraint firstItem="vhU-fi-92p" firstAttribute="firstBaseline" secondItem="wG8-uV-aIC" secondAttribute="baseline" id="NI7-6P-csl"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="top" secondItem="F67-v3-Poi" secondAttribute="bottom" constant="43" id="Rk8-G1-E3C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="69H-An-xwY" secondAttribute="trailing" constant="28" id="WzY-bi-sE9"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="leading" secondItem="wG8-uV-aIC" secondAttribute="trailing" constant="16" id="Y49-UT-hVW"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="top" secondItem="F67-v3-Poi" secondAttribute="bottom" constant="43" id="YIo-NW-lbc"/>
+                            <constraint firstItem="wG8-uV-aIC" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="227" id="eKB-8f-m6N"/>
+                            <constraint firstItem="wG8-uV-aIC" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leadingMargin" id="epe-uH-hRI"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="96" id="fS8-RP-MCg"/>
+                            <constraint firstAttribute="trailing" secondItem="F67-v3-Poi" secondAttribute="trailing" constant="279" id="fiF-1E-zFh"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="96" id="htU-NP-m3N"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="82" id="hzB-dy-c3H"/>
+                            <constraint firstItem="wG8-uV-aIC" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leadingMargin" id="kNL-te-hAi"/>
+                            <constraint firstItem="vhU-fi-92p" firstAttribute="leading" secondItem="69H-An-xwY" secondAttribute="trailing" constant="28" id="ldb-GT-vdO"/>
+                            <constraint firstAttribute="trailing" secondItem="vhU-fi-92p" secondAttribute="trailing" constant="16" id="n2n-mj-hu7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F67-v3-Poi" secondAttribute="trailing" constant="263" id="ndJ-pM-pmJ"/>
+                            <constraint firstItem="vhU-fi-92p" firstAttribute="leading" secondItem="69H-An-xwY" secondAttribute="trailing" constant="8" symbolic="YES" id="oDZ-GR-ZbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="69H-An-xwY" secondAttribute="trailing" constant="64" id="pds-ac-84C"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="279" id="rKD-12-2MA"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leadingMargin" constant="263" id="ruD-sw-M82"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="centerY" secondItem="9rL-L1-Nkc" secondAttribute="centerY" id="sV3-PX-XuU"/>
+                            <constraint firstItem="F67-v3-Poi" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="96" id="t4f-mE-xbd"/>
+                            <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="69H-An-xwY" secondAttribute="bottom" constant="180" id="thw-JW-JM1"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="top" secondItem="F67-v3-Poi" secondAttribute="bottom" constant="24" id="xc9-lo-piz"/>
+                            <constraint firstItem="69H-An-xwY" firstAttribute="top" secondItem="F67-v3-Poi" secondAttribute="bottom" constant="43" id="yMf-Ag-vz7"/>
+                            <constraint firstAttribute="centerY" secondItem="wG8-uV-aIC" secondAttribute="centerY" id="z6o-qy-2HC"/>
+                            <constraint firstAttribute="centerX" secondItem="69H-An-xwY" secondAttribute="centerX" id="ztr-9z-yIX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2Re-HD-AmY"/>
+                                <exclude reference="2jP-gF-VRg"/>
+                                <exclude reference="Rk8-G1-E3C"/>
+                                <exclude reference="WzY-bi-sE9"/>
+                                <exclude reference="Y49-UT-hVW"/>
+                                <exclude reference="YIo-NW-lbc"/>
+                                <exclude reference="hzB-dy-c3H"/>
+                                <exclude reference="pds-ac-84C"/>
+                                <exclude reference="sV3-PX-XuU"/>
+                                <exclude reference="xc9-lo-piz"/>
+                                <exclude reference="yMf-Ag-vz7"/>
+                                <exclude reference="ztr-9z-yIX"/>
+                                <exclude reference="eKB-8f-m6N"/>
+                                <exclude reference="epe-uH-hRI"/>
+                                <exclude reference="B0d-1T-ZX0"/>
+                                <exclude reference="fS8-RP-MCg"/>
+                                <exclude reference="fiF-1E-zFh"/>
+                                <exclude reference="htU-NP-m3N"/>
+                                <exclude reference="ndJ-pM-pmJ"/>
+                                <exclude reference="rKD-12-2MA"/>
+                                <exclude reference="ruD-sw-M82"/>
+                                <exclude reference="t4f-mE-xbd"/>
+                                <exclude reference="3NE-1v-1Yk"/>
+                                <exclude reference="Alm-zK-nSI"/>
+                                <exclude reference="MdM-ga-vg9"/>
+                                <exclude reference="NI7-6P-csl"/>
+                                <exclude reference="n2n-mj-hu7"/>
+                                <exclude reference="oDZ-GR-ZbQ"/>
+                                <exclude reference="446-mp-eh7"/>
+                                <exclude reference="E6W-9I-wc1"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="69H-An-xwY" id="W38-wQ-2J6"/>
                         <outlet property="titleLabel" destination="F67-v3-Poi" id="M1h-L2-hav"/>
                     </connections>
                 </viewController>
