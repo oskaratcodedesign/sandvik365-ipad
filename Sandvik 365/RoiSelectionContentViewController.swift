@@ -16,6 +16,7 @@ class RoiSelectionContentViewController: UIViewController {
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator?
     var roiContentView: UIView?
+    var toggleTimer: NSTimer?
 
     private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
         NSLocalizedString("NUMBER OF MACHINES", comment: ""),
@@ -61,16 +62,31 @@ class RoiSelectionContentViewController: UIViewController {
     }
 
     @IBAction func toggleLeft(sender: UIButton) {
+       toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleLeft"), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func toggleRight(sender: UIButton) {
+        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleRight"), userInfo: nil, repeats: true)
+    }
+    
+    func toggleLeft() {
         if let numberView = roiContentView as? RoiNumberView {
             numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
         }
     }
     
-    @IBAction func toggleRight(sender: UIButton) {
+    func toggleRight() {
         if let numberView = roiContentView as? RoiNumberView {
             numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
         }
     }
+    
+    @IBAction func releaseAction(sender: UIButton) {
+        toggleTimer?.fire()
+        toggleTimer?.invalidate()
+        toggleTimer = nil
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

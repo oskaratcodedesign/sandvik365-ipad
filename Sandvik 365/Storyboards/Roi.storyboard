@@ -132,7 +132,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchUpInside" id="GIO-4n-YJO"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="473-X5-7Nh"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="9He-AB-vdA"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Xr2-5m-Za0"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="f1B-e3-7CI"/>
+                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchDown" id="6en-O3-8qs"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69H-An-xwY">
@@ -156,7 +160,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchUpInside" id="APj-gB-qeY"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="Dp9-TY-Xog"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Qp5-PN-9kl"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="YvQ-1k-wkH"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="fuV-VD-Gxy"/>
+                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchDown" id="zZz-B2-uNT"/>
                                 </connections>
                             </button>
                         </subviews>
