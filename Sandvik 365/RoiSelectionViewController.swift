@@ -10,22 +10,24 @@ import UIKit
 
 class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    @IBOutlet var selectionDots: [UIImageView]!
     @IBOutlet weak var titleLabel: UILabel!
     private var pageViewController: UIPageViewController?
-    private let numberOfItems = 5;
+    private let numberOfItems = 6;
 
     var selectedROICalculator: ROICalculator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPageController()
-        setupPageControl()
+        setupSelectionDots()
     }
     
     private func loadPageController()
     {
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
         pageController.dataSource = self
+        pageController.delegate = self
         
         let firstController = getItemController(0)!
         let startingViewControllers: NSArray = [firstController]
@@ -37,11 +39,19 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         pageViewController!.didMoveToParentViewController(self)
     }
     
-    private func setupPageControl() {
-        let appearance = UIPageControl.appearance()
-        appearance.pageIndicatorTintColor = UIColor.grayColor()
-        appearance.currentPageIndicatorTintColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000)
-        //appearance.backgroundColor = UIColor.darkGrayColor()
+    private func setupSelectionDots() {
+        for img in selectionDots{
+            img.layer.cornerRadius = img.bounds.width/2
+            img.layer.borderColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000).CGColor
+            img.layer.borderWidth = 1
+        }
+    }
+    
+    private func fillDot(itemIndex: Int)
+    {
+        if itemIndex >= 0 {
+            selectionDots[itemIndex].backgroundColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000)
+        }
     }
     
     private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
@@ -50,6 +60,7 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
             pageItemController.selectedROICalculator = selectedROICalculator
+            
             return pageItemController
         }
         
@@ -78,12 +89,19 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         return nil
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return numberOfItems
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
+        
+        if let currentController = pendingViewControllers.last as? RoiSelectionContentViewController
+        {
+            fillDot(currentController.itemIndex-1)
+        }
+        
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        
+        var count = previousViewControllers.count
+        count = 1;
     }
     
     override func didReceiveMemoryWarning() {
