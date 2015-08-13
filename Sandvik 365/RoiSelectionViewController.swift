@@ -49,6 +49,7 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         if itemIndex < numberOfItems {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
+            pageItemController.selectedROICalculator = selectedROICalculator
             return pageItemController
         }
         
