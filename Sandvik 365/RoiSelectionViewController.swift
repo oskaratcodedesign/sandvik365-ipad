@@ -10,6 +10,7 @@ import UIKit
 
 class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    @IBOutlet weak var titleLabel: UILabel!
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 5;
 
