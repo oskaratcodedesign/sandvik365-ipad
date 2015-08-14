@@ -8,10 +8,9 @@
 
 import UIKit
 
-class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate {
 
     @IBOutlet var selectionDots: [UIImageView]!
-    @IBOutlet weak var titleLabel: UILabel!
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 6;
 
@@ -21,13 +20,27 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         super.viewDidLoad()
         loadPageController()
         setupSelectionDots()
+        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+        recognizer.delegate = self
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    func handleTap(recognizer: UIGestureRecognizer) {
+        if let currentController = pageViewController?.viewControllers.last as? RoiSelectionContentViewController
+        {
+            if let nextController = getItemController(currentController.itemIndex+1) {
+                let nextViewControllers: NSArray = [nextController]
+                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+                fillDot(currentController.itemIndex)
+            }
+        }
     }
     
     private func loadPageController()
     {
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
-        pageController.dataSource = self
-        pageController.delegate = self
+        //pageController.dataSource = self
+        //pageController.delegate = self
         
         let firstController = getItemController(0)!
         let startingViewControllers: NSArray = [firstController]
