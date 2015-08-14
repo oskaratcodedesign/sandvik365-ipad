@@ -46,8 +46,7 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         }
     }
     
-    private func fillDot(itemIndex: Int)
-    {
+    private func fillDot(itemIndex: Int) {
         if itemIndex >= 0 {
             selectionDots[itemIndex].backgroundColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000)
         }
@@ -90,8 +89,7 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
     
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
         
-        if let currentController = pendingViewControllers.last as? RoiSelectionContentViewController
-        {
+        if let currentController = pendingViewControllers.last as? RoiSelectionContentViewController {
             fillDot(currentController.itemIndex-1)
         }
         
