@@ -23,8 +23,7 @@ class RoiSelectionViewController: UIViewController, UIPageViewControllerDataSour
         setupSelectionDots()
     }
     
-    private func loadPageController()
-    {
+    private func loadPageController() {
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
         pageController.dataSource = self
         pageController.delegate = self
