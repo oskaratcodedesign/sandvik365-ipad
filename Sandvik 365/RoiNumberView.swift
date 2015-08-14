@@ -13,23 +13,19 @@ class RoiNumberView: NibDesignable {
 
     @IBOutlet weak var numberLabel: UILabel!
     
-    func loadNumber(itemIndex :Int, roiInput :ROIInput)
-    {
+    func loadNumber(itemIndex: Int, roiInput: ROIInput) {
         setNumber(itemIndex, roiInput: roiInput, add: 0)
     }
     
-    func increaseNumber(itemIndex :Int, roiInput :ROIInput)
-    {
+    func increaseNumber(itemIndex: Int, roiInput: ROIInput) {
         setNumber(itemIndex, roiInput: roiInput, add: 1)
     }
     
-    func decreaseNumber(itemIndex :Int, roiInput :ROIInput)
-    {
+    func decreaseNumber(itemIndex: Int, roiInput: ROIInput) {
         setNumber(itemIndex, roiInput: roiInput, add: -1)
     }
     
-    private func setNumber(itemIndex :Int, roiInput :ROIInput, add :Int)
-    {
+    private func setNumber(itemIndex: Int, roiInput: ROIInput, add: Int) {
         switch itemIndex {
         case 1:
             let number = roiInput.numberOfProducts ?? 0
