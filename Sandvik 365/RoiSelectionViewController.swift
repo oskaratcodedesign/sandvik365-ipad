@@ -14,7 +14,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 6;
 
-    var selectedROICalculator: ROICalculator?
+    var selectedROICalculator: ROICalculator!
 
     override func viewDidLoad() {
         super.viewDidLoad()

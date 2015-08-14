@@ -14,7 +14,7 @@ class RoiSelectionContentViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
         
     var itemIndex: Int = 0
-    var selectedROICalculator: ROICalculator?
+    var selectedROICalculator: ROICalculator!
     var roiContentView: UIView?
     var toggleTimer: NSTimer?
 
@@ -49,14 +49,12 @@ class RoiSelectionContentViewController: UIViewController {
         
         if itemIndex == 0 {
             //load products
-            if let product = selectedROICalculator?.input.product {
-                
-            }
+            let product = selectedROICalculator.input.product
         }
         else {
             let numberView = RoiNumberView(frame: self.scrollView.bounds)
             scrollView.addSubview(numberView)
-            numberView.loadNumber(itemIndex, roiInput: selectedROICalculator?.input)
+            numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
             roiContentView = numberView;
         }
     }
@@ -71,13 +69,13 @@ class RoiSelectionContentViewController: UIViewController {
     
     func toggleLeft() {
         if let numberView = roiContentView as? RoiNumberView {
-            numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
+            numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
         }
     }
     
     func toggleRight() {
         if let numberView = roiContentView as? RoiNumberView {
-            numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator?.input)
+            numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
         }
     }
     
