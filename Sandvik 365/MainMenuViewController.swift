@@ -31,4 +31,12 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         progressView.progress = scrollView.contentOffset.x /
             (scrollView.contentSize.width - scrollView.frame.width)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "RoiRampUp" {
+            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+                vc.selectedROICalculator = ROICalculator(input: ROIInput(), services: [ROIService.RampUp])
+            }
+        }
+    }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiNumberView" customModule="Sandvik_365" customModuleProvider="target">
+            <connections>
+                <outlet property="numberLabel" destination="epy-Bk-WYV" id="9F5-Zv-Jd4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epy-Bk-WYV">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="epy-Bk-WYV" secondAttribute="height" multiplier="1:1" id="7XH-hx-wfX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="135"/>
+                    <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="7XH-hx-wfX"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="epy-Bk-WYV" secondAttribute="centerY" id="FBt-pE-UNp"/>
+                <constraint firstAttribute="centerX" secondItem="epy-Bk-WYV" secondAttribute="centerX" id="Pdk-wR-HWg"/>
+                <constraint firstAttribute="bottom" secondItem="epy-Bk-WYV" secondAttribute="bottom" id="R2r-3w-V9L"/>
+                <constraint firstAttribute="trailing" secondItem="epy-Bk-WYV" secondAttribute="trailing" id="lg0-op-xxe"/>
+                <constraint firstItem="epy-Bk-WYV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rma-kh-kRl"/>
+                <constraint firstItem="epy-Bk-WYV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zO7-JL-c6g"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="FBt-pE-UNp"/>
+                    <exclude reference="Pdk-wR-HWg"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
