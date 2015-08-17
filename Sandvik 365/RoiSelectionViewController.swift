@@ -10,7 +10,11 @@ import UIKit
 
 class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var selectionContainer: UIView!
+    @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
+    @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
     @IBOutlet var selectionDots: [UIImageView]!
+    private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 6;
 
@@ -32,8 +36,14 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
                 fillDot(currentController.itemIndex)
+                showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
             }
         }
+    }
+
+    func handleButtonSelect(button :RoiSelectionButton) {
+        var t = 0;
+        t = 1;
     }
     
     private func loadPageController() {
@@ -47,8 +57,11 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         
         pageViewController = pageController
         addChildViewController(pageViewController!)
-        self.view.addSubview(pageViewController!.view)
+        view.addSubview(pageViewController!.view)
+
         pageViewController!.didMoveToParentViewController(self)
+        currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+        view.bringSubviewToFront(selectionContainer)
     }
     
     private func setupSelectionDots() {
@@ -65,6 +78,54 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         }
     }
     
+    private func showSelectedInput(itemIndex: Int, roiInput: ROIInput) {
+        
+        if selectionButtons.count >= numberOfItems-1 {
+            return
+        }
+        
+        switch itemIndex {
+        case 0:
+            let product = roiInput.product
+        case 1:
+            let number = roiInput.numberOfProducts
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 2:
+            let number = roiInput.oreGrade
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 3:
+            let number = roiInput.efficiency
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 4:
+            let number = roiInput.price
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        default:
+            break
+        }
+    }
+    
+    private func addRoiSelectionButton(number: UInt, itemIndex: Int)
+    {
+        let selectionButton = RoiSelectionButton()
+        
+        let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 55)
+        let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentSelectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        
+        selectionButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        selectionContainer.addSubview(selectionButton)
+        
+        NSLayoutConstraint.deactivateConstraints([currentTrailingConstraint])
+        NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
+        currentSelectionButton = selectionButton
+        currentTrailingConstraint = trailConstraint
+        selectionButton.button.tag = itemIndex
+        selectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+        selectionButtons.append(selectionButton)
+    }
+
     private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
         
         if itemIndex < numberOfItems {

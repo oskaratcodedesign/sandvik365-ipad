@@ -38,7 +38,6 @@ class RoiSelectionContentViewController: UIViewController {
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(noOfPages),
             height: pagesScrollViewSize.height)
         titleLabel.text = titles[itemIndex]
-        
     }
     
     override func viewDidLayoutSubviews() {
