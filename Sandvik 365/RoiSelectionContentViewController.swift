@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RoiSelectionContentViewControllerDelegate {
+    func roiValueDidChange(itemIndex: Int, text :String)
+}
+
 class RoiSelectionContentViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,8 +19,10 @@ class RoiSelectionContentViewController: UIViewController {
         
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator!
-    var roiContentView: UIView?
+    var roiContentView: RoiNumberView?
     var toggleTimer: NSTimer?
+    
+    var delegate: RoiSelectionContentViewControllerDelegate?
 
     private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
         NSLocalizedString("NUMBER OF MACHINES", comment: ""),
@@ -67,14 +73,20 @@ class RoiSelectionContentViewController: UIViewController {
     }
     
     func toggleLeft() {
-        if let numberView = roiContentView as? RoiNumberView {
+        if let numberView = roiContentView {
             numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
+            if let delegate = self.delegate {
+                delegate.roiValueDidChange(itemIndex, text: numberView.numberLabel.text!)
+            }
         }
     }
     
     func toggleRight() {
-        if let numberView = roiContentView as? RoiNumberView {
+        if let numberView = roiContentView {
             numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
+            if let delegate = self.delegate {
+                delegate.roiValueDidChange(itemIndex, text: numberView.numberLabel.text!)
+            }
         }
     }
     

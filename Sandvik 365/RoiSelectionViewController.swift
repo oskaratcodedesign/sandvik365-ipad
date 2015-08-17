@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate {
+class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
 
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
@@ -41,6 +41,9 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
                 fillDot(currentController.itemIndex)
                 showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
+                if let text = currentController.roiContentView?.numberLabel.text {
+                    roiValueDidChange(currentController.itemIndex, text: text)
+                }
             }
         }
     }
@@ -134,8 +137,6 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         currentTrailingConstraint = trailConstraint
         selectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
         selectionButtons.append(selectionButton)
-        
-        selectionButton.setTextAsImage(NSString(string: String(number)))
     }
 
     private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
@@ -144,11 +145,18 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
             pageItemController.selectedROICalculator = selectedROICalculator
-            
+            pageItemController.delegate = self
             return pageItemController
         }
         
         return nil
+    }
+    
+    func roiValueDidChange(itemIndex: Int, text: String) {
+        if itemIndex < selectionButtons.count {
+            let selectedButton = selectionButtons[itemIndex]
+            selectedButton.setTextAsImage(NSString(string: text))
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
