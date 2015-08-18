@@ -98,9 +98,11 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         switch itemIndex {
         case 0:
             let product = roiInput.product
+            currentSelectionButton.button.setImage(product.productImage(), forState: .Normal)
             currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
             currentSelectionButton.hidden = false
             selectionButtons.append(currentSelectionButton)
+            
         case 1:
             let number = roiInput.numberOfProducts
             addRoiSelectionButton(number, itemIndex: itemIndex)

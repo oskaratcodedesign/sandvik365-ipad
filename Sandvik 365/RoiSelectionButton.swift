@@ -14,7 +14,8 @@ class RoiSelectionButton: NibDesignable {
     @IBOutlet weak var button: UIButton!
     
     func setTextAsImage(text: NSString) {
-        UIGraphicsBeginImageContext(bounds.size)
+        var size = bounds.size
+        UIGraphicsBeginImageContext(size)
         let font = button.titleLabel!.font
         var paraStyle = NSMutableParagraphStyle()
         paraStyle.alignment = .Center
@@ -23,13 +24,11 @@ class RoiSelectionButton: NibDesignable {
             NSForegroundColorAttributeName: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000),
             NSParagraphStyleAttributeName: paraStyle
         ]
-        
-        text.drawInRect(CGRectMake(0, 0, bounds.size.width, bounds.size.height), withAttributes: textFontAttributes)
+        let textSize = text.sizeWithAttributes(textFontAttributes)
+        text.drawInRect(CGRectMake(0, (size.height - textSize.height)/2, size.width, size.height), withAttributes: textFontAttributes)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        button.setBackgroundImage(image, forState: .Normal)
-        //button.setTitle("bla", forState: .Normal)
-        
+        button.setImage(image, forState: .Normal)
     }
 
 }
