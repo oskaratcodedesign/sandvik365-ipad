@@ -35,6 +35,8 @@
 		F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */; };
 		F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */; };
 		F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */; };
+		F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */; };
+		F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150813.m4v; sourceTree = "<group>"; };
 		F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiNumberView.swift; sourceTree = "<group>"; };
 		F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiNumberView.xib; sourceTree = "<group>"; };
+		F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionButton.swift; sourceTree = "<group>"; };
+		F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiSelectionButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,8 @@
 				48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */,
 				F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */,
 				F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */,
+				F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */,
+				F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
@@ -416,6 +423,7 @@
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
+				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */,
 			);

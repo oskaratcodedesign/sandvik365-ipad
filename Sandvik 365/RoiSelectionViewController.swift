@@ -8,11 +8,22 @@
 
 import UIKit
 
-class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate {
+class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
 
+    @IBOutlet weak var selectionContainer: UIView!
+    @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
+    @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var selectionDots: [UIImageView]!
+    private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 6;
+    
+    private let selectionButtonTitles = [NSLocalizedString("PRODUCT", comment: ""),
+        NSLocalizedString("NUMBER", comment: ""),
+        NSLocalizedString("ORE GRADE", comment: ""),
+        NSLocalizedString("EFFICIENCY", comment: ""),
+        NSLocalizedString("ORE PRICE/T", comment: "")]
 
     var selectedROICalculator: ROICalculator!
 
@@ -23,6 +34,10 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self
         view.addGestureRecognizer(recognizer)
+        
+        //do not show at first:
+        currentSelectionButton.hidden = true
+        view.bringSubviewToFront(selectionContainer)
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
@@ -32,6 +47,21 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
                 fillDot(currentController.itemIndex)
+                showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
+                if let text = currentController.roiContentView?.numberLabel.text {
+                    roiValueDidChange(currentController.itemIndex, text: text)
+                }
+            }
+        }
+    }
+    
+    
+
+    func handleButtonSelect(button :UIButton) {
+        if let index = find(selectionButtons, button.superview?.superview as! RoiSelectionButton) {
+            if let nextController = getItemController(index) {
+                let nextViewControllers: NSArray = [nextController]
+                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             }
         }
     }
@@ -47,7 +77,8 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         
         pageViewController = pageController
         addChildViewController(pageViewController!)
-        self.view.addSubview(pageViewController!.view)
+        view.addSubview(pageViewController!.view)
+
         pageViewController!.didMoveToParentViewController(self)
     }
     
@@ -65,17 +96,81 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         }
     }
     
+    private func showSelectedInput(itemIndex: Int, roiInput: ROIInput) {
+        
+        if selectionButtons.count > itemIndex {
+            return
+        }
+        
+        switch itemIndex {
+        case 0:
+            let product = roiInput.product
+            currentSelectionButton.button.setImage(product.productImage(), forState: .Normal)
+            currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+            currentSelectionButton.hidden = false
+            addSelectionButtonAndSetTitle(currentSelectionButton)
+        case 1:
+            let number = roiInput.numberOfProducts
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 2:
+            let number = roiInput.oreGrade
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 3:
+            let number = roiInput.efficiency
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        case 4:
+            let number = roiInput.price
+            addRoiSelectionButton(number, itemIndex: itemIndex)
+        default:
+            break
+        }
+    }
+    
+    private func addRoiSelectionButton(number: UInt, itemIndex: Int)
+    {
+        let selectionButton = RoiSelectionButton(frame: currentSelectionButton.bounds)
+        
+        let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: self.widthConstraint.constant)
+        let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentSelectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        
+        selectionButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        selectionContainer.addSubview(selectionButton)
+        
+        NSLayoutConstraint.deactivateConstraints([currentTrailingConstraint])
+        NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
+        currentSelectionButton = selectionButton
+        currentTrailingConstraint = trailConstraint
+        selectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+        addSelectionButtonAndSetTitle(selectionButton)
+    }
+    
+    private func addSelectionButtonAndSetTitle(button: RoiSelectionButton)
+    {
+        selectionButtons.append(button)
+        button.label.text = selectionButtonTitles[selectionButtons.count-1]
+    }
+
     private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
         
         if itemIndex < numberOfItems {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
             pageItemController.selectedROICalculator = selectedROICalculator
-            
+            pageItemController.delegate = self
             return pageItemController
         }
         
         return nil
+    }
+    
+    func roiValueDidChange(itemIndex: Int, text: String) {
+        if itemIndex < selectionButtons.count {
+            let selectedButton = selectionButtons[itemIndex]
+            selectedButton.button.setTitle(text, forState: .Normal)
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {

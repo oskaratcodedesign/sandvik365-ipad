@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ROIService {
     case RampUp
@@ -29,6 +30,16 @@ enum ROIService {
 enum ROIProduct {
     case Product1
     case Product2
+    
+    static let productImages = [
+        Product1 : "product1"]
+    
+    func productImage() -> UIImage? {
+        if let imageName = ROIProduct.productImages[self] {
+            return UIImage(named: imageName)
+        }
+        return nil
+    }
 }
 
 class ROIInput {
