@@ -7,6 +7,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -29,30 +32,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="Ft3-3w-Z2w">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIe-et-yW4">
-                                <rect key="frame" x="225" y="542" width="150" height="33"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jpB-Do-xb4">
-                                        <rect key="frame" x="8" y="5" width="20" height="20"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-PM-KX7">
-                                        <rect key="frame" x="36" y="5" width="20" height="20"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-Ug-k8O">
-                                        <rect key="frame" x="64" y="5" width="20" height="20"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXn-lv-zSW">
-                                        <rect key="frame" x="92" y="5" width="20" height="20"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-c3-AmZ">
-                                        <rect key="frame" x="120" y="5" width="20" height="20"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="lIb-A4-KhU"/>
-                                    <constraint firstAttribute="width" constant="150" id="q9M-a2-htN"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAP TO SELECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb2-dX-vXE">
+                                <rect key="frame" x="0.0" y="422" width="600" height="21"/>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
                                 <rect key="frame" x="241" y="448" width="119" height="80"/>
                                 <subviews>
@@ -91,6 +76,30 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIe-et-yW4">
+                                <rect key="frame" x="225" y="542" width="150" height="33"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jpB-Do-xb4">
+                                        <rect key="frame" x="8" y="5" width="20" height="20"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-PM-KX7">
+                                        <rect key="frame" x="36" y="5" width="20" height="20"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-Ug-k8O">
+                                        <rect key="frame" x="64" y="5" width="20" height="20"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXn-lv-zSW">
+                                        <rect key="frame" x="92" y="5" width="20" height="20"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-c3-AmZ">
+                                        <rect key="frame" x="120" y="5" width="20" height="20"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="lIb-A4-KhU"/>
+                                    <constraint firstAttribute="width" constant="150" id="q9M-a2-htN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,18 +109,22 @@
                             <constraint firstItem="yIe-et-yW4" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="227" id="F04-fe-pb4"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="yIe-et-yW4" secondAttribute="bottom" constant="8" id="Fg1-TL-M0b"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="522" id="GC1-f1-QkG"/>
+                            <constraint firstAttribute="trailing" secondItem="xb2-dX-vXE" secondAttribute="trailing" id="Kft-aI-isp"/>
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="top" secondItem="MSP-rB-ez0" secondAttribute="top" id="RGO-5Z-ZD0"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="trailing" id="SKG-cQ-HH8"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" constant="14" id="TYV-Ty-vCr"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="522" id="U1H-Y0-yG4"/>
                             <constraint firstAttribute="trailing" secondItem="Ft3-3w-Z2w" secondAttribute="trailing" id="UOi-KT-7qF"/>
+                            <constraint firstAttribute="centerX" secondItem="xb2-dX-vXE" secondAttribute="centerX" id="V7b-AS-bMw"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="yIe-et-yW4" secondAttribute="bottom" constant="25" id="bx8-Jr-Mpf"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="MSP-rB-ez0" secondAttribute="top" constant="542" id="f5D-8o-T7n"/>
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="hic-4H-2GE"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="253" id="jLH-hh-A9k"/>
                             <constraint firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="mNk-H7-DOX"/>
+                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="xb2-dX-vXE" secondAttribute="bottom" constant="5" id="mQM-VF-BbV"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="pVR-1h-NMu"/>
+                            <constraint firstItem="xb2-dX-vXE" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ybe-Cm-S1k"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="yIe-et-yW4" secondAttribute="bottom" constant="25" id="zWP-EV-JBE"/>
                             <constraint firstAttribute="centerX" secondItem="yIe-et-yW4" secondAttribute="centerX" id="zWn-EE-3T5"/>
                         </constraints>
