@@ -38,5 +38,10 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
                 vc.selectedROICalculator = ROICalculator(input: ROIInput(), services: [ROIService.RampUp])
             }
         }
+        else if segue.identifier == "VideoRampUp" {
+            if let vc = segue.destinationViewController as? VideoViewController {
+                vc.service = ROIService.RampUp
+            }
+        }
     }
 }
