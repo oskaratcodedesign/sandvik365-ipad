@@ -169,7 +169,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     func roiValueDidChange(itemIndex: Int, text: String) {
         if itemIndex < selectionButtons.count {
             let selectedButton = selectionButtons[itemIndex]
-            selectedButton.setTextAsImage(NSString(string: text))
+            selectedButton.button.setTitle(text, forState: .Normal)
         }
     }
     
