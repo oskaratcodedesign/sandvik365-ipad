@@ -18,7 +18,7 @@ enum ROIService {
     
     func videoURL() -> NSURL? {
         if let videoName = ROIService.videos[self] {
-            let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"mp4")
+            let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"m4v")
             let url = NSURL.fileURLWithPath(path!)
             return url
         }
