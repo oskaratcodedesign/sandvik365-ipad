@@ -29,6 +29,10 @@
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
+		F741D9971B84756A00010E71 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F741D9961B84756A00010E71 /* Video.storyboard */; };
+		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
+		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
+		F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */; };
 		F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */; };
 		F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */; };
 		F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */; };
@@ -77,6 +81,10 @@
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
+		F741D9961B84756A00010E71 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150813.m4v; sourceTree = "<group>"; };
 		F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiNumberView.swift; sourceTree = "<group>"; };
 		F7E69A781B7B5B66004FA708 /* RoiNumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiNumberView.xib; sourceTree = "<group>"; };
 		F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionButton.swift; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */,
 				0680F73A8AA21B6A17F84678 /* Pods_Sandvik_365.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +118,7 @@
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */,
 				F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */,
+				F741D9981B8475C400010E71 /* VideoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -188,6 +198,7 @@
 		48FDEAB61B5F8D4700C5AFE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */,
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
@@ -216,6 +227,7 @@
 		7825D85B7F7737ED3755B819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F741D99C1B84783D00010E71 /* MediaPlayer.framework */,
 				2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */,
 			);
 			name = Frameworks;
@@ -235,6 +247,7 @@
 			children = (
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
+				F741D9961B84756A00010E71 /* Video.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -324,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
+				F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiNumberView.xib in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
@@ -332,6 +346,7 @@
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
+				F741D9971B84756A00010E71 /* Video.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +417,7 @@
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
+				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
