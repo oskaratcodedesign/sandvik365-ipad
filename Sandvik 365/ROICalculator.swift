@@ -13,6 +13,17 @@ enum ROIService {
     case ConditionInspection
     case MaintenancePlanning
     case Protective
+    
+    static let videos = [RampUp : "Sandvik365_Extern_150813"]
+    
+    func videoURL() -> NSURL? {
+        if let videoName = ROIService.videos[self] {
+            let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"mp4")
+            let url = NSURL.fileURLWithPath(path!)
+            return url
+        }
+        return nil
+    }
 }
 
 enum ROIProduct {
