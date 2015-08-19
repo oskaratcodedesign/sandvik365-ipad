@@ -4,14 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
-            <string>AktivGroteskCorp-Regular</string>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="p1l-wD-EAB" id="yL6-Fl-PxM"/>
+                <outlet property="label" destination="iUq-2N-SFr" id="IPr-6I-6tP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,21 +21,40 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1l-wD-EAB">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
-                    <state key="normal">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1l-wD-EAB">
+                    <rect key="frame" x="9" y="0.0" width="582" height="582"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="40"/>
+                    <state key="normal" title="1%">
+                        <color key="titleColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-2N-SFr">
+                    <rect key="frame" x="0.0" y="586" width="600" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="9d1-Fw-es1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
+                <constraint firstItem="iUq-2N-SFr" firstAttribute="top" secondItem="p1l-wD-EAB" secondAttribute="bottom" constant="4" id="9hX-pg-LPX"/>
+                <constraint firstItem="iUq-2N-SFr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G9x-rr-hQ1"/>
+                <constraint firstAttribute="centerX" secondItem="iUq-2N-SFr" secondAttribute="centerX" id="HNs-GR-6Xg"/>
                 <constraint firstItem="p1l-wD-EAB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PyK-Tf-dT5"/>
                 <constraint firstAttribute="bottom" secondItem="p1l-wD-EAB" secondAttribute="bottom" id="T2n-F3-5Ub"/>
-                <constraint firstAttribute="trailing" secondItem="p1l-wD-EAB" secondAttribute="trailing" id="Z1L-xY-iXg"/>
-                <constraint firstItem="p1l-wD-EAB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hqq-kr-3Xb"/>
+                <constraint firstAttribute="trailing" secondItem="iUq-2N-SFr" secondAttribute="trailing" id="UuW-wG-RS0"/>
+                <constraint firstAttribute="trailing" secondItem="p1l-wD-EAB" secondAttribute="trailing" constant="9" id="Z1L-xY-iXg"/>
+                <constraint firstItem="p1l-wD-EAB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="hqq-kr-3Xb"/>
+                <constraint firstAttribute="bottom" secondItem="iUq-2N-SFr" secondAttribute="bottom" id="qmw-c0-ilk"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="T2n-F3-5Ub"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

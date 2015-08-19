@@ -12,6 +12,7 @@ import NibDesignable
 class RoiSelectionButton: NibDesignable {
 
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var label: UILabel!
     
     func setTextAsImage(text: NSString) {
         var size = bounds.size

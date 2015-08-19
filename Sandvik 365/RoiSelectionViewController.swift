@@ -13,10 +13,17 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
     @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var selectionDots: [UIImageView]!
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
     private let numberOfItems = 6;
+    
+    private let selectionButtonTitles = [NSLocalizedString("PRODUCT", comment: ""),
+        NSLocalizedString("NUMBER", comment: ""),
+        NSLocalizedString("ORE GRADE", comment: ""),
+        NSLocalizedString("EFFICIENCY", comment: ""),
+        NSLocalizedString("ORE PRICE/T", comment: "")]
 
     var selectedROICalculator: ROICalculator!
 
@@ -101,8 +108,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
             currentSelectionButton.button.setImage(product.productImage(), forState: .Normal)
             currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
             currentSelectionButton.hidden = false
-            selectionButtons.append(currentSelectionButton)
-            
+            addSelectionButtonAndSetTitle(currentSelectionButton)
         case 1:
             let number = roiInput.numberOfProducts
             addRoiSelectionButton(number, itemIndex: itemIndex)
@@ -126,7 +132,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         
         let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 55)
+        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: self.widthConstraint.constant)
         let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentSelectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         
@@ -138,7 +144,13 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         currentSelectionButton = selectionButton
         currentTrailingConstraint = trailConstraint
         selectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
-        selectionButtons.append(selectionButton)
+        addSelectionButtonAndSetTitle(selectionButton)
+    }
+    
+    private func addSelectionButtonAndSetTitle(button: RoiSelectionButton)
+    {
+        selectionButtons.append(button)
+        button.label.text = selectionButtonTitles[selectionButtons.count-1]
     }
 
     private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
