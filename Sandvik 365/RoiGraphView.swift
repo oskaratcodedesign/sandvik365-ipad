@@ -13,13 +13,38 @@ class RoiGraphView: UIView {
     @IBOutlet weak var yGraph: UIView!
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
-
+    
+    var selectedROICalculator: ROICalculator! {
+        didSet {
+            drawGraph()
+        }
+    }
+    
+    var selectedROISerives: [ROIService]! = [ROIService]()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
         addYInterValLines()
         addXInterValLines()
     }
+    
+    func setSelectedService(set: Bool, service: ROIService)
+    {
+        if set {
+            selectedROISerives.append(service)
+        }
+        else if let index = find(selectedROISerives, service) {
+            selectedROISerives.removeAtIndex(index)
+        }
+        drawGraph()
+    }
+    
+    private func drawGraph()
+    {
+        
+    }
+    
 
     private func addYInterValLines() {
         for view in yGraph.subviews {

@@ -396,6 +396,9 @@ PROFIT BY UP TO</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="rampUpAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="sFS-cz-otc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
                                                 <rect key="frame" x="0.0" y="35" width="197" height="42"/>
@@ -438,6 +441,9 @@ IAo
                                                         <exclude reference="Hsr-09-GF0"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="conditionAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="49t-SI-cu7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
                                                 <rect key="frame" x="0.0" y="74" width="197" height="42"/>
@@ -463,6 +469,9 @@ PLANNING SERVICES</string>
                                                         <exclude reference="SYx-te-ah0"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="maintenanceAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="Nwu-uV-aBQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-l7-l7v">
                                                 <rect key="frame" x="0.0" y="127" width="197" height="27"/>
@@ -472,6 +481,9 @@ PLANNING SERVICES</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="protectiveAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="L7C-Kx-K0V"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

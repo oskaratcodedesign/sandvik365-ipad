@@ -12,7 +12,7 @@ import MediaPlayer
 class VideoViewController: UIViewController {
 
     var moviePlayer : MPMoviePlayerController!
-    var service: ROIService!
+    var service: ROIService!//TODO USE A PART TYPE?
     
     override func viewDidLoad() {
         super.viewDidLoad()

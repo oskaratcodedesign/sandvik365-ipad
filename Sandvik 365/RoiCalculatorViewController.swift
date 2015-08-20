@@ -19,6 +19,27 @@ class RoiCalculatorViewController: UIViewController {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
+        roiGraphView.selectedROICalculator = selectedROICalculator
+    }
+    
+    @IBAction func rampUpAction(sender: UIButton) {
+        sender.selected = !sender.selected
+        roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
+    }
+    
+    @IBAction func conditionAction(sender: UIButton) {
+        sender.selected = !sender.selected
+        roiGraphView.setSelectedService(sender.selected, service: ROIService.ConditionInspection)
+    }
+    
+    @IBAction func maintenanceAction(sender: UIButton) {
+        sender.selected = !sender.selected
+        roiGraphView.setSelectedService(sender.selected, service: ROIService.MaintenancePlanning)
+    }
+    
+    @IBAction func protectiveAction(sender: UIButton) {
+        sender.selected = !sender.selected
+        roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
     }
     
     private func setBorderOnDetailButton() {
