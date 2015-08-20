@@ -59,6 +59,18 @@ class RoiCalculatorViewController: UIViewController {
             let fillimage = roundImage(size, fill: true, color: color)
             button.setImage(fillimage, forState: .Highlighted)
             button.setImage(fillimage, forState: .Selected)
+            if button.tag == 0 && selectedROICalculator.services.contains(ROIService.RampUp) {
+                button.selected = true
+            }
+            else if button.tag == 1 && selectedROICalculator.services.contains(ROIService.ConditionInspection) {
+                button.selected = true
+            }
+            else if button.tag == 2 && selectedROICalculator.services.contains(ROIService.MaintenancePlanning) {
+                button.selected = true
+            }
+            else if button.tag == 3 && selectedROICalculator.services.contains(ROIService.Protective) {
+                button.selected = true
+            }
         }
     }
     
