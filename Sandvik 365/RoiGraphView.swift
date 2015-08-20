@@ -20,8 +20,6 @@ class RoiGraphView: UIView {
         }
     }
     
-    var selectedROISerives: [ROIService]! = [ROIService]()
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
@@ -32,10 +30,10 @@ class RoiGraphView: UIView {
     func setSelectedService(set: Bool, service: ROIService)
     {
         if set {
-            selectedROISerives.append(service)
+            selectedROICalculator.services.insert(service)
         }
-        else if let index = find(selectedROISerives, service) {
-            selectedROISerives.removeAtIndex(index)
+        else {
+            selectedROICalculator.services.remove(service)
         }
         drawGraph()
     }

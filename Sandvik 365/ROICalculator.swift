@@ -52,9 +52,9 @@ class ROIInput {
 
 class ROICalculator {
     let input: ROIInput
-    let services: [ROIService]
+    var services: Set<ROIService>
     
-    init(input: ROIInput, services: [ROIService]) {
+    init(input: ROIInput, services: Set<ROIService>) {
         self.input = input
         self.services = services
     }
