@@ -10,6 +10,7 @@ import UIKit
 
 class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
     @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
@@ -17,7 +18,13 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     @IBOutlet var selectionDots: [UIImageView]!
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
-    private let numberOfItems = 6;
+    
+    private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
+        NSLocalizedString("NUMBER OF MACHINES", comment: ""),
+        NSLocalizedString("ORE GRADE", comment: ""),
+        NSLocalizedString("EFFICIENCY", comment: ""),
+        NSLocalizedString("ORE PRICE PER TON", comment: ""),
+        NSLocalizedString("HOW IT PLAYS OUT FOR YOU", comment: "")]
     
     private let selectionButtonTitles = [NSLocalizedString("PRODUCT", comment: ""),
         NSLocalizedString("NUMBER", comment: ""),
@@ -85,6 +92,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     private func setupSelectionDots() {
         for img in selectionDots{
             img.layer.cornerRadius = img.bounds.width/2
+            img.layer.masksToBounds = true
             img.layer.borderColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000).CGColor
             img.layer.borderWidth = 1
         }
@@ -153,16 +161,20 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         button.label.text = selectionButtonTitles[selectionButtons.count-1]
     }
 
-    private func getItemController(itemIndex: Int) -> RoiSelectionContentViewController? {
-        
-        if itemIndex < numberOfItems {
+    private func getItemController(itemIndex: Int) -> UIViewController? {
+        titleLabel.text = titles[itemIndex]
+        if itemIndex == titles.count-1 {
+            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCalculatorViewController") as! RoiCalculatorViewController
+            pageItemController.selectedROICalculator = selectedROICalculator
+            return pageItemController
+        }
+        else if itemIndex < titles.count-1 {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
             pageItemController.selectedROICalculator = selectedROICalculator
             pageItemController.delegate = self
             return pageItemController
         }
-        
         return nil
     }
     
@@ -177,7 +189,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         
         let itemController = viewController as! RoiSelectionContentViewController
         
-        if itemController.itemIndex+1 < numberOfItems {
+        if itemController.itemIndex+1 < titles.count {
             return getItemController(itemController.itemIndex+1)
         }
         

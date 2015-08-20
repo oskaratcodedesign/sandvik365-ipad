@@ -14,7 +14,6 @@ protocol RoiSelectionContentViewControllerDelegate {
 
 class RoiSelectionContentViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
         
     var itemIndex: Int = 0
@@ -23,13 +22,6 @@ class RoiSelectionContentViewController: UIViewController {
     var toggleTimer: NSTimer?
     
     var delegate: RoiSelectionContentViewControllerDelegate?
-
-    private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
-        NSLocalizedString("NUMBER OF MACHINES", comment: ""),
-        NSLocalizedString("ORE GRADE", comment: ""),
-        NSLocalizedString("EFFICIENCY", comment: ""),
-        NSLocalizedString("ORE PRICE PER TON", comment: ""),
-        NSLocalizedString("HOW IT PLAYS OUT FOR YOU", comment: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +35,6 @@ class RoiSelectionContentViewController: UIViewController {
 
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(noOfPages),
             height: pagesScrollViewSize.height)
-        titleLabel.text = titles[itemIndex]
     }
     
     override func viewDidLayoutSubviews() {
