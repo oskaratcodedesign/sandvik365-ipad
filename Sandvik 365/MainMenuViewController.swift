@@ -35,7 +35,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RoiRampUp" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = ROICalculator(input: ROIInput(), services: [ROIService.RampUp])
+                vc.selectedROICalculator = ROICalculator(input: ROIInput(), services: Set<ROIService>())
             }
         }
         else if segue.identifier == "VideoRampUp" {

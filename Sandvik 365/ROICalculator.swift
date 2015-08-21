@@ -52,9 +52,9 @@ class ROIInput {
 
 class ROICalculator {
     let input: ROIInput
-    let services: [ROIService]
+    var services: Set<ROIService>
     
-    init(input: ROIInput, services: [ROIService]) {
+    init(input: ROIInput, services: Set<ROIService>) {
         self.input = input
         self.services = services
     }
@@ -68,6 +68,14 @@ class ROICalculator {
     func calculatedProfit() -> [UInt] {
         
         // TEMP
-        return [0, 0, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500]
+        var multiplier = 1.0
+        for service in services {
+            multiplier += 0.25
+        }
+        var values: [UInt] = [0, 0, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500]
+        for var i = 0; i < values.count; ++i {
+            values[i] = UInt(Double(values[i]) * multiplier)
+        }
+        return values
     }
 }
