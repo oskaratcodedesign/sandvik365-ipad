@@ -47,7 +47,7 @@ class RoiGraphView: UIView {
     private func drawGraph(values: [UInt], color: UIColor)
     {
         let xSpace = xGraph.bounds.size.width / CGFloat(values.count)
-        let height = yGraph.bounds.size.height
+        let height = graphView.bounds.size.height
         let yPValue = height / 3000 //TODO some max value
         
         var points: [CGPoint]
