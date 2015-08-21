@@ -634,6 +634,7 @@ PLANNING SERVICES</string>
                     </view>
                     <connections>
                         <outlet property="detailButton" destination="NFb-Yh-3ka" id="PjM-Bi-U6W"/>
+                        <outlet property="profitLabel" destination="jt7-CD-ogG" id="bFU-aq-pjO"/>
                         <outlet property="roiGraphView" destination="IQE-cD-gCF" id="5Fm-NC-qHG"/>
                         <outletCollection property="serviceButtons" destination="TDu-fd-XVR" collectionClass="NSMutableArray" id="lp0-Fe-0Jb"/>
                         <outletCollection property="serviceButtons" destination="N4N-Vd-EON" collectionClass="NSMutableArray" id="DLx-gA-Z0w"/>

@@ -14,32 +14,47 @@ class RoiCalculatorViewController: UIViewController {
     @IBOutlet var serviceButtons: [UIButton]!
     @IBOutlet weak var roiGraphView: RoiGraphView!
     @IBOutlet weak var detailButton: UIButton!
+    @IBOutlet weak var profitLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
         roiGraphView.selectedROICalculator = selectedROICalculator
+        setProfitLabel()
     }
     
     @IBAction func rampUpAction(sender: UIButton) {
         sender.selected = !sender.selected
         roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
+        setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
         sender.selected = !sender.selected
         roiGraphView.setSelectedService(sender.selected, service: ROIService.ConditionInspection)
+        setProfitLabel()
     }
     
     @IBAction func maintenanceAction(sender: UIButton) {
         sender.selected = !sender.selected
         roiGraphView.setSelectedService(sender.selected, service: ROIService.MaintenancePlanning)
+        setProfitLabel()
     }
     
     @IBAction func protectiveAction(sender: UIButton) {
         sender.selected = !sender.selected
         roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
+        setProfitLabel()
+    }
+    
+    private func setProfitLabel()
+    {
+        var sum: UInt = 0
+        for v in selectedROICalculator.calculatedProfit() {
+            sum += v
+        }
+        profitLabel.text = "$" + String(sum);
     }
     
     private func setBorderOnDetailButton() {
