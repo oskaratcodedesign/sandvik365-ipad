@@ -14,17 +14,14 @@ class RoiGraphView: UIView {
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
     
-    var selectedROICalculator: ROICalculator! {
-        didSet {
-            drawGraph()
-        }
-    }
+    var selectedROICalculator: ROICalculator!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
         addYInterValLines()
         addXInterValLines()
+        drawGraphs()
     }
     
     func setSelectedService(set: Bool, service: ROIService)
@@ -35,11 +32,42 @@ class RoiGraphView: UIView {
         else {
             selectedROICalculator.services.remove(service)
         }
-        drawGraph()
+        drawGraphs()
     }
     
-    private func drawGraph()
+    private func drawGraphs() {
+        
+        for view in graphView.subviews {
+            view.removeFromSuperview()
+        }
+        drawGraph(selectedROICalculator.calculatedProfit(), color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
+        drawGraph(selectedROICalculator.originalProfit(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
+    }
+    
+    private func drawGraph(values: [UInt], color: UIColor)
     {
+        let xSpace = xGraph.bounds.size.width / CGFloat(values.count)
+        let height = yGraph.bounds.size.height
+        let yPValue = height / 3000 //TODO some max value
+        
+        var points: [CGPoint]
+        var path = UIBezierPath()
+        var x = xSpace
+        
+        path.moveToPoint(CGPointMake(0, height))
+        for value in values {
+            let y = height - CGFloat(value) * yPValue
+            path.addLineToPoint(CGPointMake(x, y))
+            x += xSpace
+        }
+        path.addLineToPoint(CGPointMake(x-xSpace, height))
+        path.closePath()
+        var shapeLAyer = CAShapeLayer()
+        shapeLAyer.path = path.CGPath
+        shapeLAyer.fillColor = color.CGColor
+        var view = UIView()
+        view.layer.addSublayer(shapeLAyer)
+        graphView.addSubview(view)
         
     }
     

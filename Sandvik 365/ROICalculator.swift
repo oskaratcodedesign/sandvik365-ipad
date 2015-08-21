@@ -68,6 +68,14 @@ class ROICalculator {
     func calculatedProfit() -> [UInt] {
         
         // TEMP
-        return [0, 0, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500]
+        var multiplier = 1.0
+        for service in services {
+            multiplier += 0.25
+        }
+        var values: [UInt] = [0, 0, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500]
+        for var i = 0; i < values.count; ++i {
+            values[i] = UInt(Double(values[i]) * multiplier)
+        }
+        return values
     }
 }
