@@ -18,7 +18,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     @IBOutlet var selectionDots: [UIImageView]!
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
-    private var viewControllers: [UIViewController]?
+    private var viewControllers: [UIViewController]! = [UIViewController]()
     
     private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
         NSLocalizedString("NUMBER OF MACHINES", comment: ""),
@@ -51,7 +51,8 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     func handleTap(recognizer: UIGestureRecognizer) {
         if let currentController = pageViewController?.viewControllers.last as? RoiSelectionContentViewController
         {
-            if let nextController = getItemController(currentController.itemIndex+1) {
+            if viewControllers.count > currentController.itemIndex+1 {
+                let nextController = viewControllers[currentController.itemIndex+1]
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 fillDot(currentController.itemIndex)
@@ -67,7 +68,8 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
 
     func handleButtonSelect(button :UIButton) {
         if let index = find(selectionButtons, button.superview?.superview as! RoiSelectionButton) {
-            if let nextController = getItemController(index) {
+            if viewControllers.count > index {
+                let nextController = viewControllers[index]
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             }
@@ -79,8 +81,10 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         //pageController.dataSource = self
         //pageController.delegate = self
         
-        let firstController = getItemController(0)!
-        let startingViewControllers: NSArray = [firstController]
+        for i in 0...titles.count-1 {
+            viewControllers.append(getItemController(i)!)
+        }
+        let startingViewControllers: NSArray = [viewControllers[0]]
         pageController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         pageViewController = pageController
@@ -186,7 +190,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    /*func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         var itemIndex = titles.count
         if let viewController = viewController as? RoiSelectionContentViewController {
@@ -218,7 +222,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         }
         
         return nil
-    }
+    }*/
     
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
         
