@@ -15,6 +15,26 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var progressView: ProgressLineView!
 
     override func viewDidLoad() {
+        
+        if let navigationController = self.navigationController {
+            navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            navigationController.navigationBar.shadowImage = UIImage()
+            navigationController.navigationBar.translucent = true
+            navigationController.navigationBar.tintColor = UIColor.whiteColor()
+            navigationController.view.backgroundColor = UIColor.clearColor()
+            //navigationController.navigationBar.backIndicatorImage = UIImage(named: "bg")?.imageWithRenderingMode(.AlwaysOriginal)
+            //navigationController.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "bg")?.imageWithRenderingMode(.AlwaysOriginal)
+/*let image = UIImage(named: "bg")
+let button: UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+button.frame = CGRectMake(0, 0, image!.size.width, image!.size.height)
+button.setImage(image, forState: .Normal)
+let backButton = UIBarButtonItem(customView: button)*/
+            let backButton = UIBarButtonItem()
+            backButton.title = "<"
+            backButton.setBackgroundImage(UIImage(named: "bg"), forState: .Normal, barMetrics: .Default)
+            //backButton.set
+            self.navigationItem.backBarButtonItem = backButton
+        }
         self.scrollViewDidScroll(menuScrollView)
     }
     
