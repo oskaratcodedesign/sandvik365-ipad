@@ -31,9 +31,16 @@ class RoiSelectionContentViewController: UIViewController {
         }
         else {
             let numberView = RoiNumberView(frame: containerView.bounds)
-            numberView.autoresizingMask = .FlexibleHeight | .FlexibleLeftMargin | .FlexibleRightMargin
+            
+            let topConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+            let trailConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+            let leadingConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
             containerView.addSubview(numberView)
             numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+            
+            numberView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, trailConstraint, leadingConstraint])
             roiContentView = numberView;
         }
     }

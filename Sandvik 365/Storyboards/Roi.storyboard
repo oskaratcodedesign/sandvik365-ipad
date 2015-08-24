@@ -47,19 +47,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP TO SELECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb2-dX-vXE">
-                                <rect key="frame" x="0.0" y="429" width="600" height="14"/>
+                                <rect key="frame" x="0.0" y="409" width="600" height="14"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                <rect key="frame" x="241" y="448" width="119" height="80"/>
+                                <rect key="frame" x="231" y="428" width="139" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="20" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
-                                            <constraint firstAttribute="width" constant="80" id="oxj-98-Ocg"/>
+                                            <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -78,7 +78,7 @@
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="SPa-fF-YUF"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="top" id="XUg-LM-JiO"/>
                                     <constraint firstAttribute="width" constant="600" id="bAL-du-CM6"/>
-                                    <constraint firstAttribute="height" constant="80" id="w8W-Fx-aeE"/>
+                                    <constraint firstAttribute="height" constant="100" id="w8W-Fx-aeE"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -202,6 +202,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-uV-aIC">
                                 <rect key="frame" x="0.0" y="233" width="98" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="5Ha-yH-0wJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
                                 <state key="normal" title="&lt;">
@@ -218,6 +221,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-fi-92p">
                                 <rect key="frame" x="502" y="233" width="98" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="RAB-iY-iVH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
                                 <state key="normal" title="&gt;">
