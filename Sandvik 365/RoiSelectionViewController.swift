@@ -18,6 +18,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     @IBOutlet var selectionDots: [UIImageView]!
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
+    private var viewControllers: [UIViewController]?
     
     private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
         NSLocalizedString("NUMBER OF MACHINES", comment: ""),
@@ -52,7 +53,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         {
             if let nextController = getItemController(currentController.itemIndex+1) {
                 let nextViewControllers: NSArray = [nextController]
-                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 fillDot(currentController.itemIndex)
                 showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
                 if let text = currentController.roiContentView?.numberLabel.text {
@@ -187,10 +188,16 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        let itemController = viewController as! RoiSelectionContentViewController
+        var itemIndex = titles.count
+        if let viewController = viewController as? RoiSelectionContentViewController {
+            itemIndex = viewController.itemIndex
+        }
+        else if let viewController = viewController as? RoiCalculatorViewController {
+            itemIndex = titles.count-1
+        }
         
-        if itemController.itemIndex+1 < titles.count {
-            return getItemController(itemController.itemIndex+1)
+        if itemIndex+1 < titles.count {
+            return getItemController(itemIndex+1)
         }
         
         return nil
@@ -198,10 +205,16 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
-        let itemController = viewController as! RoiSelectionContentViewController
+        var itemIndex = 0
+        if let viewController = viewController as? RoiSelectionContentViewController {
+            itemIndex = viewController.itemIndex
+        }
+        else if let viewController = viewController as? RoiCalculatorViewController {
+            itemIndex = titles.count-1
+        }
         
-        if itemController.itemIndex > 0 {
-            return getItemController(itemController.itemIndex-1)
+        if itemIndex > 0 {
+            return getItemController(itemIndex-1)
         }
         
         return nil
@@ -213,12 +226,6 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
             fillDot(currentController.itemIndex-1)
         }
         
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        
-        var count = previousViewControllers.count
-        count = 1;
     }
     
     override func didReceiveMemoryWarning() {

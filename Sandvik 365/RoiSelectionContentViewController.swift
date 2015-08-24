@@ -14,8 +14,7 @@ protocol RoiSelectionContentViewControllerDelegate {
 
 class RoiSelectionContentViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-        
+    @IBOutlet weak var containerView: UIView!
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator!
     var roiContentView: RoiNumberView?
@@ -26,30 +25,14 @@ class RoiSelectionContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pagesScrollViewSize = scrollView.frame.size
-        var noOfPages = 1
-        
-        /*if itemIndex >= 0{
-            noOfPages = 100
-        }*/
-
-        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(noOfPages),
-            height: pagesScrollViewSize.height)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-        if roiContentView != nil {
-            return
-        }
-        
         if itemIndex == 0 {
             //load products
             let product = selectedROICalculator.input.product
         }
         else {
-            let numberView = RoiNumberView(frame: self.scrollView.bounds)
-            scrollView.addSubview(numberView)
+            let numberView = RoiNumberView(frame: containerView.bounds)
+            numberView.autoresizingMask = .FlexibleHeight | .FlexibleLeftMargin | .FlexibleRightMargin
+            containerView.addSubview(numberView)
             numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
             roiContentView = numberView;
         }
