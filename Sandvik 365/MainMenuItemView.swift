@@ -13,9 +13,10 @@ import NibDesignable
 class MainMenuItemView : NibDesignable {
     let focusZoomLevel: CGFloat = 1.2
     let unfocusZoomLevel: CGFloat = 1.0
+    var partType: PartType! = .None
     
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var button: UIButton!
     
     @IBInspectable var title: String? = nil {
         didSet {
@@ -25,8 +26,19 @@ class MainMenuItemView : NibDesignable {
     
     @IBInspectable var image: UIImage? = nil {
         didSet {
-            self.imageView.image = image
+            self.button.imageView?.contentMode = .ScaleAspectFill
+            self.button.setImage(image, forState: .Normal)
         }
+    }
+    
+    @IBInspectable var partBridgeType: UInt! = .None {
+        didSet {
+            self.partType = PartType(rawValue: partBridgeType)
+        }
+    }
+    
+    @IBAction func pressAction(sender: UIButton) {
+        
     }
     
     func updateZoomLevel() {
@@ -45,7 +57,7 @@ class MainMenuItemView : NibDesignable {
             // calc scale between unfocusZoomLevel and focusZoomLevel
             let scale = self.unfocusZoomLevel + (self.focusZoomLevel - self.unfocusZoomLevel) * easeInOut(max(inverseOffset, 0) / midScrollView)
             
-            self.imageView.transform = CGAffineTransformMakeScale(scale, scale)
+            self.button.transform = CGAffineTransformMakeScale(scale, scale)
         }
     }
     

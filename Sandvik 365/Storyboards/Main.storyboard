@@ -175,6 +175,9 @@ YOU CAN COUNT ON</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="product-awareness-surface-2048"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
@@ -184,6 +187,9 @@ YOU CAN COUNT ON</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
@@ -193,6 +199,9 @@ YOU CAN COUNT ON</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
@@ -202,6 +211,9 @@ YOU CAN COUNT ON</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
@@ -211,6 +223,9 @@ YOU CAN COUNT ON</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
