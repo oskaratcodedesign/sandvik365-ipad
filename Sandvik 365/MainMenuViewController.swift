@@ -29,8 +29,9 @@ let button: UIButton = UIButton.buttonWithType(.Custom) as! UIButton
 button.frame = CGRectMake(0, 0, image!.size.width, image!.size.height)
 button.setImage(image, forState: .Normal)
 let backButton = UIBarButtonItem(customView: button)*/
-            let backButton = UIBarButtonItem()
-            backButton.title = "<"
+            let backButton = UIBarButtonItem(image: UIImage(named: "bg"), style: .Plain, target: nil, action: nil)
+            backButton.imageInsets = UIEdgeInsetsMake(-100, -100, 10, 10)
+            //backButton.title = "<"
             backButton.setBackgroundImage(UIImage(named: "bg"), forState: .Normal, barMetrics: .Default)
             //backButton.set
             self.navigationItem.backBarButtonItem = backButton
