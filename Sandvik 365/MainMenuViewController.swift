@@ -13,30 +13,45 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var progressView: ProgressLineView!
-
+    var backButtonBg: UIImageView?
     override func viewDidLoad() {
         
         if let navigationController = self.navigationController {
             navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             navigationController.navigationBar.shadowImage = UIImage()
             navigationController.navigationBar.translucent = true
-            navigationController.navigationBar.tintColor = UIColor.whiteColor()
+            navigationController.navigationBar.tintColor = UIColor.blackColor()
             navigationController.view.backgroundColor = UIColor.clearColor()
-            //navigationController.navigationBar.backIndicatorImage = UIImage(named: "bg")?.imageWithRenderingMode(.AlwaysOriginal)
-            //navigationController.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "bg")?.imageWithRenderingMode(.AlwaysOriginal)
-/*let image = UIImage(named: "bg")
-let button: UIButton = UIButton.buttonWithType(.Custom) as! UIButton
-button.frame = CGRectMake(0, 0, image!.size.width, image!.size.height)
-button.setImage(image, forState: .Normal)
-let backButton = UIBarButtonItem(customView: button)*/
-            let backButton = UIBarButtonItem(image: UIImage(named: "bg"), style: .Plain, target: nil, action: nil)
-            backButton.imageInsets = UIEdgeInsetsMake(-100, -100, 10, 10)
-            //backButton.title = "<"
-            backButton.setBackgroundImage(UIImage(named: "bg"), forState: .Normal, barMetrics: .Default)
-            //backButton.set
+            
+            //let image = UIImage(named: "sandvik_back_btn")
+            backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn3"))
+            
+            let image = UIImage(named: "small_back_arrow")?.imageWithRenderingMode(
+                .AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 15, 0))
+            navigationController.navigationBar.backIndicatorImage = image
+            navigationController.navigationBar.backIndicatorTransitionMaskImage = image
+            
+            //button.frame = CGRectMake(0, 0, image!.size.width, image!.size.height)
+            //button.setBackgroundImage(image, forState: .Normal)
+            navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
+            //navigationController.navigationItem.backBarButtonItem?.imageInsets = UIEdgeInsetsMake(20, 20, 0, 0)
+            let backButton = UIBarButtonItem()
+            backButton.title = ""
             self.navigationItem.backBarButtonItem = backButton
+            
+            
         }
         self.scrollViewDidScroll(menuScrollView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        backButtonBg?.hidden = true
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        backButtonBg?.hidden = false
     }
     
     @IBAction func showSecondScreen(sender: AnyObject) {
