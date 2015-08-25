@@ -31,14 +31,10 @@ class MainMenuItemView : NibDesignable {
         }
     }
     
-    @IBInspectable var partBridgeType: UInt! = .None {
+    @IBInspectable var partBridgeType: NSNumber! = .None {
         didSet {
-            self.partType = PartType(rawValue: partBridgeType)
+            self.partType = PartType(rawValue: partBridgeType.unsignedLongValue)
         }
-    }
-    
-    @IBAction func pressAction(sender: UIButton) {
-        
     }
     
     func updateZoomLevel() {
