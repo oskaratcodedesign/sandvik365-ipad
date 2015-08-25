@@ -81,7 +81,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         //pageController.dataSource = self
         //pageController.delegate = self
         
-        for i in 0...titles.count-1 {
+        for i in 0..<titles.count {
             viewControllers.append(getItemController(i)!)
         }
         let startingViewControllers: NSArray = [viewControllers[0]]
