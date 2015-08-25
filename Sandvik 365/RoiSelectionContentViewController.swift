@@ -14,8 +14,7 @@ protocol RoiSelectionContentViewControllerDelegate {
 
 class RoiSelectionContentViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-        
+    @IBOutlet weak var containerView: UIView!
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator!
     var roiContentView: RoiNumberView?
@@ -26,31 +25,22 @@ class RoiSelectionContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pagesScrollViewSize = scrollView.frame.size
-        var noOfPages = 1
-        
-        /*if itemIndex >= 0{
-            noOfPages = 100
-        }*/
-
-        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(noOfPages),
-            height: pagesScrollViewSize.height)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-        if roiContentView != nil {
-            return
-        }
-        
         if itemIndex == 0 {
             //load products
             let product = selectedROICalculator.input.product
         }
         else {
-            let numberView = RoiNumberView(frame: self.scrollView.bounds)
-            scrollView.addSubview(numberView)
+            let numberView = RoiNumberView(frame: containerView.bounds)
+            
+            let topConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+            let trailConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+            let leadingConstraint = NSLayoutConstraint(item: numberView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: containerView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+            containerView.addSubview(numberView)
             numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+            
+            numberView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, trailConstraint, leadingConstraint])
             roiContentView = numberView;
         }
     }

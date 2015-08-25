@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSource, UIPageViewControllerDelegate,*/ UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
+class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectionContainer: UIView!
@@ -18,6 +18,7 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     @IBOutlet var selectionDots: [UIImageView]!
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
+    private var viewControllers: [UIViewController]! = [UIViewController]()
     
     private let titles = [NSLocalizedString("SELECT PRODUCT", comment: ""),
         NSLocalizedString("NUMBER OF MACHINES", comment: ""),
@@ -50,9 +51,10 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     func handleTap(recognizer: UIGestureRecognizer) {
         if let currentController = pageViewController?.viewControllers.last as? RoiSelectionContentViewController
         {
-            if let nextController = getItemController(currentController.itemIndex+1) {
+            if viewControllers.count > currentController.itemIndex+1 {
+                let nextController = viewControllers[currentController.itemIndex+1]
                 let nextViewControllers: NSArray = [nextController]
-                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+                pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 fillDot(currentController.itemIndex)
                 showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
                 if let text = currentController.roiContentView?.numberLabel.text {
@@ -66,7 +68,8 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
 
     func handleButtonSelect(button :UIButton) {
         if let index = find(selectionButtons, button.superview?.superview as! RoiSelectionButton) {
-            if let nextController = getItemController(index) {
+            if viewControllers.count > index {
+                let nextController = viewControllers[index]
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             }
@@ -75,11 +78,11 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
     
     private func loadPageController() {
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
-        //pageController.dataSource = self
-        //pageController.delegate = self
         
-        let firstController = getItemController(0)!
-        let startingViewControllers: NSArray = [firstController]
+        for i in 0..<titles.count {
+            viewControllers.append(getItemController(i)!)
+        }
+        let startingViewControllers: NSArray = [viewControllers[0]]
         pageController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         pageViewController = pageController
@@ -185,28 +188,6 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        
-        let itemController = viewController as! RoiSelectionContentViewController
-        
-        if itemController.itemIndex+1 < titles.count {
-            return getItemController(itemController.itemIndex+1)
-        }
-        
-        return nil
-    }
-
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        
-        let itemController = viewController as! RoiSelectionContentViewController
-        
-        if itemController.itemIndex > 0 {
-            return getItemController(itemController.itemIndex-1)
-        }
-        
-        return nil
-    }
-    
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
         
         if let currentController = pendingViewControllers.last as? RoiSelectionContentViewController {
@@ -215,26 +196,8 @@ class RoiSelectionViewController: UIViewController, /*UIPageViewControllerDataSo
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        
-        var count = previousViewControllers.count
-        count = 1;
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
