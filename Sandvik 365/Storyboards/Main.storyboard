@@ -90,8 +90,8 @@
                                                 <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="70" y="277" width="312" height="73"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
+                                                <rect key="frame" x="70" y="276" width="300" height="71"/>
                                                 <animations/>
                                                 <string key="text">PARTS &amp; SERVICES
 YOU CAN COUNT ON</string>
@@ -99,38 +99,20 @@ YOU CAN COUNT ON</string>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                <rect key="frame" x="269" y="446" width="63" height="74"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
+                                                <rect key="frame" x="269" y="448" width="63" height="73"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
+                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-MM-Wek">
-                                                <rect key="frame" x="51" y="71" width="46" height="30"/>
-                                                <state key="normal" title="ROI">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiRampUp" customClass="RBStoryboardPushSegue" id="gwY-dM-gsq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFz-FO-RQn">
-                                                <rect key="frame" x="51" y="98" width="46" height="30"/>
-                                                <state key="normal" title="VIDEO">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="qjC-0k-slQ" kind="custom" identifier="VideoRampUp" customClass="RBStoryboardPushSegue" id="zO6-oo-OYY"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,18 +162,6 @@ YOU CAN COUNT ON</string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="402" y="0.0" width="201" height="500"/>
-                                                        <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="603" y="0.0" width="201" height="500"/>
                                                         <animations/>
@@ -200,7 +170,7 @@ YOU CAN COUNT ON</string>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="2"/>
+                                                                <integer key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -212,7 +182,7 @@ YOU CAN COUNT ON</string>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="3"/>
+                                                                <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -224,7 +194,19 @@ YOU CAN COUNT ON</string>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="4"/>
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="402" y="0.0" width="201" height="500"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -354,12 +336,41 @@ YOU CAN COUNT ON</string>
                     <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="ZrJ-l7-vIj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="936"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
+                                <rect key="frame" x="118" y="244" width="46" height="30"/>
+                                <state key="normal" title="ROI">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
+                                <rect key="frame" x="231" y="239" width="46" height="30"/>
+                                <state key="normal" title="VIDEO">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qjC-0k-slQ" kind="custom" identifier="VideoViewController" customClass="RBStoryboardPushSegue" id="IQd-JY-Fdk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZrJ-l7-vIj" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="b88-Is-iqf"/>
+                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="ZrJ-l7-vIj" secondAttribute="bottom" id="i8P-W4-8Rh"/>
+                            <constraint firstItem="ZrJ-l7-vIj" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="pKe-2L-5B4"/>
+                            <constraint firstAttribute="trailing" secondItem="ZrJ-l7-vIj" secondAttribute="trailing" id="v00-7T-IGb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="-553"/>
+            <point key="canvasLocation" x="2341" y="499"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="86A-La-u9v">
@@ -380,7 +391,7 @@ YOU CAN COUNT ON</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fc-fi-xbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330" y="376"/>
+            <point key="canvasLocation" x="3314" y="168"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="tYS-Ra-b1E">
@@ -401,7 +412,7 @@ YOU CAN COUNT ON</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzA-0O-cbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="1040"/>
+            <point key="canvasLocation" x="3303" y="1192"/>
         </scene>
     </scenes>
     <resources>

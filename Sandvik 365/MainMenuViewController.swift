@@ -53,10 +53,5 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
                 }
             }
         }
-        else if segue.identifier == "VideoRampUp" {
-            if let vc = segue.destinationViewController as? VideoViewController {
-                vc.service = ROIService.RampUp
-            }
-        }
     }
 }

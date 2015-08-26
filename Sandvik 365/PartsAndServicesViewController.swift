@@ -24,14 +24,17 @@ class PartsAndServicesViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "RoiSelectionViewController" {
+            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+                vc.selectedROICalculator = selectedPart.roiCalculator
+            }
+        }
+        else if segue.identifier == "VideoViewController" {
+            if let vc = segue.destinationViewController as? VideoViewController {
+                vc.selectedPart = selectedPart
+            }
+        }
     }
-    */
 
 }

@@ -9,10 +9,21 @@
 import Foundation
 
 enum PartType: UInt {
-    case None
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
+    case Empty
+    
+    static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150813"]
+    
+    func videoURL() -> NSURL? {
+        if let videoName = PartType.videos[self] {
+            let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"m4v")
+            let url = NSURL.fileURLWithPath(path!)
+            return url
+        }
+        return nil
+    }
 }
 
 class Part {
