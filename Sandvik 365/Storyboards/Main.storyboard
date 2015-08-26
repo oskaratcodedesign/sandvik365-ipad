@@ -154,7 +154,7 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-cD-KjF" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="product-awareness-surface-2048"/>
@@ -166,7 +166,7 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="603" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
@@ -178,7 +178,7 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="804" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
@@ -190,7 +190,7 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="201" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
@@ -202,7 +202,7 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="402" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
@@ -213,6 +213,7 @@ YOU CAN COUNT ON</string>
                                                     </view>
                                                 </subviews>
                                                 <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="jto-Cr-aoV" firstAttribute="top" secondItem="Hcf-Nq-nhu" secondAttribute="top" id="2Qk-s4-FvI"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="width" secondItem="I9D-No-weO" secondAttribute="width" id="6GH-Ak-bNf"/>
@@ -265,6 +266,7 @@ YOU CAN COUNT ON</string>
                                             </view>
                                         </subviews>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="p2M-OL-gMy" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" id="CTn-X6-btS"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="JzS-u6-iwY"/>
@@ -279,6 +281,7 @@ YOU CAN COUNT ON</string>
                                     </view>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="LGY-k8-KXB" firstAttribute="leading" secondItem="Btf-qB-THU" secondAttribute="leading" id="2sI-pW-R0d"/>
                                     <constraint firstAttribute="trailing" secondItem="LGY-k8-KXB" secondAttribute="trailing" id="7VT-Io-fdg"/>
