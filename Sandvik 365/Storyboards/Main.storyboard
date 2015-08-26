@@ -340,18 +340,18 @@ YOU CAN COUNT ON</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="ZrJ-l7-vIj">
                                 <rect key="frame" x="0.0" y="64" width="600" height="936"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
-                                <rect key="frame" x="118" y="244" width="46" height="30"/>
-                                <state key="normal" title="ROI">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
+                                <rect key="frame" x="106" y="216" width="82" height="82"/>
+                                <state key="normal" image="sandvik_calc">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
-                                <rect key="frame" x="231" y="239" width="46" height="30"/>
-                                <state key="normal" title="VIDEO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
+                                <rect key="frame" x="106" y="341" width="82" height="82"/>
+                                <state key="normal" image="sandvik_play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -419,6 +419,8 @@ YOU CAN COUNT ON</string>
         <image name="1435275" width="1024" height="682"/>
         <image name="1535304" width="1024" height="682"/>
         <image name="product-awareness-surface-2048" width="1024" height="768"/>
+        <image name="sandvik_calc" width="82" height="82"/>
+        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
