@@ -20,8 +20,6 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -200,14 +198,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-uV-aIC">
-                                <rect key="frame" x="0.0" y="233" width="98" height="133"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-uV-aIC">
+                                <rect key="frame" x="0.0" y="238" width="98" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="5Ha-yH-0wJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
-                                <state key="normal" title="&lt;">
+                                <state key="normal" image="sandvik_arrow_left">
                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -219,14 +216,13 @@
                                     <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchDown" id="6en-O3-8qs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-fi-92p">
-                                <rect key="frame" x="502" y="233" width="98" height="133"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-fi-92p">
+                                <rect key="frame" x="502" y="238" width="98" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="RAB-iY-iVH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
-                                <state key="normal" title="&gt;">
+                                <state key="normal" image="sandvik_arrow_right">
                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -319,7 +315,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="50" y="0.0" width="119" height="48"/>
+                                                <rect key="frame" x="50" y="0.0" width="118.5" height="47.5"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
@@ -327,7 +323,7 @@ PROFIT BY UP TO</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-CD-ogG">
-                                                <rect key="frame" x="219" y="3" width="43" height="42"/>
+                                                <rect key="frame" x="218.5" y="3" width="43" height="41.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="3UL-gw-dgA"/>
                                                 </constraints>
@@ -341,7 +337,7 @@ PROFIT BY UP TO</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-Yh-3ka">
-                                                <rect key="frame" x="288" y="5" width="111" height="38"/>
+                                                <rect key="frame" x="288" y="5" width="111" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="SEE DETAILS">
@@ -375,7 +371,7 @@ PROFIT BY UP TO</string>
                                         <rect key="frame" x="0.0" y="48" width="197" height="252"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDu-fd-XVR">
-                                                <rect key="frame" x="0.0" y="23" width="197" height="27"/>
+                                                <rect key="frame" x="0.0" y="24" width="197" height="27"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="RAMP-UP SERVICES">
@@ -387,7 +383,7 @@ PROFIT BY UP TO</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                <rect key="frame" x="0.0" y="59" width="197" height="42"/>
+                                                <rect key="frame" x="0.0" y="60" width="197" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                 </constraints>
@@ -431,8 +427,8 @@ IAo
                                                     <action selector="conditionAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="49t-SI-cu7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                <rect key="frame" x="0.0" y="109" width="197" height="42"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
+                                                <rect key="frame" x="0.0" y="110" width="197" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                 </constraints>
@@ -546,7 +542,7 @@ PLANNING SERVICES</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                        <rect key="frame" x="175" y="3" width="4" height="22"/>
+                                                        <rect key="frame" x="175.5" y="3" width="3.5" height="22"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -640,6 +636,8 @@ PLANNING SERVICES</string>
         </scene>
     </scenes>
     <resources>
+        <image name="sandvik_arrow_left" width="32" height="64"/>
+        <image name="sandvik_arrow_right" width="32" height="64"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
