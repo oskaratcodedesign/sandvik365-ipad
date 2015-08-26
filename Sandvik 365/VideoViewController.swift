@@ -28,7 +28,12 @@ class VideoViewController: UIViewController {
             player.repeatMode = MPMovieRepeatMode.One
             player.play()
             self.view.addSubview(player.view)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "doneButtonClick:", name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
         }
+    }
+    
+    func doneButtonClick(sender:NSNotification?){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

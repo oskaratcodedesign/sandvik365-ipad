@@ -347,7 +347,7 @@ YOU CAN COUNT ON</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qjC-0k-slQ" kind="custom" identifier="VideoViewController" customClass="RBStoryboardPushSegue" id="IQd-JY-Fdk"/>
+                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="QwE-UL-hIE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
@@ -415,26 +415,23 @@ YOU CAN COUNT ON</string>
             </objects>
             <point key="canvasLocation" x="3314" y="168"/>
         </scene>
-        <!--Storyboard Link-->
-        <scene sceneID="tYS-Ra-b1E">
+        <!--Video View Controller-->
+        <scene sceneID="aVg-Lp-tFe">
             <objects>
-                <viewController id="qjC-0k-slQ" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                <viewController id="cpp-rD-eaA" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fod-Xn-ghp"/>
-                        <viewControllerLayoutGuide type="bottom" id="66H-62-AcZ"/>
+                        <viewControllerLayoutGuide type="top" id="Abi-1S-jGd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wtG-OA-pKs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cSi-58-D57">
+                    <view key="view" contentMode="scaleToFill" id="gHX-vs-F4F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Video"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DzA-0O-cbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJI-vR-KWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="1192"/>
+            <point key="canvasLocation" x="3286" y="889"/>
         </scene>
     </scenes>
     <resources>
