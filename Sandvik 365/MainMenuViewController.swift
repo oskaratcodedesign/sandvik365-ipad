@@ -13,9 +13,11 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var progressView: ProgressLineView!
+    @IBOutlet var mainMenuItemViews: [MainMenuItemView]!
+    
     var backButtonBg: UIImageView?
+    
     override func viewDidLoad() {
-        
         if let navigationController = self.navigationController {
             navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             navigationController.navigationBar.shadowImage = UIImage()
@@ -38,12 +40,13 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             let backButton = UIBarButtonItem()
             backButton.title = ""
             self.navigationItem.backBarButtonItem = backButton
-            
-            
+        }
+        for view in mainMenuItemViews {
+            view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
         }
         self.scrollViewDidScroll(menuScrollView)
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         backButtonBg?.hidden = true
@@ -52,6 +55,15 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         backButtonBg?.hidden = false
+    }
+    
+    func pressAction(sender: UIButton) {
+        for view in mainMenuItemViews {
+            if sender == view.button {
+                performSegueWithIdentifier("PartsAndServicesViewController", sender: view)
+                break
+            }
+        }
     }
     
     @IBAction func showSecondScreen(sender: AnyObject) {
@@ -69,14 +81,11 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "RoiRampUp" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = ROICalculator(input: ROIInput(), services: Set<ROIService>())
-            }
-        }
-        else if segue.identifier == "VideoRampUp" {
-            if let vc = segue.destinationViewController as? VideoViewController {
-                vc.service = ROIService.RampUp
+        if segue.identifier == "PartsAndServicesViewController" {
+            if let vc = segue.destinationViewController as? PartsAndServicesViewController {
+                if let view = sender as? MainMenuItemView {
+                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROIInput(), services: Set<ROIService>()))
+                }
             }
         }
     }

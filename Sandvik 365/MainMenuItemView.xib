@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="Vg8-d9-REC" id="beE-NH-bse"/>
+                <outlet property="button" destination="K1w-0z-V8i" id="AEU-n3-wi2"/>
                 <outlet property="label" destination="BZ4-rv-Jtz" id="VbA-Yl-UmD"/>
             </connections>
         </placeholder>
@@ -20,11 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vg8-d9-REC">
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1w-0z-V8i">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <animations/>
-                </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-CE-obR" customClass="GradientView" customModule="Sandvik_365" customModuleProvider="target">
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-CE-obR" customClass="GradientView" customModule="Sandvik_365" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="608" height="321"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -48,22 +50,18 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Vg8-d9-REC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3eH-V1-Jv7"/>
-                <constraint firstItem="Vg8-d9-REC" firstAttribute="top" secondItem="BZ4-rv-Jtz" secondAttribute="bottom" constant="-309" id="Fhn-Le-huH"/>
-                <constraint firstItem="Vg8-d9-REC" firstAttribute="leading" secondItem="BZ4-rv-Jtz" secondAttribute="trailing" constant="-126" id="JuR-no-evh"/>
-                <constraint firstAttribute="bottom" secondItem="Vg8-d9-REC" secondAttribute="bottom" id="PJS-9T-K2M"/>
-                <constraint firstItem="BZ4-rv-Jtz" firstAttribute="top" secondItem="Vg8-d9-REC" secondAttribute="bottom" id="RjF-U0-geJ"/>
-                <constraint firstAttribute="trailing" secondItem="Vg8-d9-REC" secondAttribute="trailing" id="V8S-l6-8v6"/>
+                <constraint firstItem="K1w-0z-V8i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CNi-yo-R73"/>
+                <constraint firstItem="K1w-0z-V8i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EBX-fO-wNk"/>
+                <constraint firstAttribute="trailing" secondItem="K1w-0z-V8i" secondAttribute="trailing" id="HTG-Nf-jXN"/>
+                <constraint firstItem="K1w-0z-V8i" firstAttribute="top" secondItem="BZ4-rv-Jtz" secondAttribute="bottom" id="Q2E-2x-5Tq"/>
                 <constraint firstItem="BZ4-rv-Jtz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="158" id="VoV-ZT-EYU"/>
                 <constraint firstAttribute="trailing" secondItem="BZ4-rv-Jtz" secondAttribute="trailing" constant="50" id="jYP-4K-Qee"/>
                 <constraint firstItem="BZ4-rv-Jtz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="jbZ-i4-RfC"/>
-                <constraint firstItem="Vg8-d9-REC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u38-NS-to7"/>
+                <constraint firstAttribute="bottom" secondItem="K1w-0z-V8i" secondAttribute="bottom" id="pvI-yU-j0o"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="Fhn-Le-huH"/>
-                    <exclude reference="JuR-no-evh"/>
-                    <exclude reference="RjF-U0-geJ"/>
+                    <exclude reference="Q2E-2x-5Tq"/>
                 </mask>
             </variation>
         </view>
