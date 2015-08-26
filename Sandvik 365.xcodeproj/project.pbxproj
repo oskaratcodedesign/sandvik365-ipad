@@ -33,6 +33,7 @@
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */; };
+		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
 		F7CB9D191B8C517200C1B3A1 /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* Part.swift */; };
 		F7E69A771B7B5B48004FA708 /* RoiNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */; };
@@ -89,6 +90,7 @@
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150813.m4v; sourceTree = "<group>"; };
+		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CB9D181B8C517200C1B3A1 /* Part.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
 		F7E69A761B7B5B48004FA708 /* RoiNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiNumberView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				F741D9981B8475C400010E71 /* VideoViewController.swift */,
 				F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */,
+				F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */,
+				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

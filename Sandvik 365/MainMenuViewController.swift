@@ -25,21 +25,13 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             navigationController.navigationBar.tintColor = UIColor.blackColor()
             navigationController.view.backgroundColor = UIColor.clearColor()
             
-            //let image = UIImage(named: "sandvik_back_btn")
-            backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn3"))
-            
-            let image = UIImage(named: "small_back_arrow")?.imageWithRenderingMode(
-                .AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 15, 0))
-            navigationController.navigationBar.backIndicatorImage = image
-            navigationController.navigationBar.backIndicatorTransitionMaskImage = image
-            
-            //button.frame = CGRectMake(0, 0, image!.size.width, image!.size.height)
-            //button.setBackgroundImage(image, forState: .Normal)
+            backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn"))
             navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
-            //navigationController.navigationItem.backBarButtonItem?.imageInsets = UIEdgeInsetsMake(20, 20, 0, 0)
-            let backButton = UIBarButtonItem()
-            backButton.title = ""
-            self.navigationItem.backBarButtonItem = backButton
+            
+            let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 4, 0, 0)))
+            UIBarButtonItem.appearance().setBackButtonBackgroundImage(image, forState: .Normal, barMetrics: .Default)
+            UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         }
         for view in mainMenuItemViews {
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
