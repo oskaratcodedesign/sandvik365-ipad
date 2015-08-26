@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -313,7 +314,7 @@ YOU CAN COUNT ON</string>
                         <outletCollection property="mainMenuItemViews" destination="Hcf-Nq-nhu" collectionClass="NSMutableArray" id="qja-Sc-GXA"/>
                         <outletCollection property="mainMenuItemViews" destination="jto-Cr-aoV" collectionClass="NSMutableArray" id="adC-3G-r4f"/>
                         <outletCollection property="mainMenuItemViews" destination="I9D-No-weO" collectionClass="NSMutableArray" id="VeO-NA-H7E"/>
-                        <segue destination="QLr-DO-bh8" kind="show" identifier="PartsAndServicesViewController" id="Yfz-wD-IKl"/>
+                        <segue destination="QLr-DO-bh8" kind="show" identifier="PartsAndServicesViewController" id="tQu-jd-51V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og2-vF-GsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,23 +335,14 @@ YOU CAN COUNT ON</string>
                         <viewControllerLayoutGuide type="bottom" id="ElF-ex-6wJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="ZrJ-l7-vIj">
-                                <rect key="frame" x="0.0" y="64" width="600" height="936"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product-awareness-surface-2048" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-pE-7QT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
-                                <rect key="frame" x="106" y="216" width="82" height="82"/>
-                                <state key="normal" image="sandvik_calc">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
-                                <rect key="frame" x="106" y="341" width="82" height="82"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
+                                <rect key="frame" x="28" y="268" width="82" height="82"/>
                                 <state key="normal" image="sandvik_play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -358,15 +350,45 @@ YOU CAN COUNT ON</string>
                                     <segue destination="qjC-0k-slQ" kind="custom" identifier="VideoViewController" customClass="RBStoryboardPushSegue" id="IQd-JY-Fdk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
+                                <rect key="frame" x="28" y="134" width="82" height="82"/>
+                                <state key="normal" image="sandvik_calc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZrJ-l7-vIj" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="b88-Is-iqf"/>
-                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="ZrJ-l7-vIj" secondAttribute="bottom" id="i8P-W4-8Rh"/>
-                            <constraint firstItem="ZrJ-l7-vIj" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="pKe-2L-5B4"/>
-                            <constraint firstAttribute="trailing" secondItem="ZrJ-l7-vIj" secondAttribute="trailing" id="v00-7T-IGb"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="zlc-Uy-tFr" secondAttribute="top" id="83P-3B-C13"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="GQI-RR-MVi"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="70" id="LNP-a8-f6C"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="oWT-Zb-sra" secondAttribute="trailing" constant="-600" id="Lof-YG-Hi6"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="9Ma-T0-bFe" secondAttribute="leading" id="UPX-Vx-fPl"/>
+                            <constraint firstAttribute="bottom" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="am8-J9-BnH"/>
+                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="gkm-V7-233"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="hVm-s3-MaQ"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="izR-Jh-nKQ"/>
+                            <constraint firstAttribute="trailing" secondItem="HlW-pE-7QT" secondAttribute="trailing" id="o9P-YF-Slp"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" id="rC8-Wx-GqR"/>
+                            <constraint firstItem="9Ma-T0-bFe" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" constant="52" id="rVm-7N-H8v"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="tEB-pQ-6KV"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leadingMargin" constant="12" id="wy5-h8-kPW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GQI-RR-MVi"/>
+                                <exclude reference="Lof-YG-Hi6"/>
+                                <exclude reference="hVm-s3-MaQ"/>
+                                <exclude reference="izR-Jh-nKQ"/>
+                                <exclude reference="rC8-Wx-GqR"/>
+                                <exclude reference="gkm-V7-233"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
