@@ -27,10 +27,6 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             
             backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn"))
             navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
-            
-            let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 4, 0, 0)))
-            UIBarButtonItem.appearance().setBackButtonBackgroundImage(image, forState: .Normal, barMetrics: .Default)
-            UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         }
         for view in mainMenuItemViews {
@@ -77,6 +73,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
                     vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROIInput(), services: Set<ROIService>()))
+                    vc.navigationItem.title = view.label.text
                 }
             }
         }

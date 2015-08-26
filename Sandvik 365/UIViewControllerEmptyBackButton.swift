@@ -35,5 +35,15 @@ extension UIViewController {
     func mob_viewDidLoad() {
         self.mob_viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+       
+        if let navController = self.navigationController {
+            let label = UILabel(frame: CGRectMake(0, 0, navController.navigationBar.frame.size.width-navController.navigationBar.frame.size.width/4, navController.navigationBar.frame.size.height))
+            if let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16) {
+                label.font = font
+            }
+            label.textColor = UIColor.whiteColor()
+            label.text = self.navigationItem.title
+            self.navigationItem.titleView = label
+        }
     }
 }

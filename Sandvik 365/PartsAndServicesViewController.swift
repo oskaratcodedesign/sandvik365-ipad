@@ -14,8 +14,6 @@ class PartsAndServicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +26,7 @@ class PartsAndServicesViewController: UIViewController {
         if segue.identifier == "RoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
                 vc.selectedROICalculator = selectedPart.roiCalculator
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, NSLocalizedString("ROI CALCULATOR", comment: ""))
             }
         }
         else if segue.identifier == "VideoViewController" {

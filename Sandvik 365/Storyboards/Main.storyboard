@@ -65,7 +65,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="Gbd-TK-02b">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vq2-UY-Bko" customClass="MainMenuViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" automaticallyAdjustsScrollViewInsets="NO" id="vq2-UY-Bko" customClass="MainMenuViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6fy-aL-R5d"/>
                         <viewControllerLayoutGuide type="bottom" id="w7v-Iz-kr0"/>
