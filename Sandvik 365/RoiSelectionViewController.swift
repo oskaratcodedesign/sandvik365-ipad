@@ -58,8 +58,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 fillDot(currentController.itemIndex)
                 showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
-                if let text = currentController.roiContentView?.numberLabel.text {
-                    roiValueDidChange(currentController.itemIndex, text: text)
+                if let numberView = currentController.roiContentView as? RoiNumberView {
+                    roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.text!)
                 }
                 titleLabel.text = titles[currentController.itemIndex+1]
             }
@@ -119,7 +119,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         switch itemIndex {
         case 0:
             let product = roiInput.product
-            currentSelectionButton.button.setImage(product.productImage(), forState: .Normal)
+            currentSelectionButton.button.setImage(product.smallProductImage(), forState: .Normal)
             currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
             currentSelectionButton.hidden = false
             addSelectionButtonAndSetTitle(currentSelectionButton)
@@ -184,10 +184,16 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         return nil
     }
     
-    func roiValueDidChange(itemIndex: Int, text: String) {
-        if itemIndex < selectionButtons.count {
+    func roiValueDidChange(itemIndex: Int, object: AnyObject) {
+        if itemIndex == 0 {
             let selectedButton = selectionButtons[itemIndex]
-            selectedButton.button.setTitle(text, forState: .Normal)
+            if let input = object as? ROIInput {
+                selectedButton.button.setImage(input.product.smallProductImage(), forState: .Normal)
+            }
+        }
+        else if itemIndex < selectionButtons.count {
+            let selectedButton = selectionButtons[itemIndex]
+            selectedButton.button.setTitle(object as? String, forState: .Normal)
         }
     }
     

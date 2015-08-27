@@ -16,16 +16,32 @@ enum ROIService {
     case Protective
 }
 
-enum ROIProduct {
+enum ROIProduct: Int {
     case Product1
     case Product2
     
     static let productImages = [
-        Product1 : "product1"]
+        Product1 : "sandvik_front_loader_"]
+    static let productNames = [
+        Product1 : "PT1500", Product2 : "PT3000"]
     
-    func productImage() -> UIImage? {
+    func bigProductImage() -> UIImage? {
         if let imageName = ROIProduct.productImages[self] {
-            return UIImage(named: imageName)
+            return UIImage(named: imageName + "big")
+        }
+        return nil
+    }
+    
+    func smallProductImage() -> UIImage? {
+        if let imageName = ROIProduct.productImages[self] {
+            return UIImage(named: imageName + "small")
+        }
+        return nil
+    }
+    
+    func productName() -> String? {
+        if let name = ROIProduct.productNames[self] {
+            return name
         }
         return nil
     }
