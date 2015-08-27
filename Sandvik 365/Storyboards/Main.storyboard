@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -64,7 +65,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="Gbd-TK-02b">
             <objects>
-                <viewController id="vq2-UY-Bko" customClass="MainMenuViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" automaticallyAdjustsScrollViewInsets="NO" id="vq2-UY-Bko" customClass="MainMenuViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6fy-aL-R5d"/>
                         <viewControllerLayoutGuide type="bottom" id="w7v-Iz-kr0"/>
@@ -90,8 +91,8 @@
                                                 <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="70" y="277" width="312" height="73"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
+                                                <rect key="frame" x="70" y="276" width="300" height="71"/>
                                                 <animations/>
                                                 <string key="text">PARTS &amp; SERVICES
 YOU CAN COUNT ON</string>
@@ -99,38 +100,20 @@ YOU CAN COUNT ON</string>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                <rect key="frame" x="269" y="446" width="63" height="74"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
+                                                <rect key="frame" x="269" y="448" width="63" height="73"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
+                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-MM-Wek">
-                                                <rect key="frame" x="51" y="71" width="46" height="30"/>
-                                                <state key="normal" title="ROI">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiRampUp" customClass="RBStoryboardPushSegue" id="gwY-dM-gsq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFz-FO-RQn">
-                                                <rect key="frame" x="51" y="98" width="46" height="30"/>
-                                                <state key="normal" title="VIDEO">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="qjC-0k-slQ" kind="custom" identifier="VideoRampUp" customClass="RBStoryboardPushSegue" id="zO6-oo-OYY"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,50 +154,66 @@ YOU CAN COUNT ON</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-cD-KjF" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="product-awareness-surface-2048"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="402" y="0.0" width="201" height="500"/>
-                                                        <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="603" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="804" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="201" y="0.0" width="201" height="500"/>
                                                         <animations/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="402" y="0.0" width="201" height="500"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="jto-Cr-aoV" firstAttribute="top" secondItem="Hcf-Nq-nhu" secondAttribute="top" id="2Qk-s4-FvI"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="width" secondItem="I9D-No-weO" secondAttribute="width" id="6GH-Ak-bNf"/>
@@ -267,6 +266,7 @@ YOU CAN COUNT ON</string>
                                             </view>
                                         </subviews>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="p2M-OL-gMy" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" id="CTn-X6-btS"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="JzS-u6-iwY"/>
@@ -281,6 +281,7 @@ YOU CAN COUNT ON</string>
                                     </view>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="LGY-k8-KXB" firstAttribute="leading" secondItem="Btf-qB-THU" secondAttribute="leading" id="2sI-pW-R0d"/>
                                     <constraint firstAttribute="trailing" secondItem="LGY-k8-KXB" secondAttribute="trailing" id="7VT-Io-fdg"/>
@@ -311,6 +312,12 @@ YOU CAN COUNT ON</string>
                         <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
                         <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
                         <outlet property="scrollView" destination="Btf-qB-THU" id="BUH-Bh-mXh"/>
+                        <outletCollection property="mainMenuItemViews" destination="YEk-cD-KjF" collectionClass="NSMutableArray" id="Y1w-Lf-wPG"/>
+                        <outletCollection property="mainMenuItemViews" destination="goe-Xq-a6b" collectionClass="NSMutableArray" id="Vlb-sY-7eI"/>
+                        <outletCollection property="mainMenuItemViews" destination="Hcf-Nq-nhu" collectionClass="NSMutableArray" id="qja-Sc-GXA"/>
+                        <outletCollection property="mainMenuItemViews" destination="jto-Cr-aoV" collectionClass="NSMutableArray" id="adC-3G-r4f"/>
+                        <outletCollection property="mainMenuItemViews" destination="I9D-No-weO" collectionClass="NSMutableArray" id="VeO-NA-H7E"/>
+                        <segue destination="QLr-DO-bh8" kind="show" identifier="PartsAndServicesViewController" id="tQu-jd-51V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og2-vF-GsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,6 +328,74 @@ YOU CAN COUNT ON</string>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1466" y="554"/>
+        </scene>
+        <!--Parts And Services View Controller-->
+        <scene sceneID="pqe-Ao-OEW">
+            <objects>
+                <viewController storyboardIdentifier="PartsAndServicesViewController" id="QLr-DO-bh8" customClass="PartsAndServicesViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oWT-Zb-sra"/>
+                        <viewControllerLayoutGuide type="bottom" id="ElF-ex-6wJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr">
+                        <rect key="frame" x="0.0" y="64" width="600" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product-awareness-surface-2048" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-pE-7QT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
+                                <rect key="frame" x="28" y="268" width="82" height="82"/>
+                                <state key="normal" image="sandvik_play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="QwE-UL-hIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
+                                <rect key="frame" x="28" y="134" width="82" height="82"/>
+                                <state key="normal" image="sandvik_calc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="zlc-Uy-tFr" secondAttribute="top" id="83P-3B-C13"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="GQI-RR-MVi"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="70" id="LNP-a8-f6C"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="oWT-Zb-sra" secondAttribute="trailing" constant="-600" id="Lof-YG-Hi6"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="9Ma-T0-bFe" secondAttribute="leading" id="UPX-Vx-fPl"/>
+                            <constraint firstAttribute="bottom" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="am8-J9-BnH"/>
+                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="gkm-V7-233"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="hVm-s3-MaQ"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="izR-Jh-nKQ"/>
+                            <constraint firstAttribute="trailing" secondItem="HlW-pE-7QT" secondAttribute="trailing" id="o9P-YF-Slp"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" id="rC8-Wx-GqR"/>
+                            <constraint firstItem="9Ma-T0-bFe" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" constant="52" id="rVm-7N-H8v"/>
+                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="tEB-pQ-6KV"/>
+                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leadingMargin" constant="12" id="wy5-h8-kPW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GQI-RR-MVi"/>
+                                <exclude reference="Lof-YG-Hi6"/>
+                                <exclude reference="hVm-s3-MaQ"/>
+                                <exclude reference="izR-Jh-nKQ"/>
+                                <exclude reference="rC8-Wx-GqR"/>
+                                <exclude reference="gkm-V7-233"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2341" y="499"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="86A-La-u9v">
@@ -341,34 +416,33 @@ YOU CAN COUNT ON</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fc-fi-xbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330" y="376"/>
+            <point key="canvasLocation" x="3314" y="168"/>
         </scene>
-        <!--Storyboard Link-->
-        <scene sceneID="tYS-Ra-b1E">
+        <!--Video View Controller-->
+        <scene sceneID="aVg-Lp-tFe">
             <objects>
-                <viewController id="qjC-0k-slQ" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                <viewController id="cpp-rD-eaA" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fod-Xn-ghp"/>
-                        <viewControllerLayoutGuide type="bottom" id="66H-62-AcZ"/>
+                        <viewControllerLayoutGuide type="top" id="Abi-1S-jGd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wtG-OA-pKs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cSi-58-D57">
+                    <view key="view" contentMode="scaleToFill" id="gHX-vs-F4F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Video"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DzA-0O-cbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJI-vR-KWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="1040"/>
+            <point key="canvasLocation" x="3286" y="889"/>
         </scene>
     </scenes>
     <resources>
         <image name="1435275" width="1024" height="682"/>
         <image name="1535304" width="1024" height="682"/>
         <image name="product-awareness-surface-2048" width="1024" height="768"/>
+        <image name="sandvik_calc" width="82" height="82"/>
+        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>

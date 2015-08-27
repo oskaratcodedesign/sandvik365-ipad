@@ -46,6 +46,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         //do not show at first:
         currentSelectionButton.hidden = true
         view.bringSubviewToFront(selectionContainer)
+        titleLabel.text = titles[0]
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
@@ -60,6 +61,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 if let text = currentController.roiContentView?.numberLabel.text {
                     roiValueDidChange(currentController.itemIndex, text: text)
                 }
+                titleLabel.text = titles[currentController.itemIndex+1]
             }
         }
     }
@@ -72,6 +74,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 let nextController = viewControllers[index]
                 let nextViewControllers: NSArray = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+                titleLabel.text = titles[index]
             }
         }
     }
@@ -165,7 +168,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     }
 
     private func getItemController(itemIndex: Int) -> UIViewController? {
-        titleLabel.text = titles[itemIndex]
+        
         if itemIndex == titles.count-1 {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCalculatorViewController") as! RoiCalculatorViewController
             pageItemController.selectedROICalculator = selectedROICalculator
