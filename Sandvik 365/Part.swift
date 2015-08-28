@@ -8,13 +8,22 @@
 
 import Foundation
 
-enum PartType: UInt {
+enum PartType {
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
-    case Empty
+    case None
+    
+    static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, None]
     
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150813"]
+    
+    static func atIndex(index: Int) -> PartType {
+        if index < PartType.allValues.count {
+            return PartType.allValues[index]
+        }
+        return PartType.None
+    }
     
     func videoURL() -> NSURL? {
         if let videoName = PartType.videos[self] {
@@ -24,6 +33,8 @@ enum PartType: UInt {
         }
         return nil
     }
+    
+    
 }
 
 class Part {

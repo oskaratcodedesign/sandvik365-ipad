@@ -185,7 +185,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     
     func roiValueDidChange(itemIndex: Int, object: AnyObject) {
-        if itemIndex == 0 {
+        if itemIndex == 0 && !selectionButtons.isEmpty {
             let selectedButton = selectionButtons[itemIndex]
             if let input = object as? ROIInput {
                 selectedButton.button.setImage(input.product.smallProductImage(), forState: .Normal)

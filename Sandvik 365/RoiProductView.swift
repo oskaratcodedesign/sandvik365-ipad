@@ -14,23 +14,21 @@ class RoiProductView: NibDesignable {
     @IBOutlet weak var imageView: UIImageView!
     
     func loadProduct(roiInput: ROIInput) {
-        setProduct(roiInput, add: 0)
+        setProduct(roiInput, product: roiInput.product)
     }
     
     func nextProduct(roiInput: ROIInput)
     {
-        setProduct(roiInput, add: 1)
+        setProduct(roiInput, product: roiInput.product.infiniteNext())
     }
     
     func previousProduct(roiInput: ROIInput)
     {
-        setProduct(roiInput, add: -1)
+        setProduct(roiInput, product: roiInput.product.infinitePrevious())
     }
     
-    private func setProduct(roiInput: ROIInput, add: Int)
+    private func setProduct(roiInput: ROIInput, product: ROIProduct)
     {
-        let index = roiInput.product.rawValue+add
-        let product = ROIProduct(rawValue: index) ?? .Product1
         roiInput.product = product
         imageView.image = product.bigProductImage()
     }
