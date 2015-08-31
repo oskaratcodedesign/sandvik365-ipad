@@ -29,32 +29,23 @@ enum ROIProduct {
     static let allValues = [Product1, Product2, Product3]
     
     func infiniteNext() -> ROIProduct{
-        var index = self.index()
-        index++
-        if index < ROIProduct.allValues.count {
-            return ROIProduct.allValues[index]
+        if var index = find(ROIProduct.allValues, self) {
+            index++
+            if index < ROIProduct.allValues.count {
+                return ROIProduct.allValues[index]
+            }
         }
         return ROIProduct.allValues.first!
     }
     
     func infinitePrevious() -> ROIProduct{
-        var index = self.index()
-        index--
-        if index >= 0 {
-            return ROIProduct.allValues[index]
+        if var index = find(ROIProduct.allValues, self) {
+            index--
+            if index >= 0 {
+                return ROIProduct.allValues[index]
+            }
         }
         return ROIProduct.allValues.last!
-    }
-    
-    private func index() -> Int {
-        var index = 0
-        for product in ROIProduct.allValues {
-            if product == self {
-                break
-            }
-            index++
-        }
-        return index
     }
     
     func bigProductImage() -> UIImage? {
