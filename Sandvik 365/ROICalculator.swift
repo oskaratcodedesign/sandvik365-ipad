@@ -19,15 +19,68 @@ enum ROIService {
 enum ROIProduct {
     case Product1
     case Product2
+    case Product3
+
+    static let allValues = [Product1, Product2, Product3]
     
-    static let productImages = [
-        Product1 : "product1"]
+    func infiniteNext() -> ROIProduct{
+        if var index = find(ROIProduct.allValues, self) {
+            index++
+            if index < ROIProduct.allValues.count {
+                return ROIProduct.allValues[index]
+            }
+        }
+        return ROIProduct.allValues.first!
+    }
     
-    func productImage() -> UIImage? {
-        if let imageName = ROIProduct.productImages[self] {
-            return UIImage(named: imageName)
+    func infinitePrevious() -> ROIProduct{
+        if var index = find(ROIProduct.allValues, self) {
+            index--
+            if index >= 0 {
+                return ROIProduct.allValues[index]
+            }
+        }
+        return ROIProduct.allValues.last!
+    }
+    
+    func bigProductImage() -> UIImage? {
+        if let imageName = productImage() {
+            return UIImage(named: imageName + "big")
         }
         return nil
+    }
+    
+    func smallProductImage() -> UIImage? {
+        if let imageName = productImage() {
+            return UIImage(named: imageName + "small")
+        }
+        return nil
+    }
+    
+    private func productImage() -> String? {
+        var imageName: String! = nil
+        switch self {
+        case Product1:
+            imageName = "sandvik_front_loader_"
+        case Product2:
+            imageName = ""
+        case Product3:
+            imageName = ""
+        }
+        return imageName
+    }
+    
+    private func productName() -> String? {
+        var productName: String! = nil
+        switch self {
+        case Product1:
+            productName = "PT1500"
+        case Product2:
+            productName = ""
+        case Product3:
+            productName = ""
+        }
+        return productName
     }
 }
 
