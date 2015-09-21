@@ -21,14 +21,4 @@ class ROICalculatorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testOriginalProfitProduct1() {
-        var input = ROIInput()
-        input.product = .Product1
-        input.numberOfProducts = 1
-        input.oreGrade = 30
-        input.efficiency = 30
-        input.price = 30
-        let profit = ROICalculator(input: input, services: []).originalProfit()
-        XCTAssert(profit.count == 10)
-    }
 }

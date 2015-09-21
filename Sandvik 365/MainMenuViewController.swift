@@ -77,7 +77,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROIInput(), services: Set<ROIService>()))
+                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROICrusherInput()))
                     vc.navigationItem.title = view.label.text
                 }
             }

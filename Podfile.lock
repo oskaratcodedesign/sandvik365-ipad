@@ -1,6 +1,6 @@
 PODS:
   - AHEasing (1.2)
-  - NibDesignable (1.1.1)
+  - NibDesignable (2.1.0)
   - RBStoryboardLink (0.1.4)
 
 DEPENDENCIES:
@@ -10,7 +10,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AHEasing: 847f583bcd83a2bb850e38ccdb26d22e2593f34d
-  NibDesignable: 95579fc418e1922f341f51fc1243a1a21af04ccf
+  NibDesignable: 9c41809e5b8ca2bdaf85e70316b2e7073db78e7f
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
 
 COCOAPODS: 0.38.2

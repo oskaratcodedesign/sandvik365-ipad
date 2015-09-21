@@ -25,23 +25,12 @@ class RoiSelectionContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if itemIndex == 0 {
-            //load products
-            let productView = RoiProductView(frame: containerView.bounds)
-            containerView.addSubview(productView)
-            productView.loadProduct(selectedROICalculator.input)
-            productView.setTranslatesAutoresizingMaskIntoConstraints(false)
-            NSLayoutConstraint.activateConstraints(fillConstraints(productView, toView: containerView))
-            roiContentView = productView
-        }
-        else {
-            let numberView = RoiNumberView(frame: containerView.bounds)
-            containerView.addSubview(numberView)
-            numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
-            numberView.setTranslatesAutoresizingMaskIntoConstraints(false)
-            NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
-            roiContentView = numberView;
-        }
+        let numberView = RoiNumberView(frame: containerView.bounds)
+        containerView.addSubview(numberView)
+        numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+        numberView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
+        roiContentView = numberView;
     }
     
     private func fillConstraints(fromView: UIView, toView: UIView) -> [NSLayoutConstraint] {
@@ -67,12 +56,12 @@ class RoiSelectionContentViewController: UIViewController {
                 delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
             }
         }
-        else if let productView = roiContentView as? RoiProductView{
-            productView.previousProduct(selectedROICalculator.input)
+        /*else if let productView = roiContentView as? RoiProductView{
+            //productView.previousProduct(selectedROICalculator.input)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: selectedROICalculator.input)
             }
-        }
+        }*/
     }
     
     func toggleRight() {
@@ -82,12 +71,12 @@ class RoiSelectionContentViewController: UIViewController {
                 delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
             }
         }
-        else if let productView = roiContentView as? RoiProductView{
-            productView.nextProduct(selectedROICalculator.input)
+        /*else if let productView = roiContentView as? RoiProductView{
+            //productView.nextProduct(selectedROICalculator.input)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: selectedROICalculator.input)
             }
-        }
+        }*/
     }
     
     @IBAction func releaseAction(sender: UIButton) {

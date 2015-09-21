@@ -26,34 +26,34 @@ class RoiCalculatorViewController: UIViewController {
     
     @IBAction func rampUpAction(sender: UIButton) {
         sender.selected = !sender.selected
-        roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
+        //roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
         setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
         sender.selected = !sender.selected
-        roiGraphView.setSelectedService(sender.selected, service: ROIService.ConditionInspection)
+        //roiGraphView.setSelectedService(sender.selected, service: ROIService.ConditionInspection)
         setProfitLabel()
     }
     
     @IBAction func maintenanceAction(sender: UIButton) {
         sender.selected = !sender.selected
-        roiGraphView.setSelectedService(sender.selected, service: ROIService.MaintenancePlanning)
+        //roiGraphView.setSelectedService(sender.selected, service: ROIService.MaintenancePlanning)
         setProfitLabel()
     }
     
     @IBAction func protectiveAction(sender: UIButton) {
         sender.selected = !sender.selected
-        roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
+        //roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
         setProfitLabel()
     }
     
     private func setProfitLabel()
     {
         var sum: UInt = 0
-        for v in selectedROICalculator.calculatedProfit() {
+        /*for v in selectedROICalculator.calculatedProfit() {
             sum += v
-        }
+        }*/
         profitLabel.text = "$" + String(sum);
     }
     
@@ -74,7 +74,7 @@ class RoiCalculatorViewController: UIViewController {
             let fillimage = roundImage(size, fill: true, color: color)
             button.setImage(fillimage, forState: .Highlighted)
             button.setImage(fillimage, forState: .Selected)
-            if button.tag == 0 && selectedROICalculator.services.contains(ROIService.RampUp) {
+            /*if button.tag == 0 && selectedROICalculator.services.contains(ROIService.RampUp) {
                 button.selected = true
             }
             else if button.tag == 1 && selectedROICalculator.services.contains(ROIService.ConditionInspection) {
@@ -85,7 +85,7 @@ class RoiCalculatorViewController: UIViewController {
             }
             else if button.tag == 3 && selectedROICalculator.services.contains(ROIService.Protective) {
                 button.selected = true
-            }
+            }*/
         }
     }
     
@@ -102,7 +102,7 @@ class RoiCalculatorViewController: UIViewController {
             layer.borderColor = color.CGColor
         }
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
-        layer.renderInContext(UIGraphicsGetCurrentContext())
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let roundedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return roundedImage
