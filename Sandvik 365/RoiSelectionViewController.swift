@@ -24,6 +24,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         titles = selectedROICalculator.input.allTitles()
+        titles.append(NSLocalizedString("How it plays out for you", comment: ""))
         loadPageController()
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self
@@ -84,7 +85,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     
     private func showSelectedInput(itemIndex: Int, roiInput: ROIInput) {
         
-        if selectionButtons.count < itemIndex-1 {
+        if selectionButtons.count < itemIndex {
             return
         }
         selectionButtons[itemIndex-1].setUnselected()

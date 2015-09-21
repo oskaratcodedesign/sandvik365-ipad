@@ -50,10 +50,7 @@ class RoiCalculatorViewController: UIViewController {
     
     private func setProfitLabel()
     {
-        var sum: UInt = 0
-        /*for v in selectedROICalculator.calculatedProfit() {
-            sum += v
-        }*/
+        let sum = selectedROICalculator.input.total()
         profitLabel.text = "$" + String(sum);
     }
     

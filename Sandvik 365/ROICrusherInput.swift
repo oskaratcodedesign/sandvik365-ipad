@@ -84,13 +84,16 @@ class ROICrusherInput: ROIInput {
     }
     
     override func changeInput(atIndex :Int, change :ChangeInput) -> String {
-        var input = allInputs()[atIndex]
+        let input = allInputs()[atIndex]
         switch input {
         case .OreGrade:
             if change != ChangeInput.Load {
-                oreGrade = .OreGrade(input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10))
+                let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
+                if value >= 0 {
+                    oreGrade = .OreGrade(value)
+                }
             }
-            return String(format:"%.2f", input.value as! Double) + "%";
+            return String(format:"%.2f", oreGrade.value as! Double) + "%";
         case .Capacity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -98,49 +101,61 @@ class ROICrusherInput: ROIInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-            return String(format:"%f", input.value as! UInt) + "%";
+            return String(capacity.value as! UInt) + "m t/hr";
         case .FinishedProduct:
             if change != ChangeInput.Load {
-                finishedProduct = .OreGrade(input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10))
+                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+                if value >= 0 {
+                    finishedProduct = .Capacity(UInt(value))
+                }
             }
-            return String(format:"%f", input.value as! UInt) + "%";
+            return String(finishedProduct.value as! UInt) + "%";
         case .RecoveryRate:
             if change != ChangeInput.Load {
-                recoveryRate = .OreGrade(input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10))
+                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+                if value >= 0 {
+                    recoveryRate = .RecoveryRate(UInt(value))
+                }
             }
-            return String(format:"%f", input.value as! UInt) + "%";
+            return String(recoveryRate.value as! UInt) + "%";
         case .OrePrice:
             if change != ChangeInput.Load {
-                orePrice = .OreGrade(input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10))
+                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+                if value >= 0 {
+                    orePrice = .OrePrice(UInt(value))
+                }
             }
-            return String(format:"%f", input.value as! UInt) + "%";
+            return "$" + String(orePrice.value as! UInt);
         case .ProcessingCost:
             if change != ChangeInput.Load {
-                input = .OreGrade(input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10))
+                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+                if value >= 0 {
+                    processingCost = .ProcessingCost(UInt(value))
+                }
             }
-            return String(format:"%f", input.value as! UInt) + "%";
+            return "$" + String(processingCost.value as! UInt) + "m t/hr";
         }
     }
     
-    func finishedProductMTHR() -> UInt {
+    func finishedProductMTHR() -> Double {
         if let c = capacity.value as? UInt, f = finishedProduct.value as? UInt {
-            return c * (f/100)
+            return Double(c) * (Double(f)/100)
         }
         return 0
     }
     
-    func additionalTonsOfFinishedProduct() -> UInt {
-        return finishedProductMTHR() * service.rawValue
+    func additionalTonsOfFinishedProduct() -> Double {
+        return finishedProductMTHR() * Double(service.rawValue)
     }
     
     func recoveredProductAfterProcessing() -> Double {
         if let o = oreGrade.value as? Double, r = recoveryRate.value as? UInt {
-            return Double(additionalTonsOfFinishedProduct() * (r/100)) * (o/100)
+            return (additionalTonsOfFinishedProduct() * (Double(r)/100)) * (o/100)
         }
         return 0
     }
     
-    func total() -> Double {
+    override func total() -> Double {
         if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
             let r = recoveredProductAfterProcessing()
             return (r * Double(o)) - (r * Double(p))
