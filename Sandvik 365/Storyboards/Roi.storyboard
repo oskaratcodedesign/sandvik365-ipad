@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -10,9 +11,10 @@
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -41,12 +43,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsz-tO-ijf">
                                 <rect key="frame" x="0.0" y="60" width="600" height="23"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP TO SELECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb2-dX-vXE">
-                                <rect key="frame" x="0.0" y="409" width="600" height="14"/>
-                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -121,7 +117,6 @@
                             <constraint firstItem="yIe-et-yW4" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="227" id="F04-fe-pb4"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="yIe-et-yW4" secondAttribute="bottom" constant="8" id="Fg1-TL-M0b"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="522" id="GC1-f1-QkG"/>
-                            <constraint firstAttribute="trailing" secondItem="xb2-dX-vXE" secondAttribute="trailing" id="Kft-aI-isp"/>
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="top" secondItem="MSP-rB-ez0" secondAttribute="top" id="RGO-5Z-ZD0"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="trailing" id="SKG-cQ-HH8"/>
                             <constraint firstAttribute="trailing" secondItem="xsz-tO-ijf" secondAttribute="trailing" id="T4d-w5-DXq"/>
@@ -129,7 +124,6 @@
                             <constraint firstAttribute="centerX" secondItem="xsz-tO-ijf" secondAttribute="centerX" id="Tgf-s0-vfV"/>
                             <constraint firstItem="yIe-et-yW4" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="522" id="U1H-Y0-yG4"/>
                             <constraint firstAttribute="trailing" secondItem="Ft3-3w-Z2w" secondAttribute="trailing" id="UOi-KT-7qF"/>
-                            <constraint firstAttribute="centerX" secondItem="xb2-dX-vXE" secondAttribute="centerX" id="V7b-AS-bMw"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="40" id="Vsm-YV-JOe"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ZLG-Y2-T6S"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
@@ -138,9 +132,7 @@
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="hic-4H-2GE"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="253" id="jLH-hh-A9k"/>
                             <constraint firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="mNk-H7-DOX"/>
-                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="xb2-dX-vXE" secondAttribute="bottom" constant="5" id="mQM-VF-BbV"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="pVR-1h-NMu"/>
-                            <constraint firstItem="xb2-dX-vXE" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ybe-Cm-S1k"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="yIe-et-yW4" secondAttribute="bottom" constant="25" id="zWP-EV-JBE"/>
                             <constraint firstAttribute="centerX" secondItem="yIe-et-yW4" secondAttribute="centerX" id="zWn-EE-3T5"/>
                         </constraints>
@@ -199,43 +191,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-uV-aIC">
-                                <rect key="frame" x="0.0" y="238" width="98" height="124"/>
+                                <rect key="frame" x="0.0" y="238" width="150" height="124"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="5Ha-yH-0wJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="5Ha-yH-0wJ"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
-                                <state key="normal" image="sandvik_arrow_left">
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
+                                <state key="normal" title="PREVIOUS" image="sandvik_arrow_left">
                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="473-X5-7Nh"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="9He-AB-vdA"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Xr2-5m-Za0"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="f1B-e3-7CI"/>
-                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchDown" id="6en-O3-8qs"/>
+                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchUpInside" id="B86-Lc-rhb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-fi-92p">
-                                <rect key="frame" x="502" y="238" width="98" height="124"/>
+                                <rect key="frame" x="450" y="238" width="150" height="124"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="RAB-iY-iVH"/>
+                                    <constraint firstAttribute="width" constant="150" id="RAB-iY-iVH"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
-                                <state key="normal" image="sandvik_arrow_right">
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
+                                <inset key="titleEdgeInsets" minX="-34" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="NEXT" image="sandvik_arrow_right">
                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="Dp9-TY-Xog"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Qp5-PN-9kl"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="YvQ-1k-wkH"/>
-                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="fuV-VD-Gxy"/>
-                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchDown" id="zZz-B2-uNT"/>
+                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchUpInside" id="aBx-Hg-AtC"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-R7-krj">
-                                <rect key="frame" x="98" y="150" width="404" height="300"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="404" id="BHA-Qb-9dG"/>
                                     <constraint firstAttribute="height" constant="240" id="uTH-4R-jGx"/>
@@ -247,9 +235,32 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emg-Q1-pTs">
+                                <rect key="frame" x="268" y="118" width="64" height="32"/>
+                                <state key="normal" image="sandvik_arrow_up"/>
+                                <connections>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="1Og-GP-1NL"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="2hk-UD-Sxz"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="bvd-Dc-gI4"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="qdZ-TP-3lP"/>
+                                    <action selector="toggleUp:" destination="50B-Ue-aKk" eventType="touchDown" id="JAG-cY-ihs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWu-Hx-4hz">
+                                <rect key="frame" x="268" y="450" width="64" height="32"/>
+                                <state key="normal" image="sandvik_arrow_down"/>
+                                <connections>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Pi2-P5-S3s"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="QFG-f3-HQX"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpInside" id="j6n-6Q-BNF"/>
+                                    <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchCancel" id="sB6-DY-Kic"/>
+                                    <action selector="toggleDown:" destination="50B-Ue-aKk" eventType="touchDown" id="0m2-SR-df3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="vhU-fi-92p" firstAttribute="baseline" secondItem="wG8-uV-aIC" secondAttribute="firstBaseline" id="3NE-1v-1Yk"/>
+                            <constraint firstItem="HWu-Hx-4hz" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" id="AWt-uf-24Y"/>
                             <constraint firstItem="vhU-fi-92p" firstAttribute="top" secondItem="wG8-uV-aIC" secondAttribute="top" id="Alm-zK-nSI"/>
                             <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="vhU-fi-92p" secondAttribute="bottom" constant="248" id="E6W-9I-wc1"/>
                             <constraint firstAttribute="centerY" secondItem="vhU-fi-92p" secondAttribute="centerY" id="JBB-dF-ifu"/>
@@ -258,7 +269,9 @@
                             <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" constant="180" id="NCp-cA-oa5"/>
                             <constraint firstItem="vhU-fi-92p" firstAttribute="firstBaseline" secondItem="wG8-uV-aIC" secondAttribute="baseline" id="NI7-6P-csl"/>
                             <constraint firstItem="vhU-fi-92p" firstAttribute="leading" secondItem="AJe-R7-krj" secondAttribute="trailing" id="PjE-sj-JTy"/>
+                            <constraint firstItem="HWu-Hx-4hz" firstAttribute="centerX" secondItem="9rL-L1-Nkc" secondAttribute="centerX" id="Pkv-VT-yCJ"/>
                             <constraint firstAttribute="trailing" secondItem="vhU-fi-92p" secondAttribute="trailing" id="WDl-pc-KN0"/>
+                            <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="emg-Q1-pTs" secondAttribute="bottom" id="WLy-NF-cpM"/>
                             <constraint firstItem="wG8-uV-aIC" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="227" id="eKB-8f-m6N"/>
                             <constraint firstItem="wG8-uV-aIC" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leadingMargin" id="epe-uH-hRI"/>
                             <constraint firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="hfS-qp-RQq"/>
@@ -270,6 +283,7 @@
                             <constraint firstAttribute="centerX" secondItem="AJe-R7-krj" secondAttribute="centerX" id="s2B-7T-FgV"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="height" secondItem="9rL-L1-Nkc" secondAttribute="height" multiplier="0.5" id="xyl-Z9-d4S"/>
                             <constraint firstAttribute="centerY" secondItem="wG8-uV-aIC" secondAttribute="centerY" id="z6o-qy-2HC"/>
+                            <constraint firstItem="emg-Q1-pTs" firstAttribute="centerX" secondItem="9rL-L1-Nkc" secondAttribute="centerX" id="zRh-nx-bbq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -309,13 +323,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6B-dn-Mx1">
-                                <rect key="frame" x="98" y="150" width="404" height="300"/>
+                                <rect key="frame" x="102" y="150" width="396" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-73-rNl">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="50" y="0.0" width="118.5" height="47.5"/>
+                                                <rect key="frame" x="50" y="0.0" width="119" height="48"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
@@ -323,7 +337,7 @@ PROFIT BY UP TO</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-CD-ogG">
-                                                <rect key="frame" x="218.5" y="3" width="43" height="41.5"/>
+                                                <rect key="frame" x="219" y="3" width="43" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="3UL-gw-dgA"/>
                                                 </constraints>
@@ -337,7 +351,7 @@ PROFIT BY UP TO</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-Yh-3ka">
-                                                <rect key="frame" x="288" y="5" width="111" height="37.5"/>
+                                                <rect key="frame" x="280" y="5" width="111" height="38"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="SEE DETAILS">
@@ -371,7 +385,7 @@ PROFIT BY UP TO</string>
                                         <rect key="frame" x="0.0" y="48" width="197" height="252"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDu-fd-XVR">
-                                                <rect key="frame" x="0.0" y="24" width="197" height="27"/>
+                                                <rect key="frame" x="0.0" y="23" width="197" height="27"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="RAMP-UP SERVICES">
@@ -383,7 +397,7 @@ PROFIT BY UP TO</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                <rect key="frame" x="0.0" y="60" width="197" height="42"/>
+                                                <rect key="frame" x="0.0" y="59" width="197" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                 </constraints>
@@ -428,7 +442,7 @@ IAo
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                <rect key="frame" x="0.0" y="110" width="197" height="42"/>
+                                                <rect key="frame" x="0.0" y="109" width="197" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                 </constraints>
@@ -501,7 +515,7 @@ PLANNING SERVICES</string>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF" customClass="RoiGraphView" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="197" y="48" width="207" height="252"/>
+                                        <rect key="frame" x="197" y="48" width="199" height="252"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-bi-gzk">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="252"/>
@@ -532,17 +546,17 @@ PLANNING SERVICES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-gn-rMh">
-                                                <rect key="frame" x="25" y="227" width="182" height="25"/>
+                                                <rect key="frame" x="25" y="227" width="174" height="25"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-Ie-fWm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="3"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="SFu-1g-v1J"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                        <rect key="frame" x="175.5" y="3" width="3.5" height="22"/>
+                                                        <rect key="frame" x="167" y="3" width="4" height="22"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -560,7 +574,7 @@ PLANNING SERVICES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
-                                                <rect key="frame" x="25" y="0.0" width="182" height="227"/>
+                                                <rect key="frame" x="25" y="0.0" width="174" height="227"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -636,8 +650,10 @@ PLANNING SERVICES</string>
         </scene>
     </scenes>
     <resources>
+        <image name="sandvik_arrow_down" width="64" height="32"/>
         <image name="sandvik_arrow_left" width="32" height="64"/>
         <image name="sandvik_arrow_right" width="32" height="64"/>
+        <image name="sandvik_arrow_up" width="64" height="32"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>

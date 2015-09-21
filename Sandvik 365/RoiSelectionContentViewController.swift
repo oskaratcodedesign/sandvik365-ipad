@@ -40,16 +40,24 @@ class RoiSelectionContentViewController: UIViewController {
         let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
         return [topConstraint, bottomConstraint, trailConstraint, leadingConstraint]
     }
+    
+    @IBAction func toggleUp(sender: UIButton) {
+        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleUp"), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func toggleDown(sender: UIButton) {
+        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
+    }
 
     @IBAction func toggleLeft(sender: UIButton) {
-       toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleLeft"), userInfo: nil, repeats: true)
+       
     }
     
     @IBAction func toggleRight(sender: UIButton) {
-        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleRight"), userInfo: nil, repeats: true)
+        
     }
     
-    func toggleLeft() {
+    func toggleDown() {
         if let numberView = roiContentView as? RoiInputView{
             numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
@@ -64,7 +72,7 @@ class RoiSelectionContentViewController: UIViewController {
         }*/
     }
     
-    func toggleRight() {
+    func toggleUp() {
         if let numberView = roiContentView as? RoiInputView{
             numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
