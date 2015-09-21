@@ -9,7 +9,7 @@
 import UIKit
 import NibDesignable
 
-class RoiNumberView: NibDesignable {
+class RoiInputView: NibDesignable {
 
     @IBOutlet weak var numberLabel: UILabel!
     

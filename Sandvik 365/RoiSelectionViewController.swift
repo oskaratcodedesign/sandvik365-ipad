@@ -47,7 +47,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 fillDot(currentController.itemIndex)
                 showSelectedInput(currentController.itemIndex, roiInput: currentController.selectedROICalculator.input)
-                if let numberView = currentController.roiContentView as? RoiNumberView {
+                if let numberView = currentController.roiContentView as? RoiInputView {
                     roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.text!)
                 }
                 titleLabel.text = titles[currentController.itemIndex+1]

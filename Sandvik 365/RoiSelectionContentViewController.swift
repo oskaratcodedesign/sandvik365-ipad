@@ -25,7 +25,7 @@ class RoiSelectionContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let numberView = RoiNumberView(frame: containerView.bounds)
+        let numberView = RoiInputView(frame: containerView.bounds)
         containerView.addSubview(numberView)
         numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
         numberView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,7 @@ class RoiSelectionContentViewController: UIViewController {
     }
     
     func toggleLeft() {
-        if let numberView = roiContentView as? RoiNumberView{
+        if let numberView = roiContentView as? RoiInputView{
             numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
@@ -65,7 +65,7 @@ class RoiSelectionContentViewController: UIViewController {
     }
     
     func toggleRight() {
-        if let numberView = roiContentView as? RoiNumberView{
+        if let numberView = roiContentView as? RoiInputView{
             numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
