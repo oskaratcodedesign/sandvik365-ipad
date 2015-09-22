@@ -25,11 +25,11 @@ class ROIInput {
         preconditionFailure("This method must be overridden")
     }
     
-    func originalTotal() -> [UInt] {
+    func originalTotal() -> [Int] {
         preconditionFailure("This method must be overridden")
     }
     
-    func calculatedTotal() -> [UInt] {
+    func calculatedTotal() -> [Int] {
         preconditionFailure("This method must be overridden")
     }
     

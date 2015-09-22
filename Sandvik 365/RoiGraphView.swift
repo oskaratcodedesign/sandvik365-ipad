@@ -48,7 +48,7 @@ class RoiGraphView: UIView {
         drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
     }
     
-    private func drawGraph(values: [UInt], color: UIColor)
+    private func drawGraph(values: [Int], color: UIColor)
     {
         if values.isEmpty {
             return
@@ -63,8 +63,13 @@ class RoiGraphView: UIView {
         
         path.moveToPoint(CGPointMake(0, height))
         for value in values {
-            let y = value == 0 ? height : height / 2 - (CGFloat(value) * yPValue)
-            path.addLineToPoint(CGPointMake(x, y))
+            if value >= 0 {
+                let y = value == 0 ? height : height / 2 - (CGFloat(value) * yPValue)
+                path.addLineToPoint(CGPointMake(x, y))
+            }
+            else {
+                path.moveToPoint(CGPointMake(x+xSpace, height))//move forward so we can produce a straight line once value is changed
+            }
             x += xSpace
         }
         path.addLineToPoint(CGPointMake(x-xSpace, height))

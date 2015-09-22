@@ -198,12 +198,12 @@ class ROICrusherInput: ROIInput {
         return result
     }
     
-    override func originalTotal() -> [UInt] {
+    override func originalTotal() -> [Int] {
         let currentServices = services
         services = []
         
-        let t = UInt(total())
-        var totals = [UInt]()
+        let t = Int(total())
+        var totals = [Int]()
         for i in 0...months-1 {
             if i >= startMonth {
                 totals.append(t)
@@ -216,9 +216,9 @@ class ROICrusherInput: ROIInput {
         return totals
     }
     
-    override func calculatedTotal() -> [UInt] {
-        var t = UInt(total())
-        var totals = [UInt]()
+    override func calculatedTotal() -> [Int] {
+        var t = Int(total())
+        var totals = [Int]()
         
         if services.contains(.RampUp) {
             totals = originalTotal()
@@ -227,7 +227,7 @@ class ROICrusherInput: ROIInput {
             if services.contains(.MaintenancePlanning) {
                 let currentServices = services
                 services = [.MaintenancePlanning]
-                t = UInt(total())
+                t = Int(total())
                 for i in 0...months-1 {
                     if i >= newStartMonth {
                         totals[Int(i)] = t
@@ -241,7 +241,7 @@ class ROICrusherInput: ROIInput {
             else if services.contains(.ConditionInspection){
                 let currentServices = services
                 services = [.ConditionInspection]
-                t = UInt(total())
+                t = Int(total())
                 for i in 0...months-1 {
                     if i >= newStartMonth {
                         totals[Int(i)] = t
@@ -260,7 +260,7 @@ class ROICrusherInput: ROIInput {
                         totals.append(t)
                     }
                     else {
-                        totals.append(0)
+                        totals.append(-1)//so graph will make straight line
                     }
                 }
             }
@@ -270,7 +270,7 @@ class ROICrusherInput: ROIInput {
                         totals.append(t)
                     }
                     else {
-                        totals.append(0)
+                        totals.append(-1)
                     }
                 }
             }
