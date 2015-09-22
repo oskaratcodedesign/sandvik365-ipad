@@ -84,7 +84,7 @@ class ROICrusherInput: ROIInput {
         return allTitles
     }
     
-    override func changeInput(atIndex :Int, change :ChangeInput) -> String {
+    override func changeInput(atIndex :Int, change :ChangeInput) -> NSAttributedString {
         let input = allInputs()[atIndex]
         switch input {
         case .OreGrade:
@@ -94,7 +94,10 @@ class ROICrusherInput: ROIInput {
                     oreGrade = .OreGrade(value)
                 }
             }
-            return String(format:"%.2f", oreGrade.value as! Double) + "%";
+            let valueType: String = "%"
+            let attrString = NSMutableAttributedString(string: String(format:"%.2f", oreGrade.value as! Double) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
+            return attrString;
         case .Capacity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -102,7 +105,10 @@ class ROICrusherInput: ROIInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-            return String(capacity.value as! UInt) + "m t/hr";
+            let valueType: String = "m t/hr"
+            let attrString = NSMutableAttributedString(string: String(capacity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
+            return attrString;
         case .FinishedProduct:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -110,7 +116,10 @@ class ROICrusherInput: ROIInput {
                     finishedProduct = .Capacity(UInt(value))
                 }
             }
-            return String(finishedProduct.value as! UInt) + "%";
+            let valueType: String = "%"
+            let attrString = NSMutableAttributedString(string: String(finishedProduct.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
+            return attrString;
         case .RecoveryRate:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -118,7 +127,10 @@ class ROICrusherInput: ROIInput {
                     recoveryRate = .RecoveryRate(UInt(value))
                 }
             }
-            return String(recoveryRate.value as! UInt) + "%";
+            let valueType: String = "%"
+            let attrString = NSMutableAttributedString(string: String(recoveryRate.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
+            return attrString;
         case .OrePrice:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -126,7 +138,10 @@ class ROICrusherInput: ROIInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-            return "$" + String(orePrice.value as! UInt);
+            let valueType: String = "$"
+            let attrString = NSMutableAttributedString(string: valueType + String(orePrice.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
+            return attrString;
         case .ProcessingCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -134,7 +149,10 @@ class ROICrusherInput: ROIInput {
                     processingCost = .ProcessingCost(UInt(value))
                 }
             }
-            return "$" + String(processingCost.value as! UInt);
+            let valueType: String = "$"
+            let attrString = NSMutableAttributedString(string: valueType + String(processingCost.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
+            return attrString;
         }
     }
     

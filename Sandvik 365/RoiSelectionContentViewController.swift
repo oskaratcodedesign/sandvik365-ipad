@@ -61,7 +61,7 @@ class RoiSelectionContentViewController: UIViewController {
         if let numberView = roiContentView as? RoiInputView{
             numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
+                delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.attributedText!)
             }
         }
         /*else if let productView = roiContentView as? RoiProductView{
@@ -76,7 +76,7 @@ class RoiSelectionContentViewController: UIViewController {
         if let numberView = roiContentView as? RoiInputView{
             numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.text!)
+                delegate.roiValueDidChange(itemIndex, object: numberView.numberLabel.attributedText!)
             }
         }
         /*else if let productView = roiContentView as? RoiProductView{

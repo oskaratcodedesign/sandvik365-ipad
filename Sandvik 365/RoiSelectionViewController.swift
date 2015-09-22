@@ -61,7 +61,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                     selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1])
                 }
                 if let numberView = currentController.roiContentView as? RoiInputView {
-                    roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.text!)
+                    roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.attributedText!)
                 }
                 showSelectedInput(nextIndex)
             }
@@ -162,7 +162,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     func roiValueDidChange(itemIndex: Int, object: AnyObject) {
         if itemIndex < selectionButtons.count {
             let selectedButton = selectionButtons[itemIndex]
-            selectedButton.button.setTitle(object as? String, forState: .Normal)
+            let attString = RoiInputView.changeNSAttributedStringFontSize((object as? NSAttributedString)!, fontSize: (selectedButton.button.titleLabel?.font.pointSize)!)
+            selectedButton.button.setAttributedTitle(attString, forState: .Normal)
         }
     }
     

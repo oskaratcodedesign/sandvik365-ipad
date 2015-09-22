@@ -37,7 +37,7 @@ class ROIInput {
         preconditionFailure("This method must be overridden")
     }
     
-    func changeInput(atIndex :Int, change : ChangeInput) -> String {
+    func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
         preconditionFailure("This method must be overridden")
     }
 }
