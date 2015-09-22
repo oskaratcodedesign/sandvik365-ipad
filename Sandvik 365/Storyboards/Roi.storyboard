@@ -62,6 +62,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="prevAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="Jlx-Qb-q4z"/>
                                     <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchUpInside" id="M3l-hS-Jja"/>
                                 </connections>
                             </button>
@@ -85,6 +86,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="nextAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="ZgJ-tX-HNm"/>
                                     <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchUpInside" id="guy-Lp-e9A"/>
                                 </connections>
                             </button>
@@ -189,6 +191,8 @@
                     <connections>
                         <outlet property="currentSelectionButton" destination="WUG-T4-S4q" id="kML-Hs-JRh"/>
                         <outlet property="currentTrailingConstraint" destination="EHF-CQ-P1W" id="8Ik-d7-R0I"/>
+                        <outlet property="nextButton" destination="tVa-ib-G4a" id="9fQ-5J-rJv"/>
+                        <outlet property="prevButton" destination="d7a-fs-vKI" id="5A9-Pu-LRL"/>
                         <outlet property="selectionContainer" destination="qZr-V3-Kiy" id="aBs-NT-bMR"/>
                         <outlet property="titleLabel" destination="xsz-tO-ijf" id="srP-di-3Vg"/>
                         <outlet property="widthConstraint" destination="oxj-98-Ocg" id="gQP-s5-9Ke"/>

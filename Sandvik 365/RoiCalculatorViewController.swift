@@ -25,31 +25,71 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     @IBAction func rampUpAction(sender: UIButton) {
-        sender.selected = !sender.selected
-        //roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
         if let input = selectedROICalculator.input as? ROICrusherInput {
-            input.service = .RampUp
-            roiGraphView.selectedROIInput = input
+            controlCrusherServices(input, selectedService: .RampUp)
         }
         setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
-        sender.selected = !sender.selected
-        //roiGraphView.setSelectedService(sender.selected, service: ROIService.ConditionInspection)
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            controlCrusherServices(input, selectedService: .ConditionInspection)
+        }
         setProfitLabel()
     }
     
     @IBAction func maintenanceAction(sender: UIButton) {
-        sender.selected = !sender.selected
-        //roiGraphView.setSelectedService(sender.selected, service: ROIService.MaintenancePlanning)
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            controlCrusherServices(input, selectedService: .MaintenancePlanning)
+        }
         setProfitLabel()
     }
     
     @IBAction func protectiveAction(sender: UIButton) {
-        sender.selected = !sender.selected
         //roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
         setProfitLabel()
+    }
+    
+    private func controlCrusherServices(input: ROICrusherInput, var selectedService: ROICrusherService) {
+
+        if input.service == selectedService {
+            selectedService = .None
+        }
+        
+        switch selectedService {
+        case .RampUp:
+            for button in serviceButtons {
+                button.selected = true
+            }
+        case .ConditionInspection:
+            for button in serviceButtons {
+                if button.tag == 0 {
+                    button.selected = false
+                }
+                else {
+                    button.selected = true
+                }
+            }
+        case .MaintenancePlanning:
+            for button in serviceButtons {
+                if button.tag < 2 {
+                    button.selected = false
+                }
+                else {
+                    button.selected = true
+                }
+            }
+            
+        case .Protective: break
+        case .None:
+            for button in serviceButtons {
+                button.selected = false
+            }
+        }
+        
+        
+        input.service = selectedService
+        roiGraphView.selectedROIInput = input
     }
     
     private func setProfitLabel()

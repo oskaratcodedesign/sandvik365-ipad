@@ -50,9 +50,13 @@ class RoiGraphView: UIView {
     
     private func drawGraph(values: [UInt], color: UIColor)
     {
+        if values.isEmpty {
+            return
+        }
+        
         let xSpace = xGraph.bounds.size.width / CGFloat(values.count)
         let height = graphView.bounds.size.height
-        let yPValue = height / CGFloat(selectedROIInput.total())
+        let yPValue = height / CGFloat(selectedROIInput.maxTotal())
         
         let path = UIBezierPath()
         var x = xSpace

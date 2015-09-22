@@ -21,6 +21,10 @@ class ROIInput {
         preconditionFailure("This method must be overridden")
     }
     
+    func maxTotal() -> Double {
+        preconditionFailure("This method must be overridden")
+    }
+    
     func originalTotal() -> [UInt] {
         preconditionFailure("This method must be overridden")
     }

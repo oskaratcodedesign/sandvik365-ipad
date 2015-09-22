@@ -157,11 +157,24 @@ class ROICrusherInput: ROIInput {
     }
     
     override func total() -> Double {
+        var result: Double = 0
         if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
             let r = recoveredProductAfterProcessing()
-            return (r * Double(o)) - (r * Double(p))
+            result = (r * Double(o)) - (r * Double(p))
         }
-        return 0
+        return result
+    }
+    
+    override func maxTotal() -> Double {
+        let currentService = service
+        service = .RampUp
+        var result: Double = 0
+        if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
+            let r = recoveredProductAfterProcessing()
+            result = (r * Double(o)) - (r * Double(p))
+        }
+        service = currentService
+        return result
     }
     
     override func originalTotal() -> [UInt] {
@@ -185,6 +198,9 @@ class ROICrusherInput: ROIInput {
     override func calculatedTotal() -> [UInt] {
         let t = UInt(total())
         var totals = [UInt]()
+        if service == .None {
+            return totals
+        }
         for i in 0...months-1 {
             if i >= startMonth-1 {
                 totals.append(t)

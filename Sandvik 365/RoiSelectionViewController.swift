@@ -15,6 +15,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
     @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
+    
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
     private var viewControllers: [UIViewController]! = [UIViewController]()
@@ -26,30 +29,41 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         titles = selectedROICalculator.input.allTitles()
         titles.append(NSLocalizedString("How it plays out for you", comment: ""))
         loadPageController()
-        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
-        recognizer.delegate = self
-        view.addGestureRecognizer(recognizer)
         
         view.bringSubviewToFront(selectionContainer)
+        view.bringSubviewToFront(nextButton)
+        view.bringSubviewToFront(prevButton)
+        
         selectionButtons.append(currentSelectionButton)
         currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
-        currentSelectionButton.setSelected(0, text: titles[0])
+        currentSelectionButton.fillDot()
+        prevButton.hidden = true
         loadSelectionButtons()
         titleLabel.text = titles[0]
     }
+
+    @IBAction func nextAction(sender: UIButton) {
+        toggleLeftRight(false)
+    }
+    @IBAction func prevAction(sender: UIButton) {
+        toggleLeftRight(true)
+    }
     
-    func handleTap(recognizer: UIGestureRecognizer) {
+    private func toggleLeftRight(left: Bool) {
         if let currentController = pageViewController?.viewControllers!.last as? RoiSelectionContentViewController
         {
-            if viewControllers.count > currentController.itemIndex+1 {
-                let nextController = viewControllers[currentController.itemIndex+1]
+            let nextIndex = left ? currentController.itemIndex - 1 : currentController.itemIndex + 1
+            if viewControllers.count > nextIndex && nextIndex >= 0 {
+                let nextController = viewControllers[nextIndex]
                 let nextViewControllers: [UIViewController] = [nextController]
-                pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
-                showSelectedInput(currentController.itemIndex+1, roiInput: currentController.selectedROICalculator.input)
+                pageViewController?.setViewControllers(nextViewControllers, direction: left ?UIPageViewControllerNavigationDirection.Reverse: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+                if !left {
+                    selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1])
+                }
                 if let numberView = currentController.roiContentView as? RoiInputView {
                     roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.text!)
                 }
-                titleLabel.text = titles[currentController.itemIndex+1]
+                showSelectedInput(nextIndex)
             }
         }
     }
@@ -60,10 +74,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 let nextController = viewControllers[index]
                 let nextViewControllers: [UIViewController] = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-                currentSelectionButton.unFillDot()
-                selectionButtons[index].fillDot()
-                currentSelectionButton = selectionButtons[index]
-                titleLabel.text = titles[index]
+                showSelectedInput(index)
             }
         }
     }
@@ -84,14 +95,23 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         pageViewController!.didMoveToParentViewController(self)
     }
     
-    private func showSelectedInput(itemIndex: Int, roiInput: ROIInput) {
+    private func showSelectedInput(itemIndex: Int) {
         
-        if selectionButtons.count <= itemIndex {
+        if selectionButtons.count < itemIndex {
             return
         }
-        selectionButtons[itemIndex-1].setSelected(itemIndex-1, text: titles[itemIndex-1])
-        selectionButtons[itemIndex].fillDot()
-        currentSelectionButton = selectionButtons[itemIndex]
+        nextButton.hidden = false
+        prevButton.hidden = false
+        currentSelectionButton.unFillDot()
+        if(itemIndex < selectionButtons.count) {
+            selectionButtons[itemIndex].fillDot()
+            currentSelectionButton = selectionButtons[itemIndex]
+        }
+        else {
+            nextButton.hidden = true
+            prevButton.hidden = true
+        }
+        titleLabel.text = titles[itemIndex]
     }
     
     private func loadSelectionButtons() {
