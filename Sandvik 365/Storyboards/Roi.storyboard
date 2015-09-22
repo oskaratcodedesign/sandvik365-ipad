@@ -19,7 +19,6 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -103,8 +102,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="dOb-I9-BLK"/>
                                         <exclude reference="OlB-7L-XVJ"/>
+                                        <exclude reference="dOb-I9-BLK"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -473,18 +472,6 @@ PLANNING SERVICES</string>
                                                     <action selector="maintenanceAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="Nwu-uV-aBQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-l7-l7v">
-                                                <rect key="frame" x="0.0" y="174" width="197" height="27"/>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
-                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="PROTECTIVE SERVICES">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="protectiveAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="L7C-Kx-K0V"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -494,15 +481,11 @@ PLANNING SERVICES</string>
                                             <constraint firstItem="TDu-fd-XVR" firstAttribute="top" secondItem="gTT-ed-AHq" secondAttribute="top" constant="24" id="Gbz-VZ-ZFh"/>
                                             <constraint firstItem="ndL-Cx-29I" firstAttribute="top" secondItem="N4N-Vd-EON" secondAttribute="bottom" constant="8" id="Jey-oe-0Un"/>
                                             <constraint firstAttribute="bottom" secondItem="N4N-Vd-EON" secondAttribute="bottom" multiplier="5:2" id="Kat-oX-2Zf"/>
-                                            <constraint firstAttribute="trailing" secondItem="zc5-l7-l7v" secondAttribute="trailing" id="Mvs-OA-ee2"/>
-                                            <constraint firstItem="zc5-l7-l7v" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="OhQ-3H-SHp"/>
                                             <constraint firstAttribute="bottom" secondItem="TDu-fd-XVR" secondAttribute="bottom" multiplier="5:1" id="Px7-js-KOG"/>
                                             <constraint firstItem="ndL-Cx-29I" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="bXh-vv-fi3"/>
                                             <constraint firstAttribute="trailing" secondItem="TDu-fd-XVR" secondAttribute="trailing" id="jMR-bi-m4i"/>
                                             <constraint firstAttribute="bottom" secondItem="ndL-Cx-29I" secondAttribute="bottom" multiplier="5:3" id="l32-Nt-BOt"/>
-                                            <constraint firstAttribute="bottom" secondItem="zc5-l7-l7v" secondAttribute="bottom" multiplier="5:4" id="mRP-yO-zOD"/>
                                             <constraint firstItem="N4N-Vd-EON" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TDu-fd-XVR" secondAttribute="bottom" constant="8" id="omb-Jz-dix"/>
-                                            <constraint firstItem="zc5-l7-l7v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ndL-Cx-29I" secondAttribute="bottom" constant="8" id="q5s-Ij-K5c"/>
                                             <constraint firstItem="TDu-fd-XVR" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="qsM-hI-DWF"/>
                                             <constraint firstItem="N4N-Vd-EON" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="tnM-Cn-DKV"/>
                                             <constraint firstItem="ndL-Cx-29I" firstAttribute="top" secondItem="N4N-Vd-EON" secondAttribute="bottom" constant="8" id="zm5-Ng-Uaf"/>
@@ -514,7 +497,6 @@ PLANNING SERVICES</string>
                                                 <exclude reference="CT1-8G-p2T"/>
                                                 <exclude reference="Jey-oe-0Un"/>
                                                 <exclude reference="zm5-Ng-Uaf"/>
-                                                <exclude reference="q5s-Ij-K5c"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -578,13 +560,13 @@ PLANNING SERVICES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
-                                                <rect key="frame" x="25" y="0.0" width="174" height="227"/>
+                                                <rect key="frame" x="25" y="20" width="174" height="207"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="dUK-lx-H79" firstAttribute="top" secondItem="IQE-cD-gCF" secondAttribute="top" id="1zA-4B-1mi"/>
+                                            <constraint firstItem="dUK-lx-H79" firstAttribute="top" secondItem="IQE-cD-gCF" secondAttribute="top" constant="20" id="1zA-4B-1mi"/>
                                             <constraint firstItem="mhD-bi-gzk" firstAttribute="top" secondItem="IQE-cD-gCF" secondAttribute="top" id="70v-oU-6Yp"/>
                                             <constraint firstAttribute="trailing" secondItem="dUK-lx-H79" secondAttribute="trailing" id="9UY-sI-76r"/>
                                             <constraint firstAttribute="trailing" secondItem="LiP-gn-rMh" secondAttribute="trailing" id="DbC-kA-wCH"/>
@@ -639,13 +621,12 @@ PLANNING SERVICES</string>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="conditionButton" destination="N4N-Vd-EON" id="V4N-4C-w4X"/>
                         <outlet property="detailButton" destination="NFb-Yh-3ka" id="PjM-Bi-U6W"/>
+                        <outlet property="maintenenceButton" destination="ndL-Cx-29I" id="U57-rk-TZ7"/>
                         <outlet property="profitLabel" destination="jt7-CD-ogG" id="bFU-aq-pjO"/>
+                        <outlet property="rampUpButton" destination="TDu-fd-XVR" id="OtC-WB-mo0"/>
                         <outlet property="roiGraphView" destination="IQE-cD-gCF" id="5Fm-NC-qHG"/>
-                        <outletCollection property="serviceButtons" destination="TDu-fd-XVR" collectionClass="NSMutableArray" id="lp0-Fe-0Jb"/>
-                        <outletCollection property="serviceButtons" destination="N4N-Vd-EON" collectionClass="NSMutableArray" id="DLx-gA-Z0w"/>
-                        <outletCollection property="serviceButtons" destination="ndL-Cx-29I" collectionClass="NSMutableArray" id="N8e-zU-1ZQ"/>
-                        <outletCollection property="serviceButtons" destination="zc5-l7-l7v" collectionClass="NSMutableArray" id="dM6-rP-ePX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmC-5r-cN8" userLabel="First Responder" sceneMemberID="firstResponder"/>

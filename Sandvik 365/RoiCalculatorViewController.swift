@@ -11,10 +11,12 @@ import UIKit
 class RoiCalculatorViewController: UIViewController {
 
     var selectedROICalculator: ROICalculator!
-    @IBOutlet var serviceButtons: [UIButton]!
     @IBOutlet weak var roiGraphView: RoiGraphView!
     @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var profitLabel: UILabel!
+    @IBOutlet weak var rampUpButton: UIButton!
+    @IBOutlet weak var conditionButton: UIButton!
+    @IBOutlet weak var maintenenceButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +28,21 @@ class RoiCalculatorViewController: UIViewController {
     
     @IBAction func rampUpAction(sender: UIButton) {
         if let input = selectedROICalculator.input as? ROICrusherInput {
-            controlCrusherServices(input, selectedService: .RampUp)
+            controlCrusherServices(input, selectedService: .RampUp, selectedButton: sender)
         }
         setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
         if let input = selectedROICalculator.input as? ROICrusherInput {
-            controlCrusherServices(input, selectedService: .ConditionInspection)
+            controlCrusherServices(input, selectedService: .ConditionInspection, selectedButton: sender)
         }
         setProfitLabel()
     }
     
     @IBAction func maintenanceAction(sender: UIButton) {
         if let input = selectedROICalculator.input as? ROICrusherInput {
-            controlCrusherServices(input, selectedService: .MaintenancePlanning)
+            controlCrusherServices(input, selectedService: .MaintenancePlanning, selectedButton: sender)
         }
         setProfitLabel()
     }
@@ -50,52 +52,34 @@ class RoiCalculatorViewController: UIViewController {
         setProfitLabel()
     }
     
-    private func controlCrusherServices(input: ROICrusherInput, var selectedService: ROICrusherService) {
+    private func controlCrusherServices(input: ROICrusherInput, selectedService: ROICrusherService, selectedButton: UIButton) {
 
-        if input.service == selectedService {
-            selectedService = .None
+        selectedButton.selected = !selectedButton.selected
+        
+        if selectedButton.selected {
+            input.services.insert(selectedService)
+        }
+        else {
+            input.services.remove(selectedService)
         }
         
-        switch selectedService {
-        case .RampUp:
-            for button in serviceButtons {
-                button.selected = true
-            }
-        case .ConditionInspection:
-            for button in serviceButtons {
-                if button.tag == 0 {
-                    button.selected = false
-                }
-                else {
-                    button.selected = true
-                }
-            }
-        case .MaintenancePlanning:
-            for button in serviceButtons {
-                if button.tag < 2 {
-                    button.selected = false
-                }
-                else {
-                    button.selected = true
-                }
-            }
-            
-        case .Protective: break
-        case .None:
-            for button in serviceButtons {
-                button.selected = false
-            }
+        if selectedService == .MaintenancePlanning {
+            input.services.remove(.ConditionInspection) // always remove if selected
+            conditionButton.selected = selectedButton.selected
         }
         
+        if selectedService == .ConditionInspection && input.services.contains(.MaintenancePlanning){
+            input.services.remove(.MaintenancePlanning) // always remove if selected
+            maintenenceButton.selected = selectedButton.selected
+        }
         
-        input.service = selectedService
         roiGraphView.selectedROIInput = input
     }
     
     private func setProfitLabel()
     {
         let sum = selectedROICalculator.input.total()
-        profitLabel.text = "$" + String(sum);
+        profitLabel.text = "$" + String(Int(sum));
     }
     
     private func setBorderOnDetailButton() {
@@ -106,9 +90,10 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     private func loadServiceButtons() {
-        var size = serviceButtons[0].bounds.size
+        var size = rampUpButton.bounds.size
         size.width = size.height
         let color = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000)
+        let serviceButtons = [rampUpButton, conditionButton, maintenenceButton]
         for button in serviceButtons {
             let borderimage = roundImage(size, fill: false, color: color)
             button.setImage(borderimage, forState: .Normal)

@@ -11,10 +11,9 @@ import UIKit
 
 enum ROICrusherService: UInt {
     case RampUp = 200
-    case ConditionInspection = 80
-    case MaintenancePlanning = 8
-    case Protective
-    case None = 1
+    case ConditionInspection = 8
+    case MaintenancePlanning = 80
+    //case Protective
 }
 
 enum ROICrusherInputValue {
@@ -67,8 +66,8 @@ class ROICrusherInput: ROIInput {
     var recoveryRate: ROICrusherInputValue = .RecoveryRate(85) //%
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
     var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
-    var service: ROICrusherService = .None
-    let months: UInt = 12
+    var services: Set<ROICrusherService> = Set<ROICrusherService>()
+    let months: UInt = 24
     let startMonth: UInt = 4
     
     private func allInputs() -> [ROICrusherInputValue] {
@@ -164,7 +163,11 @@ class ROICrusherInput: ROIInput {
     }
     
     func additionalTonsOfFinishedProduct() -> Double {
-        return finishedProductMTHR() * Double(service.rawValue)
+        var totalServiceValue: UInt = 0
+        for service in services {
+            totalServiceValue += service.rawValue
+        }
+        return finishedProductMTHR() * Double(totalServiceValue == 0 ? 1 : totalServiceValue)
     }
     
     func recoveredProductAfterProcessing() -> Double {
@@ -184,20 +187,20 @@ class ROICrusherInput: ROIInput {
     }
     
     override func maxTotal() -> Double {
-        let currentService = service
-        service = .RampUp
+        let currentServices = services
+        services = [.MaintenancePlanning]
         var result: Double = 0
         if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
             let r = recoveredProductAfterProcessing()
             result = (r * Double(o)) - (r * Double(p))
         }
-        service = currentService
+        services = currentServices
         return result
     }
     
     override func originalTotal() -> [UInt] {
-        let currentService = service
-        service = .None
+        let currentServices = services
+        services = []
         
         let t = UInt(total())
         var totals = [UInt]()
@@ -209,24 +212,98 @@ class ROICrusherInput: ROIInput {
                 totals.append(0)
             }
         }
-        service = currentService
+        services = currentServices
         return totals
     }
     
     override func calculatedTotal() -> [UInt] {
-        let t = UInt(total())
+        var t = UInt(total())
         var totals = [UInt]()
-        if service == .None {
+        
+        if services.contains(.RampUp) {
+            totals = originalTotal()
+            let newStartMonth = startMonth - 1
+            totals[Int(newStartMonth)] = totals.last!
+            if services.contains(.MaintenancePlanning) {
+                let currentServices = services
+                services = [.MaintenancePlanning]
+                t = UInt(total())
+                for i in 0...months-1 {
+                    if i >= newStartMonth {
+                        totals[Int(i)] = t
+                    }
+                    else {
+                        totals[Int(i)] = 0
+                    }
+                }
+                services = currentServices
+            }
+            else if services.contains(.ConditionInspection){
+                let currentServices = services
+                services = [.ConditionInspection]
+                t = UInt(total())
+                for i in 0...months-1 {
+                    if i >= newStartMonth {
+                        totals[Int(i)] = t
+                    }
+                    else {
+                        totals[Int(i)] = 0
+                    }
+                }
+                services = currentServices
+            }
+        }
+        else {
+            if services.contains(.MaintenancePlanning) {
+                for i in 0...months-1 {
+                    if i >= startMonth {
+                        totals.append(t)
+                    }
+                    else {
+                        totals.append(0)
+                    }
+                }
+            }
+            else if services.contains(.ConditionInspection){
+                for i in 0...months-1 {
+                    if i >= startMonth {
+                        totals.append(t)
+                    }
+                    else {
+                        totals.append(0)
+                    }
+                }
+            }
+        }
+
+        /*for
+        switch service {
+        case .RampUp:
+            totals = originalTotal()
+            let newStartMonth = startMonth - 1
+            totals[Int(newStartMonth)] = totals.last!
+            return totals // only shows timespan
+        case .MaintenancePlanning:
+            for i in 0...months-1 {
+                if i >= startMonth-1 {
+                    totals.append(t)
+                }
+                else {
+                    totals.append(0)
+                }
+            }
             return totals
-        }
-        for i in 0...months-1 {
-            if i >= startMonth-1 {
-                totals.append(t)
+        case .ConditionInspection:
+            for i in 0...months-1 {
+                if i >= startMonth-1 {
+                    totals.append(t)
+                }
+                else {
+                    totals.append(0)
+                }
             }
-            else {
-                totals.append(0)
-            }
-        }
+            return totals
+        }*/
         return totals
     }
 }
