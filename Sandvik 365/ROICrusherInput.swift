@@ -68,7 +68,8 @@ class ROICrusherInput: ROIInput {
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
     var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
     var service: ROICrusherService = .None
-    
+    let months: UInt = 12
+    let startMonth: UInt = 4
     
     private func allInputs() -> [ROICrusherInputValue] {
         return [oreGrade, capacity, finishedProduct, recoveryRate, orePrice, processingCost]
@@ -133,7 +134,7 @@ class ROICrusherInput: ROIInput {
                     processingCost = .ProcessingCost(UInt(value))
                 }
             }
-            return "$" + String(processingCost.value as! UInt) + "m t/hr";
+            return "$" + String(processingCost.value as! UInt);
         }
     }
     
@@ -161,5 +162,37 @@ class ROICrusherInput: ROIInput {
             return (r * Double(o)) - (r * Double(p))
         }
         return 0
+    }
+    
+    override func originalTotal() -> [UInt] {
+        let currentService = service
+        service = .None
+        
+        let t = UInt(total())
+        var totals = [UInt]()
+        for i in 0...months-1 {
+            if i >= startMonth {
+                totals.append(t)
+            }
+            else {
+                totals.append(0)
+            }
+        }
+        service = currentService
+        return totals
+    }
+    
+    override func calculatedTotal() -> [UInt] {
+        let t = UInt(total())
+        var totals = [UInt]()
+        for i in 0...months-1 {
+            if i >= startMonth-1 {
+                totals.append(t)
+            }
+            else {
+                totals.append(0)
+            }
+        }
+        return totals
     }
 }

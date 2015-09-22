@@ -19,28 +19,32 @@ class RoiSelectionButton: NibDesignable {
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupSelectionDot()
+        setUp()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupSelectionDot()
+        setUp()
     }
     
     func setSelected(index: Int, text: String) {
         button.hidden = false
         label.hidden = false
+        label.text = text
         if index % 2 == 0 {
             lineHeightConstraint.constant = 0
         }
         else {
             line.hidden = false
         }
-        fillDot()
-    }
-    
-    func setUnselected() {
         dot.backgroundColor = UIColor.clearColor()
+    }
+
+    private func setUp() {
+        button.hidden = true
+        label.hidden = true
+        line.hidden = true
+        setupSelectionDot()
     }
     
     private func setupSelectionDot() {
@@ -50,7 +54,13 @@ class RoiSelectionButton: NibDesignable {
         dot.layer.borderWidth = 2
     }
     
-    private func fillDot() {
+    
+    func unFillDot() {
+        dot.backgroundColor = UIColor.clearColor()
+    }
+    
+    
+    func fillDot() {
         dot.backgroundColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000)
     }
 }

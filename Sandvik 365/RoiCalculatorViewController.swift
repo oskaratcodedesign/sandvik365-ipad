@@ -20,13 +20,17 @@ class RoiCalculatorViewController: UIViewController {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
-        roiGraphView.selectedROICalculator = selectedROICalculator
+        roiGraphView.selectedROIInput = selectedROICalculator.input
         setProfitLabel()
     }
     
     @IBAction func rampUpAction(sender: UIButton) {
         sender.selected = !sender.selected
         //roiGraphView.setSelectedService(sender.selected, service: ROIService.RampUp)
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            input.service = .RampUp
+            roiGraphView.selectedROIInput = input
+        }
         setProfitLabel()
     }
     

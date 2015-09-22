@@ -21,6 +21,14 @@ class ROIInput {
         preconditionFailure("This method must be overridden")
     }
     
+    func originalTotal() -> [UInt] {
+        preconditionFailure("This method must be overridden")
+    }
+    
+    func calculatedTotal() -> [UInt] {
+        preconditionFailure("This method must be overridden")
+    }
+    
     func allTitles() -> [String] {
         preconditionFailure("This method must be overridden")
     }
