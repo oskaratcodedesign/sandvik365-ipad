@@ -109,10 +109,10 @@
                                 </variation>
                             </view>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                <rect key="frame" x="235" y="420" width="130" height="175"/>
+                                <rect key="frame" x="235" y="420" width="130" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="0.0" width="120" height="175"/>
+                                        <rect key="frame" x="5" y="0.0" width="120" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
                                             <constraint firstAttribute="width" constant="120" id="oxj-98-Ocg"/>
@@ -174,7 +174,7 @@
                             <constraint firstAttribute="trailing" secondItem="aqm-DF-q37" secondAttribute="trailing" id="VEI-wO-ram"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="50" id="Vsm-YV-JOe"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="YAq-WA-kX2"/>
-                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" constant="5" id="YFg-qf-XZM"/>
+                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" constant="20" id="YFg-qf-XZM"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ZLG-Y2-T6S"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="bpU-98-QoA"/>
