@@ -166,14 +166,6 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        
-        if let currentController = pendingViewControllers.last as? RoiSelectionContentViewController {
-            //fillDot(currentController.itemIndex-1)
-        }
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

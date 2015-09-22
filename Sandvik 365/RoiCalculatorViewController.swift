@@ -99,7 +99,7 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     private func setBorderOnDetailButton() {
-        var layer = self.detailButton.layer
+        let layer = self.detailButton.layer
         layer.masksToBounds = true
         layer.borderWidth = 1
         layer.borderColor = self.detailButton.titleLabel?.textColor.CGColor
@@ -131,7 +131,7 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     private func roundImage(size: CGSize, fill: Bool, color: UIColor) -> UIImage? {
-        var layer = CALayer()
+        let layer = CALayer()
         layer.frame = CGRectMake(0, 0, size.width, size.height)
         layer.cornerRadius = size.width/2
         layer.masksToBounds = true
