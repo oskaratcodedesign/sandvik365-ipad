@@ -38,6 +38,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="Ft3-3w-Z2w">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqm-DF-q37">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsz-tO-ijf">
                                 <rect key="frame" x="0.0" y="70" width="600" height="23"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="20"/>
@@ -153,7 +157,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="1VL-iL-eTW"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" id="2Hc-98-vl0"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="2pM-qy-itj"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="4G3-44-XBg"/>
+                            <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="aqm-DF-q37" secondAttribute="trailing" id="5ej-Ys-dRs"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="A7p-XQ-B1t"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="BC6-G1-6Xi"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="BfW-Hh-tPh"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="Pfv-Rj-qtp" secondAttribute="trailing" id="KFo-rx-X0l"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="McR-7d-S0G"/>
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="top" secondItem="MSP-rB-ez0" secondAttribute="top" id="RGO-5Z-ZD0"/>
@@ -161,30 +171,46 @@
                             <constraint firstAttribute="trailing" secondItem="xsz-tO-ijf" secondAttribute="trailing" id="T4d-w5-DXq"/>
                             <constraint firstAttribute="centerX" secondItem="xsz-tO-ijf" secondAttribute="centerX" id="Tgf-s0-vfV"/>
                             <constraint firstAttribute="trailing" secondItem="Ft3-3w-Z2w" secondAttribute="trailing" id="UOi-KT-7qF"/>
+                            <constraint firstAttribute="trailing" secondItem="aqm-DF-q37" secondAttribute="trailing" id="VEI-wO-ram"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="50" id="Vsm-YV-JOe"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="YAq-WA-kX2"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" constant="5" id="YFg-qf-XZM"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ZLG-Y2-T6S"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="bpU-98-QoA"/>
                             <constraint firstItem="d7a-fs-vKI" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="c5X-hZ-6mp"/>
                             <constraint firstItem="Ft3-3w-Z2w" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="hic-4H-2GE"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="253" id="jLH-hh-A9k"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" id="mDV-5H-eGc"/>
                             <constraint firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="mNk-H7-DOX"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="30" id="nVe-oA-dTr"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" id="o9z-1G-BuD"/>
+                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="oJX-Gv-NHR"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="pVR-1h-NMu"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" multiplier="0.3" id="pz8-7Y-zIS"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="uCJ-Ij-oYs"/>
+                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="vFp-BX-NJf"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" constant="345" id="wlF-jD-baP"/>
                             <constraint firstItem="d7a-fs-vKI" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="yCE-Kq-NY5"/>
                             <constraint firstAttribute="trailing" secondItem="tVa-ib-G4a" secondAttribute="trailing" id="yGe-jF-fl5"/>
+                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="ylZ-8O-nRS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="A7p-XQ-B1t"/>
+                                <exclude reference="BC6-G1-6Xi"/>
+                                <exclude reference="VEI-wO-ram"/>
+                                <exclude reference="mDV-5H-eGc"/>
+                                <exclude reference="uCJ-Ij-oYs"/>
+                                <exclude reference="vFp-BX-NJf"/>
                                 <exclude reference="SKG-cQ-HH8"/>
                                 <exclude reference="jLH-hh-A9k"/>
                                 <exclude reference="pVR-1h-NMu"/>
                                 <exclude reference="wlF-jD-baP"/>
+                                <exclude reference="ylZ-8O-nRS"/>
+                                <exclude reference="5ej-Ys-dRs"/>
                                 <exclude reference="o9z-1G-BuD"/>
+                                <exclude reference="oJX-Gv-NHR"/>
                             </mask>
                         </variation>
                     </view>
