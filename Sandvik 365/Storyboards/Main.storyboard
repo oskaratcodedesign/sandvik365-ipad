@@ -12,6 +12,9 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -109,13 +112,14 @@ YOU CAN COUNT ON.</string>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-ch-kaG">
-                                                <rect key="frame" x="432" y="350" width="82" height="82"/>
-                                                <state key="normal" image="sandvik_play">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiJ-FI-2f6">
+                                                <rect key="frame" x="314" y="150" width="246" height="82"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                <state key="normal" title="CRUSHER RISK CALCULATOR" image="sandvik_calc">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="PpG-ih-rpJ"/>
+                                                    <segue destination="qo5-Vm-f4B" kind="show" identifier="RoiCrusherSelectionViewController" id="TX1-AZ-x0F"/>
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
@@ -132,13 +136,21 @@ YOU CAN COUNT ON.</string>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiJ-FI-2f6">
-                                                <rect key="frame" x="432" y="179" width="82" height="82"/>
-                                                <state key="normal" image="sandvik_calc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awi-i4-3Ve">
+                                                <rect key="frame" x="314" y="253" width="278" height="82"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                <state key="normal" title="ROCK DRILL UPGRADE SIMULATOR" image="sandvik_calc">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-ch-kaG">
+                                                <rect key="frame" x="314" y="366" width="196" height="82"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                <state key="normal" title="SANDVIK 365 VIDEO" image="sandvik_play">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="qo5-Vm-f4B" kind="show" identifier="RoiCrusherSelectionViewController" id="TX1-AZ-x0F"/>
+                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="PpG-ih-rpJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -148,17 +160,23 @@ YOU CAN COUNT ON.</string>
                                         <constraints>
                                             <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="0AO-Ab-1KA"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
+                                            <constraint firstItem="hTp-ch-kaG" firstAttribute="top" secondItem="Hav-AD-1zF" secondAttribute="bottom" constant="19" id="6uR-ie-84R"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
+                                            <constraint firstAttribute="trailing" secondItem="WiJ-FI-2f6" secondAttribute="trailing" constant="40" id="BRv-m7-wij"/>
+                                            <constraint firstAttribute="trailing" secondItem="hTp-ch-kaG" secondAttribute="trailing" constant="90" id="INP-v0-now"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="M8O-q8-7Xk"/>
                                             <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
                                             <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
                                             <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
+                                            <constraint firstItem="WiJ-FI-2f6" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="150" id="bAm-Ed-FT0"/>
                                             <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
                                             <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
+                                            <constraint firstAttribute="trailing" secondItem="awi-i4-3Ve" secondAttribute="trailing" constant="8" id="gvI-Kx-XW9"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
+                                            <constraint firstItem="awi-i4-3Ve" firstAttribute="top" secondItem="WiJ-FI-2f6" secondAttribute="bottom" constant="21" id="mcA-tN-lOz"/>
                                             <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                             <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
                                         </constraints>
