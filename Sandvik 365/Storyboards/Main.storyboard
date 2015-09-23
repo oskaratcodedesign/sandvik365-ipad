@@ -63,6 +63,14 @@
             </objects>
             <point key="canvasLocation" x="273" y="479"/>
         </scene>
+        <!--Roi-->
+        <scene sceneID="NMr-e8-LyS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Roi" id="qo5-Vm-f4B" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7S-QL-h9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="-410"/>
+        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="Gbd-TK-02b">
             <objects>
@@ -101,6 +109,15 @@ YOU CAN COUNT ON.</string>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-ch-kaG">
+                                                <rect key="frame" x="432" y="350" width="82" height="82"/>
+                                                <state key="normal" image="sandvik_play">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="PpG-ih-rpJ"/>
+                                                </connections>
+                                            </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
                                                 <rect key="frame" x="269" y="447" width="63" height="73"/>
                                                 <animations/>
@@ -115,6 +132,15 @@ YOU CAN COUNT ON.</string>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiJ-FI-2f6">
+                                                <rect key="frame" x="432" y="179" width="82" height="82"/>
+                                                <state key="normal" image="sandvik_calc">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="qo5-Vm-f4B" kind="show" identifier="RoiCrusherSelectionViewController" id="TX1-AZ-x0F"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,9 +378,6 @@ YOU CAN COUNT ON.</string>
                                 <state key="normal" image="sandvik_calc">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="dJ0-qd-UOK" kind="custom" identifier="RoiSelectionViewController" customClass="RBStoryboardPushSegue" id="7Gd-r7-Z2o"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,28 +412,7 @@ YOU CAN COUNT ON.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="499"/>
-        </scene>
-        <!--Storyboard Link-->
-        <scene sceneID="86A-La-u9v">
-            <objects>
-                <viewController id="dJ0-qd-UOK" customClass="RBStoryboardLink" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rsz-S6-3XX"/>
-                        <viewControllerLayoutGuide type="bottom" id="a2G-UG-eLO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sIK-0d-Qjw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Roi"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3fc-fi-xbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3314" y="168"/>
+            <point key="canvasLocation" x="2421" y="55"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="aVg-Lp-tFe">
@@ -428,7 +430,7 @@ YOU CAN COUNT ON.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJI-vR-KWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3286" y="889"/>
+            <point key="canvasLocation" x="2450" y="1109"/>
         </scene>
     </scenes>
     <resources>
@@ -439,4 +441,7 @@ YOU CAN COUNT ON.</string>
         <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PpG-ih-rpJ"/>
+    </inferredMetricsTieBreakers>
 </document>
