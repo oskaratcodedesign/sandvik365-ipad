@@ -22,6 +22,10 @@ class RoiCalculatorViewController: UIViewController {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         roiGraphView.selectedROIInput = selectedROICalculator.input
         setProfitLabel()
     }
