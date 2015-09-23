@@ -627,6 +627,7 @@ PLANNING SERVICES</string>
                         <outlet property="profitLabel" destination="jt7-CD-ogG" id="bFU-aq-pjO"/>
                         <outlet property="rampUpButton" destination="TDu-fd-XVR" id="OtC-WB-mo0"/>
                         <outlet property="roiGraphView" destination="IQE-cD-gCF" id="5Fm-NC-qHG"/>
+                        <outlet property="titleLabel" destination="6tO-Bv-YgK" id="bUG-Uk-c1i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmC-5r-cN8" userLabel="First Responder" sceneMemberID="firstResponder"/>

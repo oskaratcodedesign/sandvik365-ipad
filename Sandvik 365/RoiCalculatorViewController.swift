@@ -17,11 +17,24 @@ class RoiCalculatorViewController: UIViewController {
     @IBOutlet weak var rampUpButton: UIButton!
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var maintenenceButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
+        if (selectedROICalculator.input as? ROICrusherInput != nil) {
+            titleLabel.text = NSLocalizedString("POSSIBLE SAVINGS", comment: "")
+        }
+        else if (selectedROICalculator.input as? ROIRockDrillInput != nil) {
+            titleLabel.text = NSLocalizedString("INCREASED REVENUE DUE TO INCREASED ORE OUTPUT", comment: "")
+            //TODO temp stuff
+            maintenenceButton.hidden = true
+            rampUpButton.setTitle("RD520", forState: .Normal)
+            
+            conditionButton.setAttributedTitle(nil, forState: .Normal)
+            conditionButton.setTitle("RD525", forState: .Normal)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,12 +47,18 @@ class RoiCalculatorViewController: UIViewController {
         if let input = selectedROICalculator.input as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .RampUp, selectedButton: sender)
         }
+        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+            controlRockDrillProducts(input, selectedProduct: .RD520, selectedButton: sender)
+        }
         setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
         if let input = selectedROICalculator.input as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .ConditionInspection, selectedButton: sender)
+        }
+        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+            controlRockDrillProducts(input, selectedProduct: .RD525, selectedButton: sender)
         }
         setProfitLabel()
     }
@@ -54,6 +73,24 @@ class RoiCalculatorViewController: UIViewController {
     @IBAction func protectiveAction(sender: UIButton) {
         //roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
         setProfitLabel()
+    }
+    
+    private func controlRockDrillProducts(input: ROIRockDrillInput, var selectedProduct: ROIRockDrillProduct, selectedButton: UIButton) {
+        selectedButton.selected = !selectedButton.selected
+        
+        if selectedProduct == .RD520 {
+            conditionButton.selected = false
+        }
+        else if selectedProduct == .RD525 {
+            rampUpButton.selected = false
+        }
+        
+        if !selectedButton.selected {
+            selectedProduct = .None
+        }
+        
+        input.product = selectedProduct
+        roiGraphView.selectedROIInput = input
     }
     
     private func controlCrusherServices(input: ROICrusherInput, selectedService: ROICrusherService, selectedButton: UIButton) {
