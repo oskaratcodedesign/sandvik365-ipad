@@ -108,13 +108,13 @@
                                 </variation>
                             </view>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                <rect key="frame" x="235" y="420" width="130" height="160"/>
+                                <rect key="frame" x="270" y="420" width="60" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="0.0" width="120" height="160"/>
+                                        <rect key="frame" x="-20" y="0.0" width="100" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
-                                            <constraint firstAttribute="width" constant="120" id="oxj-98-Ocg"/>
+                                            <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -124,19 +124,19 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="leading" constant="5" id="1sb-dh-WZ9"/>
-                                    <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" secondItem="qZr-V3-Kiy" secondAttribute="leading" priority="999" constant="5" id="3Kc-85-FGd"/>
+                                    <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="leading" constant="-20" id="1sb-dh-WZ9"/>
+                                    <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" secondItem="qZr-V3-Kiy" secondAttribute="leading" priority="999" constant="-20" id="3Kc-85-FGd"/>
                                     <constraint firstAttribute="centerX" secondItem="WUG-T4-S4q" secondAttribute="centerX" id="5Hr-e8-8ko"/>
                                     <constraint firstAttribute="bottom" secondItem="WUG-T4-S4q" secondAttribute="bottom" constant="5" id="8ls-Lu-bQc"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="top" id="B2f-KD-qfZ"/>
                                     <constraint firstAttribute="bottom" secondItem="WUG-T4-S4q" secondAttribute="bottom" id="DET-87-CXm"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WUG-T4-S4q" secondAttribute="trailing" constant="5" id="EHF-CQ-P1W"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WUG-T4-S4q" secondAttribute="trailing" constant="-20" id="EHF-CQ-P1W"/>
                                     <constraint firstAttribute="height" constant="150" id="EnO-Cd-0y3"/>
                                     <constraint firstAttribute="bottom" secondItem="WUG-T4-S4q" secondAttribute="bottom" id="Jcf-B9-MAJ"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="SPa-fF-YUF"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="top" id="XUg-LM-JiO"/>
                                     <constraint firstAttribute="width" constant="600" id="bAL-du-CM6"/>
-                                    <constraint firstAttribute="trailing" secondItem="WUG-T4-S4q" secondAttribute="trailing" priority="999" constant="5" id="vtk-ad-ULE"/>
+                                    <constraint firstAttribute="trailing" secondItem="WUG-T4-S4q" secondAttribute="trailing" priority="999" constant="-20" id="vtk-ad-ULE"/>
                                     <constraint firstAttribute="height" constant="100" id="w8W-Fx-aeE"/>
                                 </constraints>
                                 <variation key="default">
