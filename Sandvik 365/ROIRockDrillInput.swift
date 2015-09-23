@@ -103,7 +103,7 @@ class ROIRockDrillInput: ROIInput {
     
     var product: ROIRockDrillProduct = .None
     let standardMeterHour: Double = 112.5 / 2
-    
+    let months: Int = 12
     
     private func allInputs() -> [ROIRockDrillInputValue] {
         return [typeOfOre, commodityPrice, oreConcentration, utilizationRate, oreGravity, holesInAFace, drillFaceWidth, drillFaceHeight, feedLenght, numberOfBooms]
@@ -118,8 +118,8 @@ class ROIRockDrillInput: ROIInput {
     }
     
     private func meterDrilledBlast() -> Double {
-        if let hf = holesInAFace.value as? Double, fl = feedLenght.value as? Double {
-            return hf * fl
+        if let hf = holesInAFace.value as? UInt, fl = feedLenght.value as? Double {
+            return Double(hf) * fl
         }
         return 0
     }
@@ -180,15 +180,23 @@ class ROIRockDrillInput: ROIInput {
     }
     
     override func maxTotal() -> Double {
-        return metersDrilledYearlyAfter()
+        let currentProduct = product
+        product = .RD525
+        let result = tonnageOutputAfter()
+        product = currentProduct
+        return result
     }
     
     override func originalTotal() -> [Int] {
-        preconditionFailure("This method must be overridden")
+        let t = Int(tonnageOutputBefore())
+        let totals = [Int](count: months, repeatedValue: t)
+        return totals
     }
     
     override func calculatedTotal() -> [Int] {
-        preconditionFailure("This method must be overridden")
+        let t = Int(tonnageOutputAfter())
+        let totals = [Int](count: months, repeatedValue: t)
+        return totals
     }
 
     override func allTitles() -> [String] {
@@ -308,6 +316,9 @@ class ROIRockDrillInput: ROIInput {
             let attrString = NSMutableAttributedString(string: String(numberOfBooms.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             return attrString
         }
-
+    }
+    
+    override func graphScale() -> CGFloat {
+        return 0.5
     }
 }

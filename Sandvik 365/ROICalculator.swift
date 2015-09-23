@@ -40,6 +40,10 @@ class ROIInput {
     func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
         preconditionFailure("This method must be overridden")
     }
+    
+    func graphScale() -> CGFloat {
+        preconditionFailure("This method must be overridden")
+    }
 }
 
 class ROICalculator {

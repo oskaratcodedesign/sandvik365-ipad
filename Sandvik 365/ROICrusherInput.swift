@@ -275,35 +275,10 @@ class ROICrusherInput: ROIInput {
                 }
             }
         }
-
-        /*for
-        switch service {
-        case .RampUp:
-            totals = originalTotal()
-            let newStartMonth = startMonth - 1
-            totals[Int(newStartMonth)] = totals.last!
-            return totals // only shows timespan
-        case .MaintenancePlanning:
-            for i in 0...months-1 {
-                if i >= startMonth-1 {
-                    totals.append(t)
-                }
-                else {
-                    totals.append(0)
-                }
-            }
-            return totals
-        case .ConditionInspection:
-            for i in 0...months-1 {
-                if i >= startMonth-1 {
-                    totals.append(t)
-                }
-                else {
-                    totals.append(0)
-                }
-            }
-            return totals
-        }*/
         return totals
+    }
+    
+    override func graphScale() -> CGFloat {
+        return 2
     }
 }

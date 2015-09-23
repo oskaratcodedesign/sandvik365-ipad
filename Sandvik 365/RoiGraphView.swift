@@ -56,15 +56,19 @@ class RoiGraphView: UIView {
         
         let xSpace = xGraph.bounds.size.width / CGFloat(values.count)
         let height = graphView.bounds.size.height
-        let yPValue = height / 2 / CGFloat(selectedROIInput.maxTotal())
+        let yPValue = height / selectedROIInput.graphScale() / CGFloat(selectedROIInput.maxTotal())
         
         let path = UIBezierPath()
         var x = xSpace
         
+        if values.first > 0 {
+            //straight
+            x = 0
+        }
         path.moveToPoint(CGPointMake(0, height))
         for value in values {
             if value >= 0 {
-                let y = value == 0 ? height : height / 2 - (CGFloat(value) * yPValue)
+                let y = value == 0 ? height : height / selectedROIInput.graphScale() - (CGFloat(value) * yPValue)
                 path.addLineToPoint(CGPointMake(x, y))
             }
             else {
