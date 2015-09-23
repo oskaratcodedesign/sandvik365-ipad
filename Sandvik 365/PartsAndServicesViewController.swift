@@ -30,7 +30,7 @@ class PartsAndServicesViewController: UIViewController {
         }
         else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedPart = selectedPart
+                vc.selectedPartType = selectedPart.partType
             }
         }
     }

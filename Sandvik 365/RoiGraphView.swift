@@ -14,7 +14,11 @@ class RoiGraphView: UIView {
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
     
-    var selectedROICalculator: ROICalculator!
+    var selectedROIInput: ROIInput! {
+        didSet {
+            drawGraphs()
+        }
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -24,7 +28,7 @@ class RoiGraphView: UIView {
         drawGraphs()
     }
     
-    func setSelectedService(set: Bool, service: ROIService)
+    /*func setSelectedService(set: Bool, service: ROIService)
     {
         if set {
             selectedROICalculator.services.insert(service)
@@ -33,39 +37,47 @@ class RoiGraphView: UIView {
             selectedROICalculator.services.remove(service)
         }
         drawGraphs()
-    }
+    }*/
     
     private func drawGraphs() {
         
         for view in graphView.subviews {
             view.removeFromSuperview()
         }
-        drawGraph(selectedROICalculator.calculatedProfit(), color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        drawGraph(selectedROICalculator.originalProfit(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
+        drawGraph(selectedROIInput.calculatedTotal(), color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
+        drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
     }
     
-    private func drawGraph(values: [UInt], color: UIColor)
+    private func drawGraph(values: [Int], color: UIColor)
     {
+        if values.isEmpty {
+            return
+        }
+        
         let xSpace = xGraph.bounds.size.width / CGFloat(values.count)
         let height = graphView.bounds.size.height
-        let yPValue = height / 3000 //TODO some max value
+        let yPValue = height / 2 / CGFloat(selectedROIInput.maxTotal())
         
-        var points: [CGPoint]
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         var x = xSpace
         
         path.moveToPoint(CGPointMake(0, height))
         for value in values {
-            let y = height - CGFloat(value) * yPValue
-            path.addLineToPoint(CGPointMake(x, y))
+            if value >= 0 {
+                let y = value == 0 ? height : height / 2 - (CGFloat(value) * yPValue)
+                path.addLineToPoint(CGPointMake(x, y))
+            }
+            else {
+                path.moveToPoint(CGPointMake(x+xSpace, height))//move forward so we can produce a straight line once value is changed
+            }
             x += xSpace
         }
         path.addLineToPoint(CGPointMake(x-xSpace, height))
         path.closePath()
-        var shapeLAyer = CAShapeLayer()
+        let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = path.CGPath
         shapeLAyer.fillColor = color.CGColor
-        var view = UIView()
+        let view = UIView()
         view.layer.addSublayer(shapeLAyer)
         graphView.addSubview(view)
         
@@ -80,7 +92,7 @@ class RoiGraphView: UIView {
         let space = height*0.2
         var y = space
         while y < height-2 {
-            var imageView = UIImageView(frame: CGRectMake(-10, y, 10, 2))
+            let imageView = UIImageView(frame: CGRectMake(-10, y, 10, 2))
             imageView.backgroundColor = UIColor.whiteColor()
             yGraph.addSubview(imageView)
             y += space
@@ -95,7 +107,7 @@ class RoiGraphView: UIView {
         let space = lenght*0.1
         var x = space
         while x < lenght-2 {
-            var imageView = UIImageView(frame: CGRectMake(x, 0, 2, 10))
+            let imageView = UIImageView(frame: CGRectMake(x, 0, 2, 10))
             imageView.backgroundColor = UIColor.whiteColor()
             xGraph.addSubview(imageView)
             x += space

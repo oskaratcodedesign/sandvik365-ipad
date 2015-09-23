@@ -77,9 +77,20 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROIInput(), services: Set<ROIService>()))
+                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROICrusherInput()))
                     vc.navigationItem.title = view.label.text
                 }
+            }
+        }
+        else if segue.identifier == "RoiCrusherSelectionViewController" {
+            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+                vc.selectedROICalculator = ROICalculator(input: ROICrusherInput())
+                vc.navigationItem.title = NSLocalizedString("CRUSHER RISK CALCULATOR", comment: "")
+            }
+        }
+        else if segue.identifier == "VideoViewController" {
+            if let vc = segue.destinationViewController as? VideoViewController {
+                vc.selectedPartType = .BulkMaterialHandling
             }
         }
     }
