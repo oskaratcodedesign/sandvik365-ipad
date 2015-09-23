@@ -332,7 +332,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="50" y="0.0" width="119" height="48"/>
+                                                <rect key="frame" x="95" y="0.0" width="119" height="48"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
@@ -373,13 +373,17 @@ PROFIT BY UP TO</string>
                                             <constraint firstItem="6tO-Bv-YgK" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" id="KcO-jG-wLC"/>
                                             <constraint firstAttribute="trailing" secondItem="6tO-Bv-YgK" secondAttribute="trailing" constant="329" id="O6q-vO-80u"/>
                                             <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="6tO-Bv-YgK" secondAttribute="trailing" constant="50" id="RC8-aR-3m1"/>
+                                            <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="219" id="WWn-b0-J4G"/>
                                             <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="174" id="c9C-G8-72q"/>
                                             <constraint firstAttribute="trailing" secondItem="NFb-Yh-3ka" secondAttribute="trailing" constant="5" id="hDa-19-M1K"/>
                                             <constraint firstAttribute="bottom" secondItem="NFb-Yh-3ka" secondAttribute="bottom" constant="5" id="oGm-Rv-2wA"/>
+                                            <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="6tO-Bv-YgK" secondAttribute="trailing" constant="5" id="pL3-Bu-1Tn"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="ErG-7b-bqb"/>
                                                 <exclude reference="O6q-vO-80u"/>
+                                                <exclude reference="RC8-aR-3m1"/>
                                                 <exclude reference="c9C-G8-72q"/>
                                             </mask>
                                         </variation>

@@ -24,10 +24,10 @@ class RoiCalculatorViewController: UIViewController {
         loadServiceButtons()
         setBorderOnDetailButton()
         if (selectedROICalculator.input as? ROICrusherInput != nil) {
-            titleLabel.text = NSLocalizedString("POSSIBLE SAVINGS", comment: "")
+            titleLabel.text = NSLocalizedString("POSSIBLE\nSAVINGS", comment: "")
         }
         else if (selectedROICalculator.input as? ROIRockDrillInput != nil) {
-            titleLabel.text = NSLocalizedString("INCREASED REVENUE DUE TO INCREASED ORE OUTPUT", comment: "")
+            titleLabel.text = NSLocalizedString("INCREASED REVENUE DUE\nTO INCREASED ORE OUTPUT", comment: "")
             //TODO temp stuff
             maintenenceButton.hidden = true
             rampUpButton.setTitle("RD520", forState: .Normal)
