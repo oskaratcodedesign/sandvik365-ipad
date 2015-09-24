@@ -165,15 +165,27 @@ class ROIRockDrillInput: ROIInput {
 
     }
     
+    private func shanks() -> Double {
+        return (metersDrilledYearlyAfter() / (1200 * ( 1 + 0.4)))-(metersDrilledYearlyAfter()/1200)
+    }
+    
+    private func bits() -> Double {
+        return (metersDrilledYearlyAfter() / (225 * ( 1 + 0.17)))-(metersDrilledYearlyAfter()/225)
+    }
+    
+    func shanksAndBitsSavings() -> Double {
+        return (shanks() * 167 + 62 * bits()) * -1
+    }
+    
     override func total() -> Double {
         switch typeOfOre.value as! OreType  {
         case .Gold:
             if let oc = oreConcentration.value as? UInt, cp = commodityPrice.value as? UInt {
-                return ((tonnageOutputAfter() - tonnageOutputBefore()) * Double(oc)) * OreType.Gold.rawValue * Double(cp)
+                return (((tonnageOutputAfter() - tonnageOutputBefore()) * Double(oc)) * OreType.Gold.rawValue * Double(cp)) + shanksAndBitsSavings()
             }
         case .Copper:
             if let oc = oreConcentration.value as? UInt, cp = commodityPrice.value as? UInt {
-                return ((tonnageOutputAfter() - tonnageOutputBefore()) * OreType.Copper.rawValue * (Double(oc)) / 100) *  Double(cp)
+                return (((tonnageOutputAfter() - tonnageOutputBefore()) * OreType.Copper.rawValue * (Double(oc)) / 100) *  Double(cp)) + shanksAndBitsSavings()
             }
         }
         return 0
