@@ -21,7 +21,6 @@
 		48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */; };
 		48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */; };
 		48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */; };
-		48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */; };
 		48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */; };
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
@@ -80,7 +79,6 @@
 		48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		48FDEAA01B5F8CEC00C5AFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		48FDEAA61B5F8CEC00C5AFE6 /* Sandvik 365Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sandvik 365Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FDEAAB1B5F8CEC00C5AFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sandvik_365Tests.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
 				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
 				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
-				48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
 				48FCED4C1B74AC47002D45A0 /* Sandvik-Bridging-Header.h */,
 			);
@@ -385,7 +382,6 @@
 				F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
-				48FDEAA11B5F8CEC00C5AFE6 /* LaunchScreen.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
@@ -502,17 +498,6 @@
 			targetProxy = 48FDEAA71B5F8CEC00C5AFE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		48FDEA9F1B5F8CEC00C5AFE6 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48FDEAA01B5F8CEC00C5AFE6 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48FDEAAE1B5F8CEC00C5AFE6 /* Debug */ = {
