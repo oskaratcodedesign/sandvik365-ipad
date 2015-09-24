@@ -17,7 +17,7 @@ enum ChangeInput{
 
 class ROIInput {
     
-    func total() -> Double {
+    func total() -> Int {
         preconditionFailure("This method must be overridden")
     }
     

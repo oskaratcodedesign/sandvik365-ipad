@@ -22,13 +22,13 @@ class RoiCrusherDetailView: NibDesignable {
         
         let currentServices = input.services
         input.services = [.RampUp]
-        let rt = Int(input.total())
+        let rt = input.total()
         rampUpLabel.text = "$" + String(rt);
         input.services = [.ConditionInspection]
-        let ct = Int(input.total())
+        let ct = input.total()
         conditionLabel.text = "$" + String(ct);
         input.services = [.MaintenancePlanning]
-        let mt = Int(input.total()) - ct
+        let mt = input.total() - ct
         maintenanceLabel.text = "$" + String(mt);
         input.services = currentServices
         
