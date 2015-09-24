@@ -112,7 +112,7 @@ class ROICrusherInput: ROIInput {
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
                 if value >= 0 {
-                    finishedProduct = .Capacity(UInt(value))
+                    finishedProduct = .FinishedProduct(UInt(value))
                 }
             }
             let valueType: String = "%"
