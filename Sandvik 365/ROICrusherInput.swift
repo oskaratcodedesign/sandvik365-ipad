@@ -177,11 +177,17 @@ class ROICrusherInput: ROIInput {
         return 0
     }
     
-    override func total() -> Double {
-        var result: Double = 0
+    override func total() -> Int {
+        var result: Int = 0
         if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
             let r = recoveredProductAfterProcessing()
-            result = (r * Double(o)) - (r * Double(p))
+            let res = (r * Double(o)) - (r * Double(p))
+            if res > Double(Int.max) {
+                result = Int.max
+            }
+            else {
+                result = Int(res)
+            }
         }
         return result
     }
@@ -202,7 +208,7 @@ class ROICrusherInput: ROIInput {
         let currentServices = services
         services = []
         
-        let t = Int(total())
+        let t = total()
         var totals = [Int]()
         for i in 0...months-1 {
             if i >= startMonth {
@@ -217,7 +223,7 @@ class ROICrusherInput: ROIInput {
     }
     
     override func calculatedTotal() -> [Int] {
-        var t = Int(total())
+        var t = total()
         var totals = [Int]()
         
         if services.contains(.RampUp) {
@@ -227,7 +233,7 @@ class ROICrusherInput: ROIInput {
             if services.contains(.MaintenancePlanning) {
                 let currentServices = services
                 services = [.MaintenancePlanning]
-                t = Int(total())
+                t = total()
                 for i in 0...months-1 {
                     if i >= newStartMonth {
                         totals[Int(i)] = t
@@ -241,7 +247,7 @@ class ROICrusherInput: ROIInput {
             else if services.contains(.ConditionInspection){
                 let currentServices = services
                 services = [.ConditionInspection]
-                t = Int(total())
+                t = total()
                 for i in 0...months-1 {
                     if i >= newStartMonth {
                         totals[Int(i)] = t

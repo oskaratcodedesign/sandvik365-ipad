@@ -29,7 +29,7 @@ class RoiRockDrillDetailView: NibDesignable {
         tonnageBeforeLabel.text = String(Int(input.tonnageOutputBefore())) + "t";
         tonnageAfterLabel.text = String(Int(input.tonnageOutputAfter())) + "t";
         
-        let total = Int(input.total())
+        let total = input.total()
         let shanksAndBitsSavings = Int(input.shanksAndBitsSavings())
         oreOutPutLabel.text = "$" + String(total - shanksAndBitsSavings);
         shanksLabel.text = "$" + String(shanksAndBitsSavings);
