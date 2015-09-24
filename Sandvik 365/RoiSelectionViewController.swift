@@ -42,7 +42,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         currentSelectionButton.fillDot()
         prevButton.hidden = true
         loadSelectionButtons()
-        titleLabel.text = titles[0]
+        titleLabel.text = titles[0].uppercaseString
     }
 
     @IBAction func nextAction(sender: UIButton) {
@@ -64,7 +64,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 let nextViewControllers: [UIViewController] = [nextController]
                 pageViewController?.setViewControllers(nextViewControllers, direction: left ?UIPageViewControllerNavigationDirection.Reverse: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                 if !left {
-                    selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1])
+                    selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1].uppercaseString)
                 }
                 if let numberView = currentController.roiContentView as? RoiInputView {
                     roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.attributedText!)
@@ -126,7 +126,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             viewResultButton.hidden = true
             hasVisitedLastPage = true
         }
-        titleLabel.text = titles[itemIndex]
+        titleLabel.text = titles[itemIndex].uppercaseString
     }
     
     private func loadSelectionButtons() {
