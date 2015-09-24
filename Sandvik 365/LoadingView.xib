@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
+                <outlet property="logoImageView" destination="ziY-LG-fCV" id="z1o-4c-OND"/>
                 <outlet property="numberLabel" destination="iSO-pU-1t0" id="msi-3c-cpd"/>
             </connections>
         </placeholder>
@@ -31,14 +32,22 @@
                     <color key="textColor" red="0.8901960784313725" green="0.43137254901960786" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-LG-fCV">
+                    <rect key="frame" x="153" y="246" width="295" height="108"/>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="iSO-pU-1t0" secondAttribute="centerX" id="JwG-EA-AxX"/>
                 <constraint firstAttribute="centerY" secondItem="iSO-pU-1t0" secondAttribute="centerY" id="KY7-3I-hnG"/>
+                <constraint firstItem="ziY-LG-fCV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eE5-BT-Ig7"/>
+                <constraint firstItem="ziY-LG-fCV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qab-IH-yLa"/>
             </constraints>
             <point key="canvasLocation" x="619" y="544"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo" width="295" height="108"/>
+    </resources>
 </document>

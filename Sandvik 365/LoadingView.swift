@@ -12,6 +12,7 @@ import NibDesignable
 
 class LoadingView : NibDesignable {
     
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     let circlePathLayer = CAShapeLayer()
     var progressTimer: NSTimer?
@@ -58,9 +59,14 @@ class LoadingView : NibDesignable {
             progressTimer?.invalidate()
             progressTimer = nil
             let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-                Int64(1 * Double(NSEC_PER_SEC)))
+                Int64(0.5 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
-                self.removeFromSuperview()
+                self.logoImageView.hidden = false
+                let newdelayTime = dispatch_time(DISPATCH_TIME_NOW,
+                    Int64(1 * Double(NSEC_PER_SEC)))
+                dispatch_after(newdelayTime, dispatch_get_main_queue()) {
+                    self.removeFromSuperview()
+                }
             }
             return
         } else if (progress < 0) {
