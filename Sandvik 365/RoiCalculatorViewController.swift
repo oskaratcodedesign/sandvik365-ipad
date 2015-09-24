@@ -12,12 +12,15 @@ class RoiCalculatorViewController: UIViewController {
 
     var selectedROICalculator: ROICalculator!
     @IBOutlet weak var roiGraphView: RoiGraphView!
-    @IBOutlet weak var detailButton: UIButton!
+    @IBOutlet weak var seeDetailButton: UIButton!
+    @IBOutlet weak var closeDetailButton: UIButton!
     @IBOutlet weak var profitLabel: UILabel!
     @IBOutlet weak var rampUpButton: UIButton!
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var maintenenceButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsContainerView: UIView!
+    @IBOutlet weak var graphContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +77,24 @@ class RoiCalculatorViewController: UIViewController {
         //roiGraphView.setSelectedService(sender.selected, service: ROIService.Protective)
         setProfitLabel()
     }
+    @IBAction func closeDetailAction(sender: UIButton) {
+        for view in detailsContainerView.subviews {
+            view.removeFromSuperview()
+        }
+        graphContainerView.hidden = false
+        seeDetailButton.hidden = false
+        detailsContainerView.hidden = true
+        closeDetailButton.hidden = true
+    }
+    @IBAction func seeDetailAction(sender: UIButton) {
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            detailsContainerView.addSubview(RoiCrusherDetailView(frame: detailsContainerView.frame, input: input))
+        }
+        graphContainerView.hidden = true
+        seeDetailButton.hidden = true
+        detailsContainerView.hidden = false
+        closeDetailButton.hidden = false
+    }
     
     private func controlRockDrillProducts(input: ROIRockDrillInput, var selectedProduct: ROIRockDrillProduct, selectedButton: UIButton) {
         selectedButton.selected = !selectedButton.selected
@@ -124,10 +145,10 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     private func setBorderOnDetailButton() {
-        let layer = self.detailButton.layer
+        let layer = self.seeDetailButton.layer
         layer.masksToBounds = true
         layer.borderWidth = 1
-        layer.borderColor = self.detailButton.titleLabel?.textColor.CGColor
+        layer.borderColor = self.seeDetailButton.titleLabel?.textColor.CGColor
     }
     
     private func loadServiceButtons() {
