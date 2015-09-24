@@ -12,8 +12,9 @@ protocol RoiSelectionContentViewControllerDelegate {
     func roiValueDidChange(itemIndex: Int, object :AnyObject)
 }
 
-class RoiSelectionContentViewController: UIViewController {
+class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var spinnerScrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator!
@@ -21,6 +22,9 @@ class RoiSelectionContentViewController: UIViewController {
     var toggleTimer: NSTimer?
     
     var delegate: RoiSelectionContentViewControllerDelegate?
+    
+    var contentOffsetLast: CGPoint?
+    let swipeOffset: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,39 @@ class RoiSelectionContentViewController: UIViewController {
         numberView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
         roiContentView = numberView;
+        spinnerScrollView.contentSize = CGSizeMake(spinnerScrollView.frame.width, spinnerScrollView.frame.height*40)
+        spinnerScrollView.contentOffset = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+        spinnerScrollView.delegate = self
+        contentOffsetLast = spinnerScrollView.contentOffset
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        print(contentOffsetLast!.y)
+        let dy = scrollView.contentOffset.y - contentOffsetLast!.y
+        print(dy)
+        if dy != 0 && scrollView.contentOffset.y > 0{
+            
+            if dy > swipeOffset {
+                toggleUp()
+                contentOffsetLast = scrollView.contentOffset
+            }
+            else if dy < -swipeOffset {
+                toggleDown()
+                contentOffsetLast = scrollView.contentOffset
+            }
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        print("DidEndDecelerating")
+        scrollView.bounds.origin = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+        contentOffsetLast = scrollView.contentOffset
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        spinnerScrollView.bounds.origin = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+        contentOffsetLast = spinnerScrollView.contentOffset
     }
     
     private func fillConstraints(fromView: UIView, toView: UIView) -> [NSLayoutConstraint] {
@@ -48,7 +85,7 @@ class RoiSelectionContentViewController: UIViewController {
     @IBAction func toggleDown(sender: UIButton) {
         toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
     }
-
+    
     @IBAction func toggleLeft(sender: UIButton) {
        
     }
