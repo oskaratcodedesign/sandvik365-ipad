@@ -22,6 +22,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -69,7 +70,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="prevAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="Jlx-Qb-q4z"/>
-                                    <action selector="toggleLeft:" destination="50B-Ue-aKk" eventType="touchUpInside" id="M3l-hS-Jja"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-ib-G4a">
@@ -93,7 +93,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="nextAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="ZgJ-tX-HNm"/>
-                                    <action selector="toggleRight:" destination="50B-Ue-aKk" eventType="touchUpInside" id="guy-Lp-e9A"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfv-Rj-qtp">
@@ -155,6 +154,29 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-bc-FmT">
+                                <rect key="frame" x="510" y="534" width="70" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="IPV-Ag-afG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LLN-T7-Glv"/>
+                                    <constraint firstAttribute="width" constant="150" id="Nug-3x-FRd"/>
+                                    <constraint firstAttribute="width" constant="70" id="e4k-dw-Qt7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
+                                <state key="normal" title="  VIEW RESULT">
+                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LLN-T7-Glv"/>
+                                        <exclude reference="Nug-3x-FRd"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="viewResultAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="9L3-cu-J3C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -163,6 +185,7 @@
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="2pM-qy-itj"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="4G3-44-XBg"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="aqm-DF-q37" secondAttribute="trailing" id="5ej-Ys-dRs"/>
+                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Jep-bc-FmT" secondAttribute="bottom" constant="60" id="9Nl-xM-Gh0"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="A7p-XQ-B1t"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="BC6-G1-6Xi"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="BfW-Hh-tPh"/>
@@ -175,8 +198,10 @@
                             <constraint firstAttribute="trailing" secondItem="Ft3-3w-Z2w" secondAttribute="trailing" id="UOi-KT-7qF"/>
                             <constraint firstAttribute="trailing" secondItem="aqm-DF-q37" secondAttribute="trailing" id="VEI-wO-ram"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="50" id="Vsm-YV-JOe"/>
+                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Jep-bc-FmT" secondAttribute="bottom" constant="20" id="X79-oX-DEx"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="YAq-WA-kX2"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" constant="20" id="YFg-qf-XZM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jep-bc-FmT" secondAttribute="trailing" id="ZD4-jp-sTe"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ZLG-Y2-T6S"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="bpU-98-QoA"/>
@@ -193,6 +218,7 @@
                             <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="uCJ-Ij-oYs"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="vFp-BX-NJf"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" constant="345" id="wlF-jD-baP"/>
+                            <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="Jep-bc-FmT" secondAttribute="trailing" constant="5" id="xIU-hn-3ic"/>
                             <constraint firstItem="d7a-fs-vKI" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="yCE-Kq-NY5"/>
                             <constraint firstAttribute="trailing" secondItem="tVa-ib-G4a" secondAttribute="trailing" id="yGe-jF-fl5"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="ylZ-8O-nRS"/>
@@ -205,12 +231,14 @@
                                 <exclude reference="mDV-5H-eGc"/>
                                 <exclude reference="uCJ-Ij-oYs"/>
                                 <exclude reference="vFp-BX-NJf"/>
+                                <exclude reference="9Nl-xM-Gh0"/>
                                 <exclude reference="SKG-cQ-HH8"/>
                                 <exclude reference="jLH-hh-A9k"/>
                                 <exclude reference="pVR-1h-NMu"/>
                                 <exclude reference="wlF-jD-baP"/>
                                 <exclude reference="ylZ-8O-nRS"/>
                                 <exclude reference="5ej-Ys-dRs"/>
+                                <exclude reference="xIU-hn-3ic"/>
                                 <exclude reference="o9z-1G-BuD"/>
                                 <exclude reference="oJX-Gv-NHR"/>
                             </mask>
@@ -223,6 +251,7 @@
                         <outlet property="prevButton" destination="d7a-fs-vKI" id="5A9-Pu-LRL"/>
                         <outlet property="selectionContainer" destination="qZr-V3-Kiy" id="aBs-NT-bMR"/>
                         <outlet property="titleLabel" destination="xsz-tO-ijf" id="srP-di-3Vg"/>
+                        <outlet property="viewResultButton" destination="Jep-bc-FmT" id="e9f-YC-Zp8"/>
                         <outlet property="widthConstraint" destination="oxj-98-Ocg" id="gQP-s5-9Ke"/>
                     </connections>
                 </viewController>

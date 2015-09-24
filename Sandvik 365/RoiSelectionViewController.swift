@@ -17,11 +17,13 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var viewResultButton: UIButton!
     
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
     private var viewControllers: [UIViewController]! = [UIViewController]()
     private var titles = [String]()
+    private var hasVisitedLastPage: Bool = false
     var selectedROICalculator: ROICalculator!
 
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         view.bringSubviewToFront(selectionContainer)
         view.bringSubviewToFront(nextButton)
         view.bringSubviewToFront(prevButton)
+        view.bringSubviewToFront(viewResultButton)
         
         selectionButtons.append(currentSelectionButton)
         currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
@@ -47,6 +50,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     @IBAction func prevAction(sender: UIButton) {
         toggleLeftRight(true)
+    }
+    @IBAction func viewResultAction(sender: UIButton) {
+        goToPage(viewControllers.count-1)
     }
     
     private func toggleLeftRight(left: Bool) {
@@ -70,12 +76,16 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     
     func handleButtonSelect(button :UIButton) {
         if let index = selectionButtons.indexOf(button.superview?.superview as! RoiSelectionButton) {
-            if viewControllers.count > index {
-                let nextController = viewControllers[index]
-                let nextViewControllers: [UIViewController] = [nextController]
-                pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-                showSelectedInput(index)
-            }
+            goToPage(index)
+        }
+    }
+    
+    private func goToPage(index: Int) {
+        if viewControllers.count > index {
+            let nextController = viewControllers[index]
+            let nextViewControllers: [UIViewController] = [nextController]
+            pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            showSelectedInput(index)
         }
     }
     
@@ -102,6 +112,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
         nextButton.hidden = false
         prevButton.hidden = false
+        if hasVisitedLastPage {
+            viewResultButton.hidden = false
+        }
         currentSelectionButton.unFillDot()
         if(itemIndex < selectionButtons.count) {
             selectionButtons[itemIndex].fillDot()
@@ -110,6 +123,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         else {
             nextButton.hidden = true
             prevButton.hidden = true
+            viewResultButton.hidden = true
+            hasVisitedLastPage = true
         }
         titleLabel.text = titles[itemIndex]
     }

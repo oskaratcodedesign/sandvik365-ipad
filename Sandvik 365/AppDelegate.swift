@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             loadingView.startLoadingAnimation()
         }
     }
-
     
     private func addLoadingView() {
         if let window = self.window {
