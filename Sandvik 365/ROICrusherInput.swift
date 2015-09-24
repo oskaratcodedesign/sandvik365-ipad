@@ -96,7 +96,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "%"
             let attrString = NSMutableAttributedString(string: String(format:"%.2f", oreGrade.value as! Double) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString;
+            return attrString
         case .Capacity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -107,7 +107,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "m t/hr"
             let attrString = NSMutableAttributedString(string: String(capacity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString;
+            return attrString
         case .FinishedProduct:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -118,7 +118,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "%"
             let attrString = NSMutableAttributedString(string: String(finishedProduct.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString;
+            return attrString
         case .RecoveryRate:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -129,7 +129,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "%"
             let attrString = NSMutableAttributedString(string: String(recoveryRate.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString;
+            return attrString
         case .OrePrice:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -140,7 +140,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "$"
             let attrString = NSMutableAttributedString(string: valueType + String(orePrice.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
-            return attrString;
+            return attrString
         case .ProcessingCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -151,7 +151,7 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "$"
             let attrString = NSMutableAttributedString(string: valueType + String(processingCost.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
-            return attrString;
+            return attrString
         }
     }
     
@@ -275,35 +275,10 @@ class ROICrusherInput: ROIInput {
                 }
             }
         }
-
-        /*for
-        switch service {
-        case .RampUp:
-            totals = originalTotal()
-            let newStartMonth = startMonth - 1
-            totals[Int(newStartMonth)] = totals.last!
-            return totals // only shows timespan
-        case .MaintenancePlanning:
-            for i in 0...months-1 {
-                if i >= startMonth-1 {
-                    totals.append(t)
-                }
-                else {
-                    totals.append(0)
-                }
-            }
-            return totals
-        case .ConditionInspection:
-            for i in 0...months-1 {
-                if i >= startMonth-1 {
-                    totals.append(t)
-                }
-                else {
-                    totals.append(0)
-                }
-            }
-            return totals
-        }*/
         return totals
+    }
+    
+    override func graphScale() -> CGFloat {
+        return 2
     }
 }

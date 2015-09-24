@@ -38,10 +38,12 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         backButtonBg.hidden = true
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = false
         self.backButtonBg.alpha = 0.0
         self.backButtonBg.hidden = false
         UIView.animateWithDuration(0.25, animations: { () -> Void in
@@ -86,6 +88,12 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
                 vc.selectedROICalculator = ROICalculator(input: ROICrusherInput())
                 vc.navigationItem.title = NSLocalizedString("CRUSHER RISK CALCULATOR", comment: "")
+            }
+        }
+        else if segue.identifier == "RoiRockDrillSelectionViewController" {
+            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+                vc.selectedROICalculator = ROICalculator(input: ROIRockDrillInput())
+                vc.navigationItem.title = NSLocalizedString("ROCK DRILL UPGRADE SIMULATOR", comment: "")
             }
         }
         else if segue.identifier == "VideoViewController" {
