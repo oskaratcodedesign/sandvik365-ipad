@@ -31,12 +31,12 @@
 		F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
-		F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
+		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; settings = {ASSET_TAGS = (); }; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; settings = {ASSET_TAGS = (); }; };
 		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -95,9 +95,9 @@
 		F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150813.m4v; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
+		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
 		F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		48FDEAB61B5F8D4700C5AFE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F741D99E1B847CFB00010E71 /* Sandvik365_Extern_150813.m4v */,
+				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
@@ -376,9 +376,9 @@
 			files = (
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */,
-				F741D99F1B847D0200010E71 /* Sandvik365_Extern_150813.m4v in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */,
+				F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */,
 				F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,

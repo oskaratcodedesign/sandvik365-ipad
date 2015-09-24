@@ -16,7 +16,7 @@ enum PartType {
     
     static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, None]
     
-    static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150813"]
+    static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
     
     static func atIndex(index: Int) -> PartType {
         if index < PartType.allValues.count {
