@@ -48,7 +48,7 @@ class LoadingView : NibDesignable {
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
             Int64(1 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(3.0/365, target: self, selector: Selector("animateProgress"), userInfo: nil, repeats: true)
+            self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(2.0/365, target: self, selector: Selector("animateProgress"), userInfo: nil, repeats: true)
         }
     }
     

@@ -8,6 +8,9 @@
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
@@ -24,10 +27,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1l-wD-EAB">
-                    <rect key="frame" x="9" y="463" width="582" height="47"/>
-                    <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
-                    <state key="normal" title="TEST">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1l-wD-EAB">
+                    <rect key="frame" x="9" y="460" width="582" height="31"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
+                    <state key="normal" title="test">
                         <color key="titleColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,16 +54,19 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-2N-SFr">
-                    <rect key="frame" x="0.0" y="515" width="600" height="0.0"/>
+                    <rect key="frame" x="0.0" y="496" width="600" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="9d1-Fw-es1"/>
+                        <constraint firstAttribute="height" constant="19" id="Xdu-jx-Unw"/>
+                        <constraint firstAttribute="height" constant="20" id="hNJ-xb-El0"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="9d1-Fw-es1"/>
+                            <exclude reference="hNJ-xb-El0"/>
                         </mask>
                     </variation>
                 </label>
