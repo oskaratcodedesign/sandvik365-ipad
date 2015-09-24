@@ -142,25 +142,25 @@ class ROIRockDrillInput: ROIInput {
         return productiveHoursDay() * 0.75
     }
     
-    private func metersDrilledYearlyBefore() -> Double {
+    func metersDrilledYearlyBefore() -> Double {
         if let nb = numberOfBooms.value as? UInt {
             return standardMeterHour * percussionHoursDay() * 365 * Double(nb)
         }
         return 0
     }
     
-    private func tonnageOutputBefore() -> Double {
+    func tonnageOutputBefore() -> Double {
         return (metersDrilledYearlyBefore() / meterDrilledBlast()) * tonnesBlast()
     }
     
-    private func metersDrilledYearlyAfter() -> Double {
+    func metersDrilledYearlyAfter() -> Double {
         if product != .None {
             return metersDrilledYearlyBefore() * (1+product.rawValue)
         }
         return metersDrilledYearlyBefore()
     }
     
-    private func tonnageOutputAfter() -> Double {
+    func tonnageOutputAfter() -> Double {
         return (metersDrilledYearlyAfter() / meterDrilledBlast()) * tonnesBlast()
 
     }

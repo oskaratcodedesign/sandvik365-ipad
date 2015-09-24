@@ -3,14 +3,202 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiRockDrillDetailView" customModule="Sandvik_365" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiRockDrillDetailView" customModule="Sandvik_365" customModuleProvider="target">
+            <connections>
+                <outlet property="metersAfterLabel" destination="s5L-MW-0yq" id="lK4-BZ-nFG"/>
+                <outlet property="metersBeforeLabel" destination="QDt-Dv-rjw" id="TCE-aD-W0Z"/>
+                <outlet property="tonnageAfterLabel" destination="6UW-RM-pWK" id="IP5-V9-kWT"/>
+                <outlet property="tonnageBeforeLabel" destination="qwr-Cg-gD4" id="mBa-vw-WXH"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="eCE-CD-Vxr">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="METERS DRILLED YEARLY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke8-QP-9xU">
+                    <rect key="frame" x="0.0" y="85" width="155" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDt-Dv-rjw">
+                    <rect key="frame" x="400" y="100" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEFORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdP-sF-nDv">
+                    <rect key="frame" x="400" y="65" width="50" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5L-MW-0yq">
+                    <rect key="frame" x="400" y="100" width="200" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="gzT-QD-Smb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TONNAGE OUTPUT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9Q-bx-iMM">
+                    <rect key="frame" x="0.0" y="185" width="116" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwr-Cg-gD4">
+                    <rect key="frame" x="400" y="200" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UW-RM-pWK">
+                    <rect key="frame" x="400" y="200" width="200" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="865-XM-iXV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-6G-OMo">
+                    <rect key="frame" x="0.0" y="270" width="129" height="30"/>
+                    <string key="text">MAINTENANCE
+PLANNING SERVICES</string>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gain 7-10 days of production" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-2c-yyo">
+                    <rect key="frame" x="219" y="285" width="176" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-AA-9ei">
+                    <rect key="frame" x="600" y="300" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROTECTIVE SERVICES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XG-nb-Uek">
+                    <rect key="frame" x="0.0" y="385" width="142" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80% coverage of capital spare parts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNB-kc-N5Z">
+                    <rect key="frame" x="219" y="385" width="219" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-Ps-tV5">
+                    <rect key="frame" x="0.0" y="485" width="55" height="15"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-2U-y32">
+                    <rect key="frame" x="600" y="500" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aju-tc-OyA">
+                    <rect key="frame" x="400" y="65" width="200" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="eVX-Ax-QkG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QDt-Dv-rjw" firstAttribute="top" secondItem="WdP-sF-nDv" secondAttribute="bottom" constant="20" id="4Vy-Ja-Be9"/>
+                <constraint firstItem="Ke8-QP-9xU" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="4cM-xc-zu1"/>
+                <constraint firstItem="i9Q-bx-iMM" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="5Yj-oP-L5z"/>
+                <constraint firstItem="QDt-Dv-rjw" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="400" id="6Xp-gJ-4Aa"/>
+                <constraint firstItem="qwr-Cg-gD4" firstAttribute="top" secondItem="KDQ-AA-9ei" secondAttribute="bottom" id="8O5-RE-fV8"/>
+                <constraint firstItem="aju-tc-OyA" firstAttribute="top" secondItem="s5L-MW-0yq" secondAttribute="bottom" constant="20" id="DRd-JG-ndL"/>
+                <constraint firstItem="QDt-Dv-rjw" firstAttribute="leading" secondItem="Ke8-QP-9xU" secondAttribute="trailing" constant="219" id="EEo-U7-DYS"/>
+                <constraint firstItem="uNB-kc-N5Z" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="GGf-xg-8F4"/>
+                <constraint firstAttribute="bottom" secondItem="2XG-nb-Uek" secondAttribute="bottom" multiplier="6:4" id="Gfj-jd-s1q"/>
+                <constraint firstItem="MVf-Ps-tV5" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="Goa-5X-FQt"/>
+                <constraint firstAttribute="bottom" secondItem="MVf-Ps-tV5" secondAttribute="bottom" multiplier="6:5" id="JNf-SJ-tui"/>
+                <constraint firstAttribute="bottom" secondItem="uNB-kc-N5Z" secondAttribute="bottom" multiplier="6:4" id="JkW-y0-VjF"/>
+                <constraint firstAttribute="bottom" secondItem="KDQ-AA-9ei" secondAttribute="bottom" multiplier="6:3" id="Lcq-E2-iZX"/>
+                <constraint firstAttribute="bottom" secondItem="i9Q-bx-iMM" secondAttribute="bottom" multiplier="6:2" id="Lj8-L0-Il1"/>
+                <constraint firstAttribute="trailing" secondItem="s5L-MW-0yq" secondAttribute="trailing" id="NPP-yV-9Ix"/>
+                <constraint firstItem="WdP-sF-nDv" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="400" id="OZC-T3-es3"/>
+                <constraint firstAttribute="bottom" secondItem="qwr-Cg-gD4" secondAttribute="bottom" multiplier="6:2" id="OZo-4e-LYx"/>
+                <constraint firstAttribute="bottom" secondItem="9XT-6G-OMo" secondAttribute="bottom" multiplier="6:3" id="Own-XI-JAm"/>
+                <constraint firstItem="s5L-MW-0yq" firstAttribute="top" secondItem="aju-tc-OyA" secondAttribute="bottom" constant="20" id="PL9-Pk-wpT"/>
+                <constraint firstItem="6UW-RM-pWK" firstAttribute="top" secondItem="s5L-MW-0yq" secondAttribute="bottom" id="PzW-1l-ngz"/>
+                <constraint firstAttribute="bottom" secondItem="jZk-2U-y32" secondAttribute="bottom" multiplier="6:5" id="QBD-iw-2Vj"/>
+                <constraint firstAttribute="bottom" secondItem="s5L-MW-0yq" secondAttribute="bottom" multiplier="6:1" id="Qfj-Fy-2qi"/>
+                <constraint firstItem="9XT-6G-OMo" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="TyF-S2-1ja"/>
+                <constraint firstItem="QDt-Dv-rjw" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="WjB-rR-sa0"/>
+                <constraint firstItem="WdP-sF-nDv" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="XQe-vR-JnM"/>
+                <constraint firstAttribute="bottom" secondItem="Ke8-QP-9xU" secondAttribute="bottom" multiplier="6:1" id="caw-BK-vlx"/>
+                <constraint firstItem="aju-tc-OyA" firstAttribute="leading" secondItem="WdP-sF-nDv" secondAttribute="trailing" constant="50" id="dZS-Ks-7VG"/>
+                <constraint firstItem="s5L-MW-0yq" firstAttribute="leading" secondItem="QDt-Dv-rjw" secondAttribute="trailing" constant="50" id="fus-VY-O4F"/>
+                <constraint firstItem="2XG-nb-Uek" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="iRE-7W-TBu"/>
+                <constraint firstAttribute="bottom" secondItem="1CA-2c-yyo" secondAttribute="bottom" multiplier="6:3" id="kE6-3V-cDd"/>
+                <constraint firstItem="QDt-Dv-rjw" firstAttribute="top" secondItem="6UW-RM-pWK" secondAttribute="bottom" id="kY1-C8-hO0"/>
+                <constraint firstAttribute="trailing" secondItem="QDt-Dv-rjw" secondAttribute="trailing" constant="50" id="mZh-p2-Eku"/>
+                <constraint firstItem="qwr-Cg-gD4" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="400" id="nRZ-Su-iRK"/>
+                <constraint firstAttribute="trailing" secondItem="aju-tc-OyA" secondAttribute="trailing" id="oId-bd-86i"/>
+                <constraint firstAttribute="trailing" secondItem="KDQ-AA-9ei" secondAttribute="trailing" id="p65-j2-DH0"/>
+                <constraint firstAttribute="bottom" secondItem="6UW-RM-pWK" secondAttribute="bottom" multiplier="6:2" id="rOk-hJ-bRG"/>
+                <constraint firstAttribute="trailing" secondItem="jZk-2U-y32" secondAttribute="trailing" id="svj-Ut-vrr"/>
+                <constraint firstItem="1CA-2c-yyo" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="uHm-Ww-Mp2"/>
+                <constraint firstAttribute="trailing" secondItem="6UW-RM-pWK" secondAttribute="trailing" id="vbo-3X-vPu"/>
+                <constraint firstAttribute="bottom" secondItem="QDt-Dv-rjw" secondAttribute="bottom" multiplier="6:1" id="w1T-Wb-lcl"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="8O5-RE-fV8"/>
+                    <exclude reference="XQe-vR-JnM"/>
+                    <exclude reference="EEo-U7-DYS"/>
+                    <exclude reference="WjB-rR-sa0"/>
+                    <exclude reference="kY1-C8-hO0"/>
+                    <exclude reference="mZh-p2-Eku"/>
+                    <exclude reference="DRd-JG-ndL"/>
+                    <exclude reference="dZS-Ks-7VG"/>
+                    <exclude reference="fus-VY-O4F"/>
+                    <exclude reference="PzW-1l-ngz"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="815" y="411"/>
         </view>
     </objects>
 </document>

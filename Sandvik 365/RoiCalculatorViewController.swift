@@ -90,6 +90,9 @@ class RoiCalculatorViewController: UIViewController {
         if let input = selectedROICalculator.input as? ROICrusherInput {
             detailsContainerView.addSubview(RoiCrusherDetailView(frame: detailsContainerView.frame, input: input))
         }
+        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+            detailsContainerView.addSubview(RoiRockDrillDetailView(frame: detailsContainerView.frame, input: input))
+        }
         graphContainerView.hidden = true
         seeDetailButton.hidden = true
         detailsContainerView.hidden = false
