@@ -15,7 +15,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var progressView: ProgressLineView!
     @IBOutlet var mainMenuItemViews: [MainMenuItemView]!
     
-    var backButtonBg: UIImageView!
+    private var backButtonBg: UIImageView!
+    private var showBackButton: Bool = true
     
     override func viewDidLoad() {
         if let navigationController = self.navigationController {
@@ -44,12 +45,15 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = false
-        self.backButtonBg.alpha = 0.0
-        self.backButtonBg.hidden = false
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.backButtonBg.alpha = 1.0
-            }, completion: { (finished: Bool) -> Void in
-        })
+        if showBackButton {
+            self.backButtonBg.alpha = 0.0
+            self.backButtonBg.hidden = false
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                self.backButtonBg.alpha = 1.0
+                }, completion: { (finished: Bool) -> Void in
+            })
+        }
+        showBackButton = true
     }
     
     func pressAction(sender: UIButton) {
@@ -99,6 +103,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
                 vc.selectedPartType = .BulkMaterialHandling
+                showBackButton = false
             }
         }
     }
