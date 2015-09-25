@@ -45,14 +45,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding 2-5 weeks of production" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2r-Ew-azM">
-                    <rect key="frame" x="219" y="85" width="193" height="15"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <rect key="frame" x="219" y="83" width="208" height="17"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fU-le-ti8">
                     <rect key="frame" x="600" y="100" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -65,14 +65,14 @@ INSPECTION SERVICES</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 1 additional day of production" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NM7-qs-1yg">
-                    <rect key="frame" x="219" y="185" width="229" height="15"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <rect key="frame" x="219" y="183" width="247" height="17"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTP-On-oLE">
                     <rect key="frame" x="600" y="200" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -85,14 +85,14 @@ PLANNING SERVICES</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gain 7-10 days of production" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J98-6I-h6q">
-                    <rect key="frame" x="219" y="285" width="176" height="15"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <rect key="frame" x="219" y="283" width="189" height="17"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5J-Kd-BBS">
                     <rect key="frame" x="600" y="300" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -103,11 +103,18 @@ PLANNING SERVICES</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80% coverage of capital spare parts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOh-Jf-5hM">
-                    <rect key="frame" x="219" y="385" width="219" height="15"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <rect key="frame" x="219" y="383" width="235" height="17"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pki-vs-RN1">
+                    <rect key="frame" x="0.0" y="443" width="600" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="59X-Bw-z7H"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCm-8G-lZz">
                     <rect key="frame" x="0.0" y="485" width="55" height="15"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
@@ -116,7 +123,7 @@ PLANNING SERVICES</string>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdR-ii-zE5">
                     <rect key="frame" x="600" y="500" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -134,6 +141,8 @@ PLANNING SERVICES</string>
                 <constraint firstItem="GeU-UK-q6O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gn3-c0-1AL"/>
                 <constraint firstAttribute="trailing" secondItem="d5J-Kd-BBS" secondAttribute="trailing" id="HXH-LV-8xa"/>
                 <constraint firstAttribute="bottom" secondItem="AdR-ii-zE5" secondAttribute="bottom" multiplier="6:5" id="OPR-Nz-idK"/>
+                <constraint firstItem="RCm-8G-lZz" firstAttribute="top" secondItem="Pki-vs-RN1" secondAttribute="bottom" constant="5" id="Oqp-ye-EAP"/>
+                <constraint firstItem="Pki-vs-RN1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PKL-Ci-JPx"/>
                 <constraint firstItem="J2r-Ew-azM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="219" id="UtE-9N-Xaw"/>
                 <constraint firstAttribute="bottom" secondItem="J98-6I-h6q" secondAttribute="bottom" multiplier="6:3" id="WRP-of-EKY"/>
                 <constraint firstAttribute="bottom" secondItem="NM7-qs-1yg" secondAttribute="bottom" multiplier="6:2" id="Ylp-U4-mjf"/>
@@ -144,21 +153,30 @@ PLANNING SERVICES</string>
                 <constraint firstItem="RCm-8G-lZz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cqK-oq-dZT"/>
                 <constraint firstAttribute="bottom" secondItem="OTP-On-oLE" secondAttribute="bottom" multiplier="6:2" id="dLi-dq-k9S"/>
                 <constraint firstAttribute="bottom" secondItem="J2r-Ew-azM" secondAttribute="bottom" multiplier="6:1" id="ewL-cS-h6H"/>
+                <constraint firstItem="RCm-8G-lZz" firstAttribute="top" secondItem="Pki-vs-RN1" secondAttribute="bottom" multiplier="6:4" id="fHk-IE-zTe"/>
                 <constraint firstAttribute="bottom" secondItem="x3v-CY-SDn" secondAttribute="bottom" multiplier="6:2" id="fTJ-0a-5fr"/>
+                <constraint firstAttribute="trailing" secondItem="Pki-vs-RN1" secondAttribute="trailing" id="gTf-PR-7rE"/>
+                <constraint firstAttribute="bottom" secondItem="Pki-vs-RN1" secondAttribute="bottom" multiplier="1.35" id="ggc-1E-urk"/>
                 <constraint firstAttribute="trailing" secondItem="OTP-On-oLE" secondAttribute="trailing" id="hRw-yo-Ebn"/>
+                <constraint firstItem="AdR-ii-zE5" firstAttribute="top" secondItem="Pki-vs-RN1" secondAttribute="bottom" constant="10" id="ikf-Bo-wUy"/>
                 <constraint firstAttribute="bottom" secondItem="s82-tl-SwZ" secondAttribute="bottom" multiplier="6:4" id="iuC-kF-aLb"/>
                 <constraint firstItem="98n-o7-Gco" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRQ-5Z-lTc"/>
                 <constraint firstItem="BOh-Jf-5hM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="219" id="kp8-jv-1fZ"/>
                 <constraint firstAttribute="bottom" secondItem="RCm-8G-lZz" secondAttribute="bottom" multiplier="6:5" id="qYp-Ri-oMs"/>
                 <constraint firstAttribute="bottom" secondItem="1fU-le-ti8" secondAttribute="bottom" multiplier="6:1" id="uJV-GC-zf8"/>
                 <constraint firstAttribute="trailing" secondItem="AdR-ii-zE5" secondAttribute="trailing" id="v9d-yP-rGC"/>
+                <constraint firstAttribute="bottom" secondItem="Pki-vs-RN1" secondAttribute="bottom" constant="140" id="yon-rs-ofq"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="0bx-6k-kOa"/>
                     <exclude reference="Ela-Mf-yhc"/>
                     <exclude reference="cR1-3I-L5i"/>
+                    <exclude reference="yon-rs-ofq"/>
+                    <exclude reference="Oqp-ye-EAP"/>
+                    <exclude reference="fHk-IE-zTe"/>
                     <exclude reference="02V-cQ-7Jy"/>
+                    <exclude reference="ikf-Bo-wUy"/>
                 </mask>
             </variation>
         </view>

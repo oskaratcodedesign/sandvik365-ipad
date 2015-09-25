@@ -53,7 +53,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="Rhz-hX-8Pf"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -80,7 +80,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="gzT-QD-Smb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -95,7 +95,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="6bg-lt-9VB"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -104,7 +104,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="865-XM-iXV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -118,7 +118,7 @@ DUE TO INCREASED ORE OUTPUT</string>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-AA-9ei">
                     <rect key="frame" x="600" y="300" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -130,10 +130,23 @@ DUE TO INCREASED ORE OUTPUT</string>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6r-AU-z3g">
                     <rect key="frame" x="600" y="400" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hqK-YR-GHJ">
+                    <rect key="frame" x="0.0" y="443" width="600" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="LF9-Ry-k3h"/>
+                        <constraint firstAttribute="height" constant="1" id="bJc-QZ-YHf"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="LF9-Ry-k3h"/>
+                        </mask>
+                    </variation>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-Ps-tV5">
                     <rect key="frame" x="0.0" y="485" width="55" height="15"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
@@ -142,7 +155,7 @@ DUE TO INCREASED ORE OUTPUT</string>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-2U-y32">
                     <rect key="frame" x="600" y="500" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -164,6 +177,7 @@ DUE TO INCREASED ORE OUTPUT</string>
                 <constraint firstAttribute="bottom" secondItem="KDQ-AA-9ei" secondAttribute="bottom" multiplier="6:3" id="Lcq-E2-iZX"/>
                 <constraint firstAttribute="bottom" secondItem="i9Q-bx-iMM" secondAttribute="bottom" multiplier="6:2" id="Lj8-L0-Il1"/>
                 <constraint firstAttribute="trailing" secondItem="s5L-MW-0yq" secondAttribute="trailing" id="NPP-yV-9Ix"/>
+                <constraint firstAttribute="trailing" secondItem="hqK-YR-GHJ" secondAttribute="trailing" id="NSv-ea-XRV"/>
                 <constraint firstAttribute="trailing" secondItem="QDt-Dv-rjw" secondAttribute="trailing" constant="677" id="NVI-fm-cA1"/>
                 <constraint firstItem="WdP-sF-nDv" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="600" id="OZC-T3-es3"/>
                 <constraint firstAttribute="bottom" secondItem="qwr-Cg-gD4" secondAttribute="bottom" multiplier="6:2" id="OZo-4e-LYx"/>
@@ -176,8 +190,10 @@ DUE TO INCREASED ORE OUTPUT</string>
                 <constraint firstItem="QDt-Dv-rjw" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="WjB-rR-sa0"/>
                 <constraint firstItem="WdP-sF-nDv" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" constant="219" id="XQe-vR-JnM"/>
                 <constraint firstItem="aju-tc-OyA" firstAttribute="leading" secondItem="qwr-Cg-gD4" secondAttribute="trailing" constant="5" id="aG9-6C-ARR"/>
+                <constraint firstAttribute="bottom" secondItem="hqK-YR-GHJ" secondAttribute="bottom" multiplier="1.35" id="cYM-mz-WDm"/>
                 <constraint firstAttribute="bottom" secondItem="Ke8-QP-9xU" secondAttribute="bottom" multiplier="6:1" id="caw-BK-vlx"/>
                 <constraint firstItem="aju-tc-OyA" firstAttribute="leading" secondItem="WdP-sF-nDv" secondAttribute="trailing" constant="50" id="dZS-Ks-7VG"/>
+                <constraint firstItem="hqK-YR-GHJ" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="e3I-FE-6Io"/>
                 <constraint firstItem="s5L-MW-0yq" firstAttribute="leading" secondItem="QDt-Dv-rjw" secondAttribute="trailing" constant="50" id="fus-VY-O4F"/>
                 <constraint firstItem="2XG-nb-Uek" firstAttribute="leading" secondItem="eCE-CD-Vxr" secondAttribute="leading" id="iRE-7W-TBu"/>
                 <constraint firstItem="QDt-Dv-rjw" firstAttribute="top" secondItem="6UW-RM-pWK" secondAttribute="bottom" id="kY1-C8-hO0"/>
@@ -193,8 +209,6 @@ DUE TO INCREASED ORE OUTPUT</string>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="8O5-RE-fV8"/>
-                    <exclude reference="nRZ-Su-iRK"/>
                     <exclude reference="OZC-T3-es3"/>
                     <exclude reference="XQe-vR-JnM"/>
                     <exclude reference="6Xp-gJ-4Aa"/>
@@ -203,6 +217,8 @@ DUE TO INCREASED ORE OUTPUT</string>
                     <exclude reference="WjB-rR-sa0"/>
                     <exclude reference="kY1-C8-hO0"/>
                     <exclude reference="mZh-p2-Eku"/>
+                    <exclude reference="8O5-RE-fV8"/>
+                    <exclude reference="nRZ-Su-iRK"/>
                     <exclude reference="DRd-JG-ndL"/>
                     <exclude reference="dZS-Ks-7VG"/>
                     <exclude reference="fus-VY-O4F"/>
