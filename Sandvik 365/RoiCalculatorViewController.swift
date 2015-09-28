@@ -144,7 +144,11 @@ class RoiCalculatorViewController: UIViewController {
     private func setProfitLabel()
     {
         let sum = selectedROICalculator.input.total()
-        profitLabel.text = "$" + String(sum);
+        
+        let fmt = NSNumberFormatter()
+        fmt.numberStyle = .DecimalStyle
+        
+        profitLabel.text = "$" + fmt.stringFromNumber(sum)!
     }
     
     private func setBorderOnDetailButton() {
