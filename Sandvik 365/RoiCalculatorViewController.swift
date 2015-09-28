@@ -38,6 +38,7 @@ class RoiCalculatorViewController: UIViewController {
             conditionButton.setAttributedTitle(nil, forState: .Normal)
             conditionButton.setTitle("RD525", forState: .Normal)
         }
+        profitLabel.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -111,6 +112,10 @@ class RoiCalculatorViewController: UIViewController {
         
         if !selectedButton.selected {
             selectedProduct = .None
+            profitLabel.hidden = true
+        }
+        else {
+            profitLabel.hidden = false
         }
         
         input.product = selectedProduct
@@ -136,6 +141,13 @@ class RoiCalculatorViewController: UIViewController {
         if selectedService == .ConditionInspection && input.services.contains(.MaintenancePlanning){
             input.services.remove(.MaintenancePlanning) // always remove if selected
             maintenenceButton.selected = selectedButton.selected
+        }
+        
+        if input.services.count > 0 {
+            profitLabel.hidden = false
+        }
+        else {
+            profitLabel.hidden = true
         }
         
         roiGraphView.selectedROIInput = input
@@ -169,18 +181,6 @@ class RoiCalculatorViewController: UIViewController {
             let fillimage = roundImage(size, fill: true, color: color)
             button.setImage(fillimage, forState: .Highlighted)
             button.setImage(fillimage, forState: .Selected)
-            /*if button.tag == 0 && selectedROICalculator.services.contains(ROIService.RampUp) {
-                button.selected = true
-            }
-            else if button.tag == 1 && selectedROICalculator.services.contains(ROIService.ConditionInspection) {
-                button.selected = true
-            }
-            else if button.tag == 2 && selectedROICalculator.services.contains(ROIService.MaintenancePlanning) {
-                button.selected = true
-            }
-            else if button.tag == 3 && selectedROICalculator.services.contains(ROIService.Protective) {
-                button.selected = true
-            }*/
         }
     }
     
@@ -207,16 +207,5 @@ class RoiCalculatorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
