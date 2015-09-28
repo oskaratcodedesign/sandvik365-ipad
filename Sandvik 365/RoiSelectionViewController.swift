@@ -66,8 +66,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 if !left {
                     selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1].uppercaseString)
                 }
-                if let numberView = currentController.roiContentView as? RoiInputView {
-                    roiValueDidChange(currentController.itemIndex, object: numberView.numberLabel.attributedText!)
+                if let numberView = currentController.roiContentView {
+                    roiValueDidChange(currentController.itemIndex, object: numberView.textField.attributedText!)
                 }
                 showSelectedInput(nextIndex)
             }

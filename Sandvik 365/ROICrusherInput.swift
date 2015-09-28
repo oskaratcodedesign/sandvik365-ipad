@@ -83,6 +83,63 @@ class ROICrusherInput: ROIInput {
         return allTitles
     }
     
+    override func setInput(atIndex :Int, stringValue :String) -> Bool {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .OreGrade:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                oreGrade = .OreGrade(number.doubleValue)
+                return true
+            }
+        case .Capacity:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                capacity = .Capacity(number.unsignedLongValue)
+                return true
+            }
+        case .FinishedProduct:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                finishedProduct = .FinishedProduct(number.unsignedLongValue)
+                return true
+            }
+        case .RecoveryRate:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                recoveryRate = .RecoveryRate(number.unsignedLongValue)
+                return true
+            }
+        case .OrePrice:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                orePrice = .OrePrice(number.unsignedLongValue)
+                return true
+            }
+        case .ProcessingCost:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                processingCost = .ProcessingCost(number.unsignedLongValue)
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    override func getInputAsString(atIndex :Int) -> String? {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .OreGrade:
+            return String(format:"%.2f", oreGrade.value as! Double)
+        case .Capacity:
+            return String(capacity.value as! UInt)
+        case .FinishedProduct:
+            return String(finishedProduct.value as! UInt)
+        case .RecoveryRate:
+            return String(recoveryRate.value as! UInt)
+        case .OrePrice:
+            return String(orePrice.value as! UInt)
+        case .ProcessingCost:
+            return String(processingCost.value as! UInt)
+        }
+    }
+
+    
     override func changeInput(atIndex :Int, change :ChangeInput) -> NSAttributedString {
         let input = allInputs()[atIndex]
         switch input {
