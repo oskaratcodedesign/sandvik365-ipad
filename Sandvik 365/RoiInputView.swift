@@ -9,20 +9,20 @@
 import UIKit
 import NibDesignable
 
-class RoiInputView: NibDesignable {
+class RoiInputView: NibDesignable, UITextFieldDelegate {
 
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
     
     func loadNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.numberLabel.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Load), fontSize: self.numberLabel.font.pointSize)
+        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Load), fontSize: self.textField.font!.pointSize)
     }
     
     func increaseNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.numberLabel.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Increase), fontSize: self.numberLabel.font.pointSize)
+        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Increase), fontSize: self.textField.font!.pointSize)
     }
     
     func decreaseNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.numberLabel.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Decrease), fontSize: self.numberLabel.font.pointSize)
+        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Decrease), fontSize: self.textField.font!.pointSize)
     }
     
     static func changeNSAttributedStringFontSize(attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {

@@ -347,6 +347,7 @@
                     </view>
                     <connections>
                         <outlet property="containerView" destination="AJe-R7-krj" id="rWD-Bz-GQM"/>
+                        <outlet property="containerViewCenterY" destination="hfS-qp-RQq" id="LWI-GR-ycS"/>
                         <outlet property="spinnerScrollView" destination="uo9-2z-IJg" id="f1K-bS-RB7"/>
                     </connections>
                 </viewController>

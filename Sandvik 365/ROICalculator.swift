@@ -41,6 +41,14 @@ class ROIInput {
         preconditionFailure("This method must be overridden")
     }
     
+    func setInput(atIndex :Int, stringValue :String) -> Bool {
+        preconditionFailure("This method must be overridden")
+    }
+    
+    func getInputAsString(atIndex :Int) -> String {
+        preconditionFailure("This method must be overridden")
+    }
+    
     func graphScale() -> CGFloat {
         preconditionFailure("This method must be overridden")
     }
