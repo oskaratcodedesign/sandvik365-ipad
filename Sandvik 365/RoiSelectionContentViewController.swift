@@ -58,12 +58,12 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
             }
             alertController.addAction(okAction)
             
-            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load old value
             // Present Alert Controller
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         else {
-            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load new value
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
             }
@@ -77,9 +77,10 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
-        let value = selectedROICalculator.input.getInputAsString(itemIndex)
-        roiContentView.textField.text = value
-        roiContentView.textField.becomeFirstResponder()
+        if let value = selectedROICalculator.input.getInputAsString(itemIndex) {
+            roiContentView.textField.text = value
+            roiContentView.textField.becomeFirstResponder()
+        }
     }
     
     func keyboardWillShow(notification: NSNotification) {

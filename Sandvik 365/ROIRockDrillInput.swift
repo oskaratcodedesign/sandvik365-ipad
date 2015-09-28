@@ -232,6 +232,87 @@ class ROIRockDrillInput: ROIInput {
         return allTitles
     }
     
+    override func setInput(atIndex :Int, stringValue :String) -> Bool {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .TypeOfOre:
+            return false
+        case .CommodityPrice:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                commodityPrice = .CommodityPrice(number.unsignedLongValue)
+                return true
+            }
+        case .OreConcentration:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                oreConcentration = .OreConcentration(number.unsignedLongValue)
+                return true
+            }
+        case .UtilizationRate:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                utilizationRate = .UtilizationRate(number.unsignedLongValue)
+                return true
+            }
+        case .OreGravity:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                oreGravity = .OreGravity(number.unsignedLongValue)
+                return true
+            }
+        case .HolesInAFace:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                holesInAFace = .HolesInAFace(number.unsignedLongValue)
+                return true
+            }
+        case .DrillFaceWidth:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                drillFaceWidth = .DrillFaceWidth(number.doubleValue)
+                return true
+            }
+        case .DrillFaceHeight:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                drillFaceHeight = .DrillFaceHeight(number.doubleValue)
+                return true
+            }
+        case .FeedLenght:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                feedLenght = .FeedLenght(number.doubleValue)
+                return true
+            }
+        case .NumberOfBooms:
+            if let number = NSNumberFormatter().numberFromString(stringValue) {
+                numberOfBooms = .NumberOfBooms(number.unsignedLongValue)
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    override func getInputAsString(atIndex :Int) -> String? {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .TypeOfOre:
+            return nil
+        case .CommodityPrice:
+            return String(commodityPrice.value as! UInt)
+        case .OreConcentration:
+            return String(oreConcentration.value as! UInt)
+        case .UtilizationRate:
+            return String(utilizationRate.value as! UInt)
+        case .OreGravity:
+            return String(oreGravity.value as! UInt)
+        case .HolesInAFace:
+            return String(holesInAFace.value as! UInt)
+        case .DrillFaceWidth:
+            return String(format:"%.2f", drillFaceWidth.value as! Double)
+        case .DrillFaceHeight:
+            return String(format:"%.2f", drillFaceHeight.value as! Double)
+        case .FeedLenght:
+            return String(format:"%.2f", feedLenght.value as! Double)
+        case .NumberOfBooms:
+            return String(numberOfBooms.value as! UInt)
+        }
+    }
+    
     override func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
         let input = allInputs()[atIndex]
         switch input {

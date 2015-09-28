@@ -121,7 +121,7 @@ class ROICrusherInput: ROIInput {
         return false
     }
     
-    override func getInputAsString(atIndex :Int) -> String {
+    override func getInputAsString(atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
         case .OreGrade:
