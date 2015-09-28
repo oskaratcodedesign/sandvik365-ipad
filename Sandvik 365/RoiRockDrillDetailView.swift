@@ -23,17 +23,20 @@ class RoiRockDrillDetailView: NibDesignable {
     init(frame: CGRect, input: ROIRockDrillInput) {
         super.init(frame: frame)
         
-        metersBeforeLabel.text = String(Int(input.metersDrilledYearlyBefore())) + "m";
-        metersAfterLabel.text = String(Int(input.metersDrilledYearlyAfter())) + "m";
+        let fmt = NSNumberFormatter()
+        fmt.numberStyle = .DecimalStyle
         
-        tonnageBeforeLabel.text = String(Int(input.tonnageOutputBefore())) + "t";
-        tonnageAfterLabel.text = String(Int(input.tonnageOutputAfter())) + "t";
+        metersBeforeLabel.text = fmt.stringFromNumber(Int(input.metersDrilledYearlyBefore()))! + "m"
+        metersAfterLabel.text = fmt.stringFromNumber(Int(input.metersDrilledYearlyAfter()))! + "m"
+        
+        tonnageBeforeLabel.text = fmt.stringFromNumber(Int(input.tonnageOutputBefore()))! + "t"
+        tonnageAfterLabel.text = fmt.stringFromNumber(Int(input.tonnageOutputAfter()))! + "t"
         
         let total = input.total()
         let shanksAndBitsSavings = Int(input.shanksAndBitsSavings())
-        oreOutPutLabel.text = "$" + String(total - shanksAndBitsSavings);
-        shanksLabel.text = "$" + String(shanksAndBitsSavings);
-        totalLabel.text = "$" + String(total);
+        oreOutPutLabel.text = "$" + fmt.stringFromNumber(total - shanksAndBitsSavings)!
+        shanksLabel.text = "$" + fmt.stringFromNumber(shanksAndBitsSavings)!
+        totalLabel.text = "$" + fmt.stringFromNumber(total)!
     }
     
     required init?(coder aDecoder: NSCoder) {
