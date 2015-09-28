@@ -24,6 +24,7 @@
 		48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */; };
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
+		98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -87,6 +88,7 @@
 		48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dalton Maag - Aktiv Grotesk Corp.ttf"; sourceTree = "<group>"; };
 		48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */,
 				F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */,
 				F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */,
+				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* Part.swift in Sources */,
+				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,

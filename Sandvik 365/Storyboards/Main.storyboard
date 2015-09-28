@@ -108,7 +108,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
                                                 <rect key="frame" x="70" y="276" width="307" height="71"/>
                                                 <animations/>
-                                                <string key="text">PARTS &amp; SERVICES
+                                                <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON.</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,7 +121,7 @@ YOU CAN COUNT ON.</string>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
                                                 <rect key="frame" x="273" y="427" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
@@ -482,7 +482,7 @@ YOU CAN COUNT ON.</string>
         <!--SANDVIK 365 SERVICE APP-->
         <scene sceneID="0Fn-OH-cLp">
             <objects>
-                <viewController id="jzx-rd-u6m" sceneMemberID="viewController">
+                <viewController id="jzx-rd-u6m" customClass="DisclaimerViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0t1-bP-rJF"/>
                         <viewControllerLayoutGuide type="bottom" id="4gz-95-xIi"/>
@@ -497,27 +497,16 @@ YOU CAN COUNT ON.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-XA-xfb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-Y3-C3G">
-                                        <rect key="frame" x="70" y="100" width="230" height="1032"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-WF-CXB">
+                                        <rect key="frame" x="67" y="92" width="233" height="488.5"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">ABOUT THIS APP
-
 </string>
                                                 <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="22" name="AktivGroteskCorp-Regular"/>
+                                                    <color key="NSColor" red="0.082352941176470587" green="0.67843137254901964" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">This app is designed to give all people involved in the efficient and profitable running of mining operations an insight into the benefits of using original Sandvik products and services. It contains profit calculators, videos and information about Sandvik’s current range. If you would like more detailed information, or have other questions regarding Sandvik products and services, please contact us through mining.sandvik.com.</string>
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="22" name="AktivGroteskCorp-Regular"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36"/>
-                                                    <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -526,18 +515,55 @@ Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="22" name="AktivGroteskCorp-Regular"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">This app is designed to give all people involved in the efficient and profitable running of mining operations an insight into the benefits of using original Sandvik products and services. It contains profit calculators, videos and information about Sandvik’s current range. If you would like more detailed information, or have other questions regarding Sandvik products and services, please contact us through mining.sandvik.com.</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="0.0"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
-DON’T MISS
-
+                                                <string key="content" base64-UTF8="YES">
+Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="22" name="AktivGroteskCorp-Regular"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">DON’T MISS
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.082352941176470587" green="0.67843137254901964" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
@@ -545,21 +571,24 @@ DON’T MISS
                                                 <string key="content">Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.</string>
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="22" name="AktivGroteskCorp-Regular"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                     <real key="NSKern" value="0.0"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36"/>
-                                                    <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jzx-rd-u6m" id="m3x-xJ-4HH"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="lPo-Y3-C3G" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="70" id="NpH-eD-r8I"/>
-                                    <constraint firstAttribute="trailing" secondItem="lPo-Y3-C3G" secondAttribute="trailing" constant="300" id="WKQ-f5-k9M"/>
-                                    <constraint firstItem="lPo-Y3-C3G" firstAttribute="top" secondItem="lgQ-XA-xfb" secondAttribute="top" constant="100" id="n9y-sQ-x0n"/>
+                                    <constraint firstItem="0IX-WF-CXB" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="67" id="7Xb-SU-Bee"/>
+                                    <constraint firstItem="0IX-WF-CXB" firstAttribute="top" secondItem="lgQ-XA-xfb" secondAttribute="top" constant="92" id="hEw-7w-Xns"/>
+                                    <constraint firstAttribute="trailing" secondItem="0IX-WF-CXB" secondAttribute="trailing" constant="300" id="iSC-B5-I7F"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -588,6 +617,9 @@ DON’T MISS
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="SANDVIK 365 SERVICE APP" id="NNx-yE-Hp4"/>
+                    <connections>
+                        <outlet property="disclaimerTextView" destination="0IX-WF-CXB" id="g1z-Le-5Hb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reH-3D-5lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -622,7 +654,7 @@ DON’T MISS
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PpG-ih-rpJ"/>
+        <segue reference="QwE-UL-hIE"/>
         <segue reference="KwD-YR-ime"/>
     </inferredMetricsTieBreakers>
 </document>
