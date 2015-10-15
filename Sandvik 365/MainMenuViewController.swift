@@ -34,6 +34,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
         }
         self.scrollViewDidScroll(menuScrollView)
+        //JSONManager().readJSONFromFile();
     }
 
     override func viewWillAppear(animated: Bool) {

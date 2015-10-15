@@ -25,6 +25,8 @@
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
 		98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867B51BCE7DDA00033AB5 /* JSONManager.swift */; settings = {ASSET_TAGS = (); }; };
+		F70867B81BCF854400033AB5 /* sandvik365.json in Resources */ = {isa = PBXBuildFile; fileRef = F70867B71BCF854400033AB5 /* sandvik365.json */; settings = {ASSET_TAGS = (); }; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -90,6 +92,8 @@
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
+		F70867B51BCE7DDA00033AB5 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		F70867B71BCF854400033AB5 /* sandvik365.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sandvik365.json; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				F7CB9D181B8C517200C1B3A1 /* Part.swift */,
 				F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */,
 				F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */,
+				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
+				F70867B71BCF854400033AB5 /* sandvik365.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
+				F70867B81BCF854400033AB5 /* sandvik365.json in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
@@ -479,6 +486,7 @@
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculator.swift in Sources */,
+				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,
 			);
