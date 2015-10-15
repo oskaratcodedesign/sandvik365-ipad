@@ -256,36 +256,12 @@ YOU CAN COUNT ON.</string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="603" y="0.0" width="201" height="500"/>
-                                                        <animations/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="804" y="0.0" width="201" height="500"/>
-                                                        <animations/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="201" y="0.0" width="201" height="500"/>
                                                         <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="CONVEYOR COMPONENTS"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="1"/>
@@ -297,10 +273,78 @@ YOU CAN COUNT ON.</string>
                                                         <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="603" y="0.0" width="201" height="500"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="804" y="0.0" width="201" height="500"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qv-38-hVy" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="1005" y="0.0" width="201" height="500"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="MINE AUTOMATION SYSTEMS"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="1206" y="0.0" width="201" height="500"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="1407" y="0.0" width="201" height="500"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="1608" y="0.0" width="201" height="500"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -309,23 +353,43 @@ YOU CAN COUNT ON.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="jto-Cr-aoV" firstAttribute="top" secondItem="Hcf-Nq-nhu" secondAttribute="top" id="2Qk-s4-FvI"/>
+                                                    <constraint firstItem="2n6-qv-Za8" firstAttribute="top" secondItem="4Qv-38-hVy" secondAttribute="top" id="2np-ha-Wlh"/>
+                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="width" secondItem="2n6-qv-Za8" secondAttribute="width" id="3CJ-7s-SKq"/>
+                                                    <constraint firstItem="4Qv-38-hVy" firstAttribute="top" secondItem="jto-Cr-aoV" secondAttribute="top" id="4qb-ju-tbu"/>
+                                                    <constraint firstItem="eGP-oU-ZVq" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="5D2-aN-4pb"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="width" secondItem="I9D-No-weO" secondAttribute="width" id="6GH-Ak-bNf"/>
+                                                    <constraint firstItem="eGP-oU-ZVq" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="6xR-1W-EfS"/>
+                                                    <constraint firstItem="2n6-qv-Za8" firstAttribute="width" secondItem="4Qv-38-hVy" secondAttribute="width" id="79L-w7-7Cc"/>
                                                     <constraint firstItem="I9D-No-weO" firstAttribute="width" secondItem="goe-Xq-a6b" secondAttribute="width" id="89m-Ma-B2F"/>
                                                     <constraint firstItem="goe-Xq-a6b" firstAttribute="height" secondItem="Hcf-Nq-nhu" secondAttribute="height" id="DbX-Fn-nVR"/>
                                                     <constraint firstItem="I9D-No-weO" firstAttribute="leading" secondItem="YEk-cD-KjF" secondAttribute="trailing" id="ETt-1Z-Ueb"/>
+                                                    <constraint firstItem="4Qv-38-hVy" firstAttribute="width" secondItem="jto-Cr-aoV" secondAttribute="width" id="Gum-jL-aWK"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="top" secondItem="I9D-No-weO" secondAttribute="top" id="KbC-do-bgl"/>
                                                     <constraint firstItem="goe-Xq-a6b" firstAttribute="top" secondItem="Hcf-Nq-nhu" secondAttribute="top" id="L2y-LT-ytR"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="height" secondItem="I9D-No-weO" secondAttribute="height" id="LF9-pK-DvP"/>
                                                     <constraint firstItem="goe-Xq-a6b" firstAttribute="width" secondItem="Hcf-Nq-nhu" secondAttribute="width" id="N5p-yz-sQt"/>
+                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="leading" secondItem="2n6-qv-Za8" secondAttribute="trailing" id="UdF-rI-m4H"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="leading" secondItem="p2M-OL-gMy" secondAttribute="leading" id="a2n-3z-DaY"/>
+                                                    <constraint firstItem="4Qv-38-hVy" firstAttribute="leading" secondItem="jto-Cr-aoV" secondAttribute="trailing" id="bEk-ag-zjR"/>
+                                                    <constraint firstItem="2n6-qv-Za8" firstAttribute="leading" secondItem="4Qv-38-hVy" secondAttribute="trailing" id="bFN-gn-LXN"/>
+                                                    <constraint firstItem="2n6-qv-Za8" firstAttribute="height" secondItem="4Qv-38-hVy" secondAttribute="height" id="cjg-Gr-rEz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4Qv-38-hVy" secondAttribute="bottom" id="djp-OP-BfH"/>
+                                                    <constraint firstItem="4Qv-38-hVy" firstAttribute="height" secondItem="jto-Cr-aoV" secondAttribute="height" id="et0-rf-tDp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eGP-oU-ZVq" secondAttribute="trailing" id="eti-c6-Lcb"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="width" secondItem="p2M-OL-gMy" secondAttribute="width" multiplier="1/3" constant="1" id="f6A-0p-Onx"/>
                                                     <constraint firstItem="I9D-No-weO" firstAttribute="height" secondItem="goe-Xq-a6b" secondAttribute="height" id="g0I-99-yW0"/>
                                                     <constraint firstItem="YEk-cD-KjF" firstAttribute="top" secondItem="p2M-OL-gMy" secondAttribute="top" id="g47-gK-7Eh"/>
                                                     <constraint firstItem="jto-Cr-aoV" firstAttribute="leading" secondItem="Hcf-Nq-nhu" secondAttribute="trailing" id="gTQ-VH-0yu"/>
                                                     <constraint firstItem="Hcf-Nq-nhu" firstAttribute="top" secondItem="jto-Cr-aoV" secondAttribute="top" id="hME-O5-Aeo"/>
+                                                    <constraint firstItem="eGP-oU-ZVq" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="jLx-59-b8T"/>
+                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="height" secondItem="2n6-qv-Za8" secondAttribute="height" id="jrY-AL-rrh"/>
+                                                    <constraint firstItem="4Qv-38-hVy" firstAttribute="top" secondItem="p2M-OL-gMy" secondAttribute="top" id="lkQ-A3-nxN"/>
+                                                    <constraint firstItem="eGP-oU-ZVq" firstAttribute="leading" secondItem="Efv-Tf-KN9" secondAttribute="trailing" id="mVT-Dq-Idh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Efv-Tf-KN9" secondAttribute="trailing" id="oKm-9C-QcZ"/>
                                                     <constraint firstItem="Hcf-Nq-nhu" firstAttribute="width" secondItem="jto-Cr-aoV" secondAttribute="width" id="pgN-1n-ENK"/>
                                                     <constraint firstItem="I9D-No-weO" firstAttribute="top" secondItem="goe-Xq-a6b" secondAttribute="top" id="phy-fx-8Id"/>
                                                     <constraint firstItem="jto-Cr-aoV" firstAttribute="leading" secondItem="Hcf-Nq-nhu" secondAttribute="trailing" id="qWG-ud-pVa"/>
+                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="top" secondItem="2n6-qv-Za8" secondAttribute="top" id="ruj-rV-Vtw"/>
                                                     <constraint firstAttribute="trailing" secondItem="jto-Cr-aoV" secondAttribute="trailing" id="sNV-bV-dzP"/>
                                                     <constraint firstItem="Hcf-Nq-nhu" firstAttribute="height" secondItem="jto-Cr-aoV" secondAttribute="height" id="sZ3-mg-cvF"/>
                                                     <constraint firstAttribute="bottom" secondItem="YEk-cD-KjF" secondAttribute="bottom" id="uWS-6r-P3c"/>
@@ -338,6 +402,10 @@ YOU CAN COUNT ON.</string>
                                                         <exclude reference="xTI-15-1OF"/>
                                                         <exclude reference="hME-O5-Aeo"/>
                                                         <exclude reference="gTQ-VH-0yu"/>
+                                                        <exclude reference="sNV-bV-dzP"/>
+                                                        <exclude reference="djp-OP-BfH"/>
+                                                        <exclude reference="lkQ-A3-nxN"/>
+                                                        <exclude reference="oKm-9C-QcZ"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -409,6 +477,10 @@ YOU CAN COUNT ON.</string>
                         <outletCollection property="mainMenuItemViews" destination="Hcf-Nq-nhu" collectionClass="NSMutableArray" id="qja-Sc-GXA"/>
                         <outletCollection property="mainMenuItemViews" destination="jto-Cr-aoV" collectionClass="NSMutableArray" id="adC-3G-r4f"/>
                         <outletCollection property="mainMenuItemViews" destination="I9D-No-weO" collectionClass="NSMutableArray" id="VeO-NA-H7E"/>
+                        <outletCollection property="mainMenuItemViews" destination="4Qv-38-hVy" collectionClass="NSMutableArray" id="2VL-9c-rcF"/>
+                        <outletCollection property="mainMenuItemViews" destination="2n6-qv-Za8" collectionClass="NSMutableArray" id="VUI-J9-cps"/>
+                        <outletCollection property="mainMenuItemViews" destination="Efv-Tf-KN9" collectionClass="NSMutableArray" id="d7N-Tz-O7N"/>
+                        <outletCollection property="mainMenuItemViews" destination="eGP-oU-ZVq" collectionClass="NSMutableArray" id="R7t-Vp-fou"/>
                         <segue destination="QLr-DO-bh8" kind="show" identifier="PartsAndServicesViewController" id="tQu-jd-51V"/>
                     </connections>
                 </viewController>

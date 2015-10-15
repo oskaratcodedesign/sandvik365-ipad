@@ -12,10 +12,17 @@ enum PartType {
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
+    case ExplorationDrillRigs
+    case MechanicalCutting
+    case MineAutomationSystems
+    case SurfaceDrilling
+    case UndergroundDrillingAndBolting
+    case UndergroundLoadingAndHauling
     case None
     
     static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, None]
     
+    //TODO return from case
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
     
     static func atIndex(index: Int) -> PartType {
@@ -33,8 +40,6 @@ enum PartType {
         }
         return nil
     }
-    
-    
 }
 
 class Part {
