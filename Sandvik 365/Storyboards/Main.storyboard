@@ -481,7 +481,7 @@ YOU CAN COUNT ON.</string>
                         <outletCollection property="mainMenuItemViews" destination="2n6-qv-Za8" collectionClass="NSMutableArray" id="VUI-J9-cps"/>
                         <outletCollection property="mainMenuItemViews" destination="Efv-Tf-KN9" collectionClass="NSMutableArray" id="d7N-Tz-O7N"/>
                         <outletCollection property="mainMenuItemViews" destination="eGP-oU-ZVq" collectionClass="NSMutableArray" id="R7t-Vp-fou"/>
-                        <segue destination="QLr-DO-bh8" kind="show" identifier="PartsAndServicesViewController" id="tQu-jd-51V"/>
+                        <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="C3U-QL-Bxu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og2-vF-GsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,71 +492,6 @@ YOU CAN COUNT ON.</string>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1466" y="554"/>
-        </scene>
-        <!--Parts And Services View Controller-->
-        <scene sceneID="pqe-Ao-OEW">
-            <objects>
-                <viewController storyboardIdentifier="PartsAndServicesViewController" id="QLr-DO-bh8" customClass="PartsAndServicesViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oWT-Zb-sra"/>
-                        <viewControllerLayoutGuide type="bottom" id="ElF-ex-6wJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product-awareness-surface-2048" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-pE-7QT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ma-T0-bFe">
-                                <rect key="frame" x="28" y="268" width="82" height="82"/>
-                                <state key="normal" image="sandvik_play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="QwE-UL-hIE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-YO-vxf">
-                                <rect key="frame" x="28" y="134" width="82" height="82"/>
-                                <state key="normal" image="sandvik_calc">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="zlc-Uy-tFr" secondAttribute="top" id="83P-3B-C13"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="GQI-RR-MVi"/>
-                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="70" id="LNP-a8-f6C"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="oWT-Zb-sra" secondAttribute="trailing" constant="-600" id="Lof-YG-Hi6"/>
-                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="9Ma-T0-bFe" secondAttribute="leading" id="UPX-Vx-fPl"/>
-                            <constraint firstAttribute="bottom" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="am8-J9-BnH"/>
-                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="gkm-V7-233"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="hVm-s3-MaQ"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="izR-Jh-nKQ"/>
-                            <constraint firstAttribute="trailing" secondItem="HlW-pE-7QT" secondAttribute="trailing" id="o9P-YF-Slp"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" id="rC8-Wx-GqR"/>
-                            <constraint firstItem="9Ma-T0-bFe" firstAttribute="top" secondItem="Xsp-YO-vxf" secondAttribute="bottom" constant="52" id="rVm-7N-H8v"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="tEB-pQ-6KV"/>
-                            <constraint firstItem="Xsp-YO-vxf" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leadingMargin" constant="12" id="wy5-h8-kPW"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="GQI-RR-MVi"/>
-                                <exclude reference="Lof-YG-Hi6"/>
-                                <exclude reference="hVm-s3-MaQ"/>
-                                <exclude reference="izR-Jh-nKQ"/>
-                                <exclude reference="rC8-Wx-GqR"/>
-                                <exclude reference="gkm-V7-233"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2421" y="55"/>
         </scene>
         <!--SANDVIK 365 SERVICE APP-->
         <scene sceneID="0Fn-OH-cLp">
@@ -707,7 +642,7 @@ Cg
         <!--Video View Controller-->
         <scene sceneID="aVg-Lp-tFe">
             <objects>
-                <viewController id="cpp-rD-eaA" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-cpp-rD-eaA" id="cpp-rD-eaA" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Abi-1S-jGd"/>
                         <viewControllerLayoutGuide type="bottom" id="wtG-OA-pKs"/>
@@ -722,6 +657,14 @@ Cg
             </objects>
             <point key="canvasLocation" x="2450" y="1109"/>
         </scene>
+        <!--PartsAndService-->
+        <scene sceneID="jAS-uh-L8G">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PartsAndServiceViewController" storyboardName="PartsAndService" id="i8i-Vk-v9G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RcE-98-40J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2421" y="55"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1435275" width="1024" height="682"/>
@@ -734,6 +677,5 @@ Cg
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KwD-YR-ime"/>
-        <segue reference="PpG-ih-rpJ"/>
     </inferredMetricsTieBreakers>
 </document>

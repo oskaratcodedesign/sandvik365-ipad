@@ -33,7 +33,7 @@ class MainMenuItemView : NibDesignable {
     
     @IBInspectable var partBridgeType: NSNumber! {
         didSet {
-            self.partType = PartType.atIndex(partBridgeType.integerValue)
+            self.partType = PartType(rawValue: partBridgeType.unsignedLongValue)
         }
     }
     

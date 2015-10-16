@@ -34,7 +34,6 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
         }
         self.scrollViewDidScroll(menuScrollView)
-        //JSONManager().readJSONFromFile();
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -81,10 +80,12 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PartsAndServicesViewController" {
-            if let vc = segue.destinationViewController as? PartsAndServicesViewController {
+        if segue.identifier == "PartsAndServiceViewController" {
+            if let vc = segue.destinationViewController as? PartsAndServiceViewController {
                 if let view = sender as? MainMenuItemView {
-                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROICrusherInput()))
+                    if let json = JSONManager().readJSONFromFile() {
+                        vc.selectedPart = PartsAndService(partType: view.partType, json: json)
+                    }
                     vc.navigationItem.title = view.label.text
                 }
             }

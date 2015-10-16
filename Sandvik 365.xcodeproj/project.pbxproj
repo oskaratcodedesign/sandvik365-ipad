@@ -27,6 +27,7 @@
 		98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867B51BCE7DDA00033AB5 /* JSONManager.swift */; settings = {ASSET_TAGS = (); }; };
 		F70867B81BCF854400033AB5 /* sandvik365.json in Resources */ = {isa = PBXBuildFile; fileRef = F70867B71BCF854400033AB5 /* sandvik365.json */; settings = {ASSET_TAGS = (); }; };
+		F70867BA1BD0F66400033AB5 /* PartsAndService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70867B91BD0F66400033AB5 /* PartsAndService.storyboard */; settings = {ASSET_TAGS = (); }; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -40,12 +41,12 @@
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; settings = {ASSET_TAGS = (); }; };
-		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
+		F7C7C7CE1B8CEE34005A6953 /* PartsAndServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServiceViewController.swift */; };
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; settings = {ASSET_TAGS = (); }; };
 		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; settings = {ASSET_TAGS = (); }; };
 		F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */; settings = {ASSET_TAGS = (); }; };
 		F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */; settings = {ASSET_TAGS = (); }; };
-		F7CB9D191B8C517200C1B3A1 /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* Part.swift */; };
+		F7CB9D191B8C517200C1B3A1 /* PartsAndService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* PartsAndService.swift */; };
 		F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiInputView.swift */; };
 		F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiInputView.xib */; };
 		F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */; };
@@ -94,6 +95,7 @@
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
 		F70867B51BCE7DDA00033AB5 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		F70867B71BCF854400033AB5 /* sandvik365.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sandvik365.json; sourceTree = "<group>"; };
+		F70867B91BD0F66400033AB5 /* PartsAndService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PartsAndService.storyboard; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -104,12 +106,12 @@
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
-		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
+		F7C7C7CD1B8CEE34005A6953 /* PartsAndServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServiceViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
 		F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
 		F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillDetailView.swift; sourceTree = "<group>"; };
 		F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiCrusherDetailView.swift; sourceTree = "<group>"; };
-		F7CB9D181B8C517200C1B3A1 /* Part.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		F7CB9D181B8C517200C1B3A1 /* PartsAndService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndService.swift; sourceTree = "<group>"; };
 		F7E69A761B7B5B48004FA708 /* RoiInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiInputView.swift; sourceTree = "<group>"; };
 		F7E69A781B7B5B66004FA708 /* RoiInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiInputView.xib; sourceTree = "<group>"; };
 		F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionButton.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				F741D9981B8475C400010E71 /* VideoViewController.swift */,
-				F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */,
+				F7C7C7CD1B8CEE34005A6953 /* PartsAndServiceViewController.swift */,
 				F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */,
 			);
 			name = "View Controllers";
@@ -155,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				48FCED541B78C02E002D45A0 /* ROICalculator.swift */,
-				F7CB9D181B8C517200C1B3A1 /* Part.swift */,
+				F7CB9D181B8C517200C1B3A1 /* PartsAndService.swift */,
 				F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */,
 				F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */,
 				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
+				F70867B91BD0F66400033AB5 /* PartsAndService.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 			);
 			path = Storyboards;
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
+				F70867BA1BD0F66400033AB5 /* PartsAndService.storyboard in Resources */,
 				F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */,
@@ -465,10 +469,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
-				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
+				F7C7C7CE1B8CEE34005A6953 /* PartsAndServiceViewController.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
-				F7CB9D191B8C517200C1B3A1 /* Part.swift in Sources */,
+				F7CB9D191B8C517200C1B3A1 /* PartsAndService.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,

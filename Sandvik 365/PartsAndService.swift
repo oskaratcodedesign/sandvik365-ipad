@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PartType {
+enum PartType: UInt {
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
@@ -25,13 +25,6 @@ enum PartType {
     //TODO return from case
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
     
-    static func atIndex(index: Int) -> PartType {
-        if index < PartType.allValues.count {
-            return PartType.allValues[index]
-        }
-        return PartType.None
-    }
-    
     func videoURL() -> NSURL? {
         if let videoName = PartType.videos[self] {
             let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"m4v")
@@ -42,13 +35,37 @@ enum PartType {
     }
 }
 
-class Part {
-    let partType: PartType
-    let roiCalculator: ROICalculator
+class JSONPart {
+    let mainSections: [NSDictionary]
     
-    init(partType: PartType, roiCalculator: ROICalculator)
+    init(partType: PartType, json: NSDictionary) {
+        //parse out relevant parts:
+        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+            mainSections = sections
+        }
+        else {
+            mainSections = []
+        }
+    }
+    
+    func mainSectionTitles() -> [String] {
+        var titles: [String] = []
+        for dic in mainSections {
+            if let title = dic.valueForKey("title") as? String {
+                titles.append(title)
+            }
+        }
+        return titles
+    }
+}
+
+class PartsAndService {
+    let partType: PartType
+    let jsonPart: JSONPart
+    
+    init(partType: PartType, json: NSDictionary)
     {
         self.partType = partType
-        self.roiCalculator = roiCalculator
+        self.jsonPart = JSONPart(partType: partType, json: json)
     }
 }

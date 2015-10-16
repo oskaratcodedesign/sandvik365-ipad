@@ -25,7 +25,7 @@ class JSONManager {
         }.resume()
     }
     
-    func readJSONFromFile() {
+    func readJSONFromFile() -> NSDictionary? {
         
         if let path = NSBundle.mainBundle().pathForResource("sandvik365", ofType: "json")
         {
@@ -33,7 +33,7 @@ class JSONManager {
             {
                 do {
                     if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                        print(json)
+                        return json
                     }
                 }
                 catch {
@@ -41,6 +41,6 @@ class JSONManager {
                 }
             }
         }
-        
+        return nil
     }
 }

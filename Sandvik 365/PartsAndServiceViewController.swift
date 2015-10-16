@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PartsAndServicesViewController: UIViewController {
+class PartsAndServiceViewController: UIViewController {
 
-    var selectedPart: Part!
+    var selectedPart: PartsAndService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class PartsAndServicesViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = selectedPart.roiCalculator
+                //vc.selectedROICalculator = selectedPart.roiCalculator
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, NSLocalizedString("ROI CALCULATOR", comment: ""))
             }
         }
