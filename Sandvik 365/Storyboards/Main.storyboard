@@ -657,10 +657,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="2450" y="1109"/>
         </scene>
-        <!--PartsAndService-->
+        <!--PartsAndServices-->
         <scene sceneID="jAS-uh-L8G">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PartsAndServiceViewController" storyboardName="PartsAndService" id="i8i-Vk-v9G" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PartsAndServices" id="i8i-Vk-v9G" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcE-98-40J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2421" y="55"/>

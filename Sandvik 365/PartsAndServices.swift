@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PartType: UInt {
+enum BusinessType: UInt {
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
@@ -26,7 +26,7 @@ enum PartType: UInt {
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
     
     func videoURL() -> NSURL? {
-        if let videoName = PartType.videos[self] {
+        if let videoName = BusinessType.videos[self] {
             let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"m4v")
             let url = NSURL.fileURLWithPath(path!)
             return url
@@ -38,7 +38,7 @@ enum PartType: UInt {
 class JSONPart {
     let mainSections: [NSDictionary]
     
-    init(partType: PartType, json: NSDictionary) {
+    init(businessType: BusinessType, json: NSDictionary) {
         //parse out relevant parts:
         if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             mainSections = sections
@@ -59,13 +59,13 @@ class JSONPart {
     }
 }
 
-class PartsAndService {
-    let partType: PartType
+class PartsAndServices {
+    let businessType: BusinessType
     let jsonPart: JSONPart
     
-    init(partType: PartType, json: NSDictionary)
+    init(businessType: BusinessType, json: NSDictionary)
     {
-        self.partType = partType
-        self.jsonPart = JSONPart(partType: partType, json: json)
+        self.businessType = businessType
+        self.jsonPart = JSONPart(businessType: businessType, json: json)
     }
 }

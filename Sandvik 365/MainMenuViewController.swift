@@ -81,10 +81,10 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PartsAndServiceViewController" {
-            if let vc = segue.destinationViewController as? PartsAndServiceViewController {
+            if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
                     if let json = JSONManager().readJSONFromFile() {
-                        vc.selectedPart = PartsAndService(partType: view.partType, json: json)
+                        vc.selectedPartsAndServices = PartsAndServices(businessType: view.businessType, json: json)
                     }
                     vc.navigationItem.title = view.label.text
                 }
@@ -104,7 +104,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         }
         else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedPartType = .BulkMaterialHandling
+                vc.selectedBusinessType = .BulkMaterialHandling
                 showBackButton = false
             }
         }

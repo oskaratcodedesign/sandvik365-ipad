@@ -6,10 +6,28 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Parts And Service View Controller-->
+        <!--Part Service Selection View Controller-->
+        <scene sceneID="o4a-zA-0fh">
+            <objects>
+                <viewController id="qrw-oR-DJv" customClass="PartServiceSelectionViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lck-QY-Xgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="5kj-dU-aar"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sa1-c8-XHA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zq-9q-mKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3122" y="55"/>
+        </scene>
+        <!--Parts And Services View Controller-->
         <scene sceneID="pqe-Ao-OEW">
             <objects>
-                <viewController storyboardIdentifier="PartsAndServiceViewController" id="QLr-DO-bh8" customClass="PartsAndServiceViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PartsAndServicesViewController" id="QLr-DO-bh8" customClass="PartsAndServicesViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oWT-Zb-sra"/>
                         <viewControllerLayoutGuide type="bottom" id="ElF-ex-6wJ"/>

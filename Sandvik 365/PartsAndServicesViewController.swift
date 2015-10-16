@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PartsAndServiceViewController: UIViewController {
+class PartsAndServicesViewController: UIViewController {
 
-    var selectedPart: PartsAndService!
+    var selectedPartsAndServices: PartsAndServices!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class PartsAndServiceViewController: UIViewController {
         }
         else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedPartType = selectedPart.partType
+                vc.selectedBusinessType = selectedPartsAndServices.businessType
             }
         }
     }
