@@ -30,6 +30,8 @@
 		F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */; settings = {ASSET_TAGS = (); }; };
 		F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867BC1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867BE1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */; settings = {ASSET_TAGS = (); }; };
+		F70867C61BD4DEF000033AB5 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C51BD4DEF000033AB5 /* CALayer.swift */; settings = {ASSET_TAGS = (); }; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -100,6 +102,8 @@
 		F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PartsAndServices.storyboard; sourceTree = "<group>"; };
 		F70867BC1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceSelectionViewController.swift; sourceTree = "<group>"; };
 		F70867BE1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceSelectionViewController.swift; sourceTree = "<group>"; };
+		F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWheel.swift; sourceTree = "<group>"; };
+		F70867C51BD4DEF000033AB5 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				F7227B8C1B7A04F5002354B1 /* Storyboards */,
 				48FCED531B78C01B002D45A0 /* Services */,
 				486F88781B72383C0084211F /* View Controllers */,
+				F70867C41BD4DE9E00033AB5 /* Extenstions */,
 				48FDEABA1B5F901100C5AFE6 /* Custom Views */,
 				48FDEAB61B5F8D4700C5AFE6 /* Resources */,
 				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
@@ -264,6 +269,7 @@
 				F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */,
 				F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */,
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
+				F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -294,6 +300,14 @@
 				F70867BE1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift */,
 			);
 			name = PartsAndServices;
+			sourceTree = "<group>";
+		};
+		F70867C41BD4DE9E00033AB5 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				F70867C51BD4DEF000033AB5 /* CALayer.swift */,
+			);
+			name = Extenstions;
 			sourceTree = "<group>";
 		};
 		F7227B8C1B7A04F5002354B1 /* Storyboards */ = {
@@ -488,6 +502,7 @@
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
+				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,
 				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,
@@ -500,6 +515,7 @@
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */,
+				F70867C61BD4DEF000033AB5 /* CALayer.swift in Sources */,
 				F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,

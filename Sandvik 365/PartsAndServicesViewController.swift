@@ -10,6 +10,8 @@ import UIKit
 
 class PartsAndServicesViewController: UIViewController {
 
+    @IBOutlet weak var selectionWheel: SelectionWheel!
+    
     var selectedPartsAndServices: PartsAndServices!
     
     override func viewDidLoad() {
