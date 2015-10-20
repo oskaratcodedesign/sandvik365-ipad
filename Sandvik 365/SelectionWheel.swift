@@ -45,6 +45,8 @@ class SelectionWheel: UIView {
         centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(2, 2, frame.size.width-4, frame.size.height-4), fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
         drawWheel()
         //rotate(false)
+        setCurrentSelection(1)
+        //	float angleVal = (((atan2((endPoint.x - startPoint.x) , (endPoint.y - startPoint.y)))*180)/M_PI);
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
@@ -55,6 +57,11 @@ class SelectionWheel: UIView {
         let currentPoint = sectionPoints[currentSection]
         let nextSection = currentSection + 1 < sectionLayers.count ? currentSection + 1 : 0
         let nextPoint = sectionPoints[nextSection]
+        
+        /*currentPoint = CGPointApplyAffineTransform(currentPoint, self.wheelContainer.transform)
+        currentPoint = CGPointMake(currentPoint.x + centerLabel.center.x, currentPoint.y + centerLabel.center.y)
+        nextPoint = CGPointApplyAffineTransform(nextPoint, self.wheelContainer.transform)
+        nextPoint = CGPointMake(nextPoint.x + centerLabel.center.x, nextPoint.y + centerLabel.center.y)*/
         
         let angle = atan2(nextPoint.y - currentPoint.y, nextPoint.x - currentPoint.x)
         print(angle, currentPoint, nextPoint)
@@ -124,14 +131,32 @@ class SelectionWheel: UIView {
         sectionPath.addLineToPoint(center)
         sectionPath.addLineToPoint(nextPoint)
         
+        let xDiff = nextPoint.x - path.currentPoint.x
+        let yDiff = nextPoint.y - path.currentPoint.y
+        
+        let angle = atan2(yDiff, xDiff)
+        let distance = sqrt((xDiff * xDiff) + (yDiff * yDiff))
+        
+        //var label = UILabel(frame: CGRectMake(0, 10, distance, 50))
+        let label = CATextLayer()
+        label.frame = CGRectMake(path.currentPoint.x, path.currentPoint.y, distance, 50)
+        label.string = "this and that"
+        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 20)
+        label.fontSize = 20
+        label.anchorPoint = CGPointMake(0, 0)
+        label.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
+        label.position = path.currentPoint
+        label.alignmentMode = kCAAlignmentCenter
         sectionPoints.append(nextPoint)
         
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = sectionPath.CGPath
         shapeLAyer.fillColor = UIColor.clearColor().CGColor
-        //shapeLAyer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        
+        shapeLAyer.addSublayer(label)
         sectionLayers.append(shapeLAyer)
         wheelContainer.layer.addSublayer(shapeLAyer)
+        
         path.addLineToPoint(nextPoint)
     }
 }

@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-kB-npY" customClass="SelectionWheel" customModule="Sandvik_365" customModuleProvider="target">
-                                <rect key="frame" x="80" y="20" width="440" height="580"/>
+                                <rect key="frame" x="80" y="320" width="440" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaQ-Wi-bBT">
                                         <rect key="frame" x="0.0" y="0.0" width="440" height="580"/>
@@ -78,7 +78,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="bottom" id="3tU-Ea-mVA"/>
+                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="bottom" constant="-300" id="3tU-Ea-mVA"/>
                             <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="zlc-Uy-tFr" secondAttribute="top" id="83P-3B-C13"/>
                             <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="GQI-RR-MVi"/>
                             <constraint firstItem="UDb-kB-npY" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" constant="80" id="Hx4-AE-5g4"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="hVm-s3-MaQ"/>
                             <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="izR-Jh-nKQ"/>
                             <constraint firstAttribute="trailing" secondItem="HlW-pE-7QT" secondAttribute="trailing" id="o9P-YF-Slp"/>
-                            <constraint firstItem="UDb-kB-npY" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="rYe-sO-bwf"/>
+                            <constraint firstItem="UDb-kB-npY" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="300" id="rYe-sO-bwf"/>
                             <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="tEB-pQ-6KV"/>
                             <constraint firstAttribute="trailing" secondItem="UDb-kB-npY" secondAttribute="trailing" constant="80" id="xro-Y0-Cte"/>
                         </constraints>
