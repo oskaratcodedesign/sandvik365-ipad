@@ -166,11 +166,11 @@ class SelectionWheel: UIView {
         container.frame = CGRectMake(path.currentPoint.x, path.currentPoint.y, distance, 50)
         let label = CATextLayer()
         let padding = distance / 8
-        label.frame = CGRectMake(padding, 10, distance-padding*2, 50)
+        label.frame = CGRectMake(padding, 10, distance-padding*2, 100)
         let stringIndex = sectionLayers.count+1 == numberOfSections ? sectionTitles.count-1 : sectionLayers.count % sectionTitles.count
         label.string = sectionTitles[stringIndex]
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 20)
-        label.fontSize = 20
+        label.fontSize = 16
         label.alignmentMode = kCAAlignmentCenter
         label.wrapped = true
         label.contentsScale = UIScreen.mainScreen().scale

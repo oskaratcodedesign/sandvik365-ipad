@@ -52,7 +52,7 @@ class JSONPart {
         var titles: [String] = []
         for dic in mainSections {
             if let title = dic.valueForKey("title") as? String {
-                titles.append(title)
+                titles.append(title.uppercaseString)
             }
         }
         return titles
