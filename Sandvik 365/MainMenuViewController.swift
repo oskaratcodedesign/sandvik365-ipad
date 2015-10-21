@@ -80,7 +80,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PartsAndServiceViewController" {
+        if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
                     if let json = JSONManager().readJSONFromFile() {

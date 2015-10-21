@@ -12,14 +12,16 @@ class SelectionWheel: UIView {
 
     @IBOutlet weak var centerLabel: UILabel!
     @IBOutlet weak var wheelContainer: UIView!
-    var sectionPoints: [CGPoint] = []
-    var sectionLayers: [CAShapeLayer] = []
-    var currentSection = 3
+    var sectionPoints: [CGPoint]!
+    var sectionLayers: [CAShapeLayer]!
+    var currentSection = 0
+    
+    var sectionTitles: [String]!
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     override func awakeFromNib() {
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         centerLabel.userInteractionEnabled = true
@@ -28,6 +30,17 @@ class SelectionWheel: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setup()
+    }
+    
+    func handleTap(recognizer: UIGestureRecognizer) {
+        rotate(true)
+    }
+    
+    private func setup() {
+        sectionPoints = []
+        sectionLayers = []
+        currentSection = 0
         //remove in case they exist
         if let sublayers = wheelContainer.layer.sublayers {
             for layer in sublayers {
@@ -44,13 +57,7 @@ class SelectionWheel: UIView {
         centerLabel.layer.roundCALayer(frame, fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
         centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(2, 2, frame.size.width-4, frame.size.height-4), fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
         drawWheel()
-        //rotate(false)
-        setCurrentSelection(1)
-        //	float angleVal = (((atan2((endPoint.x - startPoint.x) , (endPoint.y - startPoint.y)))*180)/M_PI);
-    }
-    
-    func handleTap(recognizer: UIGestureRecognizer) {
-        rotate(true)
+        rotate(false)
     }
     
     private func rotate(animate: Bool) {
@@ -58,15 +65,11 @@ class SelectionWheel: UIView {
         let nextSection = currentSection + 1 < sectionLayers.count ? currentSection + 1 : 0
         let nextPoint = sectionPoints[nextSection]
         
-        /*currentPoint = CGPointApplyAffineTransform(currentPoint, self.wheelContainer.transform)
-        currentPoint = CGPointMake(currentPoint.x + centerLabel.center.x, currentPoint.y + centerLabel.center.y)
-        nextPoint = CGPointApplyAffineTransform(nextPoint, self.wheelContainer.transform)
-        nextPoint = CGPointMake(nextPoint.x + centerLabel.center.x, nextPoint.y + centerLabel.center.y)*/
-        
         let angle = atan2(nextPoint.y - currentPoint.y, nextPoint.x - currentPoint.x)
         print(angle, currentPoint, nextPoint)
         
         if animate {
+            self.clearCurrentSelection()
             UIView.animateWithDuration(0.25, animations: { () -> Void in
                 self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
                 
@@ -80,13 +83,14 @@ class SelectionWheel: UIView {
         }
     }
     
-    private func setCurrentSelection(section: Int) {
-        
-        self.currentSection = section
+    private func clearCurrentSelection() {
         let prevSection = currentSection-1 >= 0 ? currentSection-1 : sectionLayers.count-1
         sectionLayers[prevSection].fillColor = UIColor.clearColor().CGColor
-        
+    }
+    
+    private func setCurrentSelection(nextSection: Int) {
         sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        currentSection = nextSection
     }
     
     private func drawWheel() {
@@ -96,7 +100,7 @@ class SelectionWheel: UIView {
         let height = self.wheelContainer.bounds.size.height
         let width = self.wheelContainer.bounds.size.width
         //create sections
-        path.moveToPoint(CGPointMake(0, height/2))
+        path.moveToPoint(CGPointMake(width-width/1.1, height/2))
         
         addSection(path, nextPoint: CGPointMake(width/5, height-height/1.2))
         //2
@@ -104,7 +108,7 @@ class SelectionWheel: UIView {
         //3
         addSection(path, nextPoint: CGPointMake(width/1.3, height-height/1.2))
         //4
-        addSection(path, nextPoint: CGPointMake(width, height/2))
+        addSection(path, nextPoint: CGPointMake(width/1.1, height/2))
         //5
         addSection(path, nextPoint: CGPointMake(width/1.3, height/1.2))
         //6
@@ -112,7 +116,7 @@ class SelectionWheel: UIView {
         //7
         addSection(path, nextPoint: CGPointMake(width/5, height/1.2))
         //8
-        addSection(path, nextPoint: CGPointMake(0, height/2))
+        addSection(path, nextPoint: CGPointMake(width-width/1.1, height/2))
         path.closePath()
         
         let shapeLAyer = CAShapeLayer()
@@ -137,23 +141,31 @@ class SelectionWheel: UIView {
         let angle = atan2(yDiff, xDiff)
         let distance = sqrt((xDiff * xDiff) + (yDiff * yDiff))
         
-        //var label = UILabel(frame: CGRectMake(0, 10, distance, 50))
+        let container = CALayer()
+        container.frame = CGRectMake(path.currentPoint.x, path.currentPoint.y, distance, 50)
         let label = CATextLayer()
-        label.frame = CGRectMake(path.currentPoint.x, path.currentPoint.y, distance, 50)
-        label.string = "this and that"
+        let padding = distance / 8
+        label.frame = CGRectMake(padding, 0, distance-padding*2, 50)
+        let stringIndex = sectionLayers.count % sectionTitles.count
+        label.string = sectionTitles[stringIndex]
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 20)
         label.fontSize = 20
-        label.anchorPoint = CGPointMake(0, 0)
-        label.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
-        label.position = path.currentPoint
         label.alignmentMode = kCAAlignmentCenter
-        sectionPoints.append(nextPoint)
+        label.wrapped = true
+        container.addSublayer(label)
+        container.anchorPoint = CGPointMake(0, 0)
+        container.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
+        container.position = path.currentPoint
+        
+        let x = path.currentPoint.x + (distance/2)*cos(angle)
+        let y = path.currentPoint.y + (distance/2)*sin(angle)
+        sectionPoints.append(CGPointMake(x, y))
         
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = sectionPath.CGPath
         shapeLAyer.fillColor = UIColor.clearColor().CGColor
         
-        shapeLAyer.addSublayer(label)
+        shapeLAyer.addSublayer(container)
         sectionLayers.append(shapeLAyer)
         wheelContainer.layer.addSublayer(shapeLAyer)
         

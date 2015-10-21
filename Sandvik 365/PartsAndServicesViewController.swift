@@ -16,6 +16,7 @@ class PartsAndServicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectionWheel.sectionTitles = selectedPartsAndServices.jsonPart.mainSectionTitles()
     }
 
     override func didReceiveMemoryWarning() {
