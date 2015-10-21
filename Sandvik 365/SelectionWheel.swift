@@ -15,8 +15,8 @@ class SelectionWheel: UIView {
     var sectionPoints: [CGPoint]!
     var sectionLayers: [CAShapeLayer]!
     var currentSection = 0
-    
     var sectionTitles: [String]!
+    var rotateAnimationRunning: Bool = false
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -69,12 +69,16 @@ class SelectionWheel: UIView {
         print(angle, currentPoint, nextPoint)
         
         if animate {
-            self.clearCurrentSelection()
-            UIView.animateWithDuration(0.25, animations: { () -> Void in
-                self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
-                
-                }) { (Bool) -> Void in
-                    self.setCurrentSelection(nextSection)
+            if !rotateAnimationRunning {
+                self.clearCurrentSelection()
+                rotateAnimationRunning = true
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
+                    
+                    }) { (Bool) -> Void in
+                        self.setCurrentSelection(nextSection)
+                        self.rotateAnimationRunning = false
+                }
             }
         }
         else {
