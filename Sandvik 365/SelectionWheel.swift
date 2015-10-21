@@ -17,6 +17,7 @@ class SelectionWheel: UIView {
     var currentSection = 0
     var sectionTitles: [String]!
     var rotateAnimationRunning: Bool = false
+    var touchedLayer: CALayer?
     let numberOfSections = 8
     
     required internal init?(coder aDecoder: NSCoder) {
@@ -71,7 +72,7 @@ class SelectionWheel: UIView {
         
         if animate {
             if !rotateAnimationRunning {
-                self.clearCurrentSelection()
+                //self.clearCurrentSelection()
                 rotateAnimationRunning = true
                 UIView.animateWithDuration(0.25, animations: { () -> Void in
                     self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
@@ -88,15 +89,15 @@ class SelectionWheel: UIView {
         }
     }
     
-    private func clearCurrentSelection() {
+    /*private func clearCurrentSelection() {
         let prevSection = currentSection-1 >= 0 ? currentSection-1 : sectionLayers.count-1
         sectionLayers[prevSection].fillColor = UIColor.clearColor().CGColor
         getTextLayer(prevSection).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-    }
+    }*/
     
     private func setCurrentSelection(nextSection: Int) {
-        sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-        getTextLayer(currentSection).foregroundColor = UIColor.blackColor().CGColor
+        //sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        //getTextLayer(currentSection).foregroundColor = UIColor.blackColor().CGColor
         feedSectionTitle()
         currentSection = nextSection
     }
@@ -195,6 +196,81 @@ class SelectionWheel: UIView {
     }
     
     private func getTextLayer(section: Int) -> CATextLayer! {
-        return sectionLayers[section].sublayers!.first!.sublayers!.first as! CATextLayer
+        return getTextLayer(sectionLayers[section])
+    }
+    
+    private func getTextLayer(layer: CAShapeLayer) -> CATextLayer! {
+        return layer.sublayers!.first!.sublayers!.first as! CATextLayer
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            if let view = touch.view {
+                if view == centerLabel {
+                    touchedLayer = centerLabel.layer
+                }
+                else if view == wheelContainer {
+                    let p = touch.locationInView(wheelContainer)
+                    
+                    for layer in sectionLayers {
+                        if CGPathContainsPoint(layer.path,
+                            nil, p, false) {
+                            touchedLayer = layer
+                            break
+                        }
+                    }
+                }
+                fillTouchedLayer()
+            }
+        }
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if touchedLayer != nil, let touch = touches.first {
+            if touchedLayer == centerLabel.layer {
+                if !CGRectContainsPoint(touchedLayer!.frame, touch.locationInView(self)) {
+                    clearTouchedLayer()
+                }
+            }
+            else if let layer = touchedLayer as? CAShapeLayer{
+                if !CGPathContainsPoint(layer.path,
+                    nil, touch.locationInView(wheelContainer), false) {
+                        clearTouchedLayer()
+                }
+            }
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        clearTouchedLayer()
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        clearTouchedLayer()
+    }
+    
+    private func fillTouchedLayer() {
+        if touchedLayer != nil {
+            if let layer = touchedLayer as? CAShapeLayer{
+                layer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+                getTextLayer(layer).foregroundColor = UIColor.blackColor().CGColor
+            }
+            else {
+                touchedLayer!.backgroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+            }
+        }
+    }
+    
+    private func clearTouchedLayer() {
+        if touchedLayer != nil {
+            if let layer = touchedLayer as? CAShapeLayer{
+                layer.fillColor = UIColor.clearColor().CGColor
+                getTextLayer(layer).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+            }
+            else {
+                touchedLayer!.backgroundColor = UIColor.clearColor().CGColor
+            }
+            touchedLayer = nil
+        }
     }
 }
