@@ -17,6 +17,7 @@ class SelectionWheel: UIView {
     var currentSection = 0
     var sectionTitles: [String]!
     var rotateAnimationRunning: Bool = false
+    let numberOfSections = 8
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -94,7 +95,22 @@ class SelectionWheel: UIView {
     
     private func setCurrentSelection(nextSection: Int) {
         sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        feedSectionTitle()
         currentSection = nextSection
+    }
+    
+    private func feedSectionTitle() {
+        let bottomSection = (currentSection + 5) % numberOfSections
+        let layer = sectionLayers[bottomSection]
+        if let label = layer.sublayers?.first?.sublayers?.first as? CATextLayer {
+            let prevBottomSection = (currentSection + 4) % numberOfSections
+            if let prevLabel = sectionLayers[prevBottomSection].sublayers?.first?.sublayers?.first as? CATextLayer {
+                if let prevTitle = prevLabel.string {
+                    let nextTitleIndex = (sectionTitles.indexOf(prevTitle as! String)! + 1) % sectionTitles.count
+                    label.string = sectionTitles[nextTitleIndex]
+                }
+            }
+        }
     }
     
     private func drawWheel() {
@@ -150,7 +166,7 @@ class SelectionWheel: UIView {
         let label = CATextLayer()
         let padding = distance / 8
         label.frame = CGRectMake(padding, 0, distance-padding*2, 50)
-        let stringIndex = sectionLayers.count % sectionTitles.count
+        let stringIndex = sectionLayers.count+1 == numberOfSections ? sectionTitles.count-1 : sectionLayers.count % sectionTitles.count
         label.string = sectionTitles[stringIndex]
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 20)
         label.fontSize = 20
