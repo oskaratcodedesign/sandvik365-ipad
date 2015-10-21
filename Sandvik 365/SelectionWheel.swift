@@ -175,6 +175,7 @@ class SelectionWheel: UIView {
         label.wrapped = true
         label.contentsScale = UIScreen.mainScreen().scale
         label.foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        
         container.addSublayer(label)
         container.anchorPoint = CGPointMake(0, 0)
         container.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
@@ -188,6 +189,13 @@ class SelectionWheel: UIView {
         shapeLAyer.path = sectionPath.CGPath
         shapeLAyer.fillColor = UIColor.clearColor().CGColor
         
+        let mask = CAShapeLayer()
+        let p = UIBezierPath(rect: self.bounds)
+        p.appendPath(UIBezierPath(roundedRect: centerLabel.frame, cornerRadius: centerLabel.frame.size.width/2))
+        //sectionPath.usesEvenOddFillRule = true
+        mask.path = p.CGPath
+        mask.fillRule = kCAFillRuleEvenOdd;
+        shapeLAyer.mask = mask
         shapeLAyer.addSublayer(container)
         sectionLayers.append(shapeLAyer)
         wheelContainer.layer.addSublayer(shapeLAyer)
