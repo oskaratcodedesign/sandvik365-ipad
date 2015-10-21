@@ -91,20 +91,21 @@ class SelectionWheel: UIView {
     private func clearCurrentSelection() {
         let prevSection = currentSection-1 >= 0 ? currentSection-1 : sectionLayers.count-1
         sectionLayers[prevSection].fillColor = UIColor.clearColor().CGColor
+        getTextLayer(prevSection).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
     }
     
     private func setCurrentSelection(nextSection: Int) {
         sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        getTextLayer(currentSection).foregroundColor = UIColor.blackColor().CGColor
         feedSectionTitle()
         currentSection = nextSection
     }
     
     private func feedSectionTitle() {
         let bottomSection = (currentSection + 5) % numberOfSections
-        let layer = sectionLayers[bottomSection]
-        if let label = layer.sublayers?.first?.sublayers?.first as? CATextLayer {
+        if let label = getTextLayer(bottomSection) {
             let prevBottomSection = (currentSection + 4) % numberOfSections
-            if let prevLabel = sectionLayers[prevBottomSection].sublayers?.first?.sublayers?.first as? CATextLayer {
+            if let prevLabel = getTextLayer(prevBottomSection) {
                 if let prevTitle = prevLabel.string {
                     let nextTitleIndex = (sectionTitles.indexOf(prevTitle as! String)! + 1) % sectionTitles.count
                     label.string = sectionTitles[nextTitleIndex]
@@ -114,7 +115,6 @@ class SelectionWheel: UIView {
     }
     
     private func drawWheel() {
-        
         let path = UIBezierPath()
         
         let height = self.wheelContainer.bounds.size.height
@@ -142,7 +142,7 @@ class SelectionWheel: UIView {
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = path.CGPath
         shapeLAyer.lineWidth = 2
-        shapeLAyer.fillColor = UIColor(white: 0, alpha: 0.5).CGColor
+        shapeLAyer.fillColor = UIColor(white: 0, alpha: 0.8).CGColor
         shapeLAyer.strokeColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
         wheelContainer.layer.insertSublayer(shapeLAyer, atIndex: 0)
     }
@@ -165,13 +165,15 @@ class SelectionWheel: UIView {
         container.frame = CGRectMake(path.currentPoint.x, path.currentPoint.y, distance, 50)
         let label = CATextLayer()
         let padding = distance / 8
-        label.frame = CGRectMake(padding, 0, distance-padding*2, 50)
+        label.frame = CGRectMake(padding, 10, distance-padding*2, 50)
         let stringIndex = sectionLayers.count+1 == numberOfSections ? sectionTitles.count-1 : sectionLayers.count % sectionTitles.count
         label.string = sectionTitles[stringIndex]
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 20)
         label.fontSize = 20
         label.alignmentMode = kCAAlignmentCenter
         label.wrapped = true
+        label.contentsScale = UIScreen.mainScreen().scale
+        label.foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
         container.addSublayer(label)
         container.anchorPoint = CGPointMake(0, 0)
         container.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
@@ -190,5 +192,9 @@ class SelectionWheel: UIView {
         wheelContainer.layer.addSublayer(shapeLAyer)
         
         path.addLineToPoint(nextPoint)
+    }
+    
+    private func getTextLayer(section: Int) -> CATextLayer! {
+        return sectionLayers[section].sublayers!.first!.sublayers!.first as! CATextLayer
     }
 }
