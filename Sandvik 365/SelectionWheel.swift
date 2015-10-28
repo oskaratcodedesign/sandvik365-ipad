@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SelectionWheelDelegate {
+    func didSelectSection(sectionTitle: String)
+}
+
 class SelectionWheel: UIView {
 
     @IBOutlet weak var centerLabel: UILabel!
@@ -19,6 +23,8 @@ class SelectionWheel: UIView {
     var rotateAnimationRunning: Bool = false
     var touchedLayer: CALayer?
     let numberOfSections = 8
+    
+    var delegate: SelectionWheelDelegate?
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -250,6 +256,16 @@ class SelectionWheel: UIView {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if touchedLayer != nil, let touch = touches.first, let delegate = self.delegate {
+            if let layer = touchedLayer as? CAShapeLayer{
+                if CGPathContainsPoint(layer.path,
+                    nil, touch.locationInView(wheelContainer), false) {
+                        if let index = sectionLayers.indexOf(layer) {
+                            delegate.didSelectSection(sectionTitles[index])
+                        }
+                }
+            }
+        }
         clearTouchedLayer()
     }
     
