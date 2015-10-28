@@ -129,7 +129,7 @@ class PartsAndServices {
         return jsonParts.levelThreeSectionTitles.objectForKey(sectionTitle) as! [String]
     }
     
-    func subPartContent(sectionTitle: String) -> NSDictionary {
-        return jsonParts.levelThreeContent.objectForKey(sectionTitle) as! NSDictionary
+    func subPartContent(sectionTitle: String) -> NSDictionary? {
+        return jsonParts.levelThreeContent.objectForKey(sectionTitle) as? NSDictionary
     }
 }

@@ -13,9 +13,20 @@ class SubPartServiceContentViewController: UIViewController {
     var selectedPartsAndServices: PartsAndServices!
     var sectionTitle: String!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var content = selectedPartsAndServices.subPartContent(sectionTitle)
+        if let content = selectedPartsAndServices.subPartContent(sectionTitle) {
+            if var title = content.objectForKey("title") as? String {
+                if let subtitle = content.objectForKey("subTitle") as? String {
+                    title += "\n" + subtitle
+                }
+                titleLabel.text = title
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
