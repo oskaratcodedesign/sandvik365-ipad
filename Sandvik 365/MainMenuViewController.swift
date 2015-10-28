@@ -83,9 +83,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    if let json = JSONManager().readJSONFromFile() {
-                        vc.selectedPartsAndServices = PartsAndServices(businessType: view.businessType, json: json)
-                    }
+                    vc.selectedPartsAndServices = PartsAndServices(businessType: view.businessType)
                     vc.navigationItem.title = view.label.text
                 }
             }
