@@ -21,8 +21,28 @@
                     <view key="view" contentMode="scaleToFill" id="sa1-c8-XHA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYV-ay-6TU">
+                                <rect key="frame" x="131" y="147" width="338" height="98"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tempAction:" destination="qrw-oR-DJv" eventType="touchUpInside" id="unH-0W-fdq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZk-fi-9aE">
+                                <rect key="frame" x="168" y="253" width="264" height="221"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tempButton" destination="RYV-ay-6TU" id="pjX-Xo-HLf"/>
+                        <outlet property="tempLabel" destination="dZk-fi-9aE" id="m4O-EE-JEu"/>
+                        <segue destination="dC8-A3-gL8" kind="show" identifier="ShowSubPartServiceSelectionViewController" id="kRX-aC-bEV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zq-9q-mKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +131,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2421" y="55"/>
+        </scene>
+        <!--Sub Part Service Selection View Controller-->
+        <scene sceneID="tH7-qM-JfV">
+            <objects>
+                <viewController id="dC8-A3-gL8" customClass="SubPartServiceSelectionViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nVC-OV-f4e"/>
+                        <viewControllerLayoutGuide type="bottom" id="l9q-pM-b7e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8oH-OQ-16R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxe-8M-6jS">
+                                <rect key="frame" x="147" y="86" width="306" height="142"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tempAction:" destination="dC8-A3-gL8" eventType="touchUpInside" id="E71-Gz-TkM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tempButton" destination="gxe-8M-6jS" id="ccw-Jj-kcB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7P-2C-yCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2677" y="715"/>
         </scene>
     </scenes>
     <resources>

@@ -10,10 +10,15 @@ import UIKit
 
 class SubPartServiceSelectionViewController: UIViewController {
 
+    @IBOutlet weak var tempButton: UIButton!
+    var selectedPartsAndServices: PartsAndServices!
+    var sectionTitle: String!
+    var selectedSectionTitle: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        var titles = selectedPartsAndServices.subPartServicTitles(sectionTitle)
+        tempButton.setTitle(titles[0] as! String, forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +27,8 @@ class SubPartServiceSelectionViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func tempAction(sender: AnyObject) {
     }
-    */
+
 
 }

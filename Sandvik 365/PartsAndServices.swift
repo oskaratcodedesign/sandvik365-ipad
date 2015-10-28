@@ -36,10 +36,14 @@ enum BusinessType: UInt {
 }
 
 class JSONParts {
-    let businessType: BusinessType
+    var levelOneSectionTitles: [String] = []
+    let levelTwoSectionTitlesAndDescriptions: NSMutableDictionary = NSMutableDictionary()
+    let levelThreeSectionTitles: NSMutableDictionary = NSMutableDictionary()
     
-    init(businessType: BusinessType) {
-        self.businessType = businessType
+    init(businessType: BusinessType, json: NSDictionary) {
+        
+        //parse out relevant parts:
+        levelOneSectionTitles(json)
     }
     
     private func sectionTitle(dic: NSDictionary) -> String? {
@@ -57,45 +61,45 @@ class JSONParts {
         return nil
     }
     
-    func levelOneSectionTitles(json: NSDictionary) -> [String] {
-        var titles: [String] = []
+    private func levelOneSectionTitles(json: NSDictionary) {
         if let sections = levelOneSections(json) {
             for dic in sections {
                 if let title = sectionTitle(dic) {
-                    titles.append(title.uppercaseString)
-                }
-            }
-        }
-        return titles
-    }
-    
-    private func levelTwoSections(json: NSDictionary, levelOneSectionTitle: String) -> [NSDictionary]? {
-        if let sections = levelOneSections(json) {
-            for dic in sections {
-                if let title = sectionTitle(dic) {
-                    if levelOneSectionTitle.caseInsensitiveCompare(title) == .OrderedSame  {
-                        return dic.valueForKey("children") as? [NSDictionary]
+                    levelOneSectionTitles.append(title.uppercaseString)
+                    
+                    if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
+                        levelTwoSectionTitlesAndDescriptions(jsonpart, levelOneTitle: title)
                     }
                 }
             }
         }
-        return nil
     }
     
-    func levelTwoSectionTitlesAndDescriptions(json: NSDictionary, levelOneSectionTitle: String) -> [NSDictionary] {
+    private func levelTwoSectionTitlesAndDescriptions(jsonpart: [NSDictionary], levelOneTitle: String){
         var titlesAndDesc: [NSDictionary] = []
-        if let sections = levelTwoSections(json, levelOneSectionTitle: levelOneSectionTitle) {
-            for dic in sections {
-                if let title = sectionTitle(dic) {
-                    let titleDesc = NSMutableDictionary(object: title.uppercaseString, forKey: "title")
-                    if let desc = sectionDescription(dic) {
-                        titleDesc.setObject(desc, forKey: "description")
-                    }
-                    titlesAndDesc.append(titleDesc)
+        for dic in jsonpart {
+            if let title = sectionTitle(dic) {
+                let titleDesc = NSMutableDictionary(object: title.uppercaseString, forKey: "title")
+                if let desc = sectionDescription(dic) {
+                    titleDesc.setObject(desc, forKey: "description")
+                }
+                titlesAndDesc.append(titleDesc)
+                if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
+                    levelThreeSectionTitles(jsonpart, levelTwoTitle: title)
                 }
             }
         }
-        return titlesAndDesc
+        levelTwoSectionTitlesAndDescriptions.setObject(titlesAndDesc, forKey: levelOneTitle.uppercaseString)
+    }
+    
+    private func levelThreeSectionTitles(jsonpart: [NSDictionary], levelTwoTitle: String) {
+        var titles: [String] = []
+        for dic in jsonpart {
+            if let title = sectionTitle(dic) {
+                titles.append(title.uppercaseString)
+            }
+        }
+        levelThreeSectionTitles.setObject(titles, forKey: levelTwoTitle.uppercaseString)
     }
 }
 
@@ -103,17 +107,21 @@ class PartsAndServices {
     let businessType: BusinessType
     let jsonParts: JSONParts
     
-    init(businessType: BusinessType)
+    init(businessType: BusinessType, json: NSDictionary)
     {
         self.businessType = businessType
-        self.jsonParts = JSONParts(businessType: businessType)
+        self.jsonParts = JSONParts(businessType: businessType, json: json)
     }
     
-    func mainSectionTitles(json: NSDictionary) -> [String] {
-        return jsonParts.levelOneSectionTitles(json)
+    func mainSectionTitles() -> [String] {
+        return jsonParts.levelOneSectionTitles
     }
     
-    func partServiceTitlesAndDescriptions(json: NSDictionary, sectionTitle: String) -> [NSDictionary] {
-        return jsonParts.levelTwoSectionTitlesAndDescriptions(json, levelOneSectionTitle: sectionTitle)
+    func partServiceTitlesAndDescriptions(sectionTitle: String) -> [NSDictionary] {
+        return jsonParts.levelTwoSectionTitlesAndDescriptions.objectForKey(sectionTitle) as! [NSDictionary]
+    }
+    
+    func subPartServicTitles(sectionTitle: String) -> [String] {
+        return jsonParts.levelThreeSectionTitles.objectForKey(sectionTitle) as! [String]
     }
 }

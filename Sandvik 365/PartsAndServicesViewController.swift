@@ -17,10 +17,8 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let json = JSONManager().readJSONFromFile() {
-            selectionWheel.sectionTitles = selectedPartsAndServices.mainSectionTitles(json)
-            selectionWheel.delegate = self
-        }
+        selectionWheel.sectionTitles = selectedPartsAndServices.mainSectionTitles()
+        selectionWheel.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
