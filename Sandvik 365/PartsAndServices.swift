@@ -39,10 +39,12 @@ class JSONParts {
     var levelOneSectionTitles: [String] = []
     let levelTwoSectionTitlesAndDescriptions: NSMutableDictionary = NSMutableDictionary()
     let levelThreeSectionTitles: NSMutableDictionary = NSMutableDictionary()
+    let levelThreeContent: NSMutableDictionary = NSMutableDictionary()
     
     init(businessType: BusinessType, json: NSDictionary) {
         
         //parse out relevant parts:
+        //TODO chain parts, can contains same keys
         levelOneSectionTitles(json)
     }
     
@@ -97,7 +99,9 @@ class JSONParts {
         for dic in jsonpart {
             if let title = sectionTitle(dic) {
                 titles.append(title.uppercaseString)
+                levelThreeContent.setObject(dic, forKey: title.uppercaseString)
             }
+            
         }
         levelThreeSectionTitles.setObject(titles, forKey: levelTwoTitle.uppercaseString)
     }
