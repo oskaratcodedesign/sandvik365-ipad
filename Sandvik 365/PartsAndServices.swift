@@ -35,17 +35,42 @@ enum BusinessType: UInt {
     }
 }
 
+class MainPartService {
+    let title: String
+    var partsServices: [PartService] = []
+    
+    init(title: String){
+        self.title = title
+    }
+}
+
+class PartService {
+    let title: String
+    let description: String
+    var subPartsServices: [SubPartService] = []
+    
+    init(title: String, description: String){
+        self.title = title
+        self.description = description
+    }
+}
+
+class SubPartService {
+    let title: String
+    let content: NSDictionary
+    
+    init(title: String, content: NSDictionary){
+        self.title = title
+        self.content = content
+    }
+}
+
 class JSONParts {
-    var levelOneSectionTitles: [String] = []
-    let levelTwoSectionTitlesAndDescriptions: NSMutableDictionary = NSMutableDictionary()
-    let levelThreeSectionTitles: NSMutableDictionary = NSMutableDictionary()
-    let levelThreeContent: NSMutableDictionary = NSMutableDictionary()
+    var allParts: [MainPartService] = []
     
     init(businessType: BusinessType, json: NSDictionary) {
-        
         //parse out relevant parts:
-        //TODO chain parts, can contain same keys
-        levelOneSectionTitles(json)
+        parseMainSections(json)
     }
     
     private func sectionTitle(dic: NSDictionary) -> String? {
@@ -56,54 +81,47 @@ class JSONParts {
         return dic.valueForKey("description") as? String
     }
     
-    private func levelOneSections(json: NSDictionary) -> [NSDictionary]? {
+    private func mainSections(json: NSDictionary) -> [NSDictionary]? {
         if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             return sections
         }
         return nil
     }
     
-    private func levelOneSectionTitles(json: NSDictionary) {
-        if let sections = levelOneSections(json) {
+    private func parseMainSections(json: NSDictionary) {
+        if let sections = mainSections(json) {
             for dic in sections {
                 if let title = sectionTitle(dic) {
-                    levelOneSectionTitles.append(title.uppercaseString)
+                    let mainPartService = MainPartService(title: title)
                     
                     if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
-                        levelTwoSectionTitlesAndDescriptions(jsonpart, levelOneTitle: title)
+                        parsePartServiceSections(jsonpart, mainPartService: mainPartService)
                     }
+                    allParts.append(mainPartService)
                 }
             }
         }
     }
     
-    private func levelTwoSectionTitlesAndDescriptions(jsonpart: [NSDictionary], levelOneTitle: String){
-        var titlesAndDesc: [NSDictionary] = []
+    private func parsePartServiceSections(jsonpart: [NSDictionary], mainPartService: MainPartService) {
         for dic in jsonpart {
-            if let title = sectionTitle(dic) {
-                let titleDesc = NSMutableDictionary(object: title.uppercaseString, forKey: "title")
-                if let desc = sectionDescription(dic) {
-                    titleDesc.setObject(desc, forKey: "description")
-                }
-                titlesAndDesc.append(titleDesc)
+            if let title = sectionTitle(dic), let desc = sectionDescription(dic) {
+                let partService = PartService(title: title, description: desc)
                 if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
-                    levelThreeSectionTitles(jsonpart, levelTwoTitle: title)
+                    parseSubPartServiceSections(jsonpart, partService: partService)
                 }
+                mainPartService.partsServices.append(partService)
             }
         }
-        levelTwoSectionTitlesAndDescriptions.setObject(titlesAndDesc, forKey: levelOneTitle.uppercaseString)
     }
     
-    private func levelThreeSectionTitles(jsonpart: [NSDictionary], levelTwoTitle: String) {
-        var titles: [String] = []
+    private func parseSubPartServiceSections(jsonpart: [NSDictionary], partService: PartService) {
         for dic in jsonpart {
             if let title = sectionTitle(dic) {
-                titles.append(title.uppercaseString)
-                levelThreeContent.setObject(dic, forKey: title.uppercaseString)
+                let subPartService = SubPartService(title: title, content: dic)
+                partService.subPartsServices.append(subPartService)
             }
-            
         }
-        levelThreeSectionTitles.setObject(titles, forKey: levelTwoTitle.uppercaseString)
     }
 }
 
@@ -118,18 +136,30 @@ class PartsAndServices {
     }
     
     func mainSectionTitles() -> [String] {
-        return jsonParts.levelOneSectionTitles
+        var titles: [String] = []
+        for mp in jsonParts.allParts {
+            titles.append(mp.title.uppercaseString)
+        }
+        return titles
     }
     
-    func partServiceTitlesAndDescriptions(sectionTitle: String) -> [NSDictionary] {
-        return jsonParts.levelTwoSectionTitlesAndDescriptions.objectForKey(sectionTitle) as! [NSDictionary]
+    func partsServices(mainSectionTitle: String) -> [PartService]? {
+        for mp in jsonParts.allParts {
+            if mp.title.caseInsensitiveCompare(mainSectionTitle) == .OrderedSame {
+                return mp.partsServices
+            }
+        }
+        return nil
     }
     
-    func subPartServicTitles(sectionTitle: String) -> [String] {
-        return jsonParts.levelThreeSectionTitles.objectForKey(sectionTitle) as! [String]
-    }
-    
-    func subPartContent(sectionTitle: String) -> NSDictionary? {
-        return jsonParts.levelThreeContent.objectForKey(sectionTitle) as? NSDictionary
+    func subPartsServices(mainSectionTitle: String, partServicesectionTitle: String) -> [SubPartService]? {
+        if let partsServices = partsServices(mainSectionTitle) {
+            for ps in partsServices {
+                if ps.title.caseInsensitiveCompare(partServicesectionTitle) == .OrderedSame {
+                    return ps.subPartsServices
+                }
+            }
+        }
+        return nil
     }
 }

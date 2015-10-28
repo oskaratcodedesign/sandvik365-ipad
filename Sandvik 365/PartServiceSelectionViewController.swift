@@ -11,7 +11,7 @@ import UIKit
 class PartServiceSelectionViewController: UIViewController {
 
     var selectedPartsAndServices: PartsAndServices!
-    var sectionTitle: String!
+    var mainSectionTitle: String!
     var selectedSectionTitle: String!
     
     @IBOutlet weak var tempButton: UIButton!
@@ -19,9 +19,10 @@ class PartServiceSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var titlesAndDesc = selectedPartsAndServices.partServiceTitlesAndDescriptions(sectionTitle)
-        tempButton.setTitle(titlesAndDesc[0].objectForKey("title") as! String, forState: .Normal)
-        tempLabel.text = titlesAndDesc[0].objectForKey("description") as! String
+        if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
+            tempButton.setTitle(partsServices.first?.title, forState: .Normal)
+            tempLabel.text = partsServices.first?.description
+        }
     }
 
     @IBAction func tempAction(sender: UIButton) {
@@ -38,7 +39,7 @@ class PartServiceSelectionViewController: UIViewController {
         if segue.identifier == "ShowSubPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.sectionTitle = selectedSectionTitle
+                vc.selectedSubPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
             }
         }

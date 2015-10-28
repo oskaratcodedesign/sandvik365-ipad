@@ -12,13 +12,15 @@ class SubPartServiceSelectionViewController: UIViewController {
 
     @IBOutlet weak var tempButton: UIButton!
     var selectedPartsAndServices: PartsAndServices!
-    var sectionTitle: String!
-    var selectedSectionTitle: String!
+    var selectedSubPartsServices: [SubPartService]?
+    
+    var selectedSubPart: SubPartService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var titles = selectedPartsAndServices.subPartServicTitles(sectionTitle)
-        tempButton.setTitle(titles[0] as! String, forState: .Normal)
+        if let subParts = selectedSubPartsServices {
+            tempButton.setTitle(subParts.first?.title, forState: .Normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +30,25 @@ class SubPartServiceSelectionViewController: UIViewController {
     
 
     @IBAction func tempAction(sender: UIButton) {
-        selectedSectionTitle = sender.titleLabel?.text
-        performSegueWithIdentifier("ShowSubPartServiceContentViewController", sender: self)
+        if let selectedSectionTitle = sender.titleLabel?.text {
+            if let subParts = selectedSubPartsServices {
+                for sp in subParts {
+                    if sp.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame {
+                        selectedSubPart = sp
+                        performSegueWithIdentifier("ShowSubPartServiceContentViewController", sender: self)
+                        return
+                    }
+                }
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowSubPartServiceContentViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.sectionTitle = selectedSectionTitle
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.selectedSubPartService = selectedSubPart
+                //vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
             }
         }
     }

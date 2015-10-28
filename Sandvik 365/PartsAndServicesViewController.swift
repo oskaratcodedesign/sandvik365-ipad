@@ -46,7 +46,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         else if segue.identifier == "ShowPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.sectionTitle = selectedSectionTitle
+                vc.mainSectionTitle = selectedSectionTitle
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
             }
         }
