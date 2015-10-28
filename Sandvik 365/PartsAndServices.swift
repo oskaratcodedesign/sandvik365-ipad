@@ -44,7 +44,7 @@ class JSONParts {
     init(businessType: BusinessType, json: NSDictionary) {
         
         //parse out relevant parts:
-        //TODO chain parts, can contains same keys
+        //TODO chain parts, can contain same keys
         levelOneSectionTitles(json)
     }
     
@@ -127,5 +127,9 @@ class PartsAndServices {
     
     func subPartServicTitles(sectionTitle: String) -> [String] {
         return jsonParts.levelThreeSectionTitles.objectForKey(sectionTitle) as! [String]
+    }
+    
+    func subPartContent(sectionTitle: String) -> NSDictionary {
+        return jsonParts.levelThreeContent.objectForKey(sectionTitle) as! NSDictionary
     }
 }

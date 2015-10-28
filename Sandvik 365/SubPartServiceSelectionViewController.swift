@@ -27,8 +27,19 @@ class SubPartServiceSelectionViewController: UIViewController {
     }
     
 
-    @IBAction func tempAction(sender: AnyObject) {
+    @IBAction func tempAction(sender: UIButton) {
+        selectedSectionTitle = sender.titleLabel?.text
+        performSegueWithIdentifier("ShowSubPartServiceContentViewController", sender: self)
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowSubPartServiceContentViewController" {
+            if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
+                vc.selectedPartsAndServices = selectedPartsAndServices
+                vc.sectionTitle = selectedSectionTitle
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+            }
+        }
+    }
 
 }

@@ -156,11 +156,29 @@
                     </view>
                     <connections>
                         <outlet property="tempButton" destination="gxe-8M-6jS" id="ccw-Jj-kcB"/>
+                        <segue destination="DvM-WU-qFf" kind="show" identifier="ShowSubPartServiceContentViewController" id="HCU-SY-t7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7P-2C-yCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2677" y="715"/>
+        </scene>
+        <!--Sub Part Service Content View Controller-->
+        <scene sceneID="Sax-Oq-kxF">
+            <objects>
+                <viewController id="DvM-WU-qFf" customClass="SubPartServiceContentViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qYK-MS-ssF"/>
+                        <viewControllerLayoutGuide type="bottom" id="L0W-Cl-u8N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tFP-gj-asj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bal-fB-qjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
