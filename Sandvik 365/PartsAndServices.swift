@@ -46,6 +46,10 @@ class JSONParts {
         return dic.valueForKey("navTitle") as? String
     }
     
+    private func sectionDescription(dic: NSDictionary) -> String? {
+        return dic.valueForKey("description") as? String
+    }
+    
     private func levelOneSections(json: NSDictionary) -> [NSDictionary]? {
         if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             return sections
@@ -68,24 +72,30 @@ class JSONParts {
     private func levelTwoSections(json: NSDictionary, levelOneSectionTitle: String) -> [NSDictionary]? {
         if let sections = levelOneSections(json) {
             for dic in sections {
-                if levelOneSectionTitle == sectionTitle(dic) {
-                    return dic.valueForKey("children") as? [NSDictionary]
+                if let title = sectionTitle(dic) {
+                    if levelOneSectionTitle.caseInsensitiveCompare(title) == .OrderedSame  {
+                        return dic.valueForKey("children") as? [NSDictionary]
+                    }
                 }
             }
         }
         return nil
     }
     
-    func levelTwoSectionTitles(json: NSDictionary, levelOneSectionTitle: String) -> [String] {
-        var titles: [String] = []
+    func levelTwoSectionTitlesAndDescriptions(json: NSDictionary, levelOneSectionTitle: String) -> [NSDictionary] {
+        var titlesAndDesc: [NSDictionary] = []
         if let sections = levelTwoSections(json, levelOneSectionTitle: levelOneSectionTitle) {
             for dic in sections {
                 if let title = sectionTitle(dic) {
-                    titles.append(title.uppercaseString)
+                    let titleDesc = NSMutableDictionary(object: title.uppercaseString, forKey: "title")
+                    if let desc = sectionDescription(dic) {
+                        titleDesc.setObject(desc, forKey: "description")
+                    }
+                    titlesAndDesc.append(titleDesc)
                 }
             }
         }
-        return titles
+        return titlesAndDesc
     }
 }
 
@@ -101,5 +111,9 @@ class PartsAndServices {
     
     func mainSectionTitles(json: NSDictionary) -> [String] {
         return jsonParts.levelOneSectionTitles(json)
+    }
+    
+    func partServiceTitlesAndDescriptions(json: NSDictionary, sectionTitle: String) -> [NSDictionary] {
+        return jsonParts.levelTwoSectionTitlesAndDescriptions(json, levelOneSectionTitle: sectionTitle)
     }
 }

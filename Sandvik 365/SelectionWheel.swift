@@ -260,8 +260,8 @@ class SelectionWheel: UIView {
             if let layer = touchedLayer as? CAShapeLayer{
                 if CGPathContainsPoint(layer.path,
                     nil, touch.locationInView(wheelContainer), false) {
-                        if let index = sectionLayers.indexOf(layer) {
-                            delegate.didSelectSection(sectionTitles[index])
+                        if let title = getTextLayer(layer).string as? String {
+                            delegate.didSelectSection(title)
                         }
                 }
             }
