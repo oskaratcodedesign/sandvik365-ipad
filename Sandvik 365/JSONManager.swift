@@ -10,7 +10,7 @@ import Foundation
 
 class JSONManager {
     
-    let url: String = "http://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED"
+    let url: String = "https://mining.test.ibp.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?Client=%7B5525EAB6-6401-4CAA-A5C9-CC8A484638ED%7D"
     
     func downLoadJSON() {
         NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
