@@ -169,7 +169,7 @@
         <!--Sub Part Service Content View Controller-->
         <scene sceneID="Sax-Oq-kxF">
             <objects>
-                <viewController id="DvM-WU-qFf" customClass="SubPartServiceContentViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DvM-WU-qFf" customClass="SubPartServiceContentViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qYK-MS-ssF"/>
                         <viewControllerLayoutGuide type="bottom" id="L0W-Cl-u8N"/>
@@ -228,6 +228,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="k5Y-KQ-imn" id="v6j-5S-XQw"/>
+                        <outlet property="leadingConstraint" destination="I6I-op-QvB" id="Gqc-5N-QT2"/>
                         <outlet property="scrollView" destination="Qz5-JH-xDz" id="rdw-66-xoP"/>
                         <outlet property="titleLabel" destination="agf-ql-z8F" id="seN-kh-HlD"/>
                     </connections>
