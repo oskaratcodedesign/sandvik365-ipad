@@ -14,10 +14,11 @@ class SubPartServiceContentViewController: UIViewController {
     var selectedSubPartService: SubPartService!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
     private let topConstant: CGFloat = 20
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class SubPartServiceContentViewController: UIViewController {
                     else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
                         previousView = addKeyFeatureList(value, prevView: previousView)
                     }
-                    else if type == "columns", let value = part.objectForKey("value") as? NSDictionary {
+                    else if type == "columns", let value = part.objectForKey("value") as? [NSDictionary] {
                         previousView = addColumns(value, prevView: previousView)
                     }
                     else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
@@ -50,6 +51,11 @@ class SubPartServiceContentViewController: UIViewController {
                     }
                 }
             }
+
+            let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+            previousView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.deactivateConstraints([bottomConstraint])
+            NSLayoutConstraint.activateConstraints([newbottomConstraint])
         }
     }
     
@@ -81,15 +87,18 @@ class SubPartServiceContentViewController: UIViewController {
     }
     
     private func addKeyFeatureList(dic: NSDictionary, prevView: UIView) -> UIView {
-        let view = UIView()
+        let view = prevView
+        if let featureList = dic.objectForKey("config") as? [String] {
+            
+        }
         
         return view
     }
     
-    private func addColumns(dic: NSDictionary, prevView: UIView) -> UIView {
+    private func addColumns(dic: [NSDictionary], prevView: UIView) -> UIView {
         let view = UIView()
         
-        return view
+        return prevView
     }
     
     private func addTabbedContent(dic: NSDictionary, prevView: UIView) -> UIView {
