@@ -20,27 +20,27 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXO-XJ-48X" customClass="KeyFeatureItem" customModule="Sandvik_365" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="1"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-16-qT8" customClass="KeyFeatureItem" customModule="Sandvik_365" customModuleProvider="target">
                     <rect key="frame" x="200" y="0.0" width="200" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="2"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W83-6p-ZbB" customClass="KeyFeatureItem" customModule="Sandvik_365" customModuleProvider="target">
                     <rect key="frame" x="400" y="0.0" width="200" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="3"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="B8Q-16-qT8" secondAttribute="bottom" id="4UD-Rg-tFI"/>
                 <constraint firstItem="W83-6p-ZbB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5RM-aw-ncZ"/>
