@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
+            <string>AktivGroteskCorp-Light</string>
+        </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyFeatureItem">
+            <connections>
+                <outlet property="button" destination="zoh-sL-HaX" id="8eW-cw-1mT"/>
+                <outlet property="textLabel" destination="B0y-4o-MYx" id="C6f-pt-d8F"/>
+                <outlet property="textLabelBottomConstraint" destination="P9h-Is-PgP" id="U2E-Fo-avr"/>
+                <outlet property="titleAboveText" destination="lC4-LZ-dOd" id="5jT-3d-Hmd"/>
+                <outlet property="titleBelowBottomConstraint" destination="qAL-Sk-9uo" id="XBJ-nL-u8u"/>
+                <outlet property="titleBelowButtonLabel" destination="tz4-hj-XMM" id="tQr-ks-yl9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC4-LZ-dOd">
+                    <rect key="frame" x="200" y="0.0" width="200" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="lo6-3N-7dq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                    <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
+                    <rect key="frame" x="200" y="24.5" width="200" height="575.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="nDU-15-GFc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoh-sL-HaX">
+                    <rect key="frame" x="250" y="0.0" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="WpM-Xh-qjT"/>
+                        <constraint firstAttribute="width" constant="100" id="z8g-bY-glb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clickAction:" destination="-1" eventType="touchUpInside" id="I4d-oC-rbh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-hj-XMM">
+                    <rect key="frame" x="200" y="110" width="200" height="490"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="5Fg-hO-7IT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                    <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="B0y-4o-MYx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9U2-H4-BFn"/>
+                <constraint firstItem="B0y-4o-MYx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cba-V7-Wa2"/>
+                <constraint firstItem="tz4-hj-XMM" firstAttribute="top" secondItem="zoh-sL-HaX" secondAttribute="bottom" constant="10" id="Dzp-va-qtC"/>
+                <constraint firstItem="tz4-hj-XMM" firstAttribute="top" secondItem="B0y-4o-MYx" secondAttribute="bottom" constant="68" id="Lvl-ce-Gke"/>
+                <constraint firstAttribute="bottom" secondItem="B0y-4o-MYx" secondAttribute="bottom" priority="750" id="P9h-Is-PgP"/>
+                <constraint firstItem="lC4-LZ-dOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="266" id="QeK-e5-IOa"/>
+                <constraint firstItem="lC4-LZ-dOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y0Y-oQ-Ujb"/>
+                <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="lC4-LZ-dOd" secondAttribute="bottom" constant="5" id="cjN-O3-VWa"/>
+                <constraint firstItem="lC4-LZ-dOd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hXp-E4-ftY"/>
+                <constraint firstItem="zoh-sL-HaX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jYx-Xs-QFo"/>
+                <constraint firstItem="zoh-sL-HaX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="q9X-h5-uJd"/>
+                <constraint firstAttribute="bottom" secondItem="tz4-hj-XMM" secondAttribute="bottom" id="qAL-Sk-9uo"/>
+                <constraint firstItem="tz4-hj-XMM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yhK-cv-k7R"/>
+                <constraint firstItem="zoh-sL-HaX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ysX-xC-5eZ"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QeK-e5-IOa"/>
+                    <exclude reference="9U2-H4-BFn"/>
+                    <exclude reference="Lvl-ce-Gke"/>
+                    <exclude reference="ysX-xC-5eZ"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

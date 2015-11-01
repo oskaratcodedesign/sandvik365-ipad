@@ -87,11 +87,11 @@ class SubPartServiceContentViewController: UIViewController {
     }
     
     private func addKeyFeatureList(dic: NSDictionary, prevView: UIView) -> UIView {
-        let view = prevView
+        var view = prevView
         if let featureList = dic.objectForKey("config") as? [String] {
-            
+            view = KeyFeatureList(frame: CGRectMake(100, 100, 100, 100), strings: featureList)
+            addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
         }
-        
         return view
     }
     
