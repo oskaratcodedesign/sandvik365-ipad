@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -26,6 +27,21 @@ extension String {
     
     func stripHTML() -> String {
         return self.stringByReplacingOccurrencesOfString("<[^>]+>|&nbsp;", withString: "", options: NSStringCompareOptions.RegularExpressionSearch, range: nil).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+    
+    func stripHTMLWithAttributedString() -> String {
+        let encodedData = self.dataUsingEncoding(NSUTF8StringEncoding)!
+        let attributedOptions : [String: AnyObject] = [
+            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+        ]
+        do {
+            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+            return attributedString.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        } catch {
+            print(error)
+        }
+        return self
     }
 
 }

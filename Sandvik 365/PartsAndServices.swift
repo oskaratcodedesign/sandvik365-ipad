@@ -71,9 +71,9 @@ class SubPartService {
         
         init(content: NSDictionary){
             if let title = content.objectForKey("title") as? String {
-                self.title = title
+                self.title = title.stripHTMLWithAttributedString()
                 if let subtitle = content.objectForKey("subTitle") as? String {
-                    self.subtitle = subtitle
+                    self.subtitle = subtitle.stripHTMLWithAttributedString()
                 }
             }
             if let html = content.objectForKey("content") as? [NSDictionary] {
@@ -109,7 +109,7 @@ class SubPartService {
                 for part in content {
                     if let type = part.objectForKey("type") as? String {
                         if type.caseInsensitiveCompare("body") == .OrderedSame, let title = part.objectForKey("value") as? String {
-                            self.title = title
+                            self.title = title.stripHTMLWithAttributedString()
                         }
                         else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = part.objectForKey("value") as? [NSDictionary] {
                             for counton in countonList {
@@ -131,26 +131,33 @@ class SubPartService {
             
             private func setTexts(rows: [NSDictionary]) {
                 if rows.count == 3 {
-                    self.topText = rows[0].objectForKey("text") as? String
-                    self.midText = rows[1].objectForKey("text") as? String
-                    self.bottomText = rows[2].objectForKey("text") as? String
+                    self.topText = textFromObj(rows[0])
+                    self.midText = textFromObj(rows[1])
+                    self.bottomText = textFromObj(rows[2])
                 }
                 else if rows.count == 2 {
                     //check which should be where
                     let firstSize = rows[0].objectForKey("size") as? Int
                     let nextSize = rows[1].objectForKey("size") as? Int
                     if nextSize >= firstSize {
-                        self.topText = rows[0].objectForKey("text") as? String
-                        self.midText = rows[1].objectForKey("text") as? String
+                        self.topText = textFromObj(rows[0])
+                        self.midText = textFromObj(rows[1])
                     }
                     else {
-                        self.midText = rows[0].objectForKey("text") as? String
-                        self.bottomText = rows[1].objectForKey("text") as? String
+                        self.midText = textFromObj(rows[0])
+                        self.bottomText = textFromObj(rows[1])
                     }
                 }
                 else if rows.count == 1 {
-                    self.midText = rows[1].objectForKey("text") as? String
+                    self.midText = textFromObj(rows[0])
                 }
+            }
+            
+            private func textFromObj(obj: NSDictionary) -> String? {
+                if let string = obj.objectForKey("text") as? String {
+                    return string.stripHTMLWithAttributedString()
+                }
+                return nil
             }
         }
         
@@ -199,7 +206,7 @@ class SubPartService {
             var text: String? = nil
             
             init(text: String) {
-                self.text = text.stripHTML()
+                self.text = text.stripHTMLWithAttributedString()
             }
         }
         
@@ -215,17 +222,17 @@ class SubPartService {
             var text: String? = nil
             
             init(title: String, text: String){
-                self.title = title
-                self.text = text
+                self.title = title.stripHTMLWithAttributedString()
+                self.text = text.stripHTMLWithAttributedString()
             }
             
             init(textWithPossibleTitle: String){
                 if let title = textWithPossibleTitle.stringBetweenHeaderTag() {
-                    self.title = title.stripHTML()
-                    self.text = textWithPossibleTitle.stringByReplacingOccurrencesOfString(title, withString: "").stripHTML()
+                    self.title = title.stripHTMLWithAttributedString()
+                    self.text = textWithPossibleTitle.stringByReplacingOccurrencesOfString(title, withString: "").stripHTMLWithAttributedString()
                 }
                 else {
-                    self.text = textWithPossibleTitle.stripHTML()
+                    self.text = textWithPossibleTitle.stripHTMLWithAttributedString()
                 }
             }
         }
