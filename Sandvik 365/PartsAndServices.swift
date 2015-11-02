@@ -166,6 +166,9 @@ class SubPartService {
             var texts: [TitleAndText]? = nil
             
             init(content: NSDictionary) {
+                if let title = content.objectForKey("title") as? String {
+                    self.title = title.stripHTMLWithAttributedString()
+                }
                 if let featureList = content.objectForKey("config") as? [String] {
                     self.texts = []
                     for feature in featureList {
