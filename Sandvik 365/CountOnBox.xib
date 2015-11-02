@@ -44,19 +44,19 @@
                             <rect key="frame" x="367" y="0.0" width="233" height="575"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="okej" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG9-LB-Luf">
-                                    <rect key="frame" x="178" y="0.0" width="55" height="474.5"/>
+                                    <rect key="frame" x="178" y="0.0" width="55" height="475"/>
                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="30"/>
                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-C3-WEd">
-                                    <rect key="frame" x="148" y="479" width="84.5" height="46"/>
+                                    <rect key="frame" x="148" y="479" width="85" height="46"/>
                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="40"/>
                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bla bla bla" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEG-xP-xeu">
-                                    <rect key="frame" x="100" y="530" width="133" height="34.5"/>
+                                    <rect key="frame" x="100" y="530" width="133" height="35"/>
                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="30"/>
                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                     </variation>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="NTo-8D-Jyb" firstAttribute="leading" secondItem="kfa-Hr-ACS" secondAttribute="leading" id="0fM-ya-eza"/>
                                 <constraint firstAttribute="trailing" secondItem="NTo-8D-Jyb" secondAttribute="trailing" id="1CS-IZ-z4f"/>
@@ -107,7 +107,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="kfa-Hr-ACS" firstAttribute="leading" secondItem="b9u-ch-cjb" secondAttribute="leading" id="589-vQ-nPs"/>
                         <constraint firstItem="kfa-Hr-ACS" firstAttribute="leading" secondItem="b9u-ch-cjb" secondAttribute="leading" constant="367" placeholder="YES" id="LDf-xh-atg"/>
