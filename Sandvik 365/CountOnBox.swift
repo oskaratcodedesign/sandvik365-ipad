@@ -22,7 +22,7 @@ class CountOnBox: NibDesignable {
         for d in dic {
             if let type = d.objectForKey("type") as? String {
                 if type.caseInsensitiveCompare("body") == .OrderedSame, let text = d.objectForKey("value") as? String {
-                    
+                    bodyLabel.text = text
                 }
                 else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = d.objectForKey("value") as? [NSDictionary] {
                     for counton in countonList {
