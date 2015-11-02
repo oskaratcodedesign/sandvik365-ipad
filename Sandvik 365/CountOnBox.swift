@@ -18,7 +18,7 @@ class CountOnBox: NibDesignable {
     
     init(frame: CGRect, dic: [NSDictionary], alignRight: Bool) {
         super.init(frame: frame)
-        
+        //TODO handle align left ?
         for d in dic {
             if let type = d.objectForKey("type") as? String {
                 if type.caseInsensitiveCompare("body") == .OrderedSame, let text = d.objectForKey("value") as? String {
