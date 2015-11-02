@@ -109,7 +109,7 @@ class SubPartServiceContentViewController: UIViewController {
         return view
     }
     
-    private func addTabbedContent(content: SubPartService.Content.TabbedContent, prevView: UIView) -> UIView {
+    private func addTabbedContent(content: SubPartService.Content.TabbedContent, var prevView: UIView) -> UIView {
         var label = prevView
         
         if let tabs = content.tabs {
@@ -123,6 +123,7 @@ class SubPartServiceContentViewController: UIViewController {
                     label = genericTextLabel(text)
                     addViewAndConstraints(label, toView: prevLabel, topConstant: topConstant)
                 }
+                prevView = label
             }
         }
         return label

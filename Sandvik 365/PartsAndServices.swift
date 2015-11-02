@@ -89,9 +89,7 @@ class SubPartService {
                             contentList.append(KeyFeatureListContent(content: value))
                         }
                         else if type == "columns", let value = part.objectForKey("value") as? [NSDictionary] {
-                            for d in value {
-                                contentList.append(CountOnBoxContent(content: d))
-                            }
+                            contentList.append(CountOnBoxContent(content: value))
                         }
                         else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
                             contentList.append(TabbedContent(content: value))
@@ -107,19 +105,21 @@ class SubPartService {
             var midText: String? = nil
             var bottomText: String? = nil
             
-            init(content: NSDictionary){
-                if let type = content.objectForKey("type") as? String {
-                    if type.caseInsensitiveCompare("body") == .OrderedSame, let title = content.objectForKey("value") as? String {
-                        self.title = title
-                    }
-                    else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = content.objectForKey("value") as? [NSDictionary] {
-                        for counton in countonList {
-                            if let value = counton.objectForKey("value") as? NSDictionary {
-                                if let config = value.objectForKey("config") as? NSDictionary {
-                                    if let columns = config.objectForKey("columns") as? [NSDictionary] {
-                                        print("columns count", columns.count) //can it be more than one?
-                                        if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
-                                            setTexts(rows)
+            init(content: [NSDictionary]){
+                for part in content {
+                    if let type = part.objectForKey("type") as? String {
+                        if type.caseInsensitiveCompare("body") == .OrderedSame, let title = part.objectForKey("value") as? String {
+                            self.title = title
+                        }
+                        else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = part.objectForKey("value") as? [NSDictionary] {
+                            for counton in countonList {
+                                if let value = counton.objectForKey("value") as? NSDictionary {
+                                    if let config = value.objectForKey("config") as? NSDictionary {
+                                        if let columns = config.objectForKey("columns") as? [NSDictionary] {
+                                            print("columns count", columns.count) //can it be more than one?
+                                            if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
+                                                setTexts(rows)
+                                            }
                                         }
                                     }
                                 }
