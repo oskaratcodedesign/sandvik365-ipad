@@ -13,7 +13,7 @@ import NibDesignable
 class MainMenuItemView : NibDesignable {
     let focusZoomLevel: CGFloat = 1.2
     let unfocusZoomLevel: CGFloat = 1.0
-    var partType: PartType!
+    var businessType: BusinessType!
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
@@ -33,7 +33,7 @@ class MainMenuItemView : NibDesignable {
     
     @IBInspectable var partBridgeType: NSNumber! {
         didSet {
-            self.partType = PartType.atIndex(partBridgeType.integerValue)
+            self.businessType = BusinessType(rawValue: partBridgeType.unsignedLongValue)
         }
     }
     

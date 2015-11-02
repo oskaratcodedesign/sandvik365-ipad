@@ -12,12 +12,12 @@ import MediaPlayer
 class VideoViewController: UIViewController {
 
     var moviePlayer : MPMoviePlayerController!
-    var selectedPartType: PartType!
+    var selectedBusinessType: BusinessType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.moviePlayer = MPMoviePlayerController(contentURL: selectedPartType.videoURL())
+        self.moviePlayer = MPMoviePlayerController(contentURL: selectedBusinessType.videoURL())
         if let player = self.moviePlayer {
             player.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
             player.view.sizeToFit()

@@ -176,31 +176,12 @@ class RoiCalculatorViewController: UIViewController {
         let color = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000)
         let serviceButtons = [rampUpButton, conditionButton, maintenenceButton]
         for button in serviceButtons {
-            let borderimage = roundImage(size, fill: false, color: color)
+            let borderimage = CALayer().roundImage(CGRectMake(0, 0, size.width, size.height), fill: false, color: color)
             button.setImage(borderimage, forState: .Normal)
-            let fillimage = roundImage(size, fill: true, color: color)
+            let fillimage = CALayer().roundImage(CGRectMake(0, 0, size.width, size.height), fill: true, color: color)
             button.setImage(fillimage, forState: .Highlighted)
             button.setImage(fillimage, forState: .Selected)
         }
-    }
-    
-    private func roundImage(size: CGSize, fill: Bool, color: UIColor) -> UIImage? {
-        let layer = CALayer()
-        layer.frame = CGRectMake(0, 0, size.width, size.height)
-        layer.cornerRadius = size.width/2
-        layer.masksToBounds = true
-        if fill {
-            layer.backgroundColor = color.CGColor
-        }
-        else {
-            layer.borderWidth = 1
-            layer.borderColor = color.CGColor
-        }
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let roundedImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return roundedImage
     }
 
     override func didReceiveMemoryWarning() {

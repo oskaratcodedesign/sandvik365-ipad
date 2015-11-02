@@ -83,8 +83,10 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    vc.selectedPart = Part(partType: view.partType, roiCalculator: ROICalculator(input: ROICrusherInput()))
-                    vc.navigationItem.title = view.label.text
+                    if let json = JSONManager().readJSONFromFile() {
+                        vc.selectedPartsAndServices = PartsAndServices(businessType: view.businessType, json: json)
+                        vc.navigationItem.title = view.label.text
+                    }
                 }
             }
         }
@@ -102,7 +104,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         }
         else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedPartType = .BulkMaterialHandling
+                vc.selectedBusinessType = .BulkMaterialHandling
                 showBackButton = false
             }
         }
