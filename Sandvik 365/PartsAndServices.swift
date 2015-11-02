@@ -232,7 +232,6 @@ class SubPartService {
     }
 }
 
-
 class JSONParts {
     var allParts: [MainPartService] = []
     
