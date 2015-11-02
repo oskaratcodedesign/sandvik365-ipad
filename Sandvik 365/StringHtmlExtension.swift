@@ -17,6 +17,13 @@ extension String {
         return nil
     }
     
+    func stringBetweenHeaderTag() -> String? {
+        if let range = self.rangeOfString("(?i)(?<=<h)[^.]+(?=</h)", options:.RegularExpressionSearch) {
+            return self.substringWithRange(range)
+        }
+        return nil
+    }
+    
     func stripHTML() -> String {
         return self.stringByReplacingOccurrencesOfString("<[^>]+>|&nbsp;", withString: "", options: NSStringCompareOptions.RegularExpressionSearch, range: nil).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }

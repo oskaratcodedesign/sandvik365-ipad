@@ -16,57 +16,27 @@ class CountOnBox: NibDesignable {
     @IBOutlet weak var middleLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     
-    init(frame: CGRect, dic: [NSDictionary], alignRight: Bool) {
+    init(frame: CGRect, countOnBox: SubPartService.Content.CountOnBoxContent, alignRight: Bool) {
         super.init(frame: frame)
         //TODO handle align left ?
-        for d in dic {
-            if let type = d.objectForKey("type") as? String {
-                if type.caseInsensitiveCompare("body") == .OrderedSame, let text = d.objectForKey("value") as? String {
-                    bodyLabel.text = text
-                }
-                else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = d.objectForKey("value") as? [NSDictionary] {
-                    for counton in countonList {
-                        if let value = counton.objectForKey("value") as? NSDictionary {
-                            if let config = value.objectForKey("config") as? NSDictionary {
-                                if let columns = config.objectForKey("columns") as? [NSDictionary] {
-                                    print("columns count", columns.count) //can it be more than one?
-                                    if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
-                                        setTexts(rows)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        if let title = countOnBox.title {
+                bodyLabel.text = title
         }
-    }
-    
-    private func setTexts(rows: [NSDictionary]) {
-        if rows.count == 3 {
-            topLabel.text = rows[0].objectForKey("text") as? String
-            middleLabel.text = rows[1].objectForKey("text") as? String
-            bottomLabel.text = rows[2].objectForKey("text") as? String
+        topLabel.hidden = true
+        middleLabel.hidden = true
+        bottomLabel.hidden = true
+        
+        if let toptext = countOnBox.topText {
+            topLabel.text = toptext
+            topLabel.hidden = false
         }
-        else if rows.count == 2 {
-            //check which should be where
-            let firstSize = rows[0].objectForKey("size") as? Int
-            let nextSize = rows[1].objectForKey("size") as? Int
-            if nextSize >= firstSize {
-                topLabel.text = rows[0].objectForKey("text") as? String
-                middleLabel.text = rows[1].objectForKey("text") as? String
-                bottomLabel.hidden = true
-            }
-            else {
-                middleLabel.text = rows[0].objectForKey("text") as? String
-                bottomLabel.text = rows[1].objectForKey("text") as? String
-                topLabel.hidden = true
-            }
+        if let midtext = countOnBox.midText {
+            middleLabel.text = midtext
+            middleLabel.hidden = false
         }
-        else if rows.count == 1 {
-            middleLabel.text = rows[1].objectForKey("text") as? String
-            topLabel.hidden = true
-            bottomLabel.hidden = true
+        if let bottomtext = countOnBox.bottomText {
+            bottomLabel.text = bottomtext
+            bottomLabel.hidden = false
         }
     }
     

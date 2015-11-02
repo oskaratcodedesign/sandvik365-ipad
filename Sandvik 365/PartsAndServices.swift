@@ -57,13 +57,181 @@ class PartService {
 
 class SubPartService {
     let title: String
-    let content: NSDictionary
+    let content: Content
     
     init(title: String, content: NSDictionary){
         self.title = title
-        self.content = content
+        self.content = Content(content: content)
+    }
+    
+    class Content {
+        var title: String? = nil
+        var subtitle: String? = nil
+        var contentList: [AnyObject] = []
+        
+        init(content: NSDictionary){
+            if let title = content.objectForKey("title") as? String {
+                self.title = title
+                if let subtitle = content.objectForKey("subTitle") as? String {
+                    self.subtitle = subtitle
+                }
+            }
+            if let html = content.objectForKey("content") as? [NSDictionary] {
+                for part in html {
+                    if let type = part.objectForKey("type") as? String {
+                        if type == "lead", let value = part.objectForKey("value") as? String {
+                            contentList.append(Lead(text: value))
+                        }
+                        else if type == "body", let value = part.objectForKey("value") as? String {
+                            contentList.append(Body(textWithPossibleTitle: value))
+                        }
+                        else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
+                            contentList.append(KeyFeatureListContent(content: value))
+                        }
+                        else if type == "columns", let value = part.objectForKey("value") as? [NSDictionary] {
+                            for d in value {
+                                contentList.append(CountOnBoxContent(content: d))
+                            }
+                        }
+                        else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
+                            contentList.append(TabbedContent(content: value))
+                        }
+                    }
+                }
+            }
+        }
+        
+        class CountOnBoxContent {
+            var title: String? = nil
+            var topText: String? = nil
+            var midText: String? = nil
+            var bottomText: String? = nil
+            
+            init(content: NSDictionary){
+                if let type = content.objectForKey("type") as? String {
+                    if type.caseInsensitiveCompare("body") == .OrderedSame, let title = content.objectForKey("value") as? String {
+                        self.title = title
+                    }
+                    else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = content.objectForKey("value") as? [NSDictionary] {
+                        for counton in countonList {
+                            if let value = counton.objectForKey("value") as? NSDictionary {
+                                if let config = value.objectForKey("config") as? NSDictionary {
+                                    if let columns = config.objectForKey("columns") as? [NSDictionary] {
+                                        print("columns count", columns.count) //can it be more than one?
+                                        if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
+                                            setTexts(rows)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            private func setTexts(rows: [NSDictionary]) {
+                if rows.count == 3 {
+                    self.topText = rows[0].objectForKey("text") as? String
+                    self.midText = rows[1].objectForKey("text") as? String
+                    self.bottomText = rows[2].objectForKey("text") as? String
+                }
+                else if rows.count == 2 {
+                    //check which should be where
+                    let firstSize = rows[0].objectForKey("size") as? Int
+                    let nextSize = rows[1].objectForKey("size") as? Int
+                    if nextSize >= firstSize {
+                        self.topText = rows[0].objectForKey("text") as? String
+                        self.midText = rows[1].objectForKey("text") as? String
+                    }
+                    else {
+                        self.midText = rows[0].objectForKey("text") as? String
+                        self.bottomText = rows[1].objectForKey("text") as? String
+                    }
+                }
+                else if rows.count == 1 {
+                    self.midText = rows[1].objectForKey("text") as? String
+                }
+            }
+        }
+        
+        class KeyFeatureListContent {
+            var title: String? = nil
+            var texts: [TitleAndText]? = nil
+            
+            init(content: NSDictionary) {
+                if let featureList = content.objectForKey("config") as? [String] {
+                    self.texts = []
+                    for feature in featureList {
+                        if let title = feature.stringBetweenStrongTag() {
+                            let text = feature.stringByReplacingOccurrencesOfString(title, withString: "").stripHTML()
+                            self.texts!.append(TitleAndText(title: title, text: text))
+                        }
+                    }
+                }
+            }
+        }
+        
+        class TabbedContent {
+            var tabs: [TitleAndText]? = nil
+            
+            init(content: NSDictionary) {
+                if let tabs = content.objectForKey("config") as? [NSDictionary] {
+                    self.tabs = []
+                    for tab in tabs {
+                        if let title = tab.objectForKey("text") as? String {
+                            if let content = tab.objectForKey("content") as? [NSDictionary] {
+                                var string: String = ""
+                                for text in content {
+                                    if let t = text.objectForKey("text") as? String {
+                                        string += t
+                                        //TODO can it loop ?
+                                    }
+                                }
+                                self.tabs!.append(TitleAndText(title: title, text: string))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        class Lead {
+            var text: String? = nil
+            
+            init(text: String) {
+                self.text = text.stripHTML()
+            }
+        }
+        
+        class Body: TitleAndText {
+            
+            override init(textWithPossibleTitle: String) {
+                super.init(textWithPossibleTitle: textWithPossibleTitle)
+            }
+        }
+        
+        class TitleAndText {
+            var title: String? = nil
+            var text: String? = nil
+            
+            init(title: String, text: String){
+                self.title = title
+                self.text = text
+            }
+            
+            init(textWithPossibleTitle: String){
+                if let title = textWithPossibleTitle.stringBetweenHeaderTag() {
+                    self.title = title.stripHTML()
+                    self.text = textWithPossibleTitle.stringByReplacingOccurrencesOfString(title, withString: "").stripHTML()
+                }
+                else {
+                    self.text = textWithPossibleTitle.stripHTML()
+                }
+            }
+        }
     }
 }
+
 
 class JSONParts {
     var allParts: [MainPartService] = []

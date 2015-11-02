@@ -40,16 +40,14 @@ class KeyFeatureItem: NibDesignable {
         //NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
     }
     
-    func setTexts(string: String) {
-        if let title = string.stringBetweenStrongTag() {
-            var text = string.stringByReplacingOccurrencesOfString(title, withString: "")
-            text = text.stripHTML()
-            
+    func setTexts(text: SubPartService.Content.TitleAndText) {
+        if let title = text.title {
             titleAboveText.text = title
             titleBelowButtonLabel.text = title
+        }
+        if let text = text.text {
             textLabel.text = text
         }
-        
     }
     
     @IBAction func clickAction(sender: UIButton) {
