@@ -20,6 +20,7 @@ class SubPartServiceContentViewController: UIViewController {
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
     private let topConstant: CGFloat = 20
+    private var alignCountOnBoxRight: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,16 +90,17 @@ class SubPartServiceContentViewController: UIViewController {
     private func addKeyFeatureList(dic: NSDictionary, prevView: UIView) -> UIView {
         var view = prevView
         if let featureList = dic.objectForKey("config") as? [String] {
-            view = KeyFeatureList(frame: CGRectMake(100, 100, 100, 100), strings: featureList)
+            view = KeyFeatureList(frame: CGRectZero, strings: featureList)
             addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
         }
         return view
     }
     
     private func addColumns(dic: [NSDictionary], prevView: UIView) -> UIView {
-        let view = UIView()
-        
-        return prevView
+        let view = CountOnBox(frame: CGRectZero, dic: dic, alignRight: alignCountOnBoxRight)
+        addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
+        alignCountOnBoxRight = !alignCountOnBoxRight
+        return view
     }
     
     private func addTabbedContent(dic: NSDictionary, prevView: UIView) -> UIView {
