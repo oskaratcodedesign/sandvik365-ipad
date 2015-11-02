@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0680F73A8AA21B6A17F84678 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0680F73A8AA21B6A17F84678 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; };
 		486F887A1B7238630084211F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F88791B7238630084211F /* SplashViewController.swift */; };
 		486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F887B1B72397B0084211F /* MainMenuViewController.swift */; };
 		486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486F88821B736AE80084211F /* MainMenuItemView.xib */; };
@@ -53,13 +53,13 @@
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
-		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; settings = {ASSET_TAGS = (); }; };
+		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
+		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
-		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; settings = {ASSET_TAGS = (); }; };
-		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; settings = {ASSET_TAGS = (); }; };
-		F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */; settings = {ASSET_TAGS = (); }; };
-		F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */; settings = {ASSET_TAGS = (); }; };
+		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; };
+		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; };
+		F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */; };
+		F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */; };
 		F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */; };
 		F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiInputView.swift */; };
 		F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiInputView.xib */; };
