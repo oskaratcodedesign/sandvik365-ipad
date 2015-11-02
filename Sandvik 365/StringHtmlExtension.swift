@@ -18,7 +18,7 @@ extension String {
     }
     
     func stringBetweenHeaderTag() -> String? {
-        if let range = self.rangeOfString("(?i)(?<=<h)[^.]+(?=</h)", options:.RegularExpressionSearch) {
+        if let range = self.rangeOfString("(?i)[^.]+(?=</h)", options:.RegularExpressionSearch) {
             return self.substringWithRange(range)
         }
         return nil
