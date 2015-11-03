@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -7,11 +7,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
-            <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
-        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -106,7 +101,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="70" y="276" width="307" height="71"/>
+                                                <rect key="frame" x="70" y="275" width="307" height="71"/>
                                                 <animations/>
                                                 <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON.</string>
@@ -122,60 +117,12 @@ YOU CAN COUNT ON.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
+                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiJ-FI-2f6">
-                                                <rect key="frame" x="12" y="336" width="193" height="124"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="124" id="Rsb-Qy-tDB"/>
-                                                    <constraint firstAttribute="width" constant="193" id="UOC-mW-osB"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-100" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="CRUSHER RISK CALCULATOR" image="sandvik_calc">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="qo5-Vm-f4B" kind="show" identifier="RoiCrusherSelectionViewController" id="TX1-AZ-x0F"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-ch-kaG">
-                                                <rect key="frame" x="225" y="336" width="151" height="124"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="124" id="dsi-gi-InU"/>
-                                                    <constraint firstAttribute="width" constant="151" id="pbJ-cj-QGT"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-92" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="SANDVIK 365 VIDEO" image="sandvik_play">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="PpG-ih-rpJ"/>
-                                                </connections>
-                                            </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awi-i4-3Ve">
-                                                <rect key="frame" x="396" y="336" width="220" height="124"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="220" id="bRX-sM-pBb"/>
-                                                    <constraint firstAttribute="height" constant="124" id="ped-nb-IxJ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-100" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="ROCK DRILL UPGRADE SIMULATOR" image="sandvik_calc">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="qo5-Vm-f4B" kind="show" identifier="RoiRockDrillSelectionViewController" id="KwD-YR-ime"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
                                                 <rect key="frame" x="70" y="70" width="31" height="31"/>
                                                 <state key="normal" image="sandvik-icons_info-btn">
@@ -192,46 +139,26 @@ YOU CAN COUNT ON.</string>
                                         <constraints>
                                             <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="0AO-Ab-1KA"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
-                                            <constraint firstAttribute="bottom" secondItem="WiJ-FI-2f6" secondAttribute="bottom" constant="40" id="3Jv-wQ-8Ma"/>
-                                            <constraint firstItem="hTp-ch-kaG" firstAttribute="top" secondItem="Hav-AD-1zF" secondAttribute="bottom" constant="19" id="6uR-ie-84R"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
-                                            <constraint firstAttribute="trailing" secondItem="WiJ-FI-2f6" secondAttribute="trailing" constant="40" id="BRv-m7-wij"/>
-                                            <constraint firstAttribute="bottom" secondItem="awi-i4-3Ve" secondAttribute="bottom" constant="40" id="ElM-lV-an9"/>
-                                            <constraint firstAttribute="trailing" secondItem="hTp-ch-kaG" secondAttribute="trailing" constant="90" id="INP-v0-now"/>
-                                            <constraint firstItem="hTp-ch-kaG" firstAttribute="leading" secondItem="WiJ-FI-2f6" secondAttribute="trailing" constant="20" id="JAh-dE-XvO"/>
-                                            <constraint firstItem="awi-i4-3Ve" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="20" id="L38-wx-9ua"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="M8O-q8-7Xk"/>
                                             <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
                                             <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
-                                            <constraint firstItem="awi-i4-3Ve" firstAttribute="leading" secondItem="hTp-ch-kaG" secondAttribute="trailing" constant="20" id="SDm-oX-pol"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
                                             <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
-                                            <constraint firstItem="WiJ-FI-2f6" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="150" id="bAm-Ed-FT0"/>
                                             <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="flW-BI-L4A"/>
                                             <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
-                                            <constraint firstAttribute="trailing" secondItem="awi-i4-3Ve" secondAttribute="trailing" constant="8" id="gvI-Kx-XW9"/>
-                                            <constraint firstAttribute="bottom" secondItem="hTp-ch-kaG" secondAttribute="bottom" constant="40" id="hzC-oI-WsL"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
-                                            <constraint firstItem="awi-i4-3Ve" firstAttribute="top" secondItem="WiJ-FI-2f6" secondAttribute="bottom" constant="21" id="mcA-tN-lOz"/>
                                             <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                             <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
-                                            <constraint firstItem="hTp-ch-kaG" firstAttribute="centerX" secondItem="LGY-k8-KXB" secondAttribute="centerX" id="s2w-Hu-ped"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="70" id="yCY-xh-cic"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="js3-V0-gUc"/>
-                                                <exclude reference="BRv-m7-wij"/>
-                                                <exclude reference="bAm-Ed-FT0"/>
-                                                <exclude reference="6uR-ie-84R"/>
-                                                <exclude reference="INP-v0-now"/>
                                                 <exclude reference="PIs-hD-Kt1"/>
-                                                <exclude reference="L38-wx-9ua"/>
-                                                <exclude reference="gvI-Kx-XW9"/>
-                                                <exclude reference="mcA-tN-lOz"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -671,11 +598,6 @@ Cg
         <image name="1535304" width="1024" height="682"/>
         <image name="product-awareness-surface-2048" width="1024" height="768"/>
         <image name="sandvik-icons_info-btn" width="31" height="31"/>
-        <image name="sandvik_calc" width="82" height="82"/>
-        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="KwD-YR-ime"/>
-    </inferredMetricsTieBreakers>
 </document>
