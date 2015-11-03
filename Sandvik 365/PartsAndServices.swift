@@ -83,7 +83,7 @@ class SubPartService {
                             contentList.append(Lead(text: value))
                         }
                         else if type == "body", let value = part.objectForKey("value") as? String {
-                            contentList.append(Body(textWithPossibleTitle: value))
+                            contentList.append(Body(text: value))
                         }
                         else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
                             contentList.append(KeyFeatureListContent(content: value))
@@ -213,10 +213,22 @@ class SubPartService {
             }
         }
         
-        class Body: TitleAndText {
+        class Body {
+            var titlesAndText: [TitleAndText] = []
             
-            override init(textWithPossibleTitle: String) {
-                super.init(textWithPossibleTitle: textWithPossibleTitle)
+            init(var text: String) {
+                if let titles = text.stringsWithHeaderTag() {
+                    for title in titles {
+                        if let range = text.rangeOfString(title) {
+                            text = text.substringFromIndex(range.endIndex)
+                        }
+                        let subtext = text.stringUntilNextHeaderTag()
+                        titlesAndText.append(TitleAndText(title: title, text: subtext))
+                        if let range = text.rangeOfString(subtext) {
+                            text = text.substringFromIndex(range.endIndex)
+                        }
+                    }
+                }
             }
         }
         
@@ -227,16 +239,6 @@ class SubPartService {
             init(title: String, text: String){
                 self.title = title.stripHTMLWithAttributedString()
                 self.text = text.stripHTMLWithAttributedString()
-            }
-            
-            init(textWithPossibleTitle: String){
-                if let title = textWithPossibleTitle.stringBetweenHeaderTag() {
-                    self.title = title.stripHTMLWithAttributedString()
-                    self.text = textWithPossibleTitle.stringByReplacingOccurrencesOfString(title, withString: "").stripHTMLWithAttributedString()
-                }
-                else {
-                    self.text = textWithPossibleTitle.stripHTMLWithAttributedString()
-                }
             }
         }
     }

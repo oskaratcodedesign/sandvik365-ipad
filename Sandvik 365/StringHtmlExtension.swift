@@ -18,9 +18,22 @@ extension String {
         return nil
     }
     
-    func stringBetweenHeaderTag() -> String? {
-        if let range = self.rangeOfString("(?i)[^.]+(?=</h)", options:.RegularExpressionSearch) {
-            return self.substringWithRange(range)
+    func stringUntilNextHeaderTag() -> String {
+        if let range = self.rangeOfString("<h(1|2|3|4|5|6)", options:.RegularExpressionSearch) {
+            return self.substringToIndex(range.startIndex)
+        }
+        return self
+    }
+    
+    func stringsWithHeaderTag() -> [String]? {
+        do {
+            let regex = try NSRegularExpression(pattern: "(?=<h(1|2|3|4|5|6))[^.]+(?=</h(1|2|3|4|5|6))", options: [])
+            let nsString = self as NSString
+            let results = regex.matchesInString(self,
+                options: [], range: NSMakeRange(0, self.characters.count))
+            return results.map { nsString.substringWithRange($0.range)}
+        } catch let error as NSError {
+            print(error)
         }
         return nil
     }

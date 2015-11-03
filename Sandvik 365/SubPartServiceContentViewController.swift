@@ -80,17 +80,20 @@ class SubPartServiceContentViewController: UIViewController {
         return label
     }
     
-    private func addBody(content: SubPartService.Content.Body, prevView: UIView) -> UIView {
+    private func addBody(content: SubPartService.Content.Body, var prevView: UIView) -> UIView {
         var label = prevView
         
-        if let title = content.title {
-            label = genericTitleLabel(title)
-            addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
-        }
-        if let text = content.text {
-            let prevLabel = label
-            label = genericTextLabel(text)
-            addViewAndConstraints(label, toView: prevLabel, topConstant: topConstant)
+        for titlesAndText in content.titlesAndText {
+            if let title = titlesAndText.title {
+                label = genericTitleLabel(title)
+                addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
+            }
+            if let text = titlesAndText.text {
+                let prevLabel = label
+                label = genericTextLabel(text)
+                addViewAndConstraints(label, toView: prevLabel, topConstant: topConstant)
+                prevView = label
+            }
         }
         
         return label
