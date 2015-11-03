@@ -48,7 +48,7 @@ class SubPartServiceSelectionViewController: UIViewController {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedSubPartService = selectedSubPart
-                //vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.navigationItem.title = self.navigationItem.title
             }
         }
     }

@@ -29,7 +29,7 @@ class SubPartServiceContentViewController: UIViewController {
             if let subtitle = content.subtitle {
                 title += "\n" + subtitle
             }
-            titleLabel.text = title
+            titleLabel.text = title.uppercaseString
         }
         var previousView: UIView = titleLabel
         for obj in content.contentList {
@@ -146,9 +146,9 @@ class SubPartServiceContentViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16.0)
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
         
-        label.text = string
+        label.text = string.uppercaseString
         return label
     }
 

@@ -42,8 +42,8 @@ class KeyFeatureItem: NibDesignable {
     
     func setTexts(text: SubPartService.Content.TitleAndText) {
         if let title = text.title {
-            titleAboveText.text = title
-            titleBelowButtonLabel.text = title
+            titleAboveText.text = title.uppercaseString
+            titleBelowButtonLabel.text = title.uppercaseString
         }
         if let text = text.text {
             textLabel.text = text

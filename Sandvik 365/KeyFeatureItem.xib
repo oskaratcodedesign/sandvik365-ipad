@@ -5,15 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
-            <string>AktivGroteskCorp-Light</string>
-        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
-        </mutableArray>
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
-            <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -42,7 +38,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="lo6-3N-7dq"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -51,7 +47,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="nDU-15-GFc"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -74,7 +70,7 @@
                                 <constraint firstAttribute="height" constant="100" id="WpM-Xh-qjT"/>
                                 <constraint firstAttribute="width" constant="100" id="z8g-bY-glb"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                             <state key="normal">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -87,7 +83,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="5Fg-hO-7IT"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>

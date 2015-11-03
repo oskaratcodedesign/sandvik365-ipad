@@ -40,7 +40,7 @@ class PartServiceSelectionViewController: UIViewController {
             if let vc = segue.destinationViewController as? SubPartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedSubPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
             }
         }
     }

@@ -9,8 +9,10 @@
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
         </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
-            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
@@ -33,7 +35,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" placeholder="YES" id="Weo-ts-YGP"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
