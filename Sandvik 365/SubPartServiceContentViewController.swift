@@ -21,11 +21,24 @@ class SubPartServiceContentViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
-    private var topConstant: CGFloat = 20
+    @IBOutlet var paddingView: UIView!
+    @IBOutlet var subContentView: UIView!
+    @IBOutlet var stripeImageView: UIImageView!
+    private let topConstant: CGFloat = 20
     private var alignCountOnBoxRight: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let image = UIImage(named: "sandvik_stripes_bg_mask") {
+            let mask = CALayer()
+            mask.frame = CGRectMake(0, 0, image.size.width, image.size.height)
+            mask.contents = image.CGImage
+            
+            //stripeImageView.layer.masksToBounds = true
+            stripeImageView.layer.mask = mask
+        }
+        
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
@@ -36,9 +49,7 @@ class SubPartServiceContentViewController: UIViewController {
             }
             titleLabel.text = title.uppercaseString
         }
-        var previousView: UIView = titleLabel
-        let defConstant = topConstant
-        topConstant = contentView.bounds.size.height*0.7
+        var previousView: UIView = paddingView
         for obj in content.contentList {
             if let value = obj as? SubPartService.Content.Lead {
                 previousView = addLead(value, prevView: previousView)
@@ -55,10 +66,9 @@ class SubPartServiceContentViewController: UIViewController {
             else if let value = obj as? SubPartService.Content.TabbedContent {
                 previousView = addTabbedContent(value, prevView: previousView)
             }
-            topConstant = defConstant //reset
         }
 
-        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -50)
+        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: subContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -50)
         previousView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
@@ -71,10 +81,10 @@ class SubPartServiceContentViewController: UIViewController {
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
         
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -leadingConstraint.constant)
-        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leadingConstraint.constant)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -leadingConstraint.constant)
+        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leadingConstraint.constant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(fromView)
+        subContentView.addSubview(fromView)
         
         NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, leadConstraint])
     }
