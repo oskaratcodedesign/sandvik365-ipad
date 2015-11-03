@@ -12,6 +12,13 @@ import NibDesignable
 class ViewWithBGImage: NibDesignable {
 
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var gradientView: GradientView!
+    
+    @IBInspectable var fillColor: UIColor? {
+        didSet {
+            self.gradientView.fillColor = fillColor
+        }
+    }
     
     func setImageBG(imageName: String) {
         if let image = UIImage(named: imageName) {

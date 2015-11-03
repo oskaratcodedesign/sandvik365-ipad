@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
+                <outlet property="gradientView" destination="gPz-GC-3HY" id="W8R-NU-BTz"/>
                 <outlet property="imageView" destination="HIt-cF-91I" id="MvU-DM-Xbk"/>
             </connections>
         </placeholder>
@@ -18,13 +19,29 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HIt-cF-91I">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPz-GC-3HY" customClass="GradientView" customModule="Sandvik_365" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="gPz-GC-3HY" secondAttribute="trailing" id="6kT-WN-c9l"/>
                 <constraint firstAttribute="bottom" secondItem="HIt-cF-91I" secondAttribute="bottom" id="TzB-ON-74n"/>
+                <constraint firstItem="gPz-GC-3HY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XIW-QD-sYl"/>
                 <constraint firstItem="HIt-cF-91I" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bwh-0O-Zun"/>
                 <constraint firstAttribute="trailing" secondItem="HIt-cF-91I" secondAttribute="trailing" id="i6D-JW-PCS"/>
+                <constraint firstItem="gPz-GC-3HY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mWY-H6-ruR"/>
                 <constraint firstItem="HIt-cF-91I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uGL-2L-ZLs"/>
+                <constraint firstAttribute="bottom" secondItem="gPz-GC-3HY" secondAttribute="bottom" id="yRS-3G-24h"/>
             </constraints>
         </view>
     </objects>
