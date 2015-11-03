@@ -18,8 +18,8 @@ class KeyFeatureItem: NibDesignable {
     
     @IBOutlet weak var buttonTitleContainer: UIView!
     @IBOutlet weak var textTitleContainer: UIView!
-    @IBOutlet weak var textTitleContainerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonTitleContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var textTitleContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var buttonTitleContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleAboveText: UILabel!
     
     @IBInspectable var buttonText: String? = nil {
