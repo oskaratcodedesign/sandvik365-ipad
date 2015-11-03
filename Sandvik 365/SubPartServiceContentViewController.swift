@@ -105,7 +105,12 @@ class SubPartServiceContentViewController: UIViewController {
         return label
     }
     
-    private func addKeyFeatureList(content: SubPartService.Content.KeyFeatureListContent, prevView: UIView) -> UIView {
+    private func addKeyFeatureList(content: SubPartService.Content.KeyFeatureListContent, var prevView: UIView) -> UIView {
+        if let title = content.title {
+            let label = genericTitleLabel(title)
+            addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
+            prevView = label
+        }
         let view = KeyFeatureList(frame: CGRectZero, keyFeatureList: content)
         addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
         return view
