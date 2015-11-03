@@ -26,6 +26,9 @@ class SubPartServiceContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         let content = selectedSubPartService.content
         if var title = content.title {
             if let subtitle = content.subtitle {

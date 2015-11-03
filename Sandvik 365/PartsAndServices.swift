@@ -18,9 +18,8 @@ enum BusinessType: UInt {
     case SurfaceDrilling
     case UndergroundDrillingAndBolting
     case UndergroundLoadingAndHauling
-    case None
     
-    static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, None]
+    static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening]
     
     //TODO return from case
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
@@ -32,6 +31,29 @@ enum BusinessType: UInt {
             return url
         }
         return nil
+    }
+    
+    var backgroundImageName :String {
+        switch self {
+        case BulkMaterialHandling:
+            return "product-awareness-surface-2048"
+        case ConveyorComponents:
+            return "1435275"
+        case CrusherAndScreening:
+            return "1535304"
+        case ExplorationDrillRigs:
+            return "product-awareness-surface-2048"
+        case MechanicalCutting:
+            return "product-awareness-surface-2048"
+        case MineAutomationSystems:
+            return "product-awareness-surface-2048"
+        case SurfaceDrilling:
+            return "product-awareness-surface-2048"
+        case UndergroundDrillingAndBolting:
+            return "product-awareness-surface-2048"
+        case UndergroundLoadingAndHauling:
+            return "product-awareness-surface-2048"
+        }
     }
 }
 

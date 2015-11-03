@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="top" id="Lck-QY-Xgy"/>
                         <viewControllerLayoutGuide type="bottom" id="5kj-dU-aar"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sa1-c8-XHA">
+                    <view key="view" contentMode="scaleToFill" id="sa1-c8-XHA" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -59,13 +59,10 @@
                         <viewControllerLayoutGuide type="top" id="oWT-Zb-sra"/>
                         <viewControllerLayoutGuide type="bottom" id="ElF-ex-6wJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr">
+                    <view key="view" contentMode="scaleToFill" id="zlc-Uy-tFr" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product-awareness-surface-2048" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-pE-7QT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-kB-npY" customClass="SelectionWheel" customModule="Sandvik_365" customModuleProvider="target">
                                 <rect key="frame" x="80" y="320" width="440" height="580"/>
                                 <subviews>
@@ -102,28 +99,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="bottom" constant="-300" id="3tU-Ea-mVA"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="zlc-Uy-tFr" secondAttribute="top" id="83P-3B-C13"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="GQI-RR-MVi"/>
                             <constraint firstItem="UDb-kB-npY" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" constant="80" id="Hx4-AE-5g4"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="oWT-Zb-sra" secondAttribute="trailing" constant="-600" id="Lof-YG-Hi6"/>
-                            <constraint firstAttribute="bottom" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="am8-J9-BnH"/>
-                            <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="HlW-pE-7QT" secondAttribute="bottom" id="gkm-V7-233"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="hVm-s3-MaQ"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" id="izR-Jh-nKQ"/>
-                            <constraint firstAttribute="trailing" secondItem="HlW-pE-7QT" secondAttribute="trailing" id="o9P-YF-Slp"/>
                             <constraint firstItem="UDb-kB-npY" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="300" id="rYe-sO-bwf"/>
-                            <constraint firstItem="HlW-pE-7QT" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" id="tEB-pQ-6KV"/>
                             <constraint firstAttribute="trailing" secondItem="UDb-kB-npY" secondAttribute="trailing" constant="80" id="xro-Y0-Cte"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="GQI-RR-MVi"/>
-                                <exclude reference="Lof-YG-Hi6"/>
-                                <exclude reference="hVm-s3-MaQ"/>
-                                <exclude reference="izR-Jh-nKQ"/>
-                                <exclude reference="gkm-V7-233"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
@@ -143,7 +122,7 @@
                         <viewControllerLayoutGuide type="top" id="nVC-OV-f4e"/>
                         <viewControllerLayoutGuide type="bottom" id="l9q-pM-b7e"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8oH-OQ-16R">
+                    <view key="view" contentMode="scaleToFill" id="8oH-OQ-16R" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -174,7 +153,7 @@
                         <viewControllerLayoutGuide type="top" id="qYK-MS-ssF"/>
                         <viewControllerLayoutGuide type="bottom" id="L0W-Cl-u8N"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tFP-gj-asj">
+                    <view key="view" contentMode="scaleToFill" id="tFP-gj-asj" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -251,7 +230,4 @@
             <point key="canvasLocation" x="526" y="435"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="product-awareness-surface-2048" width="1024" height="768"/>
-    </resources>
 </document>

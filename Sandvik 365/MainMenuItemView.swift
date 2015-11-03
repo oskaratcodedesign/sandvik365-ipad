@@ -24,16 +24,11 @@ class MainMenuItemView : NibDesignable {
         }
     }
     
-    @IBInspectable var image: UIImage? = nil {
-        didSet {
-            self.button.imageView?.contentMode = .ScaleAspectFill
-            self.button.setImage(image, forState: .Normal)
-        }
-    }
-    
     @IBInspectable var partBridgeType: NSNumber! {
         didSet {
             self.businessType = BusinessType(rawValue: partBridgeType.unsignedLongValue)
+            self.button.imageView?.contentMode = .ScaleAspectFill
+            self.button.setImage(UIImage(named: self.businessType.backgroundImageName), forState: .Normal)
         }
     }
     

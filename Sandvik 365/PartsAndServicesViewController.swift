@@ -17,6 +17,9 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         selectionWheel.sectionTitles = selectedPartsAndServices.mainSectionTitles()
         selectionWheel.delegate = self
     }

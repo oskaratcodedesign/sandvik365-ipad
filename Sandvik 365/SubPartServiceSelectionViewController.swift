@@ -18,6 +18,9 @@ class SubPartServiceSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         if let subParts = selectedSubPartsServices {
             tempButton.setTitle(subParts.first?.title, forState: .Normal)
         }

@@ -18,7 +18,9 @@ class PartServiceSelectionViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
             tempButton.setTitle(partsServices.first?.title, forState: .Normal)
             tempLabel.text = partsServices.first?.description

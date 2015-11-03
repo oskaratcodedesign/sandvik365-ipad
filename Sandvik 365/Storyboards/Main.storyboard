@@ -177,7 +177,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="product-awareness-surface-2048"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="0"/>
                                                             </userDefinedRuntimeAttribute>
@@ -189,7 +188,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="CONVEYOR COMPONENTS"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
@@ -201,7 +199,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
@@ -213,7 +210,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1435275"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
@@ -225,7 +221,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
@@ -236,7 +231,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="MINE AUTOMATION SYSTEMS"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -247,7 +241,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
@@ -258,7 +251,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="7"/>
                                                             </userDefinedRuntimeAttribute>
@@ -269,7 +261,6 @@ YOU CAN COUNT ON.</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="1535304"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
@@ -594,9 +585,6 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="1435275" width="1024" height="682"/>
-        <image name="1535304" width="1024" height="682"/>
-        <image name="product-awareness-surface-2048" width="1024" height="768"/>
         <image name="sandvik-icons_info-btn" width="31" height="31"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>

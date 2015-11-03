@@ -32,6 +32,8 @@
 		F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D131BE688F000A6B3C6 /* StringHtmlExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D151BE74E8900A6B3C6 /* CountOnBox.swift */; settings = {ASSET_TAGS = (); }; };
 		F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D171BE74EA400A6B3C6 /* CountOnBox.xib */; settings = {ASSET_TAGS = (); }; };
+		F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */; settings = {ASSET_TAGS = (); }; };
+		F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */; settings = {ASSET_TAGS = (); }; };
 		F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867B51BCE7DDA00033AB5 /* JSONManager.swift */; settings = {ASSET_TAGS = (); }; };
 		F70867B81BCF854400033AB5 /* sandvik365.json in Resources */ = {isa = PBXBuildFile; fileRef = F70867B71BCF854400033AB5 /* sandvik365.json */; settings = {ASSET_TAGS = (); }; };
 		F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -112,6 +114,8 @@
 		F7019D131BE688F000A6B3C6 /* StringHtmlExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHtmlExtension.swift; sourceTree = "<group>"; };
 		F7019D151BE74E8900A6B3C6 /* CountOnBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountOnBox.swift; sourceTree = "<group>"; };
 		F7019D171BE74EA400A6B3C6 /* CountOnBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountOnBox.xib; sourceTree = "<group>"; };
+		F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithBGImage.swift; sourceTree = "<group>"; };
+		F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewWithBGImage.xib; sourceTree = "<group>"; };
 		F70867B51BCE7DDA00033AB5 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		F70867B71BCF854400033AB5 /* sandvik365.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sandvik365.json; sourceTree = "<group>"; };
 		F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PartsAndServices.storyboard; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 				F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */,
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
 				F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */,
+				F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */,
+				F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
+				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
@@ -534,6 +541,7 @@
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
 				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
+				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
