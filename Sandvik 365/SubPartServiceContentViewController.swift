@@ -81,7 +81,7 @@ class SubPartServiceContentViewController: UIViewController {
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
         
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -leadingConstraint.constant)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -leadingConstraint.constant*2)
         let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leadingConstraint.constant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
         subContentView.addSubview(fromView)
