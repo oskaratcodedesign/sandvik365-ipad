@@ -21,7 +21,7 @@ class SubPartServiceContentViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
-    private let topConstant: CGFloat = 20
+    private var topConstant: CGFloat = 20
     private var alignCountOnBoxRight: Bool = true
     
     override func viewDidLoad() {
@@ -34,6 +34,8 @@ class SubPartServiceContentViewController: UIViewController {
             titleLabel.text = title.uppercaseString
         }
         var previousView: UIView = titleLabel
+        let defConstant = topConstant
+        topConstant = contentView.bounds.size.height*0.7
         for obj in content.contentList {
             if let value = obj as? SubPartService.Content.Lead {
                 previousView = addLead(value, prevView: previousView)
@@ -50,9 +52,10 @@ class SubPartServiceContentViewController: UIViewController {
             else if let value = obj as? SubPartService.Content.TabbedContent {
                 previousView = addTabbedContent(value, prevView: previousView)
             }
+            topConstant = defConstant //reset
         }
 
-        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -50)
         previousView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
