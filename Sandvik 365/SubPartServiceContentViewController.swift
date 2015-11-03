@@ -8,6 +8,8 @@
 
 import UIKit
 
+let didTapNotificationKey = "didTapNotificationKey"
+
 class SubPartServiceContentViewController: UIViewController {
 
     var selectedPartsAndServices: PartsAndServices!
@@ -54,6 +56,10 @@ class SubPartServiceContentViewController: UIViewController {
         previousView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
+    }
+    
+    @IBAction func handleTap(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName(didTapNotificationKey, object: self)
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {

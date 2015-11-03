@@ -226,6 +226,9 @@
                                 <exclude reference="bg7-VK-SGo"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1CQ-px-bG3" appends="YES" id="A53-MW-Z7n"/>
+                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -239,6 +242,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bal-fB-qjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1CQ-px-bG3">
+                    <connections>
+                        <action selector="handleTap:" destination="DvM-WU-qFf" id="kKZ-0q-4Rc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="526" y="435"/>
         </scene>
