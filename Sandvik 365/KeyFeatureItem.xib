@@ -70,7 +70,7 @@
                                 <constraint firstAttribute="height" constant="100" id="WpM-Xh-qjT"/>
                                 <constraint firstAttribute="width" constant="100" id="z8g-bY-glb"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="30"/>
                             <state key="normal">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                             </state>

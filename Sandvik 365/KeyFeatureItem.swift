@@ -35,8 +35,8 @@ class KeyFeatureItem: NibDesignable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let frame = button.layer.frame
-        button.layer.roundCALayer(frame, fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        button.layer.addSublayer(CALayer().roundCALayer(CGRectMake(2, 2, frame.size.width-4, frame.size.height-4), fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
+        button.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
+        button.layer.addSublayer(CALayer().roundCALayer(CGRectMake(6, 6, frame.size.width-12, frame.size.height-12), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
         //NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
     }
     
