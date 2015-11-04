@@ -350,7 +350,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="LQt-oP-RLf" firstAttribute="leading" secondItem="6Lg-dp-gaC" secondAttribute="leading" id="56y-Hv-FYD"/>
                                                             <constraint firstAttribute="trailing" secondItem="LQt-oP-RLf" secondAttribute="trailing" placeholder="YES" id="996-cm-sXh"/>
