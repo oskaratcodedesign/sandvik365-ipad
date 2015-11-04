@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartServiceSelectionViewController: UIViewController {
+class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
     var mainSectionTitle: String!
@@ -24,20 +24,26 @@ class PartServiceSelectionViewController: UIViewController {
     @IBOutlet weak var lastSectionButton: SectionSelectionButton!
     @IBOutlet weak var lastTrailingConstraint: NSLayoutConstraint!
     
+    var partsServices: [PartService] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
+        sectionScrollView.delegate = self
         sectionTitleLabel.text = mainSectionTitle.uppercaseString
         if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
+            self.partsServices = partsServices
             if let firstItem = partsServices.first {
                 lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
-            
+                lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                sectionDescriptionLabel.text = firstItem.description
                 for i in 1...partsServices.count-1 {
                     let ps = partsServices[i]
                     let selButton = SectionSelectionButton(frame: CGRectZero)
                     selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
+                    selButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
                     
                     let topConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
                     let botConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
@@ -53,6 +59,19 @@ class PartServiceSelectionViewController: UIViewController {
                     lastSectionButton = selButton
                 }
             }
+        }
+    }
+    
+    func handleButtonSelect(button :UIButton) {
+        selectedSectionTitle = button.titleLabel?.text
+        performSegueWithIdentifier("ShowSubPartServiceSelectionViewController", sender: self)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        let pageWidth:CGFloat = sectionScrollView.bounds.size.width
+        let currentPage = Int(floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1)
+        if currentPage < partsServices.count {
+            sectionDescriptionLabel.text = partsServices[currentPage].description
         }
     }
     
