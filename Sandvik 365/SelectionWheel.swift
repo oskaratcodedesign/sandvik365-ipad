@@ -62,8 +62,8 @@ class SelectionWheel: UIView {
         }
         
         let frame = centerLabel.layer.frame
-        centerLabel.layer.roundCALayer(frame, fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(2, 2, frame.size.width-4, frame.size.height-4), fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
+        centerLabel.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
+        centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(4, 4, frame.size.width-8, frame.size.height-8), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
         drawWheel()
         rotate(false)
     }
