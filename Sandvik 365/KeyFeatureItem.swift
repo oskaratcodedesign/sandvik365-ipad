@@ -37,7 +37,6 @@ class KeyFeatureItem: NibDesignable {
         let frame = button.layer.frame
         button.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
         button.layer.addSublayer(CALayer().roundCALayer(CGRectMake(6, 6, frame.size.width-12, frame.size.height-12), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tapDidHappen", name: didTapNotificationKey, object: nil)
         //NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
     }
     
@@ -49,10 +48,12 @@ class KeyFeatureItem: NibDesignable {
         if let text = text.text {
             textLabel.text = text
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tapDidHappen", name: didTapNotificationKey, object: nil)
     }
     
     func tapDidHappen() {
-        if buttonTitleContainer.hidden {
+        if buttonTitleContainer != nil && buttonTitleContainer.hidden {
             buttonTitleContainer.hidden = false
             textTitleContainer.hidden = true
             NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
@@ -66,4 +67,9 @@ class KeyFeatureItem: NibDesignable {
         NSLayoutConstraint.deactivateConstraints([buttonTitleContainerBottomConstraint])
         NSLayoutConstraint.activateConstraints([textTitleContainerBottomConstraint])
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 }

@@ -17,6 +17,7 @@ class KeyFeatureList: NibDesignable {
         
         if let texts = keyFeatureList.texts {
             for i in 0...texts.count-1 {
+                keyFeatureItems[i].hidden = false
                 keyFeatureItems[i].setTexts(texts[i])
             }
         }
