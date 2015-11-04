@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
@@ -17,10 +17,9 @@
             <connections>
                 <outlet property="button" destination="zoh-sL-HaX" id="8eW-cw-1mT"/>
                 <outlet property="buttonTitleContainer" destination="XwY-nE-5DL" id="d6A-Pm-m7M"/>
-                <outlet property="buttonTitleContainerBottomConstraint" destination="wcK-pM-jzd" id="2Yf-fQ-jRQ"/>
                 <outlet property="textLabel" destination="B0y-4o-MYx" id="C6f-pt-d8F"/>
                 <outlet property="textTitleContainer" destination="Djx-79-XaQ" id="oE5-St-E50"/>
-                <outlet property="textTitleContainerBottomConstraint" destination="lY6-t7-p73" id="vk2-Yg-DJl"/>
+                <outlet property="textTitleContainerBottomConstraint" destination="FDw-wU-MQw" id="1Rh-Aw-D1k"/>
                 <outlet property="titleAboveText" destination="lC4-LZ-dOd" id="5jT-3d-Hmd"/>
                 <outlet property="titleBelowButtonLabel" destination="tz4-hj-XMM" id="tQr-ks-yl9"/>
             </connections>
@@ -42,7 +41,7 @@
                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
                             <rect key="frame" x="200" y="5" width="200" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="nDU-15-GFc"/>
@@ -51,36 +50,15 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG2-CX-o8Z">
-                            <rect key="frame" x="0.0" y="5" width="600" height="595"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="240" id="Q4X-xR-10c"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="Q4X-xR-10c"/>
-                                </mask>
-                            </variation>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="rG2-CX-o8Z" secondAttribute="trailing" id="BeQ-EZ-S1f"/>
-                        <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="rG2-CX-o8Z" secondAttribute="bottom" id="F27-ol-cYH"/>
-                        <constraint firstItem="rG2-CX-o8Z" firstAttribute="top" secondItem="B0y-4o-MYx" secondAttribute="bottom" id="L9W-DO-ySk"/>
-                        <constraint firstItem="rG2-CX-o8Z" firstAttribute="leading" secondItem="Djx-79-XaQ" secondAttribute="leading" id="YkE-WP-oPR"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B0y-4o-MYx" secondAttribute="bottom" id="FDw-wU-MQw"/>
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="top" secondItem="Djx-79-XaQ" secondAttribute="top" id="dQL-Lj-X4c"/>
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="mVs-KW-jcN"/>
-                        <constraint firstAttribute="bottom" secondItem="rG2-CX-o8Z" secondAttribute="bottom" id="peC-4K-k96"/>
                         <constraint firstItem="B0y-4o-MYx" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="yMy-lJ-ByY"/>
                         <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="lC4-LZ-dOd" secondAttribute="bottom" constant="5" id="zW6-1g-ODd"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="F27-ol-cYH"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-nE-5DL">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -100,7 +78,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-hj-XMM">
-                            <rect key="frame" x="200" y="105" width="200" height="495"/>
+                            <rect key="frame" x="200" y="105" width="200" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="5Fg-hO-7IT"/>
                             </constraints>
@@ -114,7 +92,7 @@
                         <constraint firstItem="zoh-sL-HaX" firstAttribute="top" secondItem="XwY-nE-5DL" secondAttribute="top" id="047-IQ-wAS"/>
                         <constraint firstItem="zoh-sL-HaX" firstAttribute="centerX" secondItem="XwY-nE-5DL" secondAttribute="centerX" id="6AH-hr-pDB"/>
                         <constraint firstItem="zoh-sL-HaX" firstAttribute="bottom" secondItem="tz4-hj-XMM" secondAttribute="bottom" constant="5" id="6mX-XC-1yE"/>
-                        <constraint firstAttribute="bottom" secondItem="tz4-hj-XMM" secondAttribute="bottom" id="ThN-zh-6Az"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tz4-hj-XMM" secondAttribute="bottom" id="UOZ-MU-TzC"/>
                         <constraint firstItem="tz4-hj-XMM" firstAttribute="centerX" secondItem="XwY-nE-5DL" secondAttribute="centerX" id="VMM-1N-fWs"/>
                         <constraint firstItem="tz4-hj-XMM" firstAttribute="top" secondItem="zoh-sL-HaX" secondAttribute="bottom" constant="5" id="dP2-5B-izS"/>
                     </constraints>
@@ -127,15 +105,23 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="XwY-nE-5DL" secondAttribute="bottom" id="1dn-gU-RAl"/>
+                <constraint firstItem="XwY-nE-5DL" firstAttribute="height" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="height" id="BOX-Kk-ldo"/>
+                <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" priority="750" id="Hep-lk-UQ4"/>
                 <constraint firstAttribute="trailing" secondItem="XwY-nE-5DL" secondAttribute="trailing" id="IGE-z0-i2i"/>
                 <constraint firstItem="XwY-nE-5DL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J5Z-Tc-UCz"/>
+                <constraint firstItem="Djx-79-XaQ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="NeD-9K-dTo"/>
                 <constraint firstAttribute="trailing" secondItem="Djx-79-XaQ" secondAttribute="trailing" id="X7g-W2-FbQ"/>
                 <constraint firstItem="Djx-79-XaQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XlC-8o-WFb"/>
                 <constraint firstItem="XwY-nE-5DL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jzK-He-2tn"/>
-                <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" priority="750" id="lY6-t7-p73"/>
                 <constraint firstItem="Djx-79-XaQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tsk-1i-tbB"/>
-                <constraint firstAttribute="bottom" secondItem="XwY-nE-5DL" secondAttribute="bottom" priority="750" id="wcK-pM-jzd"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="NeD-9K-dTo"/>
+                    <exclude reference="BOX-Kk-ldo"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="273" y="362"/>
         </view>
     </objects>
