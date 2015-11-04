@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
@@ -22,11 +21,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-J9-0m9">
-                    <rect key="frame" x="150" y="0.0" width="300" height="600"/>
+                    <rect key="frame" x="295" y="0.0" width="10" height="600"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="CfQ-Jx-Utd"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                     <state key="normal">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -52,7 +52,6 @@
                 <constraint firstItem="5W4-J9-0m9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="89Y-p4-BPe"/>
                 <constraint firstItem="5W4-J9-0m9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VpZ-d8-O4a"/>
                 <constraint firstAttribute="trailing" secondItem="5W4-J9-0m9" secondAttribute="trailing" id="fQd-56-srr"/>
-                <constraint firstItem="5W4-J9-0m9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1/2" id="hPC-KN-ikr"/>
                 <constraint firstItem="5W4-J9-0m9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lSH-fQ-QeZ"/>
                 <constraint firstItem="5W4-J9-0m9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nsL-FE-TRY"/>
             </constraints>

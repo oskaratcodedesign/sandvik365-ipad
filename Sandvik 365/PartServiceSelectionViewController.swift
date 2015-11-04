@@ -12,10 +12,10 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
 
     var selectedPartsAndServices: PartsAndServices!
     var mainSectionTitle: String!
-    var selectedSectionTitle: String!
+    private var selectedSectionTitle: String!
+    private var partsServices: [PartService] = []
     
     @IBOutlet weak var sectionSelectionView: UIView!
-    @IBOutlet weak var subSectionSelectionView: UIView!
     @IBOutlet weak var sectionTitleLabel: UILabel!
     @IBOutlet weak var sectionScrollView: UIScrollView!
     @IBOutlet weak var sectionDescriptionLabel: UILabel!
@@ -23,8 +23,6 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     @IBOutlet weak var sectionScrollViewContentView: UIView!
     @IBOutlet weak var lastSectionButton: SectionSelectionButton!
     @IBOutlet weak var lastTrailingConstraint: NSLayoutConstraint!
-    
-    var partsServices: [PartService] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +37,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
                 lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
                 sectionDescriptionLabel.text = firstItem.description
+                lastSectionButton.buttonMultiplierWidth = 0.5
                 for i in 1...partsServices.count-1 {
                     let ps = partsServices[i]
                     let selButton = SectionSelectionButton(frame: CGRectZero)
@@ -56,6 +55,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                     NSLayoutConstraint.deactivateConstraints([lastTrailingConstraint])
                     NSLayoutConstraint.activateConstraints([topConstraint, botConstraint, trailConstraint, leadConstraint, widthConstraint])
                     lastTrailingConstraint = trailConstraint
+                    selButton.buttonMultiplierWidth = lastSectionButton.buttonMultiplierWidth
                     lastSectionButton = selButton
                 }
             }
@@ -92,11 +92,6 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
         moveToNextPage(true)
     }
     
-    @IBAction func tempAction(sender: UIButton) {
-        selectedSectionTitle = sender.titleLabel?.text
-        performSegueWithIdentifier("ShowSubPartServiceSelectionViewController", sender: self)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,7 +101,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
         if segue.identifier == "ShowSubPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.selectedSubPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
+                vc.mainSectionTitle = mainSectionTitle
+                vc.selectedSectionTitle = selectedSectionTitle
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
             }
         }

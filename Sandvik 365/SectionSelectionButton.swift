@@ -12,6 +12,14 @@ import NibDesignable
 class SectionSelectionButton: NibDesignable {
 
     @IBOutlet weak var sectionButton: UIButton!
+    
+    var buttonMultiplierWidth: CGFloat! = 0.0 {
+        didSet {
+            let widthConstraint = NSLayoutConstraint(item: sectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: sectionButton.superview, attribute: NSLayoutAttribute.Width, multiplier: buttonMultiplierWidth, constant: 0)
+            sectionButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activateConstraints([widthConstraint])
+        }
+    }
 
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

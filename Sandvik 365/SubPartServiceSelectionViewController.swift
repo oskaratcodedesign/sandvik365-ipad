@@ -8,33 +8,90 @@
 
 import UIKit
 
-class SubPartServiceSelectionViewController: UIViewController {
+class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
-    var selectedSubPartsServices: [SubPartService]?
+    var mainSectionTitle: String!
+    var selectedSectionTitle: String!
     
-    var selectedSubPart: SubPartService!
+    private var selectedSubPart: SubPartService!
+    private var subPartsServices: [SubPartService]?
     
-    @IBOutlet var sectionTitleLabel: UILabel!
+    @IBOutlet weak var sectionScrollView: UIScrollView!
+    @IBOutlet weak var sectionScrollViewContentView: UIView!
+    @IBOutlet weak var lastSectionButton: SectionSelectionButton!
+    private var lastTrailingConstraint: NSLayoutConstraint? = nil
+    
+    @IBOutlet weak var subSectionTitleLabel: UILabel!
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
-        if let subParts = selectedSubPartsServices {
-            //tempButton.setTitle(subParts.first?.title, forState: .Normal)
+        sectionScrollView.delegate = self
+        sectionTitleLabel.text = mainSectionTitle.uppercaseString
+        subSectionTitleLabel.text = selectedSectionTitle.uppercaseString
+        
+        subPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
+        
+        if let subParts = subPartsServices {
+            if let firstItem = subParts.first {
+                lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
+                lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                lastSectionButton.buttonMultiplierWidth = 0.75
+                for i in 1...subParts.count-1 {
+                    let ps = subParts[i]
+                    let selButton = SectionSelectionButton(frame: CGRectZero)
+                    selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
+                    selButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                    
+                    let topConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+                    let botConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+                    let trailConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+                    let leadConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: lastSectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: lastSectionButton, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+                    
+                    selButton.translatesAutoresizingMaskIntoConstraints = false
+                    sectionScrollViewContentView.addSubview(selButton)
+                    if lastTrailingConstraint != nil {
+                        NSLayoutConstraint.deactivateConstraints([lastTrailingConstraint!])
+                    }
+                    NSLayoutConstraint.activateConstraints([topConstraint, botConstraint, trailConstraint, leadConstraint, widthConstraint])
+                    lastTrailingConstraint = trailConstraint
+                    selButton.buttonMultiplierWidth = lastSectionButton.buttonMultiplierWidth
+                    lastSectionButton = selButton
+                }
+            }
         }
     }
-
+    
+    func moveToNextPage(left: Bool) {
+        
+        let pageWidth:CGFloat = sectionScrollView.bounds.size.width
+        let contentOffset:CGFloat = sectionScrollView.contentOffset.x
+        
+        let slideToX = contentOffset + (left ? -pageWidth : pageWidth)
+        sectionScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, sectionScrollView.bounds.height), animated: true)
+    }
+    
+    @IBAction func toggleRight(sender: UIButton) {
+        moveToNextPage(false)
+    }
+    
+    @IBAction func toggleLeft(sender: UIButton) {
+        moveToNextPage(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    @IBAction func tempAction(sender: UIButton) {
+    func handleButtonSelect(sender: UIButton) {
         if let selectedSectionTitle = sender.titleLabel?.text {
-            if let subParts = selectedSubPartsServices {
+            if let subParts = subPartsServices {
                 for sp in subParts {
                     if sp.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame {
                         selectedSubPart = sp
