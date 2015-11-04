@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        if JSONManager().jsonLastModifiedDate() == nil {
+            // FIXME: temporarily trigger download on first launch.
+            JSONManager().downloadJSON({ (success, lastModified) -> () in
+                print("downloaded json file. Last modified: %@", lastModified)
+            })
+        } else {
+            // FIXME: loading view should not be dismissed until content is loaded
+            JSONManager().readJSONFromFile { (success) -> () in
+                print("read json from file. success = %@", success)
+            }
+        }
+        
+        
         let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 24, 0, 0)))
         UIBarButtonItem.appearance().setBackButtonBackgroundImage(image, forState: .Normal, barMetrics: .Default)
         UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
@@ -29,10 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         showLoadingView()
         
-        // FIXME: loading view should not be dismissed until content is loaded
-        JSONManager().readJSONFromFile { (success) -> () in
-            print("read json from file. success = %@", success)
-        }
         
         return true
     }
