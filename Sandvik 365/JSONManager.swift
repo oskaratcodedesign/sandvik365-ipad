@@ -135,6 +135,15 @@ class JSONManager {
     
     private func cacheFilePath() -> String {
         let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        // Create directory if it does not exist
+        do {
+            if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
+                try NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+            }
+        } catch {
+            print("Failed to create Application Support directory.", error)
+        }
+        
         return path.stringByAppendingFormat("/%@", "data.plist")
     }
 }
