@@ -98,6 +98,12 @@ class JSONManager {
         
         let path = self.cacheFilePath()
         data.writeToFile(path, atomically: true)
+        do {
+            try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
+        } catch {
+            print("Failed to exclude json cache file from iCloud backup.", error)
+        }
+        
 
         let parts = JSONParts(json: data)
         

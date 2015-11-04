@@ -29,6 +29,7 @@ class ImageCache {
             let data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
         
             data.writeToFile(path, atomically: true)
+            try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
         }
     }
     
