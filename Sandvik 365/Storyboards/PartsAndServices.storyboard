@@ -20,6 +20,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -219,6 +220,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
+                                <rect key="frame" x="130" y="120" width="400" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="LdI-rm-Nqf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="40"/>
+                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-kB-npY" customClass="SelectionWheel" customModule="Sandvik_365" customModuleProvider="target">
                                 <rect key="frame" x="80" y="320" width="440" height="580"/>
                                 <subviews>
@@ -256,12 +266,15 @@
                         <constraints>
                             <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="bottom" constant="-300" id="3tU-Ea-mVA"/>
                             <constraint firstItem="UDb-kB-npY" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" constant="80" id="Hx4-AE-5g4"/>
+                            <constraint firstItem="kL0-Ok-Qw4" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="100" id="OKw-Qa-b2t"/>
+                            <constraint firstItem="kL0-Ok-Qw4" firstAttribute="leading" secondItem="zlc-Uy-tFr" secondAttribute="leading" constant="130" id="pGX-cq-dXw"/>
                             <constraint firstItem="UDb-kB-npY" firstAttribute="top" secondItem="oWT-Zb-sra" secondAttribute="bottom" constant="300" id="rYe-sO-bwf"/>
                             <constraint firstAttribute="trailing" secondItem="UDb-kB-npY" secondAttribute="trailing" constant="80" id="xro-Y0-Cte"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
+                        <outlet property="sectionLabel" destination="kL0-Ok-Qw4" id="XOX-A3-dhM"/>
                         <outlet property="selectionWheel" destination="UDb-kB-npY" id="8je-Xo-acT"/>
                         <segue destination="qrw-oR-DJv" kind="show" identifier="ShowPartServiceSelectionViewController" id="6Lp-A9-eoo"/>
                     </connections>

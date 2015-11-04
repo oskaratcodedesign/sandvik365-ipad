@@ -70,6 +70,8 @@
 		F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
+		F7F705E21BEABA72003D6289 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; };
+		F7F705E31BEABA72003D6289 /* Pods_Sandvik_365.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,20 @@
 			remoteInfo = "Sandvik 365";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F7F705E41BEABA72003D6289 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F7F705E31BEABA72003D6289 /* Pods_Sandvik_365.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F705E21BEABA72003D6289 /* Pods_Sandvik_365.framework in Frameworks */,
 				F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */,
 				0680F73A8AA21B6A17F84678 /* Pods_Sandvik_365.framework in Frameworks */,
 			);
@@ -390,6 +407,7 @@
 				48FDEA8F1B5F8CEC00C5AFE6 /* Resources */,
 				62BD000F96246D9300F3E87D /* Embed Pods Frameworks */,
 				495D16048189F0B33D77DD71 /* Copy Pods Resources */,
+				F7F705E41BEABA72003D6289 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
