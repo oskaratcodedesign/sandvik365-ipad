@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "surface drilling-1.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "1535304.jpg"
+      "filename" : "surface drilling.jpg",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

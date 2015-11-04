@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import NibDesignable
 
+
 class LoadingView : NibDesignable {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     let circlePathLayer = CAShapeLayer()
     var progressTimer: NSTimer?
-    var progress: UInt = 0
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -31,61 +31,42 @@ class LoadingView : NibDesignable {
         circlePathLayer.strokeColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
         circlePathLayer.path = UIBezierPath(ovalInRect: circlePathLayer.frame).CGPath
         circlePathLayer.transform = CATransform3DMakeRotation(CGFloat(-90.0 / 180.0 * M_PI), 0.0, 0.0, 1.0);
-        circlePathLayer.strokeEnd = 0
         numberLabel.layer.addSublayer(circlePathLayer)
-        
-        /*let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 1
-        pathAnimation.fromValue = 0
-        pathAnimation.toValue = 1
-        circlePathLayer.addAnimation(pathAnimation, forKey: "test")*/
     }
     
     func startLoadingAnimation() {
-        if progressTimer != nil {
-            progressTimer!.invalidate()
-            progressTimer = nil
-        }
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64(1 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(2.0/365, target: self, selector: Selector("animateProgress"), userInfo: nil, repeats: true)
-        }
-    }
-    
-    func animateProgress() {
-        if (progress > 365) {
-            setStrokeEnd(1)
-            progressTimer?.invalidate()
-            progressTimer = nil
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-                Int64(0.5 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                self.numberLabel.hidden = true
-                self.circlePathLayer.hidden = true
-                self.logoImageView.hidden = false
-                let newdelayTime = dispatch_time(DISPATCH_TIME_NOW,
-                    Int64(1 * Double(NSEC_PER_SEC)))
-                dispatch_after(newdelayTime, dispatch_get_main_queue()) {
-                    self.removeFromSuperview()
-                }
-            }
-            return
-        } else if (progress < 0) {
-            setStrokeEnd(0)
-        } else {
-            setStrokeEnd(CGFloat(progress)/365)
-        }
-        numberLabel.text = self.progress.description
-        progress++
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 2.0
+        animation.fillMode = kCAFillModeForwards
+        animation.removedOnCompletion = false
+        animation.delegate = self
         
+        self.circlePathLayer.addAnimation(animation, forKey: "strokeEnd")
+        
+        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0 / 60.0, target: self, selector: "updateLabel", userInfo: nil, repeats: true)
     }
     
-    private func setStrokeEnd(value: CGFloat)
-    {
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        circlePathLayer.strokeEnd = value
-        CATransaction.commit()
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        self.progressTimer?.invalidate()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.numberLabel.hidden = true
+            self.circlePathLayer.hidden = true
+            self.logoImageView.hidden = false
+            let newdelayTime = dispatch_time(DISPATCH_TIME_NOW,
+                Int64(1 * Double(NSEC_PER_SEC)))
+            dispatch_after(newdelayTime, dispatch_get_main_queue()) {
+                self.removeFromSuperview()
+            }
+        }
+    }
+    
+    func updateLabel() {
+        if let presentationLayer = self.circlePathLayer.presentationLayer() as? CAShapeLayer {
+            numberLabel.text = Int64(round(365.0 * presentationLayer.strokeEnd)).description
+        }
     }
 }

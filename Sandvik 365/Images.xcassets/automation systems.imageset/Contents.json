@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "automation systems-1.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "1435275.jpg"
+      "filename" : "automation systems.jpg",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
