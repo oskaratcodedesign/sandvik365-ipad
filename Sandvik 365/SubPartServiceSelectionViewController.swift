@@ -40,7 +40,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
             if let firstItem = subParts.first {
                 lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
                 lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
-                lastSectionButton.buttonMultiplierWidth = 0.75
+                lastSectionButton.buttonMultiplierWidth = 0.9
                 for i in 1...subParts.count-1 {
                     let ps = subParts[i]
                     let selButton = SectionSelectionButton(frame: CGRectZero)
