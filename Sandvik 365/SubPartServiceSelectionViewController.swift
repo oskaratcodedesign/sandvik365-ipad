@@ -10,19 +10,19 @@ import UIKit
 
 class SubPartServiceSelectionViewController: UIViewController {
 
-    @IBOutlet weak var tempButton: UIButton!
     var selectedPartsAndServices: PartsAndServices!
     var selectedSubPartsServices: [SubPartService]?
     
     var selectedSubPart: SubPartService!
     
+    @IBOutlet var sectionTitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
         if let subParts = selectedSubPartsServices {
-            tempButton.setTitle(subParts.first?.title, forState: .Normal)
+            //tempButton.setTitle(subParts.first?.title, forState: .Normal)
         }
     }
 

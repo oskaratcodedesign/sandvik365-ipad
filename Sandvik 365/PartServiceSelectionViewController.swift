@@ -14,19 +14,65 @@ class PartServiceSelectionViewController: UIViewController {
     var mainSectionTitle: String!
     var selectedSectionTitle: String!
     
-    @IBOutlet weak var tempButton: UIButton!
-    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var sectionSelectionView: UIView!
+    @IBOutlet weak var subSectionSelectionView: UIView!
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    @IBOutlet weak var sectionScrollView: UIScrollView!
+    @IBOutlet weak var sectionDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var sectionScrollViewContentView: UIView!
+    @IBOutlet weak var lastSectionButton: SectionSelectionButton!
+    @IBOutlet weak var lastTrailingConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
+        sectionTitleLabel.text = mainSectionTitle.uppercaseString
         if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
-            tempButton.setTitle(partsServices.first?.title, forState: .Normal)
-            tempLabel.text = partsServices.first?.description
+            if let firstItem = partsServices.first {
+                lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
+            
+                for i in 1...partsServices.count-1 {
+                    let ps = partsServices[i]
+                    let selButton = SectionSelectionButton(frame: CGRectZero)
+                    selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
+                    
+                    let topConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+                    let botConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+                    let trailConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+                    let leadConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: lastSectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: lastSectionButton, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+                    
+                    selButton.translatesAutoresizingMaskIntoConstraints = false
+                    sectionScrollViewContentView.addSubview(selButton)
+                    NSLayoutConstraint.deactivateConstraints([lastTrailingConstraint])
+                    NSLayoutConstraint.activateConstraints([topConstraint, botConstraint, trailConstraint, leadConstraint, widthConstraint])
+                    lastTrailingConstraint = trailConstraint
+                    lastSectionButton = selButton
+                }
+            }
         }
     }
+    
+    func moveToNextPage(left: Bool) {
+        
+        let pageWidth:CGFloat = sectionScrollView.bounds.size.width
+        let contentOffset:CGFloat = sectionScrollView.contentOffset.x
+        
+        let slideToX = contentOffset + (left ? -pageWidth : pageWidth)
+        sectionScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, sectionScrollView.bounds.height), animated: true)
+    }
 
+    @IBAction func toggleRight(sender: UIButton) {
+        moveToNextPage(false)
+    }
+    
+    @IBAction func toggleLeft(sender: UIButton) {
+        moveToNextPage(true)
+    }
+    
     @IBAction func tempAction(sender: UIButton) {
         selectedSectionTitle = sender.titleLabel?.text
         performSegueWithIdentifier("ShowSubPartServiceSelectionViewController", sender: self)

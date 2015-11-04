@@ -43,4 +43,12 @@ extension CALayer {
         return roundedImage
     }
     
+    func borderUIColor() -> UIColor? {
+        return borderColor != nil ? UIColor(CGColor: borderColor!) : nil
+    }
+
+    func setBorderUIColor(color: UIColor) {
+        borderColor = color.CGColor
+    }
+    
 }
