@@ -35,7 +35,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
         subSectionTitleLabel.text = selectedSectionTitle.uppercaseString
         
         subPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
-        
+        sectionScrollView.contentOffset.x = 200
         if let subParts = subPartsServices {
             if let firstItem = subParts.first {
                 lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)

@@ -350,7 +350,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="LQt-oP-RLf" firstAttribute="leading" secondItem="6Lg-dp-gaC" secondAttribute="leading" id="56y-Hv-FYD"/>
                                                             <constraint firstAttribute="trailing" secondItem="LQt-oP-RLf" secondAttribute="trailing" placeholder="YES" id="996-cm-sXh"/>
@@ -367,6 +367,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="LQt-oP-RLf" firstAttribute="width" secondItem="U62-do-iVP" secondAttribute="width" multiplier="1/3" id="8Ft-8T-iVU"/>
+                                                    <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerX" secondItem="U62-do-iVP" secondAttribute="centerX" priority="750" id="8WF-yB-1ou"/>
                                                     <constraint firstAttribute="bottom" secondItem="6Lg-dp-gaC" secondAttribute="bottom" id="8oo-fe-hlB"/>
                                                     <constraint firstItem="LQt-oP-RLf" firstAttribute="width" secondItem="U62-do-iVP" secondAttribute="width" id="Sav-vg-7Gi"/>
                                                     <constraint firstAttribute="trailing" secondItem="6Lg-dp-gaC" secondAttribute="trailing" id="WY8-o6-Feg"/>
@@ -374,7 +375,7 @@
                                                     <constraint firstAttribute="height" constant="120" id="khy-bA-ege"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerX" secondItem="U62-do-iVP" secondAttribute="centerX" id="lyr-gj-h6j"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="top" secondItem="U62-do-iVP" secondAttribute="top" id="u4F-3s-upl"/>
-                                                    <constraint firstItem="6Lg-dp-gaC" firstAttribute="leading" secondItem="U62-do-iVP" secondAttribute="leading" id="xTd-SN-YWo"/>
+                                                    <constraint firstItem="6Lg-dp-gaC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U62-do-iVP" secondAttribute="leading" id="xTd-SN-YWo"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
