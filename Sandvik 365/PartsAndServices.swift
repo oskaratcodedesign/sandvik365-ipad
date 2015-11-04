@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Fuzi
 
 enum BusinessType: UInt {
     case BulkMaterialHandling
@@ -90,12 +91,13 @@ class SubPartService {
         var title: String? = nil
         var subtitle: String? = nil
         var contentList: [AnyObject] = []
+        var images: [NSURL] = []
         
         init(content: NSDictionary){
             if let title = content.objectForKey("title") as? String {
-                self.title = title.stripHTMLWithAttributedString()
+                self.title = title.stripHTML()
                 if let subtitle = content.objectForKey("subTitle") as? String {
-                    self.subtitle = subtitle.stripHTMLWithAttributedString()
+                    self.subtitle = subtitle.stripHTML()
                 }
             }
             if let html = content.objectForKey("content") as? [NSDictionary] {
@@ -119,6 +121,12 @@ class SubPartService {
                     }
                 }
             }
+            
+            if let images = content.objectForKey("images") as? NSDictionary, let heroImage = images.objectForKey("hero") as? String {
+                if let imageUrl = NSURL(string: heroImage) {
+                    self.images.append(imageUrl)
+                }
+            }
         }
         
         class CountOnBoxContent {
@@ -131,7 +139,7 @@ class SubPartService {
                 for part in content {
                     if let type = part.objectForKey("type") as? String {
                         if type.caseInsensitiveCompare("body") == .OrderedSame, let title = part.objectForKey("value") as? String {
-                            self.title = title.stripHTMLWithAttributedString()
+                            self.title = title.stripHTML()
                         }
                         else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = part.objectForKey("value") as? [NSDictionary] {
                             for counton in countonList {
@@ -177,7 +185,7 @@ class SubPartService {
             
             private func textFromObj(obj: NSDictionary) -> String? {
                 if let string = obj.objectForKey("text") as? String {
-                    return string.stripHTMLWithAttributedString()
+                    return string.stripHTML()
                 }
                 return nil
             }
@@ -189,14 +197,20 @@ class SubPartService {
             
             init(content: NSDictionary) {
                 if let title = content.objectForKey("title") as? String {
-                    self.title = title.stripHTMLWithAttributedString()
+                    self.title = title.stripHTML()
                 }
                 if let featureList = content.objectForKey("config") as? [String] {
                     self.texts = []
                     for feature in featureList {
-                        if let title = feature.stringBetweenStrongTag() {
-                            let text = feature.stringByReplacingOccurrencesOfString(title, withString: "").stripHTML()
-                            self.texts!.append(TitleAndText(title: title, text: text))
+                        do {
+                            let doc = try HTMLDocument(string: feature)
+                            let title = doc.firstChild(xpath: "//p/strong")?.stringValue
+                            let text = doc.firstChild(xpath: "//p/text()")?.stringValue
+                            if title != nil && text != nil {
+                                self.texts!.append(TitleAndText(title: title!, text: text!))
+                            }
+                        } catch {
+                            print("failed to parse html")
                         }
                     }
                 }
@@ -231,25 +245,27 @@ class SubPartService {
             var text: String? = nil
             
             init(text: String) {
-                self.text = text.stripHTMLWithAttributedString()
+                self.text = text.stripHTML()
             }
         }
         
         class Body {
             var titlesAndText: [TitleAndText] = []
             
-            init(var text: String) {
-                if let titles = text.stringsWithHeaderTag() {
-                    for title in titles {
-                        if let range = text.rangeOfString(title) {
-                            text = text.substringFromIndex(range.endIndex)
-                        }
-                        let subtext = text.stringUntilNextHeaderTag()
-                        titlesAndText.append(TitleAndText(title: title, text: subtext))
-                        if let range = text.rangeOfString(subtext) {
-                            text = text.substringFromIndex(range.endIndex)
+            init(text: String) {
+                do {
+                    let doc = try HTMLDocument(string: text)
+                    let headers = doc.xpath("//*[self::h1 or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]")
+                    for header in headers {
+                        let title = header.stringValue
+                        let text = header.nextSibling?.stringValue
+                        
+                        if text != nil {
+                            self.titlesAndText.append(TitleAndText(title: title, text: text!))
                         }
                     }
+                } catch {
+                    print("failed to parse html")
                 }
             }
         }
@@ -259,8 +275,8 @@ class SubPartService {
             var text: String? = nil
             
             init(title: String, text: String){
-                self.title = title.stripHTMLWithAttributedString()
-                self.text = text.stripHTMLWithAttributedString()
+                self.title = title.stripHTML()
+                self.text = text.stripHTML()
             }
         }
     }
@@ -269,7 +285,7 @@ class SubPartService {
 class JSONParts {
     var allParts: [MainPartService] = []
     
-    init(businessType: BusinessType, json: NSDictionary) {
+    init(json: NSDictionary) {
         //parse out relevant parts:
         parseMainSections(json)
     }
@@ -283,7 +299,7 @@ class JSONParts {
     }
     
     private func mainSections(json: NSDictionary) -> [NSDictionary]? {
-        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+        if let sections = json.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             return sections
         }
         return nil
@@ -330,10 +346,10 @@ class PartsAndServices {
     let businessType: BusinessType
     let jsonParts: JSONParts
     
-    init(businessType: BusinessType, json: NSDictionary)
+    init(businessType: BusinessType, json: JSONParts)
     {
         self.businessType = businessType
-        self.jsonParts = JSONParts(businessType: businessType, json: json)
+        self.jsonParts = json
     }
     
     func mainSectionTitles() -> [String] {
