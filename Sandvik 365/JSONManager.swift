@@ -62,7 +62,10 @@ class JSONManager {
             print("Reading file")
             if let data = NSDictionary(contentsOfFile: self.cacheFilePath()) {
                 print("Parsing json")
+                let start = NSDate()
                 JSONManager.jsonParts = JSONParts(json: data)
+                let end = NSDate()
+                print("Time to parse json: %@", end.timeIntervalSinceDate(start))
                 success = true
                 print("Finished parsing json")
             }

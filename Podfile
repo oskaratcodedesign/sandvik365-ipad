@@ -7,6 +7,7 @@ target 'Sandvik 365' do
   pod 'AHEasing'
   pod 'CryptoSwift'
   pod 'AsyncSwift'
+  pod 'Fuzi', '~> 0.2.0'
 end
 
 target 'Sandvik 365Tests' do
