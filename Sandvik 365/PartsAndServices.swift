@@ -37,23 +37,23 @@ enum BusinessType: UInt {
     var backgroundImageName :String {
         switch self {
         case BulkMaterialHandling:
-            return "product-awareness-surface-2048"
+            return "bulk material handling"
         case ConveyorComponents:
-            return "1435275"
+            return "conveyors"
         case CrusherAndScreening:
-            return "1535304"
+            return "crushing and screening"
         case ExplorationDrillRigs:
-            return "product-awareness-surface-2048"
+            return "exploration drilling"
         case MechanicalCutting:
-            return "product-awareness-surface-2048"
+            return "mechanical cutting"
         case MineAutomationSystems:
-            return "product-awareness-surface-2048"
+            return "automation systems"
         case SurfaceDrilling:
-            return "product-awareness-surface-2048"
+            return "surface drilling"
         case UndergroundDrillingAndBolting:
-            return "product-awareness-surface-2048"
+            return "underground drilling bolting"
         case UndergroundLoadingAndHauling:
-            return "product-awareness-surface-2048"
+            return "underground hauling"
         }
     }
 }
