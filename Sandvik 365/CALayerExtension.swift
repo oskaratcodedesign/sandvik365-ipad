@@ -25,6 +25,15 @@ extension CALayer {
         return self
     }
     
+    func roundCALayer(frame: CGRect, border: CGFloat, color: UIColor) -> CALayer? {
+        self.frame = frame
+        self.cornerRadius = frame.size.width/2
+        self.masksToBounds = true
+        self.borderWidth = border
+        self.borderColor = color.CGColor
+        return self
+    }
+    
     func roundImage(frame: CGRect, fill: Bool, color: UIColor) -> UIImage? {
         roundCALayer(frame, fill: fill, color: color)
         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0);

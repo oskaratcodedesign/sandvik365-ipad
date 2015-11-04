@@ -74,7 +74,7 @@ class SelectionWheel: UIView {
         let nextPoint = sectionPoints[nextSection]
         
         let angle = atan2(nextPoint.y - currentPoint.y, nextPoint.x - currentPoint.x)
-        print(angle, currentPoint, nextPoint)
+        //print(angle, currentPoint, nextPoint)
         
         if animate {
             if !rotateAnimationRunning {

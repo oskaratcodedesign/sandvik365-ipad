@@ -12,11 +12,13 @@ import NibDesignable
 class KeyFeatureList: NibDesignable {
 
     @IBOutlet var keyFeatureItems: [KeyFeatureItem]!
-    init(frame: CGRect, strings: [String]) {
+    init(frame: CGRect, keyFeatureList: SubPartService.Content.KeyFeatureListContent) {
         super.init(frame: frame)
         
-        for i in 0...strings.count-1 {
-            keyFeatureItems[i].setTexts(strings[i])
+        if let texts = keyFeatureList.texts {
+            for i in 0...texts.count-1 {
+                keyFeatureItems[i].setTexts(texts[i])
+            }
         }
     }
 

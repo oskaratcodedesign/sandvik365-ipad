@@ -20,6 +20,12 @@ import UIKit
         }
     }
     
+    @IBInspectable public var fillColor: UIColor? {
+        didSet {
+            configureView()
+        }
+    }
+    
     override public class func layerClass() -> AnyClass {
         return CAGradientLayer.self
     }
@@ -40,12 +46,17 @@ import UIKit
     }
     
     func configureView() {
-        let layer = self.layer as! CAGradientLayer
-        let locations = [ 0.0, 1.0 ]
-        layer.locations = locations
-        var color1 = topColor ?? self.tintColor as UIColor
-        var color2 = bottomColor ?? UIColor.blackColor() as UIColor
-        let colors: Array <AnyObject> = [ color1.CGColor, color2.CGColor ]
-        layer.colors = colors
+        if let fillColor = self.fillColor {
+            self.backgroundColor = fillColor
+        }
+        else{
+            let layer = self.layer as! CAGradientLayer
+            let locations = [ 0.0, 1.0 ]
+            layer.locations = locations
+            let color1 = topColor ?? self.tintColor as UIColor
+            let color2 = bottomColor ?? UIColor.blackColor() as UIColor
+            let colors: Array <AnyObject> = [ color1.CGColor, color2.CGColor ]
+            layer.colors = colors
+        }
     }
 }

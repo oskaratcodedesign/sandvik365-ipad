@@ -18,8 +18,8 @@ class KeyFeatureItem: NibDesignable {
     
     @IBOutlet weak var buttonTitleContainer: UIView!
     @IBOutlet weak var textTitleContainer: UIView!
-    @IBOutlet weak var textTitleContainerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonTitleContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var textTitleContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var buttonTitleContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleAboveText: UILabel!
     
     @IBInspectable var buttonText: String? = nil {
@@ -35,21 +35,29 @@ class KeyFeatureItem: NibDesignable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let frame = button.layer.frame
-        button.layer.roundCALayer(frame, fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        button.layer.addSublayer(CALayer().roundCALayer(CGRectMake(2, 2, frame.size.width-4, frame.size.height-4), fill: false, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
+        button.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
+        button.layer.addSublayer(CALayer().roundCALayer(CGRectMake(6, 6, frame.size.width-12, frame.size.height-12), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tapDidHappen", name: didTapNotificationKey, object: nil)
         //NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
     }
     
-    func setTexts(string: String) {
-        if let title = string.stringBetweenStrongTag() {
-            var text = string.stringByReplacingOccurrencesOfString(title, withString: "")
-            text = text.stripHTML()
-            
-            titleAboveText.text = title
-            titleBelowButtonLabel.text = title
+    func setTexts(text: SubPartService.Content.TitleAndText) {
+        if let title = text.title {
+            titleAboveText.text = title.uppercaseString
+            titleBelowButtonLabel.text = title.uppercaseString
+        }
+        if let text = text.text {
             textLabel.text = text
         }
-        
+    }
+    
+    func tapDidHappen() {
+        if buttonTitleContainer.hidden {
+            buttonTitleContainer.hidden = false
+            textTitleContainer.hidden = true
+            NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
+            NSLayoutConstraint.activateConstraints([buttonTitleContainerBottomConstraint])
+        }
     }
     
     @IBAction func clickAction(sender: UIButton) {

@@ -5,15 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
-            <string>AktivGroteskCorp-Light</string>
-        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
-        </mutableArray>
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
-            <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -37,33 +33,54 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djx-79-XaQ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC4-LZ-dOd">
-                            <rect key="frame" x="200" y="0.0" width="200" height="19.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC4-LZ-dOd">
+                            <rect key="frame" x="200" y="0.0" width="200" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="lo6-3N-7dq"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="sdfsdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
-                            <rect key="frame" x="200" y="24" width="200" height="576"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
+                            <rect key="frame" x="200" y="5" width="200" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="nDU-15-GFc"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG2-CX-o8Z">
+                            <rect key="frame" x="0.0" y="5" width="600" height="595"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="Q4X-xR-10c"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Q4X-xR-10c"/>
+                                </mask>
+                            </variation>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rG2-CX-o8Z" secondAttribute="trailing" id="BeQ-EZ-S1f"/>
+                        <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="rG2-CX-o8Z" secondAttribute="bottom" id="F27-ol-cYH"/>
+                        <constraint firstItem="rG2-CX-o8Z" firstAttribute="top" secondItem="B0y-4o-MYx" secondAttribute="bottom" id="L9W-DO-ySk"/>
+                        <constraint firstItem="rG2-CX-o8Z" firstAttribute="leading" secondItem="Djx-79-XaQ" secondAttribute="leading" id="YkE-WP-oPR"/>
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="top" secondItem="Djx-79-XaQ" secondAttribute="top" id="dQL-Lj-X4c"/>
-                        <constraint firstAttribute="bottom" secondItem="B0y-4o-MYx" secondAttribute="bottom" id="h80-o9-Bwa"/>
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="mVs-KW-jcN"/>
+                        <constraint firstAttribute="bottom" secondItem="rG2-CX-o8Z" secondAttribute="bottom" id="peC-4K-k96"/>
                         <constraint firstItem="B0y-4o-MYx" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="yMy-lJ-ByY"/>
                         <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="lC4-LZ-dOd" secondAttribute="bottom" constant="5" id="zW6-1g-ODd"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="F27-ol-cYH"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-nE-5DL">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -74,20 +91,20 @@
                                 <constraint firstAttribute="height" constant="100" id="WpM-Xh-qjT"/>
                                 <constraint firstAttribute="width" constant="100" id="z8g-bY-glb"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
-                            <state key="normal" title="Button">
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="30"/>
+                            <state key="normal">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="clickAction:" destination="-1" eventType="touchUpInside" id="I4d-oC-rbh"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-hj-XMM">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-hj-XMM">
                             <rect key="frame" x="200" y="105" width="200" height="495"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="5Fg-hO-7IT"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -110,27 +127,15 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Cnq-JO-a9s"/>
-                <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" constant="556.5" id="Eus-fM-u1l"/>
                 <constraint firstAttribute="trailing" secondItem="XwY-nE-5DL" secondAttribute="trailing" id="IGE-z0-i2i"/>
                 <constraint firstItem="XwY-nE-5DL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J5Z-Tc-UCz"/>
-                <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" constant="556.5" id="KnR-pM-o3H"/>
                 <constraint firstAttribute="trailing" secondItem="Djx-79-XaQ" secondAttribute="trailing" id="X7g-W2-FbQ"/>
                 <constraint firstItem="Djx-79-XaQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XlC-8o-WFb"/>
-                <constraint firstItem="Djx-79-XaQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="chj-xm-2Fc"/>
                 <constraint firstItem="XwY-nE-5DL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jzK-He-2tn"/>
                 <constraint firstAttribute="bottom" secondItem="Djx-79-XaQ" secondAttribute="bottom" priority="750" id="lY6-t7-p73"/>
                 <constraint firstItem="Djx-79-XaQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tsk-1i-tbB"/>
                 <constraint firstAttribute="bottom" secondItem="XwY-nE-5DL" secondAttribute="bottom" priority="750" id="wcK-pM-jzd"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="Cnq-JO-a9s"/>
-                    <exclude reference="Eus-fM-u1l"/>
-                    <exclude reference="KnR-pM-o3H"/>
-                    <exclude reference="chj-xm-2Fc"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="273" y="362"/>
         </view>
     </objects>

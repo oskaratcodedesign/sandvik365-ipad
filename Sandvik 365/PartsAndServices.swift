@@ -18,9 +18,8 @@ enum BusinessType: UInt {
     case SurfaceDrilling
     case UndergroundDrillingAndBolting
     case UndergroundLoadingAndHauling
-    case None
     
-    static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, None]
+    static let allValues = [BulkMaterialHandling, ConveyorComponents, CrusherAndScreening]
     
     //TODO return from case
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
@@ -32,6 +31,29 @@ enum BusinessType: UInt {
             return url
         }
         return nil
+    }
+    
+    var backgroundImageName :String {
+        switch self {
+        case BulkMaterialHandling:
+            return "product-awareness-surface-2048"
+        case ConveyorComponents:
+            return "1435275"
+        case CrusherAndScreening:
+            return "1535304"
+        case ExplorationDrillRigs:
+            return "product-awareness-surface-2048"
+        case MechanicalCutting:
+            return "product-awareness-surface-2048"
+        case MineAutomationSystems:
+            return "product-awareness-surface-2048"
+        case SurfaceDrilling:
+            return "product-awareness-surface-2048"
+        case UndergroundDrillingAndBolting:
+            return "product-awareness-surface-2048"
+        case UndergroundLoadingAndHauling:
+            return "product-awareness-surface-2048"
+        }
     }
 }
 
@@ -57,11 +79,190 @@ class PartService {
 
 class SubPartService {
     let title: String
-    let content: NSDictionary
+    let content: Content
     
     init(title: String, content: NSDictionary){
         self.title = title
-        self.content = content
+        self.content = Content(content: content)
+    }
+    
+    class Content {
+        var title: String? = nil
+        var subtitle: String? = nil
+        var contentList: [AnyObject] = []
+        
+        init(content: NSDictionary){
+            if let title = content.objectForKey("title") as? String {
+                self.title = title.stripHTMLWithAttributedString()
+                if let subtitle = content.objectForKey("subTitle") as? String {
+                    self.subtitle = subtitle.stripHTMLWithAttributedString()
+                }
+            }
+            if let html = content.objectForKey("content") as? [NSDictionary] {
+                for part in html {
+                    if let type = part.objectForKey("type") as? String {
+                        if type == "lead", let value = part.objectForKey("value") as? String {
+                            contentList.append(Lead(text: value))
+                        }
+                        else if type == "body", let value = part.objectForKey("value") as? String {
+                            contentList.append(Body(text: value))
+                        }
+                        else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
+                            contentList.append(KeyFeatureListContent(content: value))
+                        }
+                        else if type == "columns", let value = part.objectForKey("value") as? [NSDictionary] {
+                            contentList.append(CountOnBoxContent(content: value))
+                        }
+                        else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
+                            contentList.append(TabbedContent(content: value))
+                        }
+                    }
+                }
+            }
+        }
+        
+        class CountOnBoxContent {
+            var title: String? = nil
+            var topText: String? = nil
+            var midText: String? = nil
+            var bottomText: String? = nil
+            
+            init(content: [NSDictionary]){
+                for part in content {
+                    if let type = part.objectForKey("type") as? String {
+                        if type.caseInsensitiveCompare("body") == .OrderedSame, let title = part.objectForKey("value") as? String {
+                            self.title = title.stripHTMLWithAttributedString()
+                        }
+                        else if type.caseInsensitiveCompare("content") == .OrderedSame, let countonList  = part.objectForKey("value") as? [NSDictionary] {
+                            for counton in countonList {
+                                if let value = counton.objectForKey("value") as? NSDictionary {
+                                    if let config = value.objectForKey("config") as? NSDictionary {
+                                        if let columns = config.objectForKey("columns") as? [NSDictionary] {
+                                            print("columns count", columns.count) //can it be more than one?
+                                            if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
+                                                setTexts(rows)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            private func setTexts(rows: [NSDictionary]) {
+                if rows.count == 3 {
+                    self.topText = textFromObj(rows[0])
+                    self.midText = textFromObj(rows[1])
+                    self.bottomText = textFromObj(rows[2])
+                }
+                else if rows.count == 2 {
+                    //check which should be where
+                    let firstSize = rows[0].objectForKey("size") as? Int
+                    let nextSize = rows[1].objectForKey("size") as? Int
+                    if nextSize >= firstSize {
+                        self.topText = textFromObj(rows[0])
+                        self.midText = textFromObj(rows[1])
+                    }
+                    else {
+                        self.midText = textFromObj(rows[0])
+                        self.bottomText = textFromObj(rows[1])
+                    }
+                }
+                else if rows.count == 1 {
+                    self.midText = textFromObj(rows[0])
+                }
+            }
+            
+            private func textFromObj(obj: NSDictionary) -> String? {
+                if let string = obj.objectForKey("text") as? String {
+                    return string.stripHTMLWithAttributedString()
+                }
+                return nil
+            }
+        }
+        
+        class KeyFeatureListContent {
+            var title: String? = nil
+            var texts: [TitleAndText]? = nil
+            
+            init(content: NSDictionary) {
+                if let title = content.objectForKey("title") as? String {
+                    self.title = title.stripHTMLWithAttributedString()
+                }
+                if let featureList = content.objectForKey("config") as? [String] {
+                    self.texts = []
+                    for feature in featureList {
+                        if let title = feature.stringBetweenStrongTag() {
+                            let text = feature.stringByReplacingOccurrencesOfString(title, withString: "").stripHTML()
+                            self.texts!.append(TitleAndText(title: title, text: text))
+                        }
+                    }
+                }
+            }
+        }
+        
+        class TabbedContent {
+            var tabs: [TitleAndText]? = nil
+            
+            init(content: NSDictionary) {
+                if let tabs = content.objectForKey("config") as? [NSDictionary] {
+                    self.tabs = []
+                    for tab in tabs {
+                        if let title = tab.objectForKey("text") as? String {
+                            if let content = tab.objectForKey("content") as? [NSDictionary] {
+                                var string: String = ""
+                                for text in content {
+                                    if let t = text.objectForKey("text") as? String {
+                                        string += t
+                                        //TODO can it loop ?
+                                    }
+                                }
+                                self.tabs!.append(TitleAndText(title: title, text: string))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        class Lead {
+            var text: String? = nil
+            
+            init(text: String) {
+                self.text = text.stripHTMLWithAttributedString()
+            }
+        }
+        
+        class Body {
+            var titlesAndText: [TitleAndText] = []
+            
+            init(var text: String) {
+                if let titles = text.stringsWithHeaderTag() {
+                    for title in titles {
+                        if let range = text.rangeOfString(title) {
+                            text = text.substringFromIndex(range.endIndex)
+                        }
+                        let subtext = text.stringUntilNextHeaderTag()
+                        titlesAndText.append(TitleAndText(title: title, text: subtext))
+                        if let range = text.rangeOfString(subtext) {
+                            text = text.substringFromIndex(range.endIndex)
+                        }
+                    }
+                }
+            }
+        }
+        
+        class TitleAndText {
+            var title: String? = nil
+            var text: String? = nil
+            
+            init(title: String, text: String){
+                self.title = title.stripHTMLWithAttributedString()
+                self.text = text.stripHTMLWithAttributedString()
+            }
+        }
     }
 }
 

@@ -18,6 +18,9 @@ class SubPartServiceSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         if let subParts = selectedSubPartsServices {
             tempButton.setTitle(subParts.first?.title, forState: .Normal)
         }
@@ -48,7 +51,7 @@ class SubPartServiceSelectionViewController: UIViewController {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedSubPartService = selectedSubPart
-                //vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.navigationItem.title = self.navigationItem.title
             }
         }
     }

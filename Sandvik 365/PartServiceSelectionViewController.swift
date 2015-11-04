@@ -18,7 +18,9 @@ class PartServiceSelectionViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
+        }
         if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
             tempButton.setTitle(partsServices.first?.title, forState: .Normal)
             tempLabel.text = partsServices.first?.description
@@ -40,7 +42,7 @@ class PartServiceSelectionViewController: UIViewController {
             if let vc = segue.destinationViewController as? SubPartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedSubPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
             }
         }
     }
