@@ -28,6 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIViewController.swizzleViewDidLoad()
         window?.makeKeyAndVisible()
         showLoadingView()
+        
+        // FIXME: loading view should not be dismissed until content is loaded
+        JSONManager().readJSONFromFile { (success) -> () in
+            print("read json from file. success = %@", success)
+        }
+        
         return true
     }
 

@@ -90,6 +90,7 @@ class SubPartService {
         var title: String? = nil
         var subtitle: String? = nil
         var contentList: [AnyObject] = []
+        var images: [NSURL] = []
         
         init(content: NSDictionary){
             if let title = content.objectForKey("title") as? String {
@@ -117,6 +118,12 @@ class SubPartService {
                             contentList.append(TabbedContent(content: value))
                         }
                     }
+                }
+            }
+            
+            if let images = content.objectForKey("images") as? NSDictionary, let heroImage = images.objectForKey("hero") as? String {
+                if let imageUrl = NSURL(string: heroImage) {
+                    self.images.append(imageUrl)
                 }
             }
         }
@@ -269,7 +276,7 @@ class SubPartService {
 class JSONParts {
     var allParts: [MainPartService] = []
     
-    init(businessType: BusinessType, json: NSDictionary) {
+    init(json: NSDictionary) {
         //parse out relevant parts:
         parseMainSections(json)
     }
@@ -283,7 +290,7 @@ class JSONParts {
     }
     
     private func mainSections(json: NSDictionary) -> [NSDictionary]? {
-        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+        if let sections = json.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             return sections
         }
         return nil
@@ -330,10 +337,10 @@ class PartsAndServices {
     let businessType: BusinessType
     let jsonParts: JSONParts
     
-    init(businessType: BusinessType, json: NSDictionary)
+    init(businessType: BusinessType, json: JSONParts)
     {
         self.businessType = businessType
-        self.jsonParts = JSONParts(businessType: businessType, json: json)
+        self.jsonParts = json
     }
     
     func mainSectionTitles() -> [String] {

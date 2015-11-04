@@ -12,6 +12,7 @@
 		486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F887B1B72397B0084211F /* MainMenuViewController.swift */; };
 		486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486F88821B736AE80084211F /* MainMenuItemView.xib */; };
 		486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F88841B736AF50084211F /* MainMenuItemView.swift */; };
+		48E088921BE7859900F763BB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E088911BE7859900F763BB /* ImageCache.swift */; };
 		48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED4D1B74C293002D45A0 /* GradientView.swift */; };
 		48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */; };
 		48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FCED511B74CB79002D45A0 /* ProgressLineView.xib */; };
@@ -86,6 +87,7 @@
 		486F887B1B72397B0084211F /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		486F88821B736AE80084211F /* MainMenuItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuItemView.xib; sourceTree = "<group>"; };
 		486F88841B736AF50084211F /* MainMenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuItemView.swift; sourceTree = "<group>"; };
+		48E088911BE7859900F763BB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		48FCED4C1B74AC47002D45A0 /* Sandvik-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sandvik-Bridging-Header.h"; sourceTree = "<group>"; };
 		48FCED4D1B74C293002D45A0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */,
 				F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */,
 				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
+				48E088911BE7859900F763BB /* ImageCache.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
+				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */,
 				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,

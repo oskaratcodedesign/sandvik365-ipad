@@ -1,13 +1,19 @@
 PODS:
   - AHEasing (1.2)
+  - AsyncSwift (1.6.0)
+  - CryptoSwift (0.1.1)
   - NibDesignable (2.1.0)
 
 DEPENDENCIES:
   - AHEasing
+  - AsyncSwift
+  - CryptoSwift
   - NibDesignable
 
 SPEC CHECKSUMS:
   AHEasing: 847f583bcd83a2bb850e38ccdb26d22e2593f34d
+  AsyncSwift: 7f1c7b0a969f78793ef890e240e79326b881398f
+  CryptoSwift: c11640d3d66107efc8333e4131a5173f072b1d61
   NibDesignable: 9c41809e5b8ca2bdaf85e70316b2e7073db78e7f
 
 COCOAPODS: 0.39.0
