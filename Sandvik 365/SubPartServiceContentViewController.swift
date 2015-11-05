@@ -52,7 +52,7 @@ class SubPartServiceContentViewController: UIViewController {
         var previousView: UIView = paddingView
         for obj in content.contentList {
             if let value = obj as? Content.Lead {
-                previousView = addLead(value, prevView: previousView)
+                previousView = addLead(value, images: content.images, prevView: previousView)
             }
             else if let value = obj as? Content.Body {
                 previousView = addBody(value, prevView: previousView)
@@ -90,15 +90,38 @@ class SubPartServiceContentViewController: UIViewController {
     }
     
     
-    private func addLead(content: Content.Lead, prevView: UIView) -> UIView {
+    private func addLead(content: Content.Lead, images: [NSURL], prevView: UIView) -> UIView {
         var label = prevView
         
         if let text = content.text {
             label = genericTextLabel(text)
             addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
         }
+        for url in images {
+            if let image = ImageCache.getImage(url) {
+                var imgWidth:CGFloat = image.size.width
+                var imgHeight:CGFloat = image.size.height
+                let maxHeight:CGFloat = 200
+                if imgHeight > maxHeight {
+                    imgWidth = (maxHeight/image.size.height) * image.size.width
+                    imgHeight = maxHeight
+                }
+                let imageView = UIImageView(image: image)
+                imageView.contentMode = UIViewContentMode.ScaleAspectFit
+                let view = UIView()
+                let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
+                let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
+                let centerY = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
+                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(imageView)
+                NSLayoutConstraint.activateConstraints([widthConstraint, centerX, centerY, heightConstraint, topConstraint])
+                addViewAndConstraints(view, toView: label, topConstant: topConstant)
+                label = view
+            }
+        }
         
-        //todo add picture
         return label
     }
     
