@@ -74,6 +74,22 @@ class JSONManager {
         }
     }
     
+    func copyPreloadedFiles() {
+        do {
+            let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+            if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
+                if let preloadedPath = NSBundle.mainBundle().resourcePath?.stringByAppendingString("/Preloaded Resources") {
+                    try NSFileManager.defaultManager().copyItemAtPath(preloadedPath, toPath: path)
+                    try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
+                    // FIXME: Temp set last modified
+                    self.saveJsonLastModifiedDateString("2015-01-01T00:00:00.0000000Z")
+                }
+            }
+        } catch {
+            print("Failed to copy preloaded resources")
+        }
+    }
+
     private func buildUrl() -> NSURL {
         var jsonUrl = self.url
         if let jsonLastModifiedDate = self.jsonLastModifiedDateString() {
