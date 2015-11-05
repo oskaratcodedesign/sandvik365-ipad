@@ -204,6 +204,7 @@
                         <outlet property="sectionSelectionView" destination="Pkd-4U-z4f" id="pZk-e3-gQN"/>
                         <outlet property="sectionTitleLabel" destination="EV5-9s-TB1" id="thP-gj-rzV"/>
                         <segue destination="dC8-A3-gL8" kind="show" identifier="ShowSubPartServiceSelectionViewController" id="kRX-aC-bEV"/>
+                        <segue destination="DvM-WU-qFf" kind="show" identifier="ShowSubPartServiceContentViewController" id="oSS-kG-9xZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zq-9q-mKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -644,4 +645,7 @@ TO ROTATE</string>
         <image name="sandvik_arrow_right" width="32" height="64"/>
         <image name="sandvik_stripes_bg" width="1024" height="202"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oSS-kG-9xZ"/>
+    </inferredMetricsTieBreakers>
 </document>

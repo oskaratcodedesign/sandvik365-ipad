@@ -110,17 +110,26 @@ class JSONManager {
         if let strUrl = data.objectForKey("baseUrl") as? String, let baseUrl = NSURL(string: strUrl) {
             for part in parts.allParts {
                 for partService in part.partsServices {
-                    for subPartService in partService.subPartsServices {
-                        for image in subPartService.content.images {
+                    if let subPartServices = partService.subPartsServices {
+                        for subPartService in subPartServices {
+                            for image in subPartService.content.images {
+                                do {
+                                    try ImageCache.storeImage(baseUrl, urlPath: image)
+                                } catch {
+                                    print("Failed to download image: %@", image)
+                                }
+                            }
+                        }
+                    }
+                    else if let content = partService.content {
+                        for image in content.images {
                             do {
                                 try ImageCache.storeImage(baseUrl, urlPath: image)
                             } catch {
                                 print("Failed to download image: %@", image)
                             }
                         }
-                        
                     }
-                    
                 }
                 
             }
