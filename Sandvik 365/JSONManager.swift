@@ -12,8 +12,8 @@ import Async
 class JSONManager {
     static var jsonParts : JSONParts? = nil
     
-    let url = NSURL(string: "http://mining.test.ibp.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?Client=%7B5525EAB6-6401-4CAA-A5C9-CC8A484638ED%7D")!
-    //let url = NSBundle.mainBundle().URLForResource("sandvik365", withExtension: "json")!
+    //let url = NSURL(string: "https://mining.test.ibp.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?Client=%7B5525EAB6-6401-4CAA-A5C9-CC8A484638ED%7D")!
+    let url = NSBundle.mainBundle().URLForResource("sandvik365", withExtension: "json")!
     
     func jsonLastModifiedDate() -> NSDate? {
         if let dateString = self.jsonLastModifiedDateString() {
