@@ -16,7 +16,7 @@ class CountOnBox: NibDesignable {
     @IBOutlet weak var middleLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     
-    init(frame: CGRect, countOnBox: SubPartService.Content.CountOnBoxContent, alignRight: Bool) {
+    init(frame: CGRect, countOnBox: Content.CountOnBoxContent, alignRight: Bool) {
         super.init(frame: frame)
         //TODO handle align left ?
         if let title = countOnBox.title {

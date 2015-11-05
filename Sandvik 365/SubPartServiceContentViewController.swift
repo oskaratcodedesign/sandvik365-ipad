@@ -13,7 +13,7 @@ let didTapNotificationKey = "didTapNotificationKey"
 class SubPartServiceContentViewController: UIViewController {
 
     var selectedPartsAndServices: PartsAndServices!
-    var selectedSubPartService: SubPartService!
+    var selectedContent: Content!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -42,7 +42,7 @@ class SubPartServiceContentViewController: UIViewController {
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
-        let content = selectedSubPartService.content
+        let content = selectedContent
         if var title = content.title {
             if let subtitle = content.subtitle {
                 title += "\n" + subtitle
@@ -51,19 +51,19 @@ class SubPartServiceContentViewController: UIViewController {
         }
         var previousView: UIView = paddingView
         for obj in content.contentList {
-            if let value = obj as? SubPartService.Content.Lead {
+            if let value = obj as? Content.Lead {
                 previousView = addLead(value, prevView: previousView)
             }
-            else if let value = obj as? SubPartService.Content.Body {
+            else if let value = obj as? Content.Body {
                 previousView = addBody(value, prevView: previousView)
             }
-            else if let value = obj as? SubPartService.Content.KeyFeatureListContent {
+            else if let value = obj as? Content.KeyFeatureListContent {
                 previousView = addKeyFeatureList(value, prevView: previousView)
             }
-            else if let value = obj as? SubPartService.Content.CountOnBoxContent {
+            else if let value = obj as? Content.CountOnBoxContent {
                 previousView = addColumns(value, prevView: previousView)
             }
-            else if let value = obj as? SubPartService.Content.TabbedContent {
+            else if let value = obj as? Content.TabbedContent {
                 previousView = addTabbedContent(value, prevView: previousView)
             }
         }
@@ -90,7 +90,7 @@ class SubPartServiceContentViewController: UIViewController {
     }
     
     
-    private func addLead(content: SubPartService.Content.Lead, prevView: UIView) -> UIView {
+    private func addLead(content: Content.Lead, prevView: UIView) -> UIView {
         var label = prevView
         
         if let text = content.text {
@@ -102,7 +102,7 @@ class SubPartServiceContentViewController: UIViewController {
         return label
     }
     
-    private func addBody(content: SubPartService.Content.Body, var prevView: UIView) -> UIView {
+    private func addBody(content: Content.Body, var prevView: UIView) -> UIView {
         var label = prevView
         
         for titlesAndText in content.titlesAndText {
@@ -121,7 +121,7 @@ class SubPartServiceContentViewController: UIViewController {
         return label
     }
     
-    private func addKeyFeatureList(content: SubPartService.Content.KeyFeatureListContent, var prevView: UIView) -> UIView {
+    private func addKeyFeatureList(content: Content.KeyFeatureListContent, var prevView: UIView) -> UIView {
         if let title = content.title {
             let label = genericTitleLabel(title)
             addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
@@ -132,14 +132,14 @@ class SubPartServiceContentViewController: UIViewController {
         return view
     }
     
-    private func addColumns(content: SubPartService.Content.CountOnBoxContent, prevView: UIView) -> UIView {
+    private func addColumns(content: Content.CountOnBoxContent, prevView: UIView) -> UIView {
         let view = CountOnBox(frame: CGRectZero, countOnBox: content, alignRight: alignCountOnBoxRight)
         addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
         alignCountOnBoxRight = !alignCountOnBoxRight
         return view
     }
     
-    private func addTabbedContent(content: SubPartService.Content.TabbedContent, var prevView: UIView) -> UIView {
+    private func addTabbedContent(content: Content.TabbedContent, var prevView: UIView) -> UIView {
         var label = prevView
         
         if let tabs = content.tabs {
