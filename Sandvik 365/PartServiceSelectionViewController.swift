@@ -20,6 +20,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     @IBOutlet weak var sectionScrollView: UIScrollView!
     @IBOutlet weak var sectionDescriptionLabel: UILabel!
     
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var sectionScrollViewContentView: UIView!
     @IBOutlet weak var lastSectionButton: SectionSelectionButton!
     @IBOutlet weak var lastTrailingConstraint: NSLayoutConstraint!
@@ -60,6 +62,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 }
             }
         }
+        rightButton.hidden = true
+        leftButton.hidden = true
     }
     
     func handleButtonSelect(button :UIButton) {
@@ -76,12 +80,34 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     }
     
     func moveToNextPage(left: Bool) {
-        
-        let pageWidth:CGFloat = sectionScrollView.bounds.size.width
-        let contentOffset:CGFloat = sectionScrollView.contentOffset.x
+        let pageWidth = sectionScrollView.bounds.size.width
+        let contentOffset = sectionScrollView.contentOffset.x
         
         let slideToX = contentOffset + (left ? -pageWidth : pageWidth)
         sectionScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, sectionScrollView.bounds.height), animated: true)
+        hideShowToggleButtons(slideToX)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if sectionScrollView.bounds.size.width > sectionScrollView.contentSize.width {
+            leftButton.hidden = true
+            rightButton.hidden = true
+        }
+        else {
+            hideShowToggleButtons(sectionScrollView.contentOffset.x)
+        }
+    }
+    
+    func hideShowToggleButtons(nextX: CGFloat) {
+        leftButton.hidden = false
+        rightButton.hidden = false
+        if nextX <= 0 {
+            leftButton.hidden = true
+        }
+        else if nextX + sectionScrollView.bounds.size.width  >= sectionScrollView.contentSize.width {
+            rightButton.hidden = true
+        }
     }
 
     @IBAction func toggleRight(sender: UIButton) {

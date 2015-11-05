@@ -196,6 +196,8 @@
                     <connections>
                         <outlet property="lastSectionButton" destination="L52-1z-BNu" id="mqY-bJ-9ON"/>
                         <outlet property="lastTrailingConstraint" destination="QSS-bO-pOk" id="4QD-Il-RBR"/>
+                        <outlet property="leftButton" destination="XpW-kE-e0e" id="OVc-r5-Mxd"/>
+                        <outlet property="rightButton" destination="dOo-Za-mXz" id="qd1-zl-vBy"/>
                         <outlet property="sectionDescriptionLabel" destination="eSt-RV-fgR" id="DKq-Ii-4Z3"/>
                         <outlet property="sectionScrollView" destination="05B-3a-GqG" id="bbn-Hc-bqG"/>
                         <outlet property="sectionScrollViewContentView" destination="Dvc-Yz-qY3" id="RP3-P2-pfk"/>
