@@ -17,6 +17,8 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
     private var selectedSubPart: SubPartService!
     private var subPartsServices: [SubPartService]?
     
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var sectionScrollView: UIScrollView!
     @IBOutlet weak var sectionScrollViewContentView: UIView!
     @IBOutlet weak var lastSectionButton: SectionSelectionButton!
@@ -65,6 +67,19 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
                 }
             }
         }
+        rightButton.hidden = true
+        leftButton.hidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if sectionScrollView.bounds.size.width > sectionScrollView.contentSize.width {
+            leftButton.hidden = true
+            rightButton.hidden = true
+        }
+        else {
+            hideShowToggleButtons(sectionScrollView.contentOffset.x)
+        }
     }
     
     func moveToNextPage(left: Bool) {
@@ -74,6 +89,18 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
         
         let slideToX = contentOffset + (left ? -pageWidth : pageWidth)
         sectionScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, sectionScrollView.bounds.height), animated: true)
+        hideShowToggleButtons(slideToX)
+    }
+    
+    func hideShowToggleButtons(nextX: CGFloat) {
+        leftButton.hidden = false
+        rightButton.hidden = false
+        if nextX <= 0 {
+            leftButton.hidden = true
+        }
+        else if nextX + sectionScrollView.bounds.size.width  >= sectionScrollView.contentSize.width {
+            rightButton.hidden = true
+        }
     }
     
     @IBAction func toggleRight(sender: UIButton) {

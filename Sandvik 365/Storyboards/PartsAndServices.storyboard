@@ -491,6 +491,8 @@ TO ROTATE</string>
                     </view>
                     <connections>
                         <outlet property="lastSectionButton" destination="LQt-oP-RLf" id="BPR-Io-cJ4"/>
+                        <outlet property="leftButton" destination="Np8-vd-DOg" id="jFm-kL-dGD"/>
+                        <outlet property="rightButton" destination="RKD-mZ-JYB" id="M71-yu-hLI"/>
                         <outlet property="sectionScrollView" destination="U62-do-iVP" id="uBe-LY-TiC"/>
                         <outlet property="sectionScrollViewContentView" destination="6Lg-dp-gaC" id="dhN-Y6-SDQ"/>
                         <outlet property="sectionTitleLabel" destination="wPy-O6-JZA" id="8aX-iI-W6W"/>
