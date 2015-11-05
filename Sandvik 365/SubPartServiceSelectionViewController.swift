@@ -134,7 +134,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
         if segue.identifier == "ShowSubPartServiceContentViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.selectedSubPartService = selectedSubPart
+                vc.selectedContent = selectedSubPart.content
                 vc.navigationItem.title = self.navigationItem.title
             }
         }

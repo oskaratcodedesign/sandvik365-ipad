@@ -13,7 +13,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     var selectedPartsAndServices: PartsAndServices!
     var mainSectionTitle: String!
     private var selectedSectionTitle: String!
-    private var partsServices: [PartService] = []
+    private var partsServices: [PartService]?
+    private var selectedPartService: PartService!
     
     @IBOutlet weak var sectionSelectionView: UIView!
     @IBOutlet weak var sectionTitleLabel: UILabel!
@@ -67,15 +68,32 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     }
     
     func handleButtonSelect(button :UIButton) {
-        selectedSectionTitle = button.titleLabel?.text
-        performSegueWithIdentifier("ShowSubPartServiceSelectionViewController", sender: self)
+        if let selectedSectionTitle = button.titleLabel?.text {
+            self.selectedSectionTitle = selectedSectionTitle
+            if let partService = partsServices {
+                for ps in partService {
+                    if ps.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame {
+                        selectedPartService = ps
+                        if ps.content != nil {
+                            performSegueWithIdentifier("ShowSubPartServiceContentViewController", sender: self)
+                        }
+                        else if ps.subPartsServices != nil {
+                            performSegueWithIdentifier("ShowSubPartServiceSelectionViewController", sender: self)
+                        }
+                        return
+                    }
+                }
+            }
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         let pageWidth:CGFloat = sectionScrollView.bounds.size.width
         let currentPage = Int(floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1)
-        if currentPage < partsServices.count {
-            sectionDescriptionLabel.text = partsServices[currentPage].description
+        if let partsServices = partsServices {
+            if currentPage < partsServices.count {
+                sectionDescriptionLabel.text = partsServices[currentPage].description
+            }
         }
     }
     
@@ -130,6 +148,13 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 vc.mainSectionTitle = mainSectionTitle
                 vc.selectedSectionTitle = selectedSectionTitle
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
+            }
+        }
+        else if segue.identifier == "ShowSubPartServiceContentViewController" {
+            if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
+                vc.selectedPartsAndServices = selectedPartsAndServices
+                vc.selectedContent = selectedPartService.content
+                vc.navigationItem.title = self.navigationItem.title
             }
         }
     }

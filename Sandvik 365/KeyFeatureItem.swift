@@ -39,7 +39,7 @@ class KeyFeatureItem: NibDesignable {
         NSLayoutConstraint.deactivateConstraints([textTitleContainerBottomConstraint])
     }
     
-    func setTexts(text: SubPartService.Content.TitleAndText) {
+    func setTexts(text: Content.TitleAndText) {
         if let title = text.title {
             titleAboveText.text = title.uppercaseString
             titleBelowButtonLabel.text = title.uppercaseString

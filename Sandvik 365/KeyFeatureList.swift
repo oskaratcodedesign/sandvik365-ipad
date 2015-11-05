@@ -12,7 +12,7 @@ import NibDesignable
 class KeyFeatureList: NibDesignable {
 
     @IBOutlet var keyFeatureItems: [KeyFeatureItem]!
-    init(frame: CGRect, keyFeatureList: SubPartService.Content.KeyFeatureListContent) {
+    init(frame: CGRect, keyFeatureList: Content.KeyFeatureListContent) {
         super.init(frame: frame)
         
         if let texts = keyFeatureList.texts {
