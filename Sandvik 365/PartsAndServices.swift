@@ -370,7 +370,7 @@ class JSONParts {
         if let products = dic.objectForKey("products") as? [NSDictionary] {
             let pids = products.map({(product) -> String? in product["id"] as? String })
             if pids.count > 0 {
-                productIds = pids.filter({ $0 != nil }).map({ $0! })
+                productIds = pids.flatMap({ $0 })
             }
         }
         return productIds
