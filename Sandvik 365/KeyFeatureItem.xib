@@ -42,7 +42,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-4o-MYx">
-                            <rect key="frame" x="200" y="5" width="200" height="0.0"/>
+                            <rect key="frame" x="200" y="0.0" width="200" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="nDU-15-GFc"/>
                             </constraints>
@@ -57,7 +57,7 @@
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="top" secondItem="Djx-79-XaQ" secondAttribute="top" id="dQL-Lj-X4c"/>
                         <constraint firstItem="lC4-LZ-dOd" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="mVs-KW-jcN"/>
                         <constraint firstItem="B0y-4o-MYx" firstAttribute="centerX" secondItem="Djx-79-XaQ" secondAttribute="centerX" id="yMy-lJ-ByY"/>
-                        <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="lC4-LZ-dOd" secondAttribute="bottom" constant="5" id="zW6-1g-ODd"/>
+                        <constraint firstItem="B0y-4o-MYx" firstAttribute="top" secondItem="lC4-LZ-dOd" secondAttribute="bottom" id="zW6-1g-ODd"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-nE-5DL">
