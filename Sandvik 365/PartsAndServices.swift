@@ -368,13 +368,9 @@ class JSONParts {
     private func getProductTagIds(dic: NSDictionary) -> [String]? {
         var productIds: [String]? = nil
         if let products = dic.objectForKey("products") as? [NSDictionary] {
-            for product in products {
-                if let id = product.objectForKey("id") as? String {
-                    if productIds == nil {
-                        productIds = []
-                    }
-                    productIds!.append(id)
-                }
+            let pids = products.map({(product) -> String? in product["id"] as? String })
+            if pids.count > 0 {
+                productIds = pids.filter({ $0 != nil }).map({ $0! })
             }
         }
         return productIds
@@ -410,12 +406,7 @@ class PartsAndServices {
             }
         }
         if let subPartServices = ps.subPartsServices {
-            var countFalse = 0
-            for sp in subPartServices {
-                if !self.shouldSubPartServiceBeShown(sp) {
-                    countFalse++
-                }
-            }
+            let countFalse = subPartServices.reduce(0){ $0 + (!self.shouldSubPartServiceBeShown($1) ? 1 : 0)}
             if subPartServices.count == countFalse {
                 return false
             }
