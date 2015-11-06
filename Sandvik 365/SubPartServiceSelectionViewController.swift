@@ -37,16 +37,23 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
         subSectionTitleLabel.text = selectedSectionTitle.uppercaseString
         
         subPartsServices = selectedPartsAndServices.subPartsServices(mainSectionTitle, partServicesectionTitle: selectedSectionTitle)
-        sectionScrollView.contentOffset.x = 200
         if let subParts = subPartsServices {
-            if let firstItem = subParts.first {
-                lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
-                lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
-                lastSectionButton.buttonMultiplierWidth = 0.9
-                for i in 1...subParts.count-1 {
-                    let ps = subParts[i]
+            var firstSectionButtonAdded = false
+            
+            for sp in subParts {
+                if !selectedPartsAndServices.shouldSubPartServiceBeShown(sp) {
+                    continue
+                }
+                
+                if !firstSectionButtonAdded {
+                    lastSectionButton.sectionButton.setTitle(sp.title.uppercaseString, forState: .Normal)
+                    lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                    lastSectionButton.buttonMultiplierWidth = 0.9
+                    firstSectionButtonAdded = true
+                }
+                else {
                     let selButton = SectionSelectionButton(frame: CGRectZero)
-                    selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
+                    selButton.sectionButton.setTitle(sp.title.uppercaseString, forState: .Normal)
                     selButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
                     
                     let topConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
@@ -73,7 +80,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if sectionScrollView.bounds.size.width > sectionScrollView.contentSize.width {
+        if sectionScrollView.bounds.size.width >= sectionScrollView.contentSize.width {
             leftButton.hidden = true
             rightButton.hidden = true
         }
