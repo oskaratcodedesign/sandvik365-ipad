@@ -80,6 +80,52 @@ enum BusinessType: UInt {
         }
     }
     
+    var roiCalculatorTitle: String? {
+        switch self {
+        case BulkMaterialHandling:
+            return nil
+        case ConveyorComponents:
+            return nil
+        case CrusherAndScreening:
+            return "Lifecycle program calculator"
+        case ExplorationDrillRigs:
+            return nil
+        case MechanicalCutting:
+            return nil
+        case MineAutomationSystems:
+            return nil
+        case SurfaceDrilling:
+            return nil
+        case UndergroundDrillingAndBolting:
+            return nil
+        case UndergroundLoadingAndHauling:
+            return nil
+        }
+    }
+    
+    var roiCalculator: ROICalculator? {
+        switch self {
+        case BulkMaterialHandling:
+            return nil
+        case ConveyorComponents:
+            return nil
+        case CrusherAndScreening:
+            return ROICalculator(input: ROICrusherInput())
+        case ExplorationDrillRigs:
+            return nil
+        case MechanicalCutting:
+            return nil
+        case MineAutomationSystems:
+            return nil
+        case SurfaceDrilling:
+            return nil
+        case UndergroundDrillingAndBolting:
+            return nil
+        case UndergroundLoadingAndHauling:
+            return nil
+        }
+    }
+    
 }
 
 class MainPartService {
@@ -425,6 +471,10 @@ class PartsAndServices {
     
     func mainSectionTitles() -> [String] {
         var titles: [String] = []
+        
+        if let roiTitle = self.businessType.roiCalculatorTitle {
+            titles.append(roiTitle.uppercaseString)
+        }
         for mp in jsonParts.allParts {
             titles.append(mp.title.uppercaseString)
         }
