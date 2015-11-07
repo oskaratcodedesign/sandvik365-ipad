@@ -16,6 +16,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
     @IBOutlet var mainMenuItemViews: [MainMenuItemView]!
     
     private var backButtonBg: UIImageView!
+    private var logoImageView: UIImageView?
     private var showBackButton: Bool = true
     
     override func viewDidLoad() {
@@ -29,16 +30,38 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
             backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn"))
             navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+            logoImageView = addLogoToView(navigationController.navigationBar)
         }
         for view in mainMenuItemViews {
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
         }
+        addLogoToView(scrollView)
         self.scrollViewDidScroll(menuScrollView)
+    }
+    
+    private func addLogoToView(view: UIView) -> UIImageView?
+    {
+        if let image = UIImage(named: "logo") {
+            let logo = UIImageView(image: image)
+            let imgWidth:CGFloat = 60
+            let topConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
+            let trailConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
+            let widthConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
+            let heightConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: (imgWidth/image.size.width) * image.size.height)
+            logo.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(logo)
+            NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, widthConstraint, heightConstraint])
+            return logo
+        }
+        return nil
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         backButtonBg.hidden = true
+        if let logo = self.logoImageView {
+            logo.hidden = true
+        }
         self.navigationController?.navigationBarHidden = true
     }
     
@@ -46,10 +69,17 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = false
         if showBackButton {
+            if let logo = self.logoImageView {
+                logo.alpha = 0.0
+                logo.hidden = false
+            }
             self.backButtonBg.alpha = 0.0
             self.backButtonBg.hidden = false
             UIView.animateWithDuration(0.25, animations: { () -> Void in
                 self.backButtonBg.alpha = 1.0
+                if let logo = self.logoImageView {
+                    logo.alpha = 1.0
+                }
                 }, completion: { (finished: Bool) -> Void in
             })
         }
