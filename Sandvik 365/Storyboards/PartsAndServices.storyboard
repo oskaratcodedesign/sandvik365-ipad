@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
@@ -229,7 +228,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
                                 <rect key="frame" x="130" y="120" width="250" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="LdI-rm-Nqf"/>
@@ -313,7 +312,7 @@ TO ROTATE</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-O6-JZA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-O6-JZA">
                                 <rect key="frame" x="130" y="120" width="250" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="YoY-C5-edz"/>
@@ -327,10 +326,10 @@ TO ROTATE</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-ZF-Bwd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-ZF-Bwd">
                                 <rect key="frame" x="130" y="209" width="340" height="291"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-gl-Yk2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-gl-Yk2">
                                         <rect key="frame" x="0.0" y="20" width="340" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="400" id="Tsh-wK-BSf"/>
@@ -344,10 +343,10 @@ TO ROTATE</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-bY-ArL">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-bY-ArL">
                                         <rect key="frame" x="0.0" y="69" width="340" height="153"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-vd-DOg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-vd-DOg">
                                                 <rect key="frame" x="0.0" y="17" width="150" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="JWW-mU-zqZ"/>
@@ -370,7 +369,7 @@ TO ROTATE</string>
                                                     <action selector="toggleLeft:" destination="dC8-A3-gL8" eventType="touchUpInside" id="cOf-hJ-6vZ"/>
                                                 </connections>
                                             </button>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U62-do-iVP">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U62-do-iVP">
                                                 <rect key="frame" x="150" y="17" width="40" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-dp-gaC">
@@ -384,40 +383,22 @@ TO ROTATE</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="LQt-oP-RLf" firstAttribute="leading" secondItem="6Lg-dp-gaC" secondAttribute="leading" id="56y-Hv-FYD"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LQt-oP-RLf" secondAttribute="trailing" placeholder="YES" id="996-cm-sXh"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LQt-oP-RLf" secondAttribute="trailing" id="dl4-nK-al1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="LQt-oP-RLf" secondAttribute="trailing" priority="750" id="996-cm-sXh"/>
                                                             <constraint firstItem="LQt-oP-RLf" firstAttribute="top" secondItem="6Lg-dp-gaC" secondAttribute="top" id="v9m-Cn-MLz"/>
                                                             <constraint firstAttribute="bottom" secondItem="LQt-oP-RLf" secondAttribute="bottom" id="ySh-Il-T0B"/>
                                                         </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="dl4-nK-al1"/>
-                                                            </mask>
-                                                        </variation>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="LQt-oP-RLf" firstAttribute="width" secondItem="U62-do-iVP" secondAttribute="width" multiplier="1/3" id="8Ft-8T-iVU"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerX" secondItem="U62-do-iVP" secondAttribute="centerX" priority="750" id="8WF-yB-1ou"/>
                                                     <constraint firstAttribute="bottom" secondItem="6Lg-dp-gaC" secondAttribute="bottom" id="8oo-fe-hlB"/>
-                                                    <constraint firstItem="LQt-oP-RLf" firstAttribute="width" secondItem="U62-do-iVP" secondAttribute="width" id="Sav-vg-7Gi"/>
                                                     <constraint firstAttribute="trailing" secondItem="6Lg-dp-gaC" secondAttribute="trailing" id="WY8-o6-Feg"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerY" secondItem="U62-do-iVP" secondAttribute="centerY" id="dk8-lx-fcK"/>
-                                                    <constraint firstAttribute="height" constant="120" id="khy-bA-ege"/>
-                                                    <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerX" secondItem="U62-do-iVP" secondAttribute="centerX" id="lyr-gj-h6j"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="top" secondItem="U62-do-iVP" secondAttribute="top" id="u4F-3s-upl"/>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U62-do-iVP" secondAttribute="leading" id="xTd-SN-YWo"/>
                                                 </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="khy-bA-ege"/>
-                                                        <exclude reference="lyr-gj-h6j"/>
-                                                        <exclude reference="8Ft-8T-iVU"/>
-                                                        <exclude reference="Sav-vg-7Gi"/>
-                                                    </mask>
-                                                </variation>
                                             </scrollView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKD-mZ-JYB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKD-mZ-JYB">
                                                 <rect key="frame" x="190" y="17" width="150" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="9nW-nB-9YQ"/>
@@ -511,6 +492,7 @@ TO ROTATE</string>
                     </view>
                     <connections>
                         <outlet property="lastSectionButton" destination="LQt-oP-RLf" id="BPR-Io-cJ4"/>
+                        <outlet property="lastTrailingConstraint" destination="996-cm-sXh" id="mIu-AM-3u3"/>
                         <outlet property="leftButton" destination="Np8-vd-DOg" id="jFm-kL-dGD"/>
                         <outlet property="rightButton" destination="RKD-mZ-JYB" id="M71-yu-hLI"/>
                         <outlet property="sectionScrollView" destination="U62-do-iVP" id="uBe-LY-TiC"/>
@@ -544,17 +526,17 @@ TO ROTATE</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
                                 <rect key="frame" x="0.0" y="368" width="600" height="232"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qz5-JH-xDz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="akP-yz-DSd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akP-yz-DSd">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="612"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agf-ql-z8F">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agf-ql-z8F">
                                                 <rect key="frame" x="130" y="100" width="270" height="46"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -569,11 +551,11 @@ TO ROTATE</string>
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2m8-hg-J0T">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2m8-hg-J0T">
                                                 <rect key="frame" x="0.0" y="166" width="600" height="202"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w87-NK-w1J">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w87-NK-w1J">
                                                 <rect key="frame" x="0.0" y="368" width="600" height="244"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnA-PA-jnB">
