@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -101,7 +105,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="70" y="275" width="307" height="71"/>
+                                                <rect key="frame" x="70" y="276" width="307" height="71"/>
                                                 <animations/>
                                                 <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON.</string>
@@ -117,7 +121,7 @@ YOU CAN COUNT ON.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
+                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -132,6 +136,35 @@ YOU CAN COUNT ON.</string>
                                                     <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-55-Fwt">
+                                                <rect key="frame" x="379" y="306" width="151" height="124"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="8FT-O9-H77"/>
+                                                    <constraint firstAttribute="width" constant="151" id="R8b-sa-0ec"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                                                <inset key="titleEdgeInsets" minX="-92" minY="105" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="SANDVIK 365 VIDEO" image="sandvik_play">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="4y8-m6-DqU"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-Ou-r9z">
+                                                <rect key="frame" x="337" y="306" width="193" height="124"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="193" id="CCE-gv-G8e"/>
+                                                    <constraint firstAttribute="height" constant="124" id="T5Y-ib-GK2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                                                <inset key="titleEdgeInsets" minX="-100" minY="105" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="CRUSHER RISK CALCULATOR" image="sandvik_calc">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,15 +174,21 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="M8O-q8-7Xk"/>
+                                            <constraint firstItem="Pcx-55-Fwt" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="NZ5-De-47o"/>
                                             <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
+                                            <constraint firstAttribute="bottom" secondItem="lZK-Ou-r9z" secondAttribute="bottom" constant="70" id="Q7X-XG-Hj1"/>
                                             <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pcx-55-Fwt" secondAttribute="trailing" constant="70" id="QwS-mN-oHj"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
                                             <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
+                                            <constraint firstAttribute="trailing" secondItem="lZK-Ou-r9z" secondAttribute="trailing" constant="70" id="bDU-1W-2O2"/>
                                             <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
+                                            <constraint firstItem="Pcx-55-Fwt" firstAttribute="leading" secondItem="lZK-Ou-r9z" secondAttribute="trailing" constant="20" id="dqb-7Q-8dn"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="flW-BI-L4A"/>
                                             <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pcx-55-Fwt" secondAttribute="bottom" constant="70" id="h07-IQ-dMC"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
                                             <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                             <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
@@ -158,6 +197,8 @@ YOU CAN COUNT ON.</string>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="js3-V0-gUc"/>
+                                                <exclude reference="NZ5-De-47o"/>
+                                                <exclude reference="dqb-7Q-8dn"/>
                                                 <exclude reference="PIs-hD-Kt1"/>
                                             </mask>
                                         </variation>
@@ -586,6 +627,8 @@ Cg
     </scenes>
     <resources>
         <image name="sandvik-icons_info-btn" width="31" height="31"/>
+        <image name="sandvik_calc" width="82" height="82"/>
+        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
