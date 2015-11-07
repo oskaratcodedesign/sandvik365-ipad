@@ -36,13 +36,20 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
         sectionTitleLabel.text = mainSectionTitle.uppercaseString
         if let partsServices = selectedPartsAndServices.partsServices(mainSectionTitle) {
             self.partsServices = partsServices
-            if let firstItem = partsServices.first {
-                lastSectionButton.sectionButton.setTitle(firstItem.title.uppercaseString, forState: .Normal)
-                lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
-                sectionDescriptionLabel.text = firstItem.description
-                lastSectionButton.buttonMultiplierWidth = 0.5
-                for i in 1...partsServices.count-1 {
-                    let ps = partsServices[i]
+            var firstSectionButtonAdded = false
+            for ps in partsServices {
+                if !selectedPartsAndServices.shouldPartServiceBeShown(ps) {
+                    continue
+                }
+                
+                if !firstSectionButtonAdded {
+                    lastSectionButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
+                    lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                    sectionDescriptionLabel.text = ps.description
+                    lastSectionButton.buttonMultiplierWidth = 0.5
+                    firstSectionButtonAdded = true
+                }
+                else {
                     let selButton = SectionSelectionButton(frame: CGRectZero)
                     selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
                     selButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
@@ -108,7 +115,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if sectionScrollView.bounds.size.width > sectionScrollView.contentSize.width {
+        if sectionScrollView.bounds.size.width >= sectionScrollView.contentSize.width {
             leftButton.hidden = true
             rightButton.hidden = true
         }

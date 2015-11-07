@@ -56,6 +56,30 @@ enum BusinessType: UInt {
             return "underground hauling"
         }
     }
+    
+    var tagUUID: String? {
+        switch self {
+        case BulkMaterialHandling:
+            return nil
+        case ConveyorComponents:
+            return nil
+        case CrusherAndScreening:
+            return "bda647ec-7ef1-491a-9adc-a915ec5bb745"
+        case ExplorationDrillRigs:
+            return nil
+        case MechanicalCutting:
+            return "ce360d28-35bc-4578-9e52-79517f769af2"
+        case MineAutomationSystems:
+            return nil
+        case SurfaceDrilling:
+            return "c19dea00-5941-4fce-8a06-add969f41a76"
+        case UndergroundDrillingAndBolting:
+            return "1cecb185-c7ab-4e69-a81f-bdea800ba1f1"
+        case UndergroundLoadingAndHauling:
+            return "a850e245-fb6d-4232-a855-e572094c7ae9"
+        }
+    }
+    
 }
 
 class MainPartService {
@@ -70,22 +94,26 @@ class MainPartService {
 class PartService {
     let title: String
     let description: String
+    let productTagUUIDs: [String]?
     var content: Content? = nil
     var subPartsServices: [SubPartService]? = nil
     
-    init(title: String, description: String){
+    init(title: String, description: String, productTagUUIDs: [String]?){
         self.title = title
         self.description = description
+        self.productTagUUIDs = productTagUUIDs
     }
 }
 
 class SubPartService {
     let title: String
     let content: Content
+    let productTagUUIDs: [String]?
     
-    init(title: String, content: NSDictionary){
+    init(title: String, content: NSDictionary, productTagUUIDs: [String]?){
         self.title = title
         self.content = Content(content: content)
+        self.productTagUUIDs = productTagUUIDs
     }
     
 }
@@ -325,7 +353,7 @@ class JSONParts {
     private func parsePartServiceSections(jsonpart: [NSDictionary], mainPartService: MainPartService) {
         for dic in jsonpart {
             if let title = sectionTitle(dic), let desc = sectionDescription(dic) {
-                let partService = PartService(title: title, description: desc)
+                let partService = PartService(title: title, description: desc, productTagUUIDs: getProductTagIds(dic))
                 if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
                     parseSubPartServiceSections(jsonpart, partService: partService)
                 }
@@ -337,10 +365,21 @@ class JSONParts {
         }
     }
     
+    private func getProductTagIds(dic: NSDictionary) -> [String]? {
+        var productIds: [String]? = nil
+        if let products = dic.objectForKey("products") as? [NSDictionary] {
+            let pids = products.map({(product) -> String? in product["id"] as? String })
+            if pids.count > 0 {
+                productIds = pids.flatMap({ $0 })
+            }
+        }
+        return productIds
+    }
+    
     private func parseSubPartServiceSections(jsonpart: [NSDictionary], partService: PartService) {
         for dic in jsonpart {
             if let title = sectionTitle(dic) {
-                let subPartService = SubPartService(title: title, content: dic)
+                let subPartService = SubPartService(title: title, content: dic, productTagUUIDs: getProductTagIds(dic))
                 if partService.subPartsServices == nil {
                     partService.subPartsServices = []
                 }
@@ -358,6 +397,30 @@ class PartsAndServices {
     {
         self.businessType = businessType
         self.jsonParts = json
+    }
+    
+    func shouldPartServiceBeShown(ps: PartService) -> Bool {
+        if let tagids = ps.productTagUUIDs {
+            if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
+                return false
+            }
+        }
+        if let subPartServices = ps.subPartsServices {
+            let countFalse = subPartServices.reduce(0){ $0 + (!self.shouldSubPartServiceBeShown($1) ? 1 : 0)}
+            if subPartServices.count == countFalse {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func shouldSubPartServiceBeShown(sp: SubPartService) -> Bool {
+        if let tagids = sp.productTagUUIDs {
+            if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
+                return false
+            }
+        }
+        return true
     }
     
     func mainSectionTitles() -> [String] {
