@@ -136,7 +136,7 @@ class SubPartServiceContentViewController: UIViewController {
             if let text = titlesAndText.text {
                 let prevLabel = label
                 label = genericTextLabel(text)
-                addViewAndConstraints(label, toView: prevLabel, topConstant: topConstant)
+                addViewAndConstraints(label, toView: prevLabel, topConstant: 0)
                 prevView = label
             }
         }
@@ -174,7 +174,7 @@ class SubPartServiceContentViewController: UIViewController {
                 if let text = textTitle.text {
                     let prevLabel = label
                     label = genericTextLabel(text)
-                    addViewAndConstraints(label, toView: prevLabel, topConstant: topConstant)
+                    addViewAndConstraints(label, toView: prevLabel, topConstant: 0)
                 }
                 prevView = label
             }
