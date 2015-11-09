@@ -22,10 +22,10 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
     @IBOutlet weak var sectionScrollView: UIScrollView!
     @IBOutlet weak var sectionScrollViewContentView: UIView!
     @IBOutlet weak var lastSectionButton: SectionSelectionButton!
-    private var lastTrailingConstraint: NSLayoutConstraint? = nil
     
     @IBOutlet weak var subSectionTitleLabel: UILabel!
     @IBOutlet weak var sectionTitleLabel: UILabel!
+    @IBOutlet weak var lastTrailingConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +64,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
                     
                     selButton.translatesAutoresizingMaskIntoConstraints = false
                     sectionScrollViewContentView.addSubview(selButton)
-                    if lastTrailingConstraint != nil {
-                        NSLayoutConstraint.deactivateConstraints([lastTrailingConstraint!])
-                    }
+                    NSLayoutConstraint.deactivateConstraints([lastTrailingConstraint])
                     NSLayoutConstraint.activateConstraints([topConstraint, botConstraint, trailConstraint, leadConstraint, widthConstraint])
                     lastTrailingConstraint = trailConstraint
                     selButton.buttonMultiplierWidth = lastSectionButton.buttonMultiplierWidth

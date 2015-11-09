@@ -31,7 +31,14 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     }
     
     func didSelectSection(sectionTitle: String) {
+        
         selectedSectionTitle = sectionTitle
+        if let value = selectedPartsAndServices.businessType.roiCalculatorTitle {
+            if value.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
+                performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
+                return
+            }
+        }
         performSegueWithIdentifier("ShowPartServiceSelectionViewController", sender: self)
     }
 
@@ -52,6 +59,12 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.mainSectionTitle = selectedSectionTitle
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+            }
+        }
+        else if segue.identifier == "ShowRoiSelectionViewController" {
+            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+                vc.selectedROICalculator = self.selectedPartsAndServices.businessType.roiCalculator
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, self.selectedPartsAndServices.businessType.roiCalculatorTitle!.uppercaseString)
             }
         }
     }
