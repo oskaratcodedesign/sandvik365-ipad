@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainMenuViewController : UIViewController, UIScrollViewDelegate {
+class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressLineDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var progressView: ProgressLineView!
@@ -37,6 +37,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         }
         addLogoToView(scrollView)
         self.scrollViewDidScroll(menuScrollView)
+        
+        progressView.delegate = self
     }
     
     private func addLogoToView(view: UIView) -> UIImageView?
@@ -107,6 +109,11 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate {
         }
         progressView.progress = scrollView.contentOffset.x /
             (scrollView.contentSize.width - scrollView.frame.width)
+    }
+    
+    func updatedProgress(progress: CGFloat) {
+        let x = (menuScrollView.contentSize.width - menuScrollView.frame.width) * progress
+        menuScrollView.setContentOffset(CGPoint(x: x, y: menuScrollView.contentOffset.y), animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
