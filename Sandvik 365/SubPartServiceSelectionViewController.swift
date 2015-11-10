@@ -140,7 +140,7 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedContent = selectedSubPart.content
-                vc.navigationItem.title = self.navigationItem.title
+                vc.navigationItem.title = String(format: "%@ | %@ | %@", self.navigationItem.title!, mainSectionTitle.uppercaseString, selectedSectionTitle.uppercaseString)
             }
         }
     }

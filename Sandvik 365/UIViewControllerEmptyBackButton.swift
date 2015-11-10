@@ -37,12 +37,20 @@ extension UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
        
         if let navController = self.navigationController {
-            let label = UILabel(frame: CGRectMake(0, 0, navController.navigationBar.frame.size.width-navController.navigationBar.frame.size.width/4, navController.navigationBar.frame.size.height))
-            if let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16) {
-                label.font = font
-            }
+            let label = UILabel(frame: CGRectMake(0, 0, navController.navigationBar.frame.size.width-200, navController.navigationBar.frame.size.height))
+            label.textAlignment = .Left
             label.textColor = UIColor.whiteColor()
-            label.text = self.navigationItem.title
+            if let title = self.navigationItem.title {
+                let attrString = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 12)!])
+                if let range = title.rangeOfString("| ") {
+                    if let lastIndex = range.last {
+                        let subTitle = title.substringFromIndex(lastIndex)
+                        attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 12.0)!, range: NSRange(location: attrString.length-subTitle.characters.count,length: subTitle.characters.count))
+                    }
+                }
+                
+                label.attributedText = attrString
+            }
             self.navigationItem.titleView = label
         }
     }

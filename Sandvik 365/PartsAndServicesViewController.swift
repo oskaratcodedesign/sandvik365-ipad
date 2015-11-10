@@ -43,13 +43,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "RoiSelectionViewController" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                //vc.selectedROICalculator = selectedPart.roiCalculator
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, NSLocalizedString("ROI CALCULATOR", comment: ""))
-            }
-        }
-        else if segue.identifier == "VideoViewController" {
+        if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
                 vc.selectedBusinessType = selectedPartsAndServices.businessType
             }
@@ -58,7 +52,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
             if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.mainSectionTitle = selectedSectionTitle
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle)
+                vc.navigationItem.title = self.navigationItem.title
             }
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {

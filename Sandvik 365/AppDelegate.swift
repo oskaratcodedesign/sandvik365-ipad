@@ -36,9 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
 
         UINavigationBar.appearance().setTitleVerticalPositionAdjustment(15, forBarMetrics: .Default)
-        if let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 34) {
-            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        }
+
         UIViewController.swizzleViewDidLoad()
         if let window = self.window {
             window.makeKeyAndVisible()
