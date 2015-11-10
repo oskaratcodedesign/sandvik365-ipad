@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
         let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 24, 0, 0)))
         UIBarButtonItem.appearance().setBackButtonBackgroundImage(image, forState: .Normal, barMetrics: .Default)
         UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
@@ -41,11 +40,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
         }
         UIViewController.swizzleViewDidLoad()
-        window?.makeKeyAndVisible()
-        showLoadingView()
-        
+        if let window = self.window {
+            window.makeKeyAndVisible()
+            addLogoToView(window)
+            showLoadingView()
+        }
         
         return true
+    }
+    
+    private func addLogoToView(view: UIView) -> UIImageView?
+    {
+        if let image = UIImage(named: "logo") {
+            let logo = UIImageView(image: image)
+            let imgWidth:CGFloat = 60
+            let topConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
+            let trailConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
+            let widthConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
+            let heightConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: (imgWidth/image.size.width) * image.size.height)
+            logo.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(logo)
+            NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, widthConstraint, heightConstraint])
+            return logo
+        }
+        return nil
     }
 
     func applicationWillResignActive(application: UIApplication) {
