@@ -79,10 +79,14 @@ class SubPartServiceContentViewController: UIViewController {
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
+        addViewAndConstraints(fromView, toView: toView, topConstant: topConstant, leftConstant: 0)
+    }
+    
+    private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
         
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
         let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
         subContentView.addSubview(fromView)
         
@@ -94,8 +98,8 @@ class SubPartServiceContentViewController: UIViewController {
         var label = prevView
         
         if let text = content.text {
-            label = genericTextLabel(text)
-            addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
+            label = leadLabel(text)
+            addViewAndConstraints(label, toView: prevView, topConstant: topConstant, leftConstant: 160)
         }
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -108,17 +112,14 @@ class SubPartServiceContentViewController: UIViewController {
                 }
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
-                let view = UIView()
                 let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
                 let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
-                let centerY = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
-                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: label, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: label, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 36)
                 imageView.translatesAutoresizingMaskIntoConstraints = false
-                view.addSubview(imageView)
-                NSLayoutConstraint.activateConstraints([widthConstraint, centerX, centerY, heightConstraint, topConstraint])
-                addViewAndConstraints(view, toView: label, topConstant: topConstant)
-                label = view
+                subContentView.addSubview(imageView)
+                NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
+                label = imageView
             }
         }
         
@@ -127,11 +128,11 @@ class SubPartServiceContentViewController: UIViewController {
     
     private func addBody(content: Content.Body, var prevView: UIView) -> UIView {
         var label = prevView
-        
+        var top:CGFloat = 45
         for titlesAndText in content.titlesAndText {
             if let title = titlesAndText.title {
                 label = genericTitleLabel(title)
-                addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
+                addViewAndConstraints(label, toView: prevView, topConstant: top)
             }
             if let text = titlesAndText.text {
                 let prevLabel = label
@@ -139,6 +140,7 @@ class SubPartServiceContentViewController: UIViewController {
                 addViewAndConstraints(label, toView: prevLabel, topConstant: 0)
                 prevView = label
             }
+            top = topConstant
         }
         
         return label
@@ -157,7 +159,7 @@ class SubPartServiceContentViewController: UIViewController {
     
     private func addColumns(content: Content.CountOnBoxContent, prevView: UIView) -> UIView {
         let view = CountOnBox(frame: CGRectZero, countOnBox: content, alignRight: alignCountOnBoxRight)
-        addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
+        addViewAndConstraints(view, toView: prevView, topConstant: 45)
         alignCountOnBoxRight = !alignCountOnBoxRight
         return view
     }
@@ -166,10 +168,11 @@ class SubPartServiceContentViewController: UIViewController {
         var label = prevView
         
         if let tabs = content.tabs {
+            var top:CGFloat = 45
             for textTitle in tabs {
                 if let title = textTitle.title {
                     label = genericTitleLabel(title)
-                    addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
+                    addViewAndConstraints(label, toView: prevView, topConstant: top)
                 }
                 if let text = textTitle.text {
                     let prevLabel = label
@@ -177,15 +180,26 @@ class SubPartServiceContentViewController: UIViewController {
                     addViewAndConstraints(label, toView: prevLabel, topConstant: 0)
                 }
                 prevView = label
+                top = topConstant
             }
         }
+        return label
+    }
+    
+    private func leadLabel(string: String) -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 15.0)
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = .Center
+        label.text = string
         return label
     }
     
     private func genericTextLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 14.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Light", size: 15.0)
         label.textColor = UIColor.whiteColor()
         
         label.text = string
@@ -195,7 +209,7 @@ class SubPartServiceContentViewController: UIViewController {
     private func genericTitleLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 16.0)
         label.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
         
         label.text = string.uppercaseString
