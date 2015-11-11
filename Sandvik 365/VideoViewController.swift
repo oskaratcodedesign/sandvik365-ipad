@@ -19,9 +19,8 @@ class VideoViewController: UIViewController {
         
         self.moviePlayer = MPMoviePlayerController(contentURL: selectedBusinessType.videoURL())
         if let player = self.moviePlayer {
-            player.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            player.view.sizeToFit()
-            player.scalingMode = MPMovieScalingMode.Fill
+            player.view.translatesAutoresizingMaskIntoConstraints = false
+            player.scalingMode = MPMovieScalingMode.AspectFit
             player.fullscreen = true
             player.controlStyle = MPMovieControlStyle.Fullscreen
             player.movieSourceType = MPMovieSourceType.File
@@ -29,6 +28,10 @@ class VideoViewController: UIViewController {
             player.play()
             self.view.addSubview(player.view)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "doneButtonClick:", name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
+            
+            let views = ["player": player.view]
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         }
     }
     
