@@ -8,9 +8,7 @@
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
-        </mutableArray>
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
-            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorp-Light</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
@@ -32,15 +30,15 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBf-46-bNg">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9u-ch-cjb">
-                    <rect key="frame" x="0.0" y="5" width="600" height="595"/>
+                    <rect key="frame" x="0.0" y="45" width="600" height="555"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-Hr-ACS">
-                            <rect key="frame" x="500" y="0.0" width="100" height="18"/>
+                            <rect key="frame" x="500" y="0.0" width="100" height="6"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG9-LB-Luf">
                                     <rect key="frame" x="100" y="0.0" width="0.0" height="0.0"/>
@@ -49,19 +47,19 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-C3-WEd">
-                                    <rect key="frame" x="100" y="5" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="100" y="0.0" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="40"/>
                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEG-xP-xeu">
-                                    <rect key="frame" x="100" y="10" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="100" y="0.0" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="30"/>
                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTo-8D-Jyb">
-                                    <rect key="frame" x="0.0" y="15" width="100" height="3"/>
+                                    <rect key="frame" x="0.0" y="3" width="100" height="3"/>
                                     <color key="backgroundColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="3" id="Pjm-RP-E4j"/>
@@ -75,11 +73,11 @@
                                 <constraint firstItem="dG9-LB-Luf" firstAttribute="top" secondItem="kfa-Hr-ACS" secondAttribute="top" id="3o5-K9-Q84"/>
                                 <constraint firstAttribute="bottom" secondItem="NTo-8D-Jyb" secondAttribute="bottom" id="9eS-oJ-yLM"/>
                                 <constraint firstItem="7dX-C3-WEd" firstAttribute="leading" secondItem="kfa-Hr-ACS" secondAttribute="leading" constant="100" id="OWs-Qx-B42"/>
-                                <constraint firstItem="7dX-C3-WEd" firstAttribute="top" secondItem="dG9-LB-Luf" secondAttribute="bottom" constant="5" id="PNz-r3-u67"/>
+                                <constraint firstItem="7dX-C3-WEd" firstAttribute="top" secondItem="dG9-LB-Luf" secondAttribute="bottom" id="PNz-r3-u67"/>
                                 <constraint firstAttribute="trailing" secondItem="rEG-xP-xeu" secondAttribute="trailing" id="Pp0-I8-ZaO"/>
                                 <constraint firstItem="dG9-LB-Luf" firstAttribute="leading" secondItem="kfa-Hr-ACS" secondAttribute="leading" constant="100" id="Wfp-Lf-Lqb"/>
-                                <constraint firstItem="NTo-8D-Jyb" firstAttribute="top" secondItem="rEG-xP-xeu" secondAttribute="bottom" constant="5" id="bmc-3S-sjg"/>
-                                <constraint firstItem="rEG-xP-xeu" firstAttribute="top" secondItem="7dX-C3-WEd" secondAttribute="bottom" constant="5" id="cFB-p9-rio"/>
+                                <constraint firstItem="NTo-8D-Jyb" firstAttribute="top" secondItem="rEG-xP-xeu" secondAttribute="bottom" constant="3" id="bmc-3S-sjg"/>
+                                <constraint firstItem="rEG-xP-xeu" firstAttribute="top" secondItem="7dX-C3-WEd" secondAttribute="bottom" id="cFB-p9-rio"/>
                                 <constraint firstAttribute="trailing" secondItem="7dX-C3-WEd" secondAttribute="trailing" id="oda-ii-4sY"/>
                                 <constraint firstAttribute="trailing" secondItem="dG9-LB-Luf" secondAttribute="trailing" id="vjQ-wO-Exs"/>
                                 <constraint firstItem="rEG-xP-xeu" firstAttribute="leading" secondItem="kfa-Hr-ACS" secondAttribute="leading" constant="100" id="zdr-QH-YoK"/>
@@ -99,7 +97,7 @@
             <constraints>
                 <constraint firstItem="b9u-ch-cjb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8A9-k6-XK2"/>
                 <constraint firstItem="NBf-46-bNg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="At4-Tu-YQT"/>
-                <constraint firstItem="b9u-ch-cjb" firstAttribute="top" secondItem="NBf-46-bNg" secondAttribute="bottom" constant="5" id="PXX-si-lCE"/>
+                <constraint firstItem="b9u-ch-cjb" firstAttribute="top" secondItem="NBf-46-bNg" secondAttribute="bottom" constant="45" id="PXX-si-lCE"/>
                 <constraint firstAttribute="trailing" secondItem="NBf-46-bNg" secondAttribute="trailing" id="UpC-ZZ-xus"/>
                 <constraint firstAttribute="trailing" secondItem="b9u-ch-cjb" secondAttribute="trailing" id="Vrp-Lc-Rmq"/>
                 <constraint firstAttribute="bottom" secondItem="b9u-ch-cjb" secondAttribute="bottom" id="qpl-bX-En0"/>

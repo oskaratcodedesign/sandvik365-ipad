@@ -37,9 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(15, forBarMetrics: .Default)
 
         UINavigationBar.appearance().setTitleVerticalPositionAdjustment(15, forBarMetrics: .Default)
-        if let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 34) {
-            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        }
+
         UIViewController.swizzleViewDidLoad()
         if let window = self.window {
             window.makeKeyAndVisible()
@@ -52,16 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func addLogoToView(view: UIView) -> UIImageView?
     {
-        if let image = UIImage(named: "logo") {
+        if let image = UIImage(named: "SANDVIK-logo-white") {
             self.logoView = UIImageView(image: image)
-            let imgWidth:CGFloat = 60
             let topConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
             let trailConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
-            let widthConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
-            let heightConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: (imgWidth/image.size.width) * image.size.height)
             self.logoView!.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(self.logoView!)
-            NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, widthConstraint, heightConstraint])
+            NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint])
         }
         return self.logoView
     }

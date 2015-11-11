@@ -97,19 +97,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
                 }
             }
         }
-        else if segue.identifier == "RoiCrusherSelectionViewController" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = ROICalculator(input: ROICrusherInput())
-                vc.navigationItem.title = NSLocalizedString("CRUSHER RISK CALCULATOR", comment: "")
-            }
-        }
-        else if segue.identifier == "RoiRockDrillSelectionViewController" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = ROICalculator(input: ROIRockDrillInput())
-                vc.navigationItem.title = NSLocalizedString("ROCK DRILL UPGRADE SIMULATOR", comment: "")
-            }
-        }
-        else if segue.identifier == "VideoViewController" {
+        if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
                 vc.selectedBusinessType = .BulkMaterialHandling
                 showBackButton = false

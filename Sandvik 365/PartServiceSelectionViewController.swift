@@ -154,14 +154,14 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.mainSectionTitle = mainSectionTitle
                 vc.selectedSectionTitle = selectedSectionTitle
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
+                vc.navigationItem.title = self.navigationItem.title
             }
         }
         else if segue.identifier == "ShowSubPartServiceContentViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
                 vc.selectedPartsAndServices = selectedPartsAndServices
                 vc.selectedContent = selectedPartService.content
-                vc.navigationItem.title = self.navigationItem.title
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
             }
         }
     }
