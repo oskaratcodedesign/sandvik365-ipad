@@ -67,11 +67,18 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 previousView = addTabbedContent(value, prevView: previousView)
             }
         }
-
+        previousView = addStripesImage(previousView)
         let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: subContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -50)
         previousView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
+    }
+    
+    private func addStripesImage(prevView: UIView) -> UIView {
+        let view = UIImageView(image: UIImage(named: "sandvik_stripes_bg"))
+        view.contentMode = UIViewContentMode.ScaleAspectFill
+        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: topConstant, leftConstant: 0)
+        return view
     }
     
     @IBAction func handleTap(sender: AnyObject) {
@@ -86,12 +93,16 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
+        addViewAndConstraints(subContentView, fromView: fromView, toView: toView, topConstant: topConstant, leftConstant: leftConstant)
+    }
+    
+    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
         
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
-        subContentView.addSubview(fromView)
+        superView.addSubview(fromView)
         
         NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, leadConstraint])
     }
