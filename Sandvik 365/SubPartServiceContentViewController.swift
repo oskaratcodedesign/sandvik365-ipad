@@ -10,7 +10,7 @@ import UIKit
 
 let didTapNotificationKey = "didTapNotificationKey"
 
-class SubPartServiceContentViewController: UIViewController {
+class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
     var selectedContent: Content!
@@ -76,6 +76,9 @@ class SubPartServiceContentViewController: UIViewController {
     
     @IBAction func handleTap(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName(didTapNotificationKey, object: self)
+        
+        self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
+        
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
@@ -221,6 +224,42 @@ class SubPartServiceContentViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if decelerate {
+            return
+        }
+        
+        let height = scrollView.bounds.height
+        //var target = targetContentOffset.memory
+        var target = scrollView.contentOffset
+        
+        if target.y < height / 2 {
+            target.y = 0
+        } else if target.y < height {
+            target.y = height
+        }
+        
+        scrollView.scrollRectToVisible(CGRect(origin: target, size: scrollView.bounds.size), animated: true)
+    }
+    
+    
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity == CGPointZero {
+            return
+        }
+        
+        let height = scrollView.bounds.height
+        var target = targetContentOffset.memory
+        
+        if target.y < height / 2 {
+            target.y = 0
+        } else if target.y < height {
+            target.y = height
+        }
+        
+        targetContentOffset.memory = target
     }
 
 }
