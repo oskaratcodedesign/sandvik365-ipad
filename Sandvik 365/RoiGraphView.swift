@@ -23,7 +23,7 @@ class RoiGraphView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
-        addYInterValLines()
+        //addYInterValLines()
         addXInterValLines()
         drawGraphs()
     }
@@ -45,7 +45,7 @@ class RoiGraphView: UIView {
             view.removeFromSuperview()
         }
         drawGraph(selectedROIInput.calculatedTotal(), color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
+        //drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
     }
     
     private func drawGraph(values: [Int], color: UIColor)
@@ -67,7 +67,7 @@ class RoiGraphView: UIView {
         }
         path.moveToPoint(CGPointMake(0, height))
         for value in values {
-            if value >= 0 {
+            if value > 0 {
                 let y = value == 0 ? height : height / selectedROIInput.graphScale() - (CGFloat(value) * yPValue)
                 path.addLineToPoint(CGPointMake(x, y))
             }
@@ -88,7 +88,7 @@ class RoiGraphView: UIView {
     }
     
 
-    private func addYInterValLines() {
+    /*private func addYInterValLines() {
         for view in yGraph.subviews {
             view.removeFromSuperview()
         }
@@ -101,20 +101,20 @@ class RoiGraphView: UIView {
             yGraph.addSubview(imageView)
             y += space
         }
-    }
+    }*/
     
     private func addXInterValLines() {
         for view in xGraph.subviews {
             view.removeFromSuperview()
         }
         let lenght = xGraph.bounds.size.width
-        let space = lenght*0.1
+        let space = lenght/12//1year
         var x = space
-        while x < lenght-2 {
-            let imageView = UIImageView(frame: CGRectMake(x, 0, 2, 10))
+        //while x < lenght-2 {
+            let imageView = UIImageView(frame: CGRectMake(x, 0, 1, 12))
             imageView.backgroundColor = UIColor.whiteColor()
             xGraph.addSubview(imageView)
             x += space
-        }
+        //}
     }
 }

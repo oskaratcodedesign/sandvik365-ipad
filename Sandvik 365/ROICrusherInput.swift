@@ -16,7 +16,13 @@ enum ROICrusherService: UInt {
     //case Protective
 }
 
+enum OperationType: String {
+    case New = "New"
+    case Established = "Established"
+}
+
 enum ROICrusherInputValue {
+    case Operation(OperationType)
     case OreGrade(Double)
     case Capacity(UInt)
     case FinishedProduct(UInt)
@@ -26,6 +32,8 @@ enum ROICrusherInputValue {
 
     var title :String {
         switch self {
+        case Operation:
+            return NSLocalizedString("Operation", comment: "")
         case OreGrade:
             return NSLocalizedString("Ore grade", comment: "")
         case Capacity:
@@ -43,6 +51,8 @@ enum ROICrusherInputValue {
     
     var value: Any {
         switch self {
+        case Operation(let value):
+            return value
         case OreGrade(let value):
             return value
         case Capacity(let value):
@@ -60,6 +70,7 @@ enum ROICrusherInputValue {
 }
 
 class ROICrusherInput: ROIInput {
+    var operation: ROICrusherInputValue = .Operation(OperationType.New)
     var oreGrade: ROICrusherInputValue = .OreGrade(0.60) //%
     var capacity: ROICrusherInputValue = .Capacity(1200) //m t/hr
     var finishedProduct: ROICrusherInputValue = .FinishedProduct(35) //%
@@ -67,11 +78,11 @@ class ROICrusherInput: ROIInput {
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
     var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
     var services: Set<ROICrusherService> = Set<ROICrusherService>()
-    let months: UInt = 24
-    let startMonth: UInt = 4
+    let months: UInt = 12
+    let startMonth: UInt = 3
     
     private func allInputs() -> [ROICrusherInputValue] {
-        return [oreGrade, capacity, finishedProduct, recoveryRate, orePrice, processingCost]
+        return [operation, oreGrade, capacity, finishedProduct, recoveryRate, orePrice, processingCost]
     }
     
     override func allTitles() -> [String] {
@@ -86,6 +97,8 @@ class ROICrusherInput: ROIInput {
     override func setInput(atIndex :Int, stringValue :String) -> Bool {
         let input = allInputs()[atIndex]
         switch input {
+        case .Operation:
+            return false
         case .OreGrade:
             if let number = NSNumberFormatter().numberFromString(stringValue) {
                 oreGrade = .OreGrade(number.doubleValue)
@@ -124,6 +137,8 @@ class ROICrusherInput: ROIInput {
     override func getInputAsString(atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
+        case .Operation:
+            return nil
         case .OreGrade:
             let formatter = NSNumberFormatter()
             formatter.numberStyle = .DecimalStyle
@@ -145,6 +160,20 @@ class ROICrusherInput: ROIInput {
     override func changeInput(atIndex :Int, change :ChangeInput) -> NSAttributedString {
         let input = allInputs()[atIndex]
         switch input {
+        case .Operation:
+            let value = operation.value as! OperationType
+            if change != ChangeInput.Load {
+                if value == .New {
+                    operation = .Operation(.Established)
+                }
+                else {
+                    operation = .Operation(.New)
+                }
+                self.services.removeAll() //clear when operation change
+            }
+            let typeString: String = (operation.value as! OperationType).rawValue
+            let attrString = NSMutableAttributedString(string: typeString, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            return attrString
         case .OreGrade:
             if change != ChangeInput.Load {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
