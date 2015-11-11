@@ -94,6 +94,9 @@ class RoiCalculatorViewController: UIViewController {
         if let input = selectedROICalculator.input as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .MaintenancePlanning, selectedButton: sender)
         }
+        let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
+        attrString.appendAttributedString(NSAttributedString(string: "\nCAPITAL SPARE PARTS COVERED", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
+        roiGraphView.addTextToGraph(attrString)
         setProfitLabel()
     }
     

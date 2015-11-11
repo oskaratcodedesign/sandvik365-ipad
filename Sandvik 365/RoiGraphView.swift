@@ -13,7 +13,7 @@ class RoiGraphView: UIView {
     @IBOutlet weak var yGraph: UIView!
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
-    
+    private var currentCGPath: CGPathRef?
     var selectedROIInput: ROIInput! {
         didSet {
             drawGraphs()
@@ -80,11 +80,23 @@ class RoiGraphView: UIView {
         path.closePath()
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = path.CGPath
+        currentCGPath = path.CGPath
         shapeLAyer.fillColor = color.CGColor
         let view = UIView()
         view.layer.addSublayer(shapeLAyer)
         graphView.addSubview(view)
         
+    }
+    
+    func addTextToGraph(text: NSAttributedString) {
+        let frame = CGPathGetPathBoundingBox(currentCGPath)
+        
+        let label = UILabel(frame: frame)
+        label.attributedText = text
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = .Center
+        label.numberOfLines = 0
+        graphView.addSubview(label)
     }
     
 
