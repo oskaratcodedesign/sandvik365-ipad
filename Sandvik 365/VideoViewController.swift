@@ -14,6 +14,16 @@ class VideoViewController: UIViewController {
     var moviePlayer : MPMoviePlayerController!
     var selectedBusinessType: BusinessType!
     
+    override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.hideLogoView()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.showLogoView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

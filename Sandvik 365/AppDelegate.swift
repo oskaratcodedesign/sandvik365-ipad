@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var loadingView: LoadingView?
+    var logoView: UIImageView?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -52,20 +53,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func addLogoToView(view: UIView) -> UIImageView?
     {
         if let image = UIImage(named: "logo") {
-            let logo = UIImageView(image: image)
+            self.logoView = UIImageView(image: image)
             let imgWidth:CGFloat = 60
-            let topConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
-            let trailConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
-            let widthConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
-            let heightConstraint = NSLayoutConstraint(item: logo, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: (imgWidth/image.size.width) * image.size.height)
-            logo.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(logo)
+            let topConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
+            let trailConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
+            let widthConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
+            let heightConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: (imgWidth/image.size.width) * image.size.height)
+            self.logoView!.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(self.logoView!)
             NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, widthConstraint, heightConstraint])
-            return logo
         }
-        return nil
+        return self.logoView
     }
 
+    func hideLogoView() {
+        UIView.animateWithDuration(0.25) { () -> Void in
+            self.logoView?.alpha = 0.0
+        }
+    }
+    
+    func showLogoView() {
+        UIView.animateWithDuration(0.25) { () -> Void in
+            self.logoView?.alpha = 1.0
+        }
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
