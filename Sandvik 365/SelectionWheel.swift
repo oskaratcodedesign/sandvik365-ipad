@@ -24,6 +24,9 @@ class SelectionWheel: UIView {
     var touchedLayer: CALayer?
     let numberOfSections = 8
     
+    var startTransform: CGAffineTransform?
+    var deltaAngle: CGFloat?
+    
     var delegate: SelectionWheelDelegate?
     
     required internal init?(coder aDecoder: NSCoder) {
@@ -31,18 +34,12 @@ class SelectionWheel: UIView {
     }
 
     override func awakeFromNib() {
-        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         centerLabel.userInteractionEnabled = true
-        centerLabel.addGestureRecognizer(recognizer)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         setup()
-    }
-    
-    func handleTap(recognizer: UIGestureRecognizer) {
-        rotate(true)
     }
     
     private func setup() {
@@ -65,45 +62,9 @@ class SelectionWheel: UIView {
         centerLabel.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
         centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(4, 4, frame.size.width-8, frame.size.height-8), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
         drawWheel()
-        rotate(false)
     }
-    
-    private func rotate(animate: Bool) {
-        let currentPoint = sectionPoints[currentSection]
-        let nextSection = currentSection + 1 < sectionLayers.count ? currentSection + 1 : 0
-        let nextPoint = sectionPoints[nextSection]
-        
-        let angle = atan2(nextPoint.y - currentPoint.y, nextPoint.x - currentPoint.x)
-        //print(angle, currentPoint, nextPoint)
-        
-        if animate {
-            if !rotateAnimationRunning {
-                //self.clearCurrentSelection()
-                rotateAnimationRunning = true
-                UIView.animateWithDuration(0.25, animations: { () -> Void in
-                    self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
-                    
-                    }) { (Bool) -> Void in
-                        self.setCurrentSelection(nextSection)
-                        self.rotateAnimationRunning = false
-                }
-            }
-        }
-        else {
-            self.wheelContainer.transform = CGAffineTransformMakeRotation(-angle)
-            self.setCurrentSelection(nextSection)
-        }
-    }
-    
-    /*private func clearCurrentSelection() {
-        let prevSection = currentSection-1 >= 0 ? currentSection-1 : sectionLayers.count-1
-        sectionLayers[prevSection].fillColor = UIColor.clearColor().CGColor
-        getTextLayer(prevSection).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-    }*/
     
     private func setCurrentSelection(nextSection: Int) {
-        //sectionLayers[currentSection].fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-        //getTextLayer(currentSection).foregroundColor = UIColor.blackColor().CGColor
         feedSectionTitle()
         currentSection = nextSection
     }
@@ -219,6 +180,15 @@ class SelectionWheel: UIView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
+            // 1 - Get touch position
+            let pt = touch.locationInView(self)
+            // 2 - Calculate distance from center
+            let dx = pt.x  - wheelContainer.center.x
+            let dy = pt.y  - wheelContainer.center.y
+            // 3 - Calculate arctangent value
+            deltaAngle = atan2(dy,dx)
+            // 4 - Save current transform
+            startTransform = wheelContainer.transform
             if let view = touch.view {
                 if view == centerLabel {
                     touchedLayer = centerLabel.layer
@@ -240,23 +210,20 @@ class SelectionWheel: UIView {
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if touchedLayer != nil, let touch = touches.first {
-            if touchedLayer == centerLabel.layer {
-                if !CGRectContainsPoint(touchedLayer!.frame, touch.locationInView(self)) {
-                    clearTouchedLayer()
-                }
-            }
-            else if let layer = touchedLayer as? CAShapeLayer{
-                if !CGPathContainsPoint(layer.path,
-                    nil, touch.locationInView(wheelContainer), false) {
-                        clearTouchedLayer()
-                }
-            }
-        }
+        clearTouchedLayer()
+        
+        let touch = touches.first
+        let pt = touch!.locationInView(self)
+        let dx = pt.x  - wheelContainer.center.x
+        let dy = pt.y  - wheelContainer.center.y
+        let ang = atan2(dy,dx)
+        let angleDifference = deltaAngle! - ang
+        wheelContainer.transform = CGAffineTransformRotate(startTransform!, -angleDifference)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touchedLayer != nil, let touch = touches.first, let delegate = self.delegate {
+            fillTouchedLayer()
             if let layer = touchedLayer as? CAShapeLayer{
                 if CGPathContainsPoint(layer.path,
                     nil, touch.locationInView(wheelContainer), false) {
@@ -279,9 +246,6 @@ class SelectionWheel: UIView {
                 layer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
                 getTextLayer(layer).foregroundColor = UIColor.blackColor().CGColor
             }
-            else {
-                touchedLayer!.backgroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-            }
         }
     }
     
@@ -290,9 +254,6 @@ class SelectionWheel: UIView {
             if let layer = touchedLayer as? CAShapeLayer{
                 layer.fillColor = UIColor.clearColor().CGColor
                 getTextLayer(layer).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
-            }
-            else {
-                touchedLayer!.backgroundColor = UIColor.clearColor().CGColor
             }
             touchedLayer = nil
         }
