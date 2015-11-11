@@ -84,8 +84,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBAction func handleTap(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName(didTapNotificationKey, object: self)
         
-        self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
-        
+        if self.scrollView.contentOffset.y < self.scrollView.bounds.size.height {
+            self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
+        }
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
