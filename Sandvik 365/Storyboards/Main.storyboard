@@ -138,18 +138,22 @@ YOU CAN COUNT ON.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-55-Fwt">
-                                                <rect key="frame" x="379" y="306" width="151" height="124"/>
+                                                <rect key="frame" x="426" y="326" width="104" height="104"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="124" id="8FT-O9-H77"/>
                                                     <constraint firstAttribute="width" constant="151" id="R8b-sa-0ec"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-92" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="SANDVIK 365 VIDEO" image="sandvik_play">
+                                                <state key="normal" image="SANDVIK-video-button">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="8FT-O9-H77"/>
+                                                        <exclude reference="R8b-sa-0ec"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="4y8-m6-DqU"/>
                                                 </connections>
@@ -640,9 +644,9 @@ Cg
         </scene>
     </scenes>
     <resources>
+        <image name="SANDVIK-video-button" width="104" height="104"/>
         <image name="sandvik-icons_info-btn" width="31" height="31"/>
         <image name="sandvik_calc" width="82" height="82"/>
-        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
