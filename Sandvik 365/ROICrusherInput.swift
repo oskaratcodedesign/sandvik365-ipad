@@ -125,17 +125,19 @@ class ROICrusherInput: ROIInput {
         let input = allInputs()[atIndex]
         switch input {
         case .OreGrade:
-            return String(format:"%.2f", oreGrade.value as! Double)
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = .DecimalStyle
+            return formatter.stringFromNumber(oreGrade.value as! Double)
         case .Capacity:
-            return String(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
         case .FinishedProduct:
-            return String(finishedProduct.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(finishedProduct.value as! UInt)
         case .RecoveryRate:
-            return String(recoveryRate.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(recoveryRate.value as! UInt)
         case .OrePrice:
-            return String(orePrice.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(orePrice.value as! UInt)
         case .ProcessingCost:
-            return String(processingCost.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)
         }
     }
 
@@ -151,7 +153,9 @@ class ROICrusherInput: ROIInput {
                 }
             }
             let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: String(format:"%.2f", oreGrade.value as! Double) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = .DecimalStyle
+            let attrString = NSMutableAttributedString(string: (formatter.stringFromNumber(oreGrade.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
         case .Capacity:

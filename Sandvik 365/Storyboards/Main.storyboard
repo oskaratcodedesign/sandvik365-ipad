@@ -58,6 +58,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sx4-ly-qlX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="vq2-UY-Bko" kind="relationship" relationship="rootViewController" id="Sb7-xd-Qe1"/>
@@ -84,11 +85,11 @@
                         <viewControllerLayoutGuide type="bottom" id="w7v-Iz-kr0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4LT-Of-Ydb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btf-qB-THU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btf-qB-THU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-k8-KXB">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
@@ -137,23 +138,29 @@ YOU CAN COUNT ON.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-55-Fwt">
-                                                <rect key="frame" x="379" y="306" width="151" height="124"/>
+                                                <rect key="frame" x="426" y="326" width="104" height="104"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="124" id="8FT-O9-H77"/>
                                                     <constraint firstAttribute="width" constant="151" id="R8b-sa-0ec"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-92" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="SANDVIK 365 VIDEO" image="sandvik_play">
+                                                <state key="normal" image="SANDVIK-video-button">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="8FT-O9-H77"/>
+                                                        <exclude reference="R8b-sa-0ec"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="4y8-m6-DqU"/>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-Ou-r9z">
                                                 <rect key="frame" x="337" y="306" width="193" height="124"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="CCE-gv-G8e"/>
                                                     <constraint firstAttribute="height" constant="124" id="T5Y-ib-GK2"/>
@@ -269,6 +276,7 @@ YOU CAN COUNT ON.</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qv-38-hVy" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="1005" y="0.0" width="201" height="500"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="MINE AUTOMATION SYSTEMS"/>
@@ -279,6 +287,7 @@ YOU CAN COUNT ON.</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="1206" y="0.0" width="201" height="500"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
@@ -289,6 +298,7 @@ YOU CAN COUNT ON.</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="1407" y="0.0" width="201" height="500"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
@@ -299,6 +309,7 @@ YOU CAN COUNT ON.</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="1608" y="0.0" width="201" height="500"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
@@ -427,6 +438,8 @@ YOU CAN COUNT ON.</string>
                     </view>
                     <navigationItem key="navigationItem" id="8Kc-fU-snl"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
                         <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
@@ -461,17 +474,19 @@ YOU CAN COUNT ON.</string>
                         <viewControllerLayoutGuide type="bottom" id="4gz-95-xIi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xy3-JZ-xeR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-6k-MX3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-XA-xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-WF-CXB">
                                         <rect key="frame" x="67" y="92" width="233" height="489"/>
+                                        <animations/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">ABOUT THIS APP
@@ -557,6 +572,7 @@ Cg
                                         </connections>
                                     </textView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="67" id="7Xb-SU-Bee"/>
@@ -565,6 +581,7 @@ Cg
                                 </constraints>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="w7b-6k-MX3" firstAttribute="leading" secondItem="xy3-JZ-xeR" secondAttribute="leadingMargin" id="3RU-oz-3ep"/>
@@ -609,6 +626,7 @@ Cg
                     <view key="view" contentMode="scaleToFill" id="gHX-vs-F4F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -626,9 +644,9 @@ Cg
         </scene>
     </scenes>
     <resources>
+        <image name="SANDVIK-video-button" width="104" height="104"/>
         <image name="sandvik-icons_info-btn" width="31" height="31"/>
         <image name="sandvik_calc" width="82" height="82"/>
-        <image name="sandvik_play" width="82" height="82"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
