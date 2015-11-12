@@ -24,7 +24,7 @@ class RoiGraphView: UIView {
         super.layoutSubviews()
         layoutIfNeeded()
         //addYInterValLines()
-        addXInterValLines()
+        //addXInterValLines()
         drawGraphs()
     }
     
@@ -118,7 +118,7 @@ class RoiGraphView: UIView {
         }
     }*/
     
-    private func addXInterValLines() {
+    /*private func addXInterValLines() {
         for view in xGraph.subviews {
             view.removeFromSuperview()
         }
@@ -131,5 +131,5 @@ class RoiGraphView: UIView {
             xGraph.addSubview(imageView)
             x += space
         //}
-    }
+    }*/
 }

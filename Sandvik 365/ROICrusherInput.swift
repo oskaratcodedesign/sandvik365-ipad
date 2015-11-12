@@ -253,7 +253,7 @@ class ROICrusherInput: ROIInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-            let valueType: String = usePPM ? "USD/ounce" : "USD/ton"
+            let valueType: String = usePPM ? "USD/oz" : "USD/t"
             let attrString = NSMutableAttributedString(string: String(orePrice.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
@@ -343,8 +343,8 @@ class ROICrusherInput: ROIInput {
         var totals = [Int]()
         let len = months-1
         for i in 0...len {
-            if i > len/4 {
-                if i < len-len/4 {
+            if i > len/5 {
+                if i < len-len/5 {
                     totals.append(t)
                 }
                 else {

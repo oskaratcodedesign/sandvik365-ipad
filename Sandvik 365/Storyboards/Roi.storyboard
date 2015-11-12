@@ -395,7 +395,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="46"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="25" y="0.0" width="194" height="46"/>
+                                                <rect key="frame" x="27" y="0.0" width="192" height="46"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
@@ -447,7 +447,7 @@ PROFIT BY UP TO</string>
                                             <constraint firstAttribute="bottom" secondItem="TX1-EB-e3F" secondAttribute="bottom" constant="5" id="2Si-BS-ziG"/>
                                             <constraint firstItem="jt7-CD-ogG" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" constant="3" id="6AP-qY-p5E"/>
                                             <constraint firstAttribute="bottom" secondItem="6tO-Bv-YgK" secondAttribute="bottom" id="7S0-BF-Mvl"/>
-                                            <constraint firstItem="6tO-Bv-YgK" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="25" id="Cip-CK-wqq"/>
+                                            <constraint firstItem="6tO-Bv-YgK" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="27" id="Cip-CK-wqq"/>
                                             <constraint firstItem="NFb-Yh-3ka" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" constant="5" id="Dsd-0G-b12"/>
                                             <constraint firstItem="6tO-Bv-YgK" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="50" id="ErG-7b-bqb"/>
                                             <constraint firstItem="6tO-Bv-YgK" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" id="KcO-jG-wLC"/>
@@ -665,7 +665,7 @@ PLANNING SERVICES</string>
                                                                     <constraint firstAttribute="height" constant="2" id="eb7-hE-a2C"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
                                                                 <rect key="frame" x="124" y="2" width="33.5" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
