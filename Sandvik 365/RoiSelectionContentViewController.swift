@@ -76,6 +76,10 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         return true
     }
     
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return selectedROICalculator.input.getInputAsString(itemIndex) != nil
+    }
+    
     func handleTap(recognizer: UIGestureRecognizer) {
         if let value = selectedROICalculator.input.getInputAsString(itemIndex) {
             roiContentView.textField.text = value
