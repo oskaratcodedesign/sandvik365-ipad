@@ -220,7 +220,7 @@ class ROICrusherInput: ROIInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-            let valueType: String = "m t/hr"
+            let valueType: String = "m t/d"
             let attrString = NSMutableAttributedString(string: String(capacity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
@@ -253,9 +253,9 @@ class ROICrusherInput: ROIInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-            let valueType: String = "$"
-            let attrString = NSMutableAttributedString(string: valueType + String(orePrice.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
+            let valueType: String = usePPM ? "USD/ounce" : "USD/ton"
+            let attrString = NSMutableAttributedString(string: String(orePrice.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
         /*case .ProcessingCost:
             if change != ChangeInput.Load {

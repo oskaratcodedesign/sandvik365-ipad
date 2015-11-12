@@ -181,7 +181,7 @@ class RoiCalculatorViewController: UIViewController {
                 setProfitLabelFromInput()
             }
             else {
-                profitLabel.text = "$0"
+                profitLabel.text = "0USD"
             }
             
         }
@@ -193,7 +193,7 @@ class RoiCalculatorViewController: UIViewController {
         let fmt = NSNumberFormatter()
         fmt.numberStyle = .DecimalStyle
         
-        profitLabel.text = "$" + fmt.stringFromNumber(sum)!
+        profitLabel.text = fmt.stringFromNumber(sum)! + "USD"
     }
     
     private func setBorderOnDetailButton() {
