@@ -110,10 +110,10 @@
                                 </variation>
                             </view>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                <rect key="frame" x="270" y="420" width="60" height="160"/>
+                                <rect key="frame" x="270" y="460" width="60" height="120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="-20" y="0.0" width="100" height="160"/>
+                                        <rect key="frame" x="-20" y="0.0" width="100" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
                                             <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
@@ -125,6 +125,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="leading" constant="-20" id="1sb-dh-WZ9"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" secondItem="qZr-V3-Kiy" secondAttribute="leading" priority="999" constant="-20" id="3Kc-85-FGd"/>
@@ -210,7 +211,7 @@
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="253" id="jLH-hh-A9k"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" id="mDV-5H-eGc"/>
                             <constraint firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="mNk-H7-DOX"/>
-                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="30" id="nVe-oA-dTr"/>
+                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="70" id="nVe-oA-dTr"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" id="o9z-1G-BuD"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="oJX-Gv-NHR"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="pVR-1h-NMu"/>
@@ -320,7 +321,7 @@
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                             </scrollView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-UM-rE7">
-                                <rect key="frame" x="364" y="390" width="85" height="29"/>
+                                <rect key="frame" x="258" y="430" width="85" height="29"/>
                                 <segments>
                                     <segment title="%"/>
                                     <segment title="PPM"/>
@@ -338,13 +339,16 @@
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" id="AWt-uf-24Y"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="180" id="Dsi-3U-iQE"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="IeY-2c-PRi"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="centerY" secondItem="HWu-Hx-4hz" secondAttribute="centerY" id="KaK-NV-21Z"/>
                             <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" constant="180" id="NCp-cA-oa5"/>
                             <constraint firstItem="ln5-UM-rE7" firstAttribute="leading" secondItem="HWu-Hx-4hz" secondAttribute="trailing" constant="32" id="NYv-o7-lzd"/>
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="centerX" secondItem="9rL-L1-Nkc" secondAttribute="centerX" id="Pkv-VT-yCJ"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="emg-Q1-pTs" secondAttribute="bottom" id="WLy-NF-cpM"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="top" secondItem="HWu-Hx-4hz" secondAttribute="bottom" constant="8" id="ZbX-PY-28N"/>
                             <constraint firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="hfS-qp-RQq"/>
                             <constraint firstAttribute="trailing" secondItem="AJe-R7-krj" secondAttribute="trailing" constant="150" id="i6g-AU-JYK"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="160" id="mCE-gg-UZ9"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="centerX" secondItem="HWu-Hx-4hz" secondAttribute="centerX" id="oE0-qC-Pwx"/>
                             <constraint firstAttribute="centerX" secondItem="AJe-R7-krj" secondAttribute="centerX" id="s2B-7T-FgV"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="centerX" secondItem="AJe-R7-krj" secondAttribute="centerX" id="xCM-OB-vHg"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="height" secondItem="9rL-L1-Nkc" secondAttribute="height" multiplier="0.3" id="xyl-Z9-d4S"/>
@@ -354,6 +358,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mCE-gg-UZ9"/>
+                                <exclude reference="9ed-YH-j8J"/>
+                                <exclude reference="KaK-NV-21Z"/>
+                                <exclude reference="NYv-o7-lzd"/>
                                 <exclude reference="NCp-cA-oa5"/>
                             </mask>
                         </variation>
