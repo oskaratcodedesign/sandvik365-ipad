@@ -319,14 +319,27 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo9-2z-IJg">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                             </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-UM-rE7">
+                                <rect key="frame" x="364" y="390" width="85" height="29"/>
+                                <segments>
+                                    <segment title="%"/>
+                                    <segment title="PPM"/>
+                                </segments>
+                                <color key="tintColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChangedAction:" destination="50B-Ue-aKk" eventType="valueChanged" id="Fx5-Hn-dF1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="top" secondItem="HWu-Hx-4hz" secondAttribute="top" id="9ed-YH-j8J"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="150" id="AQN-tR-1FJ"/>
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" id="AWt-uf-24Y"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="180" id="Dsi-3U-iQE"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="IeY-2c-PRi"/>
                             <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" constant="180" id="NCp-cA-oa5"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="leading" secondItem="HWu-Hx-4hz" secondAttribute="trailing" constant="32" id="NYv-o7-lzd"/>
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="centerX" secondItem="9rL-L1-Nkc" secondAttribute="centerX" id="Pkv-VT-yCJ"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="emg-Q1-pTs" secondAttribute="bottom" id="WLy-NF-cpM"/>
                             <constraint firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="hfS-qp-RQq"/>
@@ -348,6 +361,7 @@
                     <connections>
                         <outlet property="containerView" destination="AJe-R7-krj" id="rWD-Bz-GQM"/>
                         <outlet property="containerViewCenterY" destination="hfS-qp-RQq" id="LWI-GR-ycS"/>
+                        <outlet property="percentPPMControl" destination="ln5-UM-rE7" id="FhS-W7-frU"/>
                         <outlet property="spinnerScrollView" destination="uo9-2z-IJg" id="f1K-bS-RB7"/>
                     </connections>
                 </viewController>
@@ -371,10 +385,10 @@
                                 <rect key="frame" x="102" y="150" width="396" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-73-rNl">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="25" y="0.0" width="194" height="47.5"/>
+                                                <rect key="frame" x="25" y="0.0" width="194" height="48"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
@@ -382,7 +396,7 @@ PROFIT BY UP TO</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-CD-ogG">
-                                                <rect key="frame" x="219" y="3" width="43" height="41.5"/>
+                                                <rect key="frame" x="219" y="3" width="43" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="3UL-gw-dgA"/>
                                                 </constraints>
@@ -396,7 +410,7 @@ PROFIT BY UP TO</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-Yh-3ka">
-                                                <rect key="frame" x="280" y="5" width="111" height="37.5"/>
+                                                <rect key="frame" x="280" y="5" width="111" height="38"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="SEE DETAILS">
@@ -408,7 +422,7 @@ PROFIT BY UP TO</string>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX1-EB-e3F">
-                                                <rect key="frame" x="351" y="5" width="40" height="37.5"/>
+                                                <rect key="frame" x="351" y="5" width="40" height="38"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="31"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="X">
@@ -450,13 +464,13 @@ PROFIT BY UP TO</string>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nou-UF-7fh">
-                                        <rect key="frame" x="0.0" y="47" width="396" height="252.5"/>
+                                        <rect key="frame" x="0.0" y="47" width="396" height="253"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-ed-AHq">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="252.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="253"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDu-fd-XVR">
-                                                        <rect key="frame" x="0.0" y="23.5" width="197" height="27"/>
+                                                        <rect key="frame" x="0.0" y="24" width="197" height="27"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="RAMP-UP SERVICES">
@@ -468,7 +482,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                        <rect key="frame" x="0.0" y="59.5" width="197" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="197" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                         </constraints>
@@ -513,7 +527,7 @@ IAo
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                        <rect key="frame" x="0.0" y="110" width="197" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="110" width="197" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                         </constraints>
@@ -597,13 +611,13 @@ PLANNING SERVICES</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF" customClass="RoiGraphView" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="197" y="0.0" width="149" height="252.5"/>
+                                                <rect key="frame" x="197" y="0.0" width="149" height="253"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-bi-gzk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="252.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="253"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nij-QE-8gC">
-                                                                <rect key="frame" x="23" y="0.0" width="2" height="230.5"/>
+                                                                <rect key="frame" x="23" y="0.0" width="2" height="231"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="2" id="8bK-QH-PdA"/>
@@ -645,7 +659,7 @@ PLANNING SERVICES</string>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
+                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -671,7 +685,7 @@ PLANNING SERVICES</string>
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
-                                                        <rect key="frame" x="25" y="20" width="124" height="207.5"/>
+                                                        <rect key="frame" x="25" y="20" width="124" height="208"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>

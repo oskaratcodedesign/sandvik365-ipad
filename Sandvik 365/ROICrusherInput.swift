@@ -78,11 +78,12 @@ class ROICrusherInput: ROIInput {
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
     //var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
     var services: Set<ROICrusherService> = Set<ROICrusherService>()
+    var usePPM: Bool = false //otherwise percent
     let months: UInt = 12
     let startMonth: UInt = 3
     
-    private func allInputs() -> [ROICrusherInputValue] {
-        return [operation, oreGrade, capacity, recoveryRate, orePrice]
+    func allInputs() -> [ROICrusherInputValue] {
+        return [operation, capacity, oreGrade, recoveryRate, orePrice]
     }
     
     override func allTitles() -> [String] {
@@ -100,7 +101,10 @@ class ROICrusherInput: ROIInput {
         case .Operation:
             return false
         case .OreGrade:
-            if let number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
+            if var number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
+                if usePPM {
+                    number = number.doubleValue/10000
+                }
                 oreGrade = .OreGrade(number.doubleValue)
                 return true
             }
@@ -147,7 +151,11 @@ class ROICrusherInput: ROIInput {
         case .Operation:
             return nil
         case .OreGrade:
-            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(oreGrade.value as! Double)
+            var value = oreGrade.value as! Double
+            if usePPM {
+                value = 10000 * value
+            }
+            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value)
         case .Capacity:
             return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
         /*case .FinishedProduct:
@@ -181,13 +189,28 @@ class ROICrusherInput: ROIInput {
             return attrString
         case .OreGrade:
             if change != ChangeInput.Load {
-                let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
+                var value = oreGrade.value as! Double
+                
+                if usePPM {
+                    value = value * 10000
+                    value = value + (change == ChangeInput.Increase ? 1 : 1)
+                    value = value/10000
+                }
+                else {
+                    value = value + (change == ChangeInput.Increase ? 0.10 : -0.10)
+                }
+                
                 if value >= 0 {
                     oreGrade = .OreGrade(value)
                 }
             }
-            let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(oreGrade.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            var value = oreGrade.value as! Double
+            var valueType: String = "%"
+            if usePPM {
+                value = value * 10000
+                valueType = "ppm"
+            }
+            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
         case .Capacity:
