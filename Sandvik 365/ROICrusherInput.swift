@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum ROICrusherService: UInt {
-    case RampUp = 200
-    case ConditionInspection = 8
-    case MaintenancePlanning = 80
+    case RampUp = 14
+    case ConditionInspection = 1
+    case MaintenancePlanning = 7
     //case Protective
 }
 
@@ -23,12 +23,12 @@ enum OperationType: String {
 
 enum ROICrusherInputValue {
     case Operation(OperationType)
-    case OreGrade(Double)
     case Capacity(UInt)
-    case FinishedProduct(UInt)
-    case RecoveryRate(UInt)
+    case OreGrade(Double)
+    //case FinishedProduct(UInt)
+    case RecoveryRate(Double)
     case OrePrice(UInt)
-    case ProcessingCost(UInt)
+    //case ProcessingCost(UInt)
 
     var title :String {
         switch self {
@@ -37,15 +37,15 @@ enum ROICrusherInputValue {
         case OreGrade:
             return NSLocalizedString("Ore grade", comment: "")
         case Capacity:
-            return NSLocalizedString("Crushing plant design capacity", comment: "")
-        case FinishedProduct:
-            return NSLocalizedString("Finished product from crushing plant", comment: "")
+            return NSLocalizedString("Crushing capacity", comment: "")
+        /*case FinishedProduct:
+            return NSLocalizedString("Finished product from crushing plant", comment: "")*/
         case RecoveryRate:
             return NSLocalizedString("Recovery rate", comment: "")
         case OrePrice:
-            return NSLocalizedString("Ore price", comment: "")
-        case ProcessingCost:
-            return NSLocalizedString("Processing cost", comment: "")
+            return NSLocalizedString("Market price", comment: "")
+        /*case ProcessingCost:
+            return NSLocalizedString("Processing cost", comment: "")*/
         }
     }
     
@@ -57,14 +57,14 @@ enum ROICrusherInputValue {
             return value
         case Capacity(let value):
             return value
-        case FinishedProduct(let value):
-            return value
+        /*case FinishedProduct(let value):
+            return value*/
         case RecoveryRate(let value):
             return value
         case OrePrice(let value):
             return value
-        case ProcessingCost(let value):
-            return value
+        /*case ProcessingCost(let value):
+            return value*/
         }
     }
 }
@@ -73,16 +73,16 @@ class ROICrusherInput: ROIInput {
     var operation: ROICrusherInputValue = .Operation(OperationType.New)
     var oreGrade: ROICrusherInputValue = .OreGrade(0.60) //%
     var capacity: ROICrusherInputValue = .Capacity(1200) //m t/hr
-    var finishedProduct: ROICrusherInputValue = .FinishedProduct(35) //%
+    //var finishedProduct: ROICrusherInputValue = .FinishedProduct(35) //%
     var recoveryRate: ROICrusherInputValue = .RecoveryRate(85) //%
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
-    var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
+    //var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
     var services: Set<ROICrusherService> = Set<ROICrusherService>()
     let months: UInt = 12
     let startMonth: UInt = 3
     
     private func allInputs() -> [ROICrusherInputValue] {
-        return [operation, oreGrade, capacity, finishedProduct, recoveryRate, orePrice, processingCost]
+        return [operation, oreGrade, capacity, recoveryRate, orePrice]
     }
     
     override func allTitles() -> [String] {
@@ -100,7 +100,7 @@ class ROICrusherInput: ROIInput {
         case .Operation:
             return false
         case .OreGrade:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
                 oreGrade = .OreGrade(number.doubleValue)
                 return true
             }
@@ -109,14 +109,14 @@ class ROICrusherInput: ROIInput {
                 capacity = .Capacity(number.unsignedLongValue)
                 return true
             }
-        case .FinishedProduct:
+        /*case .FinishedProduct:
             if let number = NSNumberFormatter().numberFromString(stringValue) {
                 finishedProduct = .FinishedProduct(number.unsignedLongValue)
                 return true
-            }
+            }*/
         case .RecoveryRate:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                recoveryRate = .RecoveryRate(number.unsignedLongValue)
+            if let number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
+                recoveryRate = .RecoveryRate(number.doubleValue)
                 return true
             }
         case .OrePrice:
@@ -124,14 +124,21 @@ class ROICrusherInput: ROIInput {
                 orePrice = .OrePrice(number.unsignedLongValue)
                 return true
             }
-        case .ProcessingCost:
+        /*case .ProcessingCost:
             if let number = NSNumberFormatter().numberFromString(stringValue) {
                 processingCost = .ProcessingCost(number.unsignedLongValue)
                 return true
-            }
+            }*/
         }
         
         return false
+    }
+    
+    private func nsNumberFormatterDecimalWith2Fractions() -> NSNumberFormatter {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .DecimalStyle
+        formatter.maximumFractionDigits = 2
+        return formatter
     }
     
     override func getInputAsString(atIndex :Int) -> String? {
@@ -140,19 +147,17 @@ class ROICrusherInput: ROIInput {
         case .Operation:
             return nil
         case .OreGrade:
-            let formatter = NSNumberFormatter()
-            formatter.numberStyle = .DecimalStyle
-            return formatter.stringFromNumber(oreGrade.value as! Double)
+            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(oreGrade.value as! Double)
         case .Capacity:
             return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
-        case .FinishedProduct:
-            return NSNumberFormatter().stringFromNumber(finishedProduct.value as! UInt)
+        /*case .FinishedProduct:
+            return NSNumberFormatter().stringFromNumber(finishedProduct.value as! UInt)*/
         case .RecoveryRate:
-            return NSNumberFormatter().stringFromNumber(recoveryRate.value as! UInt)
+            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double)
         case .OrePrice:
             return NSNumberFormatter().stringFromNumber(orePrice.value as! UInt)
-        case .ProcessingCost:
-            return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)
+        /*case .ProcessingCost:
+            return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)*/
         }
     }
 
@@ -182,9 +187,7 @@ class ROICrusherInput: ROIInput {
                 }
             }
             let valueType: String = "%"
-            let formatter = NSNumberFormatter()
-            formatter.numberStyle = .DecimalStyle
-            let attrString = NSMutableAttributedString(string: (formatter.stringFromNumber(oreGrade.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(oreGrade.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
         case .Capacity:
@@ -198,7 +201,7 @@ class ROICrusherInput: ROIInput {
             let attrString = NSMutableAttributedString(string: String(capacity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
-        case .FinishedProduct:
+        /*case .FinishedProduct:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
                 if value >= 0 {
@@ -208,16 +211,16 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "%"
             let attrString = NSMutableAttributedString(string: String(finishedProduct.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
+            return attrString*/
         case .RecoveryRate:
             if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+                let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
                 if value >= 0 {
-                    recoveryRate = .RecoveryRate(UInt(value))
+                    recoveryRate = .RecoveryRate(value)
                 }
             }
             let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: String(recoveryRate.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
+            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
             return attrString
         case .OrePrice:
@@ -231,7 +234,7 @@ class ROICrusherInput: ROIInput {
             let attrString = NSMutableAttributedString(string: valueType + String(orePrice.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
             return attrString
-        case .ProcessingCost:
+        /*case .ProcessingCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
                 if value >= 0 {
@@ -241,11 +244,11 @@ class ROICrusherInput: ROIInput {
             let valueType: String = "$"
             let attrString = NSMutableAttributedString(string: valueType + String(processingCost.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
-            return attrString
+            return attrString*/
         }
     }
     
-    func finishedProductMTHR() -> Double {
+    /*func finishedProductMTHR() -> Double {
         if let c = capacity.value as? UInt, f = finishedProduct.value as? UInt {
             return Double(c) * (Double(f)/100)
         }
@@ -265,13 +268,17 @@ class ROICrusherInput: ROIInput {
             return (additionalTonsOfFinishedProduct() * (Double(r)/100)) * (o/100)
         }
         return 0
-    }
+    }*/
     
     override func total() -> Int {
         var result: Int = 0
-        if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
-            let r = recoveredProductAfterProcessing()
-            let res = (r * Double(o)) - (r * Double(p))
+        let tonnage = capacity.value as! UInt
+        let oregrade = oreGrade.value as! Double
+        let recoverrate = recoveryRate.value as! Double
+        let marketPrice = orePrice.value as! UInt
+        
+        if let service = services.first {
+            let res = (Double(tonnage) * (Double(oregrade)/100) * (Double(recoverrate)/100) * Double(marketPrice)) * Double(service.rawValue)
             if res > Double(Int.max) {
                 result = Int.max
             }
@@ -284,12 +291,8 @@ class ROICrusherInput: ROIInput {
     
     override func maxTotal() -> Double {
         let currentServices = services
-        services = [.MaintenancePlanning]
-        var result: Double = 0
-        if let o = orePrice.value as? UInt, p = processingCost.value as? UInt {
-            let r = recoveredProductAfterProcessing()
-            result = (r * Double(o)) - (r * Double(p))
-        }
+        services = [.RampUp]
+        let result = Double(total())
         services = currentServices
         return result
     }
@@ -313,10 +316,24 @@ class ROICrusherInput: ROIInput {
     }
     
     override func calculatedTotal() -> [Int] {
-        var t = total()
+        let t = total()
         var totals = [Int]()
-        
-        if services.contains(.RampUp) {
+        let len = months-1
+        for i in 0...len {
+            if i > len/4 {
+                if i < len-len/4 {
+                    totals.append(t)
+                }
+                else {
+                    totals.append(-1)
+                }
+            }
+            else {
+                totals.append(0)
+            }
+        }
+        return totals
+        /*if services.contains(.RampUp) {
             totals = originalTotal()
             let newStartMonth = startMonth - 1
             totals[Int(newStartMonth)] = totals.last!
@@ -371,7 +388,7 @@ class ROICrusherInput: ROIInput {
                 }
             }
         }
-        return totals
+        return totals*/
     }
     
     override func graphScale() -> CGFloat {

@@ -177,7 +177,7 @@ class RoiCalculatorViewController: UIViewController {
     private func setProfitLabel()
     {
         if let input = selectedROICalculator.input as? ROICrusherInput {
-            if input.services.count > 0 {
+            if !input.services.isEmpty {
                 setProfitLabelFromInput()
             }
             else {

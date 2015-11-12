@@ -71,8 +71,11 @@ class RoiGraphView: UIView {
                 let y = value == 0 ? height : height / selectedROIInput.graphScale() - (CGFloat(value) * yPValue)
                 path.addLineToPoint(CGPointMake(x, y))
             }
-            else {
+            else if value == 0 {
                 path.moveToPoint(CGPointMake(x+xSpace, height))//move forward so we can produce a straight line once value is changed
+            }
+            else{
+                break
             }
             x += xSpace
         }
