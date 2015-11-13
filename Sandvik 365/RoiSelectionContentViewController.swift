@@ -17,6 +17,8 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     @IBOutlet weak var containerViewCenterY: NSLayoutConstraint!
     @IBOutlet weak var spinnerScrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var percentPPMControl: UISegmentedControl!
+    
     var itemIndex: Int = 0
     var selectedROICalculator: ROICalculator!
     var roiContentView: RoiInputView!
@@ -48,6 +50,14 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        percentPPMControl.hidden = true
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            switch input.allInputs()[itemIndex] {
+            case .OreGrade:
+                percentPPMControl.hidden = false
+            default: break
+            }
+        }
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -74,6 +84,14 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         roiContentView.textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if let value = selectedROICalculator.input.getInputAsString(itemIndex) {
+            roiContentView.textField.text = value
+            return true
+        }
+        return false
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
@@ -140,12 +158,16 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
     }
     
-    @IBAction func toggleLeft(sender: UIButton) {
-       
-    }
-    
-    @IBAction func toggleRight(sender: UIButton) {
-        
+   
+    @IBAction func segmentChangedAction(sender: UISegmentedControl) {
+        let isLeft = sender.selectedSegmentIndex == 0 ? true : false
+        if let input = selectedROICalculator.input as? ROICrusherInput {
+            input.usePPM = !isLeft
+            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load new value
+            if let delegate = self.delegate {
+                delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
+            }
+        }
     }
     
     func toggleDown() {

@@ -20,7 +20,7 @@ class RoiCrusherDetailView: NibDesignable {
     init(frame: CGRect, input: ROICrusherInput) {
         super.init(frame: frame)
         
-        let fmt = NSNumberFormatter()
+        /*let fmt = NSNumberFormatter()
         fmt.numberStyle = .DecimalStyle
         
         let currentServices = input.services
@@ -35,9 +35,15 @@ class RoiCrusherDetailView: NibDesignable {
         maintenanceLabel.text = "$" + fmt.stringFromNumber(mt)!
         input.services = currentServices
         
-        totalLabel.text = "$" + fmt.stringFromNumber(rt + ct + mt)!
+        totalLabel.text = "$" + fmt.stringFromNumber(rt + ct + mt)!*/
     }
 
+    @IBAction func closeAction(sender: AnyObject) {
+        if let superview = self.superview {
+            self.removeFromSuperview()
+            superview.hidden = true
+        }
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

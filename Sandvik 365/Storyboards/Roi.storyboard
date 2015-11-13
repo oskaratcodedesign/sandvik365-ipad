@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -110,10 +110,10 @@
                                 </variation>
                             </view>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                <rect key="frame" x="270" y="420" width="60" height="160"/>
+                                <rect key="frame" x="270" y="460" width="60" height="120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="-20" y="0.0" width="100" height="160"/>
+                                        <rect key="frame" x="-20" y="0.0" width="100" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
                                             <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
@@ -125,6 +125,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qZr-V3-Kiy" secondAttribute="leading" constant="-20" id="1sb-dh-WZ9"/>
                                     <constraint firstItem="WUG-T4-S4q" firstAttribute="leading" secondItem="qZr-V3-Kiy" secondAttribute="leading" priority="999" constant="-20" id="3Kc-85-FGd"/>
@@ -210,7 +211,7 @@
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" constant="253" id="jLH-hh-A9k"/>
                             <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" id="mDV-5H-eGc"/>
                             <constraint firstAttribute="centerX" secondItem="qZr-V3-Kiy" secondAttribute="centerX" id="mNk-H7-DOX"/>
-                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="30" id="nVe-oA-dTr"/>
+                            <constraint firstItem="qZr-V3-Kiy" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="70" id="nVe-oA-dTr"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="qZr-V3-Kiy" secondAttribute="bottom" id="o9z-1G-BuD"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="oJX-Gv-NHR"/>
                             <constraint firstItem="qZr-V3-Kiy" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="pVR-1h-NMu"/>
@@ -319,19 +320,35 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo9-2z-IJg">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                             </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-UM-rE7">
+                                <rect key="frame" x="258" y="430" width="85" height="29"/>
+                                <segments>
+                                    <segment title="%"/>
+                                    <segment title="PPM"/>
+                                </segments>
+                                <color key="tintColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChangedAction:" destination="50B-Ue-aKk" eventType="valueChanged" id="Fx5-Hn-dF1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="top" secondItem="HWu-Hx-4hz" secondAttribute="top" id="9ed-YH-j8J"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="150" id="AQN-tR-1FJ"/>
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" id="AWt-uf-24Y"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="leading" secondItem="9rL-L1-Nkc" secondAttribute="leading" constant="180" id="Dsi-3U-iQE"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="IeY-2c-PRi"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="centerY" secondItem="HWu-Hx-4hz" secondAttribute="centerY" id="KaK-NV-21Z"/>
                             <constraint firstItem="3kV-3J-SM8" firstAttribute="top" secondItem="AJe-R7-krj" secondAttribute="bottom" constant="180" id="NCp-cA-oa5"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="leading" secondItem="HWu-Hx-4hz" secondAttribute="trailing" constant="32" id="NYv-o7-lzd"/>
                             <constraint firstItem="HWu-Hx-4hz" firstAttribute="centerX" secondItem="9rL-L1-Nkc" secondAttribute="centerX" id="Pkv-VT-yCJ"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="emg-Q1-pTs" secondAttribute="bottom" id="WLy-NF-cpM"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="top" secondItem="HWu-Hx-4hz" secondAttribute="bottom" constant="8" id="ZbX-PY-28N"/>
                             <constraint firstAttribute="centerY" secondItem="AJe-R7-krj" secondAttribute="centerY" id="hfS-qp-RQq"/>
                             <constraint firstAttribute="trailing" secondItem="AJe-R7-krj" secondAttribute="trailing" constant="150" id="i6g-AU-JYK"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="top" secondItem="gU5-dX-sM8" secondAttribute="bottom" constant="160" id="mCE-gg-UZ9"/>
+                            <constraint firstItem="ln5-UM-rE7" firstAttribute="centerX" secondItem="HWu-Hx-4hz" secondAttribute="centerX" id="oE0-qC-Pwx"/>
                             <constraint firstAttribute="centerX" secondItem="AJe-R7-krj" secondAttribute="centerX" id="s2B-7T-FgV"/>
                             <constraint firstItem="uo9-2z-IJg" firstAttribute="centerX" secondItem="AJe-R7-krj" secondAttribute="centerX" id="xCM-OB-vHg"/>
                             <constraint firstItem="AJe-R7-krj" firstAttribute="height" secondItem="9rL-L1-Nkc" secondAttribute="height" multiplier="0.3" id="xyl-Z9-d4S"/>
@@ -341,6 +358,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mCE-gg-UZ9"/>
+                                <exclude reference="9ed-YH-j8J"/>
+                                <exclude reference="KaK-NV-21Z"/>
+                                <exclude reference="NYv-o7-lzd"/>
                                 <exclude reference="NCp-cA-oa5"/>
                             </mask>
                         </variation>
@@ -348,6 +368,7 @@
                     <connections>
                         <outlet property="containerView" destination="AJe-R7-krj" id="rWD-Bz-GQM"/>
                         <outlet property="containerViewCenterY" destination="hfS-qp-RQq" id="LWI-GR-ycS"/>
+                        <outlet property="percentPPMControl" destination="ln5-UM-rE7" id="FhS-W7-frU"/>
                         <outlet property="spinnerScrollView" destination="uo9-2z-IJg" id="f1K-bS-RB7"/>
                     </connections>
                 </viewController>
@@ -371,18 +392,18 @@
                                 <rect key="frame" x="102" y="150" width="396" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-73-rNl">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="46"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="95" y="0.0" width="119" height="48"/>
+                                                <rect key="frame" x="27" y="0.0" width="192" height="46"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-CD-ogG">
-                                                <rect key="frame" x="219" y="3" width="43" height="42"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-CD-ogG">
+                                                <rect key="frame" x="219" y="3" width="0.0" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="3UL-gw-dgA"/>
                                                 </constraints>
@@ -396,7 +417,7 @@ PROFIT BY UP TO</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-Yh-3ka">
-                                                <rect key="frame" x="280" y="5" width="111" height="38"/>
+                                                <rect key="frame" x="280" y="5" width="111" height="36"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="SEE DETAILS">
@@ -408,7 +429,7 @@ PROFIT BY UP TO</string>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX1-EB-e3F">
-                                                <rect key="frame" x="351" y="5" width="40" height="38"/>
+                                                <rect key="frame" x="351" y="5" width="40" height="36"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="31"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="X">
@@ -426,6 +447,7 @@ PROFIT BY UP TO</string>
                                             <constraint firstAttribute="bottom" secondItem="TX1-EB-e3F" secondAttribute="bottom" constant="5" id="2Si-BS-ziG"/>
                                             <constraint firstItem="jt7-CD-ogG" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" constant="3" id="6AP-qY-p5E"/>
                                             <constraint firstAttribute="bottom" secondItem="6tO-Bv-YgK" secondAttribute="bottom" id="7S0-BF-Mvl"/>
+                                            <constraint firstItem="6tO-Bv-YgK" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="27" id="Cip-CK-wqq"/>
                                             <constraint firstItem="NFb-Yh-3ka" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" constant="5" id="Dsd-0G-b12"/>
                                             <constraint firstItem="6tO-Bv-YgK" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="50" id="ErG-7b-bqb"/>
                                             <constraint firstItem="6tO-Bv-YgK" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="top" id="KcO-jG-wLC"/>
@@ -436,7 +458,7 @@ PROFIT BY UP TO</string>
                                             <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="x5q-73-rNl" secondAttribute="leading" constant="174" id="c9C-G8-72q"/>
                                             <constraint firstAttribute="trailing" secondItem="NFb-Yh-3ka" secondAttribute="trailing" constant="5" id="hDa-19-M1K"/>
                                             <constraint firstAttribute="bottom" secondItem="NFb-Yh-3ka" secondAttribute="bottom" constant="5" id="oGm-Rv-2wA"/>
-                                            <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="6tO-Bv-YgK" secondAttribute="trailing" constant="5" id="pL3-Bu-1Tn"/>
+                                            <constraint firstItem="jt7-CD-ogG" firstAttribute="leading" secondItem="6tO-Bv-YgK" secondAttribute="trailing" id="pL3-Bu-1Tn"/>
                                             <constraint firstAttribute="trailing" secondItem="TX1-EB-e3F" secondAttribute="trailing" constant="5" id="uHT-yc-Xy6"/>
                                         </constraints>
                                         <variation key="default">
@@ -449,13 +471,13 @@ PROFIT BY UP TO</string>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nou-UF-7fh">
-                                        <rect key="frame" x="0.0" y="48" width="396" height="252"/>
+                                        <rect key="frame" x="0.0" y="45.5" width="396" height="254"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-ed-AHq">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="252"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="254"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDu-fd-XVR">
-                                                        <rect key="frame" x="0.0" y="23" width="197" height="27"/>
+                                                        <rect key="frame" x="0.0" y="24" width="197" height="27"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="RAMP-UP SERVICES">
@@ -467,7 +489,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                        <rect key="frame" x="0.0" y="59" width="197" height="42"/>
+                                                        <rect key="frame" x="0.0" y="60" width="197" height="41.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                         </constraints>
@@ -512,7 +534,7 @@ IAo
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                        <rect key="frame" x="0.0" y="109" width="197" height="42"/>
+                                                        <rect key="frame" x="0.0" y="111" width="197" height="41.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                         </constraints>
@@ -539,6 +561,31 @@ PLANNING SERVICES</string>
                                                             <action selector="maintenanceAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="Nwu-uV-aBQ"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-FB-ind" userLabel="MAINTENANCE PLANNING SERVICES">
+                                                        <rect key="frame" x="0.0" y="176" width="197" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="27" id="eSj-Qf-Kjp"/>
+                                                        </constraints>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="PROTECTIVE SERVICES">
+                                                                    <attributes>
+                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <font key="NSFont" size="13" name="AktivGroteskCorp-Regular"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="eSj-Qf-Kjp"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="protectiveAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="wfY-Rs-SzB"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -549,12 +596,15 @@ PLANNING SERVICES</string>
                                                     <constraint firstItem="ndL-Cx-29I" firstAttribute="top" secondItem="N4N-Vd-EON" secondAttribute="bottom" constant="8" id="Jey-oe-0Un"/>
                                                     <constraint firstAttribute="bottom" secondItem="N4N-Vd-EON" secondAttribute="bottom" multiplier="5:2" id="Kat-oX-2Zf"/>
                                                     <constraint firstAttribute="bottom" secondItem="TDu-fd-XVR" secondAttribute="bottom" multiplier="5:1" id="Px7-js-KOG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HUP-FB-ind" secondAttribute="trailing" id="Xei-jv-P59"/>
                                                     <constraint firstItem="ndL-Cx-29I" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="bXh-vv-fi3"/>
+                                                    <constraint firstItem="HUP-FB-ind" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="hJQ-Te-iQv"/>
                                                     <constraint firstAttribute="trailing" secondItem="TDu-fd-XVR" secondAttribute="trailing" id="jMR-bi-m4i"/>
                                                     <constraint firstAttribute="bottom" secondItem="ndL-Cx-29I" secondAttribute="bottom" multiplier="5:3" id="l32-Nt-BOt"/>
                                                     <constraint firstItem="N4N-Vd-EON" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TDu-fd-XVR" secondAttribute="bottom" constant="8" id="omb-Jz-dix"/>
                                                     <constraint firstItem="TDu-fd-XVR" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="qsM-hI-DWF"/>
                                                     <constraint firstItem="N4N-Vd-EON" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="leading" id="tnM-Cn-DKV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HUP-FB-ind" secondAttribute="bottom" multiplier="5:4" id="xKJ-Ws-TdO"/>
                                                     <constraint firstItem="ndL-Cx-29I" firstAttribute="top" secondItem="N4N-Vd-EON" secondAttribute="bottom" constant="8" id="zm5-Ng-Uaf"/>
                                                 </constraints>
                                                 <variation key="default">
@@ -568,28 +618,28 @@ PLANNING SERVICES</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF" customClass="RoiGraphView" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="197" y="0.0" width="199" height="252"/>
+                                                <rect key="frame" x="197" y="0.0" width="149" height="254"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-bi-gzk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="252"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="254"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nij-QE-8gC">
-                                                                <rect key="frame" x="22" y="0.0" width="3" height="230"/>
+                                                                <rect key="frame" x="23" y="0.0" width="2" height="232"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="3" id="8bK-QH-PdA"/>
+                                                                    <constraint firstAttribute="width" constant="2" id="8bK-QH-PdA"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-G4-qjC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="12"/>
-                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-G4-qjC">
+                                                                <rect key="frame" x="-10" y="0.0" width="35" height="14"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="PD2-G4-qjC" firstAttribute="leading" secondItem="mhD-bi-gzk" secondAttribute="leading" id="AoI-dC-XCg"/>
+                                                            <constraint firstItem="PD2-G4-qjC" firstAttribute="leading" secondItem="mhD-bi-gzk" secondAttribute="leading" constant="-10" id="AoI-dC-XCg"/>
                                                             <constraint firstAttribute="bottom" secondItem="nij-QE-8gC" secondAttribute="bottom" constant="22" id="EOQ-u5-sYR"/>
                                                             <constraint firstAttribute="trailing" secondItem="nij-QE-8gC" secondAttribute="trailing" id="FXQ-1g-eBZ"/>
                                                             <constraint firstAttribute="width" constant="25" id="R4T-Yi-gN1"/>
@@ -599,18 +649,25 @@ PLANNING SERVICES</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-gn-rMh">
-                                                        <rect key="frame" x="25" y="227" width="174" height="25"/>
+                                                        <rect key="frame" x="25" y="228.5" width="124" height="25"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-Ie-fWm">
-                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="3"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="3" id="SFu-1g-v1J"/>
+                                                                    <constraint firstAttribute="height" constant="2" id="SFu-1g-v1J"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                <rect key="frame" x="167" y="3" width="4" height="22"/>
-                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Ll-y1a">
+                                                                <rect key="frame" x="124" y="0.0" width="50" height="2"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="2" id="eb7-hE-a2C"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
+                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -622,12 +679,20 @@ PLANNING SERVICES</string>
                                                             <constraint firstItem="Z07-iL-ZYX" firstAttribute="top" secondItem="Clh-Ie-fWm" secondAttribute="bottom" id="W8j-lI-fZJ"/>
                                                             <constraint firstAttribute="trailing" secondItem="Clh-Ie-fWm" secondAttribute="trailing" id="gGW-7z-qij"/>
                                                             <constraint firstAttribute="height" constant="25" id="ggm-ps-DaI"/>
+                                                            <constraint firstItem="QsS-Ll-y1a" firstAttribute="top" secondItem="LiP-gn-rMh" secondAttribute="top" id="hgo-Ue-iwq"/>
                                                             <constraint firstAttribute="bottom" secondItem="Z07-iL-ZYX" secondAttribute="bottom" id="nj0-su-2ik"/>
                                                             <constraint firstAttribute="trailing" secondItem="Z07-iL-ZYX" secondAttribute="trailing" constant="3" id="nzN-tx-d3j"/>
+                                                            <constraint firstItem="Z07-iL-ZYX" firstAttribute="leading" secondItem="Clh-Ie-fWm" secondAttribute="trailing" id="rtQ-MX-CmL"/>
+                                                            <constraint firstItem="QsS-Ll-y1a" firstAttribute="leading" secondItem="Clh-Ie-fWm" secondAttribute="trailing" id="xbA-Ur-d72"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="nzN-tx-d3j"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
-                                                        <rect key="frame" x="25" y="20" width="174" height="207"/>
+                                                        <rect key="frame" x="25" y="20" width="124" height="209"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -655,7 +720,8 @@ PLANNING SERVICES</string>
                                             <constraint firstAttribute="bottom" secondItem="gTT-ed-AHq" secondAttribute="bottom" id="0Pr-3H-Seo"/>
                                             <constraint firstItem="gTT-ed-AHq" firstAttribute="top" secondItem="nou-UF-7fh" secondAttribute="top" id="DWU-f9-2OR"/>
                                             <constraint firstItem="IQE-cD-gCF" firstAttribute="leading" secondItem="nou-UF-7fh" secondAttribute="leading" constant="197" id="Fz9-2S-r6G"/>
-                                            <constraint firstAttribute="trailing" secondItem="IQE-cD-gCF" secondAttribute="trailing" id="Xj7-lj-Ytv"/>
+                                            <constraint firstAttribute="trailing" secondItem="QsS-Ll-y1a" secondAttribute="trailing" id="Ray-Oa-P7U"/>
+                                            <constraint firstAttribute="trailing" secondItem="IQE-cD-gCF" secondAttribute="trailing" constant="50" id="Xj7-lj-Ytv"/>
                                             <constraint firstItem="IQE-cD-gCF" firstAttribute="leading" secondItem="gTT-ed-AHq" secondAttribute="trailing" id="Xld-3u-G6b"/>
                                             <constraint firstItem="gTT-ed-AHq" firstAttribute="leading" secondItem="nou-UF-7fh" secondAttribute="leading" id="YOp-Ew-fJ6"/>
                                             <constraint firstItem="IQE-cD-gCF" firstAttribute="top" secondItem="nou-UF-7fh" secondAttribute="top" id="YdM-C0-avI"/>
@@ -668,9 +734,6 @@ PLANNING SERVICES</string>
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-U8-O1m">
-                                        <rect key="frame" x="0.0" y="48" width="396" height="252"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -678,13 +741,9 @@ PLANNING SERVICES</string>
                                     <constraint firstAttribute="trailing" secondItem="nou-UF-7fh" secondAttribute="trailing" id="8Mg-mP-VqA"/>
                                     <constraint firstItem="nou-UF-7fh" firstAttribute="top" secondItem="b6B-dn-Mx1" secondAttribute="top" id="Fhx-NM-GNW"/>
                                     <constraint firstAttribute="bottom" secondItem="x5q-73-rNl" secondAttribute="bottom" constant="195" id="Gsi-fF-oM0"/>
-                                    <constraint firstItem="1S0-U8-O1m" firstAttribute="leading" secondItem="b6B-dn-Mx1" secondAttribute="leading" id="N97-NH-QCG"/>
                                     <constraint firstItem="x5q-73-rNl" firstAttribute="leading" secondItem="b6B-dn-Mx1" secondAttribute="leading" id="OYV-Je-M1p"/>
-                                    <constraint firstAttribute="trailing" secondItem="1S0-U8-O1m" secondAttribute="trailing" id="Rfq-aT-F5P"/>
-                                    <constraint firstItem="1S0-U8-O1m" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="bottom" id="Wi3-92-hWe"/>
                                     <constraint firstAttribute="trailing" secondItem="x5q-73-rNl" secondAttribute="trailing" id="cZA-FR-9Ff"/>
                                     <constraint firstItem="nou-UF-7fh" firstAttribute="top" secondItem="x5q-73-rNl" secondAttribute="bottom" id="eJD-7e-lEk"/>
-                                    <constraint firstAttribute="bottom" secondItem="1S0-U8-O1m" secondAttribute="bottom" id="eZd-Ie-Wa4"/>
                                     <constraint firstAttribute="bottom" secondItem="nou-UF-7fh" secondAttribute="bottom" id="xtA-ja-vVe"/>
                                     <constraint firstItem="nou-UF-7fh" firstAttribute="leading" secondItem="b6B-dn-Mx1" secondAttribute="leading" id="yv9-f3-eY1"/>
                                 </constraints>
@@ -695,13 +754,21 @@ PLANNING SERVICES</string>
                                     </mask>
                                 </variation>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-U8-O1m">
+                                <rect key="frame" x="102" y="150" width="396" height="300"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="b6B-dn-Mx1" secondAttribute="height" multiplier="2" id="4sm-gt-18d"/>
+                            <constraint firstItem="1S0-U8-O1m" firstAttribute="height" secondItem="b6B-dn-Mx1" secondAttribute="height" id="6uS-BQ-sjV"/>
                             <constraint firstItem="b6B-dn-Mx1" firstAttribute="centerX" secondItem="1mi-rJ-RWT" secondAttribute="centerX" id="Dqi-xn-2ut"/>
+                            <constraint firstItem="1S0-U8-O1m" firstAttribute="leading" secondItem="b6B-dn-Mx1" secondAttribute="leading" id="JzQ-j5-bzy"/>
+                            <constraint firstItem="1S0-U8-O1m" firstAttribute="centerX" secondItem="1mi-rJ-RWT" secondAttribute="centerX" id="Mhs-Ui-O3m"/>
                             <constraint firstItem="b6B-dn-Mx1" firstAttribute="leading" secondItem="1mi-rJ-RWT" secondAttribute="leadingMargin" constant="82" id="Yx1-yb-zb1"/>
+                            <constraint firstItem="1S0-U8-O1m" firstAttribute="width" secondItem="b6B-dn-Mx1" secondAttribute="width" id="aJy-hV-9Z2"/>
                             <constraint firstItem="b6B-dn-Mx1" firstAttribute="top" secondItem="FfD-ES-uyX" secondAttribute="bottom" constant="160" id="dgF-Pd-m0H"/>
+                            <constraint firstItem="1S0-U8-O1m" firstAttribute="centerY" secondItem="1mi-rJ-RWT" secondAttribute="centerY" id="mDL-Bb-FNf"/>
                             <constraint firstItem="b6B-dn-Mx1" firstAttribute="centerY" secondItem="1mi-rJ-RWT" secondAttribute="centerY" id="qkJ-x1-tuO"/>
                         </constraints>
                         <variation key="default">
@@ -717,6 +784,7 @@ PLANNING SERVICES</string>
                         <outlet property="graphContainerView" destination="nou-UF-7fh" id="HE7-h1-Hcm"/>
                         <outlet property="maintenenceButton" destination="ndL-Cx-29I" id="U57-rk-TZ7"/>
                         <outlet property="profitLabel" destination="jt7-CD-ogG" id="bFU-aq-pjO"/>
+                        <outlet property="protectiveButton" destination="HUP-FB-ind" id="S2k-Yg-kQ1"/>
                         <outlet property="rampUpButton" destination="TDu-fd-XVR" id="OtC-WB-mo0"/>
                         <outlet property="roiGraphView" destination="IQE-cD-gCF" id="5Fm-NC-qHG"/>
                         <outlet property="seeDetailButton" destination="NFb-Yh-3ka" id="1pQ-dS-tDk"/>

@@ -13,7 +13,7 @@ class RoiGraphView: UIView {
     @IBOutlet weak var yGraph: UIView!
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
-    
+    private var currentCGPath: CGPathRef?
     var selectedROIInput: ROIInput! {
         didSet {
             drawGraphs()
@@ -23,8 +23,8 @@ class RoiGraphView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
-        addYInterValLines()
-        addXInterValLines()
+        //addYInterValLines()
+        //addXInterValLines()
         drawGraphs()
     }
     
@@ -45,7 +45,7 @@ class RoiGraphView: UIView {
             view.removeFromSuperview()
         }
         drawGraph(selectedROIInput.calculatedTotal(), color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
+        //drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
     }
     
     private func drawGraph(values: [Int], color: UIColor)
@@ -67,12 +67,15 @@ class RoiGraphView: UIView {
         }
         path.moveToPoint(CGPointMake(0, height))
         for value in values {
-            if value >= 0 {
+            if value > 0 {
                 let y = value == 0 ? height : height / selectedROIInput.graphScale() - (CGFloat(value) * yPValue)
                 path.addLineToPoint(CGPointMake(x, y))
             }
-            else {
+            else if value == 0 {
                 path.moveToPoint(CGPointMake(x+xSpace, height))//move forward so we can produce a straight line once value is changed
+            }
+            else{
+                break
             }
             x += xSpace
         }
@@ -80,6 +83,7 @@ class RoiGraphView: UIView {
         path.closePath()
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = path.CGPath
+        currentCGPath = path.CGPath
         shapeLAyer.fillColor = color.CGColor
         let view = UIView()
         view.layer.addSublayer(shapeLAyer)
@@ -87,8 +91,19 @@ class RoiGraphView: UIView {
         
     }
     
+    func addTextToGraph(text: NSAttributedString) {
+        let frame = CGPathGetPathBoundingBox(currentCGPath)
+        
+        let label = UILabel(frame: frame)
+        label.attributedText = text
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = .Center
+        label.numberOfLines = 0
+        graphView.addSubview(label)
+    }
+    
 
-    private func addYInterValLines() {
+    /*private func addYInterValLines() {
         for view in yGraph.subviews {
             view.removeFromSuperview()
         }
@@ -101,20 +116,20 @@ class RoiGraphView: UIView {
             yGraph.addSubview(imageView)
             y += space
         }
-    }
+    }*/
     
-    private func addXInterValLines() {
+    /*private func addXInterValLines() {
         for view in xGraph.subviews {
             view.removeFromSuperview()
         }
         let lenght = xGraph.bounds.size.width
-        let space = lenght*0.1
+        let space = lenght/12//1year
         var x = space
-        while x < lenght-2 {
-            let imageView = UIImageView(frame: CGRectMake(x, 0, 2, 10))
+        //while x < lenght-2 {
+            let imageView = UIImageView(frame: CGRectMake(x, 0, 1, 12))
             imageView.backgroundColor = UIColor.whiteColor()
             xGraph.addSubview(imageView)
             x += space
-        }
-    }
+        //}
+    }*/
 }
