@@ -114,7 +114,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         
         if let text = content.text {
             label = leadLabel(text)
-            addViewAndConstraints(label, toView: prevView, topConstant: topConstant, leftConstant: 160)
+            addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
         }
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -208,7 +208,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 15.0)
         label.textColor = UIColor.whiteColor()
-        label.textAlignment = .Center
+        //label.textAlignment = .Center
         label.text = string
         return label
     }
