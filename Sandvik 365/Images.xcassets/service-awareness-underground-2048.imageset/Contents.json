@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "service awareness underground-1.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "service-awareness-underground-2048.png"
+      "filename" : "service awareness underground.jpg",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
