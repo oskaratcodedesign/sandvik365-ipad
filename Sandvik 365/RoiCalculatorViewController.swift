@@ -181,7 +181,7 @@ class RoiCalculatorViewController: UIViewController {
                 setProfitLabelFromInput()
             }
             else {
-                profitLabel.text = "0USD"
+                profitLabel.text = formatToUSD(0)
             }
             
         }
@@ -189,11 +189,14 @@ class RoiCalculatorViewController: UIViewController {
     
     private func setProfitLabelFromInput() {
         let sum = selectedROICalculator.input.total()
-        
+        profitLabel.text = formatToUSD(sum)
+    }
+    
+    private func formatToUSD(number: NSNumber) -> String {
         let fmt = NSNumberFormatter()
-        fmt.numberStyle = .DecimalStyle
-        
-        profitLabel.text = fmt.stringFromNumber(sum)! + "USD"
+        fmt.numberStyle = .CurrencyStyle
+        fmt.currencyCode = "USD"
+        return fmt.stringFromNumber(number)!
     }
     
     private func setBorderOnDetailButton() {
