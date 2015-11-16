@@ -28,7 +28,9 @@ class MainMenuItemView : NibDesignable {
         didSet {
             self.businessType = BusinessType(rawValue: partBridgeType.unsignedLongValue)
             self.button.imageView?.contentMode = .ScaleAspectFill
-            self.button.setImage(UIImage(named: self.businessType.backgroundImageName), forState: .Normal)
+            if let image = UIImage(named: self.businessType.backgroundImageName + "-slice") {
+                self.button.setImage(image, forState: .Normal)
+            }
         }
     }
     
