@@ -14,26 +14,25 @@ class RoiInputView: NibDesignable, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     
     func loadNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Load), fontSize: self.textField.font!.pointSize)
+        setText(itemIndex, roiInput: roiInput, change: .Load)
     }
     
     func increaseNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Increase), fontSize: self.textField.font!.pointSize)
+        setText(itemIndex, roiInput: roiInput, change: .Increase)
     }
     
     func decreaseNumber(itemIndex: Int, roiInput: ROIInput) {
-        self.textField.attributedText = RoiInputView.changeNSAttributedStringFontSize(roiInput.changeInput(itemIndex, change: .Decrease), fontSize: self.textField.font!.pointSize)
+        setText(itemIndex, roiInput: roiInput, change: .Decrease)
     }
     
-    static func changeNSAttributedStringFontSize(attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {
-        let mutString : NSMutableAttributedString = NSMutableAttributedString(attributedString: attrString);
-        mutString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, mutString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
-            if let oldFont = value as? UIFont {
-                let newFont = oldFont.fontWithSize(fontSize)
-                mutString.removeAttribute(NSFontAttributeName, range: range)
-                mutString.addAttribute(NSFontAttributeName, value: newFont, range: range)
-            }
+    private func setText(itemIndex: Int, roiInput: ROIInput, change: ChangeInput) {
+        let text = roiInput.changeInput(itemIndex, change: change)
+        let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: self.textField.font!.pointSize)
+        if let abr = roiInput.getInputAbbreviation(itemIndex) {
+            self.textField.attributedText = abr.addAbbreviation(text, valueFont: font!, abbreviationFont: UIFont(name: "AktivGroteskCorp-Light", size: self.textField.font!.pointSize)!)
         }
-        return mutString
+        else {
+            self.textField.attributedText = NSAttributedString(string: text, attributes: [NSFontAttributeName:font!])
+        }
     }
 }

@@ -177,9 +177,22 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     func roiValueDidChange(itemIndex: Int, object: AnyObject) {
         if itemIndex < selectionButtons.count {
             let selectedButton = selectionButtons[itemIndex]
-            let attString = RoiInputView.changeNSAttributedStringFontSize((object as? NSAttributedString)!, fontSize: (selectedButton.button.titleLabel?.font.pointSize)!)
+            //change to button font size:
+            let attString = changeNSAttributedStringFontSize((object as? NSAttributedString)!, fontSize: (selectedButton.button.titleLabel?.font.pointSize)!)
             selectedButton.button.setAttributedTitle(attString, forState: .Normal)
         }
+    }
+    
+    private func changeNSAttributedStringFontSize(attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {
+        let mutString : NSMutableAttributedString = NSMutableAttributedString(attributedString: attrString);
+        mutString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, mutString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
+            if let oldFont = value as? UIFont {
+                let newFont = oldFont.fontWithSize(fontSize)
+                mutString.removeAttribute(NSFontAttributeName, range: range)
+                mutString.addAttribute(NSFontAttributeName, value: newFont, range: range)
+            }
+        }
+        return mutString
     }
     
     override func didReceiveMemoryWarning() {

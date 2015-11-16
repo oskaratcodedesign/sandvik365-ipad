@@ -168,9 +168,25 @@ class ROICrusherInput: ROIInput {
             return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)*/
         }
     }
+    
+    override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .Operation:
+            return nil
+        case .OreGrade:
+            return usePPM ? InputAbbreviation.PPM : InputAbbreviation.Percent
+        case .Capacity:
+            return InputAbbreviation.MillionTonPerDay
+        case .RecoveryRate:
+            return InputAbbreviation.Percent
+        case .OrePrice:
+            return usePPM ? InputAbbreviation.USDOunce : InputAbbreviation.USDton
+        }
+    }
 
     
-    override func changeInput(atIndex :Int, change :ChangeInput) -> NSAttributedString {
+    override func changeInput(atIndex :Int, change :ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
         case .Operation:
@@ -184,9 +200,7 @@ class ROICrusherInput: ROIInput {
                 }
                 self.services.removeAll() //clear when operation change
             }
-            let typeString: String = (operation.value as! OperationType).rawValue
-            let attrString = NSMutableAttributedString(string: typeString, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
+            return (operation.value as! OperationType).rawValue
         case .OreGrade:
             if change != ChangeInput.Load {
                 var value = oreGrade.value as! Double
@@ -205,14 +219,10 @@ class ROICrusherInput: ROIInput {
                 }
             }
             var value = oreGrade.value as! Double
-            var valueType: String = "%"
             if usePPM {
                 value = value * 10000
-                valueType = "ppm"
             }
-            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
+            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value) ?? ""
         case .Capacity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -220,10 +230,7 @@ class ROICrusherInput: ROIInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-            let valueType: String = "m t/d"
-            let attrString = NSMutableAttributedString(string: String(capacity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
+            return String(capacity.value as! UInt)
         /*case .FinishedProduct:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -242,10 +249,7 @@ class ROICrusherInput: ROIInput {
                     recoveryRate = .RecoveryRate(value)
                 }
             }
-            let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: (nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double) ?? "") + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
+            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double) ?? ""
         case .OrePrice:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -253,10 +257,7 @@ class ROICrusherInput: ROIInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-            let valueType: String = usePPM ? "USD/oz" : "USD/t"
-            let attrString = NSMutableAttributedString(string: String(orePrice.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
+            return String(orePrice.value as! UInt)
         /*case .ProcessingCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)

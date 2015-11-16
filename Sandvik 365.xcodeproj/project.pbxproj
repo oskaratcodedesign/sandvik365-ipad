@@ -57,6 +57,8 @@
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
+		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
+		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; };
 		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; };
@@ -156,6 +158,7 @@
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
+		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
 		F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
@@ -208,6 +211,7 @@
 		48FCED531B78C01B002D45A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */,
 				F7C05FF21BF9D4F100E09456 /* Roi */,
 				F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */,
 				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
@@ -631,6 +635,7 @@
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,
+				F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FCED571B78C907002D45A0 /* ROICalculatorTests.swift in Sources */,
+				F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */,
 				48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */,
 				48FCED581B78CBCB002D45A0 /* ROICalculator.swift in Sources */,
 			);
