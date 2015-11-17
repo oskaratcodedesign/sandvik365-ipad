@@ -87,12 +87,7 @@ class ROICrusherInput: ROICalculatorInput {
     }
     
     override func allTitles() -> [String] {
-        var allTitles = [String]()
-        let all = allInputs()
-        for v in all {
-            allTitles.append(v.title)
-        }
-        return allTitles
+        return allInputs().flatMap({ $0.title })
     }
     
     override func setInput(atIndex :Int, stringValue :String) -> Bool {

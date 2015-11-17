@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-enum ChangeInput{
-    case Increase
-    case Decrease
-    case Load
+enum ChangeInput: Int{
+    case Increase = 1
+    case Decrease = -1
+    case Load = 0
 }
 
 enum InputAbbreviation: String {
@@ -46,10 +46,12 @@ class SelectionInput {
         preconditionFailure("This method must be overridden")
     }
     
+    /* returns false if setting input from string fails */
     func setInput(atIndex :Int, stringValue :String) -> Bool {
         preconditionFailure("This method must be overridden")
     }
     
+    /* returns nil if input cant be modified */
     func getInputAsString(atIndex :Int) -> String? {
         preconditionFailure("This method must be overridden")
     }
