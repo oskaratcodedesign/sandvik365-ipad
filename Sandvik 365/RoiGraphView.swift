@@ -14,7 +14,7 @@ class RoiGraphView: UIView {
     @IBOutlet weak var xGraph: UIView!
     @IBOutlet weak var graphView: UIView!
     private var currentCGPath: CGPathRef?
-    var selectedROIInput: ROIInput! {
+    var selectedROIInput: ROICalculatorInput! {
         didSet {
             drawGraphs()
         }

@@ -88,7 +88,7 @@ enum ROIRockDrillInputValue {
     }
 }
 
-class ROIRockDrillInput: ROIInput {
+class ROIRockDrillInput: ROICalculatorInput {
     var typeOfOre: ROIRockDrillInputValue = .TypeOfOre(OreType.Gold)
     var commodityPrice: ROIRockDrillInputValue = .CommodityPrice(800)
     var oreConcentration: ROIRockDrillInputValue = .OreConcentration(10)

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ROIInput: SelectionInput {
+class ROICalculatorInput: SelectionInput {
     
     func total() -> Int {
         preconditionFailure("This method must be overridden")
@@ -29,13 +29,5 @@ class ROIInput: SelectionInput {
     
     func graphScale() -> CGFloat {
         preconditionFailure("This method must be overridden")
-    }
-}
-
-class ROICalculator {
-    let input: ROIInput
-    
-    init(input: ROIInput) {
-        self.input = input
     }
 }

@@ -20,7 +20,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     @IBOutlet weak var percentPPMControl: UISegmentedControl!
     
     var itemIndex: Int = 0
-    var selectedROICalculator: ROICalculator!
+    var selectedInput: SelectionInput!
     var roiContentView: RoiInputView!
     var toggleTimer: NSTimer?
     
@@ -35,7 +35,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         let numberView = RoiInputView(frame: containerView.bounds)
         containerView.addSubview(numberView)
         
-        numberView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)
+        numberView.loadNumber(itemIndex, selectionInput: selectedInput)
         numberView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
         roiContentView = numberView;
@@ -51,7 +51,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         percentPPMControl.hidden = true
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             switch input.allInputs()[itemIndex] {
             case .OreGrade:
                 percentPPMControl.hidden = false
@@ -61,19 +61,19 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if !selectedROICalculator.input.setInput(itemIndex, stringValue: textField.text!) {
+        if !selectedInput.setInput(itemIndex, stringValue: textField.text!) {
             let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .Alert)
             
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
             }
             alertController.addAction(okAction)
             
-            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load old value
+            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load old value
             // Present Alert Controller
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         else {
-            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load new value
+            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
             }
@@ -87,7 +87,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if let value = selectedROICalculator.input.getInputAsString(itemIndex) {
+        if let value = selectedInput.getInputAsString(itemIndex) {
             roiContentView.textField.text = value
             return true
         }
@@ -95,7 +95,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func handleTap(recognizer: UIGestureRecognizer) {
-        if let value = selectedROICalculator.input.getInputAsString(itemIndex) {
+        if let value = selectedInput.getInputAsString(itemIndex) {
             roiContentView.textField.text = value
             roiContentView.textField.becomeFirstResponder()
         }
@@ -161,9 +161,9 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
    
     @IBAction func segmentChangedAction(sender: UISegmentedControl) {
         let isLeft = sender.selectedSegmentIndex == 0 ? true : false
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             input.usePPM = !isLeft
-            roiContentView.loadNumber(itemIndex, roiInput: selectedROICalculator.input)//load new value
+            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
             }
@@ -172,7 +172,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     
     func toggleDown() {
         if let numberView = roiContentView{
-            numberView.decreaseNumber(itemIndex, roiInput: selectedROICalculator.input)
+            numberView.decreaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: numberView.textField.attributedText!)
             }
@@ -187,7 +187,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     
     func toggleUp() {
         if let numberView = roiContentView{
-            numberView.increaseNumber(itemIndex, roiInput: selectedROICalculator.input)
+            numberView.increaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: numberView.textField.attributedText!)
             }

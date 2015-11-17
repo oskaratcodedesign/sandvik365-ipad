@@ -69,7 +69,7 @@ enum ROICrusherInputValue {
     }
 }
 
-class ROICrusherInput: ROIInput {
+class ROICrusherInput: ROICalculatorInput {
     var operation: ROICrusherInputValue = .Operation(OperationType.New)
     var oreGrade: ROICrusherInputValue = .OreGrade(0.60) //%
     var capacity: ROICrusherInputValue = .Capacity(1200) //m t/hr

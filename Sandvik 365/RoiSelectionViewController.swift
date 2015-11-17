@@ -24,11 +24,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     private var viewControllers: [UIViewController]! = [UIViewController]()
     private var titles = [String]()
     private var hasVisitedLastPage: Bool = false
-    var selectedROICalculator: ROICalculator!
+    var selectedInput: SelectionInput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titles = selectedROICalculator.input.allTitles()
+        titles = selectedInput.allTitles()
         titles.append(NSLocalizedString("How it plays out for you", comment: ""))
         loadPageController()
         
@@ -160,14 +160,16 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     private func getItemController(itemIndex: Int) -> UIViewController? {
         
         if itemIndex == titles.count-1 {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCalculatorViewController") as! RoiCalculatorViewController
-            pageItemController.selectedROICalculator = selectedROICalculator
-            return pageItemController
+            if let input = selectedInput as? ROICalculatorInput {
+                let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCalculatorViewController") as! RoiCalculatorViewController
+                pageItemController.selectedInput = input
+                return pageItemController
+            }
         }
         else if itemIndex < titles.count-1 {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
-            pageItemController.selectedROICalculator = selectedROICalculator
+            pageItemController.selectedInput = selectedInput
             pageItemController.delegate = self
             return pageItemController
         }

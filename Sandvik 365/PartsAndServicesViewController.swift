@@ -57,7 +57,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                vc.selectedROICalculator = self.selectedPartsAndServices.businessType.roiCalculator
+                vc.selectedInput = self.selectedPartsAndServices.businessType.roiCalculatorInput
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, self.selectedPartsAndServices.businessType.roiCalculatorTitle!.uppercaseString)
             }
         }
