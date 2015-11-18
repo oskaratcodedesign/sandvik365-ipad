@@ -14,7 +14,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
     @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var selectionButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var viewResultButton: UIButton!
@@ -28,8 +28,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titles = selectedInput.allTitles()
-        titles.append(NSLocalizedString("How it plays out for you", comment: ""))
+        setupDependingOnInput()
         loadPageController()
         
         view.bringSubviewToFront(selectionContainer)
@@ -38,11 +37,28 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         view.bringSubviewToFront(viewResultButton)
         
         selectionButtons.append(currentSelectionButton)
-        currentSelectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+        currentSelectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("handleButtonSelect:")))
         currentSelectionButton.fillDot()
         prevButton.hidden = true
         loadSelectionButtons()
         titleLabel.text = titles[0].uppercaseString
+    }
+    
+    private func setupDependingOnInput(){
+        
+        titles = selectedInput.allTitles()
+        
+        switch selectedInput {
+        case is ROICalculatorInput:
+            titles.append(NSLocalizedString("How it plays out for you", comment: ""))
+            
+            self.selectionButtonWidthConstraint.constant = self.view.bounds.size.width/CGFloat(titles.count)
+        case is FireSuppressionInput:
+            titles.append(NSLocalizedString("RECOMMENDED FIRE SUPPRESSION SYSTEM", comment: ""))
+            self.selectionButtonWidthConstraint.constant = self.view.bounds.size.width/CGFloat(titles.count)
+        default:
+            break
+        }
     }
 
     @IBAction func nextAction(sender: UIButton) {
@@ -74,9 +90,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
-    func handleButtonSelect(button :UIButton) {
-        if let index = selectionButtons.indexOf(button.superview?.superview as! RoiSelectionButton) {
-            goToPage(index)
+    func handleButtonSelect(recognizer: UIGestureRecognizer) {
+        if let selectionButton = recognizer.view as? RoiSelectionButton {
+            if selectionButton.isSelected(), let index = selectionButtons.indexOf(selectionButton) {
+                goToPage(index)
+            }
         }
     }
     
@@ -143,7 +161,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         
         let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: self.widthConstraint.constant)
+        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: self.selectionButtonWidthConstraint.constant)
         let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         
@@ -153,7 +171,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         NSLayoutConstraint.deactivateConstraints([currentTrailingConstraint])
         NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
         currentTrailingConstraint = trailConstraint
-        selectionButton.button.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+        selectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("handleButtonSelect:")))
         selectionButtons.append(selectionButton)
         return selectionButton
     }

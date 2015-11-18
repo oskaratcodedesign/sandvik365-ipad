@@ -232,14 +232,14 @@
                                 <exclude reference="mDV-5H-eGc"/>
                                 <exclude reference="uCJ-Ij-oYs"/>
                                 <exclude reference="vFp-BX-NJf"/>
+                                <exclude reference="5ej-Ys-dRs"/>
+                                <exclude reference="xIU-hn-3ic"/>
                                 <exclude reference="9Nl-xM-Gh0"/>
                                 <exclude reference="SKG-cQ-HH8"/>
                                 <exclude reference="jLH-hh-A9k"/>
                                 <exclude reference="pVR-1h-NMu"/>
                                 <exclude reference="wlF-jD-baP"/>
                                 <exclude reference="ylZ-8O-nRS"/>
-                                <exclude reference="5ej-Ys-dRs"/>
-                                <exclude reference="xIU-hn-3ic"/>
                                 <exclude reference="o9z-1G-BuD"/>
                                 <exclude reference="oJX-Gv-NHR"/>
                             </mask>
@@ -250,10 +250,10 @@
                         <outlet property="currentTrailingConstraint" destination="EHF-CQ-P1W" id="8Ik-d7-R0I"/>
                         <outlet property="nextButton" destination="tVa-ib-G4a" id="9fQ-5J-rJv"/>
                         <outlet property="prevButton" destination="d7a-fs-vKI" id="5A9-Pu-LRL"/>
+                        <outlet property="selectionButtonWidthConstraint" destination="oxj-98-Ocg" id="i2m-C2-0uz"/>
                         <outlet property="selectionContainer" destination="qZr-V3-Kiy" id="aBs-NT-bMR"/>
                         <outlet property="titleLabel" destination="xsz-tO-ijf" id="srP-di-3Vg"/>
                         <outlet property="viewResultButton" destination="Jep-bc-FmT" id="e9f-YC-Zp8"/>
-                        <outlet property="widthConstraint" destination="oxj-98-Ocg" id="gQP-s5-9Ke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifj-vo-1CP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -296,7 +296,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emg-Q1-pTs">
-                                <rect key="frame" x="268" y="178" width="64" height="32"/>
+                                <rect key="frame" x="268" y="178" width="65" height="32"/>
                                 <state key="normal" image="sandvik_arrow_up"/>
                                 <connections>
                                     <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchDragOutside" id="1Og-GP-1NL"/>
@@ -307,7 +307,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWu-Hx-4hz">
-                                <rect key="frame" x="268" y="390" width="64" height="32"/>
+                                <rect key="frame" x="268" y="390" width="65" height="32"/>
                                 <state key="normal" image="sandvik_arrow_down"/>
                                 <connections>
                                     <action selector="releaseAction:" destination="50B-Ue-aKk" eventType="touchUpOutside" id="Pi2-P5-S3s"/>
@@ -471,7 +471,7 @@ PROFIT BY UP TO</string>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nou-UF-7fh">
-                                        <rect key="frame" x="0.0" y="45.5" width="396" height="254"/>
+                                        <rect key="frame" x="0.0" y="46" width="396" height="254"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-ed-AHq">
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="254"/>
@@ -489,7 +489,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                        <rect key="frame" x="0.0" y="60" width="197" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="197" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                         </constraints>
@@ -533,8 +533,8 @@ IAo
                                                             <action selector="conditionAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="49t-SI-cu7"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                        <rect key="frame" x="0.0" y="111" width="197" height="41.5"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
+                                                        <rect key="frame" x="0.0" y="111" width="197" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                         </constraints>
@@ -649,7 +649,7 @@ PLANNING SERVICES</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-gn-rMh">
-                                                        <rect key="frame" x="25" y="228.5" width="124" height="25"/>
+                                                        <rect key="frame" x="25" y="229" width="124" height="25"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-Ie-fWm">
                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>
@@ -666,7 +666,7 @@ PLANNING SERVICES</string>
                                                                 </constraints>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
+                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -797,10 +797,10 @@ PLANNING SERVICES</string>
         </scene>
     </scenes>
     <resources>
-        <image name="sandvik_arrow_down" width="64" height="32"/>
+        <image name="sandvik_arrow_down" width="65" height="32"/>
         <image name="sandvik_arrow_left" width="32" height="64"/>
         <image name="sandvik_arrow_right" width="32" height="64"/>
-        <image name="sandvik_arrow_up" width="64" height="32"/>
+        <image name="sandvik_arrow_up" width="65" height="32"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
