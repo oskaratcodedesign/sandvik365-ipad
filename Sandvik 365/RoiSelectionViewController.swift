@@ -93,7 +93,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
         
         for i in 0..<titles.count {
-            viewControllers.append(getItemController(i)!)
+            if let vc = getItemController(i) {
+                viewControllers.append(vc)
+            }
         }
         let startingViewControllers: [UIViewController] = [viewControllers[0]]
         pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)

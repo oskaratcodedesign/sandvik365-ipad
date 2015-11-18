@@ -97,6 +97,15 @@ enum BusinessType: UInt {
         }
     }
     
+    var fireSuppresionTool: FireSuppressionInput? {
+        switch self {
+        case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting:
+            return nil
+        case UndergroundLoadingAndHauling:
+            return FireSuppressionInput(json: nil)
+        }
+    }
+    
     var fireSuppresionTitle: String? {
         switch self {
         case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting:
@@ -224,6 +233,9 @@ class PartsAndServices {
         
         if let roiTitle = self.businessType.roiCalculatorTitle {
             titles.append(roiTitle.uppercaseString)
+        }
+        if let fireSuppressionTitle = self.businessType.fireSuppresionTitle {
+            titles.append(fireSuppressionTitle.uppercaseString)
         }
         for mp in jsonParts.allParts {
             titles.append(mp.title.uppercaseString)

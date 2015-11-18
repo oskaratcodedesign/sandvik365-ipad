@@ -59,6 +59,7 @@
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
 		F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32921BFB322500CB3654 /* FireSuppressionInput.swift */; };
+		F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */ = {isa = PBXBuildFile; fileRef = F79E32941BFBABF400CB3654 /* firesuppression.json */; };
 		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
@@ -162,6 +163,7 @@
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
 		F79E32921BFB322500CB3654 /* FireSuppressionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionInput.swift; sourceTree = "<group>"; };
+		F79E32941BFBABF400CB3654 /* firesuppression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firesuppression.json; sourceTree = "<group>"; };
 		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
 				F70867B71BCF854400033AB5 /* sandvik365.json */,
+				F79E32941BFBABF400CB3654 /* firesuppression.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
 				F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */,
+				F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */,
 				F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */,
