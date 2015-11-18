@@ -57,7 +57,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             break
         }
         
-        self.selectionButtonWidthConstraint = NSLayoutConstraint(item: currentSelectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count), constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: currentSelectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count-1), constant: 0)
+        NSLayoutConstraint.deactivateConstraints([selectionButtonWidthConstraint])
+        NSLayoutConstraint.activateConstraints([widthConstraint])
     }
 
     @IBAction func nextAction(sender: UIButton) {
@@ -160,7 +162,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         
         let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count), constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count-1), constant: 0)
         let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         
