@@ -11,7 +11,7 @@ import Foundation
 enum TemperatureType: String {
     //TODO handle farenheit
     case Above = "Above 0 degrees Celsius"
-    case Below = "Below 0 degrees Celisus"
+    case Below = "Below 0 degrees Celsius"
 }
 
 class TitleAndImage {
