@@ -203,6 +203,27 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             //change to button font size:
             let attString = changeNSAttributedStringFontSize((object as? NSAttributedString)!, fontSize: (selectedButton.button.titleLabel?.font.pointSize)!)
             selectedButton.button.setAttributedTitle(attString, forState: .Normal)
+            clearItemsToTheRight(itemIndex)
+        }
+    }
+    
+    private func clearItemsToTheRight(itemIndex: Int) {
+        if selectedInput is FireSuppressionInput {
+            //clear items to the right
+            var itemsCleared = false
+            for i in itemIndex+1..<selectionButtons.count {
+                if selectionButtons[i].isSelected() {
+                    selectionButtons[i].setUnSelected()
+                }
+                if let vc = viewControllers[i] as? RoiSelectionContentViewController, let inputView = vc.roiContentView {
+                    inputView.loadNumber(i, selectionInput: vc.selectedInput)
+                }
+                itemsCleared = true
+            }
+            if itemsCleared {
+                hasVisitedLastPage = false
+                viewResultButton.hidden = true
+            }
         }
     }
     

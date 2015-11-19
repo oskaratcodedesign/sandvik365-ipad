@@ -31,6 +31,12 @@ class RoiSelectionButton: NibDesignable {
         return !button.hidden
     }
     
+    func setUnSelected() {
+        button.hidden = true
+        label.hidden = true
+        line.hidden = true
+    }
+    
     func setSelected(index: Int, text: String) {
         button.hidden = false
         label.hidden = false
