@@ -4,15 +4,10 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
-            <string>AktivGroteskCorpMedium-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiInputView" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
-                <outlet property="textField" destination="zRZ-69-SXN" id="qwS-zQ-u1A"/>
+                <outlet property="textView" destination="39E-0s-zRu" id="FDc-x5-oV3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,20 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zRZ-69-SXN">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="116"/>
+                <textView multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-0s-zRu">
+                    <rect key="frame" x="295" y="285" width="10" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
-                </textField>
+                </textView>
             </subviews>
             <constraints>
-                <constraint firstItem="zRZ-69-SXN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6zS-ZZ-4wb"/>
-                <constraint firstItem="zRZ-69-SXN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fu4-Al-vT4"/>
-                <constraint firstAttribute="bottom" secondItem="zRZ-69-SXN" secondAttribute="bottom" id="I7v-bW-EUc"/>
-                <constraint firstItem="zRZ-69-SXN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hzG-Cz-9t4"/>
-                <constraint firstAttribute="trailing" secondItem="zRZ-69-SXN" secondAttribute="trailing" id="mCy-Jb-L8i"/>
-                <constraint firstItem="zRZ-69-SXN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pvZ-OC-0V9"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="trailing" id="77Q-Pt-XtE"/>
+                <constraint firstItem="39E-0s-zRu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9wi-U5-2SY"/>
+                <constraint firstItem="39E-0s-zRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="Ll6-pq-sFP"/>
+                <constraint firstItem="39E-0s-zRu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="OqP-46-mu1"/>
+                <constraint firstItem="39E-0s-zRu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="im8-wu-7od"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="bottom" id="v0z-rq-T7a"/>
             </constraints>
         </view>
     </objects>

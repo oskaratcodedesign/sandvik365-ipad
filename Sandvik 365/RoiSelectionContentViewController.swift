@@ -12,7 +12,7 @@ protocol RoiSelectionContentViewControllerDelegate {
     func roiValueDidChange(itemIndex: Int, object :AnyObject)
 }
 
-class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
+class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
 
     @IBOutlet weak var containerViewCenterY: NSLayoutConstraint!
     @IBOutlet weak var spinnerScrollView: UIScrollView!
@@ -32,14 +32,14 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let numberView = RoiInputView(frame: containerView.bounds)
+        let numberView = RoiInputView(frame: CGRectZero, selectionInput: selectedInput)
         containerView.addSubview(numberView)
         
         numberView.loadNumber(itemIndex, selectionInput: selectedInput)
         numberView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
         roiContentView = numberView;
-        roiContentView.textField.delegate = self
+        roiContentView.textView.delegate = self
         spinnerScrollView.contentSize = CGSizeMake(spinnerScrollView.frame.width, spinnerScrollView.frame.height*40)
         spinnerScrollView.contentOffset = CGPointMake(0, spinnerScrollView.contentSize.height/2)
         spinnerScrollView.delegate = self
@@ -61,7 +61,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if !selectedInput.setInput(itemIndex, stringValue: textField.text!) {
+        if !selectedInput.setInput(itemIndex, stringValue: textField.attributedText!.string) {
             let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .Alert)
             
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
@@ -75,29 +75,66 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         else {
             roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
+                delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
             }
         }
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        roiContentView.textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         if let value = selectedInput.getInputAsString(itemIndex) {
-            roiContentView.textField.text = value
+            roiContentView.setAttributedStringWithString(value)
             return true
         }
         return false
     }
     
+    func textViewDidEndEditing(textView: UITextView) {
+        if !selectedInput.setInput(itemIndex, stringValue: textView.attributedText!.string) {
+            let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            }
+            alertController.addAction(okAction)
+            
+            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load old value
+            // Present Alert Controller
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        else {
+            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
+            if let delegate = self.delegate {
+                delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
+            }
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    
+    /*func textFieldShouldReturn(textField: UITextField) -> Bool {
+        roiContentView.textView.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if let value = selectedInput.getInputAsString(itemIndex) {
+            roiContentView.textView.text = value
+            return true
+        }
+        return false
+    }*/
+    
     func handleTap(recognizer: UIGestureRecognizer) {
         if let value = selectedInput.getInputAsString(itemIndex) {
-            roiContentView.textField.text = value
-            roiContentView.textField.becomeFirstResponder()
+            roiContentView.setAttributedStringWithString(value)
+            roiContentView.textView.becomeFirstResponder()
         }
     }
     
@@ -165,7 +202,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
             input.usePPM = !isLeft
             roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: roiContentView.textField.attributedText!)
+                delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
             }
         }
     }
@@ -174,7 +211,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         if let numberView = roiContentView{
             numberView.decreaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: numberView.textField.attributedText!)
+                delegate.roiValueDidChange(itemIndex, object: numberView.textView.attributedText)
             }
         }
         /*else if let productView = roiContentView as? RoiProductView{
@@ -189,7 +226,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         if let numberView = roiContentView{
             numberView.increaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: numberView.textField.attributedText!)
+                delegate.roiValueDidChange(itemIndex, object: numberView.textView.attributedText)
             }
         }
         /*else if let productView = roiContentView as? RoiProductView{
