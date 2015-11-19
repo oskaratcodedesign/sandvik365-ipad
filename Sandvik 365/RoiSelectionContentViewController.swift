@@ -60,27 +60,6 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        if !selectedInput.setInput(itemIndex, stringValue: textField.attributedText!.string) {
-            let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .Alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-            }
-            alertController.addAction(okAction)
-            
-            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load old value
-            // Present Alert Controller
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-        else {
-            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
-            if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
-            }
-        }
-        
-    }
-    
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         if let value = selectedInput.getInputAsString(itemIndex) {
             roiContentView.setAttributedStringWithString(value)
@@ -116,20 +95,6 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }
         return true
     }
-    
-    
-    /*func textFieldShouldReturn(textField: UITextField) -> Bool {
-        roiContentView.textView.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if let value = selectedInput.getInputAsString(itemIndex) {
-            roiContentView.textView.text = value
-            return true
-        }
-        return false
-    }*/
     
     func handleTap(recognizer: UIGestureRecognizer) {
         if let value = selectedInput.getInputAsString(itemIndex) {
