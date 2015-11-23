@@ -14,6 +14,7 @@ class JSONManager {
     static let updateAvailableKey = "updateAvailableKey"
     
     let url = NSURL(string: "http://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
+    let preloadedLastModifiedDate = "2015-11-23T11:13:11.0000000Z"
     
     static func getJSONParts() -> JSONParts? {
         if jsonParts == nil {
@@ -216,7 +217,7 @@ class JSONManager {
         if let lastModified =  NSUserDefaults.standardUserDefaults().stringForKey("jsonLastModified") {
             return lastModified
         }
-        return "2015-11-13T10:59:19.0000000Z"
+        return preloadedLastModifiedDate
     }
     
     private func cacheFilePath() -> String {
