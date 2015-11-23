@@ -163,7 +163,7 @@ class Content {
                     do {
                         let doc = try HTMLDocument(string: feature)
                         let title = doc.firstChild(xpath: "//p/strong")?.stringValue
-                        let text = doc.firstChild(xpath: "//p/text()")?.stringValue
+                        let text = doc.firstChild(xpath: "//following-sibling::text()[normalize-space()]")?.stringValue
                         if title != nil && text != nil {
                             self.texts!.append(TitleAndText(title: title!, text: text!))
                         }
@@ -232,7 +232,7 @@ class Content {
                             let title = doc.firstChild(xpath: "//em")?.stringValue
                             var text: String? = nil
                             if title != nil {
-                                text = doc.firstChild(xpath: "//following-sibling::text()")?.stringValue
+                                text = doc.firstChild(xpath: "//following-sibling::text()[normalize-space()]")?.stringValue
                             }
                             else {
                                 text = doc.firstChild(xpath: "//text()")?.stringValue

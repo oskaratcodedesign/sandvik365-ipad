@@ -23,7 +23,6 @@ class JSONManager {
         return jsonParts
     }
     
-    
     func jsonLastModifiedDate() -> NSDate? {
         let dateString = self.jsonLastModifiedDateString()
         let dateFormatter = NSDateFormatter()
