@@ -13,23 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var loadingView: LoadingView?
+    var activityIndicator: UIActivityIndicatorView?
     var logoView: UIImageView?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        JSONManager().copyPreloadedFiles()
-        
-        if JSONManager().jsonLastModifiedDate() == nil {
-            // FIXME: temporarily trigger download on first launch.
-            JSONManager().downloadJSON({ (success, lastModified) -> () in
-                print("downloaded json file. Last modified: %@", lastModified)
-            })
-        } else {
-            // FIXME: loading view should not be dismissed until content is loaded
-            JSONManager().readJSONFromFile { (success) -> () in
-                print("read json from file. success = %@", success)
-            }
+        let jsonManager = JSONManager()
+        jsonManager.copyPreloadedFiles()
+        jsonManager.checkforUpdate({ (success, lastModified) -> () in
+            print("checkforUpdate. Last modified: %@", lastModified)
+        })
+        //always read
+        jsonManager.readJSONFromFileAsync { (success) -> () in
+            print("read json from file. success = %@", success)
         }
         
         let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 24, 0, 0)))
@@ -43,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
             addLogoToView(window)
             showLoadingView()
+            activityIndicator = UIActivityIndicatorView(frame: window.bounds)
+            activityIndicator!.activityIndicatorViewStyle = .WhiteLarge
+            activityIndicator!.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            window.addSubview(activityIndicator!)
         }
         
         return true
