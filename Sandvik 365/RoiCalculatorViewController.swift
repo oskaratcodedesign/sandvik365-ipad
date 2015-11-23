@@ -10,7 +10,7 @@ import UIKit
 
 class RoiCalculatorViewController: UIViewController {
 
-    var selectedROICalculator: ROICalculator!
+    var selectedInput: ROICalculatorInput!
     @IBOutlet weak var roiGraphView: RoiGraphView!
     @IBOutlet weak var seeDetailButton: UIButton!
     @IBOutlet weak var closeDetailButton: UIButton!
@@ -29,10 +29,10 @@ class RoiCalculatorViewController: UIViewController {
         super.viewDidLoad()
         loadServiceButtons()
         setBorderOnDetailButton()
-        if (selectedROICalculator.input as? ROICrusherInput != nil) {
+        if (selectedInput as? ROICrusherInput != nil) {
             titleLabel.text = NSLocalizedString("INCREASED\nVALUE BY UP TO", comment: "")
         }
-        else if (selectedROICalculator.input as? ROIRockDrillInput != nil) {
+        else if (selectedInput as? ROIRockDrillInput != nil) {
             titleLabel.text = NSLocalizedString("INCREASED REVENUE DUE\nTO INCREASED ORE OUTPUT", comment: "")
             //TODO temp stuff
             maintenenceButton.hidden = true
@@ -45,9 +45,9 @@ class RoiCalculatorViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        roiGraphView.selectedROIInput = selectedROICalculator.input
+        roiGraphView.selectedROIInput = selectedInput
         setProfitLabel()
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             conditionButton.hidden = false
             maintenenceButton.hidden = false
             protectiveButton.hidden = false
@@ -64,34 +64,34 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     @IBAction func rampUpAction(sender: UIButton) {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .RampUp, selectedButton: sender)
         }
-        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+        else if let input = selectedInput as? ROIRockDrillInput {
             controlRockDrillProducts(input, selectedProduct: .RD520, selectedButton: sender)
         }
         setProfitLabel()
     }
     
     @IBAction func conditionAction(sender: UIButton) {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .ConditionInspection, selectedButton: sender)
         }
-        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+        else if let input = selectedInput as? ROIRockDrillInput {
             controlRockDrillProducts(input, selectedProduct: .RD525, selectedButton: sender)
         }
         setProfitLabel()
     }
     
     @IBAction func maintenanceAction(sender: UIButton) {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .MaintenancePlanning, selectedButton: sender)
         }
         setProfitLabel()
     }
     
     @IBAction func protectiveAction(sender: UIButton) {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             controlCrusherServices(input, selectedService: .MaintenancePlanning, selectedButton: sender)
         }
         let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
@@ -110,10 +110,10 @@ class RoiCalculatorViewController: UIViewController {
         closeDetailButton.hidden = true*/
     }
     @IBAction func seeDetailAction(sender: UIButton) {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             detailsContainerView.addSubview(RoiCrusherDetailView(frame: detailsContainerView.bounds, input: input))
         }
-        else if let input = selectedROICalculator.input as? ROIRockDrillInput {
+        else if let input = selectedInput as? ROIRockDrillInput {
             detailsContainerView.addSubview(RoiRockDrillDetailView(frame: detailsContainerView.frame, input: input))
         }
         detailsContainerView.hidden = false
@@ -176,7 +176,7 @@ class RoiCalculatorViewController: UIViewController {
     
     private func setProfitLabel()
     {
-        if let input = selectedROICalculator.input as? ROICrusherInput {
+        if let input = selectedInput as? ROICrusherInput {
             if !input.services.isEmpty {
                 setProfitLabelFromInput()
             }
@@ -188,7 +188,7 @@ class RoiCalculatorViewController: UIViewController {
     }
     
     private func setProfitLabelFromInput() {
-        let sum = selectedROICalculator.input.total()
+        let sum = selectedInput.total()
         profitLabel.text = formatToUSD(sum)
     }
     

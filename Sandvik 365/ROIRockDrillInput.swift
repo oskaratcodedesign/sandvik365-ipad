@@ -88,7 +88,7 @@ enum ROIRockDrillInputValue {
     }
 }
 
-class ROIRockDrillInput: ROIInput {
+class ROIRockDrillInput: ROICalculatorInput {
     var typeOfOre: ROIRockDrillInputValue = .TypeOfOre(OreType.Gold)
     var commodityPrice: ROIRockDrillInputValue = .CommodityPrice(800)
     var oreConcentration: ROIRockDrillInputValue = .OreConcentration(10)
@@ -313,7 +313,7 @@ class ROIRockDrillInput: ROIInput {
         }
     }
     
-    override func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
+    /*override func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
         let input = allInputs()[atIndex]
         switch input {
         case .TypeOfOre:
@@ -421,7 +421,7 @@ class ROIRockDrillInput: ROIInput {
             let attrString = NSMutableAttributedString(string: String(numberOfBooms.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
             return attrString
         }
-    }
+    }*/
     
     override func graphScale() -> CGFloat {
         return 0.5
