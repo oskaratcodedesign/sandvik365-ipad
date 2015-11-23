@@ -22,12 +22,13 @@ class JSONManager {
         return jsonParts
     }
     
-    
     func jsonLastModifiedDate() -> NSDate? {
-        let dateString = self.jsonLastModifiedDateString()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
-        return dateFormatter.dateFromString(dateString)
+        if let dateString = self.jsonLastModifiedDateString() {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
+            return dateFormatter.dateFromString(dateString)
+        }
+        return nil
     }
     
     func isUpdateAvailable() -> Bool {
@@ -144,8 +145,7 @@ class JSONManager {
 
     private func buildUrl() -> NSURL {
         var jsonUrl = self.url
-        let jsonLastModifiedDate = self.jsonLastModifiedDateString()
-        if let components = NSURLComponents(URL: self.url, resolvingAgainstBaseURL: false) {
+        if let jsonLastModifiedDate = self.jsonLastModifiedDateString(), let components = NSURLComponents(URL: self.url, resolvingAgainstBaseURL: false) {
             var queryItems = [NSURLQueryItem(name: "ifModifiedSince", value: jsonLastModifiedDate)]
             if let oldQueryItems = components.queryItems {
                 queryItems.appendContentsOf(oldQueryItems)
@@ -212,11 +212,8 @@ class JSONManager {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    private func jsonLastModifiedDateString() -> String {
-        if let lastModified =  NSUserDefaults.standardUserDefaults().stringForKey("jsonLastModified") {
-            return lastModified
-        }
-        return "2015-11-13T10:59:19.0000000Z"
+    private func jsonLastModifiedDateString() -> String? {
+        return NSUserDefaults.standardUserDefaults().stringForKey("jsonLastModified")
     }
     
     private func cacheFilePath() -> String {

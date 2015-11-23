@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>baseUrl</key>
-	<string>http://mining.test.ibp.sandvik.com</string>
+	<string>http://mining.sandvik.com</string>
 	<key>clientName</key>
 	<string>Service365MobileClient</string>
 	<key>correlationId</key>
-	<string>d667439d-57ab-c098-40af-36a1ad2a959e</string>
+	<string>d76a449d-006c-f0ff-0ff7-ddd1bb6f0a82</string>
 	<key>items</key>
 	<array>
 		<dict>
@@ -56,7 +56,7 @@
 													<key>element</key>
 													<string>p</string>
 													<key>html</key>
-													<string>When you choose Sandvik Credit, you’re harnessing a wealth of knowledge and expertise behind your products and machinery. We understand your business, your challenges and what you need from financial services. We offer you everything from leasing and rent-to-purchase with flexible payment plans. Our local colleagues give you the personal attention you need to structure loans or leases according to your application and maintenance needs.</string>
+													<string>When you choose Sandvik Credit, you’re harnessing a wealth of knowledge and expertise behind your products and machinery. We understand your business, your challenges and what you need from finan-cial services. We offer you everything from leasing and rent-to-purchase with flexible payment plans. Our local colleagues give you the personal attention you need to structure loans or leases according to your application and maintenance needs.</string>
 												</dict>
 											</array>
 										</dict>
@@ -77,7 +77,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Benefit from customized credit services with competitive rates and flexible finance terms. </string>
+									<string>Benefit from customized credit services with competitive rates and flexible finance terms.</string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -86,7 +86,7 @@
 										<string>/SiteCollectionImages/services/sandvik365-financial-services.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:31:23.0000000Z</string>
+									<string>2015-11-23T09:31:18.0000000Z</string>
 									<key>navTitle</key>
 									<string>Financial services</string>
 									<key>subTitle</key>
@@ -249,7 +249,7 @@
 										<string>/SiteCollectionImages/services/service356-rampup1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:29:58.0000000Z</string>
+									<string>2015-11-23T09:00:05.0000000Z</string>
 									<key>navTitle</key>
 									<string>Ramp-up services</string>
 									<key>subTitle</key>
@@ -327,7 +327,7 @@
 										<string>/SiteCollectionImages/services/sandvik365-commissioning.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:42:30.0000000Z</string>
+									<string>2015-11-23T09:03:16.0000000Z</string>
 									<key>navTitle</key>
 									<string>Commissioning services</string>
 									<key>subTitle</key>
@@ -396,7 +396,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Planning and logistics management to reduce downtime and save costs.</string>
+									<string>Planning and logistics management to reduce downtime and save costs. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -405,7 +405,7 @@
 										<string>/SiteCollectionImages/services/sandvik365-relocation-services.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:41:32.0000000Z</string>
+									<string>2015-11-23T09:05:51.0000000Z</string>
 									<key>navTitle</key>
 									<string>Relocation services</string>
 									<key>subTitle</key>
@@ -463,7 +463,7 @@
 								<string>/SiteCollectionImages/services/sandvik-365-startup.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-11-13T10:26:33.0000000Z</string>
+							<string>2015-11-23T08:54:21.0000000Z</string>
 							<key>navTitle</key>
 							<string>Start-up services</string>
 							<key>subTitle</key>
@@ -613,7 +613,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Keep your products in the best working order with our condition inspection, Maintenance planning, Protective and performance services  </string>
+									<string>Keep your products in the best working order with our condition inspection, Maintenance planning, Protective and performance services. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -622,7 +622,7 @@
 										<string>/SiteCollectionImages/services/sandvik-365-product-sevices.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:45:20.0000000Z</string>
+									<string>2015-11-23T09:10:34.0000000Z</string>
 									<key>navTitle</key>
 									<string>Product services</string>
 									<key>subTitle</key>
@@ -707,7 +707,7 @@
 																					<key>size</key>
 																					<integer>2</integer>
 																					<key>text</key>
-																					<string>On average</string>
+																					<string>On average* </string>
 																				</dict>
 																				<dict>
 																					<key>align</key>
@@ -721,7 +721,7 @@
 																					<key>size</key>
 																					<integer>6</integer>
 																					<key>text</key>
-																					<string>20%*</string>
+																					<string>20%</string>
 																				</dict>
 																			</array>
 																			<key>vAlign</key>
@@ -776,8 +776,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Training, monitoring and planning support services that keep everything operating at peak performance. 
-</string>
+									<string>Training, monitoring and planning support services that keep everything operating at peak performance. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -786,7 +785,7 @@
 										<string>/SiteCollectionImages/services/services-4-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T11:48:38.0000000Z</string>
+									<string>2015-11-23T09:13:15.0000000Z</string>
 									<key>navTitle</key>
 									<string>Supervisory planning services</string>
 									<key>subTitle</key>
@@ -946,6 +945,12 @@
 											<key>html</key>
 											<string>Availability of these services is dependent on our local organizations capabilities. </string>
 										</dict>
+										<dict>
+											<key>element</key>
+											<string>p</string>
+											<key>html</key>
+											<string>&lt;span style="color&amp;#58;#808080;"&gt;&lt;/span&gt;&amp;#160;</string>
+										</dict>
 									</array>
 								</dict>
 							</array>
@@ -959,7 +964,7 @@
 								<string>/SiteCollectionImages/services/Equipment_improvents.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-11-13T10:48:31.0000000Z</string>
+							<string>2015-11-23T09:08:18.0000000Z</string>
 							<key>navTitle</key>
 							<string>Maintenance and repair services</string>
 							<key>subTitle</key>
@@ -1120,12 +1125,6 @@
 													<key>html</key>
 													<string>&lt;span style="color&amp;#58;#808080;"&gt;&lt;/span&gt;&amp;#160;</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#808080;"&gt;&lt;/span&gt;&lt;br&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
@@ -1139,7 +1138,7 @@
 										<string>/SiteCollectionImages/services/Sandvik365-On-site-labor-support.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T10:56:21.0000000Z</string>
+									<string>2015-11-23T09:18:37.0000000Z</string>
 									<key>navTitle</key>
 									<string>On-site labor support</string>
 									<key>subTitle</key>
@@ -1224,7 +1223,7 @@
 																					<key>size</key>
 																					<integer>1</integer>
 																					<key>text</key>
-																					<string>An overall reduction in your equipment parts cost  by up to</string>
+																					<string>An overall reduction in your equipment parts cost  by up to*</string>
 																				</dict>
 																				<dict>
 																					<key>align</key>
@@ -1238,7 +1237,7 @@
 																					<key>size</key>
 																					<integer>6</integer>
 																					<key>text</key>
-																					<string>90%*</string>
+																					<string>90%</string>
 																				</dict>
 																			</array>
 																			<key>vAlign</key>
@@ -1353,7 +1352,7 @@
 										<string>/SiteCollectionImages/services/Sandvik365-Fully-outsourced-maintenance-services.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-13T11:58:12.0000000Z</string>
+									<string>2015-11-23T09:20:27.0000000Z</string>
 									<key>navTitle</key>
 									<string>Fully outsourced</string>
 									<key>subTitle</key>
@@ -1476,7 +1475,7 @@
 								</dict>
 							</array>
 							<key>description</key>
-							<string>The flexibility to use the maintenance services you need, when you need them.</string>
+							<string>The flexibility to use the maintenance services you need, when you need them. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -1485,7 +1484,7 @@
 								<string>/SiteCollectionImages/services/sandvik356-maintanenece-service.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-11-13T10:53:50.0000000Z</string>
+							<string>2015-11-23T09:15:37.0000000Z</string>
 							<key>navTitle</key>
 							<string>Outsourced maintenance services</string>
 							<key>subTitle</key>
@@ -1534,7 +1533,7 @@
 								</dict>
 							</array>
 							<key>description</key>
-							<string>The help you need to proactively drive equipment availability and performance. </string>
+							<string>The help you need to proactively drive equipment availability and performance.  </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -1543,7 +1542,7 @@
 								<string>/SiteCollectionImages/services/Sandvik365-On-site-labor-support.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-11-13T10:51:22.0000000Z</string>
+							<string>2015-11-23T09:21:59.0000000Z</string>
 							<key>navTitle</key>
 							<string>Expert services</string>
 							<key>subTitle</key>
@@ -1664,19 +1663,6 @@
 								</dict>
 							</array>
 						</dict>
-						<dict>
-							<key>type</key>
-							<string>body</string>
-							<key>value</key>
-							<array>
-								<dict>
-									<key>element</key>
-									<string>p</string>
-									<key>html</key>
-									<string>&lt;span style="color&amp;#58;#808080;"&gt;&lt;/span&gt;&amp;#160;</string>
-								</dict>
-							</array>
-						</dict>
 					</array>
 					<key>description</key>
 					<string>Meet your production targets in smarter, faster and more cost efficient ways. </string>
@@ -1688,7 +1674,7 @@
 						<string>/SiteCollectionImages/services/Sandvik365-service-programs-t.jpg?RenditionID=12</string>
 					</dict>
 					<key>lastModified</key>
-					<string>2015-11-13T10:25:26.0000000Z</string>
+					<string>2015-11-23T08:52:47.0000000Z</string>
 					<key>navTitle</key>
 					<string>Service programs</string>
 					<key>subTitle</key>
@@ -1849,17 +1835,11 @@
 													<key>html</key>
 													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;* ​&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Even under the harshest mining conditions, Sandvik hydraulic oil filters keep your system pro-tected. Explore Sandvik hydraulic filters </string>
+									<string>Even under the harshest mining conditions, Sandvik hydraulic oil filters keep your system pro-tected. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -1868,7 +1848,7 @@
 										<string>/SiteCollectionImages/products/parts/coolants-hydraulic-filters-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:31:54.0000000Z</string>
+									<string>2015-11-23T10:03:02.0000000Z</string>
 									<key>navTitle</key>
 									<string>Hydraulic oil filters</string>
 									<key>subTitle</key>
@@ -2006,22 +1986,9 @@
 												<string></string>
 											</dict>
 										</dict>
-										<dict>
-											<key>type</key>
-											<string>body</string>
-											<key>value</key>
-											<array>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
-											</array>
-										</dict>
 									</array>
 									<key>description</key>
-									<string>Thanks to a unique design, Sandvik engine air filters are compact, but have less air restriction and a longer lifetime. Explore Sandvik engine air filters </string>
+									<string>Thanks to a unique design, Sandvik engine air filters are compact, but have less air restriction and a longer lifetime. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -2030,7 +1997,7 @@
 										<string>/SiteCollectionImages/services/service365-engine-air-filters.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:32:40.0000000Z</string>
+									<string>2015-11-23T10:42:05.0000000Z</string>
 									<key>navTitle</key>
 									<string>Engine air filters</string>
 									<key>subTitle</key>
@@ -2109,7 +2076,7 @@
 										<string>/SiteCollectionImages/products/parts/maintenance-kits1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:33:19.0000000Z</string>
+									<string>2015-11-23T10:07:36.0000000Z</string>
 									<key>navTitle</key>
 									<string>Engine oil filters</string>
 									<key>subTitle</key>
@@ -2250,7 +2217,7 @@
 													<key>element</key>
 													<string>p</string>
 													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;​* &lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
+													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;.&lt;/span&gt;</string>
 												</dict>
 											</array>
 										</dict>
@@ -2263,7 +2230,7 @@
 										<string>/SiteCollectionImages/services/sandvik365-fuelfilters.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:33:57.0000000Z</string>
+									<string>2015-11-23T10:43:32.0000000Z</string>
 									<key>navTitle</key>
 									<string>Fuel Filters</string>
 									<key>subTitle</key>
@@ -2351,19 +2318,13 @@
 													<key>html</key>
 													<string>Sandvik oil separators use the principle of coalescence in which layers separate oil from the compressor and return it back. Together with low flow resistance, the process ensures minimum oil consumption while retaining high performance throughout the separator change interval.</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Almost complete separation of oil, keeps compressors running at maximum efficiency. Explore oil separators</string>
+									<string>Almost complete separation of oil, keeps compressors running at maximum efficiency. </string>
 									<key>lastModified</key>
-									<string>2015-10-28T11:34:51.0000000Z</string>
+									<string>2015-11-23T10:11:36.0000000Z</string>
 									<key>navTitle</key>
 									<string>Oil separators</string>
 									<key>subTitle</key>
@@ -2495,17 +2456,11 @@
 											<key>html</key>
 											<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
 										</dict>
-										<dict>
-											<key>element</key>
-											<string>p</string>
-											<key>html</key>
-											<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;​&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;T&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;est results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-										</dict>
 									</array>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Genuine, high-quality Sandvik air filters, coolants, hydraulic filters and filter kits give you the perfect fit.  Explore Filters </string>
+							<string>Genuine, high-quality Sandvik air filters, coolants, hydraulic filters and filter kits give you the perfect fit.  </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -2514,7 +2469,7 @@
 								<string>/SiteCollectionImages/services/sandvik365Filters-bundle.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T11:31:15.0000000Z</string>
+							<string>2015-11-23T09:45:48.0000000Z</string>
 							<key>navTitle</key>
 							<string>Filters</string>
 							<key>subTitle</key>
@@ -2712,23 +2667,11 @@
 													<key>html</key>
 													<string>Sandvik maintenance, endurance and repair kits give you advanced engineering expertise in a compact package that makes servicing remote locations easier. We deliver direct from our warehouse to your mine to make loader upkeep faster and easier than ever. We also guarantee that all parts are genuine, original and manufactured to our highest OEM standards to ensure stable performance, reliability and durability in your harsh mining conditions.</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
-												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&amp;#160;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;&lt;br&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Systems designed to meet the challenges of underground hard rock mining. Explore Loading and Hauling </string>
+									<string>Systems designed to meet the challenges of underground hard rock mining. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -2737,18 +2680,9 @@
 										<string>/SiteCollectionImages/products/load-haul/lh204e-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:24:05.0000000Z</string>
+									<string>2015-11-23T10:16:06.0000000Z</string>
 									<key>navTitle</key>
 									<string>Loading ＆ Hauling</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>a850e245-fb6d-4232-a855-e572094c7ae9</string>
-											<key>name</key>
-											<string>Underground Loading and Hauling</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Optimize performance, extend operating life</string>
 									<key>title</key>
@@ -2958,17 +2892,11 @@
 													<key>html</key>
 													<string>Sandvik rock drill kits consist of genuine OEM parts and are manufactured to the highest standards to en-sure stable performance, reliability and durability in harsh mining environments. Our kits are customized for all aspects of rock drill maintenance and can extend intervals between service by up to 50%.</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&amp;#160;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Everything you need to perform key repairs simultaneously and minimize downtime. Explore Drill rigs</string>
+									<string>Everything you need to perform key repairs simultaneously and minimize downtime. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -2977,18 +2905,9 @@
 										<string>/SiteCollectionImages/products/parts/genuine-parts.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:14:54.0000000Z</string>
+									<string>2015-11-23T10:49:49.0000000Z</string>
 									<key>navTitle</key>
 									<string>Drill rigs</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>c19dea00-5941-4fce-8a06-add969f41a76</string>
-											<key>name</key>
-											<string>Surface Drilling</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Field-proven kits to reduce risk and downtime</string>
 									<key>title</key>
@@ -3103,7 +3022,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Complete service and repair kits to make sure your crushers continue outperforming.Explore Crushing and Screening</string>
+									<string>Complete service and repair kits to make sure your crushers continue outperforming.</string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -3112,18 +3031,9 @@
 										<string>/SiteCollectionImages/services/sandvik365-kits-crushers-screens.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:16:01.0000000Z</string>
+									<string>2015-11-23T10:50:39.0000000Z</string>
 									<key>navTitle</key>
 									<string>Crushing ＆ Screening</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>bda647ec-7ef1-491a-9adc-a915ec5bb745</string>
-											<key>name</key>
-											<string>Crushing and Screening</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Lower your cost of ownership</string>
 									<key>title</key>
@@ -3310,17 +3220,11 @@
 													<key>html</key>
 													<string>Sandvik maintenance, endurance and repair kits for give you advanced engineering expertise in a compact package that makes servicing remote locations easier. We deliver direct from our warehouse to your worksite to make equipment upkeep faster and easier than ever. We also guarantee that all parts are genuine, original and manufactured to our highest standards. All kits consist of genuine OEM parts and are manufactured to the highest standards to ensure stable performance, reliability and durability in harsh mining environments.</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;&lt;br&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Complete service and repair kits to make sure your crushers continue outperforming. Explore Crushing and Screening.</string>
+									<string>Complete service and repair kits to make sure your crushers continue outperforming. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -3329,18 +3233,9 @@
 										<string>/SiteCollectionImages/services/service356-mech-cutting.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:17:32.0000000Z</string>
+									<string>2015-11-23T10:23:56.0000000Z</string>
 									<key>navTitle</key>
 									<string>Mechanical cutting</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>ce360d28-35bc-4578-9e52-79517f769af2</string>
-											<key>name</key>
-											<string>Mechanical Cutting</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Enhance performance and minimize downtime</string>
 									<key>title</key>
@@ -3415,23 +3310,11 @@
 											<key>html</key>
 											<string>&lt;br style="color&amp;#58;#b2b2b2;"&gt;</string>
 										</dict>
-										<dict>
-											<key>element</key>
-											<string>p</string>
-											<key>html</key>
-											<string>&lt;br style="color&amp;#58;#b2b2b2;"&gt;</string>
-										</dict>
-										<dict>
-											<key>element</key>
-											<string>p</string>
-											<key>html</key>
-											<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-										</dict>
 									</array>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Maximize total performance and extend lifetime of all components using kits that include only Sandvik genuine partsExplore service and repair kits</string>
+							<string>Maximize total performance and extend lifetime of all components using kits that include only Sandvik genuine parts.</string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -3440,7 +3323,7 @@
 								<string>/SiteCollectionImages/services/services-2.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T11:35:33.0000000Z</string>
+							<string>2015-11-23T10:13:27.0000000Z</string>
 							<key>navTitle</key>
 							<string>Service and repair kits</string>
 							<key>subTitle</key>
@@ -3498,7 +3381,7 @@
 						<string>/SiteCollectionImages/services/consumables.jpg?RenditionID=12</string>
 					</dict>
 					<key>lastModified</key>
-					<string>2015-10-28T11:30:29.0000000Z</string>
+					<string>2015-11-23T09:43:07.0000000Z</string>
 					<key>navTitle</key>
 					<string>Consumables, fluids &amp; kits</string>
 					<key>subTitle</key>
@@ -3651,25 +3534,12 @@
 													<string>&lt;p&gt;&lt;strong&gt;Stabilize output&lt;/strong&gt; &lt;br /&gt;Achieve a more continuous, stable production output by maintaining bucket geometry.&lt;/p&gt;</string>
 												</array>
 												<key>title</key>
-												<string>Extend bucket life and save</string>
+												<string></string>
 											</dict>
-										</dict>
-										<dict>
-											<key>type</key>
-											<string>body</string>
-											<key>value</key>
-											<array>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;​&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
-											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Our proven ground engaging tools (GET) are designed to meet the challenges of hard rock mining and can be customized to suit your needs.  Explore GET </string>
+									<string>Our proven ground engaging tools (GET) are designed to meet the challenges of hard rock mining and can be customized to suit your needs. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -3678,7 +3548,7 @@
 										<string>/SITECOLLECTIONIMAGES/PRODUCTS/PARTS/GET-1.JPG?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-11-02T08:10:15.0000000Z</string>
+									<string>2015-11-23T10:28:01.0000000Z</string>
 									<key>navTitle</key>
 									<string>Ground engaging tools (GET)</string>
 									<key>subTitle</key>
@@ -3748,9 +3618,9 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Get total engineering flexibility with a total-concept solution that improves overall productivity while reducing maintenance costs.  Explore wear protection buckets </string>
+									<string>Get total engineering flexibility with a total-concept solution that improves overall productivity while reducing maintenance costs.  </string>
 									<key>lastModified</key>
-									<string>2015-10-28T11:49:42.0000000Z</string>
+									<string>2015-11-23T10:30:02.0000000Z</string>
 									<key>navTitle</key>
 									<string>Wear protection buckets</string>
 									<key>subTitle</key>
@@ -3820,7 +3690,7 @@
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Fast protection that limits the consequences of a fire.Explore fire suppression </string>
+									<string>Fast protection that limits the consequences of a fire.</string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -3829,7 +3699,7 @@
 										<string>/SiteCollectionImages/services/eclipse-3.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:50:28.0000000Z</string>
+									<string>2015-11-23T10:31:52.0000000Z</string>
 									<key>navTitle</key>
 									<string>Fire suppression</string>
 									<key>subTitle</key>
@@ -3884,7 +3754,7 @@
 								</dict>
 							</array>
 							<key>description</key>
-							<string>From improvements, upgrades and wear protection for key machine elements to fire suppression and proximity detection, we keep you running safely and smoothly. Explore Loading and hauling</string>
+							<string>From improvements, upgrades and wear protection for key machine elements to fire suppression and proximity detection, we keep you running safely and smoothly. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -3893,18 +3763,9 @@
 								<string>/SiteCollectionImages/services/sandvik365-load-haul-eq-improvment.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T12:23:11.0000000Z</string>
+							<string>2015-11-23T10:26:36.0000000Z</string>
 							<key>navTitle</key>
 							<string>Loading and hauling</string>
-							<key>products</key>
-							<array>
-								<dict>
-									<key>id</key>
-									<string>a850e245-fb6d-4232-a855-e572094c7ae9</string>
-									<key>name</key>
-									<string>Underground Loading and Hauling</string>
-								</dict>
-							</array>
 							<key>subTitle</key>
 							<string>Flexibility and a longer life</string>
 							<key>title</key>
@@ -4004,7 +3865,7 @@
 																					<key>size</key>
 																					<integer>6</integer>
 																					<key>text</key>
-																					<string> 55%</string>
+																					<string>55%</string>
 																				</dict>
 																				<dict>
 																					<key>align</key>
@@ -4018,7 +3879,7 @@
 																					<key>size</key>
 																					<integer>2</integer>
 																					<key>text</key>
-																					<string>increased penetration rate</string>
+																					<string>increased penetration rate*</string>
 																				</dict>
 																			</array>
 																			<key>vAlign</key>
@@ -4055,29 +3916,9 @@
 												<string></string>
 											</dict>
 										</dict>
-										<dict>
-											<key>type</key>
-											<string>body</string>
-											<key>value</key>
-											<array>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;​&lt;/span&gt;</string>
-												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;T&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;est results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all &lt;span style="color&amp;#58;#b2b2b2;"&gt;circumstances&lt;/span&gt;&lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;.&lt;/span&gt;</string>
-												</dict>
-											</array>
-										</dict>
 									</array>
 									<key>description</key>
-									<string>Harness the latest R&amp;D advancements in your operation by upgrading to the latest Sandvik rock-drill technology.
-Explore rock drill upgrades and leasing </string>
+									<string>Harness the latest R&amp;D advancements in your operation by upgrading to the latest Sandvik rock-drill technology.</string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4086,7 +3927,7 @@ Explore rock drill upgrades and leasing </string>
 										<string>/SiteCollectionImages/products/parts/rock-drill-kits-c1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:51:41.0000000Z</string>
+									<string>2015-11-23T10:53:43.0000000Z</string>
 									<key>navTitle</key>
 									<string>Rock drill upgrades and leasing</string>
 									<key>subTitle</key>
@@ -4218,7 +4059,7 @@ Explore rock drill upgrades and leasing </string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Invest in higher productivity and minimize equipment downtime and labor-intensive repairs with our high-quality engineered subassemblies. Explore sub-assemblies for feeds and booms</string>
+									<string>Invest in higher productivity and minimize equipment downtime and labor-intensive repairs with our high-quality engineered subassemblies. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4227,7 +4068,7 @@ Explore rock drill upgrades and leasing </string>
 										<string>/SiteCollectionImages/products/parts/subassembly-feeds-booms-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:52:21.0000000Z</string>
+									<string>2015-11-23T10:56:13.0000000Z</string>
 									<key>navTitle</key>
 									<string>Subassemblies for feeds and booms</string>
 									<key>subTitle</key>
@@ -4368,17 +4209,11 @@ Explore rock drill upgrades and leasing </string>
 													<key>html</key>
 													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&amp;#160;* &lt;/span&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Upgrade your equipment to the latest technology without new capital investment through our pre-engineered and custom-engineered solutions. Explore custom-engineered solutions </string>
+									<string>Upgrade your equipment to the latest technology without new capital investment through our pre-engineered and custom-engineered solutions. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4387,7 +4222,7 @@ Explore rock drill upgrades and leasing </string>
 										<string>/SiteCollectionImages/products/parts/productivity-solutions-2.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:52:58.0000000Z</string>
+									<string>2015-11-23T10:55:39.0000000Z</string>
 									<key>navTitle</key>
 									<string>Custom-engineered solutions</string>
 									<key>subTitle</key>
@@ -4457,8 +4292,7 @@ Explore rock drill upgrades and leasing </string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Protect your underground drilling operations with fast protection that limits the consequences of a fire.
-Explore fire suppression</string>
+									<string>Protect your underground drilling operations with fast protection that limits the consequences of a fire.</string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4467,7 +4301,7 @@ Explore fire suppression</string>
 										<string>/SiteCollectionImages/services/eclipse-3.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:53:36.0000000Z</string>
+									<string>2015-11-23T10:56:58.0000000Z</string>
 									<key>navTitle</key>
 									<string>Fire suppression systems</string>
 									<key>subTitle</key>
@@ -4518,17 +4352,11 @@ Explore fire suppression</string>
 											<key>html</key>
 											<string>Sandvik offers a complete range of services and solutions&amp;#160;to increase your penetration rate, extend equipment lifespan, control your costs and minimize your risks in an underground drilling environment. In addition to standard parts provision, upgrades and leasing, we offer custom-engineered solutions that are tailored to your unique requirements and meet all standards and OEM certifications.</string>
 										</dict>
-										<dict>
-											<key>element</key>
-											<string>p</string>
-											<key>html</key>
-											<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-										</dict>
 									</array>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Safety improvements, software services, upgrades, leases and custom engineered solu-tions keep your underground drilling operations on track and on schedule. Explore Underground drill rigs</string>
+							<string>Safety improvements, software services, upgrades, leases and custom engineered solu-tions keep your underground drilling operations on track and on schedule. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -4537,18 +4365,9 @@ Explore fire suppression</string>
 								<string>/SiteCollectionImages/services/sandvik365-drill-rigs-eq-improvment.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T12:18:43.0000000Z</string>
+							<string>2015-11-23T10:53:02.0000000Z</string>
 							<key>navTitle</key>
 							<string>Underground drill rigs</string>
-							<key>products</key>
-							<array>
-								<dict>
-									<key>id</key>
-									<string>1cecb185-c7ab-4e69-a81f-bdea800ba1f1</string>
-									<key>name</key>
-									<string>Drilling and Bolting</string>
-								</dict>
-							</array>
 							<key>subTitle</key>
 							<string>Optimize performance and longevity</string>
 							<key>title</key>
@@ -4601,7 +4420,7 @@ Explore fire suppression</string>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Innovative, tested and patented solutions for optimizing crushing and screening in real time and performing under pressure will boost productivity in your toughest applications. Explore Crushing and Screening</string>
+							<string>Innovative, tested and patented solutions for optimizing crushing and screening in real time and performing under pressure will boost productivity in your toughest applications. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -4610,18 +4429,9 @@ Explore fire suppression</string>
 								<string>/SiteCollectionImages/products/crushing-screening/application-training-1.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T12:19:35.0000000Z</string>
+							<string>2015-11-23T10:57:40.0000000Z</string>
 							<key>navTitle</key>
 							<string>Crushing and screening</string>
-							<key>products</key>
-							<array>
-								<dict>
-									<key>id</key>
-									<string>bda647ec-7ef1-491a-9adc-a915ec5bb745</string>
-									<key>name</key>
-									<string>Crushing and Screening</string>
-								</dict>
-							</array>
 							<key>subTitle</key>
 							<string>Built to outperform</string>
 							<key>title</key>
@@ -4710,7 +4520,7 @@ Explore fire suppression</string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Our cast-in carbide is a unique wear material that combines durability, shock resistance, ductility and strength to withstand harsh material handling applications. Explore Cast-in carbide</string>
+									<string>Our cast-in carbide is a unique wear material that combines durability, shock resistance, ductility and strength to withstand harsh material handling applications. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4719,7 +4529,7 @@ Explore fire suppression</string>
 										<string>/SITECOLLECTIONIMAGES/PRODUCTS/WEAR-PROTECTION/HX900-3.JPG?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:55:38.0000000Z</string>
+									<string>2015-11-23T10:59:10.0000000Z</string>
 									<key>navTitle</key>
 									<string>Cast-in carbide</string>
 									<key>subTitle</key>
@@ -4814,7 +4624,7 @@ Explore fire suppression</string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Ceramic  Both protects equipment and dampens noise. Explore Ceramic </string>
+									<string>Ceramic  Both protects equipment and dampens noise. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -4823,7 +4633,7 @@ Explore fire suppression</string>
 										<string>/SITECOLLECTIONIMAGES/PRODUCTS/WEAR-PROTECTION/WT9200-T.JPG?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:56:17.0000000Z</string>
+									<string>2015-11-23T11:00:24.0000000Z</string>
 									<key>navTitle</key>
 									<string>Ceramic wear plates</string>
 									<key>subTitle</key>
@@ -4996,14 +4806,14 @@ Explore fire suppression</string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Rubber Versatile wear protection that can be tailor-made to fit your needs. Explore Rubber </string>
+									<string>Rubber Versatile wear protection that can be tailor-made to fit your needs.  </string>
 									<key>images</key>
 									<dict>
 										<key>thumbnail</key>
 										<string>/SiteCollectionImages/products/wear-protection/WT6000-2.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:56:55.0000000Z</string>
+									<string>2015-11-23T11:01:08.0000000Z</string>
 									<key>navTitle</key>
 									<string>Rubber wear plates</string>
 									<key>subTitle</key>
@@ -5067,7 +4877,7 @@ Explore fire suppression</string>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Impact bars Protection for belts and conveyors in the loading zone. Explore Impact bars</string>
+									<string>Impact bars Protection for belts and conveyors in the loading zone. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -5076,7 +4886,7 @@ Explore fire suppression</string>
 										<string>/SiteCollectionImages/products/wear-protection/WT1000-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T11:57:36.0000000Z</string>
+									<string>2015-11-23T11:02:10.0000000Z</string>
 									<key>navTitle</key>
 									<string>Impact bars</string>
 									<key>subTitle</key>
@@ -5131,7 +4941,7 @@ Explore fire suppression</string>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Enjoy extended equipment life, safe handling, minimized noise levels, reduced maintenance and operating costs and easy handling with our proven designs. Explore Wear protection</string>
+							<string>Enjoy extended equipment life, safe handling, minimized noise levels, reduced maintenance and operating costs and easy handling with our proven designs. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -5140,7 +4950,7 @@ Explore fire suppression</string>
 								<string>/SiteCollectionImages/products/wear-protection/WT6000-1.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T11:55:01.0000000Z</string>
+							<string>2015-11-23T10:58:29.0000000Z</string>
 							<key>navTitle</key>
 							<string>Wear protection</string>
 							<key>subTitle</key>
@@ -5198,7 +5008,7 @@ Explore fire suppression</string>
 						<string>/SiteCollectionImages/services/Equipment_improvents.jpg?RenditionID=12</string>
 					</dict>
 					<key>lastModified</key>
-					<string>2015-10-01T10:01:31.0000000Z</string>
+					<string>2015-11-23T10:52:08.0000000Z</string>
 					<key>navTitle</key>
 					<string>Equipment improvements</string>
 					<key>subTitle</key>
@@ -5437,17 +5247,11 @@ Explore fire suppression</string>
 													<key>html</key>
 													<string>Availability of these services is dependent on our local organizations capabilities. </string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&amp;#160;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Choose the scope of service from full rebuilds, partial rebuilds of selected subsystems or incorporate safety improvements and productivity upgrades for key loader components. Explore loaders
+									<string>Choose the scope of service from full rebuilds, partial rebuilds of selected subsystems or incorporate safety improvements and productivity upgrades for key loader components. 
 </string>
 									<key>images</key>
 									<dict>
@@ -5457,18 +5261,9 @@ Explore fire suppression</string>
 										<string>/SiteCollectionImages/services/sandvik365-rebuild-loader.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:21:20.0000000Z</string>
+									<string>2015-11-23T11:06:51.0000000Z</string>
 									<key>navTitle</key>
 									<string>Loaders</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>a850e245-fb6d-4232-a855-e572094c7ae9</string>
-											<key>name</key>
-											<string>Underground Loading and Hauling</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Reliable, productive and safe rebuilds</string>
 									<key>title</key>
@@ -5690,24 +5485,11 @@ Explore fire suppression</string>
 													<key>html</key>
 													<string>Availability of these services is dependent on our local organizations capabilities. </string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
-												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
 									<string>Upgrade machines or key components of the cutting system using the latest technology for extended performance.
-Explore mechanical cutting
 </string>
 									<key>images</key>
 									<dict>
@@ -5717,18 +5499,9 @@ Explore mechanical cutting
 										<string>/SiteCollectionImages/services/service356-mech-cutting.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:22:03.0000000Z</string>
+									<string>2015-11-23T11:08:10.0000000Z</string>
 									<key>navTitle</key>
 									<string>Mechanical-cutting</string>
-									<key>products</key>
-									<array>
-										<dict>
-											<key>id</key>
-											<string>ce360d28-35bc-4578-9e52-79517f769af2</string>
-											<key>name</key>
-											<string>Mechanical Cutting</string>
-										</dict>
-									</array>
 									<key>subTitle</key>
 									<string>Extend lifetimes beyond 20 years</string>
 									<key>title</key>
@@ -5878,17 +5651,11 @@ Explore mechanical cutting
 											<key>html</key>
 											<string>Availability of these services is dependent on our local organizations capabilities. </string>
 										</dict>
-										<dict>
-											<key>element</key>
-											<string>p</string>
-											<key>html</key>
-											<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&amp;#160;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-										</dict>
 									</array>
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Equipment Rebuilds Enjoyhigh performance, a longer life and significant savings from your equipment Explore equipment rebuilds</string>
+							<string>Equipment Rebuilds Enjoyhigh performance, a longer life and significant savings from your equipment.</string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -5897,7 +5664,7 @@ Explore mechanical cutting
 								<string>/SiteCollectionImages/services/sandvik365-eq-rebuild.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T11:59:00.0000000Z</string>
+							<string>2015-11-23T11:05:08.0000000Z</string>
 							<key>navTitle</key>
 							<string>Equipment rebuilds</string>
 							<key>subTitle</key>
@@ -5912,6 +5679,82 @@ Explore mechanical cutting
 						<dict>
 							<key>children</key>
 							<array>
+								<dict>
+									<key>content</key>
+									<array>
+										<dict>
+											<key>type</key>
+											<string>lead</string>
+											<key>value</key>
+											<array>
+												<dict>
+													<key>element</key>
+													<string>p</string>
+													<key>html</key>
+													<string>​&lt;strong&gt;When a vital component fails, every minute counts. Our accelerated-response component exchange fixes the problem fast to minimize disruption and get your equipment back up and running.&lt;/strong&gt;</string>
+												</dict>
+												<dict>
+													<key>element</key>
+													<string>p</string>
+													<key>html</key>
+													<string>&lt;strong&gt;&lt;font face="Thread-00000f50-Id-00001920"&gt;&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;</string>
+												</dict>
+											</array>
+										</dict>
+										<dict>
+											<key>type</key>
+											<string>body</string>
+											<key>value</key>
+											<array>
+												<dict>
+													<key>element</key>
+													<string>h2</string>
+													<key>html</key>
+													<string>&lt;span style="color&amp;#58;#ff6a00;"&gt;Minimize downtime&lt;/span&gt;</string>
+												</dict>
+												<dict>
+													<key>element</key>
+													<string>p</string>
+													<key>html</key>
+													<string>Protect your business from unexpected stoppages with our component exchange options. Our vast established workshop network ensures the highest possible quality through proven processes and OEM knowhow. With a wide range of essential parts and components in stock, streamlined logistics and trained service technicians, we’ll ensure you receive the working parts you need within 24-48 hours, so you can get back to peak productivity sooner. You’ll save money and enjoy a level of reliability and endurance that’s a full 80 percent of a new component. Choose to fit the replacement yourself or have our service technicians do the work to include the added peace of mind of an extended warranty. We also include a failure analysis and feedback on the worn component. &lt;br&gt;</string>
+												</dict>
+												<dict>
+													<key>element</key>
+													<string>h2</string>
+													<key>html</key>
+													<string>&lt;span style="color&amp;#58;#ff6a00;"&gt;Browse exchange options &lt;/span&gt;</string>
+												</dict>
+												<dict>
+													<key>element</key>
+													<string>p</string>
+													<key>html</key>
+													<string>We offer a range of component exchange options to suit the individual requirements of your mine. Contact your local Sandvik representative to learn more about the component families we offer. </string>
+												</dict>
+											</array>
+										</dict>
+									</array>
+									<key>description</key>
+									<string>Get the essential parts and components you need within 24-48 hours. </string>
+									<key>images</key>
+									<dict>
+										<key>hero</key>
+										<string>/SITECOLLECTIONIMAGES/PRODUCTS/PARTS/UPGRADE-YOUR-DRIFTERS-1.JPG?RenditionID=19</string>
+										<key>thumbnail</key>
+										<string>/SITECOLLECTIONIMAGES/PRODUCTS/PARTS/UPGRADE-YOUR-DRIFTERS-1.JPG?RenditionID=12</string>
+									</dict>
+									<key>lastModified</key>
+									<string>2015-11-23T11:09:32.0000000Z</string>
+									<key>navTitle</key>
+									<string>Component exchange</string>
+									<key>subTitle</key>
+									<string>Fix issues even faster</string>
+									<key>title</key>
+									<string>Component exchange</string>
+									<key>type</key>
+									<string>ServicesCategory</string>
+									<key>url</key>
+									<string>/en/parts-and-services/rebuilds-and-major-components/major-components/component-exchange</string>
+								</dict>
 								<dict>
 									<key>content</key>
 									<array>
@@ -6067,23 +5910,11 @@ Explore mechanical cutting
 													<key>html</key>
 													<string>Availability of these services is dependent on our local organizations capabilities. </string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;&lt;/span&gt;&amp;#160;</string>
-												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#b2b2b2;"&gt;* Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Avoid the cost of disposing of old parts, and save money on new, fully-warrantied parts. Explore New-for-old</string>
+									<string>Avoid the cost of disposing of old parts, and save money on new, fully-warrantied parts. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -6092,7 +5923,7 @@ Explore mechanical cutting
 										<string>/SiteCollectionImages/products/parts/cylinders-1.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:03:22.0000000Z</string>
+									<string>2015-11-23T11:11:03.0000000Z</string>
 									<key>navTitle</key>
 									<string>New-for-old</string>
 									<key>subTitle</key>
@@ -6251,18 +6082,11 @@ Explore mechanical cutting
 													<key>html</key>
 													<string>Availability of these services is dependent on our local organizations capabilities. </string>
 												</dict>
-												<dict>
-													<key>element</key>
-													<string>p</string>
-													<key>html</key>
-													<string>&lt;span style="color&amp;#58;#ff6a00;"&gt;&lt;span style="color&amp;#58;#b2b2b2;"&gt;*Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.&lt;/span&gt;&lt;/span&gt;</string>
-												</dict>
 											</array>
 										</dict>
 									</array>
 									<key>description</key>
-									<string>Minimize downtime and save up to 25% compared to purchasing new products. Explore Repair-and-return
-</string>
+									<string>Minimize downtime and save up to 25% compared to purchasing new products. </string>
 									<key>images</key>
 									<dict>
 										<key>hero</key>
@@ -6271,7 +6095,7 @@ Explore mechanical cutting
 										<string>/SiteCollectionImages/products/parts/productivity-solutions.jpg?RenditionID=12</string>
 									</dict>
 									<key>lastModified</key>
-									<string>2015-10-28T12:04:05.0000000Z</string>
+									<string>2015-11-23T11:13:11.0000000Z</string>
 									<key>navTitle</key>
 									<string>Repair and return</string>
 									<key>subTitle</key>
@@ -6326,7 +6150,7 @@ Explore mechanical cutting
 								</dict>
 							</array>
 							<key>description</key>
-							<string>Our component exchange, new-for-old and repair-and-return programs offer superior uptime. Explore major components </string>
+							<string>Our component exchange, new-for-old and repair-and-return programs offer superior uptime. </string>
 							<key>images</key>
 							<dict>
 								<key>hero</key>
@@ -6335,7 +6159,7 @@ Explore mechanical cutting
 								<string>/SiteCollectionImages/services/sandvik365-major-components.jpg?RenditionID=12</string>
 							</dict>
 							<key>lastModified</key>
-							<string>2015-10-28T12:01:35.0000000Z</string>
+							<string>2015-11-23T11:08:52.0000000Z</string>
 							<key>navTitle</key>
 							<string>Major components</string>
 							<key>subTitle</key>
@@ -6359,7 +6183,7 @@ Explore mechanical cutting
 									<key>element</key>
 									<string>p</string>
 									<key>html</key>
-									<string>​&lt;strong&gt;Safe, reliable, rebuilt Sandvik machines have a proven, safe, productive and reliable lifetime in the toughest applications. When major components start to fail and equipment nears the end of its first life it can be restored to its original condition.&amp;#160;​&lt;/strong&gt;</string>
+									<string>​&lt;strong&gt;Safe, reliable, rebuilt Sandvik machines have a proven, safe, productive and reliable lifetime in the toughest applications. When major components start to fail and equipment nears the end of its first life it can be restored to its original condition.&amp;#160;&lt;/strong&gt;&amp;#160;</string>
 								</dict>
 							</array>
 						</dict>
@@ -6377,7 +6201,7 @@ Explore mechanical cutting
 											<key>element</key>
 											<string>p</string>
 											<key>html</key>
-											<string>​Reliability and endurance that’s as good as new Our comprehensive Sandvik rebuild and major component services can double the average service life for a fraction of new capital investment cost. All rebuilds come with a full 12-month component warranty which is extended if installed by a qualified Sandvik Service technician. You can expect up to 80% higher reliability from our component exchange program compared with non-OEM exchange alternatives​</string>
+											<string>​Reliability and endurance that’s as good as new Our comprehensive Sandvik rebuild and major component services can double the average service life for a fraction of new capital investment cost. All rebuilds come with a full 12-month component warranty which is extended if installed by a qualified Sandvik Service technician. You can expect up to 80% higher reliability from our component exchange program compared with non-OEM exchange alternatives. </string>
 										</dict>
 									</array>
 								</dict>
@@ -6475,7 +6299,7 @@ Explore mechanical cutting
 						<string>/SiteCollectionImages/services/rebuilds.jpg?RenditionID=12</string>
 					</dict>
 					<key>lastModified</key>
-					<string>2015-11-13T09:28:15.0000000Z</string>
+					<string>2015-11-23T11:03:37.0000000Z</string>
 					<key>navTitle</key>
 					<string>Rebuilds and major components</string>
 					<key>subTitle</key>
@@ -6527,7 +6351,7 @@ Explore mechanical cutting
 									<array>
 										<dict>
 											<key>align</key>
-											<string>center</string>
+											<string>left</string>
 											<key>bold</key>
 											<true/>
 											<key>color</key>
@@ -6541,7 +6365,7 @@ Explore mechanical cutting
 										</dict>
 										<dict>
 											<key>align</key>
-											<string>center</string>
+											<string>left</string>
 											<key>bold</key>
 											<false/>
 											<key>color</key>
@@ -6566,13 +6390,13 @@ Explore mechanical cutting
 									<array>
 										<dict>
 											<key>align</key>
-											<string>center</string>
+											<string>left</string>
 											<key>bold</key>
 											<true/>
 											<key>color</key>
 											<string>orange</string>
 											<key>italic</key>
-											<true/>
+											<false/>
 											<key>size</key>
 											<integer>6</integer>
 											<key>text</key>
@@ -6580,7 +6404,7 @@ Explore mechanical cutting
 										</dict>
 										<dict>
 											<key>align</key>
-											<string>center</string>
+											<string>left</string>
 											<key>bold</key>
 											<false/>
 											<key>color</key>
@@ -6590,7 +6414,7 @@ Explore mechanical cutting
 											<key>size</key>
 											<integer>1</integer>
 											<key>text</key>
-											<string>of gained production through Sandvik planning services*</string>
+											<string>of gained production through our planning services*</string>
 										</dict>
 									</array>
 									<key>vAlign</key>
@@ -6610,7 +6434,7 @@ Explore mechanical cutting
 				</dict>
 			</array>
 			<key>lastModified</key>
-			<string>2015-10-28T11:19:43.0000000Z</string>
+			<string>2015-11-23T08:44:41.0000000Z</string>
 			<key>navTitle</key>
 			<string>Parts &amp; Services</string>
 			<key>subTitle</key>
@@ -6624,7 +6448,7 @@ Explore mechanical cutting
 		</dict>
 	</array>
 	<key>lastModified</key>
-	<string>2015-11-13T11:58:12.0000000Z</string>
+	<string>2015-11-23T11:13:11.0000000Z</string>
 	<key>renditions</key>
 	<dict>
 		<key>Banner</key>
@@ -6640,6 +6464,8 @@ Explore mechanical cutting
 	<dict>
 		<key>clientId</key>
 		<string>5525eab6-6401-4caa-a5c9-cc8a484638ed</string>
+		<key>ifModifiedSince</key>
+		<string>2015-11-13T10:59:19.0000000Z</string>
 		<key>language</key>
 		<string>en</string>
 	</dict>
