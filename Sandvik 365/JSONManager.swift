@@ -31,8 +31,8 @@ class JSONManager {
     }
     
     func isUpdateAvailable() -> Bool {
-        if let updatAvailable = NSUserDefaults.standardUserDefaults().objectForKey("updatAvailable") as? Bool {
-            return updatAvailable
+        if let updateAvailable = NSUserDefaults.standardUserDefaults().objectForKey(JSONManager.updateAvailableKey) as? Bool {
+            return updateAvailable
         }
         return false
     }
@@ -49,11 +49,11 @@ class JSONManager {
                             if let status = json.objectForKey("status") as? String {
                                 if status == "success" {
                                     if let message = json.objectForKey("message") as? String {
-                                        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "updatAvailable")
+                                        NSUserDefaults.standardUserDefaults().setBool(false, forKey: JSONManager.updateAvailableKey)
                                         print("Received message instead of data: %@", message)
                                     } else if (json.objectForKey("data") as? NSDictionary) != nil {
                                         //update available
-                                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "updatAvailable")
+                                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: JSONManager.updateAvailableKey)
                                         NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.updateAvailableKey, object: self)
                                     }
                                     NSUserDefaults.standardUserDefaults().synchronize()
@@ -66,8 +66,8 @@ class JSONManager {
                 catch {
                     print(error)
                 }
-                }.main {
-                    completion(success: success, lastModified: self.jsonLastModifiedDate())
+            }.main {
+                completion(success: success, lastModified: self.jsonLastModifiedDate())
             }
         }.resume()
     }
@@ -87,7 +87,7 @@ class JSONManager {
                                         print("Received message instead of data: %@", message)
                                     } else if let data = json.objectForKey("data") as? NSDictionary {
                                         JSONManager.jsonParts = self.parseAndHandleJson(data)
-                                        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "updatAvailable")
+                                        NSUserDefaults.standardUserDefaults().setBool(false, forKey: JSONManager.updateAvailableKey)
                                         NSUserDefaults.standardUserDefaults().synchronize()
                                     }
                                     success = true
