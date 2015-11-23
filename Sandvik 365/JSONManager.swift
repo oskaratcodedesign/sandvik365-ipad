@@ -14,7 +14,6 @@ class JSONManager {
     static let updateAvailableKey = "updateAvailableKey"
     
     let url = NSURL(string: "http://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
-    let preloadedLastModifiedDate = "2015-11-23T11:13:11.0000000Z"
     
     static func getJSONParts() -> JSONParts? {
         if jsonParts == nil {
@@ -24,10 +23,12 @@ class JSONManager {
     }
     
     func jsonLastModifiedDate() -> NSDate? {
-        let dateString = self.jsonLastModifiedDateString()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
-        return dateFormatter.dateFromString(dateString)
+        if let dateString = self.jsonLastModifiedDateString() {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
+            return dateFormatter.dateFromString(dateString)
+        }
+        return nil
     }
     
     func isUpdateAvailable() -> Bool {
@@ -144,8 +145,7 @@ class JSONManager {
 
     private func buildUrl() -> NSURL {
         var jsonUrl = self.url
-        let jsonLastModifiedDate = self.jsonLastModifiedDateString()
-        if let components = NSURLComponents(URL: self.url, resolvingAgainstBaseURL: false) {
+        if let jsonLastModifiedDate = self.jsonLastModifiedDateString(), let components = NSURLComponents(URL: self.url, resolvingAgainstBaseURL: false) {
             var queryItems = [NSURLQueryItem(name: "ifModifiedSince", value: jsonLastModifiedDate)]
             if let oldQueryItems = components.queryItems {
                 queryItems.appendContentsOf(oldQueryItems)
@@ -212,11 +212,8 @@ class JSONManager {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    private func jsonLastModifiedDateString() -> String {
-        if let lastModified =  NSUserDefaults.standardUserDefaults().stringForKey("jsonLastModified") {
-            return lastModified
-        }
-        return preloadedLastModifiedDate
+    private func jsonLastModifiedDateString() -> String? {
+        return NSUserDefaults.standardUserDefaults().stringForKey("jsonLastModified")
     }
     
     private func cacheFilePath() -> String {
