@@ -61,11 +61,11 @@ class Content {
         if let html = content.objectForKey("content") as? [NSDictionary] {
             for part in html {
                 if let type = part.objectForKey("type") as? String {
-                    if type == "lead", let value = part.objectForKey("value") as? String {
-                        contentList.append(Lead(text: value))
+                    if type == "lead", let value = part.objectForKey("value") as? [NSDictionary] {
+                        contentList.append(Lead(content: value))
                     }
-                    else if type == "body", let value = part.objectForKey("value") as? String {
-                        contentList.append(Body(text: value))
+                    else if type == "body", let value = part.objectForKey("value") as? [NSDictionary] {
+                        contentList.append(Body(content: value))
                     }
                     else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
                         contentList.append(KeyFeatureListContent(content: value))
@@ -200,40 +200,73 @@ class Content {
     }
     
     class Lead {
-        var text: String? = nil
+        let titleOrTextOrList: [TitleTextOrList]
         
-        init(text: String) {
-            self.text = text.stripHTML()
+        init(content: [NSDictionary]) {
+            self.titleOrTextOrList = Content.parseTitleTextList(content)
         }
     }
     
     class Body {
-        var titlesAndText: [TitleAndText] = []
-        
-        init(text: String) {
-            do {
-                let doc = try HTMLDocument(string: text)
-                let headers = doc.xpath("//*[self::h1 or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]")
-                for header in headers {
-                    let title = header.stringValue
-                    let text = header.nextSibling?.stringValue
-                    
-                    if text != nil {
-                        self.titlesAndText.append(TitleAndText(title: title, text: text!))
+        let titleOrTextOrList: [TitleTextOrList]
+        init(content: [NSDictionary]) {
+            self.titleOrTextOrList = Content.parseTitleTextList(content)
+        }
+    }
+    
+    private static func parseTitleTextList(content: [NSDictionary]) -> [TitleTextOrList] {
+        var titleOrTextOrList: [TitleTextOrList] = []
+        for part in content {
+            if let type = part.objectForKey("element") as? String {
+                if type == "p", let value = part.objectForKey("html") as? String {
+                    titleOrTextOrList.append(.Text(value.stripHTML()))
+                }
+                else if ["h1", "h2", "h3", "h4", "h5", "h6"].contains(type), let value = part.objectForKey("html") as? String {
+                    titleOrTextOrList.append(.Title(value.stripHTML()))
+                }
+                else if type == "ul", let value = part.objectForKey("items") as? [String] {
+                    var titleText = [TitleAndText]()
+                    for string in value {
+                        do {
+                            let doc = try HTMLDocument(string: string)
+                            let title = doc.firstChild(xpath: "//em")?.stringValue
+                            var text: String? = nil
+                            if title != nil {
+                                text = doc.firstChild(xpath: "//following-sibling::text()")?.stringValue
+                            }
+                            else {
+                                text = doc.firstChild(xpath: "//text()")?.stringValue
+                            }
+                            if text != nil {
+                                titleText.append(TitleAndText(title: title, text: text!))
+                            }
+                        } catch {
+                            print("failed to parse list html")
+                        }
+                    }
+                    if titleText.count > 0 {
+                        titleOrTextOrList.append(.List(titleText))
                     }
                 }
-            } catch {
-                print("failed to parse html")
             }
         }
+        return titleOrTextOrList
+    }
+    
+    enum TitleTextOrList {
+        case Title(String)
+        case Text(String)
+        case List([TitleAndText])
     }
     
     class TitleAndText {
         var title: String? = nil
         var text: String? = nil
         
-        init(title: String, text: String){
-            self.title = title.stripHTML()
+        init(title: String?, text: String){
+            if title != nil {
+                self.title = title!.stripHTML()
+            }
             self.text = text.stripHTML()
         }
     }
