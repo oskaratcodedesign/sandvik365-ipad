@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -10,8 +10,10 @@
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -115,24 +117,35 @@ YOU CAN COUNT ON.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                <rect key="frame" x="269" y="448" width="63" height="73"/>
+                                                <rect key="frame" x="269" y="447" width="63" height="73"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
+                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
-                                                <rect key="frame" x="80" y="25" width="31" height="31"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
+                                                <rect key="frame" x="80" y="25" width="37" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
                                                 <state key="normal" image="sandvik-icons_info-btn">
                                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="MUS-dT-mdX"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
                                                 </connections>
@@ -204,9 +217,9 @@ YOU CAN COUNT ON.</string>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="js3-V0-gUc"/>
+                                                <exclude reference="PIs-hD-Kt1"/>
                                                 <exclude reference="NZ5-De-47o"/>
                                                 <exclude reference="dqb-7Q-8dn"/>
-                                                <exclude reference="PIs-hD-Kt1"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -441,6 +454,7 @@ YOU CAN COUNT ON.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
+                        <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
                         <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
                         <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
                         <outlet property="scrollView" destination="Btf-qB-THU" id="BUH-Bh-mXh"/>
@@ -567,6 +581,19 @@ Cg
                                             <outlet property="delegate" destination="jzx-rd-u6m" id="m3x-xJ-4HH"/>
                                         </connections>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-aO-F8M">
+                                        <rect key="frame" x="100" y="1033" width="241" height="75"/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="30" minY="20" maxX="30" maxY="20"/>
+                                        <state key="normal">
+                                            <string key="title">NEW VERSION AVAILABLE
+UPDATE NOW</string>
+                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateAction:" destination="jzx-rd-u6m" eventType="touchUpInside" id="9HU-cR-hTS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
@@ -574,7 +601,15 @@ Cg
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="100" id="7Xb-SU-Bee"/>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="top" secondItem="lgQ-XA-xfb" secondAttribute="top" constant="92" id="hEw-7w-Xns"/>
                                     <constraint firstAttribute="trailing" secondItem="0IX-WF-CXB" secondAttribute="trailing" constant="300" id="iSC-B5-I7F"/>
+                                    <constraint firstItem="Nii-aO-F8M" firstAttribute="top" secondItem="0IX-WF-CXB" secondAttribute="bottom" constant="50" id="kIR-RL-y0N"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nii-aO-F8M" secondAttribute="bottom" constant="92" id="qLt-Cm-zdw"/>
+                                    <constraint firstItem="Nii-aO-F8M" firstAttribute="leading" secondItem="0IX-WF-CXB" secondAttribute="leading" id="vac-RO-CMg"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kIR-RL-y0N"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <animations/>
@@ -605,6 +640,7 @@ Cg
                     <navigationItem key="navigationItem" title="SANDVIK 365 SERVICE APP" id="NNx-yE-Hp4"/>
                     <connections>
                         <outlet property="disclaimerTextView" destination="0IX-WF-CXB" id="g1z-Le-5Hb"/>
+                        <outlet property="updateButton" destination="Nii-aO-F8M" id="hWh-AC-f5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reH-3D-5lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -641,8 +677,8 @@ Cg
     </scenes>
     <resources>
         <image name="SANDVIK-video-button" width="104" height="104"/>
-        <image name="sandvik-icons_info-btn" width="31" height="31"/>
-        <image name="sandvik_calc" width="82" height="82"/>
+        <image name="sandvik-icons_info-btn" width="32" height="32"/>
+        <image name="sandvik_calc" width="83" height="83"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>

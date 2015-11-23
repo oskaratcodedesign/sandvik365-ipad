@@ -209,6 +209,7 @@
 				F7EA86C71B849515003E1AA6 /* Roi */,
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
+				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
 				F741D9981B8475C400010E71 /* VideoViewController.swift */,
 			);
 			name = "View Controllers";
@@ -317,7 +318,6 @@
 				48FCED4D1B74C293002D45A0 /* GradientView.swift */,
 				48FCED511B74CB79002D45A0 /* ProgressLineView.xib */,
 				48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */,
-				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
 				F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */,
 				F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */,
 			);

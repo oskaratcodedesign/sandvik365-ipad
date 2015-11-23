@@ -15,6 +15,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
     @IBOutlet weak var progressView: ProgressLineView!
     @IBOutlet var mainMenuItemViews: [MainMenuItemView]!
     
+    @IBOutlet weak var infoButton: UIButton!
     private var backButtonBg: UIImageView!
     private var showBackButton: Bool = true
     
@@ -36,12 +37,14 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         self.scrollViewDidScroll(menuScrollView)
         
         progressView.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailableKey, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         backButtonBg.hidden = true
         self.navigationController?.navigationBarHidden = true
+        checkUpdateAvailble()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -56,6 +59,15 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
             })
         }
         showBackButton = true
+    }
+    
+    func checkUpdateAvailble(){
+        if JSONManager().isUpdateAvailable() {
+            self.infoButton.setTitle(NSLocalizedString("UPDATE AVAILABLE", comment: ""), forState: .Normal)
+        }
+        else {
+            self.infoButton.setTitle("", forState: .Normal)
+        }
     }
     
     func pressAction(sender: UIButton) {
@@ -90,7 +102,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    if let json = JSONManager.jsonParts {
+                    if let json = JSONManager.getJSONParts() {
                         vc.selectedPartsAndServices = PartsAndServices(businessType: view.businessType, json: json)
                         vc.navigationItem.title = view.label.text
                     }
@@ -103,5 +115,9 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
                 showBackButton = false
             }
         }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
