@@ -109,13 +109,10 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     
-    private func addLead(content: Content.Lead, images: [NSURL], prevView: UIView) -> UIView {
-        var label = prevView
+    private func addLead(content: Content.Lead, images: [NSURL], var prevView: UIView) -> UIView {
+
+        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, top: topConstant)
         
-        if let text = content.text {
-            label = leadLabel(text)
-            addViewAndConstraints(label, toView: prevView, topConstant: topConstant)
-        }
         for url in images {
             if let image = ImageCache.getImage(url) {
                 var imgWidth:CGFloat = image.size.width
@@ -129,36 +126,46 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
                 let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
-                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: label, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: label, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 36)
+                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 36)
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 subContentView.addSubview(imageView)
                 NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
-                label = imageView
+                prevView = imageView
             }
         }
         
-        return label
+        return prevView
     }
     
     private func addBody(content: Content.Body, var prevView: UIView) -> UIView {
-        var label = prevView
+        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, top: 45)
+        return prevView
+    }
+    
+    private func addTitlesTextList(content: [Content.TitleTextOrList], var prevView: UIView, top: CGFloat) -> UIView {
         var top:CGFloat = 45
-        for titlesAndText in content.titlesAndText {
-            if let title = titlesAndText.title {
-                label = genericTitleLabel(title)
+        for titlesTextList in content {
+            switch titlesTextList {
+            case .Title(let value):
+                let label = genericTitleLabel(value)
                 addViewAndConstraints(label, toView: prevView, topConstant: top)
-            }
-            if let text = titlesAndText.text {
-                let prevLabel = label
-                label = genericTextLabel(text)
-                addViewAndConstraints(label, toView: prevLabel, topConstant: 0)
                 prevView = label
+            case .Text(let value):
+                let label = genericTextLabel(value)
+                addViewAndConstraints(label, toView: prevView, topConstant: 0)
+                prevView = label
+            case .List(let value):
+                for titleText in value {
+                    let view = listLabels(titleText)
+                    addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
+                    prevView = view
+                }
             }
             top = topConstant
         }
         
-        return label
+        return prevView
     }
     
     private func addKeyFeatureList(content: Content.KeyFeatureListContent, var prevView: UIView) -> UIView {
@@ -211,6 +218,38 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         //label.textAlignment = .Center
         label.text = string
         return label
+    }
+    
+    private func listLabels(titleAndText: Content.TitleAndText) -> UIView {
+        let listlabel = genericTextLabel("-")
+        let container = UIView()
+        var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        listlabel.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(listlabel)
+        
+        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint])
+        let mutString = NSMutableAttributedString()
+        if titleAndText.title != nil {
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+        }
+        if titleAndText.text != nil {
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+        }
+        
+        let textlabel = genericTextLabel("")
+        textlabel.attributedText = mutString
+        topConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        leadConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: listlabel, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 10)
+        let botConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        textlabel.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(textlabel)
+        
+        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint])
+        
+        return container
     }
     
     private func genericTextLabel(string: String) -> UILabel {
