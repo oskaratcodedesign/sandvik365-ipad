@@ -104,7 +104,7 @@ class Content {
                             if let value = counton.objectForKey("value") as? NSDictionary {
                                 if let config = value.objectForKey("config") as? NSDictionary {
                                     if let columns = config.objectForKey("columns") as? [NSDictionary] {
-                                        print("columns count", columns.count) //can it be more than one?
+                                        //print("columns count", columns.count) //can it be more than one?
                                         if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
                                             setTexts(rows)
                                         }
