@@ -107,24 +107,10 @@ class FireSuppressionInput: SelectionInput {
         return nil
     }
     
-    init(json: NSDictionary?) {
+    init(json: NSDictionary) {
         super.init()
-        //TODO parse after download
-        if let path = NSBundle.mainBundle().pathForResource("firesuppression", ofType: "json")
-        {
-            if let d = NSData(contentsOfFile: path)
-            {
-                do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
-                            parseProductGroup(sections)
-                        }
-                    }
-                }
-                catch {
-                    print(error)
-                }
-            }
+        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+            parseProductGroup(sections)
         }
     }
     

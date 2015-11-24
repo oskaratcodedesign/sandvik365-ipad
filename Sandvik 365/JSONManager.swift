@@ -172,39 +172,51 @@ class JSONManager {
             print("Failed to exclude json cache file from iCloud backup.", error)
         }
         
-
         let parts = JSONParts(json: data)
+        //TODO firesuppression should be included in data
         
         if let strUrl = data.objectForKey("baseUrl") as? String, let baseUrl = NSURL(string: strUrl) {
-            for part in parts.allParts {
+            for part in parts.partsServicesContent {
                 for partService in part.partsServices {
                     if let subPartServices = partService.subPartsServices {
                         for subPartService in subPartServices {
                             for image in subPartService.content.images {
-                                do {
-                                    try ImageCache.storeImage(baseUrl, urlPath: image)
-                                } catch {
-                                    print("Failed to download image: %@", image)
-                                }
+                                downloadImage(baseUrl, imageUrl: image)
                             }
                         }
                     }
                     else if let content = partService.content {
                         for image in content.images {
-                            do {
-                                try ImageCache.storeImage(baseUrl, urlPath: image)
-                            } catch {
-                                print("Failed to download image: %@", image)
-                            }
+                            downloadImage(baseUrl, imageUrl: image)
                         }
                     }
                 }
-                
+            }
+            if let allProductGroups = parts.fireSuppressionInput?.allProductGroups {
+                for productGroup in allProductGroups {
+                    downloadImage(baseUrl, imageUrl: productGroup.image)
+                    for eq in productGroup.equipmentTypes {
+                        downloadImage(baseUrl, imageUrl: eq.image)
+                        for model in eq.models {
+                            downloadImage(baseUrl, imageUrl: model.image)
+                        }
+                    }
+                }
             }
             
         }
         
         return parts
+    }
+    
+    private func downloadImage(baseUrl: NSURL, imageUrl: NSURL?) {
+        if imageUrl != nil {
+            do {
+                try ImageCache.storeImage(baseUrl, urlPath: imageUrl!)
+            } catch {
+                print("Failed to download image: %@", imageUrl)
+            }
+        }
     }
     
     private func saveJsonLastModifiedDateString(lastMotified: String) {

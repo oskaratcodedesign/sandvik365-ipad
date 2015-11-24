@@ -9,7 +9,7 @@
 import Foundation
 import Fuzi
 
-class MainPartService {
+class PartServiceContent {
     let title: String
     var partsServices: [PartService] = []
     
