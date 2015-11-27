@@ -12,6 +12,9 @@ import NibDesignable
 class RoiInputView: NibDesignable {
 
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageTopConstraint: NSLayoutConstraint!
     
     init(frame: CGRect, selectionInput: SelectionInput) {
         super.init(frame: frame)
@@ -24,13 +27,24 @@ class RoiInputView: NibDesignable {
             self.textView.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 116)
             
             textView.textContainer.maximumNumberOfLines = 1
+            hideImage()
         }
         
         textView.textContainer.lineBreakMode = .ByTruncatingTail
     }
+    
+    private func hideImage() {
+        imageHeightConstraint.constant = 0
+        imageTopConstraint.constant = 0
+        imageView.hidden = true
+    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func hasImage() -> Bool {
+        return !imageView.hidden
     }
     
     func loadNumber(itemIndex: Int, selectionInput: SelectionInput) {
@@ -69,6 +83,15 @@ class RoiInputView: NibDesignable {
         }
         else {
             setAttributedString(NSAttributedString(string: text, attributes: [NSFontAttributeName:font!]))
+        }
+        
+        if let selectionInput = selectionInput as? FireSuppressionInput {
+            if let imageUrl = selectionInput.getImageUrl(itemIndex), let image = ImageCache.getImage(imageUrl) {
+                self.imageView.image = image
+            }
+            else {
+                hideImage()
+            }
         }
     }
 }

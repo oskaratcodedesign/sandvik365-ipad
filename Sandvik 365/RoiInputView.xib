@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiInputView" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
+                <outlet property="imageHeightConstraint" destination="9aa-P6-Z0n" id="aje-Ty-84c"/>
+                <outlet property="imageTopConstraint" destination="k5b-je-QM1" id="svx-kV-iWV"/>
+                <outlet property="imageView" destination="JIO-fJ-ahX" id="i3L-z4-Vvi"/>
                 <outlet property="textView" destination="39E-0s-zRu" id="FDc-x5-oV3"/>
             </connections>
         </placeholder>
@@ -15,21 +18,48 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-0s-zRu">
-                    <rect key="frame" x="295" y="285" width="10" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIO-fJ-ahX">
+                    <rect key="frame" x="250" y="20" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9aa-P6-Z0n"/>
+                        <constraint firstAttribute="width" constant="100" id="b9k-mN-HQ3"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-An-cOR">
+                    <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                    <subviews>
+                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-0s-zRu">
+                            <rect key="frame" x="295" y="222" width="10" height="37"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                        </textView>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
-                </textView>
+                    <constraints>
+                        <constraint firstItem="39E-0s-zRu" firstAttribute="centerX" secondItem="3dd-An-cOR" secondAttribute="centerX" id="0Oc-TP-1zP"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="bottom" id="69e-3c-IAF"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="trailing" id="VD3-Ei-NgH"/>
+                        <constraint firstItem="39E-0s-zRu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3dd-An-cOR" secondAttribute="leading" id="YvY-LR-SlQ"/>
+                        <constraint firstItem="39E-0s-zRu" firstAttribute="centerY" secondItem="3dd-An-cOR" secondAttribute="centerY" id="aOF-Gy-GQ9"/>
+                        <constraint firstItem="39E-0s-zRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3dd-An-cOR" secondAttribute="top" id="gLN-Qo-MuL"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="trailing" id="77Q-Pt-XtE"/>
-                <constraint firstItem="39E-0s-zRu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9wi-U5-2SY"/>
-                <constraint firstItem="39E-0s-zRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="Ll6-pq-sFP"/>
-                <constraint firstItem="39E-0s-zRu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="OqP-46-mu1"/>
-                <constraint firstItem="39E-0s-zRu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="im8-wu-7od"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="39E-0s-zRu" secondAttribute="bottom" id="v0z-rq-T7a"/>
+                <constraint firstItem="JIO-fJ-ahX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1e5-qU-uhu"/>
+                <constraint firstItem="3dd-An-cOR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Oa8-E6-5Js"/>
+                <constraint firstAttribute="bottom" secondItem="3dd-An-cOR" secondAttribute="bottom" id="Wr3-ge-bAW"/>
+                <constraint firstAttribute="trailing" secondItem="3dd-An-cOR" secondAttribute="trailing" id="ZIV-kt-aTV"/>
+                <constraint firstItem="3dd-An-cOR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="262" id="fmp-JB-Qs6"/>
+                <constraint firstItem="JIO-fJ-ahX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="k5b-je-QM1"/>
+                <constraint firstItem="3dd-An-cOR" firstAttribute="top" secondItem="JIO-fJ-ahX" secondAttribute="bottom" id="tBs-Zx-kvf"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="fmp-JB-Qs6"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

@@ -19,6 +19,9 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var percentPPMControl: UISegmentedControl!
     
+    @IBOutlet weak var largerContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var smallerContainerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerPropHeightConstraint: NSLayoutConstraint!
     var itemIndex: Int = 0
     var selectedInput: SelectionInput!
     var roiContentView: RoiInputView!
@@ -38,6 +41,12 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         numberView.loadNumber(itemIndex, selectionInput: selectedInput)
         numberView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activateConstraints(fillConstraints(numberView, toView: containerView))
+        if numberView.hasImage() {
+            largerContainerHeightConstraint.active = true
+            smallerContainerYConstraint.active = true
+            containerPropHeightConstraint.active = false
+            containerViewCenterY.active = false
+        }
         roiContentView = numberView;
         roiContentView.textView.delegate = self
         spinnerScrollView.contentSize = CGSizeMake(spinnerScrollView.frame.width, spinnerScrollView.frame.height*40)

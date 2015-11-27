@@ -83,6 +83,16 @@ class FireSuppressionInput: SelectionInput {
         }
     }
     
+    func getImageUrl(atIndex :Int) -> NSURL? {
+        let input = allInputs()[atIndex]
+        switch input {
+        case let value as TitleAndImage:
+            return value.image
+        default:
+            return nil
+        }
+    }
+    
     private func getNextIndexFromArray(array: [TitleAndImage], title: String, change : ChangeInput) -> Int? {
         if let index = array.indexOf({ $0.title == title }) {
             var newindex = index + change.rawValue
