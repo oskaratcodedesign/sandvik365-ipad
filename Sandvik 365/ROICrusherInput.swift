@@ -18,7 +18,7 @@ enum ROICrusherService: UInt {
 
 enum OperationType: String {
     case New = "New"
-    case Established = "Est."
+    case Established = "Established"
 }
 
 enum ROICrusherInputValue {
