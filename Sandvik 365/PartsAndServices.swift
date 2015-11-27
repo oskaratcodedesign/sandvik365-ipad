@@ -102,7 +102,7 @@ enum BusinessType: UInt {
         case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
         case UndergroundLoadingAndHauling:
-            return FireSuppressionInput(json: nil)
+            return JSONManager.getJSONParts()?.fireSuppressionInput
         }
     }
     
@@ -118,11 +118,26 @@ enum BusinessType: UInt {
 }
 
 class JSONParts {
-    var allParts: [MainPartService] = []
+    var partsServicesContent: [PartServiceContent] = []
+    var fireSuppressionInput: FireSuppressionInput?
     
     init(json: NSDictionary) {
         //parse out relevant parts:
         parseMainSections(json)
+        if let path = NSBundle.mainBundle().pathForResource("firesuppression", ofType: "json")
+        {
+            if let d = NSData(contentsOfFile: path)
+            {
+                do {
+                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
+                        fireSuppressionInput = FireSuppressionInput(json: json)
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     private func sectionTitle(dic: NSDictionary) -> String? {
@@ -144,18 +159,18 @@ class JSONParts {
         if let sections = mainSections(json) {
             for dic in sections {
                 if let title = sectionTitle(dic) {
-                    let mainPartService = MainPartService(title: title)
+                    let partServiceContent = PartServiceContent(title: title)
                     
                     if let jsonpart = dic.valueForKey("children") as? [NSDictionary] {
-                        parsePartServiceSections(jsonpart, mainPartService: mainPartService)
+                        parsePartServiceSections(jsonpart, partServiceContent: partServiceContent)
                     }
-                    allParts.append(mainPartService)
+                    partsServicesContent.append(partServiceContent)
                 }
             }
         }
     }
     
-    private func parsePartServiceSections(jsonpart: [NSDictionary], mainPartService: MainPartService) {
+    private func parsePartServiceSections(jsonpart: [NSDictionary], partServiceContent: PartServiceContent) {
         for dic in jsonpart {
             if let title = sectionTitle(dic), let desc = sectionDescription(dic) {
                 let partService = PartService(title: title, description: desc, productTagUUIDs: getProductTagIds(dic))
@@ -165,7 +180,7 @@ class JSONParts {
                 else if dic.objectForKey("content") != nil {
                     partService.content = Content(content: dic)
                 }
-                mainPartService.partsServices.append(partService)
+                partServiceContent.partsServices.append(partService)
             }
         }
     }
@@ -237,14 +252,14 @@ class PartsAndServices {
         if let fireSuppressionTitle = self.businessType.fireSuppresionTitle {
             titles.append(fireSuppressionTitle.uppercaseString)
         }
-        for mp in jsonParts.allParts {
+        for mp in jsonParts.partsServicesContent {
             titles.append(mp.title.uppercaseString)
         }
         return titles
     }
     
     func partsServices(mainSectionTitle: String) -> [PartService]? {
-        for mp in jsonParts.allParts {
+        for mp in jsonParts.partsServicesContent {
             if mp.title.caseInsensitiveCompare(mainSectionTitle) == .OrderedSame {
                 return mp.partsServices
             }

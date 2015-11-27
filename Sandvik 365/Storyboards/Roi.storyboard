@@ -118,14 +118,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
                                                 <rect key="frame" x="-20" y="0.0" width="100" height="120"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="LZk-Ct-V8U"/>
                                                     <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
                                                 </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="LZk-Ct-V8U"/>
-                                                    </mask>
-                                                </variation>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
