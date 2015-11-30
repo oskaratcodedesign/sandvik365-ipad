@@ -96,7 +96,7 @@ class ROICrusherInput: ROICalculatorInput {
         case .Operation:
             return false
         case .OreGrade:
-            if var number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
+            if var number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 if usePPM {
                     number = number.doubleValue/10000
                 }
@@ -114,12 +114,12 @@ class ROICrusherInput: ROICalculatorInput {
                 return true
             }*/
         case .RecoveryRate:
-            if let number = nsNumberFormatterDecimalWith2Fractions().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 recoveryRate = .RecoveryRate(number.doubleValue)
                 return true
             }
         case .OrePrice:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 orePrice = .OrePrice(number.unsignedLongValue)
                 return true
             }
@@ -133,13 +133,6 @@ class ROICrusherInput: ROICalculatorInput {
         return false
     }
     
-    private func nsNumberFormatterDecimalWith2Fractions() -> NSNumberFormatter {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }
-    
     override func getInputAsString(atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
@@ -150,15 +143,15 @@ class ROICrusherInput: ROICalculatorInput {
             if usePPM {
                 value = 10000 * value
             }
-            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(value)
         case .Capacity:
             return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
         /*case .FinishedProduct:
             return NSNumberFormatter().stringFromNumber(finishedProduct.value as! UInt)*/
         case .RecoveryRate:
-            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double)
         case .OrePrice:
-            return NSNumberFormatter().stringFromNumber(orePrice.value as! UInt)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(orePrice.value as! UInt)
         /*case .ProcessingCost:
             return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)*/
         }
@@ -213,11 +206,6 @@ class ROICrusherInput: ROICalculatorInput {
                     oreGrade = .OreGrade(value)
                 }
             }
-            var value = oreGrade.value as! Double
-            if usePPM {
-                value = value * 10000
-            }
-            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(value) ?? ""
         case .Capacity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -225,7 +213,6 @@ class ROICrusherInput: ROICalculatorInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-            return String(capacity.value as! UInt)
         /*case .FinishedProduct:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -244,7 +231,6 @@ class ROICrusherInput: ROICalculatorInput {
                     recoveryRate = .RecoveryRate(value)
                 }
             }
-            return nsNumberFormatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double) ?? ""
         case .OrePrice:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -252,7 +238,6 @@ class ROICrusherInput: ROICalculatorInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-            return String(orePrice.value as! UInt)
         /*case .ProcessingCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -265,6 +250,7 @@ class ROICrusherInput: ROICalculatorInput {
             attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
             return attrString*/
         }
+        return getInputAsString(atIndex)!
     }
     
     /*func finishedProductMTHR() -> Double {

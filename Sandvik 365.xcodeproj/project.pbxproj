@@ -43,6 +43,7 @@
 		F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867BE1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift */; };
 		F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */; };
 		F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */; };
+		F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -150,6 +151,7 @@
 		F70867BE1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceSelectionViewController.swift; sourceTree = "<group>"; };
 		F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWheel.swift; sourceTree = "<group>"; };
 		F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberFormatterExtension.swift; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */,
 				F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */,
 				F7019D131BE688F000A6B3C6 /* StringHtmlExtension.swift */,
+				F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */,
 				F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */,
+				F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */,
 				F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */,
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
