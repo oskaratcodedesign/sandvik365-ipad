@@ -22,12 +22,12 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     var itemIndex: Int = 0
     var selectedInput: SelectionInput!
     var roiContentView: RoiInputView!
-    var toggleTimer: NSTimer?
-    
     var delegate: RoiSelectionContentViewControllerDelegate?
     
-    var contentOffsetLast: CGPoint?
-    let swipeOffset: CGFloat = 10
+    private var toggleTimer: NSTimer?
+    private var contentOffsetLast: CGPoint?
+    private let swipeOffset: CGFloat = 10
+    private var isKeyBoardShowing: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +109,12 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         let y = CGRectGetMaxY(containerView.frame)
         let diff = y - keyboardSize!.height
         containerViewCenterY.constant += diff
+        isKeyBoardShowing = true
     }
     
     func keyboardWillHide(notification: NSNotification) {
         containerViewCenterY.constant = 0
+        isKeyBoardShowing = false
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -153,11 +155,15 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     @IBAction func toggleUp(sender: UIButton) {
-        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleUp"), userInfo: nil, repeats: true)
+        if !isKeyBoardShowing {
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleUp"), userInfo: nil, repeats: true)
+        }
     }
     
     @IBAction func toggleDown(sender: UIButton) {
-        toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
+        if !isKeyBoardShowing {
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
+        }
     }
     
    
