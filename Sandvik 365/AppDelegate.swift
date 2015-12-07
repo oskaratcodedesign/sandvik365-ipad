@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var loadingView: LoadingView?
     var activityIndicator: UIActivityIndicatorView?
-    var logoView: UIImageView?
+    var logoButton: UIButton?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,28 +48,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func addLogoToView(view: UIView) -> UIImageView?
+    private func addLogoToView(view: UIView) -> UIButton?
     {
-        if let image = UIImage(named: "SANDVIK-logo-white") {
-            self.logoView = UIImageView(image: image)
-            let topConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
-            let trailConstraint = NSLayoutConstraint(item: self.logoView!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
-            self.logoView!.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(self.logoView!)
+        if let image = UIImage(named: "SANDVIK-logo-small") {
+            self.logoButton = UIButton(type: .Custom)
+            self.logoButton?.setImage(image, forState: .Normal)
+            self.logoButton?.setImage(image, forState: .Disabled)
+            let topConstraint = NSLayoutConstraint(item: self.logoButton!, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 25)
+            let trailConstraint = NSLayoutConstraint(item: self.logoButton!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
+            self.logoButton!.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(self.logoButton!)
             NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint])
+            self.logoButton?.addTarget(self, action: Selector("popToRootAction"), forControlEvents: .TouchUpInside)
         }
-        return self.logoView
+        return self.logoButton
     }
 
     func hideLogoView() {
         UIView.animateWithDuration(0.25) { () -> Void in
-            self.logoView?.alpha = 0.0
+            self.logoButton?.alpha = 0.0
         }
     }
     
     func showLogoView() {
         UIView.animateWithDuration(0.25) { () -> Void in
-            self.logoView?.alpha = 1.0
+            self.logoButton?.alpha = 1.0
+        }
+    }
+    
+    func enableLogoButton(){
+        self.logoButton?.enabled = true
+    }
+    
+    func disableLogoButton(){
+        self.logoButton?.enabled = false
+    }
+    
+    func popToRootAction() {
+        if let navController = self.window?.rootViewController as? UINavigationController {
+            navController.popToRootViewControllerAnimated(true)
         }
     }
     

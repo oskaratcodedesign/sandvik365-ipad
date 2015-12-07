@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "SANDVIK-logo-white.png",
+      "filename" : "logo64x23.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "SANDVIK-logo-white@2x.png",
+      "filename" : "logo127x46.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "SANDVIK-logo-white@3x.png",
       "scale" : "3x"
     }
   ],

@@ -44,6 +44,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         super.viewWillAppear(animated)
         backButtonBg.hidden = true
         self.navigationController?.navigationBarHidden = true
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.disableLogoButton()
         checkUpdateAvailble()
     }
     
@@ -59,6 +61,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
             })
         }
         showBackButton = true
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.enableLogoButton()
     }
     
     func checkUpdateAvailble(){
