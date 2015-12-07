@@ -61,10 +61,12 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                 let roiTitle = selectedPartsAndServices.businessType.roiCalculatorTitle
                 let fireSuprTitle = selectedPartsAndServices.businessType.fireSuppresionTitle
                 if roiTitle != nil && selectedSectionTitle.caseInsensitiveCompare(roiTitle!) == .OrderedSame {
+                    vc.selectedBusinessType = selectedPartsAndServices.businessType
                     vc.selectedInput = self.selectedPartsAndServices.businessType.roiCalculatorInput
                     vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, roiTitle!.uppercaseString)
                 }
                 else if fireSuprTitle != nil && selectedSectionTitle.caseInsensitiveCompare(fireSuprTitle!) == .OrderedSame {
+                    vc.selectedBusinessType = selectedPartsAndServices.businessType
                     vc.selectedInput = self.selectedPartsAndServices.businessType.fireSuppresionTool
                     vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, fireSuprTitle!.uppercaseString)
                 }

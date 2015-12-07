@@ -34,17 +34,10 @@
                         <viewControllerLayoutGuide type="top" id="Dbt-9D-af3"/>
                         <viewControllerLayoutGuide type="bottom" id="zIC-2B-X2W"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MSP-rB-ez0">
+                    <view key="view" contentMode="scaleToFill" id="MSP-rB-ez0" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="Ft3-3w-Z2w">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqm-DF-q37">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsz-tO-ijf">
                                 <rect key="frame" x="0.0" y="70" width="600" height="29"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="25"/>
@@ -187,53 +180,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="1VL-iL-eTW"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" id="2Hc-98-vl0"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="2pM-qy-itj"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="4G3-44-XBg"/>
-                            <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="aqm-DF-q37" secondAttribute="trailing" id="5ej-Ys-dRs"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="A7p-XQ-B1t"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="BC6-G1-6Xi"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="BfW-Hh-tPh"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="Pfv-Rj-qtp" secondAttribute="trailing" id="KFo-rx-X0l"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="McR-7d-S0G"/>
-                            <constraint firstItem="Ft3-3w-Z2w" firstAttribute="top" secondItem="MSP-rB-ez0" secondAttribute="top" id="RGO-5Z-ZD0"/>
                             <constraint firstAttribute="trailing" secondItem="xsz-tO-ijf" secondAttribute="trailing" id="T4d-w5-DXq"/>
                             <constraint firstAttribute="centerX" secondItem="xsz-tO-ijf" secondAttribute="centerX" id="Tgf-s0-vfV"/>
-                            <constraint firstAttribute="trailing" secondItem="Ft3-3w-Z2w" secondAttribute="trailing" id="UOi-KT-7qF"/>
-                            <constraint firstAttribute="trailing" secondItem="aqm-DF-q37" secondAttribute="trailing" id="VEI-wO-ram"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" constant="50" id="Vsm-YV-JOe"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Jep-bc-FmT" secondAttribute="bottom" constant="20" id="X79-oX-DEx"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="YAq-WA-kX2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jep-bc-FmT" secondAttribute="trailing" id="ZD4-jp-sTe"/>
                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="ZLG-Y2-T6S"/>
-                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Ft3-3w-Z2w" secondAttribute="bottom" id="ao9-uB-hdh"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="bpU-98-QoA"/>
                             <constraint firstItem="d7a-fs-vKI" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="c5X-hZ-6mp"/>
                             <constraint firstItem="Jep-bc-FmT" firstAttribute="leading" secondItem="8ah-fO-PXD" secondAttribute="trailing" id="dq4-dp-FVe"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="8ah-fO-PXD" secondAttribute="bottom" constant="20" id="gGn-KN-qbR"/>
-                            <constraint firstItem="Ft3-3w-Z2w" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="hic-4H-2GE"/>
                             <constraint firstItem="8ah-fO-PXD" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="81" id="m6J-Ls-rZx"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" id="mDV-5H-eGc"/>
-                            <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="aqm-DF-q37" secondAttribute="bottom" id="oJX-Gv-NHR"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" multiplier="0.3" id="pz8-7Y-zIS"/>
                             <constraint firstItem="8ah-fO-PXD" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="tgE-tD-cVd"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="uCJ-Ij-oYs"/>
-                            <constraint firstItem="aqm-DF-q37" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="vFp-BX-NJf"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="Jep-bc-FmT" secondAttribute="trailing" constant="5" id="xIU-hn-3ic"/>
                             <constraint firstItem="d7a-fs-vKI" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leading" id="yCE-Kq-NY5"/>
                             <constraint firstAttribute="trailing" secondItem="tVa-ib-G4a" secondAttribute="trailing" id="yGe-jF-fl5"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="A7p-XQ-B1t"/>
-                                <exclude reference="BC6-G1-6Xi"/>
-                                <exclude reference="VEI-wO-ram"/>
-                                <exclude reference="mDV-5H-eGc"/>
-                                <exclude reference="uCJ-Ij-oYs"/>
-                                <exclude reference="vFp-BX-NJf"/>
-                                <exclude reference="5ej-Ys-dRs"/>
                                 <exclude reference="xIU-hn-3ic"/>
-                                <exclude reference="oJX-Gv-NHR"/>
                             </mask>
                         </variation>
                     </view>
@@ -793,6 +767,5 @@ PLANNING SERVICES</string>
         <image name="sandvik_arrow_left" width="32" height="64"/>
         <image name="sandvik_arrow_right" width="32" height="64"/>
         <image name="sandvik_arrow_up" width="65" height="32"/>
-        <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>
