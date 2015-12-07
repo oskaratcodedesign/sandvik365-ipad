@@ -253,7 +253,12 @@ class PartsAndServices {
             titles.append(fireSuppressionTitle.uppercaseString)
         }
         for mp in jsonParts.partsServicesContent {
-            titles.append(mp.title.uppercaseString)
+            for ps in mp.partsServices {
+                if(shouldPartServiceBeShown(ps)) {
+                    titles.append(mp.title.uppercaseString)
+                    break
+                }
+            }
         }
         return titles
     }
