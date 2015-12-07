@@ -60,7 +60,7 @@
                         <constraint firstAttribute="height" constant="19" id="Xdu-jx-Unw"/>
                         <constraint firstAttribute="height" constant="20" id="hNJ-xb-El0"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">

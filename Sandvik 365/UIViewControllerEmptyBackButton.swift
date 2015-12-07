@@ -41,11 +41,11 @@ extension UIViewController {
             label.textAlignment = .Left
             label.textColor = UIColor.whiteColor()
             if let title = self.navigationItem.title {
-                let attrString = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 12)!])
+                let attrString = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 13)!])
                 if let range = title.rangeOfString("| ") {
                     if let lastIndex = range.last {
                         let subTitle = title.substringFromIndex(lastIndex)
-                        attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 12.0)!, range: NSRange(location: attrString.length-subTitle.characters.count,length: subTitle.characters.count))
+                        attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 13.0)!, range: NSRange(location: attrString.length-subTitle.characters.count,length: subTitle.characters.count))
                     }
                 }
                 
