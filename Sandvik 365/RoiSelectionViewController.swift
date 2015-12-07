@@ -132,7 +132,12 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             return
         }
         nextButton.hidden = false
-        prevButton.hidden = false
+        if(itemIndex > 0) {
+            prevButton.hidden = false
+        }
+        else {
+            prevButton.hidden = true
+        }
         if hasVisitedLastPage {
             viewResultButton.hidden = false
         }
