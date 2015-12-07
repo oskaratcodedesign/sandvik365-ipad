@@ -219,7 +219,10 @@ class Content {
         for part in content {
             if let type = part.objectForKey("element") as? String {
                 if type == "p", let value = part.objectForKey("html") as? String {
-                    titleOrTextOrList.append(.Text(value.stripHTML()))
+                    let string = value.stripHTML()
+                    if(string.characters.count > 0 && string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0) {
+                        titleOrTextOrList.append(.Text(string))
+                    }
                 }
                 else if ["h1", "h2", "h3", "h4", "h5", "h6"].contains(type), let value = part.objectForKey("html") as? String {
                     titleOrTextOrList.append(.Title(value.stripHTML()))

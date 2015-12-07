@@ -79,7 +79,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func addStripesImage(prevView: UIView) -> UIView {
         let view = UIImageView(image: UIImage(named: "sandvik_stripes_bg"))
         view.contentMode = UIViewContentMode.ScaleAspectFill
-        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: 40, leftConstant: 0)
+        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: 50, leftConstant: 0)
         return view
     }
     
@@ -137,7 +137,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 subContentView.addSubview(imageView)
                 NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
                 prevView = imageView
-                changedTopConstant = 60
+                changedTopConstant = 50
             }
         }
         
@@ -219,7 +219,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func leadLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 15.0)
+        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16.0)
         label.textColor = UIColor.whiteColor()
         //label.textAlignment = .Center
         label.text = string
@@ -237,10 +237,10 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint])
         let mutString = NSMutableAttributedString()
         if titleAndText.title != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         if titleAndText.text != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         
         let textlabel = genericTextLabel("")
@@ -261,7 +261,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func genericTextLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorp-Light", size: 15.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Light", size: 16.0)
         label.textColor = UIColor.whiteColor()
         
         label.text = string
@@ -271,7 +271,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func genericTitleLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 16.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 17.0)
         label.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
         
         label.text = string.uppercaseString
