@@ -25,6 +25,8 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBOutlet var subContentView: UIView!
     @IBOutlet var stripeImageView: UIImageView!
     private let topConstant: CGFloat = 20
+    private var changedTopConstant: CGFloat = 0
+    
     private var alignCountOnBoxRight: Bool = true
     
     override func viewDidLoad() {
@@ -97,8 +99,11 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         addViewAndConstraints(subContentView, fromView: fromView, toView: toView, topConstant: topConstant, leftConstant: leftConstant)
     }
     
-    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
-        
+    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, var topConstant: CGFloat, leftConstant: CGFloat) {
+        if(changedTopConstant > 0) {
+            topConstant = changedTopConstant
+            changedTopConstant = 0
+        }
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
         let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
@@ -127,11 +132,12 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
                 let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
                 let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 36)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50)
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 subContentView.addSubview(imageView)
                 NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
                 prevView = imageView
+                changedTopConstant = 60
             }
         }
         
