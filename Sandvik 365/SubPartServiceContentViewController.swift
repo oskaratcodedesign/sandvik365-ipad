@@ -25,6 +25,8 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBOutlet var subContentView: UIView!
     @IBOutlet var stripeImageView: UIImageView!
     private let topConstant: CGFloat = 20
+    private var changedTopConstant: CGFloat = 0
+    
     private var alignCountOnBoxRight: Bool = true
     
     override func viewDidLoad() {
@@ -77,7 +79,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func addStripesImage(prevView: UIView) -> UIView {
         let view = UIImageView(image: UIImage(named: "sandvik_stripes_bg"))
         view.contentMode = UIViewContentMode.ScaleAspectFill
-        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: topConstant, leftConstant: 0)
+        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: 50, leftConstant: 0)
         return view
     }
     
@@ -97,8 +99,11 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         addViewAndConstraints(subContentView, fromView: fromView, toView: toView, topConstant: topConstant, leftConstant: leftConstant)
     }
     
-    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
-        
+    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, var topConstant: CGFloat, leftConstant: CGFloat) {
+        if(changedTopConstant > 0) {
+            topConstant = changedTopConstant
+            changedTopConstant = 0
+        }
         let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
         let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
@@ -127,11 +132,12 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
                 let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
                 let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 36)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50)
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 subContentView.addSubview(imageView)
                 NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
                 prevView = imageView
+                changedTopConstant = 50
             }
         }
         
@@ -213,7 +219,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func leadLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 15.0)
+        label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16.0)
         label.textColor = UIColor.whiteColor()
         //label.textAlignment = .Center
         label.text = string
@@ -225,29 +231,29 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         let container = UIView()
         var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        
         listlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(listlabel)
         
         NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint])
         let mutString = NSMutableAttributedString()
         if titleAndText.title != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         if titleAndText.text != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 15.0)!]))
+            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         
         let textlabel = genericTextLabel("")
         textlabel.attributedText = mutString
         topConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         leadConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: listlabel, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 10)
+        let trailConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         let botConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
         textlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(textlabel)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint])
+        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint, trailConstraint])
         
         return container
     }
@@ -255,7 +261,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func genericTextLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorp-Light", size: 15.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Light", size: 16.0)
         label.textColor = UIColor.whiteColor()
         
         label.text = string
@@ -265,7 +271,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func genericTitleLabel(string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 16.0)
+        label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 17.0)
         label.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
         
         label.text = string.uppercaseString

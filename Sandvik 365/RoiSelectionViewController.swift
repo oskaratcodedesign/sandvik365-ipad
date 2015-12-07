@@ -25,9 +25,13 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     private var titles = [String]()
     private var hasVisitedLastPage: Bool = false
     var selectedInput: SelectionInput!
+    var selectedBusinessType: BusinessType!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(selectedBusinessType.backgroundImageName)
+        }
         setupDependingOnInput()
         loadPageController()
         
@@ -132,7 +136,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             return
         }
         nextButton.hidden = false
-        prevButton.hidden = false
+        prevButton.hidden = (itemIndex == 0)
+
         if hasVisitedLastPage {
             viewResultButton.hidden = false
         }

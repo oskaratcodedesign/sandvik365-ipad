@@ -242,7 +242,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
                                 <rect key="frame" x="100" y="100" width="280" height="75"/>
                                 <animations/>
                                 <constraints>
@@ -331,7 +331,7 @@ TO ROTATE</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-O6-JZA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-O6-JZA">
                                 <rect key="frame" x="100" y="100" width="280" height="75"/>
                                 <animations/>
                                 <constraints>
@@ -349,7 +349,7 @@ TO ROTATE</string>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-ZF-Bwd">
                                 <rect key="frame" x="100" y="204" width="400" height="296"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-gl-Yk2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-gl-Yk2">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
                                         <animations/>
                                         <constraints>
@@ -364,7 +364,7 @@ TO ROTATE</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-bY-ArL">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-bY-ArL">
                                         <rect key="frame" x="0.0" y="88" width="400" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-vd-DOg">
@@ -578,7 +578,7 @@ TO ROTATE</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-Zp-aX7">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-qP-7E6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-qP-7E6">
                                                 <rect key="frame" x="100" y="80" width="300" height="58"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -607,15 +607,15 @@ TO ROTATE</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-sa-F0D">
-                                        <rect key="frame" x="0.0" y="580" width="600" height="447"/>
+                                        <rect key="frame" x="0.0" y="580" width="600" height="492"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
-                                                <rect key="frame" x="0.0" y="203" width="600" height="244"/>
+                                                <rect key="frame" x="0.0" y="203" width="600" height="289"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-jQ-fwY">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-Uo-XL0">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
@@ -623,14 +623,14 @@ TO ROTATE</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-3R-8rA">
-                                                        <rect key="frame" x="100" y="203" width="210" height="244"/>
+                                                        <rect key="frame" x="100" y="203" width="210" height="289"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pei-pB-EfP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="210" height="5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
                                                                 <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="5" id="Jmx-rF-veL"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="Jmx-rF-veL"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -753,6 +753,6 @@ TO ROTATE</string>
         <image name="sandvik_stripes_bg" width="1025" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HCU-SY-t7f"/>
+        <segue reference="oSS-kG-9xZ"/>
     </inferredMetricsTieBreakers>
 </document>
