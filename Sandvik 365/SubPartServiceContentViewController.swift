@@ -225,7 +225,6 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         let container = UIView()
         var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        
         listlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(listlabel)
         
@@ -242,12 +241,13 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         textlabel.attributedText = mutString
         topConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         leadConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: listlabel, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 10)
+        let trailConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         let botConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
         textlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(textlabel)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint])
+        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint, trailConstraint])
         
         return container
     }
