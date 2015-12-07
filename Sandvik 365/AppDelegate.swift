@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var loadingView: LoadingView?
-    var activityIndicator: UIActivityIndicatorView?
+    var downloadingView: DownloadingView?
     var logoButton: UIButton?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -39,13 +39,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
             addLogoToView(window)
             showLoadingView()
-            activityIndicator = UIActivityIndicatorView(frame: window.bounds)
-            activityIndicator!.activityIndicatorViewStyle = .WhiteLarge
-            activityIndicator!.backgroundColor = UIColor(white: 0, alpha: 0.5)
-            window.addSubview(activityIndicator!)
         }
         
         return true
+    }
+    
+    func addDownloadingViewAndAnimate() {
+        if let window = self.window {
+            self.downloadingView = DownloadingView(frame: window.bounds)
+            if let downloadingView = self.downloadingView {
+                window.addSubview(downloadingView)
+                downloadingView.activityIndicator.startAnimating()
+            }
+        }
+    }
+    
+    func removeDownloadingView() {
+        if self.downloadingView != nil {
+            self.downloadingView!.removeFromSuperview()
+            self.downloadingView = nil
+        }
     }
     
     private func addLogoToView(view: UIView) -> UIButton?
