@@ -77,7 +77,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private func addStripesImage(prevView: UIView) -> UIView {
         let view = UIImageView(image: UIImage(named: "sandvik_stripes_bg"))
         view.contentMode = UIViewContentMode.ScaleAspectFill
-        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: topConstant, leftConstant: 0)
+        addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: 40, leftConstant: 0)
         return view
     }
     
