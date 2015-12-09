@@ -18,6 +18,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var viewResultButton: UIButton!
+    @IBOutlet weak var pageContentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
@@ -35,10 +37,10 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         setupDependingOnInput()
         loadPageController()
         
-        view.bringSubviewToFront(selectionContainer.superview!)
-        view.bringSubviewToFront(nextButton)
-        view.bringSubviewToFront(prevButton)
-        view.bringSubviewToFront(viewResultButton)
+        pageContentView.bringSubviewToFront(selectionContainer.superview!)
+        pageContentView.bringSubviewToFront(nextButton)
+        pageContentView.bringSubviewToFront(prevButton)
+        pageContentView.bringSubviewToFront(viewResultButton)
         
         selectionButtons.append(currentSelectionButton)
         currentSelectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("handleButtonSelect:")))
@@ -125,9 +127,18 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         
         pageViewController = pageController
         addChildViewController(pageViewController!)
-        view.addSubview(pageViewController!.view)
-
+        pageContentView.addSubview(pageViewController!.view)
+        pageViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints(fillConstraints(pageViewController!.view, toView: pageContentView))
         pageViewController!.didMoveToParentViewController(self)
+    }
+    
+    private func fillConstraints(fromView: UIView, toView: UIView) -> [NSLayoutConstraint] {
+        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let leadingConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        return [topConstraint, bottomConstraint, trailConstraint, leadingConstraint]
     }
     
     private func showSelectedInput(itemIndex: Int) {
