@@ -56,6 +56,9 @@
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
+		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
+		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
+		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
@@ -163,6 +166,9 @@
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
+		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
+		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
+		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
@@ -328,6 +334,8 @@
 				F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */,
 				F7E2C0431C15C42C009D290B /* DownloadingView.swift */,
 				F7E2C0451C15C445009D290B /* DownloadingView.xib */,
+				F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */,
+				F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 		F70867C41BD4DE9E00033AB5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */,
 				F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */,
 				F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */,
 				F7019D131BE688F000A6B3C6 /* StringHtmlExtension.swift */,
@@ -558,6 +567,7 @@
 				F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */,
 				F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
+				F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
@@ -636,6 +646,7 @@
 			files = (
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
 				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
+				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
@@ -672,6 +683,7 @@
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
+				F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */,
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,

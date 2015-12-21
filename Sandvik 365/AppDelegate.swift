@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var loadingView: LoadingView?
     var downloadingView: DownloadingView?
     var logoButton: UIButton?
-
+    var disclaimerView: Disclaimer?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let jsonManager = JSONManager()
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = self.window {
             window.makeKeyAndVisible()
             addLogoToView(window)
+            addDisclaimerToView(window)
             showLoadingView()
         }
         
@@ -61,6 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    private func addDisclaimerToView(view: UIView) {
+        self.disclaimerView = Disclaimer(frame: view.bounds)
+        view.addSubview(self.disclaimerView!)
+    }
+    
     private func addLogoToView(view: UIView) -> UIButton?
     {
         if let image = UIImage(named: "SANDVIK-logo-small") {
@@ -80,12 +87,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func hideLogoView() {
         UIView.animateWithDuration(0.25) { () -> Void in
             self.logoButton?.alpha = 0.0
+            self.disclaimerView?.alpha = 0.0
         }
     }
     
     func showLogoView() {
         UIView.animateWithDuration(0.25) { () -> Void in
             self.logoButton?.alpha = 1.0
+            self.disclaimerView?.alpha = 1.0
         }
     }
     
