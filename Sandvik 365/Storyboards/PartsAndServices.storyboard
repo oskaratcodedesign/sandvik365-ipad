@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QLr-DO-bh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QLr-DO-bh8">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -41,7 +41,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV5-9s-TB1">
                                 <rect key="frame" x="100" y="100" width="280" height="46"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="Rxa-ed-wzO"/>
                                 </constraints>
@@ -59,7 +58,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpW-kE-e0e">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="EDW-YA-CXx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="OPw-7U-bfs"/>
@@ -89,11 +87,9 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L52-1z-BNu" customClass="SectionSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="120"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="L52-1z-BNu" firstAttribute="top" secondItem="Dvc-Yz-qY3" secondAttribute="top" id="257-UZ-Etn"/>
@@ -103,7 +99,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="Dvc-Yz-qY3" firstAttribute="top" secondItem="05B-3a-GqG" secondAttribute="top" id="2Nv-Xw-ohg"/>
                                             <constraint firstItem="Dvc-Yz-qY3" firstAttribute="leading" secondItem="05B-3a-GqG" secondAttribute="leading" id="5t4-GW-NgY"/>
@@ -123,7 +118,6 @@
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOo-Za-mXz">
                                         <rect key="frame" x="410" y="0.0" width="150" height="120"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="2Ee-wY-LwH"/>
                                             <constraint firstAttribute="width" constant="150" id="5HJ-cZ-qRn"/>
@@ -150,7 +144,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSt-RV-fgR">
                                                 <rect key="frame" x="130" y="0.0" width="300" height="194"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="Ryq-hB-Qqa"/>
                                                 </constraints>
@@ -159,7 +152,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="eSt-RV-fgR" firstAttribute="centerX" secondItem="Isj-TZ-dX3" secondAttribute="centerX" id="Bwq-X3-gbd"/>
@@ -169,7 +161,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Isj-TZ-dX3" secondAttribute="trailing" id="8Ew-hc-oXG"/>
@@ -187,7 +178,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EV5-9s-TB1" firstAttribute="top" secondItem="Lck-QY-Xgy" secondAttribute="bottom" constant="61" id="MT4-tK-wCW"/>
@@ -244,7 +234,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-Ok-Qw4">
                                 <rect key="frame" x="100" y="100" width="280" height="75"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="LdI-rm-Nqf"/>
                                 </constraints>
@@ -262,12 +251,10 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaQ-Wi-bBT">
                                         <rect key="frame" x="0.0" y="0.0" width="440" height="580"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egJ-ml-wlL">
                                         <rect key="frame" x="170" y="240" width="100" height="100"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="PQR-wP-3rt"/>
                                             <constraint firstAttribute="height" constant="100" id="x6l-NQ-inK"/>
@@ -279,7 +266,6 @@ TO ROTATE</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="WaQ-Wi-bBT" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="top" id="2YD-du-AYT"/>
@@ -295,7 +281,6 @@ TO ROTATE</string>
                                 </connections>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ElF-ex-6wJ" firstAttribute="top" secondItem="UDb-kB-npY" secondAttribute="bottom" constant="-300" id="3tU-Ea-mVA"/>
@@ -333,7 +318,6 @@ TO ROTATE</string>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-O6-JZA">
                                 <rect key="frame" x="100" y="100" width="280" height="75"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="YoY-C5-edz"/>
                                 </constraints>
@@ -346,12 +330,11 @@ TO ROTATE</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-ZF-Bwd">
-                                <rect key="frame" x="100" y="204" width="400" height="296"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-ZF-Bwd">
+                                <rect key="frame" x="100" y="205" width="400" height="295"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-gl-Yk2">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="400" id="Tsh-wK-BSf"/>
                                         </constraints>
@@ -369,7 +352,6 @@ TO ROTATE</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-vd-DOg">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="JWW-mU-zqZ"/>
                                                     <constraint firstAttribute="height" constant="120" id="Kw5-9Z-jqK"/>
@@ -399,7 +381,6 @@ TO ROTATE</string>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQt-oP-RLf" customClass="SectionSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="120"/>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="160" id="4XZ-Oo-GYx"/>
@@ -411,7 +392,6 @@ TO ROTATE</string>
                                                                 </variation>
                                                             </view>
                                                         </subviews>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="LQt-oP-RLf" firstAttribute="leading" secondItem="6Lg-dp-gaC" secondAttribute="leading" id="56y-Hv-FYD"/>
@@ -421,7 +401,6 @@ TO ROTATE</string>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstItem="6Lg-dp-gaC" firstAttribute="centerX" secondItem="U62-do-iVP" secondAttribute="centerX" priority="750" id="8WF-yB-1ou"/>
                                                     <constraint firstAttribute="bottom" secondItem="6Lg-dp-gaC" secondAttribute="bottom" id="8oo-fe-hlB"/>
@@ -434,7 +413,6 @@ TO ROTATE</string>
                                             </scrollView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKD-mZ-JYB">
                                                 <rect key="frame" x="280" y="0.0" width="120" height="120"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="9nW-nB-9YQ"/>
                                                     <constraint firstAttribute="height" constant="120" id="WOt-Qw-Uwh"/>
@@ -457,7 +435,6 @@ TO ROTATE</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Np8-vd-DOg" firstAttribute="top" secondItem="GVd-bY-ArL" secondAttribute="top" id="6fG-LH-P7D"/>
@@ -482,7 +459,6 @@ TO ROTATE</string>
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GVd-bY-ArL" secondAttribute="trailing" id="1ko-sv-xFF"/>
@@ -511,7 +487,6 @@ TO ROTATE</string>
                                 </variation>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iXD-ZF-Bwd" secondAttribute="trailing" constant="100" id="8kg-Hw-cV6"/>
@@ -580,22 +555,19 @@ TO ROTATE</string>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-qP-7E6">
                                                 <rect key="frame" x="100" y="80" width="300" height="58"/>
-                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="50"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bca-y5-26w">
-                                                <rect key="frame" x="269" y="528" width="63" height="73"/>
-                                                <animations/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bca-y5-26w">
+                                                <rect key="frame" x="269" y="527" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -611,7 +583,6 @@ TO ROTATE</string>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
                                                 <rect key="frame" x="0.0" y="203" width="600" height="289"/>
-                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-jQ-fwY">
@@ -619,7 +590,6 @@ TO ROTATE</string>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-Uo-XL0">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-3R-8rA">
@@ -627,14 +597,12 @@ TO ROTATE</string>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pei-pB-EfP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Jmx-rF-veL"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="pei-pB-EfP" secondAttribute="trailing" id="JPW-A4-6Dh"/>
@@ -644,7 +612,6 @@ TO ROTATE</string>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="2Id-3R-8rA" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="4BK-JG-kL3"/>
@@ -662,7 +629,6 @@ TO ROTATE</string>
                                                 </variation>
                                             </view>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="w8Y-jQ-fwY" secondAttribute="bottom" id="Fhl-Bd-bE6"/>
@@ -683,7 +649,6 @@ TO ROTATE</string>
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="7gp-sa-F0D" secondAttribute="bottom" id="2Rg-SP-sP4"/>
@@ -708,7 +673,6 @@ TO ROTATE</string>
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xBo-ST-VW3" firstAttribute="leading" secondItem="tFP-gj-asj" secondAttribute="leading" id="JCp-en-sBU"/>
@@ -753,6 +717,6 @@ TO ROTATE</string>
         <image name="sandvik_stripes_bg" width="1025" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oSS-kG-9xZ"/>
+        <segue reference="HCU-SY-t7f"/>
     </inferredMetricsTieBreakers>
 </document>

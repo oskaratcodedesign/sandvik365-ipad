@@ -78,6 +78,12 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         goToPage(viewControllers.count-1)
     }
     
+    @IBAction func handleTap(sender: AnyObject) {
+        if self.scrollView.contentOffset.y < self.scrollView.bounds.size.height {
+            self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
+        }
+    }
+    
     private func toggleLeftRight(left: Bool) {
         if let currentController = pageViewController?.viewControllers!.last as? RoiSelectionContentViewController
         {
