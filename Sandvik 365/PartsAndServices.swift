@@ -79,7 +79,7 @@ enum BusinessType: UInt {
         }
     }
     
-    var roiCalculatorTitle: String? {
+    var roiCrusherCalculatorTitle: String? {
         switch self {
         case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
             return nil
@@ -88,7 +88,7 @@ enum BusinessType: UInt {
         }
     }
     
-    var roiCalculatorInput: ROICalculatorInput? {
+    var roiCrusherInput: ROICrusherInput? {
         switch self {
         case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
             return nil
@@ -97,7 +97,7 @@ enum BusinessType: UInt {
         }
     }
     
-    var fireSuppresionTool: FireSuppressionInput? {
+    var fireSuppressionInput: FireSuppressionInput? {
         switch self {
         case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
@@ -106,13 +106,35 @@ enum BusinessType: UInt {
         }
     }
     
-    var fireSuppresionTitle: String? {
+    var fireSuppressionTitle: String? {
         switch self {
         case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
         case UndergroundLoadingAndHauling:
             return "Fire suppression tool"
         }
+    }
+    
+    var roiGetCalculatorTitle: String? {
+        switch self {
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+            return nil
+        case CrusherAndScreening:
+            return "GET calculator"
+        }
+    }
+    
+    var roiGetInput: ROIGetInput? {
+        switch self {
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, MineAutomationSystems, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+            return nil
+        case CrusherAndScreening:
+            return ROIGetInput()
+        }
+    }
+    
+    var roiTitlesLowerCase: [String] {
+        return [roiCrusherCalculatorTitle?.lowercaseString, fireSuppressionTitle?.lowercaseString, roiGetCalculatorTitle?.lowercaseString].flatMap({$0})
     }
     
 }
@@ -246,12 +268,17 @@ class PartsAndServices {
     func mainSectionTitles() -> [String] {
         var titles: [String] = []
         
-        if let roiTitle = self.businessType.roiCalculatorTitle {
+        if let roiTitle = self.businessType.roiCrusherCalculatorTitle {
             titles.append(roiTitle.uppercaseString)
         }
-        if let fireSuppressionTitle = self.businessType.fireSuppresionTitle {
+        if let fireSuppressionTitle = self.businessType.fireSuppressionTitle {
             titles.append(fireSuppressionTitle.uppercaseString)
         }
+        
+        if let geTitle = self.businessType.roiGetCalculatorTitle {
+            titles.append(geTitle.uppercaseString)
+        }
+        
         for mp in jsonParts.partsServicesContent {
             for ps in mp.partsServices {
                 if(shouldPartServiceBeShown(ps)) {
