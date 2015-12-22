@@ -8,29 +8,22 @@
 
 import UIKit
 
-class RoiCrusherResultViewController: UIViewController {
+class RoiCrusherResultViewController: RoiResultViewController {
 
     var selectedInput: ROICrusherInput!
-    @IBOutlet weak var seeDetailButton: UIButton!
-    @IBOutlet weak var closeDetailButton: UIButton!
-    @IBOutlet weak var profitLabel: UILabel!
     @IBOutlet weak var rampUpButton: UIButton!
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var maintenenceButton: UIButton!
     @IBOutlet weak var protectiveButton: UIButton!
     private var selectedButton: UIButton?
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsContainerView: UIView!
-    @IBOutlet weak var graphContainerView: UIView!
     @IBOutlet weak var graphLabel: UILabel!
     @IBOutlet weak var graphView: UIView!
     @IBOutlet var graphViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadServiceButtons()
-        setBorderOnDetailButton()
+        loadServiceButtons([rampUpButton, conditionButton, maintenenceButton, protectiveButton])
         titleLabel.text = NSLocalizedString("INCREASED\nVALUE BY UP TO", comment: "")
         let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
         attrString.appendAttributedString(NSAttributedString(string: "\nCAPITAL SPARE PARTS\nCOVERED", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
@@ -119,7 +112,6 @@ class RoiCrusherResultViewController: UIViewController {
         if selectedButton.selected {
             input.services.insert(selectedService)
         }
-        
     }
     
     private func setProfitLabel()
@@ -135,26 +127,5 @@ class RoiCrusherResultViewController: UIViewController {
     private func setProfitLabelFromInput() {
         let sum = selectedInput.total()
         profitLabel.text = NSNumberFormatter().formatToUSD(sum)
-    }
-    
-    private func setBorderOnDetailButton() {
-        let layer = self.seeDetailButton.layer
-        layer.masksToBounds = true
-        layer.borderWidth = 1
-        layer.borderColor = self.seeDetailButton.titleLabel?.textColor.CGColor
-    }
-    
-    private func loadServiceButtons() {
-        var size = rampUpButton.bounds.size
-        size.width = size.height
-        let color = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000)
-        let serviceButtons = [rampUpButton, conditionButton, maintenenceButton, protectiveButton]
-        for button in serviceButtons {
-            let borderimage = CALayer().roundImage(CGRectMake(0, 0, size.width, size.height), fill: false, color: color)
-            button.setImage(borderimage, forState: .Normal)
-            let fillimage = CALayer().roundImage(CGRectMake(0, 0, size.width, size.height), fill: true, color: color)
-            button.setImage(fillimage, forState: .Highlighted)
-            button.setImage(fillimage, forState: .Selected)
-        }
     }
 }

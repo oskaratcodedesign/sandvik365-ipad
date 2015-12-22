@@ -82,6 +82,8 @@
 		F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */; };
 		F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */; };
 		F7EC8DBC1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */; };
+		F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */; };
+		F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
 		F7F705E21BEABA72003D6289 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; };
@@ -193,6 +195,8 @@
 		F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiGraphView.swift; sourceTree = "<group>"; };
 		F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIGetInput.swift; sourceTree = "<group>"; };
 		F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
+		F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiGetResultViewController.swift; sourceTree = "<group>"; };
+		F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiResultViewController.swift; sourceTree = "<group>"; };
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -470,6 +474,8 @@
 				F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */,
 				F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */,
 				F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */,
+				F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */,
+				F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */,
 			);
 			name = Roi;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */,
+				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
@@ -665,6 +672,7 @@
 				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,
+				F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */,
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
