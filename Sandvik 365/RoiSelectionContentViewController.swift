@@ -118,10 +118,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
-        print(contentOffsetLast!.y)
         let dy = scrollView.contentOffset.y - contentOffsetLast!.y
-        print(dy)
         if dy != 0 && scrollView.contentOffset.y > 0{
             
             if dy > swipeOffset {
@@ -136,7 +133,6 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        print("DidEndDecelerating")
         scrollView.bounds.origin = CGPointMake(0, spinnerScrollView.contentSize.height/2)
         contentOffsetLast = scrollView.contentOffset
     }
