@@ -18,7 +18,7 @@ class RoiCrusherResultViewController: UIViewController {
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var maintenenceButton: UIButton!
     @IBOutlet weak var protectiveButton: UIButton!
-    private var selectedButton: UIButton!
+    private var selectedButton: UIButton?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsContainerView: UIView!
@@ -41,6 +41,9 @@ class RoiCrusherResultViewController: UIViewController {
         super.viewWillAppear(animated)
         setGraphValue()
         setProfitLabel()
+        if self.selectedInput.services.isEmpty {
+            self.selectedButton?.selected = false
+        }
         conditionButton.hidden = false
         maintenenceButton.hidden = false
         protectiveButton.hidden = false
@@ -107,11 +110,9 @@ class RoiCrusherResultViewController: UIViewController {
     }
     
     private func controlCrusherServices(input: ROICrusherInput, selectedService: ROICrusherService, selectedButton: UIButton) {
-        if self.selectedButton != nil {
-            self.selectedButton.selected = false
-        }
+        self.selectedButton?.selected = false
         self.selectedButton = selectedButton
-        self.selectedButton.selected = !selectedButton.selected
+        self.selectedButton?.selected = !selectedButton.selected
         
         input.services.removeAll()
         
