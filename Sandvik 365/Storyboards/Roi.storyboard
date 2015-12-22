@@ -26,6 +26,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -434,10 +435,10 @@ quiatus etur minti odisit, nobis es minctest, cu- ptiis as aut escil is sim id m
             </objects>
             <point key="canvasLocation" x="693" y="-790"/>
         </scene>
-        <!--Roi Calculator View Controller-->
+        <!--Roi Crusher Result View Controller-->
         <scene sceneID="gez-zh-AwM">
             <objects>
-                <viewController storyboardIdentifier="RoiCalculatorViewController" id="SOn-Qd-dbX" customClass="RoiCalculatorViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoiCrusherResultViewController" id="SOn-Qd-dbX" customClass="RoiCrusherResultViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FfD-ES-uyX"/>
                         <viewControllerLayoutGuide type="bottom" id="Dz0-3j-TM8"/>
@@ -546,8 +547,8 @@ PROFIT BY UP TO</string>
                                                             <action selector="rampUpAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="sFS-cz-otc"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
-                                                        <rect key="frame" x="0.0" y="58" width="197" height="44"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON">
+                                                        <rect key="frame" x="0.0" y="57" width="197" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="Hsr-09-GF0"/>
                                                         </constraints>
@@ -591,8 +592,8 @@ IAo
                                                             <action selector="conditionAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="49t-SI-cu7"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
-                                                        <rect key="frame" x="0.0" y="108" width="197" height="44"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I">
+                                                        <rect key="frame" x="0.0" y="109" width="197" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="SYx-te-ah0"/>
                                                         </constraints>
@@ -675,7 +676,7 @@ PLANNING SERVICES</string>
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF" customClass="RoiGraphView" customModule="Sandvik_365" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF">
                                                 <rect key="frame" x="197" y="0.0" width="149" height="254"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-bi-gzk">
@@ -751,7 +752,33 @@ PLANNING SERVICES</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
                                                         <rect key="frame" x="25" y="20" width="124" height="209"/>
+                                                        <subviews>
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQ2-1I-Hmj">
+                                                                <rect key="frame" x="31" y="0.0" width="62" height="209"/>
+                                                                <subviews>
+                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KU-GP-TgE">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="209"/>
+                                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="64"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="1KU-GP-TgE" firstAttribute="width" secondItem="JQ2-1I-Hmj" secondAttribute="width" id="0Up-sU-nzy"/>
+                                                                    <constraint firstItem="1KU-GP-TgE" firstAttribute="centerY" secondItem="JQ2-1I-Hmj" secondAttribute="centerY" id="fbe-Dl-w8B"/>
+                                                                    <constraint firstItem="1KU-GP-TgE" firstAttribute="centerX" secondItem="JQ2-1I-Hmj" secondAttribute="centerX" id="pik-Rv-TWi"/>
+                                                                    <constraint firstItem="1KU-GP-TgE" firstAttribute="height" secondItem="JQ2-1I-Hmj" secondAttribute="height" id="yh0-bg-j11"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="JQ2-1I-Hmj" firstAttribute="height" secondItem="dUK-lx-H79" secondAttribute="height" id="6mn-Ht-qX3"/>
+                                                            <constraint firstItem="JQ2-1I-Hmj" firstAttribute="width" secondItem="dUK-lx-H79" secondAttribute="width" multiplier="0.5" id="8UR-Xb-ab8"/>
+                                                            <constraint firstAttribute="bottom" secondItem="JQ2-1I-Hmj" secondAttribute="bottom" id="tua-eM-4Vr"/>
+                                                            <constraint firstItem="JQ2-1I-Hmj" firstAttribute="centerX" secondItem="dUK-lx-H79" secondAttribute="centerX" id="zaw-UY-JGk"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -767,11 +794,6 @@ PLANNING SERVICES</string>
                                                     <constraint firstItem="LiP-gn-rMh" firstAttribute="leading" secondItem="mhD-bi-gzk" secondAttribute="trailing" id="h9D-er-QTf"/>
                                                     <constraint firstItem="LiP-gn-rMh" firstAttribute="top" secondItem="dUK-lx-H79" secondAttribute="bottom" id="ydh-9f-k73"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="graphView" destination="dUK-lx-H79" id="dgK-qa-oQM"/>
-                                                    <outlet property="xGraph" destination="Clh-Ie-fWm" id="a1n-j4-XFh"/>
-                                                    <outlet property="yGraph" destination="nij-QE-8gC" id="aOa-9z-f5O"/>
-                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -840,11 +862,13 @@ PLANNING SERVICES</string>
                         <outlet property="conditionButton" destination="N4N-Vd-EON" id="V4N-4C-w4X"/>
                         <outlet property="detailsContainerView" destination="1S0-U8-O1m" id="56h-ko-dsg"/>
                         <outlet property="graphContainerView" destination="nou-UF-7fh" id="HE7-h1-Hcm"/>
+                        <outlet property="graphLabel" destination="1KU-GP-TgE" id="I76-GE-IUX"/>
+                        <outlet property="graphView" destination="JQ2-1I-Hmj" id="DZ6-MC-Qa7"/>
+                        <outlet property="graphViewHeightConstraint" destination="6mn-Ht-qX3" id="rqb-nR-r8h"/>
                         <outlet property="maintenenceButton" destination="ndL-Cx-29I" id="U57-rk-TZ7"/>
                         <outlet property="profitLabel" destination="jt7-CD-ogG" id="bFU-aq-pjO"/>
                         <outlet property="protectiveButton" destination="HUP-FB-ind" id="S2k-Yg-kQ1"/>
                         <outlet property="rampUpButton" destination="TDu-fd-XVR" id="OtC-WB-mo0"/>
-                        <outlet property="roiGraphView" destination="IQE-cD-gCF" id="5Fm-NC-qHG"/>
                         <outlet property="seeDetailButton" destination="NFb-Yh-3ka" id="1pQ-dS-tDk"/>
                         <outlet property="titleLabel" destination="6tO-Bv-YgK" id="bUG-Uk-c1i"/>
                     </connections>

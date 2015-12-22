@@ -78,9 +78,10 @@
 		F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiInputView.xib */; };
 		F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */; };
 		F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */; };
-		F7EA86C91B84955B003E1AA6 /* RoiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA86C81B84955B003E1AA6 /* RoiCalculatorViewController.swift */; };
+		F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */; };
 		F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */; };
 		F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */; };
+		F7EC8DBC1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
 		F7F705E21BEABA72003D6289 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; };
@@ -188,9 +189,10 @@
 		F7E69A781B7B5B66004FA708 /* RoiInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiInputView.xib; sourceTree = "<group>"; };
 		F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionButton.swift; sourceTree = "<group>"; };
 		F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiSelectionButton.xib; sourceTree = "<group>"; };
-		F7EA86C81B84955B003E1AA6 /* RoiCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiCalculatorViewController.swift; sourceTree = "<group>"; };
+		F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiCrusherResultViewController.swift; sourceTree = "<group>"; };
 		F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiGraphView.swift; sourceTree = "<group>"; };
 		F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIGetInput.swift; sourceTree = "<group>"; };
+		F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -392,6 +394,7 @@
 				F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */,
 				F7019D131BE688F000A6B3C6 /* StringHtmlExtension.swift */,
 				F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */,
+				F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -466,7 +469,7 @@
 			children = (
 				F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */,
 				F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */,
-				F7EA86C81B84955B003E1AA6 /* RoiCalculatorViewController.swift */,
+				F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */,
 			);
 			name = Roi;
 			sourceTree = "<group>";
@@ -666,7 +669,7 @@
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
-				F7EA86C91B84955B003E1AA6 /* RoiCalculatorViewController.swift in Sources */,
+				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
@@ -692,6 +695,7 @@
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,
 				F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */,
+				F7EC8DBC1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
