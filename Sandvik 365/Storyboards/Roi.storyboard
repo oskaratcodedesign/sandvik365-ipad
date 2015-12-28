@@ -877,7 +877,7 @@ PROFIT BY UP TO</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="263"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-yn-VmB" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EXPECTED WEAR LIFE">
@@ -1018,7 +1018,7 @@ PROFIT BY UP TO</string>
                                                                 </constraints>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scF-wT-jyM">
-                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
+                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -1047,15 +1047,15 @@ PROFIT BY UP TO</string>
                                                         <rect key="frame" x="25" y="20" width="124" height="218"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B47-BE-4AD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="38" height="218"/>
+                                                                <rect key="frame" x="6.5" y="0.0" width="37" height="218"/>
                                                                 <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-Mn-CVm">
-                                                                <rect key="frame" x="43" y="0.0" width="38" height="218"/>
+                                                                <rect key="frame" x="49.5" y="0.0" width="37" height="218"/>
                                                                 <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-5y-dLR">
-                                                                <rect key="frame" x="86" y="0.0" width="38" height="218"/>
+                                                                <rect key="frame" x="93" y="0.0" width="37" height="218"/>
                                                                 <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                         </subviews>
@@ -1064,13 +1064,13 @@ PROFIT BY UP TO</string>
                                                             <constraint firstItem="CiM-Mn-CVm" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="4Jr-16-mQK"/>
                                                             <constraint firstItem="EgX-5y-dLR" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="Icy-Qw-Feg"/>
                                                             <constraint firstAttribute="bottom" secondItem="B47-BE-4AD" secondAttribute="bottom" id="LeU-G0-Er9"/>
-                                                            <constraint firstItem="CiM-Mn-CVm" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" id="Obm-G0-x7h"/>
+                                                            <constraint firstItem="CiM-Mn-CVm" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="1.1" id="Obm-G0-x7h"/>
                                                             <constraint firstItem="CiM-Mn-CVm" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="dgE-CH-5En"/>
-                                                            <constraint firstItem="EgX-5y-dLR" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="1.7" id="ech-Q4-SXU"/>
+                                                            <constraint firstItem="EgX-5y-dLR" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="1.8" id="ech-Q4-SXU"/>
                                                             <constraint firstAttribute="bottom" secondItem="EgX-5y-dLR" secondAttribute="bottom" id="fIR-3J-03z"/>
                                                             <constraint firstAttribute="bottom" secondItem="CiM-Mn-CVm" secondAttribute="bottom" id="m0Y-35-BTc"/>
                                                             <constraint firstItem="B47-BE-4AD" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="meY-MJ-qQs"/>
-                                                            <constraint firstItem="B47-BE-4AD" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="0.3" id="oT5-Nf-q3x"/>
+                                                            <constraint firstItem="B47-BE-4AD" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="0.4" id="oT5-Nf-q3x"/>
                                                             <constraint firstItem="B47-BE-4AD" firstAttribute="width" secondItem="JuS-5j-3uy" secondAttribute="width" multiplier="0.3" id="wfM-co-KMN"/>
                                                             <constraint firstItem="EgX-5y-dLR" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="xvV-zY-gYk"/>
                                                         </constraints>
