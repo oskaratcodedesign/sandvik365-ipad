@@ -25,10 +25,8 @@ enum ROICrusherInputValue {
     case Operation(OperationType)
     case Capacity(UInt)
     case OreGrade(Double)
-    //case FinishedProduct(UInt)
     case RecoveryRate(Double)
     case OrePrice(UInt)
-    //case ProcessingCost(UInt)
 
     var title :String {
         switch self {
@@ -38,14 +36,10 @@ enum ROICrusherInputValue {
             return NSLocalizedString("Ore grade", comment: "")
         case Capacity:
             return NSLocalizedString("Crushing capacity", comment: "")
-        /*case FinishedProduct:
-            return NSLocalizedString("Finished product from crushing plant", comment: "")*/
         case RecoveryRate:
             return NSLocalizedString("Recovery rate", comment: "")
         case OrePrice:
             return NSLocalizedString("Market price", comment: "")
-        /*case ProcessingCost:
-            return NSLocalizedString("Processing cost", comment: "")*/
         }
     }
     
@@ -57,14 +51,10 @@ enum ROICrusherInputValue {
             return value
         case Capacity(let value):
             return value
-        /*case FinishedProduct(let value):
-            return value*/
         case RecoveryRate(let value):
             return value
         case OrePrice(let value):
             return value
-        /*case ProcessingCost(let value):
-            return value*/
         }
     }
 }
@@ -73,10 +63,8 @@ class ROICrusherInput: ROICalculatorInput {
     var operation: ROICrusherInputValue = .Operation(OperationType.New)
     var oreGrade: ROICrusherInputValue = .OreGrade(2.0) //%
     var capacity: ROICrusherInputValue = .Capacity(1200) //m t/hr
-    //var finishedProduct: ROICrusherInputValue = .FinishedProduct(35) //%
     var recoveryRate: ROICrusherInputValue = .RecoveryRate(85) //%
     var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
-    //var processingCost: ROICrusherInputValue = .ProcessingCost(10) //USD/m t
     var services: Set<ROICrusherService> = Set<ROICrusherService>()
     var usePPM: Bool = false //otherwise percent
     let months: UInt = 12
@@ -108,11 +96,6 @@ class ROICrusherInput: ROICalculatorInput {
                 capacity = .Capacity(number.unsignedLongValue)
                 return true
             }
-        /*case .FinishedProduct:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                finishedProduct = .FinishedProduct(number.unsignedLongValue)
-                return true
-            }*/
         case .RecoveryRate:
             if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 recoveryRate = .RecoveryRate(number.doubleValue)
@@ -123,11 +106,6 @@ class ROICrusherInput: ROICalculatorInput {
                 orePrice = .OrePrice(number.unsignedLongValue)
                 return true
             }
-        /*case .ProcessingCost:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                processingCost = .ProcessingCost(number.unsignedLongValue)
-                return true
-            }*/
         }
         
         return false
@@ -146,14 +124,10 @@ class ROICrusherInput: ROICalculatorInput {
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(value)
         case .Capacity:
             return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
-        /*case .FinishedProduct:
-            return NSNumberFormatter().stringFromNumber(finishedProduct.value as! UInt)*/
         case .RecoveryRate:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double)
         case .OrePrice:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(orePrice.value as! UInt)
-        /*case .ProcessingCost:
-            return NSNumberFormatter().stringFromNumber(processingCost.value as! UInt)*/
         }
     }
     
@@ -213,17 +187,6 @@ class ROICrusherInput: ROICalculatorInput {
                     capacity = .Capacity(UInt(value))
                 }
             }
-        /*case .FinishedProduct:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
-                if value >= 0 {
-                    finishedProduct = .FinishedProduct(UInt(value))
-                }
-            }
-            let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: String(finishedProduct.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString*/
         case .RecoveryRate:
             if change != ChangeInput.Load {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
@@ -238,42 +201,9 @@ class ROICrusherInput: ROICalculatorInput {
                     orePrice = .OrePrice(UInt(value))
                 }
             }
-        /*case .ProcessingCost:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
-                if value >= 0 {
-                    processingCost = .ProcessingCost(UInt(value))
-                }
-            }
-            let valueType: String = "$"
-            let attrString = NSMutableAttributedString(string: valueType + String(processingCost.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
-            return attrString*/
         }
         return getInputAsString(atIndex)!
     }
-    
-    /*func finishedProductMTHR() -> Double {
-        if let c = capacity.value as? UInt, f = finishedProduct.value as? UInt {
-            return Double(c) * (Double(f)/100)
-        }
-        return 0
-    }
-    
-    func additionalTonsOfFinishedProduct() -> Double {
-        var totalServiceValue: UInt = 0
-        for service in services {
-            totalServiceValue += service.rawValue
-        }
-        return finishedProductMTHR() * Double(totalServiceValue == 0 ? 1 : totalServiceValue)
-    }
-    
-    func recoveredProductAfterProcessing() -> Double {
-        if let o = oreGrade.value as? Double, r = recoveryRate.value as? UInt {
-            return (additionalTonsOfFinishedProduct() * (Double(r)/100)) * (o/100)
-        }
-        return 0
-    }*/
     
     override func total() -> Int {
         var result: Int = 0
@@ -300,100 +230,6 @@ class ROICrusherInput: ROICalculatorInput {
         let result = Double(total())
         services = currentServices
         return result
-    }
-    
-    override func originalTotal() -> [Int] {
-        let currentServices = services
-        services = []
-        
-        let t = total()
-        var totals = [Int]()
-        for i in 0...months-1 {
-            if i >= startMonth {
-                totals.append(t)
-            }
-            else {
-                totals.append(0)
-            }
-        }
-        services = currentServices
-        return totals
-    }
-    
-    override func calculatedTotal() -> [Int] {
-        let t = total()
-        var totals = [Int]()
-        let len = months-1
-        for i in 0...len {
-            if i > len/5 {
-                if i < len-len/5 {
-                    totals.append(t)
-                }
-                else {
-                    totals.append(-1)
-                }
-            }
-            else {
-                totals.append(0)
-            }
-        }
-        return totals
-        /*if services.contains(.RampUp) {
-            totals = originalTotal()
-            let newStartMonth = startMonth - 1
-            totals[Int(newStartMonth)] = totals.last!
-            if services.contains(.MaintenancePlanning) {
-                let currentServices = services
-                services = [.MaintenancePlanning]
-                t = total()
-                for i in 0...months-1 {
-                    if i >= newStartMonth {
-                        totals[Int(i)] = t
-                    }
-                    else {
-                        totals[Int(i)] = 0
-                    }
-                }
-                services = currentServices
-            }
-            else if services.contains(.ConditionInspection){
-                let currentServices = services
-                services = [.ConditionInspection]
-                t = total()
-                for i in 0...months-1 {
-                    if i >= newStartMonth {
-                        totals[Int(i)] = t
-                    }
-                    else {
-                        totals[Int(i)] = 0
-                    }
-                }
-                services = currentServices
-            }
-        }
-        else {
-            if services.contains(.MaintenancePlanning) {
-                for i in 0...months-1 {
-                    if i >= startMonth {
-                        totals.append(t)
-                    }
-                    else {
-                        totals.append(-1)//so graph will make straight line
-                    }
-                }
-            }
-            else if services.contains(.ConditionInspection){
-                for i in 0...months-1 {
-                    if i >= startMonth {
-                        totals.append(t)
-                    }
-                    else {
-                        totals.append(-1)
-                    }
-                }
-            }
-        }
-        return totals*/
     }
     
     override func graphScale() -> CGFloat {

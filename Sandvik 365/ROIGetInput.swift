@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-enum ROIGetService: UInt {
-    case RampUp = 14
-    case ConditionInspection = 1
-    case MaintenancePlanning = 7
-    //case Protective
+enum ROIGetCalculationType {
+    case WearLife
+    case CostPerHour
+    case RevenueLoss
+    case Availability
+    case MaintenanceTime
 }
 
 enum ROIGetInputValue {
@@ -54,6 +55,7 @@ class ROIGetInput: ROICalculatorInput {
     var lipsUsed: ROIGetInputValue = .LipsUsed(6)
     var lipReplacementCost: ROIGetInputValue = .LipReplacementCost(2500)
     var serviceCost: ROIGetInputValue = .ServiceCost(13000)
+    var calculationType: ROIGetCalculationType?
     
     func allInputs() -> [ROIGetInputValue] {
         return [loaders, lipsUsed, lipReplacementCost, serviceCost]
@@ -61,6 +63,14 @@ class ROIGetInput: ROICalculatorInput {
     
     override func allTitles() -> [String] {
         return allInputs().flatMap({ $0.title })
+    }
+    
+    override func total() -> Int {
+        return 0
+    }
+    
+    override func maxTotal() -> Double {
+        return 0
     }
     
     override func setInput(atIndex :Int, stringValue :String) -> Bool {

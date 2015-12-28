@@ -38,6 +38,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -877,7 +878,7 @@ PROFIT BY UP TO</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="263"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-yn-VmB" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="23.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="15" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EXPECTED WEAR LIFE">
@@ -895,8 +896,8 @@ PROFIT BY UP TO</string>
                                                             <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="bMO-WU-bz6"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="76" width="197" height="29"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="58.5" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="COST PER HOUR">
@@ -914,8 +915,8 @@ PROFIT BY UP TO</string>
                                                             <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="rnd-AO-PdE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="129" width="197" height="29"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="102.5" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="REVENUE LOSS">
@@ -933,8 +934,8 @@ PROFIT BY UP TO</string>
                                                             <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="Dsd-kV-YML"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-NB-tkH" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="181" width="197" height="29"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-NB-tkH" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="146.5" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EFFECT ON AVAILABILITY">
@@ -952,22 +953,60 @@ PROFIT BY UP TO</string>
                                                             <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="hGC-XH-mi8"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-Rq-yNT" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="190" width="197" height="29"/>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="MAINTENANCE TIME">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderHeight">
+                                                                <real key="value" value="29"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="Unf-Nt-Fkv"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="hmb-p5-A33" secondAttribute="bottom" multiplier="5:2" id="1pC-rP-lVQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hmb-p5-A33" secondAttribute="bottom" multiplier="6:2" id="1pC-rP-lVQ"/>
+                                                    <constraint firstItem="wCw-Zo-lre" firstAttribute="leading" secondItem="6eb-yn-VmB" secondAttribute="leading" id="4P3-qh-Tql"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RMI-Rq-yNT" secondAttribute="bottom" multiplier="6:5" id="4wS-fC-Kre"/>
+                                                    <constraint firstItem="RMI-Rq-yNT" firstAttribute="trailing" secondItem="6eb-yn-VmB" secondAttribute="trailing" id="8YM-Oo-ZHg"/>
                                                     <constraint firstAttribute="trailing" secondItem="wCw-Zo-lre" secondAttribute="trailing" id="CAx-bU-9Qe"/>
                                                     <constraint firstAttribute="trailing" secondItem="hmb-p5-A33" secondAttribute="trailing" id="HU6-uM-zjY"/>
                                                     <constraint firstItem="6eb-yn-VmB" firstAttribute="leading" secondItem="YlW-Vf-Vep" secondAttribute="leading" id="I4i-r4-vHN"/>
+                                                    <constraint firstItem="RMI-Rq-yNT" firstAttribute="leading" secondItem="6eb-yn-VmB" secondAttribute="leading" id="LIv-5h-zVr"/>
+                                                    <constraint firstItem="hmb-p5-A33" firstAttribute="leading" secondItem="6eb-yn-VmB" secondAttribute="leading" id="LLl-LX-f80"/>
                                                     <constraint firstAttribute="trailing" secondItem="Z1T-NB-tkH" secondAttribute="trailing" id="LQE-ql-KC2"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Z1T-NB-tkH" secondAttribute="bottom" multiplier="5:4" id="OKX-04-JbH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="6eb-yn-VmB" secondAttribute="bottom" multiplier="5:1" id="Rkq-T4-1tN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Z1T-NB-tkH" secondAttribute="bottom" multiplier="6:4" id="OKX-04-JbH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6eb-yn-VmB" secondAttribute="bottom" multiplier="6:1" id="Rkq-T4-1tN"/>
+                                                    <constraint firstItem="hmb-p5-A33" firstAttribute="trailing" secondItem="6eb-yn-VmB" secondAttribute="trailing" id="ZVI-Dh-nWw"/>
+                                                    <constraint firstItem="Z1T-NB-tkH" firstAttribute="leading" secondItem="6eb-yn-VmB" secondAttribute="leading" id="aRy-vw-vV6"/>
                                                     <constraint firstItem="wCw-Zo-lre" firstAttribute="leading" secondItem="YlW-Vf-Vep" secondAttribute="leading" id="bgE-Iw-ja7"/>
+                                                    <constraint firstItem="Z1T-NB-tkH" firstAttribute="trailing" secondItem="6eb-yn-VmB" secondAttribute="trailing" id="dM5-TC-iH0"/>
+                                                    <constraint firstItem="wCw-Zo-lre" firstAttribute="trailing" secondItem="6eb-yn-VmB" secondAttribute="trailing" id="jwR-O7-YNd"/>
                                                     <constraint firstItem="Z1T-NB-tkH" firstAttribute="leading" secondItem="YlW-Vf-Vep" secondAttribute="leading" id="ka2-ml-Fqa"/>
-                                                    <constraint firstAttribute="bottom" secondItem="wCw-Zo-lre" secondAttribute="bottom" multiplier="5:3" id="ndm-Iw-rZc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wCw-Zo-lre" secondAttribute="bottom" multiplier="6:3" id="ndm-Iw-rZc"/>
                                                     <constraint firstItem="hmb-p5-A33" firstAttribute="leading" secondItem="YlW-Vf-Vep" secondAttribute="leading" id="oWL-Kn-8a7"/>
                                                     <constraint firstAttribute="trailing" secondItem="6eb-yn-VmB" secondAttribute="trailing" id="s38-mI-xbz"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="HU6-uM-zjY"/>
+                                                        <exclude reference="oWL-Kn-8a7"/>
+                                                        <exclude reference="CAx-bU-9Qe"/>
+                                                        <exclude reference="bgE-Iw-ja7"/>
+                                                        <exclude reference="LQE-ql-KC2"/>
+                                                        <exclude reference="ka2-ml-Fqa"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk9-b5-SJX">
                                                 <rect key="frame" x="197" y="0.0" width="149" height="263"/>
