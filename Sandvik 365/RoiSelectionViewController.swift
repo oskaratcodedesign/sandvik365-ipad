@@ -209,6 +209,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
+                else if let input = input as? ROIGetInput {
+                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiGetResultViewController") as! RoiGetResultViewController
+                    pageItemController.selectedInput = input
+                    return pageItemController
+                }
             }
         }
         else if itemIndex < titles.count-1 {

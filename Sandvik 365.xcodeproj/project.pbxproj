@@ -84,6 +84,7 @@
 		F7EC8DBC1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */; };
 		F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */; };
 		F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */; };
+		F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
 		F7F705E21BEABA72003D6289 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */; };
@@ -197,6 +198,7 @@
 		F7EC8DBB1C29707E00A8DF3C /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiGetResultViewController.swift; sourceTree = "<group>"; };
 		F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiResultViewController.swift; sourceTree = "<group>"; };
+		F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +346,7 @@
 				F7E2C0451C15C445009D290B /* DownloadingView.xib */,
 				F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */,
 				F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */,
+				F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,
+				F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */,
 				F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */,
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,

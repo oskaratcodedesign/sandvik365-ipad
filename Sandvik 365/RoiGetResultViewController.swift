@@ -10,6 +10,9 @@ import UIKit
 
 class RoiGetResultViewController: RoiResultViewController {
 
+    @IBOutlet var selectionButtons: [UIButton]!
+    
+    var selectedInput: ROIGetInput!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,4 +20,6 @@ class RoiGetResultViewController: RoiResultViewController {
     }
 
 
+    @IBAction func selectionAction(sender: UIButton) {
+    }
 }

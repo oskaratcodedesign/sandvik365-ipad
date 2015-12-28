@@ -38,7 +38,6 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -69,7 +68,7 @@ quiatus etur minti odisit, nobis es minctest, cu- ptiis as aut escil is sim id m
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
                                                 <rect key="frame" x="253" y="507" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -845,37 +844,69 @@ PROFIT BY UP TO</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlW-Vf-Vep">
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="263"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-yn-VmB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-yn-VmB" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="24" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EXPECTED WEAR LIFE">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="bMO-WU-bz6"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="76" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="COST PER HOUR">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="rnd-AO-PdE"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="129" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="REVENUE LOSS">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="Dsd-kV-YML"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-NB-tkH">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-NB-tkH" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="181" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EFFECT ON AVAILABILITY">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectionAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="hGC-XH-mi8"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -971,31 +1002,33 @@ PROFIT BY UP TO</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-5j-3uy">
                                                         <rect key="frame" x="25" y="20" width="124" height="218"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22z-m4-YOI">
-                                                                <rect key="frame" x="31" y="0.0" width="62" height="218"/>
-                                                                <subviews>
-                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb8-hO-PkL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="218"/>
-                                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="64"/>
-                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B47-BE-4AD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="38" height="218"/>
                                                                 <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="fb8-hO-PkL" firstAttribute="centerY" secondItem="22z-m4-YOI" secondAttribute="centerY" id="08O-vu-6uN"/>
-                                                                    <constraint firstItem="fb8-hO-PkL" firstAttribute="centerX" secondItem="22z-m4-YOI" secondAttribute="centerX" id="Fux-QI-vCm"/>
-                                                                    <constraint firstItem="fb8-hO-PkL" firstAttribute="width" secondItem="22z-m4-YOI" secondAttribute="width" id="PVY-XA-WUE"/>
-                                                                    <constraint firstItem="fb8-hO-PkL" firstAttribute="height" secondItem="22z-m4-YOI" secondAttribute="height" id="dag-qM-D29"/>
-                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-Mn-CVm">
+                                                                <rect key="frame" x="43" y="0.0" width="38" height="218"/>
+                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-5y-dLR">
+                                                                <rect key="frame" x="86" y="0.0" width="38" height="218"/>
+                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="22z-m4-YOI" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" id="CaL-LT-eHb"/>
-                                                            <constraint firstItem="22z-m4-YOI" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="Pat-kf-Rc4"/>
-                                                            <constraint firstItem="22z-m4-YOI" firstAttribute="width" secondItem="JuS-5j-3uy" secondAttribute="width" multiplier="0.5" id="bo2-us-H67"/>
-                                                            <constraint firstAttribute="bottom" secondItem="22z-m4-YOI" secondAttribute="bottom" id="sbe-vi-kL2"/>
+                                                            <constraint firstItem="CiM-Mn-CVm" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="4Jr-16-mQK"/>
+                                                            <constraint firstItem="EgX-5y-dLR" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="Icy-Qw-Feg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="B47-BE-4AD" secondAttribute="bottom" id="LeU-G0-Er9"/>
+                                                            <constraint firstItem="CiM-Mn-CVm" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" id="Obm-G0-x7h"/>
+                                                            <constraint firstItem="CiM-Mn-CVm" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="dgE-CH-5En"/>
+                                                            <constraint firstItem="EgX-5y-dLR" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="1.7" id="ech-Q4-SXU"/>
+                                                            <constraint firstAttribute="bottom" secondItem="EgX-5y-dLR" secondAttribute="bottom" id="fIR-3J-03z"/>
+                                                            <constraint firstAttribute="bottom" secondItem="CiM-Mn-CVm" secondAttribute="bottom" id="m0Y-35-BTc"/>
+                                                            <constraint firstItem="B47-BE-4AD" firstAttribute="height" secondItem="JuS-5j-3uy" secondAttribute="height" id="meY-MJ-qQs"/>
+                                                            <constraint firstItem="B47-BE-4AD" firstAttribute="centerX" secondItem="JuS-5j-3uy" secondAttribute="centerX" multiplier="0.3" id="oT5-Nf-q3x"/>
+                                                            <constraint firstItem="B47-BE-4AD" firstAttribute="width" secondItem="JuS-5j-3uy" secondAttribute="width" multiplier="0.3" id="wfM-co-KMN"/>
+                                                            <constraint firstItem="EgX-5y-dLR" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="xvV-zY-gYk"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -1061,6 +1094,10 @@ PROFIT BY UP TO</string>
                         <outlet property="profitLabel" destination="U5e-Vl-7OI" id="cD2-Na-lcR"/>
                         <outlet property="seeDetailButton" destination="6aq-uy-b5x" id="upi-TN-JKr"/>
                         <outlet property="titleLabel" destination="gVu-Wt-itf" id="MKP-DB-H4m"/>
+                        <outletCollection property="selectionButtons" destination="6eb-yn-VmB" collectionClass="NSMutableArray" id="KES-NW-fgU"/>
+                        <outletCollection property="selectionButtons" destination="hmb-p5-A33" collectionClass="NSMutableArray" id="Fyf-EN-Y5A"/>
+                        <outletCollection property="selectionButtons" destination="wCw-Zo-lre" collectionClass="NSMutableArray" id="wbt-Jl-Qkt"/>
+                        <outletCollection property="selectionButtons" destination="Z1T-NB-tkH" collectionClass="NSMutableArray" id="eO7-cA-jOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9V-WZ-Vz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
