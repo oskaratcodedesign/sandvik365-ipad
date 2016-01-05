@@ -79,15 +79,14 @@ class RoiCrusherResultViewController: RoiResultViewController {
     }
     
     private func setGraphValue() {
-        let multiplier = Double(selectedInput.total()) / (selectedInput.maxTotal())
-        if multiplier > 0 {
-            self.graphView.hidden = false
-            let newConstraint = self.graphViewHeightConstraint.changeMultiplier(CGFloat(multiplier))
-            NSLayoutConstraint.deactivateConstraints([self.graphViewHeightConstraint])
-            NSLayoutConstraint.activateConstraints([newConstraint])
-            self.graphViewHeightConstraint = newConstraint
-        } else {
-            self.graphView.hidden = true
+        
+        self.graphView.hidden = true
+        if let total = selectedInput.total() {
+            let multiplier = Double(total) / (selectedInput.maxTotal())
+            if multiplier > 0 {
+                self.graphView.hidden = false
+                self.graphViewHeightConstraint = self.graphViewHeightConstraint.changeMultiplier(CGFloat(multiplier))
+            }
         }
     }
     
@@ -124,7 +123,8 @@ class RoiCrusherResultViewController: RoiResultViewController {
     }
     
     private func setProfitLabelFromInput() {
-        let sum = selectedInput.total()
-        profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+        if let sum = selectedInput.total() {
+            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+        }
     }
 }

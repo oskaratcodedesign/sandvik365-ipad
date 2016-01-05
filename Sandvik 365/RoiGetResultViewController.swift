@@ -13,9 +13,22 @@ class RoiGetResultViewController: RoiResultViewController {
     @IBOutlet var selectionButtons: [UIButton]!
     private var selectedButton: UIButton?
     
+    @IBOutlet weak var bareLipGraph: UIView!
+    @IBOutlet var barLipHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weldGraph: UIView!
+    @IBOutlet var weldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var getGraph: UIView!
+    @IBOutlet var getHeightConstraint: NSLayoutConstraint!
+    
     var selectedInput: ROIGetInput!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setProfitLabel()
     }
 
 
@@ -38,6 +51,26 @@ class RoiGetResultViewController: RoiResultViewController {
         default:
             break
         }
+        
+        if let percentages = self.selectedInput.calculationType?.percentages {
+            if let max = percentages.maxElement() {
+                for (i, value) in percentages.enumerate() {
+                    let multiplier = value / max
+                    switch i {
+                    case 0:
+                        self.barLipHeightConstraint = self.barLipHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                    case 1:
+                        self.weldHeightConstraint = self.weldHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                    case 2:
+                        self.getHeightConstraint = self.getHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                    default: break
+                    }
+                }
+            }
+            
+        }
+        
+        setProfitLabel()
     }
     
     private func setProfitLabel()
@@ -51,7 +84,8 @@ class RoiGetResultViewController: RoiResultViewController {
     }
     
     private func setProfitLabelFromInput() {
-        let sum = selectedInput.total()
-        profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+        if let sum = selectedInput.total() {
+            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+        }
     }
 }

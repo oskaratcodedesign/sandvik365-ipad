@@ -205,7 +205,7 @@ class ROICrusherInput: ROICalculatorInput {
         return getInputAsString(atIndex)!
     }
     
-    override func total() -> Int {
+    override func total() -> Int? {
         var result: Int = 0
         let tonnage = capacity.value as! UInt
         let oregrade = oreGrade.value as! Double
@@ -227,7 +227,10 @@ class ROICrusherInput: ROICalculatorInput {
     override func maxTotal() -> Double {
         let currentServices = services
         services = [.RampUp]
-        let result = Double(total())
+        var result = 0.0
+        if let total = total() {
+            result = Double(total)
+        }
         services = currentServices
         return result
     }

@@ -15,6 +15,21 @@ enum ROIGetCalculationType {
     case RevenueLoss
     case Availability
     case MaintenanceTime
+    
+    var percentages: [Double] {
+        switch self {
+        case WearLife:
+            return [100, 140, 215]
+        case CostPerHour:
+            return [100, 80, 60]
+        case RevenueLoss:
+            return [100, 30, 7]
+        case Availability:
+            return [96, 98, 99.55]
+        case MaintenanceTime:
+            return [100, 65, 25]
+        }
+    }
 }
 
 enum ROIGetInputValue {
@@ -65,8 +80,20 @@ class ROIGetInput: ROICalculatorInput {
         return allInputs().flatMap({ $0.title })
     }
     
-    override func total() -> Int {
-        return 0
+    override func total() -> Int? {
+        //(6 x 2500)+(13 000 x 2)
+        if calculationType == .CostPerHour {
+            if let loaders = loaders.value as? UInt, let lipsUsed = lipsUsed.value as? UInt, let lipReplacementCost = lipReplacementCost.value as? Double, let serviceCost = serviceCost.value as? Double {
+                let res = Double(loaders) * (Double(lipsUsed) * lipReplacementCost) + (serviceCost * 2)
+                if res > Double(Int.max) {
+                    return Int.max
+                }
+                else {
+                    return Int(res)
+                }
+            }
+        }
+        return nil
     }
     
     override func maxTotal() -> Double {

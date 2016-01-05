@@ -22,6 +22,9 @@ extension NSLayoutConstraint {
             multiplier: multiplier,
             constant: constant)
         
+        NSLayoutConstraint.deactivateConstraints([self])
+        NSLayoutConstraint.activateConstraints([newConstraint])
+        
         return newConstraint
     }
 }

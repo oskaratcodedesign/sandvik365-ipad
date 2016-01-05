@@ -11,7 +11,7 @@ import UIKit
 
 class ROICalculatorInput: SelectionInput {
     
-    func total() -> Int {
+    func total() -> Int? {
         preconditionFailure("This method must be overridden")
     }
     

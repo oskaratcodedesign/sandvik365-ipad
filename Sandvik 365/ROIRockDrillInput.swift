@@ -177,7 +177,7 @@ class ROIRockDrillInput: ROICalculatorInput {
         return (shanks() * 167 + 62 * bits()) * -1
     }
     
-    override func total() -> Int {
+    override func total() -> Int? {
         switch typeOfOre.value as! OreType  {
         case .Gold:
             if let oc = oreConcentration.value as? UInt, cp = commodityPrice.value as? UInt {
