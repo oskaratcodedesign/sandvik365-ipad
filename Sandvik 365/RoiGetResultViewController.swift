@@ -29,6 +29,7 @@ class RoiGetResultViewController: RoiResultViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         selectionAction(selectedButton)
     }
 
