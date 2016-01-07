@@ -64,6 +64,8 @@
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
 		F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32921BFB322500CB3654 /* FireSuppressionInput.swift */; };
 		F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */ = {isa = PBXBuildFile; fileRef = F79E32941BFBABF400CB3654 /* firesuppression.json */; };
+		F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */; };
+		F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */; };
 		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
@@ -179,6 +181,8 @@
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
 		F79E32921BFB322500CB3654 /* FireSuppressionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionInput.swift; sourceTree = "<group>"; };
 		F79E32941BFBABF400CB3654 /* firesuppression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firesuppression.json; sourceTree = "<group>"; };
+		F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphWithLabel.swift; sourceTree = "<group>"; };
+		F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphWithLabel.xib; sourceTree = "<group>"; };
 		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
@@ -445,6 +449,8 @@
 				F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */,
 				F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */,
 				F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */,
+				F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */,
+				F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */,
 			);
 			name = Roi;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4842CE721BEB798E00D39F5F /* Preloaded Resources in Resources */,
+				F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */,
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
@@ -704,6 +711,7 @@
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
 				F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */,
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
+				F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,
 				F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */,

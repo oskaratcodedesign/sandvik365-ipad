@@ -10,15 +10,11 @@ import UIKit
 
 class RoiGetResultViewController: RoiResultViewController {
 
-    @IBOutlet var selectionButtons: [UIButton]!
-    private var selectedButton: UIButton?
+    @IBOutlet weak var selectedButton: UIButton!
     
-    @IBOutlet weak var bareLipGraph: UIView!
-    @IBOutlet var barLipHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var weldGraph: UIView!
-    @IBOutlet var weldHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var getGraph: UIView!
-    @IBOutlet var getHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bareLipGraph: GraphWithLabel!
+    @IBOutlet weak var weldGraph: GraphWithLabel!
+    @IBOutlet weak var getGraph: GraphWithLabel!
     
     var selectedInput: ROIGetInput!
     
@@ -29,6 +25,10 @@ class RoiGetResultViewController: RoiResultViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setProfitLabel()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        selectionAction(selectedButton)
     }
 
 
@@ -58,16 +58,15 @@ class RoiGetResultViewController: RoiResultViewController {
                     let multiplier = value / max
                     switch i {
                     case 0:
-                        self.barLipHeightConstraint = self.barLipHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                        self.bareLipGraph.updateHeightAndSetText(multiplier, string: String(Int(value)) + "%")
                     case 1:
-                        self.weldHeightConstraint = self.weldHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                        self.weldGraph.updateHeightAndSetText(multiplier, string: String(Int(value)) + "%")
                     case 2:
-                        self.getHeightConstraint = self.getHeightConstraint.changeMultiplier(CGFloat(multiplier))
+                        self.getGraph.updateHeightAndSetText(multiplier, string: String(Int(value)) + "%")
                     default: break
                     }
                 }
             }
-            
         }
         
         setProfitLabel()

@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="580"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50S-4Z-yCn">
-                                                <rect key="frame" x="140" y="100" width="280" height="572.5"/>
+                                                <rect key="frame" x="140" y="100" width="280" height="573"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">INTRO TEXT Ucimus dolore, sunt exces ellesse
 quiatus etur minti odisit, nobis es minctest, cu- ptiis as aut escil is sim id minum conserum num am dolenim usandaecto qui audic test ut evel et, arcimporpore aut res iunt laborro beaquiducia endenih illacerenis aboreped utatium fuga. Na- mus non net optatus, occusci dusant, ut quam ationecum voloressimus dolles rest, esti as esto- tatur alignis esciis accusam lacipsam ius alist pa doluptur?</string>
@@ -70,13 +70,13 @@ quiatus etur minti odisit, nobis es minctest, cu- ptiis as aut escil is sim id m
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
-                                                <rect key="frame" x="253.5" y="508" width="53.5" height="9.5"/>
+                                                <rect key="frame" x="254" y="508" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-zc-UoC">
-                                                <rect key="frame" x="249" y="527.5" width="63" height="72.5"/>
+                                                <rect key="frame" x="249" y="528" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -530,7 +530,7 @@ PROFIT BY UP TO</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="263"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDu-fd-XVR" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="23.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="24" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="RAMP-UP SERVICES">
@@ -675,7 +675,7 @@ PLANNING SERVICES</string>
                                                                 </constraints>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
+                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -897,7 +897,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="59" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="COST PER HOUR">
@@ -916,7 +916,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="102.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="103" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="REVENUE LOSS">
@@ -935,7 +935,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-NB-tkH" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="146.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="147" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EFFECT ON AVAILABILITY">
@@ -1057,7 +1057,7 @@ PROFIT BY UP TO</string>
                                                                 </constraints>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scF-wT-jyM">
-                                                                <rect key="frame" x="124" y="2" width="33.5" height="23"/>
+                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -1085,17 +1085,17 @@ PROFIT BY UP TO</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-5j-3uy">
                                                         <rect key="frame" x="25" y="20" width="124" height="218"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B47-BE-4AD">
-                                                                <rect key="frame" x="6.5" y="0.0" width="37" height="218"/>
-                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B47-BE-4AD" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="7" y="0.0" width="37" height="218"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-Mn-CVm">
-                                                                <rect key="frame" x="49.5" y="0.0" width="37" height="218"/>
-                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-Mn-CVm" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="50" y="0.0" width="37" height="218"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-5y-dLR">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-5y-dLR" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="93" y="0.0" width="37" height="218"/>
-                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1172,21 +1172,15 @@ PROFIT BY UP TO</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="barLipHeightConstraint" destination="meY-MJ-qQs" id="1TK-Ka-zkp"/>
                         <outlet property="bareLipGraph" destination="B47-BE-4AD" id="chF-g1-hoV"/>
                         <outlet property="detailsContainerView" destination="UMD-AT-bry" id="GNm-ND-ELa"/>
                         <outlet property="getGraph" destination="EgX-5y-dLR" id="NMI-Wn-mYF"/>
-                        <outlet property="getHeightConstraint" destination="Icy-Qw-Feg" id="Vbs-ua-VJn"/>
                         <outlet property="graphContainerView" destination="MkV-0W-u2H" id="DX8-gy-qNo"/>
                         <outlet property="profitLabel" destination="U5e-Vl-7OI" id="cD2-Na-lcR"/>
                         <outlet property="seeDetailButton" destination="6aq-uy-b5x" id="upi-TN-JKr"/>
+                        <outlet property="selectedButton" destination="hmb-p5-A33" id="kX7-qa-ZOf"/>
                         <outlet property="titleLabel" destination="gVu-Wt-itf" id="MKP-DB-H4m"/>
                         <outlet property="weldGraph" destination="CiM-Mn-CVm" id="h7a-0F-PnF"/>
-                        <outlet property="weldHeightConstraint" destination="dgE-CH-5En" id="vfU-hE-8tE"/>
-                        <outletCollection property="selectionButtons" destination="6eb-yn-VmB" collectionClass="NSMutableArray" id="KES-NW-fgU"/>
-                        <outletCollection property="selectionButtons" destination="hmb-p5-A33" collectionClass="NSMutableArray" id="Fyf-EN-Y5A"/>
-                        <outletCollection property="selectionButtons" destination="wCw-Zo-lre" collectionClass="NSMutableArray" id="wbt-Jl-Qkt"/>
-                        <outletCollection property="selectionButtons" destination="Z1T-NB-tkH" collectionClass="NSMutableArray" id="eO7-cA-jOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9V-WZ-Vz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
