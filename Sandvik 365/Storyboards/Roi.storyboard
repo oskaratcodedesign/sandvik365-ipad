@@ -897,7 +897,7 @@ PLANNING SERVICES</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="272"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-yn-VmB" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="16.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="17" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="EXPECTED WEAR LIFE">
@@ -916,7 +916,7 @@ PLANNING SERVICES</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="61.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="62" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="COST PER HOUR">

@@ -115,18 +115,18 @@ enum BusinessType: UInt {
     
     var roiGetCalculatorTitle: String? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
-        case CrusherAndScreening:
+        case UndergroundLoadingAndHauling:
             return "GET calculator"
         }
     }
     
     var roiGetInput: ROIGetInput? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
-        case CrusherAndScreening:
+        case UndergroundLoadingAndHauling:
             return ROIGetInput()
         }
     }

@@ -227,7 +227,7 @@ YOU CAN COUNT ON.</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="7"/>
+                                                                <integer key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -237,7 +237,7 @@ YOU CAN COUNT ON.</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="8"/>
+                                                                <integer key="value" value="7"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -297,7 +297,7 @@ YOU CAN COUNT ON.</string>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                <integer key="value" value="6"/>
+                                                                <integer key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
