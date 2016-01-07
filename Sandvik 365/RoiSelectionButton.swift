@@ -15,7 +15,7 @@ class RoiSelectionButton: NibDesignable {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var line: UIImageView!
     @IBOutlet weak var dot: UIImageView!
-    @IBOutlet weak var lineHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,10 +42,11 @@ class RoiSelectionButton: NibDesignable {
         label.hidden = false
         label.text = text
         if index % 2 == 0 {
-            lineHeightConstraint.constant = 0
+            buttonTopConstraint.constant = 1000 //minimize
         }
         else {
             line.hidden = false
+            buttonTopConstraint.constant = 0
         }
         dot.backgroundColor = UIColor.clearColor()
     }

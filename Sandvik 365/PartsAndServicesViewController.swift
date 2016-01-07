@@ -33,9 +33,8 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     func didSelectSection(sectionTitle: String) {
         
         selectedSectionTitle = sectionTitle
-        let roiTitle = selectedPartsAndServices.businessType.roiCalculatorTitle
-        let fireSuprTitle = selectedPartsAndServices.businessType.fireSuppresionTitle
-        if roiTitle != nil && sectionTitle.caseInsensitiveCompare(roiTitle!) == .OrderedSame || fireSuprTitle != nil && sectionTitle.caseInsensitiveCompare(fireSuprTitle!) == .OrderedSame {
+
+        if self.selectedPartsAndServices.businessType.roiTitlesLowerCase.contains(sectionTitle.lowercaseString) {
             performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
         }
         else {
@@ -58,17 +57,21 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                let roiTitle = selectedPartsAndServices.businessType.roiCalculatorTitle
-                let fireSuprTitle = selectedPartsAndServices.businessType.fireSuppresionTitle
-                if roiTitle != nil && selectedSectionTitle.caseInsensitiveCompare(roiTitle!) == .OrderedSame {
-                    vc.selectedBusinessType = selectedPartsAndServices.businessType
-                    vc.selectedInput = self.selectedPartsAndServices.businessType.roiCalculatorInput
-                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, roiTitle!.uppercaseString)
+                let bType = selectedPartsAndServices.businessType
+                if let title = bType.roiCrusherCalculatorTitle where selectedSectionTitle.caseInsensitiveCompare(title) == .OrderedSame {
+                    vc.selectedBusinessType = bType
+                    vc.selectedInput = bType.roiCrusherInput
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, title.uppercaseString)
                 }
-                else if fireSuprTitle != nil && selectedSectionTitle.caseInsensitiveCompare(fireSuprTitle!) == .OrderedSame {
-                    vc.selectedBusinessType = selectedPartsAndServices.businessType
-                    vc.selectedInput = self.selectedPartsAndServices.businessType.fireSuppresionTool
-                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, fireSuprTitle!.uppercaseString)
+                else if let title = bType.fireSuppressionTitle where selectedSectionTitle.caseInsensitiveCompare(title) == .OrderedSame {
+                    vc.selectedBusinessType = bType
+                    vc.selectedInput = bType.fireSuppressionInput
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, title.uppercaseString)
+                }
+                else if let title = bType.roiGetCalculatorTitle where selectedSectionTitle.caseInsensitiveCompare(title) == .OrderedSame {
+                    vc.selectedBusinessType = bType
+                    vc.selectedInput = bType.roiGetInput
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, title.uppercaseString)
                 }
             }
         }

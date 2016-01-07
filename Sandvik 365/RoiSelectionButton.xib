@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
@@ -16,10 +16,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="p1l-wD-EAB" id="yL6-Fl-PxM"/>
+                <outlet property="buttonTopConstraint" destination="kVS-fl-efV" id="hen-Cf-kHa"/>
                 <outlet property="dot" destination="LrY-5D-wee" id="0vf-l8-Ie2"/>
                 <outlet property="label" destination="iUq-2N-SFr" id="IPr-6I-6tP"/>
                 <outlet property="line" destination="TzF-FG-1AN" id="O6t-Ml-m0z"/>
-                <outlet property="lineHeightConstraint" destination="kgV-pm-7UJ" id="x94-Qt-QUe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="p1l-wD-EAB">
-                    <rect key="frame" x="9" y="460" width="582" height="31"/>
+                    <rect key="frame" x="9" y="518" width="582" height="31"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="16"/>
                     <state key="normal" title="test">
                         <color key="titleColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,11 +39,10 @@
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TzF-FG-1AN">
-                    <rect key="frame" x="299" y="525" width="2" height="50"/>
+                    <rect key="frame" x="299" y="575" width="2" height="0.0"/>
                     <color key="backgroundColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="2" id="Oon-g5-h8j"/>
-                        <constraint firstAttribute="height" constant="50" id="kgV-pm-7UJ"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LrY-5D-wee">
@@ -53,57 +52,28 @@
                         <constraint firstAttribute="width" constant="20" id="FIq-Oq-r0V"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-2N-SFr">
-                    <rect key="frame" x="0.0" y="496" width="600" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="14" id="9d1-Fw-es1"/>
-                        <constraint firstAttribute="height" constant="19" id="Xdu-jx-Unw"/>
-                        <constraint firstAttribute="height" constant="20" id="hNJ-xb-El0"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mmm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-2N-SFr">
+                    <rect key="frame" x="0.0" y="554" width="600" height="12"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="9d1-Fw-es1"/>
-                            <exclude reference="hNJ-xb-El0"/>
-                        </mask>
-                    </variation>
                 </label>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="LrY-5D-wee" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="580" id="1da-Sg-0eb"/>
-                <constraint firstItem="iUq-2N-SFr" firstAttribute="top" secondItem="p1l-wD-EAB" secondAttribute="bottom" constant="4" id="9hX-pg-LPX"/>
                 <constraint firstItem="iUq-2N-SFr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G9x-rr-hQ1"/>
                 <constraint firstAttribute="centerX" secondItem="iUq-2N-SFr" secondAttribute="centerX" id="HNs-GR-6Xg"/>
-                <constraint firstAttribute="bottom" secondItem="iUq-2N-SFr" secondAttribute="bottom" constant="10" id="Lks-0S-vyp"/>
                 <constraint firstItem="iUq-2N-SFr" firstAttribute="top" secondItem="p1l-wD-EAB" secondAttribute="bottom" constant="5" id="Ma1-IR-mSo"/>
-                <constraint firstItem="p1l-wD-EAB" firstAttribute="top" secondItem="LrY-5D-wee" secondAttribute="bottom" id="NaY-q6-PZm"/>
                 <constraint firstItem="LrY-5D-wee" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nr3-Ms-lzW"/>
                 <constraint firstItem="TzF-FG-1AN" firstAttribute="top" secondItem="iUq-2N-SFr" secondAttribute="bottom" constant="10" id="Pxb-6S-Q8C"/>
-                <constraint firstItem="p1l-wD-EAB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PyK-Tf-dT5"/>
-                <constraint firstItem="LrY-5D-wee" firstAttribute="top" secondItem="iUq-2N-SFr" secondAttribute="bottom" constant="10" id="Pyt-LR-sPT"/>
-                <constraint firstAttribute="bottom" secondItem="p1l-wD-EAB" secondAttribute="bottom" id="T2n-F3-5Ub"/>
                 <constraint firstAttribute="trailing" secondItem="iUq-2N-SFr" secondAttribute="trailing" id="UuW-wG-RS0"/>
                 <constraint firstItem="TzF-FG-1AN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Y8k-OE-U8z"/>
                 <constraint firstAttribute="trailing" secondItem="p1l-wD-EAB" secondAttribute="trailing" constant="9" id="Z1L-xY-iXg"/>
                 <constraint firstItem="p1l-wD-EAB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="hqq-kr-3Xb"/>
-                <constraint firstAttribute="bottom" secondItem="iUq-2N-SFr" secondAttribute="bottom" id="qmw-c0-ilk"/>
+                <constraint firstItem="p1l-wD-EAB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="250" constant="1000" id="kVS-fl-efV"/>
                 <constraint firstItem="LrY-5D-wee" firstAttribute="top" secondItem="TzF-FG-1AN" secondAttribute="bottom" constant="5" id="wqg-gw-6gN"/>
                 <constraint firstAttribute="bottom" secondItem="LrY-5D-wee" secondAttribute="bottom" id="zOb-d7-8dG"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="NaY-q6-PZm"/>
-                    <exclude reference="PyK-Tf-dT5"/>
-                    <exclude reference="T2n-F3-5Ub"/>
-                    <exclude reference="9hX-pg-LPX"/>
-                    <exclude reference="Lks-0S-vyp"/>
-                    <exclude reference="qmw-c0-ilk"/>
-                    <exclude reference="1da-Sg-0eb"/>
-                    <exclude reference="Pyt-LR-sPT"/>
-                </mask>
-            </variation>
         </view>
     </objects>
 </document>

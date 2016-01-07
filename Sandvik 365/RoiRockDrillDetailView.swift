@@ -32,11 +32,12 @@ class RoiRockDrillDetailView: NibDesignable {
         tonnageBeforeLabel.text = fmt.stringFromNumber(Int(input.tonnageOutputBefore()))! + "t"
         tonnageAfterLabel.text = fmt.stringFromNumber(Int(input.tonnageOutputAfter()))! + "t"
         
-        let total = input.total()
-        let shanksAndBitsSavings = Int(input.shanksAndBitsSavings())
-        oreOutPutLabel.text = "$" + fmt.stringFromNumber(total - shanksAndBitsSavings)!
-        shanksLabel.text = "$" + fmt.stringFromNumber(shanksAndBitsSavings)!
-        totalLabel.text = "$" + fmt.stringFromNumber(total)!
+        if let total = input.total() {
+            let shanksAndBitsSavings = Int(input.shanksAndBitsSavings())
+            oreOutPutLabel.text = "$" + fmt.stringFromNumber(total - shanksAndBitsSavings)!
+            shanksLabel.text = "$" + fmt.stringFromNumber(shanksAndBitsSavings)!
+            totalLabel.text = "$" + fmt.stringFromNumber(total)!
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

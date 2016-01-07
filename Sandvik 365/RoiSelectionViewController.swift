@@ -204,9 +204,16 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         
         if itemIndex == titles.count-1 {
             if let input = selectedInput as? ROICalculatorInput {
-                let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCalculatorViewController") as! RoiCalculatorViewController
-                pageItemController.selectedInput = input
-                return pageItemController
+                if let input = input as? ROICrusherInput {
+                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCrusherResultViewController") as! RoiCrusherResultViewController
+                    pageItemController.selectedInput = input
+                    return pageItemController
+                }
+                else if let input = input as? ROIGetInput {
+                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiGetResultViewController") as! RoiGetResultViewController
+                    pageItemController.selectedInput = input
+                    return pageItemController
+                }
             }
         }
         else if itemIndex < titles.count-1 {

@@ -18,6 +18,7 @@ enum ChangeInput: Int{
 enum InputAbbreviation: String {
     case Percent = "%"
     case PPM = "ppm"
+    case USD = " USD"
     case USDOunce = " USD/oz"
     case USDton = " USD/t"
     case MillionTonPerDay = "mt/d"
@@ -25,7 +26,7 @@ enum InputAbbreviation: String {
     func addAbbreviation(value: String, valueFont: UIFont, abbreviationFont: UIFont) ->  NSAttributedString{
         let attrString = NSMutableAttributedString(string: value, attributes: [NSFontAttributeName:valueFont])
         switch self {
-        case .Percent, .PPM, .USDOunce, .USDton, .MillionTonPerDay:
+        case .Percent, .PPM, .USD,.USDOunce, .USDton, .MillionTonPerDay:
             attrString.appendAttributedString(NSAttributedString(string: self.rawValue, attributes: [NSFontAttributeName:abbreviationFont]))
         }
         return attrString
