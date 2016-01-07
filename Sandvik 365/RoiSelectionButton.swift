@@ -42,7 +42,7 @@ class RoiSelectionButton: NibDesignable {
         label.hidden = false
         label.text = text
         if index % 2 == 0 {
-            buttonTopConstraint.constant = CGFloat.max //minimize
+            buttonTopConstraint.constant = 1000 //minimize
         }
         else {
             line.hidden = false
