@@ -66,6 +66,7 @@
 		F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */ = {isa = PBXBuildFile; fileRef = F79E32941BFBABF400CB3654 /* firesuppression.json */; };
 		F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */; };
 		F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */; };
+		F7A46EBF1C3EA00C00CCB4B7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */; };
 		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
@@ -183,6 +184,7 @@
 		F79E32941BFBABF400CB3654 /* firesuppression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firesuppression.json; sourceTree = "<group>"; };
 		F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphWithLabel.swift; sourceTree = "<group>"; };
 		F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphWithLabel.xib; sourceTree = "<group>"; };
+		F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */,
 				F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */,
 				F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */,
+				F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */,
 				F7019D0A1BE36D0700A6B3C6 /* ContentParts */,
 			);
 			name = PartsAndServices;
@@ -667,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
+				F7A46EBF1C3EA00C00CCB4B7 /* HighlightButton.swift in Sources */,
 				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
 				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
