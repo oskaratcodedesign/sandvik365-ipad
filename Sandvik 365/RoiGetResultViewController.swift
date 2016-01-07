@@ -15,6 +15,7 @@ class RoiGetResultViewController: RoiResultViewController {
     @IBOutlet weak var bareLipGraph: GraphWithLabel!
     @IBOutlet weak var weldGraph: GraphWithLabel!
     @IBOutlet weak var getGraph: GraphWithLabel!
+    @IBOutlet weak var weldProfitLabel: UILabel!
     
     var selectedInput: ROIGetInput!
     
@@ -84,7 +85,10 @@ class RoiGetResultViewController: RoiResultViewController {
     
     private func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+            if let percentages = selectedInput.calculationType?.percentages {
+                profitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
+                weldProfitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
+            }
         }
     }
 }
