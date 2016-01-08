@@ -26,7 +26,7 @@ class MainMenuItemView : NibDesignable {
     
     @IBInspectable var partBridgeType: NSNumber! {
         didSet {
-            self.businessType = BusinessType(rawValue: partBridgeType.unsignedLongValue)
+            self.businessType = BusinessType(rawValue: partBridgeType.unsignedIntValue)
             self.button.imageView?.contentMode = .ScaleAspectFill
             if let image = UIImage(named: self.businessType.backgroundImageName + "-slice") {
                 self.button.setImage(image, forState: .Normal)

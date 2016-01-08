@@ -12,6 +12,7 @@ import Async
 class JSONManager {
     private static var jsonParts : JSONParts? = nil
     static let updateAvailableKey = "updateAvailableKey"
+    static let newDataAvailableKey = "newDataAvailableKey"
     
     let url = NSURL(string: "http://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
     
@@ -90,6 +91,7 @@ class JSONManager {
                                         JSONManager.jsonParts = self.parseAndHandleJson(data)
                                         NSUserDefaults.standardUserDefaults().setBool(false, forKey: JSONManager.updateAvailableKey)
                                         NSUserDefaults.standardUserDefaults().synchronize()
+                                        NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.newDataAvailableKey, object: self)
                                     }
                                     success = true
                                 }

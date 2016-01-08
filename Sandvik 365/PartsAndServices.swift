@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BusinessType: UInt {
+enum BusinessType: UInt32 {
     case BulkMaterialHandling
     case ConveyorComponents
     case CrusherAndScreening
@@ -18,6 +18,19 @@ enum BusinessType: UInt {
     case SurfaceDrilling
     case UndergroundDrillingAndBolting
     case UndergroundLoadingAndHauling
+    
+    private static let _count: BusinessType.RawValue = {
+        // find the maximum enum value
+        var maxValue: UInt32 = 0
+        while let _ = BusinessType(rawValue: ++maxValue) { }
+        return maxValue
+    }()
+    
+    static func randomBusinessType() -> BusinessType {
+        // pick and return a new value
+        let rand = arc4random_uniform(_count)
+        return BusinessType(rawValue: rand)!
+    }
     
     //TODO return from case
     static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]

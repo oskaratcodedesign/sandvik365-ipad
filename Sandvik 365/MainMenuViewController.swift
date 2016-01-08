@@ -16,6 +16,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
     @IBOutlet var mainMenuItemViews: [MainMenuItemView]!
     
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var menuCountOnBox: MenuCountOnBox!
+    
     private var backButtonBg: UIImageView!
     private var showBackButton: Bool = true
     
@@ -47,6 +49,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.disableLogoButton()
         checkUpdateAvailble()
+        menuCountOnBox.loadNewInfo()
     }
     
     override func viewWillDisappear(animated: Bool) {

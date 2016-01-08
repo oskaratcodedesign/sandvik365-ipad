@@ -111,13 +111,13 @@ YOU CAN COUNT ON.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                <rect key="frame" x="269" y="448" width="63" height="73"/>
+                                                <rect key="frame" x="269" y="447" width="63" height="73"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="274" y="428" width="54" height="10"/>
+                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -218,8 +218,21 @@ YOU CAN COUNT ON.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aue-k1-9DF">
                                         <rect key="frame" x="0.0" y="500" width="600" height="500"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
+                                                <rect key="frame" x="360" y="70" width="200" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="A6s-Xc-3OE"/>
+                                                    <constraint firstAttribute="height" constant="80" id="yH5-4i-z5a"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="A6s-Xc-3OE"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                                <rect key="frame" x="0.0" y="160" width="600" height="340"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
@@ -387,6 +400,23 @@ YOU CAN COUNT ON.</string>
                                                         <exclude reference="mZs-jZ-CPi"/>
                                                         <exclude reference="oKm-9C-QcZ"/>
                                                         <exclude reference="ruj-rV-Vtw"/>
+                                                        <exclude reference="5D2-aN-4pb"/>
+                                                        <exclude reference="6xR-1W-EfS"/>
+                                                        <exclude reference="eti-c6-Lcb"/>
+                                                        <exclude reference="jLx-59-b8T"/>
+                                                        <exclude reference="mVT-Dq-Idh"/>
+                                                        <exclude reference="2Qk-s4-FvI"/>
+                                                        <exclude reference="a1Q-2v-Sfa"/>
+                                                        <exclude reference="gTQ-VH-0yu"/>
+                                                        <exclude reference="qWG-ud-pVa"/>
+                                                        <exclude reference="sNV-bV-dzP"/>
+                                                        <exclude reference="sYX-hY-oeO"/>
+                                                        <exclude reference="DbX-Fn-nVR"/>
+                                                        <exclude reference="L2y-LT-ytR"/>
+                                                        <exclude reference="N5p-yz-sQt"/>
+                                                        <exclude reference="hOO-b6-8Xs"/>
+                                                        <exclude reference="uzF-IF-yrY"/>
+                                                        <exclude reference="xTI-15-1OF"/>
                                                         <exclude reference="6GH-Ak-bNf"/>
                                                         <exclude reference="KbC-do-bgl"/>
                                                         <exclude reference="LF9-pK-DvP"/>
@@ -394,32 +424,15 @@ YOU CAN COUNT ON.</string>
                                                         <exclude reference="f6A-0p-Onx"/>
                                                         <exclude reference="g47-gK-7Eh"/>
                                                         <exclude reference="uWS-6r-P3c"/>
-                                                        <exclude reference="2Qk-s4-FvI"/>
-                                                        <exclude reference="a1Q-2v-Sfa"/>
-                                                        <exclude reference="gTQ-VH-0yu"/>
-                                                        <exclude reference="qWG-ud-pVa"/>
-                                                        <exclude reference="sNV-bV-dzP"/>
-                                                        <exclude reference="sYX-hY-oeO"/>
                                                         <exclude reference="89m-Ma-B2F"/>
                                                         <exclude reference="ETt-1Z-Ueb"/>
                                                         <exclude reference="g0I-99-yW0"/>
                                                         <exclude reference="phy-fx-8Id"/>
-                                                        <exclude reference="5D2-aN-4pb"/>
-                                                        <exclude reference="6xR-1W-EfS"/>
-                                                        <exclude reference="eti-c6-Lcb"/>
-                                                        <exclude reference="jLx-59-b8T"/>
-                                                        <exclude reference="mVT-Dq-Idh"/>
                                                         <exclude reference="hME-O5-Aeo"/>
                                                         <exclude reference="pgN-1n-ENK"/>
                                                         <exclude reference="sZ3-mg-cvF"/>
                                                         <exclude reference="w8d-JP-JYO"/>
                                                         <exclude reference="26a-H3-c5R"/>
-                                                        <exclude reference="DbX-Fn-nVR"/>
-                                                        <exclude reference="L2y-LT-ytR"/>
-                                                        <exclude reference="N5p-yz-sQt"/>
-                                                        <exclude reference="hOO-b6-8Xs"/>
-                                                        <exclude reference="uzF-IF-yrY"/>
-                                                        <exclude reference="xTI-15-1OF"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -441,19 +454,24 @@ YOU CAN COUNT ON.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="p2M-OL-gMy" firstAttribute="top" secondItem="1Hj-OI-4WY" secondAttribute="bottom" constant="10" id="1Ak-6f-WU3"/>
                                             <constraint firstItem="p2M-OL-gMy" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" id="CTn-X6-btS"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="JzS-u6-iwY"/>
                                             <constraint firstAttribute="trailing" secondItem="wZy-j6-tYo" secondAttribute="trailing" constant="150" id="Nby-KV-cRV"/>
                                             <constraint firstItem="p2M-OL-gMy" firstAttribute="top" secondItem="aue-k1-9DF" secondAttribute="top" id="Tgr-uo-aS3"/>
                                             <constraint firstItem="Efv-Tf-KN9" firstAttribute="height" secondItem="aue-k1-9DF" secondAttribute="height" id="abN-Yz-ilq"/>
+                                            <constraint firstItem="1Hj-OI-4WY" firstAttribute="width" secondItem="aue-k1-9DF" secondAttribute="width" multiplier="1/3" id="krY-Pg-DO2"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Hj-OI-4WY" secondAttribute="trailing" constant="40" id="lEL-31-Bfm"/>
                                             <constraint firstAttribute="trailing" secondItem="p2M-OL-gMy" secondAttribute="trailing" id="nD7-U2-ttg"/>
                                             <constraint firstItem="YEk-cD-KjF" firstAttribute="height" secondItem="aue-k1-9DF" secondAttribute="height" id="sYC-Gx-LxU"/>
+                                            <constraint firstItem="1Hj-OI-4WY" firstAttribute="top" secondItem="aue-k1-9DF" secondAttribute="top" constant="70" id="vCO-22-kAz"/>
                                             <constraint firstAttribute="bottom" secondItem="p2M-OL-gMy" secondAttribute="bottom" id="vOe-FJ-4VW"/>
                                             <constraint firstItem="wZy-j6-tYo" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" constant="150" id="wQO-6b-YNs"/>
                                             <constraint firstAttribute="bottom" secondItem="wZy-j6-tYo" secondAttribute="bottom" constant="50" id="zWv-VS-wqL"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="Tgr-uo-aS3"/>
                                                 <exclude reference="sYC-Gx-LxU"/>
                                             </mask>
                                         </variation>
@@ -488,6 +506,7 @@ YOU CAN COUNT ON.</string>
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
+                        <outlet property="menuCountOnBox" destination="1Hj-OI-4WY" id="cRs-tF-bwp"/>
                         <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
                         <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
                         <outlet property="scrollView" destination="Btf-qB-THU" id="BUH-Bh-mXh"/>
