@@ -34,8 +34,12 @@ extension UIViewController {
     
     func mob_viewDidLoad() {
         self.mob_viewDidLoad()
+        self.styleNavBar()
+    }
+    
+    func styleNavBar() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-       
+        
         if let navController = self.navigationController {
             let label = UILabel(frame: CGRectMake(0, 0, navController.navigationBar.frame.size.width-200, navController.navigationBar.frame.size.height))
             label.textAlignment = .Left

@@ -71,22 +71,31 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
     
     func didTapMenuCountOnBox(partsAndServices: PartsAndServices, partService: PartService, subPartService: SubPartService, mainSectionTitle: String) {
         let storyboard = UIStoryboard(name: "PartsAndServices", bundle: nil)
-        if let first = storyboard.instantiateViewControllerWithIdentifier("PartsAndServicesViewController") as?PartsAndServicesViewController, let second = storyboard.instantiateViewControllerWithIdentifier("PartServiceSelectionViewController") as?PartServiceSelectionViewController, let third = storyboard.instantiateViewControllerWithIdentifier("SubPartServiceSelectionViewController") as?SubPartServiceSelectionViewController, let fourth = storyboard.instantiateViewControllerWithIdentifier("SubPartServiceContentViewController") as?SubPartServiceContentViewController {
+        if /*let first = storyboard.instantiateViewControllerWithIdentifier("PartsAndServicesViewController") as?PartsAndServicesViewController, let second = storyboard.instantiateViewControllerWithIdentifier("PartServiceSelectionViewController") as?PartServiceSelectionViewController, let third = storyboard.instantiateViewControllerWithIdentifier("SubPartServiceSelectionViewController") as?SubPartServiceSelectionViewController, */let fourth = storyboard.instantiateViewControllerWithIdentifier("SubPartServiceContentViewController") as?SubPartServiceContentViewController {
             
             let menuItem = self.mainMenuItemViews.filter({ $0.partBridgeType.unsignedIntValue == partsAndServices.businessType.rawValue}).first
             let title = menuItem?.label.text
             
-            MainMenuViewController.setPartsAndServicesViewController(first, selectedPartsAndServices: partsAndServices, navTitle: title)
+            /*MainMenuViewController.setPartsAndServicesViewController(first, selectedPartsAndServices: partsAndServices, navTitle: title)
             
             PartsAndServicesViewController.setPartServiceSelectionViewController(second, selectedPartsAndServices: partsAndServices, mainSectionTitle: mainSectionTitle, navTitle: title)
             
-            PartServiceSelectionViewController.setSubPartServiceSelectionViewController(third, selectedPartsAndServices: partsAndServices, mainSectionTitle: mainSectionTitle, selectedSectionTitle: partService.title, navTitle: title)
+            PartServiceSelectionViewController.setSubPartServiceSelectionViewController(third, selectedPartsAndServices: partsAndServices, mainSectionTitle: mainSectionTitle, selectedSectionTitle: partService.title, navTitle: title)*/
             
             SubPartServiceSelectionViewController.setSubPartServiceContentViewController(fourth, selectedPartsAndServices: partsAndServices, mainSectionTitle: mainSectionTitle, selectedSectionTitle: partService.title, navTitle: title, selectedSubPart: subPartService)
+
             if let navController = self.navigationController {
+                /*navController.pushViewController(first, animated: true)
+                navController.pushViewController(second, animated: true)
+                navController.pushViewController(third, animated: true)
+                navController.pushViewController(fourth, animated: true)*/
+                //navController.viewControllers.insertContentsOf([first, second, third], at: navController.viewControllers.count - 1)
+                //var viewControllers = navController.viewControllers
+                //viewControllers += [first, second, third]
                 
+                //navController.setViewControllers(viewControllers, animated: false)
+                //navController.viewControllers.insertContentsOf([first, second, third], at: navController.viewControllers.count)
                 navController.pushViewController(fourth, animated: true)
-                navController.viewControllers.insertContentsOf([first, second, third], at: navController.viewControllers.count - 1)
             }
         }
     }
