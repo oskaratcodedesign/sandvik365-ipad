@@ -39,6 +39,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="TAP TO LEARN MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-Rw-vgO">
                     <rect key="frame" x="150" y="68" width="100" height="522"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -69,6 +70,14 @@
                     <exclude reference="pXo-ED-JIH"/>
                 </mask>
             </variation>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="g9K-zO-Q5p" appends="YES" id="YIm-3O-Ufy"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="g9K-zO-Q5p">
+            <connections>
+                <action selector="tapAction:" destination="-1" id="NY3-Lb-5Eu"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

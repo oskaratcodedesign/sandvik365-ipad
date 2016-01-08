@@ -151,10 +151,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowSubPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceSelectionViewController {
-                vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.mainSectionTitle = mainSectionTitle
-                vc.selectedSectionTitle = selectedSectionTitle
-                vc.navigationItem.title = self.navigationItem.title
+                PartServiceSelectionViewController.setSubPartServiceSelectionViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: mainSectionTitle, selectedSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title)
             }
         }
         else if segue.identifier == "ShowSubPartServiceContentViewController" {
@@ -164,6 +161,13 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, selectedSectionTitle.uppercaseString)
             }
         }
+    }
+    
+    static func setSubPartServiceSelectionViewController(vc: SubPartServiceSelectionViewController, selectedPartsAndServices: PartsAndServices, mainSectionTitle: String, selectedSectionTitle: String, navTitle: String?) {
+        vc.selectedPartsAndServices = selectedPartsAndServices
+        vc.mainSectionTitle = mainSectionTitle
+        vc.selectedSectionTitle = selectedSectionTitle
+        vc.navigationItem.title = navTitle
     }
 
 }
