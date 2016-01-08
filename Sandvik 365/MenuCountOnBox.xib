@@ -38,7 +38,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="TAP TO LEARN MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-Rw-vgO">
-                    <rect key="frame" x="150" y="68" width="100" height="522"/>
+                    <rect key="frame" x="150" y="68" width="445" height="522"/>
                     <gestureRecognizers/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,6 +54,7 @@
                 <constraint firstItem="7Su-Rw-vgO" firstAttribute="leading" secondItem="PCe-UE-H6W" secondAttribute="leading" id="a8l-J5-Nzd"/>
                 <constraint firstItem="PCe-UE-H6W" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="top" id="fgq-UL-K0u"/>
                 <constraint firstItem="PCe-UE-H6W" firstAttribute="height" secondItem="fNL-tP-xou" secondAttribute="height" id="pXo-ED-JIH"/>
+                <constraint firstAttribute="trailing" secondItem="7Su-Rw-vgO" secondAttribute="trailing" constant="5" id="rbk-Qd-KRq"/>
                 <constraint firstItem="fNL-tP-xou" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="yTZ-nn-c9c"/>
                 <constraint firstAttribute="trailing" secondItem="PCe-UE-H6W" secondAttribute="trailing" constant="5" id="z5N-Ru-srn"/>
             </constraints>

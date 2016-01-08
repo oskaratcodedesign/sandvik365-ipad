@@ -219,7 +219,7 @@ YOU CAN COUNT ON.</string>
                                         <rect key="frame" x="0.0" y="500" width="600" height="500"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="360" y="70" width="200" height="80"/>
+                                                <rect key="frame" x="245" y="70" width="255" height="90"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="A6s-Xc-3OE"/>
@@ -228,11 +228,12 @@ YOU CAN COUNT ON.</string>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="A6s-Xc-3OE"/>
+                                                        <exclude reference="yH5-4i-z5a"/>
                                                     </mask>
                                                 </variation>
                                             </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
-                                                <rect key="frame" x="0.0" y="160" width="600" height="340"/>
+                                                <rect key="frame" x="0.0" y="170" width="600" height="330"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
@@ -461,7 +462,7 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstItem="p2M-OL-gMy" firstAttribute="top" secondItem="aue-k1-9DF" secondAttribute="top" id="Tgr-uo-aS3"/>
                                             <constraint firstItem="Efv-Tf-KN9" firstAttribute="height" secondItem="aue-k1-9DF" secondAttribute="height" id="abN-Yz-ilq"/>
                                             <constraint firstItem="1Hj-OI-4WY" firstAttribute="width" secondItem="aue-k1-9DF" secondAttribute="width" multiplier="1/3" id="krY-Pg-DO2"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Hj-OI-4WY" secondAttribute="trailing" constant="40" id="lEL-31-Bfm"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Hj-OI-4WY" secondAttribute="trailing" constant="100" id="lEL-31-Bfm"/>
                                             <constraint firstAttribute="trailing" secondItem="p2M-OL-gMy" secondAttribute="trailing" id="nD7-U2-ttg"/>
                                             <constraint firstItem="YEk-cD-KjF" firstAttribute="height" secondItem="aue-k1-9DF" secondAttribute="height" id="sYC-Gx-LxU"/>
                                             <constraint firstItem="1Hj-OI-4WY" firstAttribute="top" secondItem="aue-k1-9DF" secondAttribute="top" constant="70" id="vCO-22-kAz"/>
@@ -472,6 +473,7 @@ YOU CAN COUNT ON.</string>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Tgr-uo-aS3"/>
+                                                <exclude reference="krY-Pg-DO2"/>
                                                 <exclude reference="sYC-Gx-LxU"/>
                                             </mask>
                                         </variation>
