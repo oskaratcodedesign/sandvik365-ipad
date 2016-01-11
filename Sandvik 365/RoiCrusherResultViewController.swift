@@ -25,7 +25,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
         super.viewDidLoad()
         titleLabel.text = NSLocalizedString("INCREASED\nVALUE BY UP TO", comment: "")
         let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
-        attrString.appendAttributedString(NSAttributedString(string: "\nCAPITAL SPARE PARTS\nCOVERED", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
+        attrString.appendAttributedString(NSAttributedString(string: "\nCOVERAGE ON CAPITAL\nSPARE PARTS", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         self.graphLabel.attributedText = attrString
     }
     
