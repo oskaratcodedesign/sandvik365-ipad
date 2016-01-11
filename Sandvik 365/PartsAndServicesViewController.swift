@@ -50,9 +50,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         }
         else if segue.identifier == "ShowPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
-                vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.mainSectionTitle = selectedSectionTitle
-                vc.navigationItem.title = self.navigationItem.title
+                PartsAndServicesViewController.setPartServiceSelectionViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title)
             }
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {
@@ -75,6 +73,12 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                 }
             }
         }
+    }
+    
+    static func setPartServiceSelectionViewController(vc: PartServiceSelectionViewController, selectedPartsAndServices: PartsAndServices, mainSectionTitle: String, navTitle: String?) {
+        vc.selectedPartsAndServices = selectedPartsAndServices
+        vc.mainSectionTitle = mainSectionTitle
+        vc.navigationItem.title = navTitle
     }
 
 }

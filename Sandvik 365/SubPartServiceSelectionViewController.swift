@@ -138,11 +138,15 @@ class SubPartServiceSelectionViewController: UIViewController, UIScrollViewDeleg
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowSubPartServiceContentViewController" {
             if let vc = segue.destinationViewController as? SubPartServiceContentViewController {
-                vc.selectedPartsAndServices = selectedPartsAndServices
-                vc.selectedContent = selectedSubPart.content
-                vc.navigationItem.title = String(format: "%@ | %@ | %@", self.navigationItem.title!, mainSectionTitle.uppercaseString, selectedSectionTitle.uppercaseString)
+                SubPartServiceSelectionViewController.setSubPartServiceContentViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: mainSectionTitle, selectedSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title, selectedSubPart: selectedSubPart)
             }
         }
+    }
+    
+    static func setSubPartServiceContentViewController(vc: SubPartServiceContentViewController, selectedPartsAndServices: PartsAndServices, mainSectionTitle: String, selectedSectionTitle: String, navTitle: String?, selectedSubPart: SubPartService) {
+        vc.selectedPartsAndServices = selectedPartsAndServices
+        vc.selectedContent = selectedSubPart.content
+        vc.navigationItem.title = String(format: "%@ | %@ | %@", navTitle!, mainSectionTitle.uppercaseString, selectedSectionTitle.uppercaseString)
     }
 
 }

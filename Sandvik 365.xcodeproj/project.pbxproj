@@ -77,6 +77,8 @@
 		F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */; };
 		F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2C0431C15C42C009D290B /* DownloadingView.swift */; };
 		F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E2C0451C15C445009D290B /* DownloadingView.xib */; };
+		F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E344C61C3EA5D5003B7C67 /* MenuCountOnBox.swift */; };
+		F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E344C81C3EA605003B7C67 /* MenuCountOnBox.xib */; };
 		F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A761B7B5B48004FA708 /* RoiInputView.swift */; };
 		F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E69A781B7B5B66004FA708 /* RoiInputView.xib */; };
 		F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */; };
@@ -194,6 +196,8 @@
 		F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServices.swift; sourceTree = "<group>"; };
 		F7E2C0431C15C42C009D290B /* DownloadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
 		F7E2C0451C15C445009D290B /* DownloadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadingView.xib; sourceTree = "<group>"; };
+		F7E344C61C3EA5D5003B7C67 /* MenuCountOnBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCountOnBox.swift; sourceTree = "<group>"; };
+		F7E344C81C3EA605003B7C67 /* MenuCountOnBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCountOnBox.xib; sourceTree = "<group>"; };
 		F7E69A761B7B5B48004FA708 /* RoiInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiInputView.swift; sourceTree = "<group>"; };
 		F7E69A781B7B5B66004FA708 /* RoiInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiInputView.xib; sourceTree = "<group>"; };
 		F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionButton.swift; sourceTree = "<group>"; };
@@ -463,6 +467,8 @@
 				F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */,
 				F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */,
 				F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */,
+				F7E344C61C3EA5D5003B7C67 /* MenuCountOnBox.swift */,
+				F7E344C81C3EA605003B7C67 /* MenuCountOnBox.xib */,
 				F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */,
 				F7019D0A1BE36D0700A6B3C6 /* ContentParts */,
 			);
@@ -603,6 +609,7 @@
 				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
+				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,6 +685,7 @@
 				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
+				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
