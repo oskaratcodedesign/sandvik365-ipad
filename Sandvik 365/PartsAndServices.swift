@@ -45,6 +45,15 @@ enum BusinessType: UInt32 {
         }
     }
     
+    var mediaCenterTitle: String? {
+        switch self {
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+            return nil
+        case UndergroundLoadingAndHauling:
+            return "Media center"
+        }
+    }
+    
     var backgroundImageName :String {
         switch self {
         case BulkMaterialHandling:
@@ -289,6 +298,10 @@ class PartsAndServices {
         
         if let geTitle = self.businessType.roiGetCalculatorTitle {
             titles.append(geTitle.uppercaseString)
+        }
+        
+        if let mediaCenterTitle = self.businessType.mediaCenterTitle {
+            titles.append(mediaCenterTitle.uppercaseString)
         }
         
         for mp in jsonParts.partsServicesContent {

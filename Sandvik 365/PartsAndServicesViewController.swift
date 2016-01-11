@@ -37,6 +37,9 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         if self.selectedPartsAndServices.businessType.roiTitlesLowerCase.contains(sectionTitle.lowercaseString) {
             performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
         }
+        else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
+            performSegueWithIdentifier("ShowVideoCenterViewController", sender: self)
+        }
         else {
             performSegueWithIdentifier("ShowPartServiceSelectionViewController", sender: self)
         }
@@ -46,6 +49,11 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         if segue.identifier == "ShowPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
                 PartsAndServicesViewController.setPartServiceSelectionViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title)
+            }
+        }
+        else if segue.identifier == "ShowVideoCenterViewController" {
+            if let vc = segue.destinationViewController as? VideoCenterViewController {
+                vc.selectedBusinessType = self.selectedPartsAndServices.businessType
             }
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {

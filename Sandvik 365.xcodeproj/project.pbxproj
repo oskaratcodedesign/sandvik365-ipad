@@ -52,6 +52,7 @@
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
+		F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3D1C43F4A100742EBD /* VideoCell.swift */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
@@ -183,6 +184,7 @@
 		F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MHS Remove 1920x1080_v1.mp4"; sourceTree = "<group>"; };
 		F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sectional Shroud Install_v1.mp4"; sourceTree = "<group>"; };
 		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		F73E9B3D1C43F4A100742EBD /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		48FDEABA1B5F901100C5AFE6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F73E9B3C1C43F47F00742EBD /* MediaCenter */,
 				F7C05FF11BF9D45800E09456 /* PartsAndServices */,
 				F7C05FF01BF9D41500E09456 /* Roi */,
 				48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */,
@@ -473,6 +476,14 @@
 			isa = PBXGroup;
 			children = (
 				F73E9B3A1C43E7B900742EBD /* Video.swift */,
+			);
+			name = MediaCenter;
+			sourceTree = "<group>";
+		};
+		F73E9B3C1C43F47F00742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B3D1C43F4A100742EBD /* VideoCell.swift */,
 			);
 			name = MediaCenter;
 			sourceTree = "<group>";
@@ -768,6 +779,7 @@
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
 				F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */,
+				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,

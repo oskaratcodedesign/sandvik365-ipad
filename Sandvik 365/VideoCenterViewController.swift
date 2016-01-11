@@ -10,10 +10,14 @@ import UIKit
 
 class VideoCenterViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    var selectedBusinessType: BusinessType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let view = self.view as? ViewWithBGImage {
+            view.setImageBG(self.selectedBusinessType.backgroundImageName)
+        }
     }
 
 
