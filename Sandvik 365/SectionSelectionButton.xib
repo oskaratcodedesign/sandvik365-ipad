@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-J9-0m9">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-J9-0m9" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
                     <rect key="frame" x="290" y="0.0" width="20" height="600"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="CfQ-Jx-Utd"/>
@@ -30,12 +30,24 @@
                     <state key="normal">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="focused">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
                             <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                             <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                            <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <variation key="default">
