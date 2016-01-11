@@ -26,19 +26,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNL-tP-xou">
-                    <rect key="frame" x="5" y="10" width="135" height="58"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="50"/>
+                    <rect key="frame" x="15" y="10" width="108" height="46"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="40"/>
                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCe-UE-H6W">
-                    <rect key="frame" x="150" y="10" width="445" height="14"/>
-                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCe-UE-H6W">
+                    <rect key="frame" x="133" y="15" width="452" height="12"/>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="TAP TO LEARN MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-Rw-vgO">
-                    <rect key="frame" x="150" y="68" width="445" height="522"/>
+                    <rect key="frame" x="133" y="578" width="452" height="12"/>
                     <gestureRecognizers/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,14 +49,15 @@
             <constraints>
                 <constraint firstItem="PCe-UE-H6W" firstAttribute="leading" secondItem="fNL-tP-xou" secondAttribute="trailing" constant="10" id="NRc-Hr-q36"/>
                 <constraint firstAttribute="bottom" secondItem="7Su-Rw-vgO" secondAttribute="bottom" constant="10" id="Qpe-Ug-8zL"/>
-                <constraint firstItem="7Su-Rw-vgO" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="bottom" id="UvX-dV-umw"/>
-                <constraint firstItem="fNL-tP-xou" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="X2d-q4-xqQ"/>
+                <constraint firstItem="7Su-Rw-vgO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fNL-tP-xou" secondAttribute="bottom" id="UvX-dV-umw"/>
+                <constraint firstItem="fNL-tP-xou" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="X2d-q4-xqQ"/>
                 <constraint firstItem="7Su-Rw-vgO" firstAttribute="leading" secondItem="PCe-UE-H6W" secondAttribute="leading" id="a8l-J5-Nzd"/>
-                <constraint firstItem="PCe-UE-H6W" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="top" id="fgq-UL-K0u"/>
+                <constraint firstItem="PCe-UE-H6W" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="top" constant="5" id="fgq-UL-K0u"/>
+                <constraint firstItem="7Su-Rw-vgO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PCe-UE-H6W" secondAttribute="bottom" id="gmF-3o-wSO"/>
                 <constraint firstItem="PCe-UE-H6W" firstAttribute="height" secondItem="fNL-tP-xou" secondAttribute="height" id="pXo-ED-JIH"/>
-                <constraint firstAttribute="trailing" secondItem="7Su-Rw-vgO" secondAttribute="trailing" constant="5" id="rbk-Qd-KRq"/>
+                <constraint firstAttribute="trailing" secondItem="7Su-Rw-vgO" secondAttribute="trailing" constant="15" id="rbk-Qd-KRq"/>
                 <constraint firstItem="fNL-tP-xou" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="yTZ-nn-c9c"/>
-                <constraint firstAttribute="trailing" secondItem="PCe-UE-H6W" secondAttribute="trailing" constant="5" id="z5N-Ru-srn"/>
+                <constraint firstAttribute="trailing" secondItem="PCe-UE-H6W" secondAttribute="trailing" constant="15" id="z5N-Ru-srn"/>
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">

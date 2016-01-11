@@ -53,6 +53,12 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         menuCountOnBox.loadNewInfo()
     }
     
+    override func viewWillLayoutSubviews()
+    {
+        super.viewWillLayoutSubviews()
+        //self.menuScrollView.contentSize.height = self.menuScrollView.frame.size.height
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = false
