@@ -236,6 +236,22 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
+    func percentPPMchange(percent: Bool, object: AnyObject) {
+        let index = selectionButtons.count-1
+        let selectedButton = selectionButtons[index]
+        
+        if let abr = selectedInput.getInputAbbreviation(index) {
+            let text = selectedInput.changeInput(index, change: .Load)
+            if let string = selectedButton.button.attributedTitleForState(.Normal) {
+                let fonts = getNSAttributedStringFonts(string)
+                if fonts.count > 1 {
+                    let attString = abr.addAbbreviation(text, valueFont: UIFont(name: fonts[0].fontName, size: (selectedButton.button.titleLabel?.font.pointSize)!)!, abbreviationFont: UIFont(name: fonts[1].fontName, size: (selectedButton.button.titleLabel?.font.pointSize)!)!)
+                    selectedButton.button.setAttributedTitle(attString, forState: .Normal)
+                }
+            }
+        }
+    }
+    
     private func clearItemsToTheRight(itemIndex: Int) {
         if selectedInput is FireSuppressionInput {
             //clear items to the right
@@ -256,8 +272,18 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
+    private func getNSAttributedStringFonts(attrString: NSAttributedString) -> [UIFont] {
+        var fonts: [UIFont] = []
+        attrString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, attrString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
+            if let font = value as? UIFont {
+                fonts.append(font)
+            }
+        }
+        return fonts
+    }
+    
     private func changeNSAttributedStringFontSize(attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {
-        let mutString : NSMutableAttributedString = NSMutableAttributedString(attributedString: attrString);
+        let mutString : NSMutableAttributedString = NSMutableAttributedString(attributedString: attrString)
         mutString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, mutString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
             if let oldFont = value as? UIFont {
                 let newFont = oldFont.fontWithSize(fontSize)

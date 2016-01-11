@@ -10,6 +10,7 @@ import UIKit
 
 protocol RoiSelectionContentViewControllerDelegate {
     func roiValueDidChange(itemIndex: Int, object :AnyObject)
+    func percentPPMchange(percent: Bool, object :AnyObject)
 }
 
 class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
@@ -161,7 +162,6 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
             toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
         }
     }
-    
    
     @IBAction func segmentChangedAction(sender: UISegmentedControl) {
         let isLeft = sender.selectedSegmentIndex == 0 ? true : false
@@ -170,6 +170,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
             roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
             if let delegate = self.delegate {
                 delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
+                delegate.percentPPMchange(isLeft, object: roiContentView.textView.attributedText)
             }
         }
     }
