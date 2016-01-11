@@ -32,16 +32,17 @@ enum BusinessType: UInt32 {
         return BusinessType(rawValue: rand)!
     }
     
-    //TODO return from case
-    static let videos = [BulkMaterialHandling : "Sandvik365_Extern_150917"]
-    
-    func videoURL() -> NSURL? {
-        if let videoName = BusinessType.videos[self] {
-            let path = NSBundle.mainBundle().pathForResource(videoName, ofType:"m4v")
-            let url = NSURL.fileURLWithPath(path!)
-            return url
+    var videos: [Video]? {
+        switch self {
+        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+            return nil
+        case UndergroundLoadingAndHauling:
+            return [Video(videoName: "Bucket Shroud Wear Movie Release 01_v1", ext: "mp4", title: ""),
+            Video(videoName: "Corner Shroud Installation_v1", ext: "mp4", title: ""),
+            Video(videoName: "MHS Install 1920x1080_v1", ext: "mp4", title: ""),
+            Video(videoName: "MHS Remove 1920x1080_v1", ext: "mp4", title: ""),
+            Video(videoName: "Sectional Shroud Install_v1", ext: "mp4", title: "")]
         }
-        return nil
     }
     
     var backgroundImageName :String {

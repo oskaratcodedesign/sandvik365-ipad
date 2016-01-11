@@ -43,12 +43,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "VideoViewController" {
-            if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedBusinessType = selectedPartsAndServices.businessType
-            }
-        }
-        else if segue.identifier == "ShowPartServiceSelectionViewController" {
+        if segue.identifier == "ShowPartServiceSelectionViewController" {
             if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
                 PartsAndServicesViewController.setPartServiceSelectionViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title)
             }

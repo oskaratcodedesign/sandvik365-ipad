@@ -49,6 +49,9 @@
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
 		F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */; };
+		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
+		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
+		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
@@ -172,6 +175,14 @@
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
 		F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
+		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
+		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
+		F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bucket Shroud Wear Movie Release 01_v1.mp4"; sourceTree = "<group>"; };
+		F73E9B351C43E5D700742EBD /* Corner Shroud Installation_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Corner Shroud Installation_v1.mp4"; sourceTree = "<group>"; };
+		F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MHS Install 1920x1080_v1.mp4"; sourceTree = "<group>"; };
+		F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MHS Remove 1920x1080_v1.mp4"; sourceTree = "<group>"; };
+		F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sectional Shroud Install_v1.mp4"; sourceTree = "<group>"; };
+		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
@@ -237,12 +248,12 @@
 		486F88781B72383C0084211F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F73E9B2F1C43E42600742EBD /* MediaCenter */,
 				F70867BB1BD0F9B500033AB5 /* PartsAndServices */,
 				F7EA86C71B849515003E1AA6 /* Roi */,
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
-				F741D9981B8475C400010E71 /* VideoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 		48FCED531B78C01B002D45A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F73E9B391C43E7A700742EBD /* MediaCenter */,
 				F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */,
 				F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */,
 				F7C05FF21BF9D4F100E09456 /* Roi */,
@@ -327,8 +339,8 @@
 		48FDEAB61B5F8D4700C5AFE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F73E9B321C43E4C900742EBD /* videos */,
 				4842CE711BEB798E00D39F5F /* Preloaded Resources */,
-				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
@@ -422,8 +434,47 @@
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
 				F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
+				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F73E9B2F1C43E42600742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F741D9981B8475C400010E71 /* VideoViewController.swift */,
+				F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */,
+			);
+			name = MediaCenter;
+			sourceTree = "<group>";
+		};
+		F73E9B321C43E4C900742EBD /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
+				F73E9B331C43E4DC00742EBD /* get */,
+			);
+			name = videos;
+			sourceTree = "<group>";
+		};
+		F73E9B331C43E4DC00742EBD /* get */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */,
+				F73E9B351C43E5D700742EBD /* Corner Shroud Installation_v1.mp4 */,
+				F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */,
+				F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */,
+				F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */,
+			);
+			name = get;
+			sourceTree = "<group>";
+		};
+		F73E9B391C43E7A700742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B3A1C43E7B900742EBD /* Video.swift */,
+			);
+			name = MediaCenter;
 			sourceTree = "<group>";
 		};
 		F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */ = {
@@ -606,6 +657,7 @@
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
+				F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */,
 				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
@@ -707,6 +759,7 @@
 				F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */,
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
+				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */,
 				F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */,
@@ -723,6 +776,7 @@
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
 				F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */,
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
+				F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */,
 				F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,
