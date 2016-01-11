@@ -223,7 +223,8 @@ YOU CAN COUNT ON.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="4BX-vE-7mg"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="sZp-ZA-dkR"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="hkF-BC-mMo"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="sZp-ZA-dkR"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">

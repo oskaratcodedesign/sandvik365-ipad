@@ -36,7 +36,21 @@ protocol MenuCountOnBoxDelegate {
     }
     
     func getParts() {
-        self.partServiceContent = JSONManager.getJSONParts()?.partsServicesContent.filter({ $0.partsServices.filter({ $0.subPartsServices?.filter({ $0.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent}).count > 0}).count > 0}).count > 0})//filter out those with countonboxes
+        if let partServiceContent = JSONManager.getJSONParts()?.partsServicesContent {
+            //filter out countonboxes
+            for pc in partServiceContent  {
+                for ps in pc.partsServices {
+                    if let subPartServices = ps.subPartsServices {
+                        for sp in subPartServices {
+                            sp.content.contentList = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
+                        }
+                        ps.subPartsServices = subPartServices.filter({ $0.content.contentList.count > 0})
+                    }
+                }
+                pc.partsServices = pc.partsServices.filter({ $0.subPartsServices?.count > 0})
+            }
+            self.partServiceContent = partServiceContent
+        }
         loadNewInfo()
     }
     

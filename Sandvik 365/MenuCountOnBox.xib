@@ -31,8 +31,8 @@
                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCe-UE-H6W">
-                    <rect key="frame" x="133" y="15" width="452" height="12"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCe-UE-H6W">
+                    <rect key="frame" x="133" y="10" width="452" height="0.0"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                 <constraint firstItem="7Su-Rw-vgO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fNL-tP-xou" secondAttribute="bottom" id="UvX-dV-umw"/>
                 <constraint firstItem="fNL-tP-xou" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="X2d-q4-xqQ"/>
                 <constraint firstItem="7Su-Rw-vgO" firstAttribute="leading" secondItem="PCe-UE-H6W" secondAttribute="leading" id="a8l-J5-Nzd"/>
-                <constraint firstItem="PCe-UE-H6W" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="top" constant="5" id="fgq-UL-K0u"/>
+                <constraint firstItem="PCe-UE-H6W" firstAttribute="top" secondItem="fNL-tP-xou" secondAttribute="top" id="fgq-UL-K0u"/>
                 <constraint firstItem="7Su-Rw-vgO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PCe-UE-H6W" secondAttribute="bottom" id="gmF-3o-wSO"/>
                 <constraint firstItem="PCe-UE-H6W" firstAttribute="height" secondItem="fNL-tP-xou" secondAttribute="height" id="pXo-ED-JIH"/>
                 <constraint firstAttribute="trailing" secondItem="7Su-Rw-vgO" secondAttribute="trailing" constant="15" id="rbk-Qd-KRq"/>
