@@ -9,6 +9,17 @@
 import Foundation
 import NibDesignable
 
-@IBDesignable class ContactUsView : NibDesignable {
+class ContactUsView : NibDesignable {
+    @IBOutlet weak var mapImageView: UIImageView!
+    @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var phoneButton: UIButton!
 
+    
+    @IBAction func phoneAction(sender: UIButton) {
+    }
+    @IBAction func emailAction(sender: AnyObject) {
+    }
+    @IBAction func visitAction(sender: AnyObject) {
+    }
+    @IBOutlet weak var showRegionsAction: UIButton!
 }
