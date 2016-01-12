@@ -37,11 +37,11 @@ enum BusinessType: UInt32 {
         case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return [Video(videoName: "Bucket Shroud Wear Movie Release 01_v1", ext: "mp4", title: ""),
-            Video(videoName: "Corner Shroud Installation_v1", ext: "mp4", title: ""),
-            Video(videoName: "MHS Install 1920x1080_v1", ext: "mp4", title: ""),
-            Video(videoName: "MHS Remove 1920x1080_v1", ext: "mp4", title: ""),
-            Video(videoName: "Sectional Shroud Install_v1", ext: "mp4", title: "")]
+            return [Video(videoName: "Bucket Shroud Wear Movie Release 01_v1", ext: "mp4", title: "", image: "logo"),
+            Video(videoName: "Corner Shroud Installation_v1", ext: "mp4", title: "", image: "logo"),
+            Video(videoName: "MHS Install 1920x1080_v1", ext: "mp4", title: "", image: "logo"),
+            Video(videoName: "MHS Remove 1920x1080_v1", ext: "mp4", title: "", image: "logo"),
+            Video(videoName: "Sectional Shroud Install_v1", ext: "mp4", title: "", image: "logo")]
         }
     }
     

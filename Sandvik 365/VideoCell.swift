@@ -12,4 +12,6 @@ import UIKit
 class VideoCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
 }

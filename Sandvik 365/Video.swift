@@ -10,12 +10,14 @@ import Foundation
 
 class Video {
     var videoUrl: NSURL?
-    var title: String?
+    var title: String
+    var imageName: String
     
-    init(videoName: String, ext: String, title: String) {
+    init(videoName: String, ext: String, title: String, image: String) {
         if let path = NSBundle.mainBundle().pathForResource(videoName, ofType:ext) {
             self.videoUrl = NSURL.fileURLWithPath(path)
-            self.title = title
         }
+        self.title = title
+        self.imageName = image
     }
 }

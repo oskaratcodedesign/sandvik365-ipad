@@ -8,17 +8,39 @@
 
 import UIKit
 
-class VideoCenterViewController: UIViewController {
+class VideoCenterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+{
 
     @IBOutlet weak var collectionView: UICollectionView!
     var selectedBusinessType: BusinessType!
+    private var videos: [Video]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedBusinessType.backgroundImageName)
         }
+        self.videos = self.selectedBusinessType.videos
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
 
-
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.selectedBusinessType.videos?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VideoCell
+        let video = self.videos[indexPath.row]
+        cell.imageView.image = UIImage(named: video.imageName)
+        cell.titleLabel.text = video.title
+        
+        return cell
+    }
+    
 }
