@@ -42,7 +42,10 @@ protocol MenuCountOnBoxDelegate {
                 for ps in pc.partsServices {
                     if let subPartServices = ps.subPartsServices {
                         for sp in subPartServices {
-                            sp.content.contentList = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
+                            let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
+                            if countOnBoxes.isEmpty {
+                                sp.content.contentList = []
+                            }
                         }
                         ps.subPartsServices = subPartServices.filter({ $0.content.contentList.count > 0})
                     }

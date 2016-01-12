@@ -116,7 +116,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     
     private func addLead(content: Content.Lead, images: [NSURL], var prevView: UIView) -> UIView {
 
-        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, top: topConstant)
+        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: true)
         
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -145,11 +145,11 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     private func addBody(content: Content.Body, var prevView: UIView) -> UIView {
-        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, top: 45)
+        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: false)
         return prevView
     }
     
-    private func addTitlesTextList(content: [Content.TitleTextOrList], var prevView: UIView, top: CGFloat) -> UIView {
+    private func addTitlesTextList(content: [Content.TitleTextOrList], var prevView: UIView, isLead: Bool) -> UIView {
         var top:CGFloat = 45
         for titlesTextList in content {
             switch titlesTextList {
@@ -159,7 +159,19 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 prevView = label
             case .Text(let value):
                 let label = genericTextLabel(value)
-                addViewAndConstraints(label, toView: prevView, topConstant: 0)
+                if isLead {
+                    top = 0
+                }
+                else {
+                    top = content.filter({
+                        switch $0 {
+                        case .Title:
+                            return true
+                        default:
+                        return false
+                        }}).count > 0 ? 0 : top
+                }
+                addViewAndConstraints(label, toView: prevView, topConstant: top)
                 prevView = label
             case .List(let value):
                 for titleText in value {
