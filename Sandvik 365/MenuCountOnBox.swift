@@ -38,7 +38,7 @@ protocol MenuCountOnBoxDelegate {
         if let json = JSONManager.getJSONParts() {
             //find first
             var count = 0
-            while count < Int.max {
+            while count < 1000 {
                 let bType = BusinessType.randomBusinessType()
                 let partsAndServices = PartsAndServices(businessType: bType, json: json)
                 
