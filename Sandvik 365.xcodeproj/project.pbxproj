@@ -49,6 +49,8 @@
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
 		F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */; };
+		F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B451C44FD9600742EBD /* ContactUsView.swift */; };
+		F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B471C44FDD100742EBD /* ContactUsView.xib */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
@@ -172,6 +174,8 @@
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
 		F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
+		F73E9B451C44FD9600742EBD /* ContactUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		F73E9B471C44FDD100742EBD /* ContactUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsView.xib; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 		48FDEABA1B5F901100C5AFE6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F73E9B441C44FD7D00742EBD /* ContactUs */,
 				F7C05FF11BF9D45800E09456 /* PartsAndServices */,
 				F7C05FF01BF9D41500E09456 /* Roi */,
 				48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */,
@@ -424,6 +429,15 @@
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F73E9B441C44FD7D00742EBD /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B451C44FD9600742EBD /* ContactUsView.swift */,
+				F73E9B471C44FDD100742EBD /* ContactUsView.xib */,
+			);
+			name = ContactUs;
 			sourceTree = "<group>";
 		};
 		F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */ = {
@@ -593,6 +607,7 @@
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
+				F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */,
 				F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */,
 				F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */,
 				F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */,
@@ -699,6 +714,7 @@
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
+				F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,

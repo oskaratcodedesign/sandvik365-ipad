@@ -611,16 +611,23 @@ TO ROTATE</string>
                                                             <constraint firstItem="pei-pB-EfP" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="leading" id="upN-xg-gjZ"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="315" y="203" width="285" height="0.0"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="2Id-3R-8rA" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="4BK-JG-kL3"/>
                                                     <constraint firstItem="SBT-Uo-XL0" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="6rc-gA-ye7"/>
+                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="5" id="73p-Xg-veL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3b8-G6-P3a" secondAttribute="trailing" id="8PM-qJ-oco"/>
                                                     <constraint firstAttribute="bottom" secondItem="2Id-3R-8rA" secondAttribute="bottom" id="Agd-Ih-ZSr"/>
                                                     <constraint firstAttribute="trailing" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="290" id="Xld-LE-wQj"/>
                                                     <constraint firstAttribute="trailing" secondItem="SBT-Uo-XL0" secondAttribute="trailing" id="bf8-4v-ppN"/>
                                                     <constraint firstItem="2Id-3R-8rA" firstAttribute="top" secondItem="SBT-Uo-XL0" secondAttribute="bottom" id="c2L-Nc-q3A"/>
                                                     <constraint firstItem="SBT-Uo-XL0" firstAttribute="top" secondItem="w8Y-jQ-fwY" secondAttribute="top" id="cqk-IG-d5u"/>
+                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="top" secondItem="2Id-3R-8rA" secondAttribute="top" id="pYi-r2-cJj"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
