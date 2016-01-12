@@ -21,10 +21,7 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
             view.setImageBG(self.selectedBusinessType.backgroundImageName)
         }
         self.videos = self.selectedBusinessType.videos
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
     }
-
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -43,4 +40,13 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "VideoViewController" {
+            if let vc = segue.destinationViewController as? VideoViewController {
+                if let indexPath = self.collectionView.indexPathsForSelectedItems()?.first {
+                    vc.videoUrl = self.videos[indexPath.row].videoUrl
+                }
+            }
+        }
+    }
 }

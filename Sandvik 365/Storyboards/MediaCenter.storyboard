@@ -76,7 +76,7 @@
                                                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-LR-P7n">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-LR-P7n">
                                                     <rect key="frame" x="86" y="23" width="55" height="55"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -86,6 +86,12 @@
                                                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="43"/>
                                                     <state key="normal" title="▶︎">
                                                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="selected" title="▶︎">
+                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="highlighted" title="▶︎">
+                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
                                             </subviews>
@@ -120,9 +126,14 @@
                                             <outlet property="imageView" destination="aE2-hP-Zgo" id="JhR-s2-h1V"/>
                                             <outlet property="playButton" destination="VnO-LR-P7n" id="XNm-NF-WhA"/>
                                             <outlet property="titleLabel" destination="yHQ-3g-GtU" id="dZO-18-L3B"/>
+                                            <segue destination="hXl-7f-Ynj" kind="presentation" identifier="VideoViewController" id="tXp-Td-aHg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Um-uf-dXf" id="Tia-pW-hIS"/>
+                                    <outlet property="delegate" destination="4Um-uf-dXf" id="Grb-5K-Xd8"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -154,6 +165,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qi4-Da-QVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="310" y="358"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="Ak1-OF-RsJ">
+            <objects>
+                <viewController storyboardIdentifier="VideoViewController" id="hXl-7f-Ynj" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7y-Qf-Alt"/>
+                        <viewControllerLayoutGuide type="bottom" id="71a-go-3RG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bx7-JF-Jmh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itV-pl-vJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="1109"/>
         </scene>
     </scenes>
     <resources>

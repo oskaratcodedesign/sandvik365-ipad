@@ -53,6 +53,11 @@
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
 		F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3D1C43F4A100742EBD /* VideoCell.swift */; };
+		F73E9B3F1C44F8AA00742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */; };
+		F73E9B401C44F8AE00742EBD /* Corner Shroud Installation_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B351C43E5D700742EBD /* Corner Shroud Installation_v1.mp4 */; };
+		F73E9B411C44F8B500742EBD /* MHS Install 1920x1080_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */; };
+		F73E9B421C44F8B700742EBD /* MHS Remove 1920x1080_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */; };
+		F73E9B431C44F8BB00742EBD /* Sectional Shroud Install_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
@@ -646,8 +651,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73E9B431C44F8BB00742EBD /* Sectional Shroud Install_v1.mp4 in Resources */,
+				F73E9B411C44F8B500742EBD /* MHS Install 1920x1080_v1.mp4 in Resources */,
 				4842CE721BEB798E00D39F5F /* Preloaded Resources in Resources */,
 				F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */,
+				F73E9B421C44F8B700742EBD /* MHS Remove 1920x1080_v1.mp4 in Resources */,
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
@@ -668,10 +676,12 @@
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
+				F73E9B401C44F8AE00742EBD /* Corner Shroud Installation_v1.mp4 in Resources */,
 				F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */,
 				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
+				F73E9B3F1C44F8AA00742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 			);

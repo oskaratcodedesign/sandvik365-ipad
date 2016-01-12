@@ -159,7 +159,7 @@ YOU CAN COUNT ON.</string>
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <segue destination="cpp-rD-eaA" kind="presentation" identifier="VideoViewController" id="4y8-m6-DqU"/>
+                                                    <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="1ql-Le-gM4"/>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-Ou-r9z">
@@ -218,7 +218,7 @@ YOU CAN COUNT ON.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aue-k1-9DF">
                                         <rect key="frame" x="0.0" y="500" width="600" height="500"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
                                                 <rect key="frame" x="262" y="75" width="248" height="367"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -232,13 +232,13 @@ YOU CAN COUNT ON.</string>
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDK-5t-wKV">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDK-5t-wKV">
                                                 <rect key="frame" x="0.0" y="467" width="600" height="33"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="33"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -248,7 +248,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="201" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -258,7 +258,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="402" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -268,7 +268,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="603" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -278,7 +278,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-cD-KjF" userLabel="bulk" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-cD-KjF" userLabel="bulk" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="804" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -288,7 +288,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" userLabel="conveyor" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" userLabel="conveyor" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="1005" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -298,7 +298,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="1206" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -308,7 +308,7 @@ YOU CAN COUNT ON.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="1407" y="0.0" width="201" height="33"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -619,24 +619,6 @@ UPDATE NOW</string>
             </objects>
             <point key="canvasLocation" x="1412" y="1699"/>
         </scene>
-        <!--Video View Controller-->
-        <scene sceneID="aVg-Lp-tFe">
-            <objects>
-                <viewController storyboardIdentifier="UIViewController-cpp-rD-eaA" id="cpp-rD-eaA" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Abi-1S-jGd"/>
-                        <viewControllerLayoutGuide type="bottom" id="wtG-OA-pKs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gHX-vs-F4F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IJI-vR-KWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2450" y="1109"/>
-        </scene>
         <!--PartsAndServices-->
         <scene sceneID="jAS-uh-L8G">
             <objects>
@@ -644,6 +626,14 @@ UPDATE NOW</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcE-98-40J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2421" y="55"/>
+        </scene>
+        <!--VideoViewController-->
+        <scene sceneID="Go4-7m-1Xd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MediaCenter" referencedIdentifier="VideoViewController" id="o07-oy-lUc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDa-jY-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="290"/>
         </scene>
     </scenes>
     <resources>
