@@ -95,7 +95,14 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     func showRegionAction() {
-        
+        let regionSelector = RegionSelector()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if let window = appDelegate.window {
+            let constraints = regionSelector.fillConstraints(window, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
+            regionSelector.translatesAutoresizingMaskIntoConstraints = false
+            window.addSubview(regionSelector)
+            NSLayoutConstraint.activateConstraints(constraints)
+        }
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
