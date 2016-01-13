@@ -56,20 +56,22 @@
                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqq-Rr-Jjo">
-                    <rect key="frame" x="10" y="199" width="128" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqq-Rr-Jjo">
+                    <rect key="frame" x="10" y="199" width="580" height="18"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="15"/>
-                    <state key="normal" title="+44 03020120102">
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                    <state key="normal" title="+44 0302012010243" image="S365-app-icon-phone">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="phoneAction:" destination="-1" eventType="touchUpInside" id="vCX-TT-6SS"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-78-YEQ">
-                    <rect key="frame" x="10" y="234" width="580" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-78-YEQ">
+                    <rect key="frame" x="10" y="222" width="580" height="30"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
-                    <state key="normal" title="SEND AN EMAIL">
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                    <state key="normal" title="SEND AN EMAIL" image="S365-app-icon-mail">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -84,10 +86,11 @@
                         <action selector="emailAction:" destination="-1" eventType="touchUpInside" id="YGQ-7X-pdk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEz-3p-Cgh">
-                    <rect key="frame" x="10" y="269" width="580" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEz-3p-Cgh">
+                    <rect key="frame" x="10" y="257" width="580" height="30"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
-                    <state key="normal" title="VISIT LOCAL WEBSITE">
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                    <state key="normal" title="VISIT LOCAL WEBSITE" image="S365-app-icon-link">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -102,8 +105,8 @@
                         <action selector="visitAction:" destination="-1" eventType="touchUpInside" id="JNG-nm-Nig"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-IK-Uax">
-                    <rect key="frame" x="10" y="304" width="580" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-IK-Uax">
+                    <rect key="frame" x="10" y="292" width="580" height="30"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                     <state key="normal" title="SHOW ALL REGIONS">
                         <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,6 +133,7 @@
                 <constraint firstItem="uEz-3p-Cgh" firstAttribute="top" secondItem="Qt3-78-YEQ" secondAttribute="top" id="LJO-uj-paz"/>
                 <constraint firstItem="Qt3-78-YEQ" firstAttribute="width" secondItem="kot-f0-Cbr" secondAttribute="width" id="Mvh-5u-R6Z"/>
                 <constraint firstItem="F2H-IK-Uax" firstAttribute="top" secondItem="uEz-3p-Cgh" secondAttribute="bottom" constant="5" id="NcB-cd-35V"/>
+                <constraint firstItem="Qt3-78-YEQ" firstAttribute="height" secondItem="F2H-IK-Uax" secondAttribute="height" id="Qeh-rz-bYq"/>
                 <constraint firstItem="kot-f0-Cbr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="RcY-Vd-m7S"/>
                 <constraint firstItem="vmU-55-CzY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UUO-bK-ijN"/>
                 <constraint firstItem="xFt-Xy-DK5" firstAttribute="leading" secondItem="kot-f0-Cbr" secondAttribute="leading" id="X4I-As-b8j"/>
@@ -139,8 +143,10 @@
                 <constraint firstItem="uEz-3p-Cgh" firstAttribute="width" secondItem="kot-f0-Cbr" secondAttribute="width" id="eOr-BF-OhY"/>
                 <constraint firstItem="kot-f0-Cbr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="hcK-wu-aId"/>
                 <constraint firstItem="xFt-Xy-DK5" firstAttribute="top" secondItem="vmU-55-CzY" secondAttribute="bottom" constant="10" id="lCt-WE-uHY"/>
+                <constraint firstItem="Fqq-Rr-Jjo" firstAttribute="width" secondItem="kot-f0-Cbr" secondAttribute="width" id="peT-Fi-5tm"/>
                 <constraint firstItem="F2H-IK-Uax" firstAttribute="width" secondItem="kot-f0-Cbr" secondAttribute="width" id="rLZ-sd-gaU"/>
                 <constraint firstAttribute="trailing" secondItem="kot-f0-Cbr" secondAttribute="trailing" constant="10" id="tIp-Wq-J8t"/>
+                <constraint firstItem="uEz-3p-Cgh" firstAttribute="height" secondItem="F2H-IK-Uax" secondAttribute="height" id="v1a-ga-R2X"/>
                 <constraint firstItem="Fqq-Rr-Jjo" firstAttribute="leading" secondItem="kot-f0-Cbr" secondAttribute="leading" id="vcN-Dk-QTf"/>
                 <constraint firstItem="Qt3-78-YEQ" firstAttribute="top" secondItem="Fqq-Rr-Jjo" secondAttribute="bottom" constant="5" id="wii-MR-6rV"/>
                 <constraint firstItem="uEz-3p-Cgh" firstAttribute="top" secondItem="Qt3-78-YEQ" secondAttribute="bottom" constant="5" id="wqU-dr-QNE"/>
@@ -163,6 +169,9 @@
         </view>
     </objects>
     <resources>
+        <image name="S365-app-icon-link" width="14" height="15"/>
+        <image name="S365-app-icon-mail" width="15" height="15"/>
+        <image name="S365-app-icon-phone" width="12" height="15"/>
         <image name="world-map-africa" width="265" height="127"/>
     </resources>
 </document>
