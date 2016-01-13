@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
+            <string>AktivGroteskCorp-Light</string>
+        </mutableArray>
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Video Center View Controller-->
+        <scene sceneID="Kry-ry-7Z6">
+            <objects>
+                <viewController storyboardIdentifier="VideoCenterViewController" id="4Um-uf-dXf" customClass="VideoCenterViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wSy-bB-jqs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yzk-kN-Lor"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QpO-XX-Fd0" customClass="ViewWithBGImage" customModule="Sandvik_365" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIA CENTER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9e-ft-qTX">
+                                <rect key="frame" x="120" y="100" width="598" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="4Us-Jj-Zbx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="85"/>
+                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4Us-Jj-Zbx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the video you want to play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-YU-FRh">
+                                <rect key="frame" x="120" y="208" width="258" height="20"/>
+                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-v5-fv7">
+                                <rect key="frame" x="120" y="238" width="460" height="295"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="295" id="oP4-dl-x5J"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="UPd-yM-SPQ">
+                                    <size key="itemSize" width="226" height="140"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="icn-FN-Uny" customClass="VideoCell" customModule="Sandvik_365" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="226" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="226" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aE2-hP-Zgo">
+                                                    <rect key="frame" x="8" y="8" width="210" height="85"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fmdkfmskmf skdfm sldfmsl fm skldf msldfm sdfkm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHQ-3g-GtU">
+                                                    <rect key="frame" x="28" y="93" width="170" height="39"/>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                                                    <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-LR-P7n">
+                                                    <rect key="frame" x="86" y="23" width="55" height="55"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="Te8-VX-gur"/>
+                                                        <constraint firstAttribute="height" constant="55" id="ps8-6d-Zq5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="43"/>
+                                                    <state key="normal" title="▶︎">
+                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="selected" title="▶︎">
+                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="highlighted" title="▶︎">
+                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="yHQ-3g-GtU" firstAttribute="top" secondItem="aE2-hP-Zgo" secondAttribute="bottom" id="ESJ-sQ-Lih"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="yHQ-3g-GtU" secondAttribute="bottom" id="UzM-72-nVN"/>
+                                            <constraint firstItem="aE2-hP-Zgo" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" id="eJz-eE-ddE"/>
+                                            <constraint firstItem="VnO-LR-P7n" firstAttribute="centerX" secondItem="aE2-hP-Zgo" secondAttribute="centerX" id="hQ9-Xh-q2V"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="aE2-hP-Zgo" secondAttribute="bottom" id="lFM-db-ab3"/>
+                                            <constraint firstItem="yHQ-3g-GtU" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" constant="20" id="oIH-yw-VOQ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="yHQ-3g-GtU" secondAttribute="trailing" constant="20" id="pUc-qu-NvT"/>
+                                            <constraint firstItem="VnO-LR-P7n" firstAttribute="centerY" secondItem="aE2-hP-Zgo" secondAttribute="centerY" id="syY-2C-WAp"/>
+                                            <constraint firstItem="aE2-hP-Zgo" firstAttribute="top" secondItem="icn-FN-Uny" secondAttribute="topMargin" id="w2P-I0-ZaL"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="aE2-hP-Zgo" secondAttribute="trailing" id="xdk-uJ-Mlt"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lFM-db-ab3"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="imageView" destination="aE2-hP-Zgo" id="JhR-s2-h1V"/>
+                                            <outlet property="playButton" destination="VnO-LR-P7n" id="XNm-NF-WhA"/>
+                                            <outlet property="titleLabel" destination="yHQ-3g-GtU" id="dZO-18-L3B"/>
+                                            <segue destination="hXl-7f-Ynj" kind="presentation" identifier="VideoViewController" id="tXp-Td-aHg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Um-uf-dXf" id="Tia-pW-hIS"/>
+                                    <outlet property="delegate" destination="4Um-uf-dXf" id="Grb-5K-Xd8"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KBb-v5-fv7" secondAttribute="trailing" id="73E-MI-7t2"/>
+                            <constraint firstItem="3gF-YU-FRh" firstAttribute="leading" secondItem="h9e-ft-qTX" secondAttribute="leading" id="7ob-IV-nSB"/>
+                            <constraint firstItem="Yzk-kN-Lor" firstAttribute="top" secondItem="KBb-v5-fv7" secondAttribute="bottom" constant="150" id="A23-yQ-iYJ"/>
+                            <constraint firstItem="3gF-YU-FRh" firstAttribute="top" secondItem="h9e-ft-qTX" secondAttribute="bottom" constant="10" id="JG8-GN-GOL"/>
+                            <constraint firstItem="h9e-ft-qTX" firstAttribute="leading" secondItem="QpO-XX-Fd0" secondAttribute="leadingMargin" constant="100" id="JxD-YA-2WQ"/>
+                            <constraint firstItem="KBb-v5-fv7" firstAttribute="top" secondItem="3gF-YU-FRh" secondAttribute="bottom" constant="10" id="PP8-gE-oYd"/>
+                            <constraint firstItem="h9e-ft-qTX" firstAttribute="top" secondItem="wSy-bB-jqs" secondAttribute="bottom" constant="80" id="Zi1-yd-5sE"/>
+                            <constraint firstItem="KBb-v5-fv7" firstAttribute="leading" secondItem="3gF-YU-FRh" secondAttribute="leading" id="x66-Bu-PY1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="A23-yQ-iYJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="KBb-v5-fv7" id="mil-pI-582"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qi4-Da-QVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="358"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="Ak1-OF-RsJ">
+            <objects>
+                <viewController storyboardIdentifier="VideoViewController" id="hXl-7f-Ynj" customClass="VideoViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7y-Qf-Alt"/>
+                        <viewControllerLayoutGuide type="bottom" id="71a-go-3RG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bx7-JF-Jmh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itV-pl-vJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="1109"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="141" height="51"/>
+    </resources>
+</document>
