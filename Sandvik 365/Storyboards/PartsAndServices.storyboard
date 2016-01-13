@@ -616,14 +616,15 @@ TO ROTATE</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" placeholder="YES" id="cPE-QN-TO6"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="rMw-pR-gOW"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="SBT-Uo-XL0" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="6rc-gA-ye7"/>
-                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="20" id="73p-Xg-veL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="3b8-G6-P3a" secondAttribute="trailing" constant="20" id="8PM-qJ-oco"/>
+                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="20" id="73p-Xg-veL"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3b8-G6-P3a" secondAttribute="trailing" constant="20" id="8PM-qJ-oco"/>
                                                     <constraint firstAttribute="bottom" secondItem="2Id-3R-8rA" secondAttribute="bottom" id="Agd-Ih-ZSr"/>
                                                     <constraint firstAttribute="trailing" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="290" id="Xld-LE-wQj"/>
                                                     <constraint firstAttribute="trailing" secondItem="SBT-Uo-XL0" secondAttribute="trailing" id="bf8-4v-ppN"/>
