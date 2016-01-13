@@ -220,6 +220,14 @@
             </objects>
             <point key="canvasLocation" x="3122" y="55"/>
         </scene>
+        <!--VideoCenterViewController-->
+        <scene sceneID="OFx-Ka-kXp">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MediaCenter" storyboardName="MediaCenter" referencedIdentifier="VideoCenterViewController" id="bso-iy-e8Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgh-7D-U8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061" y="449"/>
+        </scene>
         <!--Parts And Services View Controller-->
         <scene sceneID="pqe-Ao-OEW">
             <objects>
@@ -298,6 +306,7 @@ TO ROTATE</string>
                         <outlet property="selectionWheel" destination="UDb-kB-npY" id="8je-Xo-acT"/>
                         <segue destination="qrw-oR-DJv" kind="show" identifier="ShowPartServiceSelectionViewController" id="6Lp-A9-eoo"/>
                         <segue destination="Sf0-zf-aAn" kind="show" identifier="ShowRoiSelectionViewController" id="nyc-ET-tIb"/>
+                        <segue destination="bso-iy-e8Z" kind="show" identifier="ShowVideoCenterViewController" id="Wfu-N7-93e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>

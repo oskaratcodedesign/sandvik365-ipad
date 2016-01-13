@@ -11,8 +11,8 @@ import MediaPlayer
 
 class VideoViewController: UIViewController {
 
-    var moviePlayer : MPMoviePlayerController!
-    var selectedBusinessType: BusinessType!
+    private var moviePlayer : MPMoviePlayerController!
+    var videoUrl: NSURL!
     
     override func viewWillAppear(animated: Bool) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -27,7 +27,7 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.moviePlayer = MPMoviePlayerController(contentURL: selectedBusinessType.videoURL())
+        self.moviePlayer = MPMoviePlayerController(contentURL: self.videoUrl)
         if let player = self.moviePlayer {
             player.view.translatesAutoresizingMaskIntoConstraints = false
             player.scalingMode = MPMovieScalingMode.AspectFit

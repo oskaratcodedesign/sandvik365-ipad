@@ -149,7 +149,9 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         }
         if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
-                vc.selectedBusinessType = .BulkMaterialHandling
+                if let path = NSBundle.mainBundle().pathForResource("Sandvik365_Extern_150917", ofType:"m4v") {
+                    vc.videoUrl = NSURL.fileURLWithPath(path)
+                }
                 showBackButton = false
             }
         }
