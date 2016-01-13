@@ -13,12 +13,17 @@ protocol ContactUsViewDelegate {
     func showRegionAction()
 }
 
-class ContactUsView : NibDesignable {
+class ContactUsView : NibDesignable, RegionSelectorDelegate {
     @IBOutlet weak var mapImageView: UIImageView!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
     
     var delegate: ContactUsViewDelegate?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.didSelectRegion()
+    }
     
     @IBAction func phoneAction(sender: AnyObject) {
     }
@@ -28,5 +33,10 @@ class ContactUsView : NibDesignable {
     }
     @IBAction func showRegionAction(sender: AnyObject) {
         self.delegate?.showRegionAction()
+    }
+    
+    func didSelectRegion() {
+        let region = Region.selectedRegion
+        self.mapImageView.image = region.smallMap
     }
 }

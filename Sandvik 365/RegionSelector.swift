@@ -16,11 +16,12 @@ protocol RegionSelectorDelegate {
 class RegionSelector : NibDesignable {
     @IBOutlet weak var mapView: UIImageView!
     var colorCodingLookUp: ColorCodingLookup!
-   
+    var delegate: RegionSelectorDelegate?
     
-    init(){
+    init(del: RegionSelectorDelegate){
         super.init(frame: CGRectZero)
         self.colorCodingLookUp = ColorCodingLookup(imageName: "world-map-colors")
+        self.delegate = del
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -29,17 +30,17 @@ class RegionSelector : NibDesignable {
     
     @IBAction func mapTapAction(sender: UITapGestureRecognizer) {
         let point = sender.locationInView(self.mapView)
-        // notrh [UIColor colorWithRed:1.000 green:0.400 blue:0.000 alpha:1.000]
-        //south [UIColor colorWithRed:0.400 green:0.000 blue:0.000 alpha:1.000]
-        //europe [UIColor colorWithRed:0.000 green:0.400 blue:0.400 alpha:1.000]
-        //af [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000]
-        //as [UIColor colorWithRed:1.000 green:0.000 blue:0.400 alpha:1.000]
-        // aus [UIColor colorWithRed:0.000 green:1.000 blue:0.400 alpha:1.000]
-        let color = self.colorCodingLookUp.colorForPoint(point)
-        print(color)
+
+        if let color = self.colorCodingLookUp.colorForPoint(point) {
+            if let region = Region.allRegions.filter({ color.isEqual($0.color) }).first {
+                self.mapView.image = region.bigMap
+                region.setSelectedRegion()
+            }
+        }
         
     }
     @IBAction func closeAction(sender: AnyObject) {
         self.removeFromSuperview()
+        self.delegate?.didSelectRegion()
     }
 }

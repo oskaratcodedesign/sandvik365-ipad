@@ -49,8 +49,6 @@
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
 		F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */; };
-		F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B451C44FD9600742EBD /* ContactUsView.swift */; };
-		F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B471C44FDD100742EBD /* ContactUsView.xib */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
@@ -60,6 +58,8 @@
 		F73E9B411C44F8B500742EBD /* MHS Install 1920x1080_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */; };
 		F73E9B421C44F8B700742EBD /* MHS Remove 1920x1080_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */; };
 		F73E9B431C44F8BB00742EBD /* Sectional Shroud Install_v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */; };
+		F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B451C44FD9600742EBD /* ContactUsView.swift */; };
+		F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B471C44FDD100742EBD /* ContactUsView.xib */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
@@ -74,6 +74,7 @@
 		F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F792035E1C46309B00CF4E3F /* RegionSelector.swift */; };
 		F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203631C46680000CF4E3F /* ColorCodedTouchView.m */; };
 		F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203651C46680000CF4E3F /* ColorCodingLookup.m */; };
+		F792036A1C46DA5A00CF4E3F /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79203691C46DA5A00CF4E3F /* Region.swift */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
@@ -187,8 +188,6 @@
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
 		F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
-		F73E9B451C44FD9600742EBD /* ContactUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
-		F73E9B471C44FDD100742EBD /* ContactUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsView.xib; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
 		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
 		F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bucket Shroud Wear Movie Release 01_v1.mp4"; sourceTree = "<group>"; };
@@ -198,6 +197,8 @@
 		F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sectional Shroud Install_v1.mp4"; sourceTree = "<group>"; };
 		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		F73E9B3D1C43F4A100742EBD /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		F73E9B451C44FD9600742EBD /* ContactUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		F73E9B471C44FDD100742EBD /* ContactUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsView.xib; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		F79203631C46680000CF4E3F /* ColorCodedTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodedTouchView.m; sourceTree = "<group>"; };
 		F79203641C46680000CF4E3F /* ColorCodingLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCodingLookup.h; sourceTree = "<group>"; };
 		F79203651C46680000CF4E3F /* ColorCodingLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodingLookup.m; sourceTree = "<group>"; };
+		F79203691C46DA5A00CF4E3F /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
@@ -283,12 +285,12 @@
 			isa = PBXGroup;
 			children = (
 				F73E9B391C43E7A700742EBD /* MediaCenter */,
-				F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */,
 				F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */,
 				F7C05FF21BF9D4F100E09456 /* Roi */,
 				F79E328F1BFB2D5900CB3654 /* PartsAndServices */,
 				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
 				48E088911BE7859900F763BB /* ImageCache.swift */,
+				F79203691C46DA5A00CF4E3F /* Region.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -463,6 +465,52 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		F73E9B2F1C43E42600742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F741D9981B8475C400010E71 /* VideoViewController.swift */,
+				F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */,
+			);
+			name = MediaCenter;
+			sourceTree = "<group>";
+		};
+		F73E9B321C43E4C900742EBD /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
+				F73E9B331C43E4DC00742EBD /* get */,
+			);
+			name = videos;
+			sourceTree = "<group>";
+		};
+		F73E9B331C43E4DC00742EBD /* get */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */,
+				F73E9B351C43E5D700742EBD /* Corner Shroud Installation_v1.mp4 */,
+				F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */,
+				F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */,
+				F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */,
+			);
+			name = get;
+			sourceTree = "<group>";
+		};
+		F73E9B391C43E7A700742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B3A1C43E7B900742EBD /* Video.swift */,
+			);
+			name = MediaCenter;
+			sourceTree = "<group>";
+		};
+		F73E9B3C1C43F47F00742EBD /* MediaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F73E9B3D1C43F4A100742EBD /* VideoCell.swift */,
+			);
+			name = MediaCenter;
+			sourceTree = "<group>";
+		};
 		F73E9B441C44FD7D00742EBD /* ContactUs */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,52 +541,6 @@
 			name = ColorCoding;
 			sourceTree = "<group>";
 		};
-F73E9B2F1C43E42600742EBD /* MediaCenter */ = {
-isa = PBXGroup;
-children = (
-F741D9981B8475C400010E71 /* VideoViewController.swift */,
-F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */,
-);
-name = MediaCenter;
-sourceTree = "<group>";
-};
-F73E9B321C43E4C900742EBD /* videos */ = {
-isa = PBXGroup;
-children = (
-F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
-F73E9B331C43E4DC00742EBD /* get */,
-);
-name = videos;
-sourceTree = "<group>";
-};
-F73E9B331C43E4DC00742EBD /* get */ = {
-isa = PBXGroup;
-children = (
-F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */,
-F73E9B351C43E5D700742EBD /* Corner Shroud Installation_v1.mp4 */,
-F73E9B361C43E5D700742EBD /* MHS Install 1920x1080_v1.mp4 */,
-F73E9B371C43E5D700742EBD /* MHS Remove 1920x1080_v1.mp4 */,
-F73E9B381C43E5D700742EBD /* Sectional Shroud Install_v1.mp4 */,
-);
-name = get;
-sourceTree = "<group>";
-};
-F73E9B391C43E7A700742EBD /* MediaCenter */ = {
-isa = PBXGroup;
-children = (
-F73E9B3A1C43E7B900742EBD /* Video.swift */,
-);
-name = MediaCenter;
-sourceTree = "<group>";
-};
-F73E9B3C1C43F47F00742EBD /* MediaCenter */ = {
-isa = PBXGroup;
-children = (
-F73E9B3D1C43F4A100742EBD /* VideoCell.swift */,
-);
-name = MediaCenter;
-sourceTree = "<group>";
-};
 		F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +593,7 @@ sourceTree = "<group>";
 		F7C05FF21BF9D4F100E09456 /* Roi */ = {
 			isa = PBXGroup;
 			children = (
+				F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */,
 				48FCED541B78C02E002D45A0 /* ROICalculatorInput.swift */,
 				F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */,
 				F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */,
@@ -800,6 +803,7 @@ sourceTree = "<group>";
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
 				F7A46EBF1C3EA00C00CCB4B7 /* HighlightButton.swift in Sources */,
 				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
+				F792036A1C46DA5A00CF4E3F /* Region.swift in Sources */,
 				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */,

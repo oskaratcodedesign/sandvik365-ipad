@@ -95,7 +95,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     func showRegionAction() {
-        let regionSelector = RegionSelector()
+        let regionSelector = RegionSelector(del: self.contactUsView)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if let window = appDelegate.window {
             let constraints = regionSelector.fillConstraints(window, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
