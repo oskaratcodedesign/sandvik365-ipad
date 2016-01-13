@@ -9,17 +9,24 @@
 import Foundation
 import NibDesignable
 
+protocol ContactUsViewDelegate {
+    func showRegionAction()
+}
+
 class ContactUsView : NibDesignable {
     @IBOutlet weak var mapImageView: UIImageView!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
-
     
-    @IBAction func phoneAction(sender: UIButton) {
+    var delegate: ContactUsViewDelegate?
+    
+    @IBAction func phoneAction(sender: AnyObject) {
     }
     @IBAction func emailAction(sender: AnyObject) {
     }
     @IBAction func visitAction(sender: AnyObject) {
     }
-    @IBOutlet weak var showRegionsAction: UIButton!
+    @IBAction func showRegionAction(sender: AnyObject) {
+        self.delegate?.showRegionAction()
+    }
 }
