@@ -61,6 +61,10 @@
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
+		F792035D1C46308700CF4E3F /* RegionSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = F792035C1C46308700CF4E3F /* RegionSelector.xib */; };
+		F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F792035E1C46309B00CF4E3F /* RegionSelector.swift */; };
+		F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203631C46680000CF4E3F /* ColorCodedTouchView.m */; };
+		F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203651C46680000CF4E3F /* ColorCodingLookup.m */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
@@ -131,7 +135,7 @@
 		486F88821B736AE80084211F /* MainMenuItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuItemView.xib; sourceTree = "<group>"; };
 		486F88841B736AF50084211F /* MainMenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuItemView.swift; sourceTree = "<group>"; };
 		48E088911BE7859900F763BB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		48FCED4C1B74AC47002D45A0 /* Sandvik-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sandvik-Bridging-Header.h"; sourceTree = "<group>"; };
+		48FCED4C1B74AC47002D45A0 /* Sandvik_365-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sandvik_365-Bridging-Header.h"; sourceTree = "<group>"; };
 		48FCED4D1B74C293002D45A0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineView.swift; sourceTree = "<group>"; };
 		48FCED511B74CB79002D45A0 /* ProgressLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressLineView.xib; sourceTree = "<group>"; };
@@ -183,6 +187,12 @@
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F792035C1C46308700CF4E3F /* RegionSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegionSelector.xib; sourceTree = "<group>"; };
+		F792035E1C46309B00CF4E3F /* RegionSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionSelector.swift; sourceTree = "<group>"; };
+		F79203621C46680000CF4E3F /* ColorCodedTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCodedTouchView.h; sourceTree = "<group>"; };
+		F79203631C46680000CF4E3F /* ColorCodedTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodedTouchView.m; sourceTree = "<group>"; };
+		F79203641C46680000CF4E3F /* ColorCodingLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCodingLookup.h; sourceTree = "<group>"; };
+		F79203651C46680000CF4E3F /* ColorCodingLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodingLookup.m; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
@@ -287,6 +297,7 @@
 		48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */ = {
 			isa = PBXGroup;
 			children = (
+				F79203601C4667A500CF4E3F /* Util */,
 				F7227B8C1B7A04F5002354B1 /* Storyboards */,
 				48FCED531B78C01B002D45A0 /* Services */,
 				486F88781B72383C0084211F /* View Controllers */,
@@ -297,7 +308,7 @@
 				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
 				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
-				48FCED4C1B74AC47002D45A0 /* Sandvik-Bridging-Header.h */,
+				48FCED4C1B74AC47002D45A0 /* Sandvik_365-Bridging-Header.h */,
 			);
 			path = "Sandvik 365";
 			sourceTree = "<group>";
@@ -436,8 +447,29 @@
 			children = (
 				F73E9B451C44FD9600742EBD /* ContactUsView.swift */,
 				F73E9B471C44FDD100742EBD /* ContactUsView.xib */,
+				F792035C1C46308700CF4E3F /* RegionSelector.xib */,
+				F792035E1C46309B00CF4E3F /* RegionSelector.swift */,
 			);
 			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		F79203601C4667A500CF4E3F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F79203681C46682000CF4E3F /* ColorCoding */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		F79203681C46682000CF4E3F /* ColorCoding */ = {
+			isa = PBXGroup;
+			children = (
+				F79203621C46680000CF4E3F /* ColorCodedTouchView.h */,
+				F79203631C46680000CF4E3F /* ColorCodedTouchView.m */,
+				F79203641C46680000CF4E3F /* ColorCodingLookup.h */,
+				F79203651C46680000CF4E3F /* ColorCodingLookup.m */,
+			);
+			name = ColorCoding;
 			sourceTree = "<group>";
 		};
 		F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */ = {
@@ -560,7 +592,7 @@
 		48FDEA891B5F8CEC00C5AFE6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Commind;
 				TargetAttributes = {
@@ -607,6 +639,7 @@
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F79E32951BFBABF400CB3654 /* firesuppression.json in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
+				F792035D1C46308700CF4E3F /* RegionSelector.xib in Resources */,
 				F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */,
 				F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */,
 				F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */,
@@ -710,6 +743,7 @@
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,
 				F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */,
+				F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */,
 				F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */,
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
@@ -721,11 +755,13 @@
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */,
+				F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */,
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */,
 				F7E69A771B7B5B48004FA708 /* RoiInputView.swift in Sources */,
+				F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */,
 				F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */,
 				F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */,
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
@@ -860,11 +896,14 @@
 			baseConfigurationReference = DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sandvik 365/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sandvik.mining.sandvik-365";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -873,11 +912,13 @@
 			baseConfigurationReference = 215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Sandvik Mining and Construction B.V. (HFVY6P4J37)";
 				INFOPLIST_FILE = "Sandvik 365/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sandvik.mining.sandvik-365";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 			};
 			name = Release;
 		};

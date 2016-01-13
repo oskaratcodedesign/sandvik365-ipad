@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegionSelector" customModule="Sandvik_365" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="SPU-Hv-fTR" id="WBp-0K-IOk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-7O-2J4">
+                    <rect key="frame" x="10" y="20" width="116" height="55"/>
+                    <string key="text">Select the
+region you want
+to contact:</string>
+                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV2-p6-9ce">
+                    <rect key="frame" x="679" y="20" width="79" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="79" id="6PC-go-15h"/>
+                        <constraint firstAttribute="height" constant="57" id="RtS-L9-WwE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="119"/>
+                    <state key="normal" title="×">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="gTd-hn-btU"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-map-none-white" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-Hv-fTR">
+                    <rect key="frame" x="0.0" y="75" width="768" height="368"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="tay-92-mT3" appends="YES" id="HKg-Tk-mPI"/>
+                    </connections>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ZuQ-7O-2J4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="4Am-NA-MQQ"/>
+                <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="680-3i-hkY"/>
+                <constraint firstItem="nV2-p6-9ce" firstAttribute="top" secondItem="ZuQ-7O-2J4" secondAttribute="top" id="8pY-r4-tRT"/>
+                <constraint firstItem="ZuQ-7O-2J4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="8sG-Az-SF1"/>
+                <constraint firstAttribute="trailing" secondItem="SPU-Hv-fTR" secondAttribute="trailing" id="Ayw-ii-GqX"/>
+                <constraint firstAttribute="trailing" secondItem="nV2-p6-9ce" secondAttribute="trailing" constant="10" id="gL3-nh-mGf"/>
+                <constraint firstItem="SPU-Hv-fTR" firstAttribute="top" secondItem="ZuQ-7O-2J4" secondAttribute="bottom" id="tmO-XI-3hv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <tapGestureRecognizer id="tay-92-mT3">
+            <connections>
+                <action selector="mapTapAction:" destination="-1" id="Bkm-bW-hOq"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="world-map-none-white" width="768" height="368"/>
+    </resources>
+</document>
