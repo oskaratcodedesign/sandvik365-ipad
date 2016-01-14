@@ -14,8 +14,10 @@
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -875,6 +877,9 @@ PLANNING SERVICES</string>
                                                         <color key="value" red="0.89019608500000003" green="0.4313725531" blue="0.15294118230000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="detailsShowAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="Xgb-kN-QbA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1007,7 +1012,7 @@ PLANNING SERVICES</string>
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMD-AT-bry">
-                                                        <rect key="frame" x="-18" y="-61" width="31" height="82"/>
+                                                        <rect key="frame" x="61" y="-77" width="60" height="71"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1191,6 +1196,70 @@ PLANNING SERVICES</string>
                                     <constraint firstAttribute="trailing" secondItem="MkV-0W-u2H" secondAttribute="trailing" id="qJS-TD-KMM"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-0J-whY">
+                                <rect key="frame" x="102" y="87" width="396" height="363"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-tS-lWb">
+                                        <rect key="frame" x="10" y="10" width="376" height="343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK8-Ns-dz4">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="17"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4az-Mt-xyv">
+                                                <rect key="frame" x="297" y="0.0" width="79" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="79" id="rus-1O-7sM"/>
+                                                    <constraint firstAttribute="height" constant="57" id="ugm-Qo-ukd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="119"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="detailCloseAction:" destination="tVr-ka-cPU" eventType="touchUpInside" id="Gx0-pr-sHT"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u1-uc-EOI">
+                                                <rect key="frame" x="0.0" y="67" width="297" height="110"/>
+                                                <string key="text">The data is based on trial data obtained from U/G Hardrock mines globally, typically, Copper/Gold. Benefits gained are based on the assumption that the mine site operates medium - large UG Loaders, at 4,000hrs/year/lhd </string>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="7u1-uc-EOI" firstAttribute="leading" secondItem="EO4-tS-lWb" secondAttribute="leading" id="3au-VQ-o1m"/>
+                                            <constraint firstItem="7u1-uc-EOI" firstAttribute="top" secondItem="4az-Mt-xyv" secondAttribute="top" id="MMU-X6-j2j"/>
+                                            <constraint firstAttribute="trailing" secondItem="4az-Mt-xyv" secondAttribute="trailing" id="QPJ-Mk-gO3"/>
+                                            <constraint firstItem="UK8-Ns-dz4" firstAttribute="top" secondItem="EO4-tS-lWb" secondAttribute="top" id="RDd-uI-IhT"/>
+                                            <constraint firstItem="7u1-uc-EOI" firstAttribute="trailing" secondItem="4az-Mt-xyv" secondAttribute="trailing" constant="-79" id="WgE-vt-SZe"/>
+                                            <constraint firstItem="7u1-uc-EOI" firstAttribute="top" secondItem="4az-Mt-xyv" secondAttribute="bottom" constant="10" id="hej-Wv-bM3"/>
+                                            <constraint firstItem="UK8-Ns-dz4" firstAttribute="leading" secondItem="EO4-tS-lWb" secondAttribute="leading" id="j5J-8i-1Eb"/>
+                                            <constraint firstAttribute="bottom" secondItem="7u1-uc-EOI" secondAttribute="bottom" multiplier="5:1" id="jj6-rV-INm"/>
+                                            <constraint firstItem="4az-Mt-xyv" firstAttribute="top" secondItem="EO4-tS-lWb" secondAttribute="top" id="kg8-Wt-nrC"/>
+                                            <constraint firstAttribute="trailing" secondItem="7u1-uc-EOI" secondAttribute="trailing" constant="200" id="nOl-be-Ikt"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MMU-X6-j2j"/>
+                                                <exclude reference="jj6-rV-INm"/>
+                                                <exclude reference="nOl-be-Ikt"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EO4-tS-lWb" secondAttribute="trailing" constant="10" id="0MW-lD-w9V"/>
+                                    <constraint firstItem="EO4-tS-lWb" firstAttribute="leading" secondItem="ZjK-0J-whY" secondAttribute="leading" constant="10" id="2bZ-qo-xVS"/>
+                                    <constraint firstAttribute="bottom" secondItem="EO4-tS-lWb" secondAttribute="bottom" constant="10" id="jNp-mK-0ad"/>
+                                    <constraint firstItem="EO4-tS-lWb" firstAttribute="top" secondItem="ZjK-0J-whY" secondAttribute="top" constant="10" id="wPw-4q-ym6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1198,19 +1267,30 @@ PLANNING SERVICES</string>
                             <constraint firstItem="kr4-ZB-i4q" firstAttribute="leading" secondItem="gVu-Wt-itf" secondAttribute="leading" id="7lu-hZ-1Dd"/>
                             <constraint firstItem="0RL-hy-pWA" firstAttribute="leading" secondItem="U5e-Vl-7OI" secondAttribute="leading" id="7uw-En-L66"/>
                             <constraint firstItem="0RL-hy-pWA" firstAttribute="top" secondItem="Ve4-cS-hjF" secondAttribute="bottom" constant="12" id="PkO-wJ-vEU"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="centerY" secondItem="YT1-RW-Umd" secondAttribute="centerY" id="PzC-5A-WmP"/>
                             <constraint firstItem="kr4-ZB-i4q" firstAttribute="top" secondItem="Ve4-cS-hjF" secondAttribute="bottom" constant="15" id="SzZ-RM-I78"/>
                             <constraint firstItem="Ve4-cS-hjF" firstAttribute="leading" secondItem="kr4-ZB-i4q" secondAttribute="leading" id="VJa-Np-JYE"/>
                             <constraint firstItem="DEV-Zh-1cu" firstAttribute="leading" secondItem="YT1-RW-Umd" secondAttribute="leadingMargin" constant="82" id="Zpg-0x-aPv"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="height" secondItem="DEV-Zh-1cu" secondAttribute="height" id="ZrM-bh-2YG"/>
                             <constraint firstAttribute="height" secondItem="DEV-Zh-1cu" secondAttribute="height" multiplier="2" id="dns-g2-wyK"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="top" secondItem="Ve4-cS-hjF" secondAttribute="bottom" id="dtE-pc-VgB"/>
                             <constraint firstItem="U5e-Vl-7OI" firstAttribute="top" secondItem="0RL-hy-pWA" secondAttribute="bottom" constant="5" id="fOr-ex-ai2"/>
                             <constraint firstItem="DEV-Zh-1cu" firstAttribute="centerX" secondItem="YT1-RW-Umd" secondAttribute="centerX" id="foe-Vy-Brv"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="top" secondItem="Ve4-cS-hjF" secondAttribute="top" id="gaR-eP-LbB"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="width" secondItem="DEV-Zh-1cu" secondAttribute="width" id="ljo-fs-ypA"/>
                             <constraint firstItem="DEV-Zh-1cu" firstAttribute="centerY" secondItem="YT1-RW-Umd" secondAttribute="centerY" id="p8B-yv-ZJc"/>
                             <constraint firstItem="kr4-ZB-i4q" firstAttribute="top" secondItem="gVu-Wt-itf" secondAttribute="bottom" constant="108" id="poX-Yd-fHX"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="leading" secondItem="DEV-Zh-1cu" secondAttribute="leading" id="qGW-vw-tGL"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="bottom" secondItem="DEV-Zh-1cu" secondAttribute="bottom" id="s6z-dh-7y5"/>
+                            <constraint firstItem="ZjK-0J-whY" firstAttribute="centerX" secondItem="YT1-RW-Umd" secondAttribute="centerX" id="uvc-RI-byp"/>
                             <constraint firstItem="gVu-Wt-itf" firstAttribute="top" secondItem="kr4-ZB-i4q" secondAttribute="bottom" constant="10" id="yjE-7d-QbO"/>
                             <constraint firstItem="kr4-ZB-i4q" firstAttribute="baseline" secondItem="0RL-hy-pWA" secondAttribute="baseline" id="ywC-xi-JG2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="PzC-5A-WmP"/>
+                                <exclude reference="ZrM-bh-2YG"/>
+                                <exclude reference="dtE-pc-VgB"/>
                                 <exclude reference="SzZ-RM-I78"/>
                                 <exclude reference="poX-Yd-fHX"/>
                                 <exclude reference="yjE-7d-QbO"/>
@@ -1220,7 +1300,7 @@ PLANNING SERVICES</string>
                     </view>
                     <connections>
                         <outlet property="bareLipGraph" destination="B47-BE-4AD" id="chF-g1-hoV"/>
-                        <outlet property="detailsContainerView" destination="UMD-AT-bry" id="GNm-ND-ELa"/>
+                        <outlet property="detailsContainerView" destination="ZjK-0J-whY" id="cHH-M1-Mrw"/>
                         <outlet property="getGraph" destination="EgX-5y-dLR" id="NMI-Wn-mYF"/>
                         <outlet property="graphContainerView" destination="MkV-0W-u2H" id="DX8-gy-qNo"/>
                         <outlet property="profitLabel" destination="U5e-Vl-7OI" id="cD2-Na-lcR"/>

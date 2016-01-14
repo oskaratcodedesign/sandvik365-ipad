@@ -33,6 +33,13 @@ class RoiGetResultViewController: RoiResultViewController {
         selectionAction(selectedButton)
     }
 
+    @IBAction func detailsShowAction(sender: AnyObject) {
+        self.detailsContainerView.hidden = false
+    }
+    
+    @IBAction func detailCloseAction(sender: AnyObject) {
+        self.detailsContainerView.hidden = true
+    }
 
     @IBAction func selectionAction(sender: UIButton) {
         self.selectedButton?.selected = false
