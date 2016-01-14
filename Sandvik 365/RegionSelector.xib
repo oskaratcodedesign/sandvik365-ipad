@@ -5,7 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
@@ -21,24 +28,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qid-n9-fnH">
-                    <rect key="frame" x="128" y="163" width="768" height="443"/>
+                    <rect key="frame" x="128" y="107" width="768" height="554"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-7O-2J4">
-                            <rect key="frame" x="10" y="20" width="116" height="55"/>
+                            <rect key="frame" x="10" y="30" width="123" height="59"/>
                             <string key="text">Select the
 region you want
 to contact:</string>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV2-p6-9ce">
-                            <rect key="frame" x="688" y="20" width="50" height="40"/>
+                            <rect key="frame" x="688" y="30" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="6PC-go-15h"/>
                                 <constraint firstAttribute="height" constant="40" id="RtS-L9-WwE"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="60"/>
+                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="60"/>
                             <state key="normal" title="×">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -46,8 +53,66 @@ to contact:</string>
                                 <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="gTd-hn-btU"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACT US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0q-ca-nhz">
+                            <rect key="frame" x="10" y="407" width="160" height="30"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="26"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK SERVICE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ten-by-cBX">
+                            <rect key="frame" x="10" y="437" width="131" height="18"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKM-OA-Pj3">
+                            <rect key="frame" x="10" y="485" width="173" height="18"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                            <state key="normal" title="+44 0302012010243" image="S365-app-icon-phone-white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNM-Dh-JDk">
+                            <rect key="frame" x="223" y="474" width="186" height="40"/>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                            <state key="normal" title="SEND AN EMAIL" image="S365-app-icon-mail-white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-su-19T">
+                            <rect key="frame" x="419" y="474" width="186" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="MmF-xe-nwd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                            <state key="normal" title="VISIT LOCAL WEBSITE" image="S365-app-icon-link-white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-map-none-white" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-Hv-fTR">
-                            <rect key="frame" x="0.0" y="75" width="768" height="368"/>
+                            <rect key="frame" x="0.0" y="89" width="768" height="368"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="768" id="FMM-Hi-lxD"/>
                                 <constraint firstAttribute="height" constant="368" id="zH2-ox-IaS"/>
@@ -59,26 +124,42 @@ to contact:</string>
                     </subviews>
                     <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="IKM-OA-Pj3" firstAttribute="top" secondItem="ten-by-cBX" secondAttribute="bottom" constant="30" id="0Ob-0r-LA4"/>
                         <constraint firstItem="nV2-p6-9ce" firstAttribute="top" secondItem="ZuQ-7O-2J4" secondAttribute="top" id="1Yu-9N-XjD"/>
+                        <constraint firstItem="uWO-su-19T" firstAttribute="leading" secondItem="rNM-Dh-JDk" secondAttribute="trailing" constant="10" id="36l-ZK-fLE"/>
+                        <constraint firstAttribute="bottom" secondItem="IKM-OA-Pj3" secondAttribute="bottom" constant="20" id="4Uf-T5-0Wp"/>
+                        <constraint firstItem="rNM-Dh-JDk" firstAttribute="width" secondItem="uWO-su-19T" secondAttribute="width" id="4bz-Gi-zsm"/>
+                        <constraint firstItem="uWO-su-19T" firstAttribute="baseline" secondItem="IKM-OA-Pj3" secondAttribute="baseline" id="7Me-d4-X2g"/>
                         <constraint firstAttribute="trailing" secondItem="SPU-Hv-fTR" secondAttribute="trailing" id="7sP-WM-TIF"/>
+                        <constraint firstItem="rNM-Dh-JDk" firstAttribute="baseline" secondItem="IKM-OA-Pj3" secondAttribute="baseline" id="9Mi-db-8g3"/>
+                        <constraint firstItem="ten-by-cBX" firstAttribute="leading" secondItem="v0q-ca-nhz" secondAttribute="leading" id="Ahq-1M-AES"/>
+                        <constraint firstItem="rNM-Dh-JDk" firstAttribute="leading" secondItem="uWO-su-19T" secondAttribute="trailing" constant="739" id="C6t-X3-cdI"/>
                         <constraint firstAttribute="trailing" secondItem="nV2-p6-9ce" secondAttribute="trailing" constant="30" id="CA0-Tv-pKb"/>
+                        <constraint firstItem="ten-by-cBX" firstAttribute="top" secondItem="v0q-ca-nhz" secondAttribute="bottom" id="Fpw-HO-cqE"/>
+                        <constraint firstItem="v0q-ca-nhz" firstAttribute="top" secondItem="SPU-Hv-fTR" secondAttribute="bottom" constant="-50" id="HJe-Ln-Pyo"/>
+                        <constraint firstItem="rNM-Dh-JDk" firstAttribute="leading" secondItem="IKM-OA-Pj3" secondAttribute="trailing" constant="40" id="IjY-KF-2Hn"/>
                         <constraint firstAttribute="bottom" secondItem="SPU-Hv-fTR" secondAttribute="bottom" id="KML-XB-3q1"/>
-                        <constraint firstAttribute="width" constant="768" id="OsQ-99-P4v"/>
-                        <constraint firstAttribute="height" constant="800" id="Ovl-bm-pyj"/>
-                        <constraint firstAttribute="trailing" secondItem="SPU-Hv-fTR" secondAttribute="trailing" id="SDl-ZU-Lcl"/>
-                        <constraint firstItem="ZuQ-7O-2J4" firstAttribute="top" secondItem="qid-n9-fnH" secondAttribute="top" constant="20" id="YzX-sb-7h1"/>
+                        <constraint firstItem="v0q-ca-nhz" firstAttribute="leading" secondItem="ZuQ-7O-2J4" secondAttribute="leading" id="NIq-Ls-geI"/>
+                        <constraint firstItem="IKM-OA-Pj3" firstAttribute="leading" secondItem="ten-by-cBX" secondAttribute="leading" id="T0S-RF-fve"/>
+                        <constraint firstItem="uWO-su-19T" firstAttribute="leading" secondItem="IKM-OA-Pj3" secondAttribute="trailing" constant="40" id="U0x-5s-K5q"/>
+                        <constraint firstItem="ZuQ-7O-2J4" firstAttribute="top" secondItem="qid-n9-fnH" secondAttribute="top" constant="30" id="YzX-sb-7h1"/>
+                        <constraint firstAttribute="bottom" secondItem="uWO-su-19T" secondAttribute="bottom" constant="40" id="Zsa-rC-EH0"/>
                         <constraint firstItem="ZuQ-7O-2J4" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" constant="10" id="aG2-Cq-Gn6"/>
                         <constraint firstItem="SPU-Hv-fTR" firstAttribute="top" secondItem="ZuQ-7O-2J4" secondAttribute="bottom" id="h07-kf-mXe"/>
                         <constraint firstItem="SPU-Hv-fTR" firstAttribute="centerX" secondItem="qid-n9-fnH" secondAttribute="centerX" id="iag-iv-Y0H"/>
+                        <constraint firstItem="rNM-Dh-JDk" firstAttribute="height" secondItem="uWO-su-19T" secondAttribute="height" id="kBS-Va-B6H"/>
+                        <constraint firstItem="uWO-su-19T" firstAttribute="leading" secondItem="IKM-OA-Pj3" secondAttribute="leading" id="lBr-rd-LCc"/>
                         <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" id="mhN-EW-oVO"/>
-                        <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" id="y5r-CI-pgh"/>
+                        <constraint firstItem="v0q-ca-nhz" firstAttribute="bottom" secondItem="ten-by-cBX" secondAttribute="top" constant="5" id="yZ0-Mo-Klx"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="OsQ-99-P4v"/>
-                            <exclude reference="Ovl-bm-pyj"/>
-                            <exclude reference="SDl-ZU-Lcl"/>
-                            <exclude reference="y5r-CI-pgh"/>
+                            <exclude reference="KML-XB-3q1"/>
+                            <exclude reference="yZ0-Mo-Klx"/>
+                            <exclude reference="4Uf-T5-0Wp"/>
+                            <exclude reference="C6t-X3-cdI"/>
+                            <exclude reference="U0x-5s-K5q"/>
+                            <exclude reference="lBr-rd-LCc"/>
                         </mask>
                     </variation>
                 </view>
@@ -109,6 +190,9 @@ to contact:</string>
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="S365-app-icon-link-white" width="14" height="15"/>
+        <image name="S365-app-icon-mail-white" width="15" height="15"/>
+        <image name="S365-app-icon-phone-white" width="12" height="15"/>
         <image name="world-map-none-white" width="768" height="368"/>
     </resources>
 </document>
