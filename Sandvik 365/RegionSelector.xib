@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qid-n9-fnH">
-                    <rect key="frame" x="128" y="107" width="768" height="554"/>
+                    <rect key="frame" x="108" y="107" width="808" height="554"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-7O-2J4">
                             <rect key="frame" x="10" y="30" width="123" height="59"/>
@@ -40,7 +40,7 @@ to contact:</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV2-p6-9ce">
-                            <rect key="frame" x="688" y="30" width="50" height="40"/>
+                            <rect key="frame" x="728" y="30" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="6PC-go-15h"/>
                                 <constraint firstAttribute="height" constant="40" id="RtS-L9-WwE"/>
@@ -112,7 +112,7 @@ to contact:</string>
                             </userDefinedRuntimeAttributes>
                         </button>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-map-none-white" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-Hv-fTR">
-                            <rect key="frame" x="0.0" y="89" width="768" height="368"/>
+                            <rect key="frame" x="20" y="89" width="768" height="368"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="768" id="FMM-Hi-lxD"/>
                                 <constraint firstAttribute="height" constant="368" id="zH2-ox-IaS"/>
@@ -130,7 +130,7 @@ to contact:</string>
                         <constraint firstAttribute="bottom" secondItem="IKM-OA-Pj3" secondAttribute="bottom" constant="20" id="4Uf-T5-0Wp"/>
                         <constraint firstItem="rNM-Dh-JDk" firstAttribute="width" secondItem="uWO-su-19T" secondAttribute="width" id="4bz-Gi-zsm"/>
                         <constraint firstItem="uWO-su-19T" firstAttribute="baseline" secondItem="IKM-OA-Pj3" secondAttribute="baseline" id="7Me-d4-X2g"/>
-                        <constraint firstAttribute="trailing" secondItem="SPU-Hv-fTR" secondAttribute="trailing" id="7sP-WM-TIF"/>
+                        <constraint firstAttribute="trailing" secondItem="SPU-Hv-fTR" secondAttribute="trailing" constant="20" id="7sP-WM-TIF"/>
                         <constraint firstItem="rNM-Dh-JDk" firstAttribute="baseline" secondItem="IKM-OA-Pj3" secondAttribute="baseline" id="9Mi-db-8g3"/>
                         <constraint firstItem="ten-by-cBX" firstAttribute="leading" secondItem="v0q-ca-nhz" secondAttribute="leading" id="Ahq-1M-AES"/>
                         <constraint firstItem="rNM-Dh-JDk" firstAttribute="leading" secondItem="uWO-su-19T" secondAttribute="trailing" constant="739" id="C6t-X3-cdI"/>
@@ -149,7 +149,7 @@ to contact:</string>
                         <constraint firstItem="SPU-Hv-fTR" firstAttribute="centerX" secondItem="qid-n9-fnH" secondAttribute="centerX" id="iag-iv-Y0H"/>
                         <constraint firstItem="rNM-Dh-JDk" firstAttribute="height" secondItem="uWO-su-19T" secondAttribute="height" id="kBS-Va-B6H"/>
                         <constraint firstItem="uWO-su-19T" firstAttribute="leading" secondItem="IKM-OA-Pj3" secondAttribute="leading" id="lBr-rd-LCc"/>
-                        <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" id="mhN-EW-oVO"/>
+                        <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" constant="20" id="mhN-EW-oVO"/>
                         <constraint firstItem="v0q-ca-nhz" firstAttribute="bottom" secondItem="ten-by-cBX" secondAttribute="top" constant="5" id="yZ0-Mo-Klx"/>
                     </constraints>
                     <variation key="default">
