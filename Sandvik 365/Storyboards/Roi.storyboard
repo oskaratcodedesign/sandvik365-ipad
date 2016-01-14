@@ -7,9 +7,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Light.ttf">
-            <string>AktivGroteskCorp-Light</string>
-        </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
@@ -63,22 +60,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-38-zGS">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="580"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50S-4Z-yCn">
-                                                <rect key="frame" x="140" y="100" width="280" height="573"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50S-4Z-yCn">
+                                                <rect key="frame" x="168" y="290" width="224" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <string key="text">Welcome. Here you can calculate your potential benefits. Just enter your data on the following pages and we will do the math for you. You can adjust the data by clicking the up and down arrows and navigate through the pages by clicking right and left. </string>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
-                                                <rect key="frame" x="254" y="508" width="54" height="10"/>
+                                                <rect key="frame" x="253" y="507" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-zc-UoC">
-                                                <rect key="frame" x="249" y="528" width="63" height="73"/>
+                                                <rect key="frame" x="249" y="527" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,6 +84,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="50S-4Z-yCn" firstAttribute="centerY" secondItem="gwR-38-zGS" secondAttribute="centerY" id="3Qg-Nz-r3B"/>
                                             <constraint firstItem="50S-4Z-yCn" firstAttribute="leading" secondItem="gwR-38-zGS" secondAttribute="leading" constant="100" id="8v7-Wd-klb"/>
                                             <constraint firstItem="50S-4Z-yCn" firstAttribute="top" secondItem="gwR-38-zGS" secondAttribute="top" constant="100" id="CVD-P5-ZJz"/>
                                             <constraint firstItem="50S-4Z-yCn" firstAttribute="centerX" secondItem="gwR-38-zGS" secondAttribute="centerX" id="MJN-dr-eZB"/>
@@ -95,12 +92,13 @@
                                             <constraint firstAttribute="bottom" secondItem="jBG-zc-UoC" secondAttribute="bottom" constant="-20" id="cpd-9d-4eM"/>
                                             <constraint firstItem="N8A-i6-zf0" firstAttribute="centerX" secondItem="gwR-38-zGS" secondAttribute="centerX" id="eSl-9C-D5k"/>
                                             <constraint firstAttribute="trailing" secondItem="50S-4Z-yCn" secondAttribute="trailing" constant="200" id="gNt-gd-kI2"/>
-                                            <constraint firstItem="50S-4Z-yCn" firstAttribute="width" secondItem="gwR-38-zGS" secondAttribute="width" multiplier="0.5" id="lcT-aG-95m"/>
+                                            <constraint firstItem="50S-4Z-yCn" firstAttribute="width" secondItem="gwR-38-zGS" secondAttribute="width" multiplier="0.4" id="lcT-aG-95m"/>
                                             <constraint firstAttribute="centerX" secondItem="jBG-zc-UoC" secondAttribute="centerX" id="qfl-ZX-da7"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="8v7-Wd-klb"/>
+                                                <exclude reference="CVD-P5-ZJz"/>
                                                 <exclude reference="gNt-gd-kI2"/>
                                             </mask>
                                         </variation>
@@ -338,6 +336,7 @@
                     <connections>
                         <outlet property="currentSelectionButton" destination="WUG-T4-S4q" id="kML-Hs-JRh"/>
                         <outlet property="currentTrailingConstraint" destination="EHF-CQ-P1W" id="8Ik-d7-R0I"/>
+                        <outlet property="introLabel" destination="50S-4Z-yCn" id="HZq-35-Pw4"/>
                         <outlet property="nextButton" destination="tVa-ib-G4a" id="9fQ-5J-rJv"/>
                         <outlet property="pageContentView" destination="fsC-Yh-GKN" id="ycT-3j-2Km"/>
                         <outlet property="prevButton" destination="d7a-fs-vKI" id="5A9-Pu-LRL"/>
