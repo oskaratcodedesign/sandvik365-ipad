@@ -67,14 +67,6 @@
             </objects>
             <point key="canvasLocation" x="273" y="479"/>
         </scene>
-        <!--Roi-->
-        <scene sceneID="NMr-e8-LyS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Roi" id="qo5-Vm-f4B" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7S-QL-h9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1542" y="-410"/>
-        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="Gbd-TK-02b">
             <objects>
@@ -219,7 +211,7 @@ YOU CAN COUNT ON.</string>
                                         <rect key="frame" x="0.0" y="500" width="600" height="500"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="262" y="75" width="248" height="367"/>
+                                                <rect key="frame" x="100" y="75" width="248" height="367"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="4BX-vE-7mg"/>
@@ -388,6 +380,7 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstAttribute="bottom" secondItem="aDK-5t-wKV" secondAttribute="bottom" id="GB3-dR-EFY"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="JzS-u6-iwY"/>
                                             <constraint firstAttribute="trailing" secondItem="wZy-j6-tYo" secondAttribute="trailing" constant="200" id="Nby-KV-cRV"/>
+                                            <constraint firstItem="1Hj-OI-4WY" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" constant="100" id="Us2-KW-ebe"/>
                                             <constraint firstAttribute="trailing" secondItem="aDK-5t-wKV" secondAttribute="trailing" id="cDv-EK-BEv"/>
                                             <constraint firstAttribute="trailing" secondItem="1Hj-OI-4WY" secondAttribute="trailing" constant="90" id="lEL-31-Bfm"/>
                                             <constraint firstItem="aDK-5t-wKV" firstAttribute="top" secondItem="1Hj-OI-4WY" secondAttribute="bottom" constant="25" id="r3A-zv-Zbo"/>
@@ -398,6 +391,7 @@ YOU CAN COUNT ON.</string>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="JzS-u6-iwY"/>
+                                                <exclude reference="lEL-31-Bfm"/>
                                             </mask>
                                         </variation>
                                     </view>

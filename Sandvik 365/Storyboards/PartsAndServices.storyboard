@@ -620,7 +620,7 @@ TO ROTATE</string>
                                                             <constraint firstItem="pei-pB-EfP" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="leading" id="upN-xg-gjZ"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
                                                         <rect key="frame" x="360" y="303" width="220" height="300"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
