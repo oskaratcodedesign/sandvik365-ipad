@@ -66,19 +66,18 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50S-4Z-yCn">
                                                 <rect key="frame" x="140" y="100" width="280" height="573"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <string key="text">INTRO TEXT Ucimus dolore, sunt exces ellesse
-quiatus etur minti odisit, nobis es minctest, cu- ptiis as aut escil is sim id minum conserum num am dolenim usandaecto qui audic test ut evel et, arcimporpore aut res iunt laborro beaquiducia endenih illacerenis aboreped utatium fuga. Na- mus non net optatus, occusci dusant, ut quam ationecum voloressimus dolles rest, esti as esto- tatur alignis esciis accusam lacipsam ius alist pa doluptur?</string>
+                                                <string key="text">Welcome. Here you can calculate your potential benefits. Just enter your data on the following pages and we will do the math for you. You can adjust the data by clicking the up and down arrows and navigate through the pages by clicking right and left. </string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
                                                 <rect key="frame" x="254" y="508" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-zc-UoC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-zc-UoC">
                                                 <rect key="frame" x="249" y="528" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
