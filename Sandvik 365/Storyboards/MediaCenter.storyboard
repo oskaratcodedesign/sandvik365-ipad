@@ -53,32 +53,54 @@
                                     <constraint firstAttribute="height" constant="295" id="oP4-dl-x5J"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="UPd-yM-SPQ">
-                                    <size key="itemSize" width="230" height="130"/>
+                                    <size key="itemSize" width="230" height="135"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="icn-FN-Uny" customClass="VideoCell" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="230" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-wG-mYz" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="214" height="114"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="135"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="H4U-nb-fJY"/>
+                                                        <constraint firstAttribute="height" constant="130" id="gG1-xd-UD0"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="H4U-nb-fJY"/>
+                                                            <exclude reference="gG1-xd-UD0"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="Ut8-wG-mYz" secondAttribute="trailing" id="MZS-CZ-k99"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="centerX" secondItem="icn-FN-Uny" secondAttribute="centerX" id="Uwy-Uw-tS8"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="width" secondItem="icn-FN-Uny" secondAttribute="width" id="XkJ-yg-n1L"/>
                                             <constraint firstItem="Ut8-wG-mYz" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" id="c4v-A8-C52"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="height" secondItem="icn-FN-Uny" secondAttribute="height" id="k9J-wj-4RN"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Ut8-wG-mYz" secondAttribute="bottom" id="p5q-hS-7c5"/>
                                             <constraint firstItem="Ut8-wG-mYz" firstAttribute="top" secondItem="icn-FN-Uny" secondAttribute="topMargin" id="qR6-1Z-SLO"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="centerY" secondItem="icn-FN-Uny" secondAttribute="centerY" id="wMY-vH-NOd"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MZS-CZ-k99"/>
+                                                <exclude reference="c4v-A8-C52"/>
+                                                <exclude reference="p5q-hS-7c5"/>
+                                                <exclude reference="qR6-1Z-SLO"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="videoButton" destination="Ut8-wG-mYz" id="HmJ-WZ-ubh"/>
                                             <segue destination="hXl-7f-Ynj" kind="presentation" identifier="VideoViewController" id="tXp-Td-aHg"/>

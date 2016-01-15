@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q00-0Y-kWh">
-                    <rect key="frame" x="195" y="240" width="210" height="120"/>
+                    <rect key="frame" x="195" y="474" width="210" height="121"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="03Q-yI-JfO">
                             <rect key="frame" x="0.0" y="0.0" width="210" height="81"/>
@@ -57,35 +57,60 @@
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-hx-Rjr">
-                            <rect key="frame" x="20" y="81" width="170" height="39"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-wL-04W">
+                            <rect key="frame" x="0.0" y="81" width="210" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-hx-Rjr">
+                                    <rect key="frame" x="20" y="3" width="170" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="QRQ-hR-3VY"/>
+                                    </constraints>
+                                    <string key="text">sdfsfsfsf s
+sdfsf</string>
+                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
+                                    <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="QRQ-hR-3VY"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="39" id="QRQ-hR-3VY"/>
+                                <constraint firstAttribute="trailing" secondItem="ONB-hx-Rjr" secondAttribute="trailing" constant="20" id="2LV-jL-gFz"/>
+                                <constraint firstItem="ONB-hx-Rjr" firstAttribute="centerY" secondItem="VF2-wL-04W" secondAttribute="centerY" id="3aD-HZ-Tac"/>
+                                <constraint firstAttribute="height" constant="40" id="6y8-aU-JV7"/>
+                                <constraint firstItem="ONB-hx-Rjr" firstAttribute="leading" secondItem="VF2-wL-04W" secondAttribute="leading" constant="20" id="SAX-vN-44b"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
-                            <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="ONB-hx-Rjr" secondAttribute="bottom" id="0is-PS-vOW"/>
+                        <constraint firstAttribute="height" constant="120" id="37b-2n-304"/>
                         <constraint firstItem="03Q-yI-JfO" firstAttribute="top" secondItem="Q00-0Y-kWh" secondAttribute="top" id="AGA-Wu-8fj"/>
                         <constraint firstItem="xKd-XI-3fY" firstAttribute="centerY" secondItem="03Q-yI-JfO" secondAttribute="centerY" id="Bce-1U-nrf"/>
-                        <constraint firstItem="ONB-hx-Rjr" firstAttribute="leading" secondItem="Q00-0Y-kWh" secondAttribute="leading" constant="20" id="aFp-8m-ApI"/>
+                        <constraint firstAttribute="bottom" secondItem="VF2-wL-04W" secondAttribute="bottom" id="JGY-ns-PRZ"/>
+                        <constraint firstItem="VF2-wL-04W" firstAttribute="top" secondItem="03Q-yI-JfO" secondAttribute="bottom" id="LsP-hV-KvG"/>
+                        <constraint firstAttribute="trailing" secondItem="VF2-wL-04W" secondAttribute="trailing" id="PfH-H0-wfl"/>
+                        <constraint firstItem="VF2-wL-04W" firstAttribute="leading" secondItem="Q00-0Y-kWh" secondAttribute="leading" id="UGo-oM-OaR"/>
                         <constraint firstItem="xKd-XI-3fY" firstAttribute="centerX" secondItem="03Q-yI-JfO" secondAttribute="centerX" id="iak-Js-ABB"/>
                         <constraint firstItem="03Q-yI-JfO" firstAttribute="leading" secondItem="Q00-0Y-kWh" secondAttribute="leading" id="orn-wa-YxY"/>
                         <constraint firstAttribute="width" constant="210" id="pfS-rI-8rN"/>
                         <constraint firstAttribute="trailing" secondItem="03Q-yI-JfO" secondAttribute="trailing" id="shh-sP-Qfz"/>
-                        <constraint firstAttribute="trailing" secondItem="ONB-hx-Rjr" secondAttribute="trailing" constant="20" id="vB7-zg-Wkl"/>
-                        <constraint firstItem="ONB-hx-Rjr" firstAttribute="top" secondItem="03Q-yI-JfO" secondAttribute="bottom" id="x23-na-Xqz"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="37b-2n-304"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Q00-0Y-kWh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="44p-5q-6jL"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q00-0Y-kWh" secondAttribute="bottom" constant="5" id="Fj2-gb-UjW"/>
+                <constraint firstAttribute="bottom" secondItem="Q00-0Y-kWh" secondAttribute="bottom" constant="5" id="Fj2-gb-UjW"/>
                 <constraint firstItem="Q00-0Y-kWh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="FwG-1q-1Ra"/>
                 <constraint firstItem="Q00-0Y-kWh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Tbl-eh-Zpz"/>
                 <constraint firstItem="Q00-0Y-kWh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Y3p-d4-Br5"/>
@@ -99,6 +124,11 @@
                     <integer key="value" value="2"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Y3p-d4-Br5"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

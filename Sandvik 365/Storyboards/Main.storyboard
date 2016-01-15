@@ -154,12 +154,12 @@ YOU CAN COUNT ON.</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="280" y="240" width="220" height="130"/>
+                                                <rect key="frame" x="270" y="240" width="230" height="135"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
-                                                    <constraint firstAttribute="width" constant="220" id="bRr-zq-5F6"/>
-                                                    <constraint firstAttribute="height" constant="130" id="mVw-gk-zxg"/>
+                                                    <constraint firstAttribute="width" constant="230" id="bRr-zq-5F6"/>
+                                                    <constraint firstAttribute="height" constant="135" id="mVw-gk-zxg"/>
                                                     <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
