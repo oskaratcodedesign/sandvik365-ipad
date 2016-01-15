@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressLineDelegate, MenuCountOnBoxDelegate {
+class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressLineDelegate, MenuCountOnBoxDelegate, VideoButtonDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var progressView: ProgressLineView!
@@ -18,6 +18,8 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var menuCountOnBox: MenuCountOnBox!
     
+    @IBOutlet weak var firstContainer: UIView!
+    @IBOutlet weak var videoButton: VideoButton!
     private var backButtonBg: UIImageView!
     private var showBackButton: Bool = true
     
@@ -37,7 +39,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
         }
         self.scrollViewDidScroll(menuScrollView)
-        
+        videoButton.delegate = self
         progressView.delegate = self
         menuCountOnBox.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailableKey, object: nil)
@@ -67,6 +69,18 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         showBackButton = true
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.enableLogoButton()
+    }
+    
+    func didTouchEnded() {
+        self.performSegueWithIdentifier("VideoViewController", sender: self)
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        let point = touch.locationInView(self.firstContainer)
+        if CGRectContainsPoint(self.videoButton.frame, point) {
+            return false
+        }
+        return true
     }
     
     func didTapMenuCountOnBox(partsAndServices: PartsAndServices, partService: PartService, subPartService: SubPartService, mainSectionTitle: String) {

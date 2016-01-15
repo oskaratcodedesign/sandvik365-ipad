@@ -9,11 +9,16 @@
 import Foundation
 import NibDesignable
 
+protocol VideoButtonDelegate {
+    func didTouchEnded()
+}
+
 class VideoButton : NibDesignable {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    var delegate: VideoButtonDelegate?
     
     @IBInspectable var videoImage: UIImage? {
         didSet {
@@ -35,6 +40,7 @@ class VideoButton : NibDesignable {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.playButton.highlighted = false
         super.touchesEnded(touches, withEvent: event)
+        self.delegate?.didTouchEnded()
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {

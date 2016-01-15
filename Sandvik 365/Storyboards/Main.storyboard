@@ -9,7 +9,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
@@ -133,26 +132,6 @@ YOU CAN COUNT ON.</string>
                                                     <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-55-Fwt">
-                                                <rect key="frame" x="426" y="326" width="104" height="104"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="124" id="8FT-O9-H77"/>
-                                                    <constraint firstAttribute="width" constant="151" id="R8b-sa-0ec"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <state key="normal" image="SANDVIK-video-button">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="8FT-O9-H77"/>
-                                                        <exclude reference="R8b-sa-0ec"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="1ql-Le-gM4"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
                                                 <rect key="frame" x="270" y="240" width="230" height="135"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -183,10 +162,8 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
                                             <constraint firstItem="B0a-Kq-6It" firstAttribute="centerY" secondItem="LGY-k8-KXB" secondAttribute="centerY" id="Fsi-uC-eP0"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="M8O-q8-7Xk"/>
-                                            <constraint firstItem="Pcx-55-Fwt" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="NZ5-De-47o"/>
                                             <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
                                             <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
-                                            <constraint firstAttribute="trailing" secondItem="Pcx-55-Fwt" secondAttribute="trailing" constant="70" id="QwS-mN-oHj"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
                                             <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
@@ -194,7 +171,6 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="flW-BI-L4A"/>
                                             <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
-                                            <constraint firstAttribute="bottom" secondItem="Pcx-55-Fwt" secondAttribute="bottom" constant="70" id="h07-IQ-dMC"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
                                             <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                             <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
@@ -206,7 +182,6 @@ YOU CAN COUNT ON.</string>
                                                 <exclude reference="js3-V0-gUc"/>
                                                 <exclude reference="Fsi-uC-eP0"/>
                                                 <exclude reference="PIs-hD-Kt1"/>
-                                                <exclude reference="NZ5-De-47o"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -430,11 +405,13 @@ YOU CAN COUNT ON.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
+                        <outlet property="firstContainer" destination="LGY-k8-KXB" id="jzs-P3-QtT"/>
                         <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
                         <outlet property="menuCountOnBox" destination="1Hj-OI-4WY" id="cRs-tF-bwp"/>
                         <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
                         <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
                         <outlet property="scrollView" destination="Btf-qB-THU" id="BUH-Bh-mXh"/>
+                        <outlet property="videoButton" destination="B0a-Kq-6It" id="vl7-rP-YMJ"/>
                         <outletCollection property="mainMenuItemViews" destination="Efv-Tf-KN9" collectionClass="NSMutableArray" id="d7N-Tz-O7N"/>
                         <outletCollection property="mainMenuItemViews" destination="jto-Cr-aoV" collectionClass="NSMutableArray" id="adC-3G-r4f"/>
                         <outletCollection property="mainMenuItemViews" destination="2n6-qv-Za8" collectionClass="NSMutableArray" id="VUI-J9-cps"/>
@@ -444,12 +421,14 @@ YOU CAN COUNT ON.</string>
                         <outletCollection property="mainMenuItemViews" destination="goe-Xq-a6b" collectionClass="NSMutableArray" id="Vlb-sY-7eI"/>
                         <outletCollection property="mainMenuItemViews" destination="I9D-No-weO" collectionClass="NSMutableArray" id="VeO-NA-H7E"/>
                         <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="C3U-QL-Bxu"/>
+                        <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="bk5-QJ-IsA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og2-vF-GsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="zsF-m4-km1">
                     <connections>
                         <action selector="showSecondScreen:" destination="vq2-UY-Bko" id="GzU-1d-PEv"/>
+                        <outlet property="delegate" destination="vq2-UY-Bko" id="jEB-gh-c14"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -638,7 +617,6 @@ UPDATE NOW</string>
     </scenes>
     <resources>
         <image name="S365-movie-button-S365-film" width="210" height="81"/>
-        <image name="SANDVIK-video-button" width="104" height="104"/>
         <image name="sandvik-icons_info-btn" width="32" height="32"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
