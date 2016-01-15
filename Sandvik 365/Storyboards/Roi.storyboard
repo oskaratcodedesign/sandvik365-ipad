@@ -41,6 +41,8 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1012,7 +1014,7 @@ PLANNING SERVICES</string>
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMD-AT-bry">
-                                                        <rect key="frame" x="61" y="-77" width="60" height="71"/>
+                                                        <rect key="frame" x="7" y="73" width="57" height="59"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1051,13 +1053,13 @@ PLANNING SERVICES</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk9-b5-SJX">
-                                                <rect key="frame" x="197" y="0.0" width="149" height="252"/>
+                                                <rect key="frame" x="197" y="0.0" width="149" height="188"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSY-Uz-QLV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="252"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="188"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgk-2X-zbm">
-                                                                <rect key="frame" x="23" y="0.0" width="2" height="229"/>
+                                                                <rect key="frame" x="23" y="0.0" width="2" height="188"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="2" id="iUA-Ql-nsf"/>
@@ -1075,68 +1077,25 @@ PLANNING SERVICES</string>
                                                             <constraint firstItem="fFU-z4-0sZ" firstAttribute="leading" secondItem="WSY-Uz-QLV" secondAttribute="leading" constant="-10" id="4kB-ku-RIl"/>
                                                             <constraint firstAttribute="trailing" secondItem="xgk-2X-zbm" secondAttribute="trailing" id="8CB-c2-QU1"/>
                                                             <constraint firstAttribute="trailing" secondItem="fFU-z4-0sZ" secondAttribute="trailing" id="Atq-zh-Vh0"/>
-                                                            <constraint firstAttribute="bottom" secondItem="xgk-2X-zbm" secondAttribute="bottom" constant="23" id="BfO-X9-A8U"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xgk-2X-zbm" secondAttribute="bottom" id="BfO-X9-A8U"/>
                                                             <constraint firstItem="fFU-z4-0sZ" firstAttribute="top" secondItem="WSY-Uz-QLV" secondAttribute="top" id="HL9-PT-lmw"/>
                                                             <constraint firstAttribute="width" constant="25" id="iRv-pR-ZyR"/>
                                                             <constraint firstItem="xgk-2X-zbm" firstAttribute="top" secondItem="WSY-Uz-QLV" secondAttribute="top" id="wAZ-aj-54A"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jam-Xt-o2O">
-                                                        <rect key="frame" x="25" y="227" width="124" height="25"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-EP-ymv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="2" id="4hN-hX-CsF"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mt4-7O-zF9">
-                                                                <rect key="frame" x="124" y="0.0" width="50" height="2"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="2" id="H3O-U2-S39"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scF-wT-jyM">
-                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
-                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="9vc-EP-ymv" secondAttribute="trailing" id="DtF-B4-ebB"/>
-                                                            <constraint firstItem="9vc-EP-ymv" firstAttribute="leading" secondItem="jam-Xt-o2O" secondAttribute="leading" id="FKh-UP-9Uh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="scF-wT-jyM" secondAttribute="bottom" id="LdC-v6-bXU"/>
-                                                            <constraint firstItem="mt4-7O-zF9" firstAttribute="leading" secondItem="9vc-EP-ymv" secondAttribute="trailing" id="Ly5-J1-6WE"/>
-                                                            <constraint firstItem="9vc-EP-ymv" firstAttribute="top" secondItem="jam-Xt-o2O" secondAttribute="top" id="S1a-ah-6Pu"/>
-                                                            <constraint firstItem="mt4-7O-zF9" firstAttribute="top" secondItem="jam-Xt-o2O" secondAttribute="top" id="Svf-5c-uAu"/>
-                                                            <constraint firstAttribute="height" constant="25" id="Tql-hq-1AY"/>
-                                                            <constraint firstAttribute="trailing" secondItem="scF-wT-jyM" secondAttribute="trailing" constant="3" id="cf4-UB-iQ8"/>
-                                                            <constraint firstItem="scF-wT-jyM" firstAttribute="leading" secondItem="9vc-EP-ymv" secondAttribute="trailing" id="pg2-dV-f97"/>
-                                                            <constraint firstItem="scF-wT-jyM" firstAttribute="top" secondItem="9vc-EP-ymv" secondAttribute="bottom" id="tp4-Xr-vuL"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="cf4-UB-iQ8"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-5j-3uy">
-                                                        <rect key="frame" x="25" y="20" width="124" height="207"/>
+                                                        <rect key="frame" x="25" y="20" width="124" height="166"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B47-BE-4AD" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="7" y="0.0" width="37" height="207"/>
+                                                                <rect key="frame" x="7" y="0.0" width="37" height="166"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-Mn-CVm" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="50" y="0.0" width="37" height="207"/>
+                                                                <rect key="frame" x="50" y="0.0" width="37" height="166"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-5y-dLR" customClass="GraphWithLabel" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="93" y="0.0" width="37" height="207"/>
+                                                                <rect key="frame" x="93" y="0.0" width="37" height="166"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                         </subviews>
@@ -1156,6 +1115,40 @@ PLANNING SERVICES</string>
                                                             <constraint firstItem="EgX-5y-dLR" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="xvV-zY-gYk"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jam-Xt-o2O">
+                                                        <rect key="frame" x="25" y="186" width="124" height="2"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-EP-ymv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="2" id="4hN-hX-CsF"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mt4-7O-zF9">
+                                                                <rect key="frame" x="124" y="0.0" width="50" height="2"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="2" id="H3O-U2-S39"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="9vc-EP-ymv" secondAttribute="trailing" id="DtF-B4-ebB"/>
+                                                            <constraint firstItem="9vc-EP-ymv" firstAttribute="leading" secondItem="jam-Xt-o2O" secondAttribute="leading" id="FKh-UP-9Uh"/>
+                                                            <constraint firstItem="mt4-7O-zF9" firstAttribute="leading" secondItem="9vc-EP-ymv" secondAttribute="trailing" id="Ly5-J1-6WE"/>
+                                                            <constraint firstItem="9vc-EP-ymv" firstAttribute="top" secondItem="jam-Xt-o2O" secondAttribute="top" id="S1a-ah-6Pu"/>
+                                                            <constraint firstItem="mt4-7O-zF9" firstAttribute="top" secondItem="jam-Xt-o2O" secondAttribute="top" id="Svf-5c-uAu"/>
+                                                            <constraint firstAttribute="height" constant="25" id="Tql-hq-1AY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mt4-7O-zF9" secondAttribute="bottom" id="qRP-be-1GZ"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="Tql-hq-1AY"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1163,6 +1156,7 @@ PLANNING SERVICES</string>
                                                     <constraint firstAttribute="bottom" secondItem="jam-Xt-o2O" secondAttribute="bottom" id="5Qy-vr-Wfg"/>
                                                     <constraint firstAttribute="bottom" secondItem="WSY-Uz-QLV" secondAttribute="bottom" id="5fJ-ry-8eV"/>
                                                     <constraint firstAttribute="trailing" secondItem="JuS-5j-3uy" secondAttribute="trailing" id="EdQ-pj-zHA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jam-Xt-o2O" secondAttribute="bottom" id="JM0-j7-ghw"/>
                                                     <constraint firstItem="JuS-5j-3uy" firstAttribute="top" secondItem="rk9-b5-SJX" secondAttribute="top" constant="20" id="cVR-MC-VnT"/>
                                                     <constraint firstItem="jam-Xt-o2O" firstAttribute="top" secondItem="JuS-5j-3uy" secondAttribute="bottom" id="cgu-1g-SWo"/>
                                                     <constraint firstItem="WSY-Uz-QLV" firstAttribute="leading" secondItem="rk9-b5-SJX" secondAttribute="leading" id="i06-Zu-b7f"/>
@@ -1170,19 +1164,119 @@ PLANNING SERVICES</string>
                                                     <constraint firstItem="JuS-5j-3uy" firstAttribute="leading" secondItem="WSY-Uz-QLV" secondAttribute="trailing" id="wG0-rf-1TJ"/>
                                                     <constraint firstItem="WSY-Uz-QLV" firstAttribute="top" secondItem="rk9-b5-SJX" secondAttribute="top" id="zE8-VV-VuP"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5Qy-vr-Wfg"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipd-MY-GIr">
+                                                <rect key="frame" x="222" y="188" width="124" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWS-gE-FU7">
+                                                        <rect key="frame" x="-18" y="4" width="88" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="FeZ-di-1xA"/>
+                                                            <constraint firstAttribute="width" constant="62" id="TfA-1q-l98"/>
+                                                            <constraint firstAttribute="height" constant="126" id="xeV-pW-Abp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="titleEdgeInsets" minX="-63" minY="46" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="BARE" image="bare-shovel"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="TfA-1q-l98"/>
+                                                                <exclude reference="xeV-pW-Abp"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-6g-e8M">
+                                                        <rect key="frame" x="-23" y="4" width="184" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="126" id="40G-er-glx"/>
+                                                            <constraint firstAttribute="width" constant="70" id="YQA-J1-wpm"/>
+                                                            <constraint firstAttribute="height" constant="60" id="hAi-7b-Gua"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="titleEdgeInsets" minX="-71" minY="46" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="58" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="WELD-ON HALF-ARROW" image="half-arrow"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="YQA-J1-wpm"/>
+                                                                <exclude reference="40G-er-glx"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqm-uU-1bF">
+                                                        <rect key="frame" x="30" y="4" width="164" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="1iU-2c-3TE"/>
+                                                            <constraint firstAttribute="width" constant="57" id="iBQ-hq-YnX"/>
+                                                            <constraint firstAttribute="height" constant="126" id="nWo-tZ-Fyq"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="titleEdgeInsets" minX="-56" minY="46" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="52" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="MECHANICAL GET (BPII)" image="mechanical-get"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="iBQ-hq-YnX"/>
+                                                                <exclude reference="nWo-tZ-Fyq"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Fvb-wT-iU2"/>
+                                                    <constraint firstItem="XWS-gE-FU7" firstAttribute="leading" secondItem="Ipd-MY-GIr" secondAttribute="leading" id="GpL-jk-Zmk"/>
+                                                    <constraint firstItem="XWS-gE-FU7" firstAttribute="top" secondItem="Ipd-MY-GIr" secondAttribute="top" constant="4" id="OeV-0d-b80"/>
+                                                    <constraint firstItem="5Wt-6g-e8M" firstAttribute="centerY" secondItem="Ipd-MY-GIr" secondAttribute="centerY" id="PfT-rO-G5s"/>
+                                                    <constraint firstItem="5Wt-6g-e8M" firstAttribute="top" secondItem="Ipd-MY-GIr" secondAttribute="top" constant="4" id="eH1-pP-lxU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XWS-gE-FU7" secondAttribute="bottom" id="esx-gn-3go"/>
+                                                    <constraint firstItem="Mqm-uU-1bF" firstAttribute="top" secondItem="Ipd-MY-GIr" secondAttribute="top" constant="4" id="gD5-Bb-N7D"/>
+                                                    <constraint firstItem="Mqm-uU-1bF" firstAttribute="centerY" secondItem="Ipd-MY-GIr" secondAttribute="centerY" id="v3g-1I-Uf0"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Fvb-wT-iU2"/>
+                                                        <exclude reference="GpL-jk-Zmk"/>
+                                                        <exclude reference="PfT-rO-G5s"/>
+                                                        <exclude reference="v3g-1I-Uf0"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="rk9-b5-SJX" secondAttribute="bottom" id="0O4-i4-925"/>
                                             <constraint firstItem="YlW-Vf-Vep" firstAttribute="top" secondItem="MkV-0W-u2H" secondAttribute="top" id="339-Es-8Cu"/>
+                                            <constraint firstItem="5Wt-6g-e8M" firstAttribute="centerX" secondItem="CiM-Mn-CVm" secondAttribute="centerX" id="3Xr-mh-fft"/>
                                             <constraint firstItem="rk9-b5-SJX" firstAttribute="top" secondItem="MkV-0W-u2H" secondAttribute="top" id="4Ty-1b-OQs"/>
+                                            <constraint firstItem="Ipd-MY-GIr" firstAttribute="width" secondItem="JuS-5j-3uy" secondAttribute="width" id="56V-Nm-csZ"/>
                                             <constraint firstAttribute="bottom" secondItem="YlW-Vf-Vep" secondAttribute="bottom" id="Akc-YT-w2v"/>
+                                            <constraint firstItem="Ipd-MY-GIr" firstAttribute="top" secondItem="rk9-b5-SJX" secondAttribute="bottom" id="C2Z-W4-tnC"/>
                                             <constraint firstItem="rk9-b5-SJX" firstAttribute="leading" secondItem="MkV-0W-u2H" secondAttribute="leading" constant="197" id="Kct-sv-b9Y"/>
                                             <constraint firstItem="YlW-Vf-Vep" firstAttribute="leading" secondItem="MkV-0W-u2H" secondAttribute="leading" id="P5s-Hm-aey"/>
+                                            <constraint firstItem="XWS-gE-FU7" firstAttribute="width" secondItem="B47-BE-4AD" secondAttribute="width" id="QpI-gP-D1a"/>
                                             <constraint firstAttribute="trailing" secondItem="mt4-7O-zF9" secondAttribute="trailing" id="Tx4-nm-ipd"/>
                                             <constraint firstItem="rk9-b5-SJX" firstAttribute="leading" secondItem="YlW-Vf-Vep" secondAttribute="trailing" id="ViN-dC-hMp"/>
+                                            <constraint firstItem="Ipd-MY-GIr" firstAttribute="leading" secondItem="JuS-5j-3uy" secondAttribute="leading" id="dOb-Ch-98z"/>
+                                            <constraint firstItem="XWS-gE-FU7" firstAttribute="centerX" secondItem="B47-BE-4AD" secondAttribute="centerX" id="jRj-wm-4Y0"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ipd-MY-GIr" secondAttribute="bottom" id="o44-Qe-Zgg"/>
+                                            <constraint firstItem="Mqm-uU-1bF" firstAttribute="centerX" secondItem="EgX-5y-dLR" secondAttribute="centerX" id="tCZ-JN-A7g"/>
                                             <constraint firstAttribute="trailing" secondItem="rk9-b5-SJX" secondAttribute="trailing" constant="50" id="yqh-qV-NJV"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0O4-i4-925"/>
+                                                <exclude reference="QpI-gP-D1a"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1317,6 +1411,9 @@ PLANNING SERVICES</string>
         </scene>
     </scenes>
     <resources>
+        <image name="bare-shovel" width="62" height="42"/>
+        <image name="half-arrow" width="70" height="42"/>
+        <image name="mechanical-get" width="53" height="42"/>
         <image name="sandvik_arrow_down" width="65" height="32"/>
         <image name="sandvik_arrow_left" width="32" height="64"/>
         <image name="sandvik_arrow_right" width="32" height="64"/>
