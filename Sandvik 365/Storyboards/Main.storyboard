@@ -10,7 +10,6 @@
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
@@ -154,39 +153,45 @@ YOU CAN COUNT ON.</string>
                                                     <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="1ql-Le-gM4"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-Ou-r9z">
-                                                <rect key="frame" x="337" y="306" width="193" height="124"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="240" width="220" height="130"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="193" id="CCE-gv-G8e"/>
-                                                    <constraint firstAttribute="height" constant="124" id="T5Y-ib-GK2"/>
+                                                    <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
+                                                    <constraint firstAttribute="width" constant="220" id="bRr-zq-5F6"/>
+                                                    <constraint firstAttribute="height" constant="130" id="mVw-gk-zxg"/>
+                                                    <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="12"/>
-                                                <inset key="titleEdgeInsets" minX="-100" minY="105" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="CRUSHER RISK CALCULATOR" image="sandvik_calc">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="videoImage" value="S365-movie-button-S365-film"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="videoTitle" value="SANDVIK 365 VIDEO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="AUC-pz-0CO"/>
+                                                        <exclude reference="uow-lj-oty"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="0AO-Ab-1KA"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
+                                            <constraint firstItem="B0a-Kq-6It" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="top" id="5Od-h9-IdK"/>
                                             <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
+                                            <constraint firstItem="B0a-Kq-6It" firstAttribute="centerY" secondItem="LGY-k8-KXB" secondAttribute="centerY" id="Fsi-uC-eP0"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="M8O-q8-7Xk"/>
                                             <constraint firstItem="Pcx-55-Fwt" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="70" id="NZ5-De-47o"/>
                                             <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
-                                            <constraint firstAttribute="bottom" secondItem="lZK-Ou-r9z" secondAttribute="bottom" constant="70" id="Q7X-XG-Hj1"/>
                                             <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
                                             <constraint firstAttribute="trailing" secondItem="Pcx-55-Fwt" secondAttribute="trailing" constant="70" id="QwS-mN-oHj"/>
                                             <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
                                             <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
-                                            <constraint firstAttribute="trailing" secondItem="lZK-Ou-r9z" secondAttribute="trailing" constant="70" id="bDU-1W-2O2"/>
                                             <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
                                             <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
-                                            <constraint firstItem="Pcx-55-Fwt" firstAttribute="leading" secondItem="lZK-Ou-r9z" secondAttribute="trailing" constant="20" id="dqb-7Q-8dn"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="flW-BI-L4A"/>
                                             <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
                                             <constraint firstAttribute="bottom" secondItem="Pcx-55-Fwt" secondAttribute="bottom" constant="70" id="h07-IQ-dMC"/>
@@ -194,13 +199,14 @@ YOU CAN COUNT ON.</string>
                                             <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                             <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
                                             <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="25" id="yCY-xh-cic"/>
+                                            <constraint firstAttribute="trailing" secondItem="B0a-Kq-6It" secondAttribute="trailing" constant="100" id="ydh-Ui-2JY"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="js3-V0-gUc"/>
+                                                <exclude reference="Fsi-uC-eP0"/>
                                                 <exclude reference="PIs-hD-Kt1"/>
                                                 <exclude reference="NZ5-De-47o"/>
-                                                <exclude reference="dqb-7Q-8dn"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -631,9 +637,9 @@ UPDATE NOW</string>
         </scene>
     </scenes>
     <resources>
+        <image name="S365-movie-button-S365-film" width="210" height="81"/>
         <image name="SANDVIK-video-button" width="104" height="104"/>
         <image name="sandvik-icons_info-btn" width="32" height="32"/>
-        <image name="sandvik_calc" width="83" height="83"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
 </document>

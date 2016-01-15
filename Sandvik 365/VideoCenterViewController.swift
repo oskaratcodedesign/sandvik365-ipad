@@ -34,8 +34,8 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VideoCell
         let video = self.videos[indexPath.row]
-        cell.imageView.image = UIImage(named: video.imageName)
-        cell.titleLabel.text = video.title
+        cell.videoButton.imageView.image = UIImage(named: video.imageName)
+        cell.videoButton.titleLabel.text = video.title
         
         return cell
     }

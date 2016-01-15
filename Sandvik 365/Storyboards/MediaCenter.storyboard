@@ -11,7 +11,6 @@
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
-            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -54,78 +53,34 @@
                                     <constraint firstAttribute="height" constant="295" id="oP4-dl-x5J"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="UPd-yM-SPQ">
-                                    <size key="itemSize" width="226" height="140"/>
+                                    <size key="itemSize" width="230" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="icn-FN-Uny" customClass="VideoCell" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="226" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="226" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aE2-hP-Zgo">
-                                                    <rect key="frame" x="8" y="8" width="210" height="85"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fmdkfmskmf skdfm sldfmsl fm skldf msldfm sdfkm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHQ-3g-GtU">
-                                                    <rect key="frame" x="28" y="93" width="170" height="39"/>
-                                                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
-                                                    <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-LR-P7n">
-                                                    <rect key="frame" x="86" y="23" width="55" height="55"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="Te8-VX-gur"/>
-                                                        <constraint firstAttribute="height" constant="55" id="ps8-6d-Zq5"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="43"/>
-                                                    <state key="normal" title="▶︎">
-                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <state key="selected" title="▶︎">
-                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <state key="highlighted" title="▶︎">
-                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-wG-mYz" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="214" height="114"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="yHQ-3g-GtU" firstAttribute="top" secondItem="aE2-hP-Zgo" secondAttribute="bottom" id="ESJ-sQ-Lih"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="yHQ-3g-GtU" secondAttribute="bottom" id="UzM-72-nVN"/>
-                                            <constraint firstItem="aE2-hP-Zgo" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" id="eJz-eE-ddE"/>
-                                            <constraint firstItem="VnO-LR-P7n" firstAttribute="centerX" secondItem="aE2-hP-Zgo" secondAttribute="centerX" id="hQ9-Xh-q2V"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="aE2-hP-Zgo" secondAttribute="bottom" id="lFM-db-ab3"/>
-                                            <constraint firstItem="yHQ-3g-GtU" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" constant="20" id="oIH-yw-VOQ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="yHQ-3g-GtU" secondAttribute="trailing" constant="20" id="pUc-qu-NvT"/>
-                                            <constraint firstItem="VnO-LR-P7n" firstAttribute="centerY" secondItem="aE2-hP-Zgo" secondAttribute="centerY" id="syY-2C-WAp"/>
-                                            <constraint firstItem="aE2-hP-Zgo" firstAttribute="top" secondItem="icn-FN-Uny" secondAttribute="topMargin" id="w2P-I0-ZaL"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="aE2-hP-Zgo" secondAttribute="trailing" id="xdk-uJ-Mlt"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Ut8-wG-mYz" secondAttribute="trailing" id="MZS-CZ-k99"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="leading" secondItem="icn-FN-Uny" secondAttribute="leadingMargin" id="c4v-A8-C52"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Ut8-wG-mYz" secondAttribute="bottom" id="p5q-hS-7c5"/>
+                                            <constraint firstItem="Ut8-wG-mYz" firstAttribute="top" secondItem="icn-FN-Uny" secondAttribute="topMargin" id="qR6-1Z-SLO"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="lFM-db-ab3"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
-                                            <outlet property="imageView" destination="aE2-hP-Zgo" id="JhR-s2-h1V"/>
-                                            <outlet property="playButton" destination="VnO-LR-P7n" id="XNm-NF-WhA"/>
-                                            <outlet property="titleLabel" destination="yHQ-3g-GtU" id="dZO-18-L3B"/>
+                                            <outlet property="videoButton" destination="Ut8-wG-mYz" id="HmJ-WZ-ubh"/>
                                             <segue destination="hXl-7f-Ynj" kind="presentation" identifier="VideoViewController" id="tXp-Td-aHg"/>
                                         </connections>
                                     </collectionViewCell>
@@ -185,7 +140,4 @@
             <point key="canvasLocation" x="2450" y="1109"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo" width="141" height="51"/>
-    </resources>
 </document>
