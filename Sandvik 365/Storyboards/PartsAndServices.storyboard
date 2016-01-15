@@ -588,27 +588,27 @@ TO ROTATE</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-sa-F0D">
-                                        <rect key="frame" x="0.0" y="580" width="600" height="492"/>
+                                        <rect key="frame" x="0.0" y="580" width="600" height="542"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
-                                                <rect key="frame" x="0.0" y="203" width="600" height="289"/>
+                                                <rect key="frame" x="0.0" y="203" width="600" height="339"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-jQ-fwY">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-Uo-XL0">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-3R-8rA">
-                                                        <rect key="frame" x="100" y="203" width="210" height="289"/>
+                                                        <rect key="frame" x="100" y="203" width="210" height="339"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pei-pB-EfP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="210" height="100"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="Jmx-rF-veL"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="Jmx-rF-veL"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -620,22 +620,27 @@ TO ROTATE</string>
                                                             <constraint firstItem="pei-pB-EfP" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="leading" id="upN-xg-gjZ"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="580" y="306" width="0.0" height="300"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" placeholder="YES" id="cPE-QN-TO6"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="220" id="rMw-pR-gOW"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="2Id-3R-8rA" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="4BK-JG-kL3"/>
                                                     <constraint firstItem="SBT-Uo-XL0" firstAttribute="leading" secondItem="w8Y-jQ-fwY" secondAttribute="leading" id="6rc-gA-ye7"/>
+                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="20" id="73p-Xg-veL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3b8-G6-P3a" secondAttribute="trailing" constant="20" id="8PM-qJ-oco"/>
                                                     <constraint firstAttribute="bottom" secondItem="2Id-3R-8rA" secondAttribute="bottom" id="Agd-Ih-ZSr"/>
                                                     <constraint firstAttribute="trailing" secondItem="2Id-3R-8rA" secondAttribute="trailing" constant="290" id="Xld-LE-wQj"/>
                                                     <constraint firstAttribute="trailing" secondItem="SBT-Uo-XL0" secondAttribute="trailing" id="bf8-4v-ppN"/>
                                                     <constraint firstItem="2Id-3R-8rA" firstAttribute="top" secondItem="SBT-Uo-XL0" secondAttribute="bottom" id="c2L-Nc-q3A"/>
                                                     <constraint firstItem="SBT-Uo-XL0" firstAttribute="top" secondItem="w8Y-jQ-fwY" secondAttribute="top" id="cqk-IG-d5u"/>
+                                                    <constraint firstItem="3b8-G6-P3a" firstAttribute="top" secondItem="2Id-3R-8rA" secondAttribute="top" constant="103" id="pYi-r2-cJj"/>
                                                 </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="4BK-JG-kL3"/>
-                                                    </mask>
-                                                </variation>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -701,6 +706,8 @@ TO ROTATE</string>
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="iin-37-iAk" id="43a-G8-Ehp"/>
+                        <outlet property="contactUsView" destination="3b8-G6-P3a" id="2RP-Vf-epz"/>
+                        <outlet property="contactusTopConstraint" destination="pYi-r2-cJj" id="jwn-rD-Qdy"/>
                         <outlet property="contentView" destination="w8Y-jQ-fwY" id="gpj-zx-lLp"/>
                         <outlet property="leadingConstraint" destination="JfO-zl-9zd" id="IUT-VM-Be0"/>
                         <outlet property="paddingView" destination="pei-pB-EfP" id="0gq-Yz-0YR"/>

@@ -9,5 +9,6 @@
 #ifndef Sandvik_365_Sandvik_Bridging_Header_h
 #define Sandvik_365_Sandvik_Bridging_Header_h
 
+#import "ColorCodingLookup.h"
 
 #endif

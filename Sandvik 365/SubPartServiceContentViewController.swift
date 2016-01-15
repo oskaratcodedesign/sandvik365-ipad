@@ -10,7 +10,7 @@ import UIKit
 
 let didTapNotificationKey = "didTapNotificationKey"
 
-class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate {
+class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate, ContactUsViewDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
     var selectedContent: Content!
@@ -21,6 +21,8 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var contactusTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contactUsView: ContactUsView!
     @IBOutlet var paddingView: UIView!
     @IBOutlet var subContentView: UIView!
     @IBOutlet var stripeImageView: UIImageView!
@@ -74,6 +76,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         previousView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
+        self.contactUsView.delegate = self
     }
     
     private func addStripesImage(prevView: UIView) -> UIView {
@@ -88,6 +91,17 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         
         if self.scrollView.contentOffset.y < self.scrollView.bounds.size.height {
             self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
+        }
+    }
+    
+    func showRegionAction() {
+        let regionSelector = RegionSelector(del: self.contactUsView)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if let window = appDelegate.window {
+            let constraints = regionSelector.fillConstraints(window, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
+            regionSelector.translatesAutoresizingMaskIntoConstraints = false
+            window.addSubview(regionSelector)
+            NSLayoutConstraint.activateConstraints(constraints)
         }
     }
     

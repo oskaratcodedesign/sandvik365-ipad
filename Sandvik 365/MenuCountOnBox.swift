@@ -19,7 +19,6 @@ protocol MenuCountOnBoxDelegate {
     @IBOutlet weak var textLabel: UILabel!
     var delegate: MenuCountOnBoxDelegate?
     
-    private var partServiceContent: [PartServiceContent]?
     private var partsAndServices: PartsAndServices?
     private var mainSectiontTile: String?
     private var partService: PartService?
@@ -36,35 +35,49 @@ protocol MenuCountOnBoxDelegate {
     }
     
     func getParts() {
-        if let partServiceContent = JSONManager.getJSONParts()?.partsServicesContent {
-            //filter out countonboxes
-            for pc in partServiceContent  {
-                for ps in pc.partsServices {
-                    if let subPartServices = ps.subPartsServices {
-                        for sp in subPartServices {
-                            let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
-                            if countOnBoxes.isEmpty {
-                                sp.content.contentList = []
+        if let json = JSONManager.getJSONParts() {
+            //find first
+            var count = 0
+            while count < 1000 {
+                let bType = BusinessType.randomBusinessType()
+                let partsAndServices = PartsAndServices(businessType: bType, json: json)
+                
+                for pc in json.partsServicesContent  {
+                    for ps in pc.partsServices {
+                        if partsAndServices.shouldPartServiceBeShown(ps), let subPartServices = ps.subPartsServices?.filter({partsAndServices.shouldSubPartServiceBeShown($0)}) where subPartServices.count > 0 {
+                            for sp in subPartServices {
+                                let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
+                                if let countonBox = countOnBoxes.first {
+                                    if let number = countonBox.midText, let botText = countonBox.bottomText {
+                                        self.numberLabel.text = number
+                                        self.textLabel.text = botText
+                                        self.partsAndServices = partsAndServices
+                                        self.partService = ps
+                                        self.subPartService = sp
+                                        self.mainSectiontTile = pc.title
+                                        print("first countonBox found " + String(count))
+                                        count = Int.max
+                                        return
+                                    }
+                                }
                             }
                         }
-                        ps.subPartsServices = subPartServices.filter({ $0.content.contentList.count > 0})
                     }
                 }
-                pc.partsServices = pc.partsServices.filter({ $0.subPartsServices?.count > 0})
+                count++
             }
-            self.partServiceContent = partServiceContent
         }
         loadNewInfo()
     }
     
     func loadNewInfo() {
-        if var partServicesContent = self.partServiceContent, let json = JSONManager.getJSONParts() {
+        if let json = JSONManager.getJSONParts() {
             var count = 0
             while count < 1000 {
                 //random buisnessType
                 let bType = BusinessType.randomBusinessType()
                 let ps = PartsAndServices(businessType: bType, json: json)
-                let partServiceContent = partServicesContent[Int(arc4random_uniform(UInt32(partServicesContent.count)))]
+                let partServiceContent = json.partsServicesContent[Int(arc4random_uniform(UInt32(json.partsServicesContent.count)))]
                 let partServices = partServiceContent.partsServices.filter({ ps.shouldPartServiceBeShown($0)})
                 if partServices.count > 0 {
                     let rand = arc4random_uniform(UInt32(partServices.count))

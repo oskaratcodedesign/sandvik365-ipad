@@ -20,6 +20,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var viewResultButton: UIButton!
     @IBOutlet weak var pageContentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var introLabel: UILabel!
     
     private var selectionButtons = [RoiSelectionButton]()
     private var pageViewController: UIPageViewController?
@@ -34,6 +35,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(selectedBusinessType.backgroundImageName)
         }
+        let attrString = NSMutableAttributedString(string: "Welcome\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 25.0)!])
+        attrString.appendAttributedString(NSAttributedString(string: "Here you can calculate your potential benefits. Just enter your data on the following pages and we will do the math for you. You can adjust the data by clicking the up and down arrows and navigate through the pages by clicking right and left.", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 25.0)!]))
+        self.introLabel.attributedText = attrString
         setupDependingOnInput()
         loadPageController()
         

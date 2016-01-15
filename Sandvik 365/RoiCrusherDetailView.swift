@@ -11,31 +11,9 @@ import UIKit
 import NibDesignable
 
 class RoiCrusherDetailView: NibDesignable {
-
-    @IBOutlet weak var rampUpLabel: UILabel!
-    @IBOutlet weak var conditionLabel: UILabel!
-    @IBOutlet weak var maintenanceLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
     
     init(frame: CGRect, input: ROICrusherInput) {
         super.init(frame: frame)
-        
-        /*let fmt = NSNumberFormatter()
-        fmt.numberStyle = .DecimalStyle
-        
-        let currentServices = input.services
-        input.services = [.RampUp]
-        let rt = input.total()
-        rampUpLabel.text = "$" + fmt.stringFromNumber(rt)!
-        input.services = [.ConditionInspection]
-        let ct = input.total()
-        conditionLabel.text = "$" + fmt.stringFromNumber(ct)!
-        input.services = [.MaintenancePlanning]
-        let mt = input.total() - ct
-        maintenanceLabel.text = "$" + fmt.stringFromNumber(mt)!
-        input.services = currentServices
-        
-        totalLabel.text = "$" + fmt.stringFromNumber(rt + ct + mt)!*/
     }
 
     @IBAction func closeAction(sender: AnyObject) {
