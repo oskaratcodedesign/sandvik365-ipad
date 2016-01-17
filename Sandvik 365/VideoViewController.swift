@@ -34,7 +34,7 @@ class VideoViewController: UIViewController {
             player.fullscreen = true
             player.controlStyle = MPMovieControlStyle.Fullscreen
             player.movieSourceType = MPMovieSourceType.File
-            player.repeatMode = MPMovieRepeatMode.One
+            player.repeatMode = MPMovieRepeatMode.None
             player.play()
             self.view.addSubview(player.view)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "doneButtonClick:", name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
