@@ -20,7 +20,9 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedBusinessType.backgroundImageName)
         }
-        self.videos = self.selectedBusinessType.videos
+        self.videos = self.selectedBusinessType.videos?.sort({ (v1: Video, v2: Video) -> Bool in
+            v1.title.caseInsensitiveCompare(v2.title) == .OrderedAscending
+        })
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -28,7 +30,7 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.selectedBusinessType.videos?.count ?? 0
+        return self.videos.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
