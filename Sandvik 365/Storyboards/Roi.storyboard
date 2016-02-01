@@ -1539,6 +1539,9 @@ PLANNING SERVICES</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-9k-7lG">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="222"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="222" placeholder="YES" id="gVC-UZ-rcj"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLH-4j-jmT">
                                                 <rect key="frame" x="0.0" y="222" width="195" height="78"/>

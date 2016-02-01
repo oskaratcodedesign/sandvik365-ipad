@@ -44,12 +44,16 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urr-Hh-IDx">
-                    <rect key="frame" x="20" y="25" width="580" height="575"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urr-Hh-IDx">
+                    <rect key="frame" x="20" y="25" width="580" height="15"/>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-ho-DTe">
+                    <rect key="frame" x="0.0" y="40" width="600" height="560"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -57,12 +61,21 @@
                 <constraint firstItem="XDU-wg-19k" firstAttribute="top" secondItem="x6N-SZ-xfH" secondAttribute="top" id="3Ld-Yo-Gyf"/>
                 <constraint firstItem="GKO-HO-gQ3" firstAttribute="leading" secondItem="XDU-wg-19k" secondAttribute="trailing" constant="10" id="3OM-T6-UMG"/>
                 <constraint firstItem="XDU-wg-19k" firstAttribute="leading" secondItem="x6N-SZ-xfH" secondAttribute="leading" id="D0A-sl-E7i"/>
+                <constraint firstAttribute="bottom" secondItem="kAJ-ho-DTe" secondAttribute="bottom" id="Ey7-8s-WqG"/>
                 <constraint firstItem="urr-Hh-IDx" firstAttribute="top" secondItem="GKO-HO-gQ3" secondAttribute="bottom" constant="10" id="FEh-A3-J4k"/>
+                <constraint firstItem="kAJ-ho-DTe" firstAttribute="leading" secondItem="x6N-SZ-xfH" secondAttribute="leading" id="HEY-zn-IWA"/>
+                <constraint firstAttribute="trailing" secondItem="kAJ-ho-DTe" secondAttribute="trailing" id="Vcx-it-WdZ"/>
                 <constraint firstAttribute="trailing" secondItem="GKO-HO-gQ3" secondAttribute="trailing" id="XXW-Y6-RRh"/>
                 <constraint firstAttribute="bottom" secondItem="urr-Hh-IDx" secondAttribute="bottom" id="acT-nq-oxs"/>
                 <constraint firstItem="GKO-HO-gQ3" firstAttribute="top" secondItem="XDU-wg-19k" secondAttribute="top" id="byZ-Az-7yE"/>
+                <constraint firstItem="urr-Hh-IDx" firstAttribute="bottom" secondItem="kAJ-ho-DTe" secondAttribute="top" id="i6U-PA-BpE"/>
                 <constraint firstItem="urr-Hh-IDx" firstAttribute="leading" secondItem="GKO-HO-gQ3" secondAttribute="leading" id="yE2-3f-EY5"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="acT-nq-oxs"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
