@@ -35,6 +35,26 @@ class EquipmentType: TitleAndImage{
 }
 
 class Model: TitleAndImage {
+    var aboveZero: BelowAboveOutPut?
+    var belowZero: BelowAboveOutPut?
+}
+
+class BelowAboveOutPut {
+    var image: NSURL?
+    var quantity: Int?
+    var partNumbers: [String]?
+    var sizes: [String]?
+    var content: Content?
+    
+    init(content: NSDictionary){
+        if let imageurl = FireSuppressionInput.image(content) {
+            self.image = NSURL(string: imageurl)
+        }
+        self.quantity = content.objectForKey("quantity") as? Int
+        self.partNumbers = content.objectForKey("partNumbers") as? [String]
+        self.sizes = content.objectForKey("sizes") as? [String]
+        self.content = Content(content: content)
+    }
 }
 
 class FireSuppressionInput: SelectionInput {
@@ -117,7 +137,7 @@ class FireSuppressionInput: SelectionInput {
     private func parseProductGroup(sections: [NSDictionary]) {
         for section in sections {
             if let title = title(section) {
-                let productGroup = ProductGroup(title: title, image: image(section))
+                let productGroup = ProductGroup(title: title, image: FireSuppressionInput.image(section))
                 if let children = section.valueForKey("children") as? [NSDictionary] {
                     parseEquipmentType(children, productGroup: productGroup)
                 }
@@ -129,7 +149,7 @@ class FireSuppressionInput: SelectionInput {
     private func parseEquipmentType(sections: [NSDictionary], productGroup: ProductGroup) {
         for section in sections {
             if let title = title(section) {
-                let equipmentType = EquipmentType(title: title, image: image(section))
+                let equipmentType = EquipmentType(title: title, image: FireSuppressionInput.image(section))
                 if let children = section.valueForKey("children") as? [NSDictionary] {
                     parseModels(children, equipmentType: equipmentType)
                 }
@@ -141,8 +161,11 @@ class FireSuppressionInput: SelectionInput {
     private func parseModels(sections: [NSDictionary], equipmentType: EquipmentType) {
         for section in sections {
             if let title = title(section) {
-                let model = Model(title: title, image: image(section))
+                let model = Model(title: title, image: FireSuppressionInput.image(section))
                 equipmentType.models.append(model)
+                if let aboveZero = section.valueForKey("aboveZero") as? NSDictionary {
+                    model.aboveZero = BelowAboveOutPut(content: aboveZero)
+                }
             }
         }
     }
@@ -151,7 +174,7 @@ class FireSuppressionInput: SelectionInput {
         return dic.valueForKey("title") as? String
     }
     
-    private func image(dic: NSDictionary) -> String? {
+    static func image(dic: NSDictionary) -> String? {
         return dic.valueForKey("thumbnail") as? String
     }
     

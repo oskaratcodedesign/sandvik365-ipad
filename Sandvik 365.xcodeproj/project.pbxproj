@@ -88,6 +88,9 @@
 		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
+		F7C958FF1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C958FE1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift */; };
+		F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C959011C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift */; };
+		F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C959031C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib */; };
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; };
 		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; };
 		F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */; };
@@ -227,6 +230,9 @@
 		F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
+		F7C958FE1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionResultViewController.swift; sourceTree = "<group>"; };
+		F7C959011C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionKeyFeatureItem.swift; sourceTree = "<group>"; };
+		F7C959031C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireSuppressionKeyFeatureItem.xib; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
 		F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
 		F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillDetailView.swift; sourceTree = "<group>"; };
@@ -567,6 +573,7 @@
 		F7C05FF01BF9D41500E09456 /* Roi */ = {
 			isa = PBXGroup;
 			children = (
+				F7C959001C5F7AC400756CB0 /* FireSuppression */,
 				F7E69A761B7B5B48004FA708 /* RoiInputView.swift */,
 				F7E69A781B7B5B66004FA708 /* RoiInputView.xib */,
 				F7E69A7C1B7DE187004FA708 /* RoiSelectionButton.swift */,
@@ -608,6 +615,15 @@
 			name = Roi;
 			sourceTree = "<group>";
 		};
+		F7C959001C5F7AC400756CB0 /* FireSuppression */ = {
+			isa = PBXGroup;
+			children = (
+				F7C959011C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift */,
+				F7C959031C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib */,
+			);
+			name = FireSuppression;
+			sourceTree = "<group>";
+		};
 		F7EA86C71B849515003E1AA6 /* Roi */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +632,7 @@
 				F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */,
 				F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */,
 				F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */,
+				F7C958FE1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift */,
 			);
 			name = Roi;
 			sourceTree = "<group>";
@@ -730,6 +747,7 @@
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F70867B81BCF854400033AB5 /* sandvik365.json in Resources */,
+				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
@@ -814,6 +832,7 @@
 				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
 				48FDEA991B5F8CEC00C5AFE6 /* ViewController.swift in Sources */,
 				F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */,
+				F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */,
 				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
@@ -863,6 +882,7 @@
 				F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */,
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
 				F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */,
+				F7C958FF1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift in Sources */,
 				F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,
 				F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */,

@@ -219,6 +219,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                     return pageItemController
                 }
             }
+            else if let input = selectedInput as? FireSuppressionInput {
+                let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("FireSuppressionResultViewController") as! FireSuppressionResultViewController
+                pageItemController.selectedInput = input
+                return pageItemController
+            }
         }
         else if itemIndex < titles.count-1 {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
