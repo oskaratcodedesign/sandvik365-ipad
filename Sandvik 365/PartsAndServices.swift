@@ -123,7 +123,7 @@ enum BusinessType: UInt32 {
         case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
         case UndergroundLoadingAndHauling:
-            return JSONManager.getJSONParts()?.fireSuppressionInput
+            return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
         }
     }
     
@@ -160,27 +160,12 @@ enum BusinessType: UInt32 {
     
 }
 
-class JSONParts {
+class PartsAndServicesJSONParts {
     var partsServicesContent: [PartServiceContent] = []
-    var fireSuppressionInput: FireSuppressionInput?
     
     init(json: NSDictionary) {
         //parse out relevant parts:
         parseMainSections(json)
-        if let path = NSBundle.mainBundle().pathForResource("firesuppression", ofType: "json")
-        {
-            if let d = NSData(contentsOfFile: path)
-            {
-                do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                        fireSuppressionInput = FireSuppressionInput(json: json)
-                    }
-                }
-                catch {
-                    print(error)
-                }
-            }
-        }
     }
     
     private func sectionTitle(dic: NSDictionary) -> String? {
@@ -254,9 +239,9 @@ class JSONParts {
 
 class PartsAndServices {
     let businessType: BusinessType
-    let jsonParts: JSONParts
+    let jsonParts: PartsAndServicesJSONParts
     
-    init(businessType: BusinessType, json: JSONParts)
+    init(businessType: BusinessType, json: PartsAndServicesJSONParts)
     {
         self.businessType = businessType
         self.jsonParts = json

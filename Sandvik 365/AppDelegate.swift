@@ -24,10 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         jsonManager.checkforUpdate({ (success, lastModified) -> () in
             print("checkforUpdate. Last modified: %@", lastModified)
         })
+        
         //always read
-        jsonManager.readJSONFromFileAsync { (success) -> () in
+        jsonManager.readJSONFromFileAsync(JSONManager.EndPoint.CONTENT_URL, completion: { (success) -> () in
             print("read json from file. success = %@", success)
-        }
+        })
         
         let image = UIImage(named: "sandvik_small_back_arrow")?.resizableImageWithCapInsets((UIEdgeInsetsMake(0, 24, 0, 0)))
         UIBarButtonItem.appearance().setBackButtonBackgroundImage(image, forState: .Normal, barMetrics: .Default)

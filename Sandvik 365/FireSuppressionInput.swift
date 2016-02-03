@@ -129,7 +129,7 @@ class FireSuppressionInput: SelectionInput {
     
     init(json: NSDictionary) {
         super.init()
-        if let sections = json.valueForKey("data")?.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+        if let sections = json.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
             parseProductGroup(sections)
         }
     }

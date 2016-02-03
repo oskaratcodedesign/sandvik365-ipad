@@ -31,11 +31,11 @@ protocol MenuCountOnBoxDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         getParts()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getParts", name: JSONManager.newDataAvailableKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getParts", name: JSONManager.newDataAvailable, object: nil)
     }
     
     func getParts() {
-        if let json = JSONManager.getJSONParts() {
+        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
             //find first
             var count = 0
             while count < 1000 {
@@ -71,7 +71,7 @@ protocol MenuCountOnBoxDelegate {
     }
     
     func loadNewInfo() {
-        if let json = JSONManager.getJSONParts() {
+        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
             var count = 0
             while count < 1000 {
                 //random buisnessType
