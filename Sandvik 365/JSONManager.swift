@@ -91,22 +91,45 @@ class JSONManager {
             return jsonUrl
         }
         
-        private func saveUpdateAvailable(updateAvailable: Bool) {
+        func cacheFilePath() -> String {
+            let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+            // Create directory if it does not exist
+            do {
+                if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
+                    try NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+                }
+            } catch {
+                print("Failed to create Application Support directory.", error)
+            }
+            
+            return path.stringByAppendingFormat("/%@", self.fileName)
+        }
+        
+        func saveUpdateAvailable(updateAvailable: Bool) {
             NSUserDefaults.standardUserDefaults().setBool(updateAvailable, forKey: self.updateAvailableKey)
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
-        private func isUpdateAvailable() -> Bool {
+        func isUpdateAvailable() -> Bool {
             return NSUserDefaults.standardUserDefaults().boolForKey(self.updateAvailableKey)
         }
 
-        private func saveJsonLastModifiedDateString(lastMotified: String) {
+        func saveJsonLastModifiedDateString(lastMotified: String) {
             NSUserDefaults.standardUserDefaults().setObject(lastMotified, forKey: self.lastModifiedKey)
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
-        private func jsonLastModifiedDateString() -> String? {
+        func jsonLastModifiedDateString() -> String? {
             return NSUserDefaults.standardUserDefaults().stringForKey(self.lastModifiedKey)
+        }
+        
+        func jsonLastModifiedDate() -> NSDate? {
+            if let dateString = self.jsonLastModifiedDateString() {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
+                return dateFormatter.dateFromString(dateString)
+            }
+            return nil
         }
     }
     
@@ -115,15 +138,6 @@ class JSONManager {
             JSONManager().parseJSONFromFileAndSetData(endPoint)
         }
         return endPoint.data
-    }
-    
-    func jsonLastModifiedDate(endPoint: EndPoint) -> NSDate? {
-        if let dateString = endPoint.jsonLastModifiedDateString() {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
-            return dateFormatter.dateFromString(dateString)
-        }
-        return nil
     }
     
     func isUpdateAvailable() -> Bool {
@@ -148,7 +162,7 @@ class JSONManager {
                                     if status == "success" {
                                         if let message = json.objectForKey("message") as? String {
                                             endPoint.saveUpdateAvailable(false)
-                                            print("Received message instead of data: %@", message)
+                                            print("Received message instead of data: %@, %@", message, endPoint.fileName)
                                         } else if (json.objectForKey("data") as? NSDictionary) != nil {
                                             //update available
                                             endPoint.saveUpdateAvailable(true)
@@ -164,7 +178,7 @@ class JSONManager {
                         print(error)
                     }
                 }.main {
-                    completion(success: success, lastModified: self.jsonLastModifiedDate(endPoint))
+                    completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
                 }
             }.resume()
         }
@@ -184,7 +198,7 @@ class JSONManager {
                                     if let status = json.objectForKey("status") as? String {
                                         if status == "success" {
                                             if let message = json.objectForKey("message") as? String {
-                                                print("Received message instead of data: %@", message)
+                                                print("Received message instead of data: %@, %@", message, endPoint.fileName)
                                             } else if let data = json.objectForKey("data") as? NSDictionary {
                                                 self.parseAndHandleJsonAndSetData(data, endpoint: endPoint)
                                                 endPoint.saveUpdateAvailable(false)
@@ -200,7 +214,7 @@ class JSONManager {
                             print(error)
                         }
                     }.main {
-                        completion(success: success, lastModified: self.jsonLastModifiedDate(endPoint))
+                        completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
                     }
                 }.resume()
             }
@@ -218,7 +232,7 @@ class JSONManager {
     
     private func parseJSONFromFileAndSetData(endPoint: EndPoint) -> Bool {
         print("Reading file")
-        if let data = NSKeyedUnarchiver.unarchiveObjectWithFile(self.cacheFilePath(endPoint)) as? NSDictionary {
+        if let data = NSKeyedUnarchiver.unarchiveObjectWithFile(endPoint.cacheFilePath()) as? NSDictionary {
             print("Parsing json" + endPoint.fileName)
             let start = NSDate()
             endPoint.setDataFromJson(data)
@@ -249,7 +263,7 @@ class JSONManager {
             endpoint.saveJsonLastModifiedDateString(lastModified)
         }
         
-        let path = self.cacheFilePath(endpoint)
+        let path = endpoint.cacheFilePath()
         NSKeyedArchiver.archiveRootObject(data, toFile: path)
         
         do {
@@ -306,19 +320,5 @@ class JSONManager {
                 print("Failed to download image: %@", imageUrl)
             }
         }
-    }
-    
-    private func cacheFilePath(endPoint: EndPoint) -> String {
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
-        // Create directory if it does not exist
-        do {
-            if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
-                try NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
-            }
-        } catch {
-            print("Failed to create Application Support directory.", error)
-        }
-        
-        return path.stringByAppendingFormat("/%@", endPoint.fileName)
     }
 }
