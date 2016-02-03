@@ -282,7 +282,7 @@ class JSONManager {
                 }
             }
         }
-        else if let parts = endPointData as? FireSuppressionInput {
+        /* firesuppression images arent used yet else if let parts = endPointData as? FireSuppressionInput {
             if let strUrl = data.objectForKey("baseUrl") as? String, let baseUrl = NSURL(string: strUrl) {
                 let allProductGroups = parts.allProductGroups
                 for productGroup in allProductGroups {
@@ -295,7 +295,7 @@ class JSONManager {
                     }
                 }
             }
-        }
+        }*/
     }
     
     private func downloadImage(baseUrl: NSURL, imageUrl: NSURL?) {
