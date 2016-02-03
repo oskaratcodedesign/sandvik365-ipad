@@ -10,8 +10,8 @@ import Foundation
 
 enum TemperatureType: String {
     //TODO handle farenheit
-    case Above = "Above 0 degrees Celsius"
-    case Below = "Below 0 degrees Celsius"
+    case Above = "Above 0°C"
+    case Below = "Below 0°C"
 }
 
 class TitleAndImage {
@@ -71,7 +71,7 @@ class FireSuppressionInput: SelectionInput {
     }
     
     override func allTitles() -> [String] {
-        return [NSLocalizedString("Product group", comment: ""), NSLocalizedString("Equipment type", comment: ""), NSLocalizedString("Model", comment: ""), NSLocalizedString("Lowest possible operating environment temperature", comment: "")]
+        return [NSLocalizedString("Product group", comment: ""), NSLocalizedString("Equipment type", comment: ""), NSLocalizedString("Model", comment: ""), NSLocalizedString("Lowest temperature", comment: "")]
     }
     
     override func changeInput(atIndex :Int, change : ChangeInput) -> String {
