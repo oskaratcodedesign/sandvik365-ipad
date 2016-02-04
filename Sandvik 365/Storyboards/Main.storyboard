@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5Y-Zb-k8z">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -86,16 +86,16 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-eR-NVw">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
-                                                <rect key="frame" x="80" y="240" width="202" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
+                                                <rect key="frame" x="80" y="240" width="195" height="36"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                                 <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="80" y="276" width="307" height="71"/>
+                                                <rect key="frame" x="80" y="276" width="300" height="71"/>
                                                 <string key="text">PARTS &amp; SERVICE
-YOU CAN COUNT ON.</string>
+YOU CAN COUNT ON</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -192,12 +192,12 @@ YOU CAN COUNT ON.</string>
                                         <rect key="frame" x="0.0" y="500" width="600" height="500"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="75" width="248" height="367"/>
+                                                <rect key="frame" x="100" y="75" width="248" height="78"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="4BX-vE-7mg"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="hkF-BC-mMo"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="sZp-ZA-dkR"/>
+                                                    <constraint firstAttribute="height" constant="78" id="sZp-ZA-dkR"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -206,13 +206,13 @@ YOU CAN COUNT ON.</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDK-5t-wKV">
-                                                <rect key="frame" x="0.0" y="467" width="600" height="33"/>
+                                                <rect key="frame" x="0.0" y="178" width="600" height="322"/>
                                                 <subviews>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
@@ -222,7 +222,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="201" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="201" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
@@ -232,7 +232,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="402" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="402" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
@@ -242,7 +242,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="603" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="603" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
@@ -252,7 +252,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-cD-KjF" userLabel="bulk" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="804" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="804" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="BULK MATERIAL HANDLING"/>
@@ -262,7 +262,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-No-weO" userLabel="conveyor" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="1005" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="1005" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="CONVEYOR COMPONENTS"/>
@@ -272,7 +272,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="1206" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="1206" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
@@ -282,7 +282,7 @@ YOU CAN COUNT ON.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="1407" y="0.0" width="201" height="33"/>
+                                                                <rect key="frame" x="1407" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
