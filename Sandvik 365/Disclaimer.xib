@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -31,8 +31,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mr6-Hs-2Ao">
                     <rect key="frame" x="0.0" y="565" width="95" height="35"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABz-aA-rPL">
-                            <rect key="frame" x="20" y="9" width="62" height="24"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABz-aA-rPL">
+                            <rect key="frame" x="0.0" y="-10" width="100" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="hju-A0-dCO"/>
+                                <constraint firstAttribute="width" constant="100" id="pcv-eY-dDQ"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="10"/>
                             <state key="normal" title="*DISCLAIMER">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,9 +49,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="9rf-za-SR9"/>
-                        <constraint firstAttribute="bottom" secondItem="ABz-aA-rPL" secondAttribute="bottom" constant="2" id="Ey9-dH-3OO"/>
+                        <constraint firstAttribute="bottom" secondItem="ABz-aA-rPL" secondAttribute="bottom" constant="5" id="Ey9-dH-3OO"/>
                         <constraint firstAttribute="width" constant="95" id="MeF-Hk-3ms"/>
-                        <constraint firstItem="ABz-aA-rPL" firstAttribute="leading" secondItem="mr6-Hs-2Ao" secondAttribute="leading" constant="20" id="gp3-Fy-5zu"/>
+                        <constraint firstItem="ABz-aA-rPL" firstAttribute="leading" secondItem="mr6-Hs-2Ao" secondAttribute="leading" id="gp3-Fy-5zu"/>
                         <constraint firstAttribute="height" constant="100" id="ic1-0s-dVc"/>
                         <constraint firstItem="ABz-aA-rPL" firstAttribute="top" secondItem="mr6-Hs-2Ao" secondAttribute="top" constant="10" id="m5K-o2-WQM"/>
                         <constraint firstAttribute="height" constant="35" id="qPS-Oc-wDD"/>
@@ -66,7 +70,11 @@
                     <rect key="frame" x="0.0" y="460" width="350" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imm-iQ-Xny">
-                            <rect key="frame" x="20" y="72" width="30" height="58"/>
+                            <rect key="frame" x="5" y="80" width="70" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="peK-Sg-yqY"/>
+                                <constraint firstAttribute="height" constant="60" id="v66-kZ-mXW"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="40"/>
                             <state key="normal" title="×">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,16 +84,16 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="*" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ug-1v-b8D">
-                            <rect key="frame" x="95" y="-77" width="6" height="17"/>
+                            <rect key="frame" x="95" y="-67" width="6" height="17"/>
                             <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POf-18-MdN">
-                            <rect key="frame" x="101" y="-77" width="199" height="202"/>
+                            <rect key="frame" x="101" y="-67" width="199" height="202"/>
                             <string key="text">Test results are to be considered as results reached under certain and controlled test conditions. These test results should not be treated as specifications and Sandvik does not guarantee, warrant or represent the outcome of test results in any or all circumstances.</string>
                             <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -97,11 +105,11 @@
                         <constraint firstItem="POf-18-MdN" firstAttribute="leading" secondItem="9ug-1v-b8D" secondAttribute="trailing" id="Sf2-47-HPS"/>
                         <constraint firstAttribute="trailing" secondItem="POf-18-MdN" secondAttribute="trailing" constant="50" id="TLk-ZQ-GzD"/>
                         <constraint firstAttribute="trailing" secondItem="9ug-1v-b8D" secondAttribute="trailing" constant="20" id="TbU-I3-DR6"/>
-                        <constraint firstAttribute="bottom" secondItem="imm-iQ-Xny" secondAttribute="bottom" constant="10" id="bb1-uf-D8C"/>
+                        <constraint firstAttribute="bottom" secondItem="imm-iQ-Xny" secondAttribute="bottom" id="bb1-uf-D8C"/>
                         <constraint firstItem="9ug-1v-b8D" firstAttribute="baseline" secondItem="imm-iQ-Xny" secondAttribute="baseline" id="ekz-4z-mgx"/>
                         <constraint firstItem="POf-18-MdN" firstAttribute="baseline" secondItem="imm-iQ-Xny" secondAttribute="baseline" id="iId-IE-2aM"/>
                         <constraint firstItem="POf-18-MdN" firstAttribute="top" secondItem="9ug-1v-b8D" secondAttribute="top" id="mFS-sw-Yuv"/>
-                        <constraint firstItem="imm-iQ-Xny" firstAttribute="leading" secondItem="GDc-cz-qE3" secondAttribute="leading" constant="20" id="mU2-Ae-lWO"/>
+                        <constraint firstItem="imm-iQ-Xny" firstAttribute="leading" secondItem="GDc-cz-qE3" secondAttribute="leading" constant="5" id="mU2-Ae-lWO"/>
                         <constraint firstAttribute="width" constant="487" id="pKc-eV-UHs"/>
                         <constraint firstAttribute="height" constant="140" id="wea-AN-m6y"/>
                     </constraints>
