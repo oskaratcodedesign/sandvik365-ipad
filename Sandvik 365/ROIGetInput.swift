@@ -43,11 +43,11 @@ enum ROIGetInputValue {
         case Loaders:
             return NSLocalizedString("Number of loaders", comment: "")
         case LipsUsed:
-            return NSLocalizedString("Number of lips used/worn out during 4000h", comment: "")
+            return NSLocalizedString("Number of lips used/worn out during 4000 hours", comment: "")
         case LipReplacementCost:
             return NSLocalizedString("Lip replacement cost/change", comment: "")
         case ServiceCost:
-            return NSLocalizedString("Service cost/2000h", comment: "")
+            return NSLocalizedString("Service cost/2000 hours", comment: "")
         }
     }
     
