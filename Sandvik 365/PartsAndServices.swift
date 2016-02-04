@@ -141,7 +141,7 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return "GET calculator"
+            return "Ground Engaging Tools (GET) calculator"
         }
     }
     
