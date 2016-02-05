@@ -242,8 +242,18 @@ YOU CAN COUNT ON</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="603" y="0.0" width="201" height="322"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="804" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
@@ -253,7 +263,7 @@ YOU CAN COUNT ON</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="804" y="0.0" width="201" height="322"/>
+                                                                <rect key="frame" x="1005" y="0.0" width="201" height="322"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
@@ -262,25 +272,17 @@ YOU CAN COUNT ON</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="1005" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="3"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="2n6-qv-Za8" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="00h-fc-bDi"/>
+                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="leading" secondItem="jto-Cr-aoV" secondAttribute="trailing" id="1Pp-wg-sU5"/>
                                                             <constraint firstItem="jto-Cr-aoV" firstAttribute="leading" secondItem="eGP-oU-ZVq" secondAttribute="trailing" id="2Wq-GN-y2M"/>
                                                             <constraint firstItem="Efv-Tf-KN9" firstAttribute="leading" secondItem="p2M-OL-gMy" secondAttribute="leading" id="4Ne-mH-NCU"/>
                                                             <constraint firstItem="goe-Xq-a6b" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="8dB-7g-kOL"/>
                                                             <constraint firstItem="jto-Cr-aoV" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="9Ft-9p-Lr2"/>
                                                             <constraint firstItem="eGP-oU-ZVq" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="DAV-ZO-BR4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Hcf-Nq-nhu" secondAttribute="trailing" id="Fhg-ZB-pH1"/>
                                                             <constraint firstItem="Efv-Tf-KN9" firstAttribute="top" secondItem="p2M-OL-gMy" secondAttribute="top" id="Fpm-yF-xxR"/>
                                                             <constraint firstItem="Hcf-Nq-nhu" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="Hde-hV-GuP"/>
                                                             <constraint firstItem="eGP-oU-ZVq" firstAttribute="leading" secondItem="Efv-Tf-KN9" secondAttribute="trailing" id="Hg0-D8-QaN"/>
@@ -297,9 +299,17 @@ YOU CAN COUNT ON</string>
                                                             <constraint firstItem="Hcf-Nq-nhu" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="mok-dh-gA7"/>
                                                             <constraint firstItem="2n6-qv-Za8" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="qGc-n0-LvK"/>
                                                             <constraint firstItem="jto-Cr-aoV" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="qrb-LB-F2h"/>
+                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="trailing" secondItem="goe-Xq-a6b" secondAttribute="leading" id="rnn-t9-Fw4"/>
                                                             <constraint firstItem="goe-Xq-a6b" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="sDG-0E-Kup"/>
                                                             <constraint firstItem="jto-Cr-aoV" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="spl-sM-HTd"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="LR3-ur-tg0"/>
+                                                                <exclude reference="XzJ-Co-5PU"/>
+                                                                <exclude reference="aAd-8B-yJJ"/>
+                                                            </mask>
+                                                        </variation>
                                                         <connections>
                                                             <outlet property="delegate" destination="vq2-UY-Bko" id="jdV-1C-xmV"/>
                                                         </connections>
