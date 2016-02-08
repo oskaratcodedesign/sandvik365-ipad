@@ -42,7 +42,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         videoButton.delegate = self
         progressView.delegate = self
         menuCountOnBox.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailableKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -155,7 +155,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         if segue.identifier == "PartsAndServicesViewController" {
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let view = sender as? MainMenuItemView {
-                    if let json = JSONManager.getJSONParts() {
+                    if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
                         MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: view.businessType, json: json), navTitle: view.label.text)
                     }
                 }

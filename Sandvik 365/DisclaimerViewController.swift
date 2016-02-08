@@ -18,7 +18,7 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
         
         disclaimerTextView.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue]
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailableKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
         
         self.updateButton.layer.borderWidth = 2
         self.updateButton.titleLabel!.numberOfLines = 0

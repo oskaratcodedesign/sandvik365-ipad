@@ -9,8 +9,8 @@
 import Foundation
 
 enum BusinessType: UInt32 {
-    case BulkMaterialHandling
-    case ConveyorComponents
+    //case BulkMaterialHandling
+    //case ConveyorComponents
     case CrusherAndScreening
     case ExplorationDrillRigs
     case MechanicalCutting
@@ -34,7 +34,7 @@ enum BusinessType: UInt32 {
     
     var videos: [Video]? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
             return [Video(videoName: "Bucket Shroud Wear Movie Release 01_v1", ext: "mp4", title: "Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
@@ -47,7 +47,7 @@ enum BusinessType: UInt32 {
     
     var mediaCenterTitle: String? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
             return "Media center"
@@ -56,10 +56,10 @@ enum BusinessType: UInt32 {
     
     var backgroundImageName :String {
         switch self {
-        case BulkMaterialHandling:
+        /*case BulkMaterialHandling:
             return "bulk material handling"
         case ConveyorComponents:
-            return "conveyors"
+            return "conveyors"*/
         case CrusherAndScreening:
             return "crushing and screening"
         case ExplorationDrillRigs:
@@ -79,10 +79,10 @@ enum BusinessType: UInt32 {
     
     var tagUUID: String? {
         switch self {
-        case BulkMaterialHandling:
+        /*case BulkMaterialHandling:
             return nil
         case ConveyorComponents:
-            return nil
+            return nil*/
         case CrusherAndScreening:
             return "bda647ec-7ef1-491a-9adc-a915ec5bb745"
         case ExplorationDrillRigs:
@@ -94,7 +94,7 @@ enum BusinessType: UInt32 {
         case SurfaceDrilling:
             return "c19dea00-5941-4fce-8a06-add969f41a76"
         case UndergroundDrillingAndBolting:
-            return "1cecb185-c7ab-4e69-a81f-bdea800ba1f1"
+            return "7b0828b7-0755-4e5c-9c60-cd748c77eec1"
         case UndergroundLoadingAndHauling:
             return "a850e245-fb6d-4232-a855-e572094c7ae9"
         }
@@ -102,7 +102,7 @@ enum BusinessType: UInt32 {
     
     var roiCrusherCalculatorTitle: String? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
             return nil
         case CrusherAndScreening:
             return "Lifecycle program calculator"
@@ -111,7 +111,7 @@ enum BusinessType: UInt32 {
     
     var roiCrusherInput: ROICrusherInput? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
             return nil
         case CrusherAndScreening:
             return ROICrusherInput()
@@ -120,16 +120,16 @@ enum BusinessType: UInt32 {
     
     var fireSuppressionInput: FireSuppressionInput? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
         case UndergroundLoadingAndHauling:
-            return JSONManager.getJSONParts()?.fireSuppressionInput
+            return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
         }
     }
     
     var fireSuppressionTitle: String? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
             return nil
         case UndergroundLoadingAndHauling:
             return "Fire suppression tool"
@@ -138,16 +138,16 @@ enum BusinessType: UInt32 {
     
     var roiGetCalculatorTitle: String? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return "GET calculator"
+            return "Ground Engaging Tools (GET) calculator"
         }
     }
     
     var roiGetInput: ROIGetInput? {
         switch self {
-        case BulkMaterialHandling, ConveyorComponents, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
             return ROIGetInput()
@@ -160,27 +160,12 @@ enum BusinessType: UInt32 {
     
 }
 
-class JSONParts {
+class PartsAndServicesJSONParts {
     var partsServicesContent: [PartServiceContent] = []
-    var fireSuppressionInput: FireSuppressionInput?
     
     init(json: NSDictionary) {
         //parse out relevant parts:
         parseMainSections(json)
-        if let path = NSBundle.mainBundle().pathForResource("firesuppression", ofType: "json")
-        {
-            if let d = NSData(contentsOfFile: path)
-            {
-                do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                        fireSuppressionInput = FireSuppressionInput(json: json)
-                    }
-                }
-                catch {
-                    print(error)
-                }
-            }
-        }
     }
     
     private func sectionTitle(dic: NSDictionary) -> String? {
@@ -254,9 +239,9 @@ class JSONParts {
 
 class PartsAndServices {
     let businessType: BusinessType
-    let jsonParts: JSONParts
+    let jsonParts: PartsAndServicesJSONParts
     
-    init(businessType: BusinessType, json: JSONParts)
+    init(businessType: BusinessType, json: PartsAndServicesJSONParts)
     {
         self.businessType = businessType
         self.jsonParts = json
