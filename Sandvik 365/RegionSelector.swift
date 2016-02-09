@@ -59,4 +59,26 @@ class RegionSelector : NibDesignable {
         self.delegate?.didSelectRegion(self.selectedRegionData)
     }
     
+    @IBAction func phoneAction(sender: AnyObject) {
+        if var phone = self.selectedRegionData?.contactCountry?.phone {
+            phone = phone.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "0123456789-+()").invertedSet).joinWithSeparator("")
+            if let url = NSURL(string: "tel://\(phone)") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
+    @IBAction func emailAction(sender: AnyObject) {
+        if let email = self.selectedRegionData?.contactCountry?.email {
+            if let url = NSURL(string: "mailto://\(email)") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
+    @IBAction func visitAction(sender: AnyObject) {
+        if let url = self.selectedRegionData?.contactCountry?.url {
+            if let url = NSURL(string: url) {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
 }

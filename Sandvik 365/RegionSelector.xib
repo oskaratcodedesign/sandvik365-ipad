@@ -88,6 +88,9 @@ to contact:</string>
                             <state key="normal" title="-" image="S365-app-icon-phone-white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="phoneAction:" destination="-1" eventType="touchUpInside" id="bp0-Ab-cO2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNM-Dh-JDk">
                             <rect key="frame" x="83" y="474" width="186" height="40"/>
@@ -105,6 +108,9 @@ to contact:</string>
                                     <integer key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="emailAction:" destination="-1" eventType="touchUpInside" id="Hx8-SN-DhB"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-su-19T">
                             <rect key="frame" x="279" y="474" width="186" height="40"/>
@@ -125,6 +131,9 @@ to contact:</string>
                                     <integer key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="visitAction:" destination="-1" eventType="touchUpInside" id="yok-x5-fpC"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
