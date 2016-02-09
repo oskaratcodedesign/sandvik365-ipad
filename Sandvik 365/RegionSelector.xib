@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -20,6 +20,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegionSelector" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
                 <outlet property="mapView" destination="SPU-Hv-fTR" id="WBp-0K-IOk"/>
+                <outlet property="phoneButton" destination="IKM-OA-Pj3" id="9BB-MT-JJj"/>
+                <outlet property="regionLabel" destination="ten-by-cBX" id="Yg5-Nn-yK2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -59,23 +61,36 @@ to contact:</string>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK SERVICE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ten-by-cBX">
-                            <rect key="frame" x="10" y="437" width="131" height="18"/>
+                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-map-none-white" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-Hv-fTR">
+                            <rect key="frame" x="20" y="89" width="768" height="368"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="768" id="FMM-Hi-lxD"/>
+                                <constraint firstAttribute="height" constant="368" id="zH2-ox-IaS"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="tay-92-mT3" appends="YES" id="HKg-Tk-mPI"/>
+                            </connections>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ten-by-cBX">
+                            <rect key="frame" x="10" y="437" width="220" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="tgM-gA-Yl6"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKM-OA-Pj3">
-                            <rect key="frame" x="10" y="485" width="173" height="18"/>
+                            <rect key="frame" x="10" y="485" width="33" height="18"/>
                             <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
-                            <state key="normal" title="+44 0302012010243" image="S365-app-icon-phone-white">
+                            <state key="normal" title="-" image="S365-app-icon-phone-white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNM-Dh-JDk">
-                            <rect key="frame" x="223" y="474" width="186" height="40"/>
+                            <rect key="frame" x="83" y="474" width="186" height="40"/>
                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
@@ -92,7 +107,7 @@ to contact:</string>
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-su-19T">
-                            <rect key="frame" x="419" y="474" width="186" height="40"/>
+                            <rect key="frame" x="279" y="474" width="186" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="MmF-xe-nwd"/>
                             </constraints>
@@ -111,16 +126,6 @@ to contact:</string>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-map-none-white" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-Hv-fTR">
-                            <rect key="frame" x="20" y="89" width="768" height="368"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="768" id="FMM-Hi-lxD"/>
-                                <constraint firstAttribute="height" constant="368" id="zH2-ox-IaS"/>
-                            </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="tay-92-mT3" appends="YES" id="HKg-Tk-mPI"/>
-                            </connections>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -150,11 +155,13 @@ to contact:</string>
                         <constraint firstItem="rNM-Dh-JDk" firstAttribute="height" secondItem="uWO-su-19T" secondAttribute="height" id="kBS-Va-B6H"/>
                         <constraint firstItem="uWO-su-19T" firstAttribute="leading" secondItem="IKM-OA-Pj3" secondAttribute="leading" id="lBr-rd-LCc"/>
                         <constraint firstItem="SPU-Hv-fTR" firstAttribute="leading" secondItem="qid-n9-fnH" secondAttribute="leading" constant="20" id="mhN-EW-oVO"/>
+                        <constraint firstItem="IKM-OA-Pj3" firstAttribute="top" secondItem="SPU-Hv-fTR" secondAttribute="bottom" constant="28" id="nrc-2p-rEG"/>
                         <constraint firstItem="v0q-ca-nhz" firstAttribute="bottom" secondItem="ten-by-cBX" secondAttribute="top" constant="5" id="yZ0-Mo-Klx"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="KML-XB-3q1"/>
+                            <exclude reference="HJe-Ln-Pyo"/>
                             <exclude reference="yZ0-Mo-Klx"/>
                             <exclude reference="4Uf-T5-0Wp"/>
                             <exclude reference="C6t-X3-cdI"/>

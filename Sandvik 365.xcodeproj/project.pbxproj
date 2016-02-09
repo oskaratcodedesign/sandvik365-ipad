@@ -65,6 +65,7 @@
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
+		F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */ = {isa = PBXBuildFile; fileRef = F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */; };
 		F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7620B821C48FBB700B0A6D8 /* VideoButton.swift */; };
 		F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7620B841C48FBC800B0A6D8 /* VideoButton.xib */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
@@ -204,6 +205,7 @@
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
+		F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegionContactsHandler.json; sourceTree = "<group>"; };
 		F7620B821C48FBB700B0A6D8 /* VideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
 		F7620B841C48FBC800B0A6D8 /* VideoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoButton.xib; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
+				F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
+				F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,

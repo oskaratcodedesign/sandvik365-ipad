@@ -1,0 +1,31 @@
+{
+	"status": "success",
+	"data": {
+		"lastModified": "2016-01-28T08:24:42.0000000Z",
+		"correlationId": "d5295d9d-05d8-5011-9a8b-d2436ee72cf0",
+		"clientName": "Service365MobileClient",
+		"regionContacts": {
+			"Africa": {
+				"name": "Sandvik Mining",
+				"phone": "+258 843 355 556",
+				"email": "",
+				"countryKey": "MZ",
+				"countryName": "Mozambique",
+				"url": ""
+			},
+			"Asia": null,
+			"Australia/Oceania": null,
+			"Europe": {
+				"name": "Sandvik Mining and Construction Sverige AB",
+				"phone": "+46 (0)26-26 00 00",
+				"email": "",
+				"countryKey": "SE",
+				"countryName": "Sweden",
+				"url": ""
+			},
+			"Europe;Asia": null,
+			"North America": null,
+			"South America": null
+		}
+	}
+}

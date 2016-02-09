@@ -9,12 +9,12 @@
 import Foundation
 
 enum Region:String {
-    case EUROPE = "EU"
-    case NORTH_AMERICA = "NA"
-    case SOUTH_AMERICA = "SA"
-    case ASIA = "AS"
-    case AFRICA = "AF"
-    case OCEANIA = "OC"
+    case EUROPE = "Europe"
+    case NORTH_AMERICA = "North America"
+    case SOUTH_AMERICA = "South America"
+    case ASIA = "Asia"
+    case AFRICA = "Africa"
+    case OCEANIA = "Australia/Oceania"
     
     func setSelectedRegion() {
         NSUserDefaults.standardUserDefaults().setObject(self.rawValue, forKey: "selectedRegion")
@@ -81,5 +81,46 @@ enum Region:String {
         }
     }
     
+    var regionData: RegionData? {
+        if let data = JSONManager.EndPoint.CONTACT_US.data as? NSDictionary{
+            if let data = data.objectForKey("data") as? NSDictionary {
+                if let regions = data.objectForKey("regionContacts") as? NSDictionary {
+                    if let region = regions.objectForKey(self.rawValue) as? NSDictionary {
+                        let regionData = RegionData(json: region)
+                        return regionData
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
     static let allRegions = [EUROPE, NORTH_AMERICA, SOUTH_AMERICA, ASIA, AFRICA, OCEANIA]
+}
+
+class RegionData {
+    let contactCountry: Country?
+    
+    init(json: NSDictionary){
+        self.contactCountry = Country(json: json)
+    }
+    
+    class Country {
+        let name: String?
+        let phone: String?
+        let email: String?
+        let countryKey: String?
+        let countryName: String?
+        let url: String?
+        
+        init(json: NSDictionary){
+            self.name = json.objectForKey("name") as? String
+            self.phone = json.objectForKey("phone") as? String
+            self.email = json.objectForKey("email") as? String
+            self.countryKey = json.objectForKey("countryKey") as? String
+            self.countryName = json.objectForKey("countryName") as? String
+            self.url = json.objectForKey("url") as? String
+        }
+    }
+    
 }
