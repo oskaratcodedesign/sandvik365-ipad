@@ -10,7 +10,7 @@ import Foundation
 import NibDesignable
 
 protocol ContactUsViewDelegate {
-    func showRegionAction(regionData: RegionData?)
+    func showRegionAction(allRegions: [RegionData])
 }
 
 class ContactUsView : NibDesignable, RegionSelectorDelegate {
@@ -19,11 +19,13 @@ class ContactUsView : NibDesignable, RegionSelectorDelegate {
     @IBOutlet weak var phoneButton: UIButton!
     
     var delegate: ContactUsViewDelegate?
+    private var allRegions: [RegionData]!
     private var selectedRegionData: RegionData?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.didSelectRegion(nil)
+        self.allRegions = Region.getAllRegionsWithData()
+        self.didSelectRegion()
     }
     
     @IBAction func phoneAction(sender: AnyObject) {
@@ -49,13 +51,13 @@ class ContactUsView : NibDesignable, RegionSelectorDelegate {
         }
     }
     @IBAction func showRegionAction(sender: AnyObject) {
-        self.delegate?.showRegionAction(self.selectedRegionData)
+        self.delegate?.showRegionAction(self.allRegions)
     }
     
-    func didSelectRegion(regionData: RegionData?) {
-        let region = Region.selectedRegion
+    func didSelectRegion() {
+        let region = Region.selectedRegion(self.allRegions)
         self.mapImageView.image = region.smallMap
-        if let regionData = regionData != nil ? regionData : region.regionData {
+        if let regionData = region.getRegionData(self.allRegions) {
             self.regionLabel.text = regionData.contactCountry?.name
             self.phoneButton.setTitle(regionData.contactCountry?.phone, forState: .Normal)
             self.selectedRegionData = regionData

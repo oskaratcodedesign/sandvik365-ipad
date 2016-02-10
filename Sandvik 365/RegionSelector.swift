@@ -10,7 +10,7 @@ import Foundation
 import NibDesignable
 
 protocol RegionSelectorDelegate {
-    func didSelectRegion(regionData: RegionData?)
+    func didSelectRegion()
 }
 
 class RegionSelector : NibDesignable {
@@ -20,22 +20,24 @@ class RegionSelector : NibDesignable {
     var colorCodingLookUp: ColorCodingLookup!
     var delegate: RegionSelectorDelegate?
     private var selectedRegionData: RegionData?
+    private var allRegions: [RegionData]!
     
-    init(del: RegionSelectorDelegate, regionData: RegionData?){
+    init(del: RegionSelectorDelegate, allRegions: [RegionData]){
         super.init(frame: CGRectZero)
         self.colorCodingLookUp = ColorCodingLookup(imageName: "world-map-colors")
         self.delegate = del
-        setRegionData(regionData)
+        self.allRegions = allRegions
+        setRegionData()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setRegionData(regionData: RegionData?) {
-        let region = Region.selectedRegion
+    func setRegionData() {
+        let region = Region.selectedRegion(self.allRegions)
         self.mapView.image = region.bigMap
-        if let regionData = regionData != nil ? regionData : region.regionData {
+        if let regionData = region.getRegionData(self.allRegions) {
             self.regionLabel.text = regionData.contactCountry?.name
             self.phoneButton.setTitle(regionData.contactCountry?.phone, forState: .Normal)
             self.selectedRegionData = regionData
@@ -49,14 +51,14 @@ class RegionSelector : NibDesignable {
             if let region = Region.allRegions.filter({ color.isEqual($0.color) }).first {
                 self.mapView.image = region.bigMap
                 region.setSelectedRegion()
-                setRegionData(region.regionData)
+                setRegionData()
             }
         }
         
     }
     @IBAction func closeAction(sender: AnyObject) {
         self.removeFromSuperview()
-        self.delegate?.didSelectRegion(self.selectedRegionData)
+        self.delegate?.didSelectRegion()
     }
     
     @IBAction func phoneAction(sender: AnyObject) {

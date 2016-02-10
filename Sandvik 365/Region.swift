@@ -16,20 +16,6 @@ enum Region:String {
     case AFRICA = "Africa"
     case OCEANIA = "Australia/Oceania"
     
-    func setSelectedRegion() {
-        NSUserDefaults.standardUserDefaults().setObject(self.rawValue, forKey: "selectedRegion")
-        NSUserDefaults.standardUserDefaults().synchronize()
-    }
-    
-    static var selectedRegion: Region {
-        if let key = NSUserDefaults.standardUserDefaults().objectForKey("selectedRegion") as? String {
-            if let region = Region(rawValue: key) {
-                return region
-            }
-        }
-        return EUROPE
-    }
-    
     var color: UIColor! {
         switch self {
         case EUROPE:
@@ -81,28 +67,62 @@ enum Region:String {
         }
     }
     
-    var regionData: RegionData? {
+    func getRegionData(allRegions: [RegionData]) -> RegionData? {
+        if let index = allRegions.indexOf({ $0.region == self}) {
+            return allRegions[index]
+        }
+        return nil
+    }
+    
+    
+    func setSelectedRegion() {
+        NSUserDefaults.standardUserDefaults().setObject(self.rawValue, forKey: "selectedRegion")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    static func selectedRegion(allRegions: [RegionData]) -> Region {
+        if let key = NSUserDefaults.standardUserDefaults().objectForKey("selectedRegion") as? String {
+            if let region = Region(rawValue: key) {
+                return region
+            }
+        }
+        else {
+            
+        }
+        return EUROPE
+    }
+    
+    static func getAllRegionsWithData() -> [RegionData] {
+        var regionsData: [RegionData] = []
         if let data = JSONManager.EndPoint.CONTACT_US.data as? NSDictionary{
             if let data = data.objectForKey("data") as? NSDictionary {
                 if let regions = data.objectForKey("regionContacts") as? NSDictionary {
-                    if let region = regions.objectForKey(self.rawValue) as? NSDictionary {
-                        let regionData = RegionData(json: region)
-                        return regionData
+                    for region in allRegions {
+                        if let json = regions.objectForKey(region.rawValue) as? NSDictionary {
+                            let regionData = RegionData(region: region, json: json)
+                            regionsData.append(regionData)
+                        }
                     }
                 }
             }
         }
-        return nil
+        return regionsData
     }
     
     static let allRegions = [EUROPE, NORTH_AMERICA, SOUTH_AMERICA, ASIA, AFRICA, OCEANIA]
 }
 
 class RegionData {
-    let contactCountry: Country?
+    let region: Region
+    var contactCountry: Country?
+    let countries: [String: String]?
     
-    init(json: NSDictionary){
-        self.contactCountry = Country(json: json)
+    init(region: Region, json: NSDictionary){
+        self.region = region
+        if let contact = json.objectForKey("contact") as? NSDictionary {
+            self.contactCountry = Country(json: contact)
+        }
+        self.countries = json.objectForKey("countries") as? Dictionary
     }
     
     class Country {
