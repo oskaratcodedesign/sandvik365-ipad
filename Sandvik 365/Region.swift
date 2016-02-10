@@ -87,6 +87,13 @@ enum Region:String {
             }
         }
         else {
+            if let ca = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String {
+                for region in allRegions {
+                    if ((region.countries?.indexOf({ $0.0.caseInsensitiveCompare(ca) == .OrderedSame})) != nil) {
+                        return region.region
+                    }
+                }
+            }
             
         }
         return EUROPE
