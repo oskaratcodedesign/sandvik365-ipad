@@ -69,6 +69,10 @@
 		F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7620B821C48FBB700B0A6D8 /* VideoButton.swift */; };
 		F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7620B841C48FBC800B0A6D8 /* VideoButton.xib */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
+		F77D5E621C6CD70C002A5867 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */; };
+		F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */; };
+		F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77D5E651C710359002A5867 /* Tutorial.storyboard */; };
+		F77D5E691C710AE3002A5867 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */; };
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
@@ -209,6 +213,10 @@
 		F7620B821C48FBB700B0A6D8 /* VideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
 		F7620B841C48FBC800B0A6D8 /* VideoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoButton.xib; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
+		F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tutorial.xcassets; sourceTree = "<group>"; };
+		F77D5E651C710359002A5867 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -279,6 +287,7 @@
 		486F88781B72383C0084211F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F77D5E671C710AC2002A5867 /* Tutorial */,
 				F73E9B2F1C43E42600742EBD /* MediaCenter */,
 				F70867BB1BD0F9B500033AB5 /* PartsAndServices */,
 				F7EA86C71B849515003E1AA6 /* Roi */,
@@ -336,6 +345,7 @@
 				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
 				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
 				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
+				F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
 				48FCED4C1B74AC47002D45A0 /* Sandvik_365-Bridging-Header.h */,
 			);
@@ -465,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
+				F77D5E651C710359002A5867 /* Tutorial.storyboard */,
 				F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
@@ -529,6 +540,15 @@
 				F792035E1C46309B00CF4E3F /* RegionSelector.swift */,
 			);
 			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		F77D5E671C710AC2002A5867 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */,
+				F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */,
+			);
+			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		F79203601C4667A500CF4E3F /* Util */ = {
@@ -752,7 +772,9 @@
 				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
+				F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */,
 				F73E9B3F1C44F8AA00742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 in Resources */,
+				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 				F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */,
@@ -831,6 +853,7 @@
 				F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */,
 				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
+				F77D5E621C6CD70C002A5867 /* TutorialViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
@@ -858,6 +881,7 @@
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
+				F77D5E691C710AE3002A5867 /* TutorialContentViewController.swift in Sources */,
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */,
 				F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */,

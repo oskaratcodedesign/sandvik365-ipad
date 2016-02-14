@@ -139,16 +139,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         addChildViewController(pageViewController!)
         pageContentView.addSubview(pageViewController!.view)
         pageViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateConstraints(fillConstraints(pageViewController!.view, toView: pageContentView))
+        NSLayoutConstraint.activateConstraints(pageViewController!.view.fillConstraints(pageContentView))
         pageViewController!.didMoveToParentViewController(self)
-    }
-    
-    private func fillConstraints(fromView: UIView, toView: UIView) -> [NSLayoutConstraint] {
-        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let leadingConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        return [topConstraint, bottomConstraint, trailConstraint, leadingConstraint]
     }
     
     private func showSelectedInput(itemIndex: Int) {

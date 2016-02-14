@@ -305,9 +305,9 @@ YOU CAN COUNT ON</string>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
-                                                                <exclude reference="LR3-ur-tg0"/>
                                                                 <exclude reference="XzJ-Co-5PU"/>
                                                                 <exclude reference="aAd-8B-yJJ"/>
+                                                                <exclude reference="LR3-ur-tg0"/>
                                                             </mask>
                                                         </variation>
                                                         <connections>
@@ -528,10 +528,19 @@ UPDATE NOW</string>
                                             <action selector="updateAction:" destination="jzx-rd-u6m" eventType="touchUpInside" id="9HU-cR-hTS"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SU-1n-Jsp">
+                                        <rect key="frame" x="459" y="1056" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="89S-xf-ced" kind="show" id="nKi-sj-w4z"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="100" id="7Xb-SU-Bee"/>
+                                    <constraint firstItem="9SU-1n-Jsp" firstAttribute="leading" secondItem="Nii-aO-F8M" secondAttribute="trailing" constant="118" id="9vW-gU-czp"/>
+                                    <constraint firstAttribute="bottom" secondItem="9SU-1n-Jsp" secondAttribute="bottom" constant="114" id="QNG-VZ-pHj"/>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="top" secondItem="lgQ-XA-xfb" secondAttribute="top" constant="92" id="hEw-7w-Xns"/>
                                     <constraint firstAttribute="trailing" secondItem="0IX-WF-CXB" secondAttribute="trailing" constant="300" id="iSC-B5-I7F"/>
                                     <constraint firstItem="Nii-aO-F8M" firstAttribute="top" secondItem="0IX-WF-CXB" secondAttribute="bottom" constant="50" id="kIR-RL-y0N"/>
@@ -594,6 +603,14 @@ UPDATE NOW</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDa-jY-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1919" y="290"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="1LX-Wf-Rut">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tutorial" id="89S-xf-ced" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gs-on-dms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073" y="1509"/>
         </scene>
     </scenes>
     <resources>
