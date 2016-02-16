@@ -31,7 +31,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         createPageViewController()
-        setupPageControl()
         self.pageControl.numberOfPages = imageNames.count
         self.view.bringSubviewToFront(self.pageControl)
         self.view.bringSubviewToFront(self.closeButton)
@@ -65,13 +64,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         addChildViewController(pageViewController!)
         self.view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
-    }
-    
-    private func setupPageControl() {
-        let appearance = UIPageControl.appearance()
-        appearance.pageIndicatorTintColor = UIColor.grayColor()
-        appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
-        appearance.backgroundColor = UIColor.clearColor()
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

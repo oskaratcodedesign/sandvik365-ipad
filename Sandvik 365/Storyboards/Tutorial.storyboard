@@ -40,12 +40,14 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-bs-k6c">
-                                <rect key="frame" x="297" y="1143" width="7" height="37"/>
+                                <rect key="frame" x="297" y="1153" width="7" height="37"/>
+                                <color key="pageIndicatorTintColor" red="1" green="1" blue="1" alpha="0.24925570101351349" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mQP-FR-unM" firstAttribute="top" secondItem="n4n-bs-k6c" secondAttribute="bottom" constant="20" id="Fci-jY-c7G"/>
+                            <constraint firstItem="mQP-FR-unM" firstAttribute="top" secondItem="n4n-bs-k6c" secondAttribute="bottom" constant="10" id="Fci-jY-c7G"/>
                             <constraint firstAttribute="trailing" secondItem="ZpI-F3-a24" secondAttribute="trailing" constant="20" id="Fr1-dq-HkD"/>
                             <constraint firstItem="n4n-bs-k6c" firstAttribute="centerX" secondItem="e7D-lt-q0i" secondAttribute="centerX" id="MBJ-lM-P3q"/>
                             <constraint firstItem="ZpI-F3-a24" firstAttribute="top" secondItem="waq-6d-cbM" secondAttribute="bottom" constant="20" id="uwY-0T-hAs"/>
