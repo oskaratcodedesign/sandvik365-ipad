@@ -16,6 +16,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -518,6 +519,10 @@ Cg
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-aO-F8M">
                                         <rect key="frame" x="100" y="1033" width="241" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Tc5-ws-Uqa"/>
+                                            <constraint firstAttribute="width" constant="241" id="frY-lF-nRB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="20" maxX="30" maxY="20"/>
                                         <state key="normal">
@@ -529,19 +534,35 @@ UPDATE NOW</string>
                                             <action selector="updateAction:" destination="jzx-rd-u6m" eventType="touchUpInside" id="9HU-cR-hTS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SU-1n-Jsp">
-                                        <rect key="frame" x="459" y="1056" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zED-x9-aAY" userLabel="QUESTIONS? SEE THE TUTORIAL AGAIN">
+                                        <rect key="frame" x="100" y="674" width="241" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="42m-sR-hRN"/>
+                                            <constraint firstAttribute="height" constant="75" id="UFp-ps-cWh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="30" minY="20" maxX="30" maxY="20"/>
+                                        <state key="normal" title="QUESTIONS? SEE THE TUTORIAL AGAIN">
+                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="nKi-sj-w4z"/>
+                                            <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="0Fv-Ab-Okl"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="leading" secondItem="lgQ-XA-xfb" secondAttribute="leading" constant="100" id="7Xb-SU-Bee"/>
-                                    <constraint firstItem="9SU-1n-Jsp" firstAttribute="leading" secondItem="Nii-aO-F8M" secondAttribute="trailing" constant="118" id="9vW-gU-czp"/>
-                                    <constraint firstAttribute="bottom" secondItem="9SU-1n-Jsp" secondAttribute="bottom" constant="114" id="QNG-VZ-pHj"/>
+                                    <constraint firstItem="zED-x9-aAY" firstAttribute="leading" secondItem="Nii-aO-F8M" secondAttribute="leading" id="D18-dE-FIh"/>
+                                    <constraint firstItem="zED-x9-aAY" firstAttribute="top" secondItem="0IX-WF-CXB" secondAttribute="bottom" constant="20" id="fZj-b6-WhR"/>
                                     <constraint firstItem="0IX-WF-CXB" firstAttribute="top" secondItem="lgQ-XA-xfb" secondAttribute="top" constant="92" id="hEw-7w-Xns"/>
                                     <constraint firstAttribute="trailing" secondItem="0IX-WF-CXB" secondAttribute="trailing" constant="300" id="iSC-B5-I7F"/>
                                     <constraint firstItem="Nii-aO-F8M" firstAttribute="top" secondItem="0IX-WF-CXB" secondAttribute="bottom" constant="50" id="kIR-RL-y0N"/>
@@ -582,6 +603,7 @@ UPDATE NOW</string>
                     <navigationItem key="navigationItem" title="SANDVIK 365 SERVICE APP" id="NNx-yE-Hp4"/>
                     <connections>
                         <outlet property="disclaimerTextView" destination="0IX-WF-CXB" id="g1z-Le-5Hb"/>
+                        <outlet property="tutorialButton" destination="zED-x9-aAY" id="RDH-CI-A5W"/>
                         <outlet property="updateButton" destination="Nii-aO-F8M" id="hWh-AC-f5H"/>
                     </connections>
                 </viewController>
@@ -620,6 +642,6 @@ UPDATE NOW</string>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nKi-sj-w4z"/>
+        <segue reference="0Fv-Ab-Okl"/>
     </inferredMetricsTieBreakers>
 </document>
