@@ -55,12 +55,13 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PresentTutorial" {
+            if let vc = segue.destinationViewController as? TutorialViewController {
+                vc.shouldShowCloseButton = true
+            }
+        }
     }
-    
     
     func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
             UIApplication.sharedApplication().openURL(URL)

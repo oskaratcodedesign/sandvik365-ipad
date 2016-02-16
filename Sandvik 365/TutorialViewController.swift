@@ -10,7 +10,9 @@ import UIKit
 
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    
     let imageNames: [String] = [
         "S365-Ext-App-tutorial-screen-0-1024x768",
         "S365-Ext-App-tutorial-screen-2-1024x768",
@@ -24,6 +26,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         "S365-Ext-App-tutorial-screen-11-1024x768"]
     
     private var pageViewController: UIPageViewController?
+    var shouldShowCloseButton = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,22 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         setupPageControl()
         self.pageControl.numberOfPages = imageNames.count
         self.view.bringSubviewToFront(self.pageControl)
+        self.view.bringSubviewToFront(self.closeButton)
+        if self.shouldShowCloseButton {
+            self.closeButton.hidden = false
+        }
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.logoButton?.hidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.logoButton?.hidden = false
+    }
+    
+    @IBAction func closeAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func createPageViewController() {
@@ -95,6 +114,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         let itemViewController =  pendingViewControllers.last as! TutorialContentViewController
         if itemViewController.itemIndex == imageNames.count {
             self.pageControl.hidden = true
+            self.closeButton.hidden = true
         }
     }
     

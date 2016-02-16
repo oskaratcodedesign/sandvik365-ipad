@@ -43,6 +43,11 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
         progressView.delegate = self
         menuCountOnBox.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
+        if NSUserDefaults.standardUserDefaults().objectForKey("firstStart") == nil {
+            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstStart")
+            self.performSegueWithIdentifier("PresentTutorial", sender: self)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -161,7 +166,7 @@ class MainMenuViewController : UIViewController, UIScrollViewDelegate, ProgressL
                 }
             }
         }
-        if segue.identifier == "VideoViewController" {
+        else if segue.identifier == "VideoViewController" {
             if let vc = segue.destinationViewController as? VideoViewController {
                 if let path = NSBundle.mainBundle().pathForResource("Sandvik365_Extern_150917", ofType:"m4v") {
                     vc.videoUrl = NSURL.fileURLWithPath(path)

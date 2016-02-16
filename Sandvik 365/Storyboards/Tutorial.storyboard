@@ -25,6 +25,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpI-F3-a24">
+                                <rect key="frame" x="501" y="40" width="79" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="crs-T4-Fbq"/>
+                                    <constraint firstAttribute="height" constant="57" id="dvr-WD-Gm4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="119"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="MNg-Lv-3FS" eventType="touchUpInside" id="ZAT-d7-W4d"/>
+                                </connections>
+                            </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-bs-k6c">
                                 <rect key="frame" x="297" y="1143" width="7" height="37"/>
                             </pageControl>
@@ -32,7 +46,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mQP-FR-unM" firstAttribute="top" secondItem="n4n-bs-k6c" secondAttribute="bottom" constant="20" id="Fci-jY-c7G"/>
+                            <constraint firstAttribute="trailing" secondItem="ZpI-F3-a24" secondAttribute="trailing" constant="20" id="Fr1-dq-HkD"/>
                             <constraint firstItem="n4n-bs-k6c" firstAttribute="centerX" secondItem="e7D-lt-q0i" secondAttribute="centerX" id="MBJ-lM-P3q"/>
+                            <constraint firstItem="ZpI-F3-a24" firstAttribute="top" secondItem="waq-6d-cbM" secondAttribute="bottom" constant="20" id="uwY-0T-hAs"/>
                         </constraints>
                     </view>
                     <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
@@ -40,6 +56,7 @@
                         <size key="landscapeSize" width="600" height="1200"/>
                     </fixedSimulatedSizeMetrics>
                     <connections>
+                        <outlet property="closeButton" destination="ZpI-F3-a24" id="IwV-C2-Oky"/>
                         <outlet property="pageControl" destination="n4n-bs-k6c" id="tSH-cV-gZg"/>
                     </connections>
                 </viewController>

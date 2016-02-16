@@ -403,6 +403,7 @@ YOU CAN COUNT ON</string>
                         <outletCollection property="mainMenuItemViews" destination="goe-Xq-a6b" collectionClass="NSMutableArray" id="Vlb-sY-7eI"/>
                         <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="C3U-QL-Bxu"/>
                         <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="bk5-QJ-IsA"/>
+                        <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="FqL-Zk-5qX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og2-vF-GsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,7 +533,7 @@ UPDATE NOW</string>
                                         <rect key="frame" x="459" y="1056" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="89S-xf-ced" kind="presentation" modalPresentationStyle="overCurrentContext" id="nKi-sj-w4z"/>
+                                            <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="nKi-sj-w4z"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -618,4 +619,7 @@ UPDATE NOW</string>
         <image name="sandvik-icons_info-btn" width="32" height="32"/>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nKi-sj-w4z"/>
+    </inferredMetricsTieBreakers>
 </document>
