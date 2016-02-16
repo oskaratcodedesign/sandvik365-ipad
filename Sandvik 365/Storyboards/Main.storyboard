@@ -532,7 +532,7 @@ UPDATE NOW</string>
                                         <rect key="frame" x="459" y="1056" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="89S-xf-ced" kind="show" id="nKi-sj-w4z"/>
+                                            <segue destination="89S-xf-ced" kind="presentation" modalPresentationStyle="overCurrentContext" id="nKi-sj-w4z"/>
                                         </connections>
                                     </button>
                                 </subviews>

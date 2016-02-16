@@ -29,7 +29,7 @@
                                 <rect key="frame" x="297" y="1143" width="7" height="37"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mQP-FR-unM" firstAttribute="top" secondItem="n4n-bs-k6c" secondAttribute="bottom" constant="20" id="Fci-jY-c7G"/>
                             <constraint firstItem="n4n-bs-k6c" firstAttribute="centerX" secondItem="e7D-lt-q0i" secondAttribute="centerX" id="MBJ-lM-P3q"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fpe-lg-28M" firstAttribute="width" secondItem="6v6-EA-YZU" secondAttribute="width" id="GMZ-yz-7dg"/>
                             <constraint firstItem="Fpe-lg-28M" firstAttribute="top" secondItem="6P7-CM-w2Q" secondAttribute="bottom" id="Mp6-k6-aCT"/>

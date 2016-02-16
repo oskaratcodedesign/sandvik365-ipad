@@ -11,9 +11,17 @@ import UIKit
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     @IBOutlet weak var pageControl: UIPageControl!
-    let imageNames: [String] = ["160210-S365-External-App-tutorial-screen-1",
-                                    "160210-S365-External-App-tutorial-screen-2",
-                                    "160210-S365-External-App-tutorial-screen-3"]
+    let imageNames: [String] = [
+        "S365-Ext-App-tutorial-screen-0-1024x768",
+        "S365-Ext-App-tutorial-screen-2-1024x768",
+        "S365-Ext-App-tutorial-screen-3-1024x768",
+        "S365-Ext-App-tutorial-screen-4-1024x768",
+        "S365-Ext-App-tutorial-screen-5-1024x768",
+        "S365-Ext-App-tutorial-screen-6-1024x768",
+        "S365-Ext-App-tutorial-screen-7-1024x768",
+        "S365-Ext-App-tutorial-screen-8-1024x768",
+        "S365-Ext-App-tutorial-screen-9-1024x768",
+        "S365-Ext-App-tutorial-screen-11-1024x768"]
     
     private var pageViewController: UIPageViewController?
 
@@ -30,6 +38,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageController.dataSource = self
         pageController.delegate = self
+        
         let firstController = getItemController(0)!
         pageController.setViewControllers([firstController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
@@ -61,7 +70,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         
         let itemController = viewController as! TutorialContentViewController
         
-        if itemController.itemIndex+1 < imageNames.count {
+        if itemController.itemIndex+1 <= imageNames.count {
             return getItemController(itemController.itemIndex+1)
         }
         
@@ -70,18 +79,30 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
     
     private func getItemController(itemIndex: Int) -> TutorialContentViewController? {
         
-        if itemIndex < imageNames.count {
+        if itemIndex <= imageNames.count {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("TutorialContentViewController") as! TutorialContentViewController
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = imageNames[itemIndex]
+            if itemIndex < imageNames.count {
+                pageItemController.imageName = imageNames[itemIndex]
+            }
             return pageItemController
         }
         
         return nil
     }
     
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        let itemViewController =  pendingViewControllers.last as! TutorialContentViewController
+        if itemViewController.itemIndex == imageNames.count {
+            self.pageControl.hidden = true
+        }
+    }
+    
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let itemViewController =  pageViewController.viewControllers!.last as! TutorialContentViewController
         self.pageControl.currentPage = itemViewController.itemIndex
+        if itemViewController.itemIndex == imageNames.count {
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
     }
 }
