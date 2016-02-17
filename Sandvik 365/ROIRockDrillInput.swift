@@ -24,7 +24,6 @@ enum ROIRockDrillInputValue {
     case TypeOfOre(OreType)
     case CommodityPrice(UInt)
     case OreConcentration(UInt)
-    //case CostPerDayNotRunning(UInt)
     case UtilizationRate(UInt)
     case OreGravity(UInt)
     case HolesInAFace(UInt)
@@ -41,8 +40,6 @@ enum ROIRockDrillInputValue {
             return NSLocalizedString("Commodity price", comment: "")
         case OreConcentration:
             return NSLocalizedString("Ore concentration", comment: "")
-        /*case CostPerDayNotRunning:
-            return NSLocalizedString("Cost per day for rockdrill not running", comment: "")*/
         case UtilizationRate:
             return NSLocalizedString("Utilization rate", comment: "")
         case OreGravity:
@@ -68,8 +65,6 @@ enum ROIRockDrillInputValue {
             return value
         case OreConcentration(let value):
             return value
-        /*case CostPerDayNotRunning(let value):
-            return value*/
         case UtilizationRate(let value):
             return value
         case OreGravity(let value):
@@ -92,7 +87,6 @@ class ROIRockDrillInput: ROICalculatorInput {
     var typeOfOre: ROIRockDrillInputValue = .TypeOfOre(OreType.Gold)
     var commodityPrice: ROIRockDrillInputValue = .CommodityPrice(800)
     var oreConcentration: ROIRockDrillInputValue = .OreConcentration(10)
-    //var costPerDayNotRunning: ROIRockDrillInputValue = .CostPerDayNotRunning(70000)
     var utilizationRate: ROIRockDrillInputValue = .UtilizationRate(25)
     var oreGravity: ROIRockDrillInputValue = .OreGravity(1808)
     var holesInAFace: ROIRockDrillInputValue = .HolesInAFace(64)
@@ -109,6 +103,9 @@ class ROIRockDrillInput: ROICalculatorInput {
         return [typeOfOre, commodityPrice, oreConcentration, utilizationRate, oreGravity, holesInAFace, drillFaceWidth, drillFaceHeight, feedLenght, numberOfBooms]
     }
     
+    override func allTitles() -> [String] {
+        return allInputs().flatMap({ $0.title })
+    }
 
     private func cumbicMeterBlast() -> Double {
         if let dw = drillFaceWidth.value as? Double, dh = drillFaceHeight.value as? Double, fl = feedLenght.value as? Double {
@@ -222,15 +219,6 @@ class ROIRockDrillInput: ROICalculatorInput {
         let totals = [Int](count: months, repeatedValue: t)
         return totals
     }
-
-    override func allTitles() -> [String] {
-        var allTitles = [String]()
-        let all = allInputs()
-        for v in all {
-            allTitles.append(v.title)
-        }
-        return allTitles
-    }
     
     override func setInput(atIndex :Int, stringValue :String) -> Bool {
         let input = allInputs()[atIndex]
@@ -313,7 +301,33 @@ class ROIRockDrillInput: ROICalculatorInput {
         }
     }
     
-    /*override func changeInput(atIndex :Int, change : ChangeInput) -> NSAttributedString {
+    override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+        let input = allInputs()[atIndex]
+        switch input {
+        case .TypeOfOre:
+            return nil
+        case .CommodityPrice:
+            return InputAbbreviation.USD
+        case .OreConcentration:
+            return InputAbbreviation.Gram
+        case .UtilizationRate:
+            return InputAbbreviation.Percent
+        case .OreGravity:
+            return InputAbbreviation.Kilo
+        case .HolesInAFace:
+            return nil
+        case .DrillFaceWidth:
+            return InputAbbreviation.Meter
+        case .DrillFaceHeight:
+            return InputAbbreviation.Meter
+        case .FeedLenght:
+            return InputAbbreviation.Meter
+        case .NumberOfBooms:
+            return nil
+        }
+    }
+    
+    override func changeInput(atIndex :Int, change : ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
         case .TypeOfOre:
@@ -326,9 +340,7 @@ class ROIRockDrillInput: ROICalculatorInput {
                     typeOfOre = .TypeOfOre(.Gold)
                 }
             }
-            let typeString: String = typeOfOre.value as! OreType == .Gold ? "Gold" : "Copper"
-            let attrString = NSMutableAttributedString(string: typeString, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
+            return typeOfOre.value as! OreType == .Gold ? "Gold" : "Copper"
         case .CommodityPrice:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -336,10 +348,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     commodityPrice = .CommodityPrice(UInt(value))
                 }
             }
-            let valueType: String = "$"
-            let attrString = NSMutableAttributedString(string: valueType + String(commodityPrice.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: 0,length: valueType.characters.count))
-            return attrString
         case .OreConcentration:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -347,12 +355,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     oreConcentration = .OreConcentration(UInt(value))
                 }
             }
-            let valueType: String = "g"
-            let attrString = NSMutableAttributedString(string: String(oreConcentration.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
-        /*case CostPerDayNotRunning:
-        return NSLocalizedString("Cost per day for rockdrill not running", comment: "")*/
         case .UtilizationRate:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -360,10 +362,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     utilizationRate = .UtilizationRate(UInt(value))
                 }
             }
-            let valueType: String = "%"
-            let attrString = NSMutableAttributedString(string: String(utilizationRate.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
         case .OreGravity:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -371,10 +369,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     oreGravity = .OreGravity(UInt(value))
                 }
             }
-            let valueType: String = "kg"
-            let attrString = NSMutableAttributedString(string: String(oreGravity.value as! UInt) + valueType, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 1.0)!, range: NSRange(location: attrString.length-valueType.characters.count,length: valueType.characters.count))
-            return attrString
         case .HolesInAFace:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -382,8 +376,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     holesInAFace = .HolesInAFace(UInt(value))
                 }
             }
-            let attrString = NSMutableAttributedString(string: String(holesInAFace.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
         case .DrillFaceWidth:
             if change != ChangeInput.Load {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
@@ -391,8 +383,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     drillFaceWidth = .DrillFaceWidth(value)
                 }
             }
-            let attrString = NSMutableAttributedString(string: String(format:"%.2f", drillFaceWidth.value as! Double), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
         case .DrillFaceHeight:
             if change != ChangeInput.Load {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
@@ -400,8 +390,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     drillFaceHeight = .DrillFaceHeight(value)
                 }
             }
-            let attrString = NSMutableAttributedString(string: String(format:"%.2f", drillFaceHeight.value as! Double), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
         case .FeedLenght:
             if change != ChangeInput.Load {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 0.10 : -0.10)
@@ -409,8 +397,6 @@ class ROIRockDrillInput: ROICalculatorInput {
                     feedLenght = .FeedLenght(value)
                 }
             }
-            let attrString = NSMutableAttributedString(string: String(format:"%.2f", feedLenght.value as! Double), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
         case .NumberOfBooms:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
@@ -418,10 +404,9 @@ class ROIRockDrillInput: ROICalculatorInput {
                     numberOfBooms = .NumberOfBooms(UInt(value))
                 }
             }
-            let attrString = NSMutableAttributedString(string: String(numberOfBooms.value as! UInt), attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 2.0)!])
-            return attrString
         }
-    }*/
+        return getInputAsString(atIndex)!
+    }
     
     override func graphScale() -> CGFloat {
         return 0.5
