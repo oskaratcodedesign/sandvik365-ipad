@@ -27,7 +27,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiRockDrillDetailView" customModule="sandvik_365_internal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoiRockDrillDetailView" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
                 <outlet property="metersAfterLabel" destination="s5L-MW-0yq" id="lK4-BZ-nFG"/>
                 <outlet property="metersBeforeLabel" destination="QDt-Dv-rjw" id="TCE-aD-W0Z"/>

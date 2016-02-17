@@ -569,8 +569,8 @@ PROFIT BY UP TO</string>
                                                             <action selector="rampUpAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="sFS-cz-otc"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60" width="197" height="45"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="72" width="197" height="33"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal">
@@ -590,8 +590,8 @@ INSPECTION SERVICES</string>
                                                             <action selector="conditionAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="49t-SI-cu7"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="113" width="197" height="45"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="125" width="197" height="33"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal">
