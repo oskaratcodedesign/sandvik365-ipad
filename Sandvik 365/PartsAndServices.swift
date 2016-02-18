@@ -100,82 +100,49 @@ enum BusinessType: UInt32 {
         }
     }
     
-    var roiCrusherCalculatorTitle: String? {
+    func getInputFromTitleOrTitles(title: String?) -> [String: SelectionInput?] {
+        var inputs: [String: SelectionInput?] = [:]
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
-            return nil
-        case CrusherAndScreening:
-            return "Lifecycle program calculator"
-        }
-    }
-    
-    var roiCrusherInput: ROICrusherInput? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, UndergroundLoadingAndHauling:
-            return nil
-        case CrusherAndScreening:
-            return ROICrusherInput()
-        }
-    }
-    
-    var fireSuppressionInput: FireSuppressionInput? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
-            return nil
-        case UndergroundLoadingAndHauling:
-            return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
-        }
-    }
-    
-    var fireSuppressionTitle: String? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ CrusherAndScreening, ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting:
-            return nil
-        case UndergroundLoadingAndHauling:
-            return "Fire suppression tool"
-        }
-    }
-    
-    var roiGetCalculatorTitle: String? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
-            return nil
-        case UndergroundLoadingAndHauling:
-            return "Ground Engaging Tools (GET) calculator"
-        }
-    }
-    
-    var roiGetInput: ROIGetInput? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
-            return nil
-        case UndergroundLoadingAndHauling:
-            return ROIGetInput()
-        }
-    }
-    
-    var roiRockDrillCalculatorTitle: String? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, CrusherAndScreening:
-            return nil
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+            break
         case SurfaceDrilling:
-            return "Rock drill upgrade simulator"
+            let rockTitle = "Rock drill upgrade simulator"
+            if title != nil {
+                if title!.caseInsensitiveCompare(rockTitle) == .OrderedSame {
+                    inputs = [rockTitle: ROIRockDrillInput()]
+                }
+            } else {
+                inputs = [rockTitle: nil]
+            }
+        case CrusherAndScreening:
+            let crusherTitle = "Lifecycle program calculator"
+            let edvTitle = "Electric dump valve calculator"
+            if title != nil {
+                if title!.caseInsensitiveCompare(crusherTitle) == .OrderedSame {
+                    inputs = [crusherTitle: ROICrusherInput()]
+                } else if title!.caseInsensitiveCompare(edvTitle) == .OrderedSame {
+                    inputs = ["Electric dump valve calculator": ROIEDVInput()]
+                }
+            } else {
+                inputs = [crusherTitle: nil, edvTitle: nil]
+            }
+        case UndergroundLoadingAndHauling:
+            let getTitle = "Ground Engaging Tools (GET) calculator"
+            let fireTitle = "Fire suppression tool"
+            if title != nil {
+                if title!.caseInsensitiveCompare(getTitle) == .OrderedSame {
+                    inputs = [getTitle: ROIGetInput()]
+                } else if title!.caseInsensitiveCompare(fireTitle) == .OrderedSame {
+                    if let firesupr = JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput {
+                        inputs = [fireTitle: firesupr]
+                    }
+                }
+            } else {
+                inputs = [getTitle: nil, fireTitle: nil]
+            }
         }
+        return inputs
     }
-    
-    var roiRockDrillInput: ROIRockDrillInput? {
-        switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, CrusherAndScreening:
-            return nil
-        case SurfaceDrilling:
-            return ROIRockDrillInput()
-        }
-    }
-    
-    var roiTitlesLowerCase: [String] {
-        return [roiCrusherCalculatorTitle?.lowercaseString, fireSuppressionTitle?.lowercaseString, roiGetCalculatorTitle?.lowercaseString, roiRockDrillCalculatorTitle?.lowercaseString].flatMap({$0})
-    }
-    
 }
 
 class PartsAndServicesJSONParts {
@@ -290,21 +257,8 @@ class PartsAndServices {
     }
     
     func mainSectionTitles() -> [String] {
-        var titles: [String] = []
-        
-        if let roiTitle = self.businessType.roiCrusherCalculatorTitle {
-            titles.append(roiTitle.uppercaseString)
-        }
-        if let fireSuppressionTitle = self.businessType.fireSuppressionTitle {
-            titles.append(fireSuppressionTitle.uppercaseString)
-        }
-        if let geTitle = self.businessType.roiGetCalculatorTitle {
-            titles.append(geTitle.uppercaseString)
-        }
-        if let roTitle = self.businessType.roiRockDrillCalculatorTitle {
-            titles.append(roTitle.uppercaseString)
-        }
-        
+        var titles: [String] = [String](self.businessType.getInputFromTitleOrTitles(nil).keys).flatMap({$0.uppercaseString})
+
         if let mediaCenterTitle = self.businessType.mediaCenterTitle {
             titles.append(mediaCenterTitle.uppercaseString)
         }
