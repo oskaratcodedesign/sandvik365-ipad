@@ -95,7 +95,7 @@ class ROIEDVInput: ROICalculatorInput {
     var costType: ROIEDVCostType?
     var usePPM: Bool = false //otherwise percent
     
-    private func allInputs() -> [ROIEDVInputValue] {
+    func allInputs() -> [ROIEDVInputValue] {
         return [breakDowns, extraCost, repairHours, numberOfTechnicians, technicianCost, standingStill, oreGrade, capacity, recoveryRate, orePrice]
     }
     
@@ -126,7 +126,7 @@ class ROIEDVInput: ROICalculatorInput {
     
     private func totalProductivityLoss() -> Double {
         if let st = standingStill.value as? UInt, ca = capacity.value as? UInt, og = oreGrade.value as? Double, rr = recoveryRate.value as? Double, op = orePrice.value as? UInt{
-            return Double(st) * Double(ca) * og * rr * Double(op)
+            return Double(st) * Double(ca) * (Double(og)/100) * (Double(rr)/100) * Double(op)
         }
         return 0
     }
@@ -151,7 +151,7 @@ class ROIEDVInput: ROICalculatorInput {
     }
     
     override func maxTotal() -> Double {
-        return totalExtraCost() * totalServiceCostPerYear() * totalProductivityLoss()
+        return totalExtraCost() + totalServiceCostPerYear() + totalProductivityLoss()
     }
     
     override func setInput(atIndex :Int, stringValue :String) -> Bool {
@@ -219,17 +219,17 @@ class ROIEDVInput: ROICalculatorInput {
         let input = allInputs()[atIndex]
         switch input {
         case .BreakDowns:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(breakDowns.value as! UInt)
         case .ExtraCost:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(extraCost.value as! UInt)
         case .RepairHours:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(repairHours.value as! UInt)
         case .NumberOfTechnicians:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(numberOfTechnicians.value as! UInt)
         case .TechnicianCost:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(technicianCost.value as! UInt)
         case .StandingStill:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
+            return NSNumberFormatter().stringFromNumber(standingStill.value as! UInt)
         case .OreGrade:
             var value = oreGrade.value as! Double
             if usePPM {

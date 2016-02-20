@@ -82,7 +82,7 @@ class RoiEDVResultViewController: RoiResultViewController {
     
     private func setProfitLabel()
     {
-        if self.selectedInput.costType == nil {
+        if self.selectedInput.costType != nil {
             setProfitLabelFromInput()
         }
         else {

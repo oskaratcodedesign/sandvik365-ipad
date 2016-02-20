@@ -52,7 +52,15 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         percentPPMControl.hidden = true
+        
         if let input = selectedInput as? ROICrusherInput {
+            switch input.allInputs()[itemIndex] {
+            case .OreGrade:
+                percentPPMControl.hidden = false
+            default: break
+            }
+        }
+        else if let input = selectedInput as? ROIEDVInput {
             switch input.allInputs()[itemIndex] {
             case .OreGrade:
                 percentPPMControl.hidden = false
