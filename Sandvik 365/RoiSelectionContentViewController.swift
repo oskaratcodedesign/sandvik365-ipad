@@ -167,11 +167,13 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         let isLeft = sender.selectedSegmentIndex == 0 ? true : false
         if let input = selectedInput as? ROICrusherInput {
             input.usePPM = !isLeft
-            roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
-            if let delegate = self.delegate {
-                delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
-                delegate.percentPPMchange(isLeft, object: roiContentView.textView.attributedText)
-            }
+        } else if let input = selectedInput as? ROIEDVInput {
+            input.usePPM = !isLeft
+        }
+        roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
+        if let delegate = self.delegate {
+            delegate.roiValueDidChange(itemIndex, object: roiContentView.textView.attributedText)
+            delegate.percentPPMchange(isLeft, object: roiContentView.textView.attributedText)
         }
     }
     
