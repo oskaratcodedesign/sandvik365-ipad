@@ -67,7 +67,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             break
         }
         
-        let widthConstraint = NSLayoutConstraint(item: currentSelectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count-1), constant: 0)
+        let widthConstraint = buttonwidthConstraint(currentSelectionButton, to: selectionContainer.superview)
         NSLayoutConstraint.deactivateConstraints([selectionButtonWidthConstraint])
         NSLayoutConstraint.activateConstraints([widthConstraint])
     }
@@ -139,16 +139,8 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         addChildViewController(pageViewController!)
         pageContentView.addSubview(pageViewController!.view)
         pageViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateConstraints(fillConstraints(pageViewController!.view, toView: pageContentView))
+        NSLayoutConstraint.activateConstraints(pageViewController!.view.fillConstraints(pageContentView))
         pageViewController!.didMoveToParentViewController(self)
-    }
-    
-    private func fillConstraints(fromView: UIView, toView: UIView) -> [NSLayoutConstraint] {
-        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let leadingConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        return [topConstraint, bottomConstraint, trailConstraint, leadingConstraint]
     }
     
     private func showSelectedInput(itemIndex: Int) {
@@ -183,12 +175,20 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
+    private func buttonwidthConstraint(from: AnyObject, to: AnyObject?) -> NSLayoutConstraint {
+        
+        let w = max(1/Double(titles.count-1), 0.1111)
+        let widthConstraint = NSLayoutConstraint(item: from, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: to, attribute: NSLayoutAttribute.Width, multiplier:CGFloat(w), constant: 0)
+        
+        return widthConstraint
+    }
+    
     private func addRoiSelectionButton(currentButton: RoiSelectionButton) -> RoiSelectionButton {
         let selectionButton = RoiSelectionButton(frame: currentButton.bounds)
         
         let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer.superview, attribute: NSLayoutAttribute.Width, multiplier:1/CGFloat(titles.count-1), constant: 0)
+        let widthConstraint = buttonwidthConstraint(selectionButton, to: selectionContainer.superview)
         let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         
@@ -215,6 +215,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                 }
                 else if let input = input as? ROIGetInput {
                     let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiGetResultViewController") as! RoiGetResultViewController
+                    pageItemController.selectedInput = input
+                    return pageItemController
+                }
+                else if let input = input as? ROIRockDrillInput {
+                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiRockDrillResultViewController") as! RoiRockDrillResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MNg-Lv-3FS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="F2L-vy-fzM">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Pd2-Gm-LCA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AY-ao-Z5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810" y="538"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="Kep-fK-Qgb">
+            <objects>
+                <viewController storyboardIdentifier="TutorialViewController" automaticallyAdjustsScrollViewInsets="NO" id="MNg-Lv-3FS" customClass="TutorialViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="waq-6d-cbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="mQP-FR-unM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e7D-lt-q0i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpI-F3-a24">
+                                <rect key="frame" x="501" y="40" width="79" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="crs-T4-Fbq"/>
+                                    <constraint firstAttribute="height" constant="57" id="dvr-WD-Gm4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="119"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="MNg-Lv-3FS" eventType="touchUpInside" id="ZAT-d7-W4d"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-bs-k6c">
+                                <rect key="frame" x="297" y="1153" width="7" height="37"/>
+                                <color key="pageIndicatorTintColor" red="1" green="1" blue="1" alpha="0.24925570101351349" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mQP-FR-unM" firstAttribute="top" secondItem="n4n-bs-k6c" secondAttribute="bottom" constant="10" id="Fci-jY-c7G"/>
+                            <constraint firstAttribute="trailing" secondItem="ZpI-F3-a24" secondAttribute="trailing" constant="20" id="Fr1-dq-HkD"/>
+                            <constraint firstItem="n4n-bs-k6c" firstAttribute="centerX" secondItem="e7D-lt-q0i" secondAttribute="centerX" id="MBJ-lM-P3q"/>
+                            <constraint firstItem="ZpI-F3-a24" firstAttribute="top" secondItem="waq-6d-cbM" secondAttribute="bottom" constant="20" id="uwY-0T-hAs"/>
+                        </constraints>
+                    </view>
+                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="600" height="1200"/>
+                        <size key="landscapeSize" width="600" height="1200"/>
+                    </fixedSimulatedSizeMetrics>
+                    <connections>
+                        <outlet property="closeButton" destination="ZpI-F3-a24" id="IwV-C2-Oky"/>
+                        <outlet property="pageControl" destination="n4n-bs-k6c" id="tSH-cV-gZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcC-F9-IFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073" y="1509"/>
+        </scene>
+        <!--Tutorial Content View Controller-->
+        <scene sceneID="bDq-nh-6XU">
+            <objects>
+                <viewController storyboardIdentifier="TutorialContentViewController" id="A4V-ND-yEK" customClass="TutorialContentViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6P7-CM-w2Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kd8-TR-VCA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6v6-EA-YZU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fpe-lg-28M">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="width" secondItem="6v6-EA-YZU" secondAttribute="width" id="GMZ-yz-7dg"/>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="top" secondItem="6P7-CM-w2Q" secondAttribute="bottom" id="Mp6-k6-aCT"/>
+                            <constraint firstItem="Kd8-TR-VCA" firstAttribute="top" secondItem="Fpe-lg-28M" secondAttribute="bottom" id="PYs-eh-pmr"/>
+                            <constraint firstAttribute="trailing" secondItem="Fpe-lg-28M" secondAttribute="trailing" id="Uvu-22-wb2"/>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="centerX" secondItem="6v6-EA-YZU" secondAttribute="centerX" id="YBM-xW-SKc"/>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="leading" secondItem="6v6-EA-YZU" secondAttribute="leading" id="f7Y-Aw-cqS"/>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="centerY" secondItem="6v6-EA-YZU" secondAttribute="centerY" id="vGr-3F-gBf"/>
+                            <constraint firstItem="Fpe-lg-28M" firstAttribute="height" secondItem="6v6-EA-YZU" secondAttribute="height" id="yQB-Yl-kCk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Mp6-k6-aCT"/>
+                                <exclude reference="Uvu-22-wb2"/>
+                                <exclude reference="f7Y-Aw-cqS"/>
+                                <exclude reference="PYs-eh-pmr"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Fpe-lg-28M" id="zhd-v0-VOA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEG-6a-juK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2731" y="1366"/>
+        </scene>
+    </scenes>
+</document>

@@ -47,7 +47,6 @@
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
-		F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
@@ -65,9 +64,18 @@
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
+		F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */ = {isa = PBXBuildFile; fileRef = F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */; };
 		F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7620B821C48FBB700B0A6D8 /* VideoButton.swift */; };
 		F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7620B841C48FBC800B0A6D8 /* VideoButton.xib */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
+		F77D5E621C6CD70C002A5867 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */; };
+		F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */; };
+		F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77D5E651C710359002A5867 /* Tutorial.storyboard */; };
+		F77D5E691C710AE3002A5867 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */; };
+		F77D5EA51C745AA5002A5867 /* ROIRockDrillInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EA41C745AA5002A5867 /* ROIRockDrillInput.swift */; };
+		F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D5EA61C745ACF002A5867 /* RoiRockDrillDetailView.xib */; };
+		F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EA71C745ACF002A5867 /* RoiRockDrillDetailView.swift */; };
+		F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAA1C745B63002A5867 /* RoiRockDrillResultViewController.swift */; };
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
@@ -90,8 +98,6 @@
 		F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C959011C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift */; };
 		F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C959031C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib */; };
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; };
-		F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */; };
-		F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */; };
 		F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */; };
 		F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */; };
 		F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2C0431C15C42C009D290B /* DownloadingView.swift */; };
@@ -189,7 +195,6 @@
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
-		F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
 		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
 		F73E9B341C43E5D700742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bucket Shroud Wear Movie Release 01_v1.mp4"; sourceTree = "<group>"; };
@@ -204,9 +209,18 @@
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
+		F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegionContactsHandler.json; sourceTree = "<group>"; };
 		F7620B821C48FBB700B0A6D8 /* VideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
 		F7620B841C48FBC800B0A6D8 /* VideoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoButton.xib; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
+		F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tutorial.xcassets; sourceTree = "<group>"; };
+		F77D5E651C710359002A5867 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
+		F77D5EA41C745AA5002A5867 /* ROIRockDrillInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIRockDrillInput.swift; sourceTree = "<group>"; };
+		F77D5EA61C745ACF002A5867 /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
+		F77D5EA71C745ACF002A5867 /* RoiRockDrillDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillDetailView.swift; sourceTree = "<group>"; };
+		F77D5EAA1C745B63002A5867 /* RoiRockDrillResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillResultViewController.swift; sourceTree = "<group>"; };
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -230,8 +244,6 @@
 		F7C959011C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionKeyFeatureItem.swift; sourceTree = "<group>"; };
 		F7C959031C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireSuppressionKeyFeatureItem.xib; sourceTree = "<group>"; };
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
-		F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiRockDrillDetailView.xib; sourceTree = "<group>"; };
-		F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillDetailView.swift; sourceTree = "<group>"; };
 		F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiCrusherDetailView.swift; sourceTree = "<group>"; };
 		F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServices.swift; sourceTree = "<group>"; };
 		F7E2C0431C15C42C009D290B /* DownloadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
@@ -277,6 +289,7 @@
 		486F88781B72383C0084211F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F77D5E671C710AC2002A5867 /* Tutorial */,
 				F73E9B2F1C43E42600742EBD /* MediaCenter */,
 				F70867BB1BD0F9B500033AB5 /* PartsAndServices */,
 				F7EA86C71B849515003E1AA6 /* Roi */,
@@ -334,6 +347,7 @@
 				48FDEA961B5F8CEC00C5AFE6 /* AppDelegate.swift */,
 				48FDEA981B5F8CEC00C5AFE6 /* ViewController.swift */,
 				48FDEA9D1B5F8CEC00C5AFE6 /* Images.xcassets */,
+				F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
 				48FCED4C1B74AC47002D45A0 /* Sandvik_365-Bridging-Header.h */,
 			);
@@ -374,6 +388,7 @@
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
+				F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -462,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				F7227B8D1B7A04F5002354B1 /* Main.storyboard */,
+				F77D5E651C710359002A5867 /* Tutorial.storyboard */,
 				F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
@@ -528,6 +544,15 @@
 			name = ContactUs;
 			sourceTree = "<group>";
 		};
+		F77D5E671C710AC2002A5867 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				F77D5E611C6CD70C002A5867 /* TutorialViewController.swift */,
+				F77D5E681C710AE3002A5867 /* TutorialContentViewController.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		F79203601C4667A500CF4E3F /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,9 +599,9 @@
 				F7E69A7E1B7DE670004FA708 /* RoiSelectionButton.xib */,
 				F7EA86CA1B85DC35003E1AA6 /* RoiGraphView.swift */,
 				F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */,
+				F77D5EA61C745ACF002A5867 /* RoiRockDrillDetailView.xib */,
+				F77D5EA71C745ACF002A5867 /* RoiRockDrillDetailView.swift */,
 				F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */,
-				F7CAE07E1BB3D4F30098389F /* RoiRockDrillDetailView.xib */,
-				F7CAE0801BB3D5170098389F /* RoiRockDrillDetailView.swift */,
 				F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */,
 				F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */,
 			);
@@ -603,7 +628,7 @@
 				F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */,
 				48FCED541B78C02E002D45A0 /* ROICalculatorInput.swift */,
 				F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */,
-				F72455CC1BAC027100598203 /* ROIRockDrillInput.swift */,
+				F77D5EA41C745AA5002A5867 /* ROIRockDrillInput.swift */,
 				F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */,
 			);
 			name = Roi;
@@ -625,6 +650,7 @@
 				F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */,
 				F7EA86C81B84955B003E1AA6 /* RoiCrusherResultViewController.swift */,
 				F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */,
+				F77D5EAA1C745B63002A5867 /* RoiRockDrillResultViewController.swift */,
 				F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */,
 				F7C958FE1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift */,
 			);
@@ -725,7 +751,6 @@
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
-				F7CAE07F1BB3D4F30098389F /* RoiRockDrillDetailView.xib in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F792035D1C46308700CF4E3F /* RegionSelector.xib in Resources */,
@@ -740,6 +765,7 @@
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
+				F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
@@ -748,7 +774,10 @@
 				F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
+				F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */,
 				F73E9B3F1C44F8AA00742EBD /* Bucket Shroud Wear Movie Release 01_v1.mp4 in Resources */,
+				F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */,
+				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 				F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */,
@@ -827,14 +856,15 @@
 				F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */,
 				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
+				F77D5E621C6CD70C002A5867 /* TutorialViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
 				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
+				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */,
 				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,
-				F7CAE0811BB3D5170098389F /* RoiRockDrillDetailView.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
 				F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */,
 				F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */,
@@ -854,6 +884,7 @@
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
+				F77D5E691C710AE3002A5867 /* TutorialContentViewController.swift in Sources */,
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */,
 				F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */,
@@ -863,11 +894,12 @@
 				F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */,
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
-				F72455CD1BAC027100598203 /* ROIRockDrillInput.swift in Sources */,
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
+				F77D5EA51C745AA5002A5867 /* ROIRockDrillInput.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
+				F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */,
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,

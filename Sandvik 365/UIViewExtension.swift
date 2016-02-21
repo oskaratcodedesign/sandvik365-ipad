@@ -11,6 +11,14 @@ import UIKit
 
 extension UIView {
     
+    func fillConstraints(toView: UIView) -> [NSLayoutConstraint] {
+        let topConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let leadingConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        let trailConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        return [topConstraint, bottomConstraint, trailConstraint, leadingConstraint]
+    }
+    
     func fillConstraints(toView: UIView, topBottomConstant: CGFloat, leadConstant: CGFloat, trailConstant: CGFloat) -> [NSLayoutConstraint] {
         let topConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: topBottomConstant)
         let bottomConstraint = NSLayoutConstraint(item: toView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topBottomConstant)

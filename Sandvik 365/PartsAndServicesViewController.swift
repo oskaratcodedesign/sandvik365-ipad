@@ -74,6 +74,11 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                     vc.selectedInput = bType.roiGetInput
                     vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, title.uppercaseString)
                 }
+                else if let title = bType.roiRockDrillCalculatorTitle where selectedSectionTitle.caseInsensitiveCompare(title) == .OrderedSame {
+                    vc.selectedBusinessType = bType
+                    vc.selectedInput = bType.roiRockDrillInput
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, title.uppercaseString)
+                }
             }
         }
     }

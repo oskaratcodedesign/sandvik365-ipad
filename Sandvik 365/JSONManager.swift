@@ -12,11 +12,12 @@ import Async
 class JSONManager {
     static let updateAvailable = "updateAvailableKey"
     static let newDataAvailable = "newDataAvailableKey"
-    private let endPoints: [EndPoint] = [.CONTENT_URL, .FIRESUPPRESSION_URL]
+    private let endPoints: [EndPoint] = [.CONTENT_URL, .FIRESUPPRESSION_URL, .CONTACT_US]
     
     enum EndPoint {
         case CONTENT_URL
         case FIRESUPPRESSION_URL
+        case CONTACT_US
         
         private static var partsAndServicesJSONParts: PartsAndServicesJSONParts? = nil
         private static var fireSuppressionInput: FireSuppressionInput? = nil
@@ -27,6 +28,8 @@ class JSONManager {
                 EndPoint.partsAndServicesJSONParts = PartsAndServicesJSONParts(json: json)
             case .FIRESUPPRESSION_URL:
                 EndPoint.fireSuppressionInput = FireSuppressionInput(json: json)
+            case .CONTACT_US:
+                return
             }
         }
         
@@ -36,6 +39,23 @@ class JSONManager {
                 return EndPoint.partsAndServicesJSONParts
             case .FIRESUPPRESSION_URL:
                 return EndPoint.fireSuppressionInput
+            case .CONTACT_US:
+                /* TODO REMOVE */
+                if let path = NSBundle.mainBundle().pathForResource("RegionContactsHandler", ofType: "json")
+                {
+                    if let d = NSData(contentsOfFile: path)
+                    {
+                        do {
+                            if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
+                                return json
+                            }
+                        }
+                        catch {
+                            print(error)
+                        }
+                    }
+                }
+                return nil
             }
         }
         
@@ -45,6 +65,8 @@ class JSONManager {
                 return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
             case .FIRESUPPRESSION_URL:
                 return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Products/FireSuppressionHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
+            case .CONTACT_US:
+                return NSURL(string: "")!
             }
         }
         
@@ -54,6 +76,8 @@ class JSONManager {
                 return "contentLastModified"
             case .FIRESUPPRESSION_URL:
                 return "fireLastModified"
+            case .CONTACT_US:
+                return "contactUsLastModified"
             }
         }
         
@@ -63,6 +87,8 @@ class JSONManager {
                 return "contentUpdateAvailableKey"
             case .FIRESUPPRESSION_URL:
                 return "fireUpdateAvailableKey"
+            case .CONTACT_US:
+                return "contactUsAvailableKey"
             }
         }
         
@@ -72,6 +98,8 @@ class JSONManager {
                 return "contentData.dat"
             case .FIRESUPPRESSION_URL:
                 return "fireData.dat"
+            case .CONTACT_US:
+                return "contactUs.dat"
             }
         }
         

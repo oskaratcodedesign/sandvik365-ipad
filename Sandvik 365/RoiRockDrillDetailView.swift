@@ -40,6 +40,13 @@ class RoiRockDrillDetailView: NibDesignable {
         }
     }
     
+    @IBAction func closeAction(sender: AnyObject) {
+        if let superview = self.superview {
+            self.removeFromSuperview()
+            superview.hidden = true
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

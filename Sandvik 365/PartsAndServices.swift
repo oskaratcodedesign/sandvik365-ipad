@@ -154,8 +154,26 @@ enum BusinessType: UInt32 {
         }
     }
     
+    var roiRockDrillCalculatorTitle: String? {
+        switch self {
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, CrusherAndScreening:
+            return nil
+        case SurfaceDrilling:
+            return "Rock drill upgrade simulator"
+        }
+    }
+    
+    var roiRockDrillInput: ROIRockDrillInput? {
+        switch self {
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, CrusherAndScreening:
+            return nil
+        case SurfaceDrilling:
+            return ROIRockDrillInput()
+        }
+    }
+    
     var roiTitlesLowerCase: [String] {
-        return [roiCrusherCalculatorTitle?.lowercaseString, fireSuppressionTitle?.lowercaseString, roiGetCalculatorTitle?.lowercaseString].flatMap({$0})
+        return [roiCrusherCalculatorTitle?.lowercaseString, fireSuppressionTitle?.lowercaseString, roiGetCalculatorTitle?.lowercaseString, roiRockDrillCalculatorTitle?.lowercaseString].flatMap({$0})
     }
     
 }
@@ -280,9 +298,11 @@ class PartsAndServices {
         if let fireSuppressionTitle = self.businessType.fireSuppressionTitle {
             titles.append(fireSuppressionTitle.uppercaseString)
         }
-        
         if let geTitle = self.businessType.roiGetCalculatorTitle {
             titles.append(geTitle.uppercaseString)
+        }
+        if let roTitle = self.businessType.roiRockDrillCalculatorTitle {
+            titles.append(roTitle.uppercaseString)
         }
         
         if let mediaCenterTitle = self.businessType.mediaCenterTitle {

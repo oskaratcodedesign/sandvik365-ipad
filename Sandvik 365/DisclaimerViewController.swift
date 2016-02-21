@@ -11,6 +11,7 @@ import UIKit
 class DisclaimerViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var disclaimerTextView: UITextView!
     
+    @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
             NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
         
+        self.tutorialButton.titleLabel!.textAlignment = .Center
         self.updateButton.layer.borderWidth = 2
         self.updateButton.titleLabel!.numberOfLines = 0
         self.updateButton.titleLabel!.textAlignment = .Center
@@ -55,12 +57,13 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PresentTutorial" {
+            if let vc = segue.destinationViewController as? TutorialViewController {
+                vc.shouldShowCloseButton = true
+            }
+        }
     }
-    
     
     func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
             UIApplication.sharedApplication().openURL(URL)
