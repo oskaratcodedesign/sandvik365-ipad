@@ -2244,12 +2244,14 @@ PROFIT BY UP TO</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-67-zLl">
-                                <rect key="frame" x="102" y="150" width="396" height="300"/>
+                                <rect key="frame" x="102" y="150" width="396" height="290"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jOg-67-zLl" firstAttribute="top" secondItem="ryg-z8-JxQ" secondAttribute="top" id="AxB-fQ-CxN"/>
                             <constraint firstAttribute="height" secondItem="ryg-z8-JxQ" secondAttribute="height" multiplier="2" id="CNb-ri-Dbi"/>
+                            <constraint firstItem="jOg-67-zLl" firstAttribute="bottom" secondItem="ryg-z8-JxQ" secondAttribute="bottom" constant="-10" id="EF5-H9-55P"/>
                             <constraint firstItem="ryg-z8-JxQ" firstAttribute="centerX" secondItem="quz-wi-k3V" secondAttribute="centerX" id="HjX-ac-RrV"/>
                             <constraint firstItem="jOg-67-zLl" firstAttribute="leading" secondItem="ryg-z8-JxQ" secondAttribute="leading" id="I9r-id-BZd"/>
                             <constraint firstItem="jOg-67-zLl" firstAttribute="height" secondItem="ryg-z8-JxQ" secondAttribute="height" id="MOy-Hu-VD4"/>
@@ -2259,6 +2261,12 @@ PROFIT BY UP TO</string>
                             <constraint firstItem="jOg-67-zLl" firstAttribute="centerX" secondItem="quz-wi-k3V" secondAttribute="centerX" id="fv6-I3-ueM"/>
                             <constraint firstItem="ryg-z8-JxQ" firstAttribute="leading" secondItem="quz-wi-k3V" secondAttribute="leadingMargin" constant="82" id="r1I-H8-DdQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MOy-Hu-VD4"/>
+                                <exclude reference="NTA-fg-JOt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="detailsContainerView" destination="jOg-67-zLl" id="Cw8-1m-cA5"/>
