@@ -27,9 +27,6 @@ class RoiEDVResultViewController: RoiResultViewController {
         super.viewWillAppear(animated)
         setGraphValue()
         setProfitLabel()
-        if self.selectedInput.costType == nil {
-            self.selectedButton?.selected = false
-        }
     }
     
     @IBAction func firstAction(sender: UIButton) {
@@ -52,12 +49,14 @@ class RoiEDVResultViewController: RoiResultViewController {
     
     private func setGraphValue() {
         
-        self.graphView.hidden = true
         if let total = selectedInput.total() {
-            let multiplier = Double(total) / (selectedInput.maxTotal())
-            if multiplier > 0 {
-                self.graphView.hidden = false
-                self.graphViewHeightConstraint = self.graphViewHeightConstraint.changeMultiplier(CGFloat(multiplier))
+            var multiplier = Double(total) / (selectedInput.maxTotal())
+            multiplier = max(multiplier, 0.001)
+            self.graphViewHeightConstraint.active = false
+            self.graphViewHeightConstraint = self.graphViewHeightConstraint.newMultiplier(CGFloat(multiplier))
+            self.graphViewHeightConstraint.active = true
+            UIView.animateWithDuration(0.25) {
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -73,16 +72,21 @@ class RoiEDVResultViewController: RoiResultViewController {
     }
     
     private func controlInput(input: ROIEDVInput, selectedService: ROIEDVCostType, selectedButton: UIButton) {
-        self.selectedButton?.selected = false
+        //self.selectedButton?.selected = false
         self.selectedButton = selectedButton
         self.selectedButton?.selected = !selectedButton.selected
         
-        input.costType = selectedService
+        if selectedButton.selected {
+            input.costTypes.insert(selectedService)
+        }
+        else {
+            input.costTypes.remove(selectedService)
+        }
     }
     
     private func setProfitLabel()
     {
-        if self.selectedInput.costType != nil {
+        if !self.selectedInput.costTypes.isEmpty {
             setProfitLabelFromInput()
         }
         else {

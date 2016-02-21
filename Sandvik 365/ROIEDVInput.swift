@@ -80,19 +80,19 @@ enum ROIEDVInputValue {
 }
 
 class ROIEDVInput: ROICalculatorInput {
-    var breakDowns: ROIEDVInputValue = .BreakDowns(1)
-    var extraCost: ROIEDVInputValue = .ExtraCost(0)
-    var repairHours: ROIEDVInputValue = .RepairHours(0)
-    var numberOfTechnicians: ROIEDVInputValue = .NumberOfTechnicians(0)
-    var technicianCost: ROIEDVInputValue = .TechnicianCost(0)
-    var standingStill: ROIEDVInputValue = .StandingStill(0)
+    var breakDowns: ROIEDVInputValue = .BreakDowns(4)
+    var extraCost: ROIEDVInputValue = .ExtraCost(10000)
+    var repairHours: ROIEDVInputValue = .RepairHours(100)
+    var numberOfTechnicians: ROIEDVInputValue = .NumberOfTechnicians(2)
+    var technicianCost: ROIEDVInputValue = .TechnicianCost(100)
+    var standingStill: ROIEDVInputValue = .StandingStill(40)
     
     var oreGrade: ROIEDVInputValue = .OreGrade(2.0) //%
     var capacity: ROIEDVInputValue = .Capacity(1200) //m t/hr
     var recoveryRate: ROIEDVInputValue = .RecoveryRate(85) //%
     var orePrice: ROIEDVInputValue = .OrePrice(5500) //USD/m t
     
-    var costType: ROIEDVCostType?
+    var costTypes: Set<ROIEDVCostType> = Set<ROIEDVCostType>()
     var usePPM: Bool = false //otherwise percent
     
     func allInputs() -> [ROIEDVInputValue] {
@@ -133,14 +133,14 @@ class ROIEDVInput: ROICalculatorInput {
     
     override func total() -> Int? {
         var result:Double = 0
-        if let costType = self.costType {
+        for costType in self.costTypes {
             switch costType {
             case ROIEDVCostType.ExtraCost:
-                result = totalExtraCost()
+                result += totalExtraCost()
             case ROIEDVCostType.ServiceCost:
-                result = totalServiceCostPerYear()
+                result += totalServiceCostPerYear()
             case ROIEDVCostType.ProductivityLoss:
-                result = totalProductivityLoss()
+                result += totalProductivityLoss()
             }
         }
         

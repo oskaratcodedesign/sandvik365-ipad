@@ -2190,8 +2190,8 @@ PROFIT BY UP TO</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9j-Op-Kft">
                                                         <rect key="frame" x="25" y="20" width="124" height="218"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-26-d9j">
-                                                                <rect key="frame" x="31" y="0.0" width="62" height="218"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-26-d9j">
+                                                                <rect key="frame" x="31" y="218" width="62" height="0.0"/>
                                                                 <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                         </subviews>
@@ -2200,7 +2200,7 @@ PROFIT BY UP TO</string>
                                                             <constraint firstItem="jy5-26-d9j" firstAttribute="centerX" secondItem="r9j-Op-Kft" secondAttribute="centerX" id="0eQ-zc-sMr"/>
                                                             <constraint firstItem="jy5-26-d9j" firstAttribute="width" secondItem="r9j-Op-Kft" secondAttribute="width" multiplier="0.5" id="6PK-2a-TOC"/>
                                                             <constraint firstAttribute="bottom" secondItem="jy5-26-d9j" secondAttribute="bottom" id="Uwb-fD-zEd"/>
-                                                            <constraint firstItem="jy5-26-d9j" firstAttribute="height" secondItem="r9j-Op-Kft" secondAttribute="height" id="rKz-dk-8XK"/>
+                                                            <constraint firstItem="jy5-26-d9j" firstAttribute="height" secondItem="r9j-Op-Kft" secondAttribute="height" multiplier="0.001" id="rKz-dk-8XK"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
