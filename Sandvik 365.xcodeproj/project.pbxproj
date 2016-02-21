@@ -78,6 +78,8 @@
 		F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAA1C745B63002A5867 /* RoiRockDrillResultViewController.swift */; };
 		F77D5EAD1C749E2D002A5867 /* ROIEDVInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAC1C749E2D002A5867 /* ROIEDVInput.swift */; };
 		F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */; };
+		F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */; };
+		F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */; };
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
@@ -225,6 +227,8 @@
 		F77D5EAA1C745B63002A5867 /* RoiRockDrillResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiRockDrillResultViewController.swift; sourceTree = "<group>"; };
 		F77D5EAC1C749E2D002A5867 /* ROIEDVInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROIEDVInput.swift; sourceTree = "<group>"; };
 		F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVResultViewController.swift; sourceTree = "<group>"; };
+		F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiEDVDetailView.xib; sourceTree = "<group>"; };
+		F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVDetailView.swift; sourceTree = "<group>"; };
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -596,6 +600,8 @@
 		F7C05FF01BF9D41500E09456 /* Roi */ = {
 			isa = PBXGroup;
 			children = (
+				F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */,
+				F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */,
 				F7C959001C5F7AC400756CB0 /* FireSuppression */,
 				F7E69A761B7B5B48004FA708 /* RoiInputView.swift */,
 				F7E69A781B7B5B66004FA708 /* RoiInputView.xib */,
@@ -756,6 +762,7 @@
 				F73E9B421C44F8B700742EBD /* MHS Remove 1920x1080_v1.mp4 in Resources */,
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
+				F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
@@ -904,6 +911,7 @@
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
+				F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				F77D5EA51C745AA5002A5867 /* ROIRockDrillInput.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,

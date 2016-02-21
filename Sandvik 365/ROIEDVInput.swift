@@ -103,7 +103,7 @@ class ROIEDVInput: ROICalculatorInput {
         return allInputs().flatMap({ $0.title })
     }
     
-    private func totalExtraCost() -> Double {
+    func totalExtraCost() -> Double {
         if let bd = breakDowns.value as? UInt, ec = extraCost.value as? UInt {
             return Double(bd * ec)
         }
@@ -117,14 +117,14 @@ class ROIEDVInput: ROICalculatorInput {
         return 0
     }
     
-    private func totalServiceCostPerYear() -> Double {
+    func totalServiceCostPerYear() -> Double {
         if let bd = breakDowns.value as? UInt {
             return Double(bd) * totalServiceCostPerBreakDown()
         }
         return 0
     }
     
-    private func totalProductivityLoss() -> Double {
+    func totalProductivityLoss() -> Double {
         if let st = standingStill.value as? UInt, ca = capacity.value as? UInt, og = oreGrade.value as? Double, rr = recoveryRate.value as? Double, op = orePrice.value as? UInt{
             return Double(st) * Double(ca) * (Double(og)/100) * (Double(rr)/100) * Double(op)
         }

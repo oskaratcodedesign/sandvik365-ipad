@@ -67,7 +67,7 @@ class RoiEDVResultViewController: RoiResultViewController {
         }
     }
     @IBAction func seeDetailAction(sender: UIButton) {
-        //detailsContainerView.addSubview(RoiCrusherDetailView(frame: detailsContainerView.bounds, input: selectedInput))
+        detailsContainerView.addSubview(RoiEDVDetailView(frame: detailsContainerView.bounds, input: selectedInput))
         detailsContainerView.hidden = false
     }
     
