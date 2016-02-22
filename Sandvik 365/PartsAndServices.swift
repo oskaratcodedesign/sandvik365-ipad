@@ -34,22 +34,32 @@ enum BusinessType: UInt32 {
     
     var videos: [Video]? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
             return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
             Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
             Video(videoName: "GET - MHS Installation", ext: "mp4", title: "MHS Installation", image: "S365-movie-button-MHS-installation"),
             Video(videoName: "GET - MHS Removal", ext: "mp4", title: "MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install")]
+            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
+            Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
+            Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+        case UndergroundDrillingAndBolting:
+            return  [Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
+                Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
+                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+        case SurfaceDrilling:
+            return  [Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+        case MechanicalCutting:
+            return  [Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds")]
         }
     }
     
     var mediaCenterTitle: String? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
-        case UndergroundLoadingAndHauling:
+        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
             return "Media center"
         }
     }

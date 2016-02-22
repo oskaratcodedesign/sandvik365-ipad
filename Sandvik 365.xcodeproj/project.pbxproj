@@ -47,6 +47,8 @@
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
+		F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */; };
+		F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
@@ -65,6 +67,8 @@
 		F74D78591C7B2F6A007F95F5 /* GET - MHS Removal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78551C7B2F60007F95F5 /* GET - MHS Removal.mp4 */; };
 		F74D785A1C7B2F6D007F95F5 /* GET - MHS Installation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78541C7B2F60007F95F5 /* GET - MHS Installation.mp4 */; };
 		F74D785B1C7B2F6F007F95F5 /* GET - Sectional Shroud Installation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78561C7B2F60007F95F5 /* GET - Sectional Shroud Installation.mp4 */; };
+		F74D78621C7B3BCF007F95F5 /* Rock drill kits - Standardize your repairs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D785D1C7B313D007F95F5 /* Rock drill kits - Standardize your repairs.mp4 */; };
+		F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D785E1C7B313D007F95F5 /* Rock drills - Modernize your drilling.mp4 */; };
 		F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7620B821C48FBB700B0A6D8 /* VideoButton.swift */; };
 		F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7620B841C48FBC800B0A6D8 /* VideoButton.xib */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
@@ -199,6 +203,8 @@
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
+		F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rebuilds and Major Components.mp4"; sourceTree = "<group>"; };
+		F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eclipse - Fluorine-free fire suppression system.mp4"; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
 		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
 		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 		F74D78541C7B2F60007F95F5 /* GET - MHS Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - MHS Installation.mp4"; sourceTree = "<group>"; };
 		F74D78551C7B2F60007F95F5 /* GET - MHS Removal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - MHS Removal.mp4"; sourceTree = "<group>"; };
 		F74D78561C7B2F60007F95F5 /* GET - Sectional Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Sectional Shroud Installation.mp4"; sourceTree = "<group>"; };
+		F74D785D1C7B313D007F95F5 /* Rock drill kits - Standardize your repairs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rock drill kits - Standardize your repairs.mp4"; sourceTree = "<group>"; };
+		F74D785E1C7B313D007F95F5 /* Rock drills - Modernize your drilling.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rock drills - Modernize your drilling.mp4"; sourceTree = "<group>"; };
 		F7620B821C48FBB700B0A6D8 /* VideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
 		F7620B841C48FBC800B0A6D8 /* VideoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoButton.xib; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
@@ -506,6 +514,9 @@
 			isa = PBXGroup;
 			children = (
 				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
+				F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */,
+				F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */,
+				F74D785F1C7B3141007F95F5 /* rockdrill */,
 				F73E9B331C43E4DC00742EBD /* get */,
 			);
 			name = videos;
@@ -550,6 +561,15 @@
 				F792035E1C46309B00CF4E3F /* RegionSelector.swift */,
 			);
 			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		F74D785F1C7B3141007F95F5 /* rockdrill */ = {
+			isa = PBXGroup;
+			children = (
+				F74D785D1C7B313D007F95F5 /* Rock drill kits - Standardize your repairs.mp4 */,
+				F74D785E1C7B313D007F95F5 /* Rock drills - Modernize your drilling.mp4 */,
+			);
+			name = rockdrill;
 			sourceTree = "<group>";
 		};
 		F77D5E671C710AC2002A5867 /* Tutorial */ = {
@@ -756,11 +776,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4842CE721BEB798E00D39F5F /* Preloaded Resources in Resources */,
+				F74D78621C7B3BCF007F95F5 /* Rock drill kits - Standardize your repairs.mp4 in Resources */,
 				F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */,
 				F74D785A1C7B2F6D007F95F5 /* GET - MHS Installation.mp4 in Resources */,
 				F7E69A7F1B7DE670004FA708 /* RoiSelectionButton.xib in Resources */,
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */,
+				F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
@@ -781,6 +803,7 @@
 				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
 				F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
+				F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
 				F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */,
@@ -788,6 +811,7 @@
 				F74D785B1C7B2F6F007F95F5 /* GET - Sectional Shroud Installation.mp4 in Resources */,
 				48FDEA9E1B5F8CEC00C5AFE6 /* Images.xcassets in Resources */,
 				F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */,
+				F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */,
 				F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */,
 				F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */,
 				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
