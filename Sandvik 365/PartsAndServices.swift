@@ -37,11 +37,11 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, SurfaceDrilling, UndergroundDrillingAndBolting, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return [Video(videoName: "Bucket Shroud Wear Movie Release 01_v1", ext: "mp4", title: "Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-            Video(videoName: "Corner Shroud Installation_v1", ext: "mp4", title: "Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-            Video(videoName: "MHS Install 1920x1080_v1", ext: "mp4", title: "MHS Installation", image: "S365-movie-button-MHS-installation"),
-            Video(videoName: "MHS Remove 1920x1080_v1", ext: "mp4", title: "MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-            Video(videoName: "Sectional Shroud Install_v1", ext: "mp4", title: "Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install")]
+            return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
+            Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
+            Video(videoName: "GET - MHS Installation", ext: "mp4", title: "MHS Installation", image: "S365-movie-button-MHS-installation"),
+            Video(videoName: "GET - MHS Removal", ext: "mp4", title: "MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
+            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install")]
         }
     }
     
