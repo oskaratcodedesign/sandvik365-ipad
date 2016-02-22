@@ -36,7 +36,6 @@ enum ROIGetInputValue {
     case Loaders(UInt)
     case LipsUsed(UInt)
     case LipReplacementCost(Double)
-    case ServiceCost(Double)
     
     var title :String {
         switch self {
@@ -46,8 +45,6 @@ enum ROIGetInputValue {
             return NSLocalizedString("Number of lips used/worn out during 4000 hours", comment: "")
         case LipReplacementCost:
             return NSLocalizedString("Lip replacement cost/change", comment: "")
-        case ServiceCost:
-            return NSLocalizedString("Service cost/2000 hours", comment: "")
         }
     }
     
@@ -59,8 +56,6 @@ enum ROIGetInputValue {
             return value
         case LipReplacementCost(let value):
             return value
-        case ServiceCost(let value):
-            return value
         }
     }
 }
@@ -69,11 +64,10 @@ class ROIGetInput: ROICalculatorInput {
     var loaders: ROIGetInputValue = .Loaders(1)
     var lipsUsed: ROIGetInputValue = .LipsUsed(6)
     var lipReplacementCost: ROIGetInputValue = .LipReplacementCost(2500)
-    var serviceCost: ROIGetInputValue = .ServiceCost(13000)
     var calculationType: ROIGetCalculationType?
     
     func allInputs() -> [ROIGetInputValue] {
-        return [loaders, lipsUsed, lipReplacementCost, serviceCost]
+        return [loaders, lipsUsed, lipReplacementCost]
     }
     
     override func allTitles() -> [String] {
@@ -83,8 +77,8 @@ class ROIGetInput: ROICalculatorInput {
     override func total() -> Int? {
         //(6 x 2500)+(13 000 x 2)
         if calculationType == .CostPerHour {
-            if let loaders = loaders.value as? UInt, let lipsUsed = lipsUsed.value as? UInt, let lipReplacementCost = lipReplacementCost.value as? Double, let serviceCost = serviceCost.value as? Double {
-                let res = Double(loaders) * (Double(lipsUsed) * lipReplacementCost) + (serviceCost * 2)
+            if let loaders = loaders.value as? UInt, let lipsUsed = lipsUsed.value as? UInt, let lipReplacementCost = lipReplacementCost.value as? Double{
+                let res = Double(loaders) * (Double(lipsUsed) * lipReplacementCost)
                 if res > Double(Int.max) {
                     return Int.max
                 }
@@ -118,11 +112,6 @@ class ROIGetInput: ROICalculatorInput {
                 lipReplacementCost = .LipReplacementCost(number.doubleValue)
                 return true
             }
-        case .ServiceCost:
-            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
-                serviceCost = .ServiceCost(number.doubleValue)
-                return true
-            }
         }
         
         return false
@@ -137,8 +126,6 @@ class ROIGetInput: ROICalculatorInput {
             return NSNumberFormatter().stringFromNumber(lipsUsed.value as! UInt)
         case .LipReplacementCost:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(lipReplacementCost.value as! Double)
-        case .ServiceCost:
-            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(serviceCost.value as! Double)
         }
     }
     
@@ -150,8 +137,6 @@ class ROIGetInput: ROICalculatorInput {
         case .LipsUsed:
             return nil
         case .LipReplacementCost:
-            return InputAbbreviation.USD
-        case .ServiceCost:
             return InputAbbreviation.USD
         }
     }
@@ -179,13 +164,6 @@ class ROIGetInput: ROICalculatorInput {
                 let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
                 if value >= 0 {
                     lipReplacementCost = .LipReplacementCost(value)
-                }
-            }
-        case .ServiceCost:
-            if change != ChangeInput.Load {
-                let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
-                if value >= 0 {
-                    serviceCost = .ServiceCost(value)
                 }
             }
         }
