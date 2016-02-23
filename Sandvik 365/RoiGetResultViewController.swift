@@ -93,10 +93,9 @@ class RoiGetResultViewController: RoiResultViewController {
     
     private func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            if let percentages = selectedInput.calculationType?.percentages {
-                profitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
-                weldProfitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
-            }
+            let percentages = ROIGetCalculationType.CostPerHour.percentages
+            profitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
+            weldProfitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
         }
     }
 }

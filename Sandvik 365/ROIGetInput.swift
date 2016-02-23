@@ -76,15 +76,14 @@ class ROIGetInput: ROICalculatorInput {
     
     override func total() -> Int? {
         //(6 x 2500)+(13 000 x 2)
-        if calculationType == .CostPerHour {
-            if let loaders = loaders.value as? UInt, let lipsUsed = lipsUsed.value as? UInt, let lipReplacementCost = lipReplacementCost.value as? Double{
-                let res = Double(loaders) * (Double(lipsUsed) * lipReplacementCost)
-                if res > Double(Int.max) {
-                    return Int.max
-                }
-                else {
-                    return Int(res)
-                }
+        /*if calculationType == .CostPerHour*/
+        if let loaders = loaders.value as? UInt, let lipsUsed = lipsUsed.value as? UInt, let lipReplacementCost = lipReplacementCost.value as? Double{
+            let res = Double(loaders) * (Double(lipsUsed) * lipReplacementCost)
+            if res > Double(Int.max) {
+                return Int.max
+            }
+            else {
+                return Int(res)
             }
         }
         return nil
