@@ -37,11 +37,11 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-            Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-            Video(videoName: "GET - MHS Installation", ext: "mp4", title: "MHS Installation", image: "S365-movie-button-MHS-installation"),
-            Video(videoName: "GET - MHS Removal", ext: "mp4", title: "MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
+            return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
+            Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
+            Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
+            Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
+            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
             Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
             Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
         case UndergroundDrillingAndBolting:
