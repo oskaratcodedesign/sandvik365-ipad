@@ -26,7 +26,7 @@ enum InputAbbreviation: String {
     case Gram = "g"
     case Kilo = "kg"
     case Meter = "m"
-    case Year = "/y"
+    case Year = "/year"
     
     func addAbbreviation(value: String, valueFont: UIFont, abbreviationFont: UIFont) ->  NSAttributedString{
         let attrString = NSMutableAttributedString(string: value, attributes: [NSFontAttributeName:valueFont])

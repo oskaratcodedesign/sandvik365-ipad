@@ -31,7 +31,7 @@ enum ROIEDVInputValue {
     var title :String {
         switch self {
         case BreakDowns:
-            return NSLocalizedString("Unplanned crusher breakdowns", comment: "")
+            return NSLocalizedString("Unplanned crusher breakdowns /year", comment: "")
         case ExtraCost:
             return NSLocalizedString("Average extra cost/breakdown", comment: "")
         case RepairHours:
