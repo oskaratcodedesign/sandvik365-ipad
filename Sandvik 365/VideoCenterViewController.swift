@@ -14,6 +14,7 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var collectionView: UICollectionView!
     var selectedBusinessType: BusinessType!
     private var videos: [Video]!
+    @IBOutlet weak var gradientView: GradientHorizontalView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,20 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         self.videos = self.selectedBusinessType.videos?.sort({ (v1: Video, v2: Video) -> Bool in
             v1.title.caseInsensitiveCompare(v2.title) == .OrderedAscending
         })
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            let size = layout.itemSize.height + layout.minimumLineSpacing
+            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: size, right: 40)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let xOffset = self.collectionView.contentSize.width
+        let width = self.collectionView.frame.size.width
+        if xOffset > width {
+            self.gradientView.hidden = false
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

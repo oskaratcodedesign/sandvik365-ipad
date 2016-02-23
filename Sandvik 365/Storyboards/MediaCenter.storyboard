@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -41,13 +41,13 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the video you want to play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-YU-FRh">
-                                <rect key="frame" x="120" y="208" width="258" height="20"/>
+                                <rect key="frame" x="120" y="208" width="258" height="19"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-v5-fv7">
-                                <rect key="frame" x="120" y="238" width="460" height="295"/>
+                                <rect key="frame" x="120" y="237" width="480" height="295"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="295" id="oP4-dl-x5J"/>
@@ -107,21 +107,45 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="oP4-dl-x5J"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="4Um-uf-dXf" id="Tia-pW-hIS"/>
                                     <outlet property="delegate" destination="4Um-uf-dXf" id="Grb-5K-Xd8"/>
                                 </connections>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rId-8V-ruH" customClass="GradientHorizontalView" customModule="Sandvik_365" customModuleProvider="target">
+                                <rect key="frame" x="560" y="237" width="40" height="295"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Q0c-tq-LId"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rightColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="KBb-v5-fv7" secondAttribute="trailing" id="73E-MI-7t2"/>
+                            <constraint firstItem="rId-8V-ruH" firstAttribute="trailing" secondItem="KBb-v5-fv7" secondAttribute="trailing" id="4mR-Hu-oPQ"/>
+                            <constraint firstItem="rId-8V-ruH" firstAttribute="top" secondItem="KBb-v5-fv7" secondAttribute="top" id="6p5-af-ORv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KBb-v5-fv7" secondAttribute="trailing" constant="-20" id="73E-MI-7t2"/>
                             <constraint firstItem="3gF-YU-FRh" firstAttribute="leading" secondItem="h9e-ft-qTX" secondAttribute="leading" id="7ob-IV-nSB"/>
                             <constraint firstItem="Yzk-kN-Lor" firstAttribute="top" secondItem="KBb-v5-fv7" secondAttribute="bottom" constant="150" id="A23-yQ-iYJ"/>
                             <constraint firstItem="3gF-YU-FRh" firstAttribute="top" secondItem="h9e-ft-qTX" secondAttribute="bottom" constant="10" id="JG8-GN-GOL"/>
                             <constraint firstItem="h9e-ft-qTX" firstAttribute="leading" secondItem="QpO-XX-Fd0" secondAttribute="leadingMargin" constant="100" id="JxD-YA-2WQ"/>
                             <constraint firstItem="KBb-v5-fv7" firstAttribute="top" secondItem="3gF-YU-FRh" secondAttribute="bottom" constant="10" id="PP8-gE-oYd"/>
+                            <constraint firstItem="rId-8V-ruH" firstAttribute="height" secondItem="KBb-v5-fv7" secondAttribute="height" id="R3C-xE-Gnj"/>
                             <constraint firstItem="h9e-ft-qTX" firstAttribute="top" secondItem="wSy-bB-jqs" secondAttribute="bottom" constant="80" id="Zi1-yd-5sE"/>
+                            <constraint firstItem="Yzk-kN-Lor" firstAttribute="top" secondItem="KBb-v5-fv7" secondAttribute="bottom" constant="68" id="vDK-bt-9aq"/>
                             <constraint firstItem="KBb-v5-fv7" firstAttribute="leading" secondItem="3gF-YU-FRh" secondAttribute="leading" id="x66-Bu-PY1"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -137,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="KBb-v5-fv7" id="mil-pI-582"/>
+                        <outlet property="gradientView" destination="rId-8V-ruH" id="Ca2-uA-b4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qi4-Da-QVp" userLabel="First Responder" sceneMemberID="firstResponder"/>

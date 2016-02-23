@@ -49,6 +49,7 @@
 		F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */; };
 		F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */; };
 		F72657651C7B8664006A2C75 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */; };
+		F72657731C7CB6FA006A2C75 /* GradientHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
@@ -190,6 +191,7 @@
 		F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rebuilds and Major Components.mp4"; sourceTree = "<group>"; };
 		F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eclipse - Fluorine-free fire suppression system.mp4"; sourceTree = "<group>"; };
 		F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Sandvik_365.framework; path = "Pods/../build/Debug-iphoneos/Pods_Sandvik_365.framework"; sourceTree = "<group>"; };
+		F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientHorizontalView.swift; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
 		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
 		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -405,11 +407,12 @@
 				486F88821B736AE80084211F /* MainMenuItemView.xib */,
 				486F88841B736AF50084211F /* MainMenuItemView.swift */,
 				48FCED4D1B74C293002D45A0 /* GradientView.swift */,
+				F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */,
+				F7E2C0431C15C42C009D290B /* DownloadingView.swift */,
 				48FCED511B74CB79002D45A0 /* ProgressLineView.xib */,
 				48FCED4F1B74CB5D002D45A0 /* ProgressLineView.swift */,
 				F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */,
 				F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */,
-				F7E2C0431C15C42C009D290B /* DownloadingView.swift */,
 				F7E2C0451C15C445009D290B /* DownloadingView.xib */,
 				F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */,
 				F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */,
@@ -877,6 +880,7 @@
 				F7C959021C5F7B7C00756CB0 /* FireSuppressionKeyFeatureItem.swift in Sources */,
 				F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */,
 				F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */,
+				F72657731C7CB6FA006A2C75 /* GradientHorizontalView.swift in Sources */,
 				F77D5E621C6CD70C002A5867 /* TutorialViewController.swift in Sources */,
 				F77D5EAD1C749E2D002A5867 /* ROIEDVInput.swift in Sources */,
 				F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */,
