@@ -10,7 +10,7 @@ import UIKit
 
 let didTapNotificationKey = "didTapNotificationKey"
 
-class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate, ContactUsViewDelegate {
+class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate, ContactUsViewDelegate, RegionSelectorDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
     var selectedContent: Content!
@@ -30,6 +30,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     private var changedTopConstant: CGFloat = 0
     
     private var alignCountOnBoxRight: Bool = true
+    private var regionSelector: RegionSelector?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,15 +95,21 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         }
     }
     
-    func showRegionAction(allRegions: [RegionData]) {
-        let regionSelector = RegionSelector(del: self.contactUsView, allRegions: allRegions)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        if let window = appDelegate.window {
-            let constraints = regionSelector.fillConstraints(window, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
-            regionSelector.translatesAutoresizingMaskIntoConstraints = false
-            window.addSubview(regionSelector)
-            NSLayoutConstraint.activateConstraints(constraints)
+    func didSelectRegion() {
+        if let regionSelector = self.regionSelector {
+            regionSelector.removeFromSuperview()
+            self.regionSelector = nil
         }
+        self.contactUsView.didSelectRegion()
+    }
+    
+    func showRegionAction(allRegions: [RegionData]) {
+        regionSelector = RegionSelector(del: self, allRegions: allRegions)
+        let constraints = regionSelector!.fillConstraints(self.view, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
+        regionSelector!.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(regionSelector!)
+        NSLayoutConstraint.activateConstraints(constraints)
+        
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
@@ -304,11 +311,6 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return label
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate {
             return

@@ -13,7 +13,7 @@ protocol ContactUsViewDelegate {
     func showRegionAction(allRegions: [RegionData])
 }
 
-class ContactUsView : NibDesignable, RegionSelectorDelegate {
+class ContactUsView : NibDesignable {
     @IBOutlet weak var mapImageView: UIImageView!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
