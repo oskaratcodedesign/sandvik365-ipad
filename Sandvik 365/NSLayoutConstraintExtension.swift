@@ -27,4 +27,18 @@ extension NSLayoutConstraint {
         
         return newConstraint
     }
+    
+    func newMultiplier(multiplier:CGFloat) -> NSLayoutConstraint {
+    
+        let newConstraint = NSLayoutConstraint(
+        item: firstItem,
+        attribute: firstAttribute,
+        relatedBy: relation,
+        toItem: secondItem,
+        attribute: secondAttribute,
+        multiplier: multiplier,
+        constant: constant)
+        
+        return newConstraint
+    }
 }
