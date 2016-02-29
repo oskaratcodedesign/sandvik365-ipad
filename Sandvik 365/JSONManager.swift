@@ -21,6 +21,7 @@ class JSONManager {
         
         private static var partsAndServicesJSONParts: PartsAndServicesJSONParts? = nil
         private static var fireSuppressionInput: FireSuppressionInput? = nil
+        private static var contactUsData: [RegionData]? = nil
         
         func setDataFromJson(json: NSDictionary) {
             switch self {
@@ -29,7 +30,7 @@ class JSONManager {
             case .FIRESUPPRESSION_URL:
                 EndPoint.fireSuppressionInput = FireSuppressionInput(json: json)
             case .CONTACT_US:
-                return
+                EndPoint.contactUsData = Region.getAllRegionsWithData(json)
             }
         }
         
@@ -40,22 +41,7 @@ class JSONManager {
             case .FIRESUPPRESSION_URL:
                 return EndPoint.fireSuppressionInput
             case .CONTACT_US:
-                /* TODO REMOVE */
-                if let path = NSBundle.mainBundle().pathForResource("RegionContactsHandler", ofType: "json")
-                {
-                    if let d = NSData(contentsOfFile: path)
-                    {
-                        do {
-                            if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                                return json
-                            }
-                        }
-                        catch {
-                            print(error)
-                        }
-                    }
-                }
-                return nil
+                return EndPoint.contactUsData
             }
         }
         
@@ -66,7 +52,7 @@ class JSONManager {
             case .FIRESUPPRESSION_URL:
                 return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Products/FireSuppressionHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
             case .CONTACT_US:
-                return NSURL(string: "")!
+                return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Contact/RegionContactsHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
             }
         }
         

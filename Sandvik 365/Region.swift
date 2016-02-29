@@ -99,17 +99,13 @@ enum Region:String {
         return EUROPE
     }
     
-    static func getAllRegionsWithData() -> [RegionData] {
+    static func getAllRegionsWithData(json: NSDictionary) -> [RegionData] {
         var regionsData: [RegionData] = []
-        if let data = JSONManager.EndPoint.CONTACT_US.data as? NSDictionary{
-            if let data = data.objectForKey("data") as? NSDictionary {
-                if let regions = data.objectForKey("regionContacts") as? NSDictionary {
-                    for region in allRegions {
-                        if let json = regions.objectForKey(region.rawValue) as? NSDictionary {
-                            let regionData = RegionData(region: region, json: json)
-                            regionsData.append(regionData)
-                        }
-                    }
+        if let regions = json.objectForKey("regionContacts") as? NSDictionary {
+            for region in allRegions {
+                if let json = regions.objectForKey(region.rawValue) as? NSDictionary {
+                    let regionData = RegionData(region: region, json: json)
+                    regionsData.append(regionData)
                 }
             }
         }

@@ -19,12 +19,12 @@ class ContactUsView : NibDesignable {
     @IBOutlet weak var phoneButton: UIButton!
     
     var delegate: ContactUsViewDelegate?
-    private var allRegions: [RegionData]!
+    private var allRegions: [RegionData]?
     private var selectedRegionData: RegionData?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.allRegions = Region.getAllRegionsWithData()
+        self.allRegions = JSONManager.getData(JSONManager.EndPoint.CONTACT_US) as? [RegionData]
         self.didSelectRegion()
     }
     
@@ -51,16 +51,20 @@ class ContactUsView : NibDesignable {
         }
     }
     @IBAction func showRegionAction(sender: AnyObject) {
-        self.delegate?.showRegionAction(self.allRegions)
+        if let allRegions = self.allRegions {
+            self.delegate?.showRegionAction(allRegions)
+        }
     }
     
     func didSelectRegion() {
-        let region = Region.selectedRegion(self.allRegions)
-        self.mapImageView.image = region.smallMap
-        if let regionData = region.getRegionData(self.allRegions) {
-            self.regionLabel.text = regionData.contactCountry?.name
-            self.phoneButton.setTitle(regionData.contactCountry?.phone, forState: .Normal)
-            self.selectedRegionData = regionData
+        if let allRegions = self.allRegions {
+            let region = Region.selectedRegion(allRegions)
+            self.mapImageView.image = region.smallMap
+            if let regionData = region.getRegionData(allRegions) {
+                self.regionLabel.text = regionData.contactCountry?.name
+                self.phoneButton.setTitle(regionData.contactCountry?.phone, forState: .Normal)
+                self.selectedRegionData = regionData
+            }
         }
     }
 }
