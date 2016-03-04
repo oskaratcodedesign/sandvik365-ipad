@@ -39,10 +39,12 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
     @IBAction func updateAction(sender: UIButton) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.addDownloadingViewAndAnimate()
-        JSONManager().downloadJSON({ (success, lastModified) -> () in
-            print("downloadJSON. Last modified: %@", lastModified)
-            appDelegate.removeDownloadingView()
-            self.checkUpdateAvailble()
+        JSONManager().downloadAllJSON({ (success, lastModified, allDownloaded) -> () in
+            print("downloadJSON. Last modified: %@ allDownloaded %@", lastModified, allDownloaded)
+            if allDownloaded {
+                appDelegate.removeDownloadingView()
+                self.checkUpdateAvailble()
+            }
         })
     }
     
