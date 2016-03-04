@@ -177,7 +177,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     
     private func buttonwidthConstraint(from: AnyObject, to: AnyObject?) -> NSLayoutConstraint {
         
-        let w = max(1/Double(titles.count-1), 0.1111)
+        let w = max(1/Double(titles.count-1), 0.1222)
         let widthConstraint = NSLayoutConstraint(item: from, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: to, attribute: NSLayoutAttribute.Width, multiplier:CGFloat(w), constant: 0)
         
         return widthConstraint
