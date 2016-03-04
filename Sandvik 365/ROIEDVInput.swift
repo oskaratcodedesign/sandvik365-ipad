@@ -15,7 +15,6 @@ enum ROIEDVCostType {
 }
 
 enum ROIEDVInputValue {
-    case BreakDowns(UInt)
     case ExtraCost(UInt)
     
     case RepairHours(UInt)
@@ -30,8 +29,6 @@ enum ROIEDVInputValue {
     
     var title :String {
         switch self {
-        case BreakDowns:
-            return NSLocalizedString("Unplanned crusher breakdowns /year", comment: "")
         case ExtraCost:
             return NSLocalizedString("Average extra cost/breakdown", comment: "")
         case RepairHours:
@@ -55,8 +52,6 @@ enum ROIEDVInputValue {
     
     var value: Any {
         switch self {
-        case BreakDowns(let value):
-            return value
         case ExtraCost(let value):
             return value
         case RepairHours(let value):
@@ -80,7 +75,6 @@ enum ROIEDVInputValue {
 }
 
 class ROIEDVInput: ROICalculatorInput {
-    var breakDowns: ROIEDVInputValue = .BreakDowns(4)
     var extraCost: ROIEDVInputValue = .ExtraCost(10000)
     var repairHours: ROIEDVInputValue = .RepairHours(100)
     var numberOfTechnicians: ROIEDVInputValue = .NumberOfTechnicians(2)
@@ -96,7 +90,7 @@ class ROIEDVInput: ROICalculatorInput {
     var usePPM: Bool = false //otherwise percent
     
     func allInputs() -> [ROIEDVInputValue] {
-        return [breakDowns, extraCost, repairHours, numberOfTechnicians, technicianCost, standingStill, oreGrade, capacity, recoveryRate, orePrice]
+        return [extraCost, repairHours, numberOfTechnicians, technicianCost, standingStill, oreGrade, capacity, recoveryRate, orePrice]
     }
     
     override func allTitles() -> [String] {
@@ -104,22 +98,15 @@ class ROIEDVInput: ROICalculatorInput {
     }
     
     func totalExtraCost() -> Double {
-        if let bd = breakDowns.value as? UInt, ec = extraCost.value as? UInt {
-            return Double(bd * ec)
+        if let ec = extraCost.value as? UInt {
+            return Double(ec)
         }
         return 0
     }
     
-    private func totalServiceCostPerBreakDown() -> Double {
+    func totalServiceCostPerBreakDown() -> Double {
         if let rh = repairHours.value as? UInt, nt = numberOfTechnicians.value as? UInt, tc = technicianCost.value as? UInt{
             return Double(rh * nt * tc)
-        }
-        return 0
-    }
-    
-    func totalServiceCostPerYear() -> Double {
-        if let bd = breakDowns.value as? UInt {
-            return Double(bd) * totalServiceCostPerBreakDown()
         }
         return 0
     }
@@ -138,7 +125,7 @@ class ROIEDVInput: ROICalculatorInput {
             case ROIEDVCostType.ExtraCost:
                 result += totalExtraCost()
             case ROIEDVCostType.ServiceCost:
-                result += totalServiceCostPerYear()
+                result += totalServiceCostPerBreakDown()
             case ROIEDVCostType.ProductivityLoss:
                 result += totalProductivityLoss()
             }
@@ -151,17 +138,12 @@ class ROIEDVInput: ROICalculatorInput {
     }
     
     override func maxTotal() -> Double {
-        return totalExtraCost() + totalServiceCostPerYear() + totalProductivityLoss()
+        return totalExtraCost() + totalServiceCostPerBreakDown() + totalProductivityLoss()
     }
     
     override func setInput(atIndex :Int, stringValue :String) -> Bool {
         let input = allInputs()[atIndex]
         switch input {
-        case .BreakDowns:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                breakDowns = .BreakDowns(number.unsignedLongValue)
-                return true
-            }
         case .ExtraCost:
             if let number = NSNumberFormatter().numberFromString(stringValue) {
                 extraCost = .ExtraCost(number.unsignedLongValue)
@@ -218,8 +200,6 @@ class ROIEDVInput: ROICalculatorInput {
     override func getInputAsString(atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
-        case .BreakDowns:
-            return NSNumberFormatter().stringFromNumber(breakDowns.value as! UInt)
         case .ExtraCost:
             return NSNumberFormatter().stringFromNumber(extraCost.value as! UInt)
         case .RepairHours:
@@ -248,8 +228,6 @@ class ROIEDVInput: ROICalculatorInput {
     override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
         let input = allInputs()[atIndex]
         switch input {
-        case .BreakDowns:
-            return InputAbbreviation.Year
         case .ExtraCost:
             return InputAbbreviation.USD
         case .RepairHours:
@@ -275,13 +253,6 @@ class ROIEDVInput: ROICalculatorInput {
     override func changeInput(atIndex :Int, change :ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
-        case .BreakDowns:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
-                if value >= 0 {
-                    breakDowns = .BreakDowns(UInt(value))
-                }
-            }
         case .ExtraCost:
             if change != ChangeInput.Load {
                 let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
