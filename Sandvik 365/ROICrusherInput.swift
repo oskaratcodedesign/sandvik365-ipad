@@ -139,7 +139,7 @@ class ROICrusherInput: ROICalculatorInput {
         case .OreGrade:
             return usePPM ? InputAbbreviation.PPM : InputAbbreviation.Percent
         case .Capacity:
-            return InputAbbreviation.MillionTonPerDay
+            return InputAbbreviation.TonPerDay
         case .RecoveryRate:
             return InputAbbreviation.Percent
         case .OrePrice:

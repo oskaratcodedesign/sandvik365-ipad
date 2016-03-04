@@ -32,13 +32,13 @@ enum ROIEDVInputValue {
         case ExtraCost:
             return NSLocalizedString("Average extra cost/breakdown", comment: "")
         case RepairHours:
-            return NSLocalizedString("Total repair maintenance hours", comment: "")
+            return NSLocalizedString("Total repair maintenance hours/breakdown", comment: "")
         case NumberOfTechnicians:
-            return NSLocalizedString("Number of repair technicians", comment: "")
+            return NSLocalizedString("Number of repair technicians/breakdown", comment: "")
         case TechnicianCost:
             return NSLocalizedString("Average cost/technician", comment: "")
         case StandingStill:
-            return NSLocalizedString("Total hours of crusher standing still", comment: "")
+            return NSLocalizedString("Total hours of crusher standing still/breakdown", comment: "")
         case OreGrade:
             return NSLocalizedString("Ore grade", comment: "")
         case Capacity:
@@ -75,11 +75,11 @@ enum ROIEDVInputValue {
 }
 
 class ROIEDVInput: ROICalculatorInput {
-    var extraCost: ROIEDVInputValue = .ExtraCost(10000)
-    var repairHours: ROIEDVInputValue = .RepairHours(100)
+    var extraCost: ROIEDVInputValue = .ExtraCost(30000)
+    var repairHours: ROIEDVInputValue = .RepairHours(20)
     var numberOfTechnicians: ROIEDVInputValue = .NumberOfTechnicians(2)
-    var technicianCost: ROIEDVInputValue = .TechnicianCost(100)
-    var standingStill: ROIEDVInputValue = .StandingStill(40)
+    var technicianCost: ROIEDVInputValue = .TechnicianCost(99)
+    var standingStill: ROIEDVInputValue = .StandingStill(20)
     
     var oreGrade: ROIEDVInputValue = .OreGrade(2.0) //%
     var capacity: ROIEDVInputValue = .Capacity(1200) //m t/hr
@@ -241,7 +241,7 @@ class ROIEDVInput: ROICalculatorInput {
         case .OreGrade:
             return usePPM ? InputAbbreviation.PPM : InputAbbreviation.Percent
         case .Capacity:
-            return InputAbbreviation.MillionTonPerDay
+            return InputAbbreviation.TonPerHour
         case .RecoveryRate:
             return InputAbbreviation.Percent
         case .OrePrice:
