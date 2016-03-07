@@ -198,40 +198,41 @@ class JSONManager {
         }
     }
     
-    func downloadJSON(completion: (success: Bool, lastModified: NSDate?) ->()) {
-        for endPoint in self.endPoints {
-            if endPoint.isUpdateAvailable() {
-                let url = endPoint.buildUrl()
-                
-                NSURLSession.sharedSession().dataTaskWithURL(url) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-                    var success = false
-                    Async.userInitiated {
-                        do {
-                            if let d = data {
-                                if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                                    if let status = json.objectForKey("status") as? String {
-                                        if status == "success" {
-                                            if let message = json.objectForKey("message") as? String {
-                                                print("Received message instead of data: %@, %@", message, endPoint.fileName)
-                                            } else if let data = json.objectForKey("data") as? NSDictionary {
-                                                self.parseAndHandleJsonAndSetData(data, endpoint: endPoint)
-                                                endPoint.saveUpdateAvailable(false)
-                                                NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.newDataAvailable, object: self)
-                                            }
-                                            success = true
+    func downloadAllJSON(completion: (success: Bool, lastModified: NSDate?, allDownloaded: Bool) ->()) {
+        let endpoints = self.endPoints.filter({$0.isUpdateAvailable()})
+        var downloadCount = endpoints.count
+        for endPoint in endpoints {
+            let url = endPoint.buildUrl()
+            
+            NSURLSession.sharedSession().dataTaskWithURL(url) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+                var success = false
+                Async.userInitiated {
+                    do {
+                        if let d = data {
+                            if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
+                                if let status = json.objectForKey("status") as? String {
+                                    if status == "success" {
+                                        if let message = json.objectForKey("message") as? String {
+                                            print("Received message instead of data: %@, %@", message, endPoint.fileName)
+                                        } else if let data = json.objectForKey("data") as? NSDictionary {
+                                            self.parseAndHandleJsonAndSetData(data, endpoint: endPoint)
+                                            endPoint.saveUpdateAvailable(false)
+                                            NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.newDataAvailable, object: self)
                                         }
+                                        success = true
                                     }
                                 }
                             }
                         }
-                        catch {
-                            print(error)
-                        }
-                    }.main {
-                        completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
                     }
+                    catch {
+                        print(error)
+                    }
+                    }.main {
+                        let allDownloaded = (--downloadCount == 0)
+                        completion(success: success, lastModified: endPoint.jsonLastModifiedDate(), allDownloaded: allDownloaded)
+                }
                 }.resume()
-            }
         }
     }
     

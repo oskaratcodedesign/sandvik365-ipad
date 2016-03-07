@@ -22,7 +22,7 @@ class RoiEDVDetailView: NibDesignable {
         
         let fmt = NSNumberFormatter()
         extraCost.text = fmt.formatToUSD(input.totalExtraCost())
-        serviceCost.text = fmt.formatToUSD(input.totalServiceCostPerYear())
+        serviceCost.text = fmt.formatToUSD(input.totalServiceCostPerBreakDown())
         prodCost.text = fmt.formatToUSD(input.totalProductivityLoss())
         totalLabel.text = fmt.formatToUSD(input.maxTotal())
     }

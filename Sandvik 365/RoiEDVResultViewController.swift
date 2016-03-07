@@ -20,7 +20,7 @@ class RoiEDVResultViewController: RoiResultViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = NSLocalizedString("TRAMP LOSS", comment: "")
+        titleLabel.text = NSLocalizedString("COST PER\nBREAKDOWN", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
