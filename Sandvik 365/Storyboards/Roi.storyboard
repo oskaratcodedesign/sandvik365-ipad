@@ -629,8 +629,8 @@ PLANNING SERVICES</string>
                                                             <action selector="maintenanceAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="Nwu-uV-aBQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-FB-ind" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="555" width="197" height="29"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-FB-ind" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="541.5" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="PROTECTIVE SERVICES">
@@ -720,8 +720,8 @@ PLANNING SERVICES</string>
                                                                     <constraint firstAttribute="height" constant="2" id="eb7-hE-a2C"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                <rect key="frame" x="1554" y="2" width="33.5" height="23"/>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
+                                                                <rect key="frame" x="1555" y="2" width="33.5" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -1754,13 +1754,13 @@ PLANNING SERVICES</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swU-Uq-ZCY">
-                                <rect key="frame" x="102" y="150" width="396" height="300"/>
+                                <rect key="frame" x="102" y="150" width="363" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9P-Wm-d52">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-6T-vwc" userLabel="INCREASED PROFIT BY UP TO">
-                                                <rect key="frame" x="27" y="0.0" width="192" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-6T-vwc">
+                                                <rect key="frame" x="33" y="0.0" width="221" height="55"/>
                                                 <string key="text">INCREASED
 PROFIT BY UP TO</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
@@ -1768,7 +1768,7 @@ PROFIT BY UP TO</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPW-Ht-FVg">
-                                                <rect key="frame" x="219" y="3" width="0.0" height="31"/>
+                                                <rect key="frame" x="254" y="3" width="0.0" height="49"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="IkB-Or-C4R"/>
                                                 </constraints>
@@ -1782,7 +1782,11 @@ PROFIT BY UP TO</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x15-V1-ZPP">
-                                                <rect key="frame" x="280" y="5" width="111" height="27"/>
+                                                <rect key="frame" x="219" y="5" width="144" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="144" id="TiJ-Wq-ATI"/>
+                                                    <constraint firstAttribute="height" constant="45" id="UZd-bB-fEj"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="SEE DETAILS">
@@ -1807,24 +1811,24 @@ PROFIT BY UP TO</string>
                                         <constraints>
                                             <constraint firstItem="zWn-6T-vwc" firstAttribute="top" secondItem="G9P-Wm-d52" secondAttribute="top" id="1Rf-Jg-A3K"/>
                                             <constraint firstItem="x15-V1-ZPP" firstAttribute="top" secondItem="G9P-Wm-d52" secondAttribute="top" constant="5" id="4qy-fX-1oM"/>
-                                            <constraint firstAttribute="trailing" secondItem="x15-V1-ZPP" secondAttribute="trailing" constant="5" id="Aaa-ns-uZs"/>
+                                            <constraint firstAttribute="trailing" secondItem="x15-V1-ZPP" secondAttribute="trailing" id="Aaa-ns-uZs"/>
                                             <constraint firstAttribute="bottom" secondItem="x15-V1-ZPP" secondAttribute="bottom" constant="5" id="T0Q-7j-ujh"/>
                                             <constraint firstAttribute="bottom" secondItem="zWn-6T-vwc" secondAttribute="bottom" id="Y09-JL-IA9"/>
                                             <constraint firstAttribute="bottom" secondItem="BPW-Ht-FVg" secondAttribute="bottom" constant="3" id="ZWf-3f-fsx"/>
-                                            <constraint firstItem="BPW-Ht-FVg" firstAttribute="leading" secondItem="G9P-Wm-d52" secondAttribute="leading" constant="219" id="Zgz-Ae-9f8"/>
+                                            <constraint firstItem="BPW-Ht-FVg" firstAttribute="leading" secondItem="G9P-Wm-d52" secondAttribute="leading" constant="254" id="Zgz-Ae-9f8"/>
                                             <constraint firstItem="BPW-Ht-FVg" firstAttribute="top" secondItem="G9P-Wm-d52" secondAttribute="top" constant="3" id="aPS-Rn-s48"/>
                                             <constraint firstItem="BPW-Ht-FVg" firstAttribute="leading" secondItem="zWn-6T-vwc" secondAttribute="trailing" id="dze-uD-5xh"/>
-                                            <constraint firstItem="zWn-6T-vwc" firstAttribute="leading" secondItem="G9P-Wm-d52" secondAttribute="leading" constant="27" id="jI4-DY-vaO"/>
+                                            <constraint firstItem="zWn-6T-vwc" firstAttribute="leading" secondItem="G9P-Wm-d52" secondAttribute="leading" constant="33" id="jI4-DY-vaO"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xR-ux-CNj">
-                                        <rect key="frame" x="0.0" y="37" width="396" height="263"/>
+                                        <rect key="frame" x="0.0" y="55" width="363" height="245"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebk-or-vZw">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="263"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="245"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gs9-vO-Stv" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="20" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="RD520">
@@ -1843,7 +1847,7 @@ PROFIT BY UP TO</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ICH-gb-IC2" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="76" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="69" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="RD525">
@@ -1873,20 +1877,20 @@ PROFIT BY UP TO</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-Pn-GMK" customClass="RoiGraphView" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="197" y="0.0" width="149" height="263"/>
+                                                <rect key="frame" x="197" y="0.0" width="166" height="245"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UR2-n0-vI4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="263"/>
+                                                        <rect key="frame" x="34" y="0.0" width="25" height="245"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML5-wh-L6P">
-                                                                <rect key="frame" x="23" y="0.0" width="2" height="240"/>
+                                                                <rect key="frame" x="23" y="0.0" width="2" height="222"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="2" id="sp9-c1-aDf"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrS-V7-2z2">
-                                                                <rect key="frame" x="-10" y="0.0" width="35" height="15"/>
+                                                                <rect key="frame" x="-6" y="0.0" width="27" height="15"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -1895,33 +1899,40 @@ PROFIT BY UP TO</string>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="ML5-wh-L6P" secondAttribute="trailing" id="1Pz-MU-txl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jrS-V7-2z2" secondAttribute="trailing" id="1QO-pJ-Lap"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jrS-V7-2z2" secondAttribute="trailing" constant="2" id="1QO-pJ-Lap"/>
                                                             <constraint firstAttribute="width" constant="25" id="1eb-45-REw"/>
                                                             <constraint firstItem="jrS-V7-2z2" firstAttribute="top" secondItem="UR2-n0-vI4" secondAttribute="top" id="4rh-Bu-kxR"/>
                                                             <constraint firstAttribute="bottom" secondItem="ML5-wh-L6P" secondAttribute="bottom" constant="23" id="H7h-dn-id0"/>
                                                             <constraint firstItem="ML5-wh-L6P" firstAttribute="top" secondItem="UR2-n0-vI4" secondAttribute="top" id="UbG-9S-PNz"/>
-                                                            <constraint firstItem="jrS-V7-2z2" firstAttribute="leading" secondItem="UR2-n0-vI4" secondAttribute="leading" constant="-10" id="vex-Ga-uz2"/>
+                                                            <constraint firstItem="ML5-wh-L6P" firstAttribute="leading" secondItem="jrS-V7-2z2" secondAttribute="trailing" constant="2" id="oAb-13-gHY"/>
+                                                            <constraint firstItem="jrS-V7-2z2" firstAttribute="leading" secondItem="UR2-n0-vI4" secondAttribute="leading" constant="2" id="vex-Ga-uz2"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="1QO-pJ-Lap"/>
+                                                                <exclude reference="vex-Ga-uz2"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieI-eI-xCE">
-                                                        <rect key="frame" x="25" y="238" width="124" height="25"/>
+                                                        <rect key="frame" x="59" y="220" width="107" height="25"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-AX-8ml">
-                                                                <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="107" height="2"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="cjR-ts-X9w"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06O-fj-Fq6">
-                                                                <rect key="frame" x="124" y="0.0" width="50" height="2"/>
+                                                                <rect key="frame" x="107" y="0.0" width="0.0" height="2"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="vsi-RU-svN"/>
                                                                 </constraints>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9s-0L-HSs">
-                                                                <rect key="frame" x="124" y="2" width="34" height="23"/>
+                                                                <rect key="frame" x="107" y="2" width="33.5" height="23"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -1947,7 +1958,7 @@ PROFIT BY UP TO</string>
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjI-dw-MfI">
-                                                        <rect key="frame" x="25" y="20" width="124" height="218"/>
+                                                        <rect key="frame" x="59" y="20" width="107" height="200"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -1964,6 +1975,11 @@ PROFIT BY UP TO</string>
                                                     <constraint firstAttribute="trailing" secondItem="ieI-eI-xCE" secondAttribute="trailing" id="ahA-Js-BYB"/>
                                                     <constraint firstItem="ieI-eI-xCE" firstAttribute="top" secondItem="qjI-dw-MfI" secondAttribute="bottom" id="w8L-aK-YkY"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="58V-Sb-tFB"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <outlet property="graphView" destination="qjI-dw-MfI" id="l7o-ro-7Pw"/>
                                                     <outlet property="xGraph" destination="FeQ-AX-8ml" id="UfU-zc-agL"/>
@@ -1980,7 +1996,7 @@ PROFIT BY UP TO</string>
                                             <constraint firstAttribute="trailing" secondItem="06O-fj-Fq6" secondAttribute="trailing" id="iDj-9b-Dva"/>
                                             <constraint firstItem="ebk-or-vZw" firstAttribute="leading" secondItem="0xR-ux-CNj" secondAttribute="leading" id="koC-Se-Our"/>
                                             <constraint firstAttribute="bottom" secondItem="VSE-Pn-GMK" secondAttribute="bottom" id="qeY-oY-6KJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="VSE-Pn-GMK" secondAttribute="trailing" constant="50" id="xaY-Fj-A9U"/>
+                                            <constraint firstAttribute="trailing" secondItem="VSE-Pn-GMK" secondAttribute="trailing" id="xaY-Fj-A9U"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1988,6 +2004,7 @@ PROFIT BY UP TO</string>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="0xR-ux-CNj" secondAttribute="bottom" id="CK0-vf-yVw"/>
                                     <constraint firstAttribute="trailing" secondItem="G9P-Wm-d52" secondAttribute="trailing" id="DjH-lL-npQ"/>
+                                    <constraint firstItem="ML5-wh-L6P" firstAttribute="leading" secondItem="BPW-Ht-FVg" secondAttribute="leading" id="ODO-6c-Qsl"/>
                                     <constraint firstItem="G9P-Wm-d52" firstAttribute="top" secondItem="swU-Uq-ZCY" secondAttribute="top" id="a7v-AS-hcC"/>
                                     <constraint firstItem="0xR-ux-CNj" firstAttribute="leading" secondItem="swU-Uq-ZCY" secondAttribute="leading" id="aUz-7H-i9B"/>
                                     <constraint firstItem="G9P-Wm-d52" firstAttribute="leading" secondItem="swU-Uq-ZCY" secondAttribute="leading" id="cTg-e1-Lx1"/>
@@ -1996,24 +2013,31 @@ PROFIT BY UP TO</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-Ja-jLf">
-                                <rect key="frame" x="102" y="150" width="396" height="300"/>
+                                <rect key="frame" x="102" y="150" width="363" height="300"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="swU-Uq-ZCY" secondAttribute="height" multiplier="2" id="2Dd-me-9mO"/>
                             <constraint firstItem="SRZ-Ja-jLf" firstAttribute="centerY" secondItem="bvq-Gu-eok" secondAttribute="centerY" id="68h-KV-Ksm"/>
+                            <constraint firstItem="SRZ-Ja-jLf" firstAttribute="centerX" secondItem="swU-Uq-ZCY" secondAttribute="centerX" id="8Io-IW-ZrW"/>
                             <constraint firstItem="SRZ-Ja-jLf" firstAttribute="width" secondItem="swU-Uq-ZCY" secondAttribute="width" id="BXt-c2-Os7"/>
                             <constraint firstItem="SRZ-Ja-jLf" firstAttribute="height" secondItem="swU-Uq-ZCY" secondAttribute="height" id="PMj-Zd-W8e"/>
                             <constraint firstItem="SRZ-Ja-jLf" firstAttribute="leading" secondItem="swU-Uq-ZCY" secondAttribute="leading" id="SEU-bT-FHA"/>
                             <constraint firstItem="VSE-Pn-GMK" firstAttribute="leading" secondItem="SRZ-Ja-jLf" secondAttribute="trailing" constant="-199" id="SmR-5k-tBK"/>
                             <constraint firstItem="swU-Uq-ZCY" firstAttribute="centerX" secondItem="bvq-Gu-eok" secondAttribute="centerX" id="VOC-vW-u5Z"/>
+                            <constraint firstItem="SRZ-Ja-jLf" firstAttribute="centerY" secondItem="swU-Uq-ZCY" secondAttribute="centerY" id="b2d-l2-raD"/>
                             <constraint firstItem="swU-Uq-ZCY" firstAttribute="centerY" secondItem="bvq-Gu-eok" secondAttribute="centerY" id="bE4-qR-Bc2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="swU-Uq-ZCY" secondAttribute="trailing" constant="115" id="fdD-aE-zM3"/>
                             <constraint firstItem="SRZ-Ja-jLf" firstAttribute="centerX" secondItem="bvq-Gu-eok" secondAttribute="centerX" id="jo0-qK-1ST"/>
                             <constraint firstItem="swU-Uq-ZCY" firstAttribute="leading" secondItem="bvq-Gu-eok" secondAttribute="leadingMargin" constant="82" id="rIW-18-dgH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="68h-KV-Ksm"/>
+                                <exclude reference="SEU-bT-FHA"/>
+                                <exclude reference="jo0-qK-1ST"/>
+                                <exclude reference="VOC-vW-u5Z"/>
                                 <exclude reference="SmR-5k-tBK"/>
                             </mask>
                         </variation>
