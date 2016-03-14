@@ -93,6 +93,8 @@
 		F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203631C46680000CF4E3F /* ColorCodedTouchView.m */; };
 		F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203651C46680000CF4E3F /* ColorCodingLookup.m */; };
 		F792036A1C46DA5A00CF4E3F /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79203691C46DA5A00CF4E3F /* Region.swift */; };
+		F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */; };
+		F79576941C9708CC002ACBB3 /* PartsServicesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
@@ -234,6 +236,8 @@
 		F79203641C46680000CF4E3F /* ColorCodingLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCodingLookup.h; sourceTree = "<group>"; };
 		F79203651C46680000CF4E3F /* ColorCodingLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodingLookup.m; sourceTree = "<group>"; };
 		F79203691C46DA5A00CF4E3F /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAreaMenuViewController.swift; sourceTree = "<group>"; };
+		F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsServicesMenuViewController.swift; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
+				F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */,
+				F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -902,6 +908,7 @@
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
+				F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */,
 				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
@@ -919,6 +926,7 @@
 				F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */,
 				F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */,
 				F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */,
+				F79576941C9708CC002ACBB3 /* PartsServicesMenuViewController.swift in Sources */,
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,

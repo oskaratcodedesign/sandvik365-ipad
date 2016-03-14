@@ -22,4 +22,12 @@ import UIKit
             }
         }
     }
+    
+    @IBInspectable var centerText: Bool = false {
+        didSet {
+            if centerText {
+                self.titleLabel?.textAlignment = .Center
+            }
+        }
+    }
 }
