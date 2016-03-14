@@ -17,6 +17,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
     @IBOutlet weak var protectiveButton: UIButton!
     private var selectedButton: UIButton?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var graphLabel: UILabel!
     @IBOutlet weak var graphView: UIView!
     @IBOutlet var graphViewHeightConstraint: NSLayoutConstraint!
@@ -76,6 +77,14 @@ class RoiCrusherResultViewController: RoiResultViewController {
         setGraphValue()
         self.graphLabel.hidden = false
         setProfitLabel()
+    }
+    
+    @IBAction func scrollLeftAction(sender: AnyObject) {
+        self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x:0, y: 0), size: scrollView.bounds.size), animated: true)
+    }
+    
+    @IBAction func scrollRightAction(sender: AnyObject) {
+        self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: self.scrollView.bounds.size.width, y: 0), size: scrollView.bounds.size), animated: true)
     }
     
     private func setGraphValue() {
