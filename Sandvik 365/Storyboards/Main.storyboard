@@ -58,13 +58,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
-                                        <rect key="frame" x="80" y="240" width="195" height="36"/>
+                                        <rect key="frame" x="100" y="240" width="195" height="36"/>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                         <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                        <rect key="frame" x="80" y="276" width="300" height="71"/>
+                                        <rect key="frame" x="100" y="276" width="300" height="71"/>
                                         <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON</string>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
@@ -72,7 +72,7 @@ YOU CAN COUNT ON</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
-                                        <rect key="frame" x="80" y="25" width="37" height="32"/>
+                                        <rect key="frame" x="100" y="25" width="37" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
                                         </constraints>
@@ -95,10 +95,10 @@ YOU CAN COUNT ON</string>
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
-                                                <rect key="frame" x="90" y="0.0" width="456" height="1536"/>
+                                                <rect key="frame" x="102" y="0.0" width="456" height="1536"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
-                                                        <rect key="frame" x="173" y="695" width="74" height="73"/>
+                                                        <rect key="frame" x="161" y="695" width="74" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
                                                                 <rect key="frame" x="10" y="0.0" width="54" height="10"/>
@@ -278,7 +278,7 @@ YOU CAN COUNT ON</string>
                                 <constraints>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
                                     <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
-                                    <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="M8O-q8-7Xk"/>
+                                    <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="100" id="M8O-q8-7Xk"/>
                                     <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
                                     <constraint firstItem="x5j-hR-t0y" firstAttribute="width" secondItem="LGY-k8-KXB" secondAttribute="width" id="Qnt-xI-WRB"/>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
@@ -292,10 +292,11 @@ YOU CAN COUNT ON</string>
                                     <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="60" id="iww-x8-679"/>
                                     <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="jiv-M9-Ibw"/>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
+                                    <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" id="mkZ-QV-cku"/>
                                     <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                     <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
                                     <constraint firstItem="x5j-hR-t0y" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="ubG-DG-qvd"/>
-                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" constant="10" id="wDd-xA-XAo"/>
+                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" constant="2" id="wDd-xA-XAo"/>
                                     <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="25" id="yCY-xh-cic"/>
                                 </constraints>
                                 <variation key="default">
@@ -303,6 +304,7 @@ YOU CAN COUNT ON</string>
                                         <exclude reference="8U2-SO-Fhv"/>
                                         <exclude reference="js3-V0-gUc"/>
                                         <exclude reference="V49-Js-Owq"/>
+                                        <exclude reference="flW-BI-L4A"/>
                                         <exclude reference="iww-x8-679"/>
                                         <exclude reference="jiv-M9-Ibw"/>
                                     </mask>
