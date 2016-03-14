@@ -19,6 +19,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -47,14 +48,14 @@
                         <viewControllerLayoutGuide type="bottom" id="w7v-Iz-kr0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4LT-Of-Ydb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-k8-KXB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-eR-NVw">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
                                         <rect key="frame" x="80" y="240" width="195" height="36"/>
@@ -68,18 +69,6 @@
 YOU CAN COUNT ON</string>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                         <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                        <rect key="frame" x="269" y="547" width="63" height="73"/>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
-                                        <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                        <rect key="frame" x="273" y="527" width="54" height="10"/>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
@@ -102,151 +91,220 @@ YOU CAN COUNT ON</string>
                                             <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
-                                        <rect key="frame" x="80" y="0.0" width="456" height="1200"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-hR-t0y">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="425" width="230" height="135"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
+                                                <rect key="frame" x="90" y="0.0" width="456" height="1536"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
+                                                        <rect key="frame" x="173" y="695" width="74" height="73"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
+                                                                <rect key="frame" x="10" y="0.0" width="54" height="10"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
+                                                                <rect key="frame" x="6" y="20" width="63" height="73"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
+                                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="ALY-Of-gny"/>
+                                                            <constraint firstItem="xTd-TR-JmA" firstAttribute="centerX" secondItem="a0r-ax-Sdf" secondAttribute="centerX" id="PYK-7i-UKX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6rP-aA-18r" secondAttribute="trailing" constant="10" id="aQw-de-5ba"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="eUs-Yx-hJg"/>
+                                                            <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="a0r-ax-Sdf" secondAttribute="leading" constant="10" id="q7u-1N-6df"/>
+                                                            <constraint firstItem="6rP-aA-18r" firstAttribute="top" secondItem="a0r-ax-Sdf" secondAttribute="top" id="xnT-rq-23P"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="573" width="230" height="135"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
+                                                            <constraint firstAttribute="width" constant="230" id="bRr-zq-5F6"/>
+                                                            <constraint firstAttribute="height" constant="135" id="mVw-gk-zxg"/>
+                                                            <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="videoImage" value="S365-movie-button-S365-film"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="videoTitle" value="SANDVIK 365 VIDEO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="AUC-pz-0CO"/>
+                                                                <exclude reference="uow-lj-oty"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-Sl-Y5C">
+                                                        <rect key="frame" x="0.0" y="1346" width="456" height="130"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore the app content, sorted by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooG-5g-ZrW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-KD-L3R" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="30" width="223" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="223" id="eLa-Nx-hep"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="nNC-aw-HUt"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
+                                                                <state key="normal" title="PARTS &amp; SERVICES">
+                                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                        <integer key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kXA-96-Wzv" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="233" y="30" width="223" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="edi-zB-x0J"/>
+                                                                    <constraint firstAttribute="width" constant="223" id="kt9-Wh-Bun"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
+                                                                <state key="normal">
+                                                                    <string key="title">PRODUCTAREAS</string>
+                                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                        <integer key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="aEQ-14-YwT" kind="show" id="LGz-Wq-LM8"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="m7v-KD-L3R" firstAttribute="leading" secondItem="gJk-Sl-Y5C" secondAttribute="leading" id="2Bs-qw-hhX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="kXA-96-Wzv" secondAttribute="trailing" id="5zN-a4-ZeH"/>
+                                                            <constraint firstItem="kXA-96-Wzv" firstAttribute="leading" secondItem="m7v-KD-L3R" secondAttribute="trailing" constant="10" id="77A-5O-ioY"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="leading" secondItem="gJk-Sl-Y5C" secondAttribute="leading" id="7eZ-iU-E5W"/>
+                                                            <constraint firstAttribute="bottom" secondItem="m7v-KD-L3R" secondAttribute="bottom" id="9VX-Op-aXw"/>
+                                                            <constraint firstItem="kXA-96-Wzv" firstAttribute="top" secondItem="m7v-KD-L3R" secondAttribute="top" id="BSs-Gh-cWy"/>
+                                                            <constraint firstItem="m7v-KD-L3R" firstAttribute="top" secondItem="ooG-5g-ZrW" secondAttribute="bottom" constant="10" id="ezf-ac-YQ3"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="bottom" secondItem="m7v-KD-L3R" secondAttribute="top" id="nn7-9M-vzp"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="top" secondItem="gJk-Sl-Y5C" secondAttribute="top" id="wwm-RE-V7h"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="nn7-9M-vzp"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
-                                                    <constraint firstAttribute="width" constant="230" id="bRr-zq-5F6"/>
-                                                    <constraint firstAttribute="height" constant="135" id="mVw-gk-zxg"/>
-                                                    <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="videoImage" value="S365-movie-button-S365-film"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="videoTitle" value="SANDVIK 365 VIDEO"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="AUC-pz-0CO"/>
-                                                        <exclude reference="uow-lj-oty"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-Sl-Y5C">
-                                                <rect key="frame" x="0.0" y="300" width="456" height="200"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-KD-L3R" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="223" id="eLa-Nx-hep"/>
-                                                            <constraint firstAttribute="height" constant="100" id="nNC-aw-HUt"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
-                                                        <state key="normal" title="PARTS &amp; SERVICES">
-                                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <state key="highlighted">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                <integer key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
-                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kXA-96-Wzv" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="233" y="0.0" width="223" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="edi-zB-x0J"/>
-                                                            <constraint firstAttribute="width" constant="223" id="kt9-Wh-Bun"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
-                                                        <state key="normal">
-                                                            <string key="title">PRODUCTAREAS</string>
-                                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <state key="highlighted">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                <integer key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
-                                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="aEQ-14-YwT" kind="show" id="LGz-Wq-LM8"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="m7v-KD-L3R" firstAttribute="leading" secondItem="gJk-Sl-Y5C" secondAttribute="leading" id="2Bs-qw-hhX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="kXA-96-Wzv" secondAttribute="trailing" id="5zN-a4-ZeH"/>
-                                                    <constraint firstItem="kXA-96-Wzv" firstAttribute="leading" secondItem="m7v-KD-L3R" secondAttribute="trailing" constant="10" id="77A-5O-ioY"/>
-                                                    <constraint firstItem="kXA-96-Wzv" firstAttribute="top" secondItem="m7v-KD-L3R" secondAttribute="top" id="BSs-Gh-cWy"/>
-                                                    <constraint firstAttribute="height" constant="200" id="MNl-EB-QSe"/>
-                                                    <constraint firstAttribute="width" constant="240" id="W5S-Bg-SVR"/>
-                                                    <constraint firstItem="m7v-KD-L3R" firstAttribute="top" secondItem="gJk-Sl-Y5C" secondAttribute="top" id="uCh-c0-p0t"/>
+                                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="640" id="3hT-WQ-BZ7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gJk-Sl-Y5C" secondAttribute="trailing" id="9po-sr-mbR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="828" id="HCv-1U-L87"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gJk-Sl-Y5C" secondAttribute="bottom" constant="60" id="NVO-42-FLL"/>
+                                                    <constraint firstItem="B0a-Kq-6It" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="Qwq-Eg-R9U"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a0r-ax-Sdf" secondAttribute="bottom" constant="768" id="SmU-7Y-hr0"/>
+                                                    <constraint firstItem="gJk-Sl-Y5C" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="hm5-KI-KRr"/>
+                                                    <constraint firstItem="a0r-ax-Sdf" firstAttribute="centerX" secondItem="Iav-IU-jbo" secondAttribute="centerX" id="rqL-IP-n2i"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="W5S-Bg-SVR"/>
+                                                        <exclude reference="3hT-WQ-BZ7"/>
+                                                        <exclude reference="rqL-IP-n2i"/>
                                                     </mask>
                                                 </variation>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gJk-Sl-Y5C" secondAttribute="trailing" id="9po-sr-mbR"/>
-                                            <constraint firstAttribute="bottom" secondItem="gJk-Sl-Y5C" secondAttribute="bottom" constant="700" id="NVO-42-FLL"/>
-                                            <constraint firstItem="B0a-Kq-6It" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="Qwq-Eg-R9U"/>
-                                            <constraint firstItem="gJk-Sl-Y5C" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="hm5-KI-KRr"/>
+                                            <constraint firstAttribute="height" secondItem="Iav-IU-jbo" secondAttribute="height" id="08E-9B-frb"/>
+                                            <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="5yL-qI-78g"/>
+                                            <constraint firstItem="a0r-ax-Sdf" firstAttribute="centerX" secondItem="x5j-hR-t0y" secondAttribute="centerX" id="OLj-pt-Tde"/>
+                                            <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="x5j-hR-t0y" secondAttribute="leading" id="ROo-Tk-DLS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Iav-IU-jbo" secondAttribute="bottom" id="WFH-SS-9WR"/>
+                                            <constraint firstAttribute="width" secondItem="gJk-Sl-Y5C" secondAttribute="width" id="dX7-M3-pmL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iav-IU-jbo" secondAttribute="trailing" id="jlp-qE-TVC"/>
+                                            <constraint firstItem="Iav-IU-jbo" firstAttribute="top" secondItem="x5j-hR-t0y" secondAttribute="top" id="zwa-ea-IMQ"/>
                                         </constraints>
-                                    </view>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="08E-9B-frb"/>
+                                                <exclude reference="ROo-Tk-DLS"/>
+                                                <exclude reference="5yL-qI-78g"/>
+                                                <exclude reference="dX7-M3-pmL"/>
+                                            </mask>
+                                        </variation>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="0AO-Ab-1KA"/>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
-                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" id="1RA-rx-4En"/>
-                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="4Ey-A2-0tW"/>
-                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" multiplier="2" id="5ra-EY-bM5"/>
                                     <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
                                     <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="M8O-q8-7Xk"/>
-                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="OT0-Bi-iyD"/>
-                                    <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
                                     <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="width" secondItem="LGY-k8-KXB" secondAttribute="width" id="Qnt-xI-WRB"/>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
-                                    <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" id="UPM-k5-tf8"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" id="V49-Js-Owq"/>
                                     <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
-                                    <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
+                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" multiplier="2" id="WGG-kX-cSn"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="ch1-0e-ugN"/>
                                     <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
                                     <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="flW-BI-L4A"/>
-                                    <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
+                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="60" id="iww-x8-679"/>
+                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="jiv-M9-Ibw"/>
                                     <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
                                     <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
                                     <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="ubG-DG-qvd"/>
+                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" constant="10" id="wDd-xA-XAo"/>
                                     <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="25" id="yCY-xh-cic"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8U2-SO-Fhv"/>
                                         <exclude reference="js3-V0-gUc"/>
-                                        <exclude reference="PIs-hD-Kt1"/>
+                                        <exclude reference="V49-Js-Owq"/>
+                                        <exclude reference="iww-x8-679"/>
+                                        <exclude reference="jiv-M9-Ibw"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -264,9 +322,12 @@ YOU CAN COUNT ON</string>
                     </view>
                     <navigationItem key="navigationItem" id="8Kc-fU-snl"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="768"/>
                     <connections>
                         <outlet property="firstContainer" destination="LGY-k8-KXB" id="jzs-P3-QtT"/>
                         <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
+                        <outlet property="scrollView" destination="x5j-hR-t0y" id="fTV-2k-5PQ"/>
                         <outlet property="videoButton" destination="B0a-Kq-6It" id="vl7-rP-YMJ"/>
                         <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="bk5-QJ-IsA"/>
                         <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="FqL-Zk-5qX"/>
@@ -291,14 +352,14 @@ YOU CAN COUNT ON</string>
                         <viewControllerLayoutGuide type="bottom" id="4gz-95-xIi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xy3-JZ-xeR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-6k-MX3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-XA-xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-WF-CXB">
                                         <rect key="frame" x="100" y="92" width="200" height="562"/>
@@ -383,7 +444,7 @@ Cg
                                         </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-aO-F8M">
-                                        <rect key="frame" x="100" y="433" width="241" height="75"/>
+                                        <rect key="frame" x="100" y="601" width="241" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Tc5-ws-Uqa"/>
                                             <constraint firstAttribute="width" constant="241" id="frY-lF-nRB"/>
@@ -501,11 +562,11 @@ UPDATE NOW</string>
                         <viewControllerLayoutGuide type="bottom" id="W14-fC-jjT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ftC-qy-FXx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-nK-65q">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-HB-eqC" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
                                         <rect key="frame" x="303" y="75" width="212" height="78"/>
@@ -523,13 +584,13 @@ UPDATE NOW</string>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-OZ-AZ8">
-                                        <rect key="frame" x="0.0" y="178" width="600" height="422"/>
+                                        <rect key="frame" x="0.0" y="178" width="600" height="590"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-VX-N93">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="422"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="590"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAC-Tb-nRE" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
@@ -539,7 +600,7 @@ UPDATE NOW</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taz-9n-V8m" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="201" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="201" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
@@ -549,7 +610,7 @@ UPDATE NOW</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-xU-PPW" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="402" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="402" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
@@ -559,7 +620,7 @@ UPDATE NOW</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rl4-l9-nXl" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="603" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="603" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
@@ -569,7 +630,7 @@ UPDATE NOW</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3g-4T-xUo" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="804" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="804" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
@@ -579,7 +640,7 @@ UPDATE NOW</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-T4-Z35" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="1005" y="0.0" width="201" height="422"/>
+                                                        <rect key="frame" x="1005" y="0.0" width="201" height="590"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
@@ -642,7 +703,7 @@ UPDATE NOW</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-lU-3je" customClass="ProgressLineView" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="530" width="200" height="50"/>
+                                        <rect key="frame" x="200" y="698" width="200" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="dX2-Nk-uNH"/>
