@@ -856,9 +856,9 @@ PLANNING SERVICES</string>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ybP-sO-Sr5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
-                                                <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="50" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="30" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="101" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="sandvik_arrow_right">
                                                     <string key="title">COMPARE
 PROGRAMS</string>

@@ -81,10 +81,17 @@ class RoiCrusherResultViewController: RoiResultViewController {
     
     @IBAction func scrollLeftAction(sender: AnyObject) {
         self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x:0, y: 0), size: scrollView.bounds.size), animated: true)
+        if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
+            vc.selectionContainer.hidden = false
+        }
     }
     
     @IBAction func scrollRightAction(sender: AnyObject) {
         self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: self.scrollView.bounds.size.width, y: 0), size: scrollView.bounds.size), animated: true)
+        
+        if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
+            vc.selectionContainer.hidden = true
+        }
     }
     
     private func setGraphValue() {
