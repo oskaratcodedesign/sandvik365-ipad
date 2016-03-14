@@ -60,7 +60,7 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
-            return "Media center"
+            return "Videos & Animations"
         }
     }
     

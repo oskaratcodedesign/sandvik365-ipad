@@ -26,8 +26,8 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         })
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             
-            let size = layout.itemSize.height + layout.minimumLineSpacing
-            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: size, right: 40)
+            //let size = layout.itemSize.height + layout.minimumLineSpacing
+            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
         }
     }
     
