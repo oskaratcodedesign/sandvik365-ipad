@@ -13,7 +13,8 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     @IBOutlet weak var selectionWheel: SelectionWheel!
     @IBOutlet weak var sectionLabel: UILabel!
     var selectedPartsAndServices: PartsAndServices!
-    var selectedSectionTitle: String!
+    var mainTitle: String?
+    private var selectedSectionTitle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         }
         selectionWheel.sectionTitles = selectedPartsAndServices.mainSectionTitles()
         selectionWheel.delegate = self
-        sectionLabel.text = self.navigationItem.title
+        sectionLabel.text = self.mainTitle ?? self.navigationItem.title
     }
 
     override func didReceiveMemoryWarning() {

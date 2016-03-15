@@ -24,11 +24,7 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         self.videos = self.selectedBusinessType.videos?.sort({ (v1: Video, v2: Video) -> Bool in
             v1.title.caseInsensitiveCompare(v2.title) == .OrderedAscending
         })
-        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            //let size = layout.itemSize.height + layout.minimumLineSpacing
-            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
-        }
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
     }
     
     override func viewDidLayoutSubviews() {

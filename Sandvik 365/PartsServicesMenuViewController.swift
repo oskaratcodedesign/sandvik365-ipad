@@ -8,12 +8,23 @@
 
 import UIKit
 
-class PartsServicesMenuViewController: UIViewController {
+class PartsServicesMenuViewController: UIViewController, SelectionWheelDelegate {
 
+    @IBOutlet weak var selectionWheel: SelectionWheel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        var titles: [String] = ["Interactive tools"]
+        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
+            let allPartsAndServices = PartsAndServices(businessType: .All, json: json)
+            let partServiceTitles = allPartsAndServices.mainSectionTitles()
+            titles += partServiceTitles
+        }
+        selectionWheel.sectionTitles = titles
+        selectionWheel.delegate = self
+    }
+    
+    func didSelectSection(sectionTitle: String) {
+        
     }
 
 }

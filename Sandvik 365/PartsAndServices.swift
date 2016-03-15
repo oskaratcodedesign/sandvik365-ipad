@@ -18,12 +18,13 @@ enum BusinessType: UInt32 {
     case SurfaceDrilling
     case UndergroundDrillingAndBolting
     case UndergroundLoadingAndHauling
+    case All
     
     private static let _count: BusinessType.RawValue = {
         // find the maximum enum value
         var maxValue: UInt32 = 0
         while let _ = BusinessType(rawValue: ++maxValue) { }
-        return maxValue
+        return maxValue - 1 //dont include All
     }()
     
     static func randomBusinessType() -> BusinessType {
@@ -37,30 +38,56 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-            Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-            Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
-            Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
-            Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
-            Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+            return [
+                Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
+                Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
+                Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
+                Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
+                Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
+                Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
+                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+            ]
         case UndergroundDrillingAndBolting:
-            return  [Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
+            return  [
+                Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
                 Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+            ]
         case SurfaceDrilling:
             return  [Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
         case MechanicalCutting:
             return  [Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds")]
+        case All:
+            return [
+                Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
+                Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
+                Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
+                Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
+                Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
+                Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
+                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse"),
+                Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
+                Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
+                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+            ]
         }
     }
     
     var mediaCenterTitle: String? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
+        case ExplorationDrillRigs, CrusherAndScreening:
             return nil
-        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
+        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
             return "Videos & Animations"
+        }
+    }
+    
+    var interActiveToolsTitle: String? {
+        switch self {
+        case ExplorationDrillRigs, CrusherAndScreening, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
+            return nil
+        case All:
+            return "Interactive tools"
         }
     }
     
@@ -84,6 +111,8 @@ enum BusinessType: UInt32 {
             return "underground drilling bolting"
         case UndergroundLoadingAndHauling:
             return "underground hauling"
+        case All:
+            return "service-awareness-underground-2048"
         }
     }
     
@@ -95,7 +124,7 @@ enum BusinessType: UInt32 {
             return nil*/
         case CrusherAndScreening:
             return "bda647ec-7ef1-491a-9adc-a915ec5bb745"
-        case ExplorationDrillRigs:
+        case ExplorationDrillRigs, All:
             return nil
         case MechanicalCutting:
             return "ce360d28-35bc-4578-9e52-79517f769af2"
@@ -113,7 +142,7 @@ enum BusinessType: UInt32 {
     func getInputFromTitleOrTitles(title: String?) -> [String: SelectionInput?] {
         var inputs: [String: SelectionInput?] = [:]
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting, All:
             break
         case SurfaceDrilling:
             let rockTitle = "Rock drill upgrade simulator"
@@ -243,7 +272,7 @@ class PartsAndServices {
     }
     
     func shouldPartServiceBeShown(ps: PartService) -> Bool {
-        if let tagids = ps.productTagUUIDs {
+        if self.businessType != .All, let tagids = ps.productTagUUIDs {
             if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
                 return false
             }
@@ -258,7 +287,7 @@ class PartsAndServices {
     }
     
     func shouldSubPartServiceBeShown(sp: SubPartService) -> Bool {
-        if let tagids = sp.productTagUUIDs {
+        if self.businessType != .All, let tagids = sp.productTagUUIDs {
             if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
                 return false
             }
@@ -271,6 +300,10 @@ class PartsAndServices {
 
         if let mediaCenterTitle = self.businessType.mediaCenterTitle {
             titles.append(mediaCenterTitle.uppercaseString)
+        }
+        
+        if let interActiveToolsTitle = self.businessType.interActiveToolsTitle {
+            titles.append(interActiveToolsTitle.uppercaseString)
         }
         
         for mp in jsonParts.partsServicesContent {

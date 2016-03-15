@@ -99,6 +99,14 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
                 showBackButton = false
             }
         }
+        else if segue.identifier == "PartsAndServicesViewController" {
+            if let vc = segue.destinationViewController as? PartsAndServicesViewController {
+                if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
+                    vc.mainTitle = "PARTS &\nSERVICES"
+                    MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: .All, json: json), navTitle: String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICES YOU CAN COUNT ON"))
+                }
+            }
+        }
     }
     
     static func setPartsAndServicesViewController(vc: PartsAndServicesViewController, selectedPartsAndServices: PartsAndServices, navTitle: String?) {
