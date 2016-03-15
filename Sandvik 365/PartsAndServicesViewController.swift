@@ -41,6 +41,9 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
             performSegueWithIdentifier("ShowVideoCenterViewController", sender: self)
         }
+        else if self.selectedPartsAndServices.businessType.interActiveToolsTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
+            performSegueWithIdentifier("ShowInterActiveToolsViewController", sender: self)
+        }
         else {
             performSegueWithIdentifier("ShowPartServiceSelectionViewController", sender: self)
         }

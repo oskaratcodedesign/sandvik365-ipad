@@ -42,6 +42,9 @@
 		F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */; };
 		F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */; };
 		F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */; };
+		F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */; };
+		F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */; };
+		F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -187,6 +190,9 @@
 		F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWheel.swift; sourceTree = "<group>"; };
 		F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberFormatterExtension.swift; sourceTree = "<group>"; };
+		F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterActiveTools.storyboard; sourceTree = "<group>"; };
+		F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterActiveToolsViewController.swift; sourceTree = "<group>"; };
+		F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +312,7 @@
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
 				F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */,
 				F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */,
+				F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -426,6 +433,7 @@
 				F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */,
 				F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */,
 				F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */,
+				F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -494,6 +502,7 @@
 				F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
+				F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -780,6 +789,7 @@
 				F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */,
 				F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
+				F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F74D78581C7B2F68007F95F5 /* GET - Corner Shroud Installation.mp4 in Resources */,
@@ -898,6 +908,7 @@
 				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
+				F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */,
 				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,
@@ -934,6 +945,7 @@
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
+				F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,

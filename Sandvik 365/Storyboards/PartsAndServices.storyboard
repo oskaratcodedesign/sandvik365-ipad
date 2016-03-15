@@ -228,6 +228,14 @@
             </objects>
             <point key="canvasLocation" x="2061" y="449"/>
         </scene>
+        <!--InterActiveToolsViewController-->
+        <scene sceneID="byt-ID-uSB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InterActiveTools" referencedIdentifier="InterActiveToolsViewController" id="sGm-gi-5PH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kL2-BI-Uwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196.5" y="518"/>
+        </scene>
         <!--Parts And Services View Controller-->
         <scene sceneID="pqe-Ao-OEW">
             <objects>
@@ -307,6 +315,7 @@ TO ROTATE</string>
                         <segue destination="qrw-oR-DJv" kind="show" identifier="ShowPartServiceSelectionViewController" id="6Lp-A9-eoo"/>
                         <segue destination="Sf0-zf-aAn" kind="show" identifier="ShowRoiSelectionViewController" id="nyc-ET-tIb"/>
                         <segue destination="bso-iy-e8Z" kind="show" identifier="ShowVideoCenterViewController" id="Wfu-N7-93e"/>
+                        <segue destination="sGm-gi-5PH" kind="show" identifier="ShowInterActiveToolsViewController" id="9kH-Kv-qxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,7 +543,7 @@ TO ROTATE</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7P-2C-yCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2677" y="715"/>
+            <point key="canvasLocation" x="2768" y="835"/>
         </scene>
         <!--Roi-->
         <scene sceneID="S99-zi-D9i">
@@ -733,6 +742,6 @@ TO ROTATE</string>
         <image name="sandvik_stripes_bg" width="1025" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oSS-kG-9xZ"/>
+        <segue reference="HCU-SY-t7f"/>
     </inferredMetricsTieBreakers>
 </document>
