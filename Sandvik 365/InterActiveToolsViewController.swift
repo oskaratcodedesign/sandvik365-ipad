@@ -11,7 +11,7 @@ import UIKit
 class InterActiveToolsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let data: [(String, AnyObject)] = [("Rock drill upgrade simulator", ROIRockDrillInput())]
+    let data: [BusinessType.InterActiveTools] = BusinessType.All.interActiveTools!
     
     override func viewDidLoad() {
         self.navigationItem.title = "SANDVIK 365 – INTERACTIVE TOOLS"
@@ -31,23 +31,23 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ToolsCollectionViewCell
-        let title = self.data[indexPath.row].0
+        let title = self.data[indexPath.row].title
         cell.titleLabel.text = title
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let object = self.data[indexPath.row]
-        if object.1 is ROIRockDrillInput {
-            self.performSegueWithIdentifier("RoiSelectionViewController", sender: self)
-        }
+        self.performSegueWithIdentifier("RoiSelectionViewController", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
-                if let input = self.data[collectionView.indexPathsForSelectedItems()!.first!.row].1 as? ROIRockDrillInput {
-                    vc.selectedInput = input
+                if let index = collectionView.indexPathsForSelectedItems()?.first?.row {
+                    let input = self.data[index]
+                    vc.selectedInput = input.selectionInput
+                    vc.selectedBusinessType = .All
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercaseString)
                 }
             }
         }

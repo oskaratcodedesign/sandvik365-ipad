@@ -139,48 +139,57 @@ enum BusinessType: UInt32 {
         }
     }
     
-    func getInputFromTitleOrTitles(title: String?) -> [String: SelectionInput?] {
-        var inputs: [String: SelectionInput?] = [:]
+    var interActiveTools: [InterActiveTools]? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting, All:
-            break
+        case ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+            return nil
         case SurfaceDrilling:
-            let rockTitle = "Rock drill upgrade simulator"
-            if title != nil {
-                if title!.caseInsensitiveCompare(rockTitle) == .OrderedSame {
-                    inputs = [rockTitle: ROIRockDrillInput()]
-                }
-            } else {
-                inputs = [rockTitle: nil]
-            }
+            return [.RockDrillTool]
         case CrusherAndScreening:
-            let crusherTitle = "Lifecycle program calculator"
-            let edvTitle = "Electric dump valve calculator"
-            if title != nil {
-                if title!.caseInsensitiveCompare(crusherTitle) == .OrderedSame {
-                    inputs = [crusherTitle: ROICrusherInput()]
-                } else if title!.caseInsensitiveCompare(edvTitle) == .OrderedSame {
-                    inputs = ["Electric dump valve calculator": ROIEDVInput()]
-                }
-            } else {
-                inputs = [crusherTitle: nil, edvTitle: nil]
-            }
+            return [.CrusherTool, .EDVTool]
         case UndergroundLoadingAndHauling:
-            let getTitle = "Ground Engaging Tools (GET) calculator"
-            let fireTitle = "Fire suppression tool"
-            if title != nil {
-                if title!.caseInsensitiveCompare(getTitle) == .OrderedSame {
-                    inputs = [getTitle: ROIGetInput()]
-                } else if title!.caseInsensitiveCompare(fireTitle) == .OrderedSame {
-                    if let firesupr = JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput {
-                        inputs = [fireTitle: firesupr]
-                    }
-                }
-            } else {
-                inputs = [getTitle: nil, fireTitle: nil]
+            return [.GetTool, .FireSuppressionTool]
+        case All:
+            return [.RockDrillTool, .CrusherTool, .FireSuppressionTool, .EDVTool, .GetTool]
+        }
+    }
+    
+    enum InterActiveTools {
+        case RockDrillTool
+        case CrusherTool
+        case FireSuppressionTool
+        case EDVTool
+        case GetTool
+        
+        var title: String! {
+            switch self {
+            case RockDrillTool:
+                return "Rock drill upgrade simulator"
+            case CrusherTool:
+                return "Lifecycle program calculator"
+            case FireSuppressionTool:
+                return "Fire suppression tool"
+            case EDVTool:
+                return "Electric dump valve calculator"
+            case GetTool:
+                return "Ground Engaging Tools (GET) calculator"
             }
         }
-        return inputs
+        
+        var selectionInput: SelectionInput? {
+            switch self {
+            case RockDrillTool:
+                return ROIRockDrillInput()
+            case CrusherTool:
+                return ROICrusherInput()
+            case FireSuppressionTool:
+                return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
+            case EDVTool:
+                return ROIEDVInput()
+            case GetTool:
+                return ROIGetInput()
+            }
+        }
     }
 }
 
@@ -296,14 +305,17 @@ class PartsAndServices {
     }
     
     func mainSectionTitles() -> [String] {
-        var titles: [String] = [String](self.businessType.getInputFromTitleOrTitles(nil).keys).flatMap({$0.uppercaseString})
-
-        if let mediaCenterTitle = self.businessType.mediaCenterTitle {
-            titles.append(mediaCenterTitle.uppercaseString)
-        }
+        var titles: [String] = []
         
         if let interActiveToolsTitle = self.businessType.interActiveToolsTitle {
             titles.append(interActiveToolsTitle.uppercaseString)
+        }
+        else if let tools = self.businessType.interActiveTools {
+            titles += tools.flatMap({$0.title.uppercaseString})
+        }
+
+        if let mediaCenterTitle = self.businessType.mediaCenterTitle {
+            titles.append(mediaCenterTitle.uppercaseString)
         }
         
         for mp in jsonParts.partsServicesContent {
