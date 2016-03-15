@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIDEOS &amp; ANIMATIONS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9e-ft-qTX">
-                                <rect key="frame" x="120" y="100" width="682" height="75"/>
+                                <rect key="frame" x="100" y="100" width="682" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="4Us-Jj-Zbx"/>
                                 </constraints>
@@ -41,13 +41,13 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the video you want to play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-YU-FRh">
-                                <rect key="frame" x="120" y="185" width="258" height="19"/>
+                                <rect key="frame" x="100" y="185" width="258" height="20"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-v5-fv7">
-                                <rect key="frame" x="120" y="214" width="480" height="435"/>
+                                <rect key="frame" x="100" y="215" width="500" height="435"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="aGl-Bt-0DO"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rId-8V-ruH" customClass="GradientHorizontalView" customModule="Sandvik_365" customModuleProvider="target">
-                                <rect key="frame" x="560" y="214" width="40" height="435"/>
+                                <rect key="frame" x="560" y="215" width="40" height="435"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Q0c-tq-LId"/>
@@ -144,7 +144,7 @@
                             <constraint firstItem="3gF-YU-FRh" firstAttribute="leading" secondItem="h9e-ft-qTX" secondAttribute="leading" id="7ob-IV-nSB"/>
                             <constraint firstItem="Yzk-kN-Lor" firstAttribute="top" secondItem="KBb-v5-fv7" secondAttribute="bottom" constant="150" id="A23-yQ-iYJ"/>
                             <constraint firstItem="3gF-YU-FRh" firstAttribute="top" secondItem="h9e-ft-qTX" secondAttribute="bottom" constant="10" id="JG8-GN-GOL"/>
-                            <constraint firstItem="h9e-ft-qTX" firstAttribute="leading" secondItem="QpO-XX-Fd0" secondAttribute="leadingMargin" constant="100" id="JxD-YA-2WQ"/>
+                            <constraint firstItem="h9e-ft-qTX" firstAttribute="leading" secondItem="QpO-XX-Fd0" secondAttribute="leading" constant="100" id="JxD-YA-2WQ"/>
                             <constraint firstItem="KBb-v5-fv7" firstAttribute="top" secondItem="3gF-YU-FRh" secondAttribute="bottom" constant="10" id="PP8-gE-oYd"/>
                             <constraint firstItem="rId-8V-ruH" firstAttribute="height" secondItem="KBb-v5-fv7" secondAttribute="height" id="R3C-xE-Gnj"/>
                             <constraint firstItem="h9e-ft-qTX" firstAttribute="top" secondItem="wSy-bB-jqs" secondAttribute="bottom" constant="80" id="Zi1-yd-5sE"/>
