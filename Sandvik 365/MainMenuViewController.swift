@@ -11,6 +11,7 @@ import UIKit
 
 class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewContentView: UIView!
     
     @IBOutlet weak var infoButton: UIButton!
     
@@ -70,7 +71,7 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        let point = touch.locationInView(self.firstContainer)
+        let point = touch.locationInView(self.scrollViewContentView)
         if CGRectContainsPoint(self.videoButton.frame, point) {
             return false
         }

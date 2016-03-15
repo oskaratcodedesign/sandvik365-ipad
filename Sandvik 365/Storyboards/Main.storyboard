@@ -97,8 +97,8 @@ YOU CAN COUNT ON</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
                                                 <rect key="frame" x="102" y="0.0" width="456" height="1536"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
-                                                        <rect key="frame" x="162" y="695" width="74" height="73"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
+                                                        <rect key="frame" x="161" y="695" width="74" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
                                                                 <rect key="frame" x="10" y="0.0" width="54" height="10"/>
@@ -334,6 +334,7 @@ AREAS</string>
                         <outlet property="firstContainer" destination="LGY-k8-KXB" id="jzs-P3-QtT"/>
                         <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
                         <outlet property="scrollView" destination="x5j-hR-t0y" id="fTV-2k-5PQ"/>
+                        <outlet property="scrollViewContentView" destination="Iav-IU-jbo" id="XVj-VF-wxd"/>
                         <outlet property="videoButton" destination="B0a-Kq-6It" id="vl7-rP-YMJ"/>
                         <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="bk5-QJ-IsA"/>
                         <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="FqL-Zk-5qX"/>
@@ -785,7 +786,7 @@ UPDATE NOW</string>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qVp-SC-fM8"/>
         <segue reference="FqL-Zk-5qX"/>
-        <segue reference="BTk-ks-6Xn"/>
     </inferredMetricsTieBreakers>
 </document>
