@@ -59,8 +59,8 @@ class SelectionWheel: UIView {
         }
         
         let frame = centerLabel.layer.frame
-        centerLabel.layer.roundCALayer(frame, border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))
-        centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(4, 4, frame.size.width-8, frame.size.height-8), border: 2, color: UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000))!)
+        centerLabel.layer.roundCALayer(frame, border: 2, color: Theme.orangePrimaryColor)
+        centerLabel.layer.addSublayer(CALayer().roundCALayer(CGRectMake(4, 4, frame.size.width-8, frame.size.height-8), border: 2, color: Theme.orangePrimaryColor)!)
         drawWheel()
     }
     
@@ -111,7 +111,7 @@ class SelectionWheel: UIView {
         shapeLAyer.path = path.CGPath
         shapeLAyer.lineWidth = 2
         shapeLAyer.fillColor = UIColor(white: 0, alpha: 0.8).CGColor
-        shapeLAyer.strokeColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        shapeLAyer.strokeColor = Theme.orangePrimaryColor.CGColor
         wheelContainer.layer.insertSublayer(shapeLAyer, atIndex: 0)
     }
     
@@ -141,7 +141,7 @@ class SelectionWheel: UIView {
         label.alignmentMode = kCAAlignmentCenter
         label.wrapped = true
         label.contentsScale = UIScreen.mainScreen().scale
-        label.foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        label.foregroundColor = Theme.orangePrimaryColor.CGColor
         
         container.addSublayer(label)
         container.anchorPoint = CGPointMake(0, 0)
@@ -243,7 +243,7 @@ class SelectionWheel: UIView {
     private func fillTouchedLayer() {
         if touchedLayer != nil {
             if let layer = touchedLayer as? CAShapeLayer{
-                layer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+                layer.fillColor = Theme.orangePrimaryColor.CGColor
                 getTextLayer(layer).foregroundColor = UIColor.blackColor().CGColor
             }
         }
@@ -253,7 +253,7 @@ class SelectionWheel: UIView {
         if touchedLayer != nil {
             if let layer = touchedLayer as? CAShapeLayer{
                 layer.fillColor = UIColor.clearColor().CGColor
-                getTextLayer(layer).foregroundColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+                getTextLayer(layer).foregroundColor = Theme.orangePrimaryColor.CGColor
             }
             touchedLayer = nil
         }

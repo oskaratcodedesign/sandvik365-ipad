@@ -58,13 +58,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
-                                        <rect key="frame" x="100" y="240" width="195" height="36"/>
+                                        <rect key="frame" x="100" y="240" width="195" height="35.5"/>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
                                         <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                        <rect key="frame" x="100" y="276" width="300" height="71"/>
+                                        <rect key="frame" x="100" y="275.5" width="300" height="71"/>
                                         <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON</string>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
@@ -98,16 +98,16 @@ YOU CAN COUNT ON</string>
                                                 <rect key="frame" x="102" y="0.0" width="456" height="1536"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
-                                                        <rect key="frame" x="161" y="695" width="74" height="73"/>
+                                                        <rect key="frame" x="161.5" y="696" width="73.5" height="72"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                                <rect key="frame" x="10" y="0.0" width="54" height="10"/>
+                                                                <rect key="frame" x="10" y="0.0" width="53.5" height="9.5"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                                <rect key="frame" x="6" y="20" width="63" height="73"/>
+                                                                <rect key="frame" x="5.5" y="19.5" width="63" height="72.5"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -144,16 +144,16 @@ YOU CAN COUNT ON</string>
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-Sl-Y5C">
-                                                        <rect key="frame" x="0.0" y="1346" width="456" height="130"/>
+                                                        <rect key="frame" x="0.0" y="1346.5" width="456" height="129.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore the app content, sorted by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooG-5g-ZrW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-KD-L3R" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="30" width="223" height="100"/>
+                                                                <rect key="frame" x="0.0" y="29.5" width="223" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="223" id="eLa-Nx-hep"/>
                                                                     <constraint firstAttribute="height" constant="100" id="nNC-aw-HUt"/>
@@ -182,14 +182,15 @@ YOU CAN COUNT ON</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kXA-96-Wzv" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="233" y="30" width="223" height="100"/>
+                                                                <rect key="frame" x="233" y="29.5" width="223" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="edi-zB-x0J"/>
                                                                     <constraint firstAttribute="width" constant="223" id="kt9-Wh-Bun"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
                                                                 <state key="normal">
-                                                                    <string key="title">PRODUCTAREAS</string>
+                                                                    <string key="title">PRODUCT
+AREAS</string>
                                                                     <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <state key="highlighted">
@@ -570,7 +571,7 @@ UPDATE NOW</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-nK-65q">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-HB-eqC" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-HB-eqC" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
                                         <rect key="frame" x="303" y="75" width="212" height="78"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -580,8 +581,8 @@ UPDATE NOW</string>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="d4M-CK-bjL"/>
                                                 <exclude reference="K6z-WG-pF2"/>
+                                                <exclude reference="d4M-CK-bjL"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -684,8 +685,8 @@ UPDATE NOW</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="k5a-pt-oR4"/>
                                                         <exclude reference="gE9-pC-hPK"/>
+                                                        <exclude reference="k5a-pt-oR4"/>
                                                         <exclude reference="NpK-fP-irl"/>
                                                     </mask>
                                                 </variation>

@@ -26,7 +26,7 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
         self.updateButton.titleLabel!.numberOfLines = 0
         self.updateButton.titleLabel!.textAlignment = .Center
         self.updateButton.setTitle(NSLocalizedString("NEW VERSION AVAILABLE\nUPDATE NOW", comment: ""), forState: .Normal)
-        self.updateButton.setTitleColor(UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000), forState: .Normal)
+        self.updateButton.setTitleColor(Theme.orangePrimaryColor, forState: .Normal)
         self.updateButton.setTitle(NSLocalizedString("NO NEW VERSION AVAILABLE", comment: ""), forState: .Disabled)
         self.updateButton.setTitleColor(UIColor(white:0.600, alpha:0.500), forState: .Disabled)
     }
@@ -50,7 +50,7 @@ class DisclaimerViewController: UIViewController, UITextViewDelegate {
     
     func checkUpdateAvailble(){
         if JSONManager().isUpdateAvailable() {
-            self.updateButton.layer.borderColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+            self.updateButton.layer.borderColor = Theme.orangePrimaryColor.CGColor
             self.updateButton.enabled = true
         }
         else {

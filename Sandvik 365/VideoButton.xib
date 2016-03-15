@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
@@ -39,12 +39,12 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-XI-3fY">
-                            <rect key="frame" x="85" y="21" width="40" height="40"/>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-XI-3fY">
+                            <rect key="frame" x="84" y="21" width="43" height="41"/>
                             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="GHX-FE-saD"/>
-                                <constraint firstAttribute="height" constant="40" id="zeE-Im-AjR"/>
+                                <constraint firstAttribute="width" constant="43" id="GHX-FE-saD"/>
+                                <constraint firstAttribute="height" constant="41" id="zeE-Im-AjR"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="30"/>
                             <state key="normal" title="▶︎">
@@ -61,7 +61,7 @@
                             <rect key="frame" x="0.0" y="81" width="210" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-hx-Rjr">
-                                    <rect key="frame" x="20" y="3" width="170" height="33"/>
+                                    <rect key="frame" x="20" y="4" width="170" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="39" id="QRQ-hR-3VY"/>
                                     </constraints>

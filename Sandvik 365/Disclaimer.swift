@@ -34,7 +34,7 @@ class Disclaimer: NibDesignable {
         sectionPath.closePath()
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = sectionPath.CGPath
-        shapeLAyer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        shapeLAyer.fillColor = Theme.orangePrimaryColor.CGColor
         view.layer.insertSublayer(shapeLAyer, atIndex: 0)
     }
     
@@ -57,7 +57,7 @@ class Disclaimer: NibDesignable {
         sectionPath.closePath()
         let shapeLAyer = CAShapeLayer()
         shapeLAyer.path = sectionPath.CGPath
-        shapeLAyer.fillColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        shapeLAyer.fillColor = Theme.orangePrimaryColor.CGColor
         view.layer.insertSublayer(shapeLAyer, atIndex: 0)
     }
     
