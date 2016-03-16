@@ -39,36 +39,19 @@ enum BusinessType: UInt32 {
             return nil
         case UndergroundLoadingAndHauling:
             return [
-                Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-                Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-                Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
-                Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-                Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
-                Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video
             ]
         case UndergroundDrillingAndBolting:
-            return  [
-                Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
-                Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+            return [
+                Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video, Videos.ECLIPSE.video
             ]
         case SurfaceDrilling:
-            return  [Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+            return [Videos.ECLIPSE.video]
         case MechanicalCutting:
-            return  [Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds")]
+            return [Videos.REBUILDS.video]
         case All:
             return [
-                Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-                Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-                Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
-                Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-                Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
-                Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse"),
-                Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
-                Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video
             ]
         }
     }

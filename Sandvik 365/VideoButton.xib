@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteButton" destination="src-ec-Izd" id="QEg-FE-eAy"/>
                 <outlet property="imageView" destination="03Q-yI-JfO" id="rk8-lx-Q37"/>
                 <outlet property="playButton" destination="xKd-XI-3fY" id="ON4-ZU-9tN"/>
                 <outlet property="titleLabel" destination="ONB-hx-Rjr" id="dpo-9o-5Mk"/>
@@ -39,8 +40,26 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-XI-3fY">
-                            <rect key="frame" x="84" y="21" width="43" height="41"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="src-ec-Izd">
+                            <rect key="frame" x="186" y="0.0" width="24" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="Tl9-Bd-eWS"/>
+                                <constraint firstAttribute="height" constant="24" id="oJl-Rj-5nU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
+                            <state key="normal" image="sandvik_internal_star">
+                                <color key="titleColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="sandvik_internal_star_selected">
+                                <color key="titleColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="favoriteAction:" destination="-1" eventType="touchUpInside" id="3GD-qD-TuE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-XI-3fY">
+                            <rect key="frame" x="84" y="20" width="43" height="41"/>
                             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="43" id="GHX-FE-saD"/>
@@ -61,7 +80,7 @@
                             <rect key="frame" x="0.0" y="81" width="210" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-hx-Rjr">
-                                    <rect key="frame" x="20" y="4" width="170" height="32"/>
+                                    <rect key="frame" x="20" y="4" width="170" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="39" id="QRQ-hR-3VY"/>
                                     </constraints>
@@ -89,11 +108,13 @@ sdfsf</string>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="37b-2n-304"/>
+                        <constraint firstItem="src-ec-Izd" firstAttribute="top" secondItem="03Q-yI-JfO" secondAttribute="top" id="7be-iX-JLk"/>
                         <constraint firstItem="03Q-yI-JfO" firstAttribute="top" secondItem="Q00-0Y-kWh" secondAttribute="top" id="AGA-Wu-8fj"/>
                         <constraint firstItem="xKd-XI-3fY" firstAttribute="centerY" secondItem="03Q-yI-JfO" secondAttribute="centerY" id="Bce-1U-nrf"/>
                         <constraint firstAttribute="bottom" secondItem="VF2-wL-04W" secondAttribute="bottom" id="JGY-ns-PRZ"/>
                         <constraint firstItem="VF2-wL-04W" firstAttribute="top" secondItem="03Q-yI-JfO" secondAttribute="bottom" id="LsP-hV-KvG"/>
                         <constraint firstAttribute="trailing" secondItem="VF2-wL-04W" secondAttribute="trailing" id="PfH-H0-wfl"/>
+                        <constraint firstItem="src-ec-Izd" firstAttribute="trailing" secondItem="03Q-yI-JfO" secondAttribute="trailing" id="ROb-QE-prH"/>
                         <constraint firstItem="VF2-wL-04W" firstAttribute="leading" secondItem="Q00-0Y-kWh" secondAttribute="leading" id="UGo-oM-OaR"/>
                         <constraint firstItem="xKd-XI-3fY" firstAttribute="centerX" secondItem="03Q-yI-JfO" secondAttribute="centerX" id="iak-Js-ABB"/>
                         <constraint firstItem="03Q-yI-JfO" firstAttribute="leading" secondItem="Q00-0Y-kWh" secondAttribute="leading" id="orn-wa-YxY"/>
@@ -131,4 +152,8 @@ sdfsf</string>
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="sandvik_internal_star" width="19" height="19"/>
+        <image name="sandvik_internal_star_selected" width="19" height="19"/>
+    </resources>
 </document>

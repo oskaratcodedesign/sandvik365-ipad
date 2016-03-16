@@ -9,8 +9,9 @@
 import Foundation
 import NibDesignable
 
-protocol VideoButtonDelegate {
-    func didTouchEnded()
+@objc protocol VideoButtonDelegate {
+    optional func didTouchEnded()
+    optional func favoriteAction(video :Video)
 }
 
 class VideoButton : NibDesignable {
@@ -18,7 +19,9 @@ class VideoButton : NibDesignable {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     var delegate: VideoButtonDelegate?
+    private var video: Video!
     
     @IBInspectable var videoImage: UIImage? {
         didSet {
@@ -40,7 +43,7 @@ class VideoButton : NibDesignable {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.highlightView(false)
         super.touchesEnded(touches, withEvent: event)
-        self.delegate?.didTouchEnded()
+        self.delegate?.didTouchEnded?()
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -61,6 +64,23 @@ class VideoButton : NibDesignable {
             self.playButton.setTitleColor(Theme.orangePrimaryColor, forState: .Normal)
             self.titleLabel.textColor = Theme.orangePrimaryColor
         }
+    }
+    
+    func configure(video: Video, delegate: VideoButtonDelegate?) {
+        self.favoriteButton.hidden = false
+        self.video = video
+        self.favoriteButton.selected = video.isFavorite
+        if let image = video.imageName {
+            self.imageView.image = UIImage(named: image)
+        }
+        self.titleLabel.text = video.title
+        self.delegate = delegate
+    }
+    
+    @IBAction func favoriteAction(sender: UIButton) {
+        sender.selected = !sender.selected
+        self.video.isFavorite = sender.selected
+        self.delegate?.favoriteAction?(self.video)
     }
     
 }
