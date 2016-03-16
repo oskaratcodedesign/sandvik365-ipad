@@ -55,13 +55,9 @@ class VideoButton : NibDesignable {
         self.playButton.highlighted = highlight
         if highlight {
             self.backgroundColor = Theme.orangePrimaryColor
-            self.playButton.backgroundColor = Theme.orangePrimaryColor
-            self.playButton.setTitleColor(UIColor.clearColor(), forState: .Normal)
             self.titleLabel.textColor = UIColor.blackColor()
         } else {
             self.backgroundColor = UIColor.clearColor()
-            self.playButton.backgroundColor = UIColor(white: 0.000, alpha: 0.5)
-            self.playButton.setTitleColor(Theme.orangePrimaryColor, forState: .Normal)
             self.titleLabel.textColor = Theme.orangePrimaryColor
         }
     }

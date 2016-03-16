@@ -41,38 +41,42 @@
                             </variation>
                         </imageView>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="src-ec-Izd">
-                            <rect key="frame" x="186" y="0.0" width="24" height="24"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="185" y="0.0" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="Tl9-Bd-eWS"/>
                                 <constraint firstAttribute="height" constant="24" id="oJl-Rj-5nU"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
-                            <state key="normal" image="sandvik_internal_star">
+                            <state key="normal" image="tools-icons-star-not-active-x1">
                                 <color key="titleColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <state key="selected" image="sandvik_internal_star_selected">
+                            <state key="selected" image="tools-icons-star-active-x1">
                                 <color key="titleColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Tl9-Bd-eWS"/>
+                                    <exclude reference="oJl-Rj-5nU"/>
+                                </mask>
+                            </variation>
                             <connections>
                                 <action selector="favoriteAction:" destination="-1" eventType="touchUpInside" id="3GD-qD-TuE"/>
                             </connections>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-XI-3fY">
                             <rect key="frame" x="84" y="20" width="43" height="41"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="43" id="GHX-FE-saD"/>
                                 <constraint firstAttribute="height" constant="41" id="zeE-Im-AjR"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="30"/>
-                            <state key="normal" title="▶︎">
+                            <state key="normal" image="play-x1">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <state key="selected" title="▶︎">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
                             </state>
-                            <state key="highlighted" title="▶︎">
+                            <state key="highlighted" image="play-inverted-x1">
                                 <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="0.5" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -153,7 +157,9 @@ sdfsf</string>
         </view>
     </objects>
     <resources>
-        <image name="sandvik_internal_star" width="19" height="19"/>
-        <image name="sandvik_internal_star_selected" width="19" height="19"/>
+        <image name="play-inverted-x1" width="43" height="43"/>
+        <image name="play-x1" width="43" height="43"/>
+        <image name="tools-icons-star-active-x1" width="25" height="25"/>
+        <image name="tools-icons-star-not-active-x1" width="25" height="25"/>
     </resources>
 </document>
