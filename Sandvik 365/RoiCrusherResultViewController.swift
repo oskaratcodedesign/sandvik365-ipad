@@ -83,6 +83,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
         self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x:0, y: 0), size: scrollView.bounds.size), animated: true)
         if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
             vc.selectionContainer.hidden = false
+            vc.titleLabel.hidden = false
         }
     }
     
@@ -91,6 +92,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
         
         if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
             vc.selectionContainer.hidden = true
+            vc.titleLabel.hidden = true
         }
     }
     
