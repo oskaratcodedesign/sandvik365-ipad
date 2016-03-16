@@ -102,6 +102,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 sectionDescriptionLabel.text = partsServices[currentPage].description
             }
         }
+        self.rightButton.enabled = true
+        self.leftButton.enabled = true
     }
     
     func moveToNextPage(left: Bool) {
@@ -111,6 +113,8 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
         let slideToX = contentOffset + (left ? -pageWidth : pageWidth)
         sectionScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, sectionScrollView.bounds.height), animated: true)
         hideShowToggleButtons(slideToX)
+        self.rightButton.enabled = false
+        self.leftButton.enabled = false
     }
     
     override func viewDidAppear(animated: Bool) {
