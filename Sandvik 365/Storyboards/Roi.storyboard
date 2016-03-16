@@ -75,7 +75,7 @@
         <!--Roi Selection View Controller-->
         <scene sceneID="kTk-dj-n60">
             <objects>
-                <viewController id="uD9-aW-1nI" customClass="RoiSelectionViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoiSelectionViewController" id="uD9-aW-1nI" customClass="RoiSelectionViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dbt-9D-af3"/>
                         <viewControllerLayoutGuide type="bottom" id="zIC-2B-X2W"/>
@@ -85,19 +85,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-KQ-QE7">
-                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-Yh-GKN">
-                                        <rect key="frame" x="0.0" y="580" width="560" height="580"/>
+                                        <rect key="frame" x="0.0" y="600" width="600" height="600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsz-tO-ijf">
-                                                <rect key="frame" x="0.0" y="70" width="560" height="29"/>
+                                                <rect key="frame" x="0.0" y="90" width="600" height="29"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-fs-vKI">
-                                                <rect key="frame" x="0.0" y="228" width="150" height="124"/>
+                                                <rect key="frame" x="0.0" y="238" width="150" height="124"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="1Tz-ld-I4d"/>
                                                     <constraint firstAttribute="width" constant="150" id="z7Y-s0-L41"/>
@@ -118,7 +118,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-ib-G4a">
-                                                <rect key="frame" x="410" y="228" width="150" height="124"/>
+                                                <rect key="frame" x="450" y="238" width="150" height="124"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="Dj9-MN-Ytg"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Uys-0u-oaf"/>
@@ -141,7 +141,7 @@
                                                 </connections>
                                             </button>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfv-Rj-qtp">
-                                                <rect key="frame" x="150" y="203" width="260" height="174"/>
+                                                <rect key="frame" x="150" y="210" width="300" height="180"/>
                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="OlB-7L-XVJ"/>
@@ -155,13 +155,13 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ah-fO-PXD">
-                                                <rect key="frame" x="70" y="458" width="420" height="102"/>
+                                                <rect key="frame" x="70" y="471" width="460" height="109"/>
                                                 <subviews>
                                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                                        <rect key="frame" x="180" y="0.0" width="60" height="102"/>
+                                                        <rect key="frame" x="200" y="0.0" width="60" height="109"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="-20" y="0.0" width="100" height="102"/>
+                                                                <rect key="frame" x="-20" y="0.0" width="100" height="109"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="100" id="oxj-98-Ocg"/>
                                                                 </constraints>
@@ -206,7 +206,7 @@
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-bc-FmT">
-                                                <rect key="frame" x="490" y="514" width="70" height="46"/>
+                                                <rect key="frame" x="530" y="534" width="70" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="IPV-Ag-afG"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LLN-T7-Glv"/>
@@ -244,27 +244,27 @@
                                             <constraint firstAttribute="trailing" secondItem="xsz-tO-ijf" secondAttribute="trailing" id="vZx-3q-Z15"/>
                                             <constraint firstItem="d7a-fs-vKI" firstAttribute="leading" secondItem="fsC-Yh-GKN" secondAttribute="leading" id="xix-mf-sb4"/>
                                             <constraint firstAttribute="trailing" secondItem="tVa-ib-G4a" secondAttribute="trailing" id="xtZ-31-lxf"/>
-                                            <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="fsC-Yh-GKN" secondAttribute="top" constant="70" id="zgM-JW-Eiy"/>
+                                            <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="fsC-Yh-GKN" secondAttribute="top" constant="90" id="zgM-JW-Eiy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-38-zGS">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="580"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50S-4Z-yCn">
-                                                <rect key="frame" x="168" y="290" width="224" height="0.0"/>
+                                                <rect key="frame" x="180" y="300" width="240" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-i6-zf0">
-                                                <rect key="frame" x="254" y="508" width="53" height="10"/>
+                                                <rect key="frame" x="273" y="527" width="54" height="10"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-zc-UoC">
-                                                <rect key="frame" x="249" y="528" width="63" height="72"/>
+                                                <rect key="frame" x="269" y="547" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,16 +321,20 @@
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="3VC-bA-nZS"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="5cu-bG-yr3"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" id="95l-Bd-0Dt"/>
+                            <constraint firstItem="Hgn-KQ-QE7" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="9EB-tw-vwR"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" id="Bf4-Z5-sUP"/>
                             <constraint firstItem="tVa-ib-G4a" firstAttribute="leading" secondItem="Pfv-Rj-qtp" secondAttribute="trailing" id="KFo-rx-X0l"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="centerY" secondItem="MSP-rB-ez0" secondAttribute="centerY" id="L5h-AE-rYW"/>
+                            <constraint firstItem="Hgn-KQ-QE7" firstAttribute="width" secondItem="MSP-rB-ez0" secondAttribute="width" id="LyH-ZE-fUU"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="RYq-pD-9wq"/>
                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="leading" secondItem="d7a-fs-vKI" secondAttribute="trailing" id="YAq-WA-kX2"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="ZpF-at-bpT"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Hgn-KQ-QE7" secondAttribute="bottom" id="clH-Ve-1Cn"/>
                             <constraint firstItem="Jep-bc-FmT" firstAttribute="leading" secondItem="8ah-fO-PXD" secondAttribute="trailing" id="dq4-dp-FVe"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="top" secondItem="Dbt-9D-af3" secondAttribute="bottom" id="eYQ-XN-fkQ"/>
+                            <constraint firstItem="Hgn-KQ-QE7" firstAttribute="height" secondItem="MSP-rB-ez0" secondAttribute="height" id="eyQ-R9-Zdl"/>
                             <constraint firstItem="zIC-2B-X2W" firstAttribute="top" secondItem="Hgn-KQ-QE7" secondAttribute="bottom" id="htW-vG-BZr"/>
+                            <constraint firstItem="Hgn-KQ-QE7" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="k7l-S4-mVI"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="centerX" secondItem="MSP-rB-ez0" secondAttribute="centerX" id="lto-pd-YQ3"/>
                             <constraint firstItem="8ah-fO-PXD" firstAttribute="top" secondItem="Pfv-Rj-qtp" secondAttribute="bottom" constant="81" id="m6J-Ls-rZx"/>
                             <constraint firstItem="Hgn-KQ-QE7" firstAttribute="leading" secondItem="MSP-rB-ez0" secondAttribute="leadingMargin" id="uSa-US-K7M"/>
@@ -351,12 +355,16 @@
                                 <exclude reference="95l-Bd-0Dt"/>
                                 <exclude reference="Bf4-Z5-sUP"/>
                                 <exclude reference="L5h-AE-rYW"/>
+                                <exclude reference="RYq-pD-9wq"/>
                                 <exclude reference="ZpF-at-bpT"/>
                                 <exclude reference="eYQ-XN-fkQ"/>
                                 <exclude reference="lto-pd-YQ3"/>
+                                <exclude reference="uSa-US-K7M"/>
                                 <exclude reference="uVy-VZ-xSM"/>
                                 <exclude reference="v1R-yk-aGB"/>
+                                <exclude reference="vtG-JB-tqI"/>
                                 <exclude reference="clH-Ve-1Cn"/>
+                                <exclude reference="htW-vG-BZr"/>
                             </mask>
                         </variation>
                         <connections>
@@ -497,10 +505,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="2048" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6B-dn-Mx1">
-                                                <rect key="frame" x="82" y="150" width="1851" height="300"/>
+                                                <rect key="frame" x="102" y="150" width="1831" height="300"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-73-rNl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1851" height="55"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1831" height="55"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-Bv-YgK">
                                                                 <rect key="frame" x="33" y="0.0" width="221" height="55"/>
@@ -525,7 +533,7 @@ PROFIT BY UP TO</string>
                                                                 </variation>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-Yh-3ka">
-                                                                <rect key="frame" x="1707" y="5" width="144" height="45"/>
+                                                                <rect key="frame" x="1687" y="5" width="144" height="45"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="8sh-3Y-5fu"/>
                                                                     <constraint firstAttribute="width" constant="144" id="S9c-3J-BeJ"/>
@@ -571,7 +579,7 @@ PROFIT BY UP TO</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nou-UF-7fh">
-                                                        <rect key="frame" x="0.0" y="55" width="1851" height="245"/>
+                                                        <rect key="frame" x="0.0" y="55" width="1831" height="245"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-ed-AHq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="245"/>
@@ -596,7 +604,7 @@ PROFIT BY UP TO</string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Vd-EON" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="53" width="197" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="65" width="197" height="33"/>
                                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         <state key="normal">
@@ -617,7 +625,7 @@ INSPECTION SERVICES</string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-Cx-29I" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="102" width="197" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="114" width="197" height="33"/>
                                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         <state key="normal">
@@ -674,7 +682,7 @@ PLANNING SERVICES</string>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-cD-gCF">
-                                                                <rect key="frame" x="197" y="0.0" width="1654" height="245"/>
+                                                                <rect key="frame" x="197" y="0.0" width="1634" height="245"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-bi-gzk">
                                                                         <rect key="frame" x="34" y="0.0" width="25" height="245"/>
@@ -712,24 +720,24 @@ PLANNING SERVICES</string>
                                                                         </variation>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-gn-rMh">
-                                                                        <rect key="frame" x="59" y="220" width="1595" height="25"/>
+                                                                        <rect key="frame" x="59" y="220" width="1575" height="25"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-Ie-fWm">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="1595" height="2"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="1575" height="2"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="2" id="SFu-1g-v1J"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Ll-y1a">
-                                                                                <rect key="frame" x="1595" y="0.0" width="0.0" height="2"/>
+                                                                                <rect key="frame" x="1575" y="0.0" width="0.0" height="2"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="2" id="eb7-hE-a2C"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-iL-ZYX">
-                                                                                <rect key="frame" x="1595" y="2" width="33.5" height="23"/>
+                                                                                <rect key="frame" x="1575" y="2" width="34" height="23"/>
                                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -755,7 +763,7 @@ PLANNING SERVICES</string>
                                                                         </variation>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-lx-H79">
-                                                                        <rect key="frame" x="59" y="20" width="1595" height="200"/>
+                                                                        <rect key="frame" x="59" y="20" width="1575" height="200"/>
                                                                         <subviews>
                                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQ2-1I-Hmj">
                                                                                 <rect key="frame" x="81" y="0.0" width="387" height="200"/>
@@ -847,7 +855,7 @@ PLANNING SERVICES</string>
                                                 </variation>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-U8-O1m">
-                                                <rect key="frame" x="82" y="150" width="1851" height="300"/>
+                                                <rect key="frame" x="102" y="150" width="1831" height="300"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ALf-Ek-8xe">
                                                 <rect key="frame" x="1898" y="238" width="150" height="124"/>
@@ -858,7 +866,7 @@ PLANNING SERVICES</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="30" maxX="0.0" maxY="30"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="101" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="98" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="sandvik_arrow_right">
                                                     <string key="title">COMPARE
 PROGRAMS</string>
@@ -887,7 +895,7 @@ PROGRAMS</string>
                                             <constraint firstItem="1S0-U8-O1m" firstAttribute="centerY" secondItem="b6B-dn-Mx1" secondAttribute="centerY" id="raA-sl-Gmi"/>
                                             <constraint firstItem="b6B-dn-Mx1" firstAttribute="height" secondItem="azz-HP-nAw" secondAttribute="height" multiplier="0.5" id="tnD-dc-tQI"/>
                                             <constraint firstAttribute="trailing" secondItem="ALf-Ek-8xe" secondAttribute="trailing" id="uJN-1S-1sz"/>
-                                            <constraint firstItem="b6B-dn-Mx1" firstAttribute="leading" secondItem="azz-HP-nAw" secondAttribute="leading" constant="82" id="vP9-P3-xDs"/>
+                                            <constraint firstItem="b6B-dn-Mx1" firstAttribute="leading" secondItem="azz-HP-nAw" secondAttribute="leading" constant="102" id="vP9-P3-xDs"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -898,11 +906,14 @@ PROGRAMS</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLD-tP-EB9">
                                         <rect key="frame" x="2048" y="0.0" width="2048" height="600"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-To-IB3">
-                                                <rect key="frame" x="0.0" y="238" width="150" height="124"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crusher tool comparison screen x1" translatesAutoresizingMaskIntoConstraints="NO" id="p9V-vN-zoN">
+                                                <rect key="frame" x="0.0" y="0.0" width="2048" height="600"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-To-IB3">
+                                                <rect key="frame" x="0.0" y="238" width="100" height="124"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="WRj-OK-4nV"/>
-                                                    <constraint firstAttribute="width" constant="150" id="n9m-RF-VOi"/>
+                                                    <constraint firstAttribute="width" constant="100" id="n9m-RF-VOi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
@@ -916,13 +927,16 @@ PROGRAMS</string>
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="prevAction:" destination="uD9-aW-1nI" eventType="touchUpInside" id="yZm-gX-CFq"/>
                                                     <action selector="scrollLeftAction:" destination="SOn-Qd-dbX" eventType="touchUpInside" id="CML-xz-LOM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="p9V-vN-zoN" firstAttribute="width" secondItem="NLD-tP-EB9" secondAttribute="width" id="5nY-74-JoD"/>
+                                            <constraint firstItem="p9V-vN-zoN" firstAttribute="centerY" secondItem="NLD-tP-EB9" secondAttribute="centerY" id="Czk-yB-VW2"/>
+                                            <constraint firstItem="p9V-vN-zoN" firstAttribute="centerX" secondItem="NLD-tP-EB9" secondAttribute="centerX" id="MhC-eD-yyI"/>
+                                            <constraint firstItem="p9V-vN-zoN" firstAttribute="height" secondItem="NLD-tP-EB9" secondAttribute="height" id="aAX-Jx-j1R"/>
                                             <constraint firstItem="Oos-To-IB3" firstAttribute="centerY" secondItem="NLD-tP-EB9" secondAttribute="centerY" id="iJH-Rs-xXq"/>
                                             <constraint firstItem="Oos-To-IB3" firstAttribute="leading" secondItem="NLD-tP-EB9" secondAttribute="leading" id="nhb-sX-AIQ"/>
                                         </constraints>
@@ -984,19 +998,19 @@ PROGRAMS</string>
                         <rect key="frame" x="0.0" y="0.0" width="2048" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SAVINGS WITH:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-cS-hjF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YOUR SAVINGS WITH:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-cS-hjF">
                                 <rect key="frame" x="135" y="92" width="141" height="17"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-hy-pWA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-hy-pWA">
                                 <rect key="frame" x="356" y="121" width="18" height="34"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELD-ON HALF-ARROW:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-ZB-i4q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WELD-ON HALF-ARROW:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-ZB-i4q">
                                 <rect key="frame" x="135" y="130" width="165" height="16"/>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1008,14 +1022,14 @@ PROGRAMS</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="738-O8-QhS">
                                         <rect key="frame" x="0.0" y="0.0" width="1811" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MECHANICAL GET (BPII):" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-Wt-itf">
-                                                <rect key="frame" x="33" y="12.5" width="221" height="37.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MECHANICAL GET (BPII):" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-Wt-itf">
+                                                <rect key="frame" x="33" y="13" width="221" height="37"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-Vl-7OI">
-                                                <rect key="frame" x="254" y="10.5" width="21.5" height="41.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-Vl-7OI">
+                                                <rect key="frame" x="254" y="11" width="22" height="41"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1109,7 +1123,7 @@ PROGRAMS</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-p5-A33" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="52.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="53" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="COST PER HOUR">
@@ -1128,7 +1142,7 @@ PROGRAMS</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Zo-lre" customClass="RoundButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="93.5" width="197" height="29"/>
+                                                        <rect key="frame" x="0.0" y="94" width="197" height="29"/>
                                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="REVENUE LOSS">
@@ -1467,14 +1481,14 @@ PROGRAMS</string>
                                     <constraint firstAttribute="trailing" secondItem="MkV-0W-u2H" secondAttribute="trailing" id="qJS-TD-KMM"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-0J-whY">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-0J-whY">
                                 <rect key="frame" x="102" y="92" width="1811" height="358"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-tS-lWb">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-tS-lWb">
                                         <rect key="frame" x="10" y="10" width="1791" height="338"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK8-Ns-dz4">
-                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="16.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="17"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1494,7 +1508,7 @@ PROGRAMS</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u1-uc-EOI">
-                                                <rect key="frame" x="0.0" y="67" width="1712" height="18.5"/>
+                                                <rect key="frame" x="0.0" y="67" width="1712" height="19"/>
                                                 <string key="text">The data is based on trial data obtained from U/G Hardrock mines globally, typically, Copper/Gold. Benefits gained are based on the assumption that the mine site operates medium - large UG Loaders, at 4000 hours / year and loader.</string>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -2496,6 +2510,7 @@ PROFIT BY UP TO</string>
     </scenes>
     <resources>
         <image name="bare-shovel" width="62" height="42"/>
+        <image name="crusher tool comparison screen x1" width="1024" height="768"/>
         <image name="half-arrow" width="70" height="42"/>
         <image name="mechanical-get" width="53" height="42"/>
         <image name="sandvik_arrow_down" width="65" height="32"/>

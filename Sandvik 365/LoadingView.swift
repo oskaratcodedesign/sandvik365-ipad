@@ -28,7 +28,7 @@ class LoadingView : NibDesignable {
         circlePathLayer.frame = numberLabel.bounds
         circlePathLayer.lineWidth = 2
         circlePathLayer.fillColor = UIColor.clearColor().CGColor
-        circlePathLayer.strokeColor = UIColor(red: 0.890, green:0.431, blue:0.153, alpha:1.000).CGColor
+        circlePathLayer.strokeColor = Theme.orangePrimaryColor.CGColor
         circlePathLayer.path = UIBezierPath(ovalInRect: circlePathLayer.frame).CGPath
         circlePathLayer.transform = CATransform3DMakeRotation(CGFloat(-90.0 / 180.0 * M_PI), 0.0, 0.0, 1.0);
         numberLabel.layer.addSublayer(circlePathLayer)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCenterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+class VideoCenterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, VideoButtonDelegate
 {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,14 +21,9 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedBusinessType.backgroundImageName)
         }
-        self.videos = self.selectedBusinessType.videos?.sort({ (v1: Video, v2: Video) -> Bool in
-            v1.title.caseInsensitiveCompare(v2.title) == .OrderedAscending
-        })
-        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            let size = layout.itemSize.height + layout.minimumLineSpacing
-            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: size, right: 40)
-        }
+        self.videos = self.selectedBusinessType.videos
+        sortVideos()
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,10 +46,27 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VideoCell
         let video = self.videos[indexPath.row]
-        cell.videoButton.imageView.image = UIImage(named: video.imageName)
-        cell.videoButton.titleLabel.text = video.title
-        
+        cell.videoButton.configure(video, delegate: self)
         return cell
+    }
+    
+    func favoriteAction(video: Video) {
+        let currentIndex = self.videos.indexOf(video)
+        sortVideos()
+        let nextIndex = self.videos.indexOf(video)
+        if currentIndex != nil && nextIndex != nil {
+            self.collectionView.moveItemAtIndexPath(NSIndexPath(forRow: currentIndex!, inSection: 0), toIndexPath: NSIndexPath(forRow: nextIndex!, inSection: 0))
+        }
+    }
+    
+    private func sortVideos() {
+        let favorites = self.videos.filter({$0.isFavorite}).sort({ (v1: Video, v2: Video) -> Bool in
+            v1.title!.caseInsensitiveCompare(v2.title!) == .OrderedAscending
+        })
+        let rest = self.videos.filter({!$0.isFavorite}).sort({ (v1: Video, v2: Video) -> Bool in
+            v1.title!.caseInsensitiveCompare(v2.title!) == .OrderedAscending
+        })
+        self.videos = favorites + rest
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

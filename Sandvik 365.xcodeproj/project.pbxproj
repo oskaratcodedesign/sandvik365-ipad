@@ -42,6 +42,9 @@
 		F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */; };
 		F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */; };
 		F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */; };
+		F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */; };
+		F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */; };
+		F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */; };
 		F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B8D1B7A04F5002354B1 /* Main.storyboard */; };
 		F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7227B911B7A0616002354B1 /* Roi.storyboard */; };
 		F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */; };
@@ -93,6 +96,8 @@
 		F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203631C46680000CF4E3F /* ColorCodedTouchView.m */; };
 		F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = F79203651C46680000CF4E3F /* ColorCodingLookup.m */; };
 		F792036A1C46DA5A00CF4E3F /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79203691C46DA5A00CF4E3F /* Region.swift */; };
+		F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */; };
+		F79576941C9708CC002ACBB3 /* PartsServicesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */; };
 		F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */; };
 		F797D9511BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */; };
 		F79E32911BFB2DA800CB3654 /* PartServiceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */; };
@@ -109,6 +114,7 @@
 		F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */; };
 		F7CAE0831BB3D5260098389F /* RoiCrusherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */; };
 		F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */; };
+		F7D6C1E31C974E0D00E933D8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1E21C974E0D00E933D8 /* Theme.swift */; };
 		F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2C0431C15C42C009D290B /* DownloadingView.swift */; };
 		F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E2C0451C15C445009D290B /* DownloadingView.xib */; };
 		F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E344C61C3EA5D5003B7C67 /* MenuCountOnBox.swift */; };
@@ -184,6 +190,9 @@
 		F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWheel.swift; sourceTree = "<group>"; };
 		F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberFormatterExtension.swift; sourceTree = "<group>"; };
+		F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterActiveTools.storyboard; sourceTree = "<group>"; };
+		F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterActiveToolsViewController.swift; sourceTree = "<group>"; };
+		F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7227B8D1B7A04F5002354B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7227B911B7A0616002354B1 /* Roi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roi.storyboard; sourceTree = "<group>"; };
 		F7227B931B7A0964002354B1 /* RoiSelectionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionContentViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +243,8 @@
 		F79203641C46680000CF4E3F /* ColorCodingLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCodingLookup.h; sourceTree = "<group>"; };
 		F79203651C46680000CF4E3F /* ColorCodingLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCodingLookup.m; sourceTree = "<group>"; };
 		F79203691C46DA5A00CF4E3F /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAreaMenuViewController.swift; sourceTree = "<group>"; };
+		F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsServicesMenuViewController.swift; sourceTree = "<group>"; };
 		F795F8001BE0FFAE0086197B /* SubPartServiceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPartServiceContentViewController.swift; sourceTree = "<group>"; };
 		F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandvik365_Extern_150917.m4v; sourceTree = "<group>"; };
 		F79E32901BFB2DA800CB3654 /* PartServiceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceContent.swift; sourceTree = "<group>"; };
@@ -249,6 +260,7 @@
 		F7CAE07C1BB3D4DF0098389F /* RoiCrusherDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiCrusherDetailView.xib; sourceTree = "<group>"; };
 		F7CAE0821BB3D5260098389F /* RoiCrusherDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiCrusherDetailView.swift; sourceTree = "<group>"; };
 		F7CB9D181B8C517200C1B3A1 /* PartsAndServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServices.swift; sourceTree = "<group>"; };
+		F7D6C1E21C974E0D00E933D8 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F7E2C0431C15C42C009D290B /* DownloadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
 		F7E2C0451C15C445009D290B /* DownloadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadingView.xib; sourceTree = "<group>"; };
 		F7E344C61C3EA5D5003B7C67 /* MenuCountOnBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCountOnBox.swift; sourceTree = "<group>"; };
@@ -298,6 +310,9 @@
 				486F88791B7238630084211F /* SplashViewController.swift */,
 				486F887B1B72397B0084211F /* MainMenuViewController.swift */,
 				98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */,
+				F79576911C97088E002ACBB3 /* ProductAreaMenuViewController.swift */,
+				F79576931C9708CC002ACBB3 /* PartsServicesMenuViewController.swift */,
+				F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -352,6 +367,7 @@
 				F77D5E631C6CD8F5002A5867 /* Tutorial.xcassets */,
 				48FDEA941B5F8CEC00C5AFE6 /* Supporting Files */,
 				48FCED4C1B74AC47002D45A0 /* Sandvik_365-Bridging-Header.h */,
+				F7D6C1E21C974E0D00E933D8 /* Theme.swift */,
 			);
 			path = "Sandvik 365";
 			sourceTree = "<group>";
@@ -417,6 +433,7 @@
 				F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */,
 				F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */,
 				F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */,
+				F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -485,6 +502,7 @@
 				F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */,
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
+				F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -771,6 +789,7 @@
 				F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */,
 				F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
+				F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
 				F7E69A791B7B5B66004FA708 /* RoiInputView.xib in Resources */,
 				F74D78581C7B2F68007F95F5 /* GET - Corner Shroud Installation.mp4 in Resources */,
@@ -889,6 +908,7 @@
 				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
 				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
+				F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
 				F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */,
 				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,
@@ -901,7 +921,9 @@
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */,
+				F7D6C1E31C974E0D00E933D8 /* Theme.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
+				F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */,
 				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
@@ -919,9 +941,11 @@
 				F79203661C46680000CF4E3F /* ColorCodedTouchView.m in Sources */,
 				F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */,
 				F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */,
+				F79576941C9708CC002ACBB3 /* PartsServicesMenuViewController.swift in Sources */,
 				F7019D141BE688F000A6B3C6 /* StringHtmlExtension.swift in Sources */,
 				F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */,
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
+				F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
 				F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,

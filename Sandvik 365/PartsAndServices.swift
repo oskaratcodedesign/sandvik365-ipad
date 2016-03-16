@@ -18,12 +18,13 @@ enum BusinessType: UInt32 {
     case SurfaceDrilling
     case UndergroundDrillingAndBolting
     case UndergroundLoadingAndHauling
+    case All
     
     private static let _count: BusinessType.RawValue = {
         // find the maximum enum value
         var maxValue: UInt32 = 0
         while let _ = BusinessType(rawValue: ++maxValue) { }
-        return maxValue
+        return maxValue - 1 //dont include All
     }()
     
     static func randomBusinessType() -> BusinessType {
@@ -37,30 +38,39 @@ enum BusinessType: UInt32 {
         case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
             return nil
         case UndergroundLoadingAndHauling:
-            return [Video(videoName: "GET - Bucket Shroud Wear", ext: "mp4", title: "GET - Bucket Shroud Wear", image: "S365-movie-button-bucket-shroud-wear"),
-            Video(videoName: "GET - Corner Shroud Installation", ext: "mp4", title: "GET - Corner Shroud Installation", image: "S365-movie-button-corner-shroud-install"),
-            Video(videoName: "GET - MHS Installation", ext: "mp4", title: "GET - MHS Installation", image: "S365-movie-button-MHS-installation"),
-            Video(videoName: "GET - MHS Removal", ext: "mp4", title: "GET - MHS Removal", image: "S365-movie-button-MHS-deinstallation"),
-            Video(videoName: "GET - Sectional Shroud Installation", ext: "mp4", title: "GET - Sectional Shroud Installation", image: "S365-movie-button-Sectional-shroud-install"),
-            Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds"),
-            Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+            return [
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video
+            ]
         case UndergroundDrillingAndBolting:
-            return  [Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits"),
-                Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill"),
-                Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+            return [
+                Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video, Videos.ECLIPSE.video
+            ]
         case SurfaceDrilling:
-            return  [Video(videoName: "Eclipse - Fluorine-free fire suppression system", ext: "mp4", title: "Eclipse - Fluorine-free fire suppression system", image: "eclipse")]
+            return [Videos.ECLIPSE.video]
         case MechanicalCutting:
-            return  [Video(videoName: "Rebuilds and Major Components", ext: "mp4", title: "Rebuilds and Major Components", image: "rebuilds")]
+            return [Videos.REBUILDS.video]
+        case All:
+            return [
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video
+            ]
         }
     }
     
     var mediaCenterTitle: String? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
+        case ExplorationDrillRigs, CrusherAndScreening:
             return nil
-        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
-            return "Media center"
+        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
+            return "Videos & Animations"
+        }
+    }
+    
+    var interActiveToolsTitle: String? {
+        switch self {
+        case ExplorationDrillRigs, CrusherAndScreening, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling:
+            return nil
+        case All:
+            return "Interactive tools"
         }
     }
     
@@ -84,6 +94,8 @@ enum BusinessType: UInt32 {
             return "underground drilling bolting"
         case UndergroundLoadingAndHauling:
             return "underground hauling"
+        case All:
+            return "service-awareness-underground-2048"
         }
     }
     
@@ -95,7 +107,7 @@ enum BusinessType: UInt32 {
             return nil*/
         case CrusherAndScreening:
             return "bda647ec-7ef1-491a-9adc-a915ec5bb745"
-        case ExplorationDrillRigs:
+        case ExplorationDrillRigs, All:
             return nil
         case MechanicalCutting:
             return "ce360d28-35bc-4578-9e52-79517f769af2"
@@ -110,48 +122,57 @@ enum BusinessType: UInt32 {
         }
     }
     
-    func getInputFromTitleOrTitles(title: String?) -> [String: SelectionInput?] {
-        var inputs: [String: SelectionInput?] = [:]
+    var interActiveTools: [InterActiveTools]? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
-            break
+        case ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+            return nil
         case SurfaceDrilling:
-            let rockTitle = "Rock drill upgrade simulator"
-            if title != nil {
-                if title!.caseInsensitiveCompare(rockTitle) == .OrderedSame {
-                    inputs = [rockTitle: ROIRockDrillInput()]
-                }
-            } else {
-                inputs = [rockTitle: nil]
-            }
+            return [.RockDrillTool]
         case CrusherAndScreening:
-            let crusherTitle = "Lifecycle program calculator"
-            let edvTitle = "Electric dump valve calculator"
-            if title != nil {
-                if title!.caseInsensitiveCompare(crusherTitle) == .OrderedSame {
-                    inputs = [crusherTitle: ROICrusherInput()]
-                } else if title!.caseInsensitiveCompare(edvTitle) == .OrderedSame {
-                    inputs = ["Electric dump valve calculator": ROIEDVInput()]
-                }
-            } else {
-                inputs = [crusherTitle: nil, edvTitle: nil]
-            }
+            return [.CrusherTool, .EDVTool]
         case UndergroundLoadingAndHauling:
-            let getTitle = "Ground Engaging Tools (GET) calculator"
-            let fireTitle = "Fire suppression tool"
-            if title != nil {
-                if title!.caseInsensitiveCompare(getTitle) == .OrderedSame {
-                    inputs = [getTitle: ROIGetInput()]
-                } else if title!.caseInsensitiveCompare(fireTitle) == .OrderedSame {
-                    if let firesupr = JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput {
-                        inputs = [fireTitle: firesupr]
-                    }
-                }
-            } else {
-                inputs = [getTitle: nil, fireTitle: nil]
+            return [.GetTool, .FireSuppressionTool]
+        case All:
+            return [.RockDrillTool, .CrusherTool, .FireSuppressionTool, .EDVTool, .GetTool]
+        }
+    }
+    
+    enum InterActiveTools {
+        case RockDrillTool
+        case CrusherTool
+        case FireSuppressionTool
+        case EDVTool
+        case GetTool
+        
+        var title: String! {
+            switch self {
+            case RockDrillTool:
+                return "Rock drill upgrade simulator"
+            case CrusherTool:
+                return "Lifecycle program calculator"
+            case FireSuppressionTool:
+                return "Fire suppression tool"
+            case EDVTool:
+                return "Electric dump valve calculator"
+            case GetTool:
+                return "Ground Engaging Tools (GET) calculator"
             }
         }
-        return inputs
+        
+        var selectionInput: SelectionInput? {
+            switch self {
+            case RockDrillTool:
+                return ROIRockDrillInput()
+            case CrusherTool:
+                return ROICrusherInput()
+            case FireSuppressionTool:
+                return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
+            case EDVTool:
+                return ROIEDVInput()
+            case GetTool:
+                return ROIGetInput()
+            }
+        }
     }
 }
 
@@ -243,7 +264,7 @@ class PartsAndServices {
     }
     
     func shouldPartServiceBeShown(ps: PartService) -> Bool {
-        if let tagids = ps.productTagUUIDs {
+        if self.businessType != .All, let tagids = ps.productTagUUIDs {
             if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
                 return false
             }
@@ -258,7 +279,7 @@ class PartsAndServices {
     }
     
     func shouldSubPartServiceBeShown(sp: SubPartService) -> Bool {
-        if let tagids = sp.productTagUUIDs {
+        if self.businessType != .All, let tagids = sp.productTagUUIDs {
             if businessType.tagUUID == nil || !tagids.contains(businessType.tagUUID!) {
                 return false
             }
@@ -267,7 +288,14 @@ class PartsAndServices {
     }
     
     func mainSectionTitles() -> [String] {
-        var titles: [String] = [String](self.businessType.getInputFromTitleOrTitles(nil).keys).flatMap({$0.uppercaseString})
+        var titles: [String] = []
+        
+        if let interActiveToolsTitle = self.businessType.interActiveToolsTitle {
+            titles.append(interActiveToolsTitle.uppercaseString)
+        }
+        else if let tools = self.businessType.interActiveTools {
+            titles += tools.flatMap({$0.title.uppercaseString})
+        }
 
         if let mediaCenterTitle = self.businessType.mediaCenterTitle {
             titles.append(mediaCenterTitle.uppercaseString)

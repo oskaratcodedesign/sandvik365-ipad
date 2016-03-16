@@ -13,7 +13,8 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     @IBOutlet weak var selectionWheel: SelectionWheel!
     @IBOutlet weak var sectionLabel: UILabel!
     var selectedPartsAndServices: PartsAndServices!
-    var selectedSectionTitle: String!
+    var mainTitle: String?
+    private var selectedSectionTitle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         }
         selectionWheel.sectionTitles = selectedPartsAndServices.mainSectionTitles()
         selectionWheel.delegate = self
-        sectionLabel.text = self.navigationItem.title
+        sectionLabel.text = self.mainTitle ?? self.navigationItem.title
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,12 +34,15 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     func didSelectSection(sectionTitle: String) {
         
         selectedSectionTitle = sectionTitle
-        let titles = [String](self.selectedPartsAndServices.businessType.getInputFromTitleOrTitles(nil).keys).flatMap({$0.lowercaseString})
-        if titles.contains(sectionTitle.lowercaseString) {
+        let iatTitles = self.selectedPartsAndServices.businessType.interActiveTools?.flatMap({$0.title.lowercaseString})
+        if let titles = iatTitles where titles.contains(sectionTitle.lowercaseString) {
             performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
         }
         else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
             performSegueWithIdentifier("ShowVideoCenterViewController", sender: self)
+        }
+        else if self.selectedPartsAndServices.businessType.interActiveToolsTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
+            performSegueWithIdentifier("ShowInterActiveToolsViewController", sender: self)
         }
         else {
             performSegueWithIdentifier("ShowPartServiceSelectionViewController", sender: self)
@@ -59,11 +63,11 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         else if segue.identifier == "ShowRoiSelectionViewController" {
             if let vc = segue.destinationViewController as? RoiSelectionViewController {
                 let bType = selectedPartsAndServices.businessType
-                let inputAndTitle = bType.getInputFromTitleOrTitles(selectedSectionTitle)
-                if let input = inputAndTitle.values.first {
+                if let index = bType.interActiveTools?.indexOf({ $0.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame}) {
+                    let interActiveTool = bType.interActiveTools![index]
                     vc.selectedBusinessType = bType
-                    vc.selectedInput = input
-                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, inputAndTitle.keys.first! .uppercaseString)
+                    vc.selectedInput = interActiveTool.selectionInput
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, interActiveTool.title.uppercaseString)
                 }
             }
         }

@@ -17,6 +17,9 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -45,334 +48,294 @@
                         <viewControllerLayoutGuide type="bottom" id="w7v-Iz-kr0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4LT-Of-Ydb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btf-qB-THU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-k8-KXB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-k8-KXB">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-eR-NVw">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
-                                                <rect key="frame" x="80" y="240" width="195" height="36"/>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
-                                                <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
-                                                <rect key="frame" x="80" y="276" width="300" height="71"/>
-                                                <string key="text">PARTS &amp; SERVICE
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-eR-NVw">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANDVIK 365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-07-Hnk">
+                                        <rect key="frame" x="100" y="240" width="195" height="36"/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
+                                        <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-AD-1zF">
+                                        <rect key="frame" x="100" y="276" width="300" height="71"/>
+                                        <string key="text">PARTS &amp; SERVICE
 YOU CAN COUNT ON</string>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
-                                                <rect key="frame" x="269" y="447" width="63" height="73"/>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
-                                                <rect key="frame" x="273" y="427" width="54" height="10"/>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
-                                                <rect key="frame" x="80" y="25" width="37" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
-                                                <state key="normal" image="sandvik-icons_info-btn">
-                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="MUS-dT-mdX"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="270" y="240" width="230" height="135"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
-                                                    <constraint firstAttribute="width" constant="230" id="bRr-zq-5F6"/>
-                                                    <constraint firstAttribute="height" constant="135" id="mVw-gk-zxg"/>
-                                                    <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="videoImage" value="S365-movie-button-S365-film"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="videoTitle" value="SANDVIK 365 VIDEO"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="AUC-pz-0CO"/>
-                                                        <exclude reference="uow-lj-oty"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="31"/>
+                                        <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
+                                        <rect key="frame" x="100" y="25" width="37" height="32"/>
                                         <constraints>
-                                            <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="0AO-Ab-1KA"/>
-                                            <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
-                                            <constraint firstItem="B0a-Kq-6It" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="top" id="5Od-h9-IdK"/>
-                                            <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
-                                            <constraint firstItem="B0a-Kq-6It" firstAttribute="centerY" secondItem="LGY-k8-KXB" secondAttribute="centerY" id="Fsi-uC-eP0"/>
-                                            <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="M8O-q8-7Xk"/>
-                                            <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="xTd-TR-JmA" secondAttribute="trailing" constant="-75" id="PIs-hD-Kt1"/>
-                                            <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
-                                            <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
-                                            <constraint firstAttribute="centerX" secondItem="6rP-aA-18r" secondAttribute="centerX" id="UvD-9E-v97"/>
-                                            <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
-                                            <constraint firstAttribute="centerX" secondItem="xTd-TR-JmA" secondAttribute="centerX" id="cYj-GT-2CT"/>
-                                            <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
-                                            <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="flW-BI-L4A"/>
-                                            <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="frt-lp-gMh"/>
-                                            <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
-                                            <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
-                                            <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
-                                            <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="25" id="yCY-xh-cic"/>
-                                            <constraint firstAttribute="trailing" secondItem="B0a-Kq-6It" secondAttribute="trailing" constant="100" id="ydh-Ui-2JY"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                                        <state key="normal" image="sandvik-icons_info-btn">
+                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="js3-V0-gUc"/>
-                                                <exclude reference="Fsi-uC-eP0"/>
-                                                <exclude reference="PIs-hD-Kt1"/>
+                                                <exclude reference="MUS-dT-mdX"/>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="zsF-m4-km1" appends="YES" id="kMy-qE-FZL"/>
+                                            <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
                                         </connections>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aue-k1-9DF">
-                                        <rect key="frame" x="0.0" y="500" width="600" height="500"/>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-hR-t0y">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-OI-4WY" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="75" width="212" height="78"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="4BX-vE-7mg"/>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="hkF-BC-mMo"/>
-                                                    <constraint firstAttribute="height" constant="78" id="sZp-ZA-dkR"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="4BX-vE-7mg"/>
-                                                        <exclude reference="hkF-BC-mMo"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDK-5t-wKV">
-                                                <rect key="frame" x="0.0" y="178" width="600" height="322"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
+                                                <rect key="frame" x="102" y="0.0" width="456" height="1536"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-OL-gMy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-ax-Sdf">
+                                                        <rect key="frame" x="161" y="695" width="74" height="73"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-Tf-KN9" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP OR SWIPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-aA-18r">
+                                                                <rect key="frame" x="10" y="0.0" width="54" height="10"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="8"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-TR-JmA">
+                                                                <rect key="frame" x="5" y="20" width="63" height="73"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
+                                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="xTd-TR-JmA" firstAttribute="top" secondItem="6rP-aA-18r" secondAttribute="bottom" constant="10" id="ALY-Of-gny"/>
+                                                            <constraint firstItem="xTd-TR-JmA" firstAttribute="centerX" secondItem="a0r-ax-Sdf" secondAttribute="centerX" id="PYK-7i-UKX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6rP-aA-18r" secondAttribute="trailing" constant="10" id="aQw-de-5ba"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xTd-TR-JmA" secondAttribute="bottom" constant="-20" id="eUs-Yx-hJg"/>
+                                                            <constraint firstItem="6rP-aA-18r" firstAttribute="leading" secondItem="a0r-ax-Sdf" secondAttribute="leading" constant="10" id="q7u-1N-6df"/>
+                                                            <constraint firstItem="6rP-aA-18r" firstAttribute="top" secondItem="a0r-ax-Sdf" secondAttribute="top" id="xnT-rq-23P"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Kq-6It" customClass="VideoButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="573" width="230" height="135"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="AUC-pz-0CO"/>
+                                                            <constraint firstAttribute="width" constant="230" id="bRr-zq-5F6"/>
+                                                            <constraint firstAttribute="height" constant="135" id="mVw-gk-zxg"/>
+                                                            <constraint firstAttribute="height" constant="140" id="uow-lj-oty"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="videoImage" value="S365-movie-button-S365-film"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="videoTitle" value="SANDVIK 365 VIDEO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="AUC-pz-0CO"/>
+                                                                <exclude reference="uow-lj-oty"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-Sl-Y5C">
+                                                        <rect key="frame" x="0.0" y="1346" width="456" height="130"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore the app content, sorted by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooG-5g-ZrW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20"/>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-KD-L3R" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="30" width="223" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="223" id="eLa-Nx-hep"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="nNC-aw-HUt"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
+                                                                <state key="normal" title="PARTS &amp; SERVICES">
+                                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="4"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGP-oU-ZVq" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="201" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jto-Cr-aoV" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="402" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                                         <integer key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n6-qv-Za8" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="603" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="3"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Xq-a6b" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="804" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="0"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-Nq-nhu" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="1005" y="0.0" width="201" height="322"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <connections>
+                                                                    <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="qVp-SC-fM8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kXA-96-Wzv" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="233" y="30" width="223" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="edi-zB-x0J"/>
+                                                                    <constraint firstAttribute="width" constant="223" id="kt9-Wh-Bun"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="30"/>
+                                                                <state key="normal">
+                                                                    <string key="title">PRODUCT
+AREAS</string>
+                                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
-                                                                        <integer key="value" value="1"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                        <integer key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="centerText" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
-                                                            </view>
+                                                                <connections>
+                                                                    <segue destination="aEQ-14-YwT" kind="show" id="LGz-Wq-LM8"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="00h-fc-bDi"/>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="leading" secondItem="jto-Cr-aoV" secondAttribute="trailing" id="1Pp-wg-sU5"/>
-                                                            <constraint firstItem="jto-Cr-aoV" firstAttribute="leading" secondItem="eGP-oU-ZVq" secondAttribute="trailing" id="2Wq-GN-y2M"/>
-                                                            <constraint firstItem="Efv-Tf-KN9" firstAttribute="leading" secondItem="p2M-OL-gMy" secondAttribute="leading" id="4Ne-mH-NCU"/>
-                                                            <constraint firstItem="goe-Xq-a6b" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="8dB-7g-kOL"/>
-                                                            <constraint firstItem="jto-Cr-aoV" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="9Ft-9p-Lr2"/>
-                                                            <constraint firstItem="eGP-oU-ZVq" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="DAV-ZO-BR4"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Hcf-Nq-nhu" secondAttribute="trailing" id="Fhg-ZB-pH1"/>
-                                                            <constraint firstItem="Efv-Tf-KN9" firstAttribute="top" secondItem="p2M-OL-gMy" secondAttribute="top" id="Fpm-yF-xxR"/>
-                                                            <constraint firstItem="Hcf-Nq-nhu" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="Hde-hV-GuP"/>
-                                                            <constraint firstItem="eGP-oU-ZVq" firstAttribute="leading" secondItem="Efv-Tf-KN9" secondAttribute="trailing" id="Hg0-D8-QaN"/>
-                                                            <constraint firstItem="eGP-oU-ZVq" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="IsG-7D-6rg"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Efv-Tf-KN9" secondAttribute="bottom" id="KHX-tj-VR4"/>
-                                                            <constraint firstItem="goe-Xq-a6b" firstAttribute="leading" secondItem="jto-Cr-aoV" secondAttribute="trailing" id="LR3-ur-tg0"/>
-                                                            <constraint firstItem="goe-Xq-a6b" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="P18-Zd-e7S"/>
-                                                            <constraint firstItem="Hcf-Nq-nhu" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="XSF-KG-3R5"/>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="leading" secondItem="Hcf-Nq-nhu" secondAttribute="trailing" id="XzJ-Co-5PU"/>
-                                                            <constraint firstItem="Hcf-Nq-nhu" firstAttribute="leading" secondItem="goe-Xq-a6b" secondAttribute="trailing" id="YWp-AX-ZTt"/>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="Ycc-a3-Qhc"/>
-                                                            <constraint firstAttribute="trailing" secondItem="2n6-qv-Za8" secondAttribute="trailing" id="aAd-8B-yJJ"/>
-                                                            <constraint firstItem="eGP-oU-ZVq" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="kfg-Zz-4YG"/>
-                                                            <constraint firstItem="Hcf-Nq-nhu" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="mok-dh-gA7"/>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="qGc-n0-LvK"/>
-                                                            <constraint firstItem="jto-Cr-aoV" firstAttribute="top" secondItem="Efv-Tf-KN9" secondAttribute="top" id="qrb-LB-F2h"/>
-                                                            <constraint firstItem="2n6-qv-Za8" firstAttribute="trailing" secondItem="goe-Xq-a6b" secondAttribute="leading" id="rnn-t9-Fw4"/>
-                                                            <constraint firstItem="goe-Xq-a6b" firstAttribute="height" secondItem="Efv-Tf-KN9" secondAttribute="height" id="sDG-0E-Kup"/>
-                                                            <constraint firstItem="jto-Cr-aoV" firstAttribute="width" secondItem="Efv-Tf-KN9" secondAttribute="width" id="spl-sM-HTd"/>
+                                                            <constraint firstItem="m7v-KD-L3R" firstAttribute="leading" secondItem="gJk-Sl-Y5C" secondAttribute="leading" id="2Bs-qw-hhX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="kXA-96-Wzv" secondAttribute="trailing" id="5zN-a4-ZeH"/>
+                                                            <constraint firstItem="kXA-96-Wzv" firstAttribute="leading" secondItem="m7v-KD-L3R" secondAttribute="trailing" constant="10" id="77A-5O-ioY"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="leading" secondItem="gJk-Sl-Y5C" secondAttribute="leading" id="7eZ-iU-E5W"/>
+                                                            <constraint firstAttribute="bottom" secondItem="m7v-KD-L3R" secondAttribute="bottom" id="9VX-Op-aXw"/>
+                                                            <constraint firstItem="kXA-96-Wzv" firstAttribute="top" secondItem="m7v-KD-L3R" secondAttribute="top" id="BSs-Gh-cWy"/>
+                                                            <constraint firstItem="m7v-KD-L3R" firstAttribute="top" secondItem="ooG-5g-ZrW" secondAttribute="bottom" constant="10" id="ezf-ac-YQ3"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="bottom" secondItem="m7v-KD-L3R" secondAttribute="top" id="nn7-9M-vzp"/>
+                                                            <constraint firstItem="ooG-5g-ZrW" firstAttribute="top" secondItem="gJk-Sl-Y5C" secondAttribute="top" id="wwm-RE-V7h"/>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
-                                                                <exclude reference="XzJ-Co-5PU"/>
-                                                                <exclude reference="aAd-8B-yJJ"/>
-                                                                <exclude reference="LR3-ur-tg0"/>
+                                                                <exclude reference="nn7-9M-vzp"/>
                                                             </mask>
                                                         </variation>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="vq2-UY-Bko" id="jdV-1C-xmV"/>
-                                                        </connections>
-                                                    </scrollView>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="p2M-OL-gMy" firstAttribute="height" secondItem="aDK-5t-wKV" secondAttribute="height" id="FJB-TH-4RZ"/>
-                                                    <constraint firstItem="p2M-OL-gMy" firstAttribute="centerY" secondItem="aDK-5t-wKV" secondAttribute="centerY" id="Okw-Dx-UHS"/>
-                                                    <constraint firstItem="p2M-OL-gMy" firstAttribute="width" secondItem="aDK-5t-wKV" secondAttribute="width" id="W8W-5O-YuM"/>
-                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="width" secondItem="aDK-5t-wKV" secondAttribute="width" multiplier="1/3" constant="1" id="dCH-Dv-mIp"/>
-                                                    <constraint firstItem="Efv-Tf-KN9" firstAttribute="height" secondItem="aDK-5t-wKV" secondAttribute="height" id="l3B-0Q-hk2"/>
-                                                    <constraint firstItem="p2M-OL-gMy" firstAttribute="centerX" secondItem="aDK-5t-wKV" secondAttribute="centerX" id="qVd-tQ-0Vw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="640" id="3hT-WQ-BZ7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gJk-Sl-Y5C" secondAttribute="trailing" id="9po-sr-mbR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="828" id="HCv-1U-L87"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gJk-Sl-Y5C" secondAttribute="bottom" constant="60" id="NVO-42-FLL"/>
+                                                    <constraint firstItem="B0a-Kq-6It" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="Qwq-Eg-R9U"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a0r-ax-Sdf" secondAttribute="bottom" constant="768" id="SmU-7Y-hr0"/>
+                                                    <constraint firstItem="gJk-Sl-Y5C" firstAttribute="leading" secondItem="Iav-IU-jbo" secondAttribute="leading" id="hm5-KI-KRr"/>
+                                                    <constraint firstItem="a0r-ax-Sdf" firstAttribute="centerX" secondItem="Iav-IU-jbo" secondAttribute="centerX" id="rqL-IP-n2i"/>
                                                 </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZy-j6-tYo" customClass="ProgressLineView" customModule="Sandvik_365" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="430" width="200" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="0jL-mG-OVR"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                        <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="3hT-WQ-BZ7"/>
+                                                        <exclude reference="rqL-IP-n2i"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="aDK-5t-wKV" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" id="78e-9a-MSI"/>
-                                            <constraint firstAttribute="bottom" secondItem="aDK-5t-wKV" secondAttribute="bottom" id="GB3-dR-EFY"/>
-                                            <constraint firstAttribute="height" constant="500" placeholder="YES" id="JzS-u6-iwY"/>
-                                            <constraint firstAttribute="trailing" secondItem="wZy-j6-tYo" secondAttribute="trailing" constant="200" id="Nby-KV-cRV"/>
-                                            <constraint firstItem="1Hj-OI-4WY" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" constant="100" id="Us2-KW-ebe"/>
-                                            <constraint firstAttribute="trailing" secondItem="aDK-5t-wKV" secondAttribute="trailing" id="cDv-EK-BEv"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Hj-OI-4WY" secondAttribute="trailing" constant="90" id="lEL-31-Bfm"/>
-                                            <constraint firstItem="aDK-5t-wKV" firstAttribute="top" secondItem="1Hj-OI-4WY" secondAttribute="bottom" constant="25" id="r3A-zv-Zbo"/>
-                                            <constraint firstItem="1Hj-OI-4WY" firstAttribute="top" secondItem="aue-k1-9DF" secondAttribute="top" constant="75" id="vCO-22-kAz"/>
-                                            <constraint firstItem="wZy-j6-tYo" firstAttribute="leading" secondItem="aue-k1-9DF" secondAttribute="leading" constant="200" id="wQO-6b-YNs"/>
-                                            <constraint firstAttribute="bottom" secondItem="wZy-j6-tYo" secondAttribute="bottom" constant="20" id="zWv-VS-wqL"/>
+                                            <constraint firstAttribute="height" secondItem="Iav-IU-jbo" secondAttribute="height" id="08E-9B-frb"/>
+                                            <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="5yL-qI-78g"/>
+                                            <constraint firstItem="a0r-ax-Sdf" firstAttribute="centerX" secondItem="x5j-hR-t0y" secondAttribute="centerX" id="OLj-pt-Tde"/>
+                                            <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="x5j-hR-t0y" secondAttribute="leading" id="ROo-Tk-DLS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Iav-IU-jbo" secondAttribute="bottom" id="WFH-SS-9WR"/>
+                                            <constraint firstAttribute="width" secondItem="gJk-Sl-Y5C" secondAttribute="width" id="dX7-M3-pmL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iav-IU-jbo" secondAttribute="trailing" id="jlp-qE-TVC"/>
+                                            <constraint firstItem="Iav-IU-jbo" firstAttribute="top" secondItem="x5j-hR-t0y" secondAttribute="top" id="zwa-ea-IMQ"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="JzS-u6-iwY"/>
-                                                <exclude reference="lEL-31-Bfm"/>
+                                                <exclude reference="08E-9B-frb"/>
+                                                <exclude reference="ROo-Tk-DLS"/>
+                                                <exclude reference="5yL-qI-78g"/>
+                                                <exclude reference="dX7-M3-pmL"/>
                                             </mask>
                                         </variation>
-                                    </view>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="LGY-k8-KXB" firstAttribute="leading" secondItem="Btf-qB-THU" secondAttribute="leading" id="2sI-pW-R0d"/>
-                                    <constraint firstAttribute="trailing" secondItem="LGY-k8-KXB" secondAttribute="trailing" id="7VT-Io-fdg"/>
-                                    <constraint firstAttribute="bottom" secondItem="aue-k1-9DF" secondAttribute="bottom" id="8Mq-p0-doY"/>
-                                    <constraint firstItem="LGY-k8-KXB" firstAttribute="width" secondItem="Btf-qB-THU" secondAttribute="width" id="L8t-kP-2D6"/>
-                                    <constraint firstAttribute="trailing" secondItem="aue-k1-9DF" secondAttribute="trailing" id="Q5e-gY-uBn"/>
-                                    <constraint firstItem="aue-k1-9DF" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" id="Xnb-bb-sSO"/>
-                                    <constraint firstItem="aue-k1-9DF" firstAttribute="leading" secondItem="Btf-qB-THU" secondAttribute="leading" id="hxU-Xb-46g"/>
-                                    <constraint firstItem="aue-k1-9DF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="bottom" id="ktP-LY-BSo"/>
-                                    <constraint firstItem="LGY-k8-KXB" firstAttribute="height" secondItem="Btf-qB-THU" secondAttribute="height" priority="900" id="oIS-Ox-5KE"/>
-                                    <constraint firstItem="LGY-k8-KXB" firstAttribute="top" secondItem="Btf-qB-THU" secondAttribute="top" id="xoz-pz-rnA"/>
+                                    <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="0j0-cH-hMS"/>
+                                    <constraint firstAttribute="height" constant="500" placeholder="YES" id="8U2-SO-Fhv"/>
+                                    <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="100" id="M8O-q8-7Xk"/>
+                                    <constraint firstAttribute="trailing" secondItem="GGX-eR-NVw" secondAttribute="trailing" id="QEB-OV-fZV"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="width" secondItem="LGY-k8-KXB" secondAttribute="width" id="Qnt-xI-WRB"/>
+                                    <constraint firstItem="GGX-eR-NVw" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="SNw-1c-QWE"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" id="UPM-k5-tf8"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" id="V49-Js-Owq"/>
+                                    <constraint firstItem="nrd-07-Hnk" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="240" id="VWh-y3-v2i"/>
+                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="height" secondItem="LGY-k8-KXB" secondAttribute="height" multiplier="2" id="WGG-kX-cSn"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" id="ch1-0e-ugN"/>
+                                    <constraint firstItem="nrd-07-Hnk" firstAttribute="leading" secondItem="Hav-AD-1zF" secondAttribute="leading" id="d2m-TB-KoI"/>
+                                    <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="LGY-k8-KXB" secondAttribute="leading" constant="80" id="flW-BI-L4A"/>
+                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="60" id="iww-x8-679"/>
+                                    <constraint firstAttribute="bottom" secondItem="B0a-Kq-6It" secondAttribute="bottom" constant="40" id="jiv-M9-Ibw"/>
+                                    <constraint firstItem="GGX-eR-NVw" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="trailing" constant="-240" id="js3-V0-gUc"/>
+                                    <constraint firstItem="0Fb-4S-QLF" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" id="mkZ-QV-cku"/>
+                                    <constraint firstItem="Hav-AD-1zF" firstAttribute="top" secondItem="nrd-07-Hnk" secondAttribute="bottom" id="oJ2-wL-S7O"/>
+                                    <constraint firstAttribute="bottom" secondItem="GGX-eR-NVw" secondAttribute="bottom" id="qua-MU-NB6"/>
+                                    <constraint firstItem="x5j-hR-t0y" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" id="ubG-DG-qvd"/>
+                                    <constraint firstItem="Iav-IU-jbo" firstAttribute="leading" secondItem="nrd-07-Hnk" secondAttribute="leading" constant="2" id="wDd-xA-XAo"/>
+                                    <constraint firstItem="0Fb-4S-QLF" firstAttribute="top" secondItem="LGY-k8-KXB" secondAttribute="top" constant="25" id="yCY-xh-cic"/>
                                 </constraints>
-                            </scrollView>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8U2-SO-Fhv"/>
+                                        <exclude reference="js3-V0-gUc"/>
+                                        <exclude reference="V49-Js-Owq"/>
+                                        <exclude reference="flW-BI-L4A"/>
+                                        <exclude reference="iww-x8-679"/>
+                                        <exclude reference="jiv-M9-Ibw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zsF-m4-km1" appends="YES" id="kMy-qE-FZL"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Btf-qB-THU" firstAttribute="leading" secondItem="4LT-Of-Ydb" secondAttribute="leading" id="Ifu-T7-mSv"/>
-                            <constraint firstItem="Btf-qB-THU" firstAttribute="top" secondItem="4LT-Of-Ydb" secondAttribute="top" id="b0E-zX-Avn"/>
-                            <constraint firstItem="w7v-Iz-kr0" firstAttribute="top" secondItem="Btf-qB-THU" secondAttribute="bottom" id="fsm-xh-2pr"/>
-                            <constraint firstAttribute="trailing" secondItem="Btf-qB-THU" secondAttribute="trailing" id="ga0-bF-wXq"/>
+                            <constraint firstItem="LGY-k8-KXB" firstAttribute="width" secondItem="4LT-Of-Ydb" secondAttribute="width" id="0Mh-ni-PiN"/>
+                            <constraint firstItem="LGY-k8-KXB" firstAttribute="centerY" secondItem="4LT-Of-Ydb" secondAttribute="centerY" id="Ftc-tX-GcE"/>
+                            <constraint firstItem="LGY-k8-KXB" firstAttribute="centerX" secondItem="4LT-Of-Ydb" secondAttribute="centerX" id="Wci-Sa-Pn4"/>
+                            <constraint firstItem="LGY-k8-KXB" firstAttribute="height" secondItem="4LT-Of-Ydb" secondAttribute="height" id="v0S-hI-Jbo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Kc-fU-snl"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1200"/>
+                    <size key="freeformSize" width="600" height="768"/>
                     <connections>
                         <outlet property="firstContainer" destination="LGY-k8-KXB" id="jzs-P3-QtT"/>
                         <outlet property="infoButton" destination="0Fb-4S-QLF" id="5ML-sn-tpB"/>
-                        <outlet property="menuCountOnBox" destination="1Hj-OI-4WY" id="cRs-tF-bwp"/>
-                        <outlet property="menuScrollView" destination="p2M-OL-gMy" id="9a3-MK-vZh"/>
-                        <outlet property="progressView" destination="wZy-j6-tYo" id="ZaP-aM-nqt"/>
-                        <outlet property="scrollView" destination="Btf-qB-THU" id="BUH-Bh-mXh"/>
+                        <outlet property="scrollView" destination="x5j-hR-t0y" id="fTV-2k-5PQ"/>
+                        <outlet property="scrollViewContentView" destination="Iav-IU-jbo" id="XVj-VF-wxd"/>
                         <outlet property="videoButton" destination="B0a-Kq-6It" id="vl7-rP-YMJ"/>
-                        <outletCollection property="mainMenuItemViews" destination="Efv-Tf-KN9" collectionClass="NSMutableArray" id="d7N-Tz-O7N"/>
-                        <outletCollection property="mainMenuItemViews" destination="jto-Cr-aoV" collectionClass="NSMutableArray" id="adC-3G-r4f"/>
-                        <outletCollection property="mainMenuItemViews" destination="2n6-qv-Za8" collectionClass="NSMutableArray" id="VUI-J9-cps"/>
-                        <outletCollection property="mainMenuItemViews" destination="Hcf-Nq-nhu" collectionClass="NSMutableArray" id="qja-Sc-GXA"/>
-                        <outletCollection property="mainMenuItemViews" destination="eGP-oU-ZVq" collectionClass="NSMutableArray" id="R7t-Vp-fou"/>
-                        <outletCollection property="mainMenuItemViews" destination="goe-Xq-a6b" collectionClass="NSMutableArray" id="Vlb-sY-7eI"/>
-                        <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="C3U-QL-Bxu"/>
                         <segue destination="o07-oy-lUc" kind="presentation" identifier="VideoViewController" id="bk5-QJ-IsA"/>
                         <segue destination="89S-xf-ced" kind="presentation" identifier="PresentTutorial" modalPresentationStyle="overCurrentContext" id="FqL-Zk-5qX"/>
                     </connections>
@@ -385,7 +348,7 @@ YOU CAN COUNT ON</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1466" y="554"/>
+            <point key="canvasLocation" x="1342" y="558"/>
         </scene>
         <!--SANDVIK 365 SERVICE APP-->
         <scene sceneID="0Fn-OH-cLp">
@@ -396,14 +359,14 @@ YOU CAN COUNT ON</string>
                         <viewControllerLayoutGuide type="bottom" id="4gz-95-xIi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xy3-JZ-xeR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-awareness-underground-2048" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-6k-MX3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-XA-xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-WF-CXB">
                                         <rect key="frame" x="100" y="92" width="200" height="562"/>
@@ -488,7 +451,7 @@ Cg
                                         </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-aO-F8M">
-                                        <rect key="frame" x="100" y="1033" width="241" height="75"/>
+                                        <rect key="frame" x="100" y="601" width="241" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Tc5-ws-Uqa"/>
                                             <constraint firstAttribute="width" constant="241" id="frY-lF-nRB"/>
@@ -587,7 +550,7 @@ UPDATE NOW</string>
                 <viewControllerPlaceholder storyboardName="PartsAndServices" id="i8i-Vk-v9G" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcE-98-40J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2421" y="55"/>
+            <point key="canvasLocation" x="2808.5" y="71"/>
         </scene>
         <!--VideoViewController-->
         <scene sceneID="Go4-7m-1Xd">
@@ -595,7 +558,218 @@ UPDATE NOW</string>
                 <viewControllerPlaceholder storyboardName="MediaCenter" referencedIdentifier="VideoViewController" id="o07-oy-lUc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDa-jY-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="290"/>
+            <point key="canvasLocation" x="2010.5" y="71"/>
+        </scene>
+        <!--Product Area Menu View Controller-->
+        <scene sceneID="zA1-sz-b4k">
+            <objects>
+                <viewController id="aEQ-14-YwT" customClass="ProductAreaMenuViewController" customModule="Sandvik_365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3rk-4n-f3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="W14-fC-jjT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ftC-qy-FXx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-nK-65q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-HB-eqC" customClass="MenuCountOnBox" customModule="Sandvik_365" customModuleProvider="target">
+                                        <rect key="frame" x="303" y="75" width="212" height="78"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="K6z-WG-pF2"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="d4M-CK-bjL"/>
+                                            <constraint firstAttribute="height" constant="78" id="dbi-i3-a0g"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="K6z-WG-pF2"/>
+                                                <exclude reference="d4M-CK-bjL"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-OZ-AZ8">
+                                        <rect key="frame" x="0.0" y="178" width="600" height="590"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-VX-N93">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="590"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAC-Tb-nRE" userLabel="ug drilling" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND DRILLING AND BOLTING"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taz-9n-V8m" userLabel="ug loading" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="201" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="UNDERGROUND LOADING AND HAULING"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-xU-PPW" userLabel="mech" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="402" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="MECHANICAL CUTTING"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rl4-l9-nXl" userLabel="surface" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="603" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="SURFACE DRILLING"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3g-4T-xUo" userLabel="crushing" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="804" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="CRUSHING AND SCREENING"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-T4-Z35" userLabel="exploration" customClass="MainMenuItemView" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="1005" y="0.0" width="201" height="590"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="EXPLORATION DRILL RIGS"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="partBridgeType">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="trailing" secondItem="q3g-4T-xUo" secondAttribute="leading" id="2Dg-sS-4C0"/>
+                                                    <constraint firstItem="q3g-4T-xUo" firstAttribute="height" secondItem="OAC-Tb-nRE" secondAttribute="height" id="4Zw-VQ-COe"/>
+                                                    <constraint firstItem="fO5-xU-PPW" firstAttribute="leading" secondItem="taz-9n-V8m" secondAttribute="trailing" id="4kB-cn-1fS"/>
+                                                    <constraint firstItem="OAC-Tb-nRE" firstAttribute="leading" secondItem="3ad-VX-N93" secondAttribute="leading" id="A3a-WS-Y1Q"/>
+                                                    <constraint firstItem="av0-T4-Z35" firstAttribute="width" secondItem="OAC-Tb-nRE" secondAttribute="width" id="D1w-ra-UkR"/>
+                                                    <constraint firstItem="fO5-xU-PPW" firstAttribute="width" secondItem="OAC-Tb-nRE" secondAttribute="width" id="DOY-ru-U8I"/>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="top" secondItem="OAC-Tb-nRE" secondAttribute="top" id="E13-2P-NRN"/>
+                                                    <constraint firstItem="av0-T4-Z35" firstAttribute="top" secondItem="OAC-Tb-nRE" secondAttribute="top" id="LEP-w4-F7s"/>
+                                                    <constraint firstItem="q3g-4T-xUo" firstAttribute="top" secondItem="OAC-Tb-nRE" secondAttribute="top" id="Lwz-Ca-1NQ"/>
+                                                    <constraint firstItem="fO5-xU-PPW" firstAttribute="height" secondItem="OAC-Tb-nRE" secondAttribute="height" id="N0m-QO-b0S"/>
+                                                    <constraint firstItem="q3g-4T-xUo" firstAttribute="leading" secondItem="fO5-xU-PPW" secondAttribute="trailing" id="NpK-fP-irl"/>
+                                                    <constraint firstItem="taz-9n-V8m" firstAttribute="leading" secondItem="OAC-Tb-nRE" secondAttribute="trailing" id="Pt3-VJ-kSy"/>
+                                                    <constraint firstItem="av0-T4-Z35" firstAttribute="height" secondItem="OAC-Tb-nRE" secondAttribute="height" id="SCw-Tt-y3S"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OAC-Tb-nRE" secondAttribute="bottom" id="SK6-ki-cKZ"/>
+                                                    <constraint firstItem="fO5-xU-PPW" firstAttribute="top" secondItem="OAC-Tb-nRE" secondAttribute="top" id="ZX5-hf-oLm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rl4-l9-nXl" secondAttribute="trailing" id="gE9-pC-hPK"/>
+                                                    <constraint firstItem="av0-T4-Z35" firstAttribute="leading" secondItem="q3g-4T-xUo" secondAttribute="trailing" id="hh5-vG-OaK"/>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="leading" secondItem="av0-T4-Z35" secondAttribute="trailing" id="k5a-pt-oR4"/>
+                                                    <constraint firstItem="taz-9n-V8m" firstAttribute="height" secondItem="OAC-Tb-nRE" secondAttribute="height" id="mFt-aU-WmA"/>
+                                                    <constraint firstItem="taz-9n-V8m" firstAttribute="top" secondItem="OAC-Tb-nRE" secondAttribute="top" id="noX-nQ-s7l"/>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="width" secondItem="OAC-Tb-nRE" secondAttribute="width" id="oSs-AX-PFg"/>
+                                                    <constraint firstItem="OAC-Tb-nRE" firstAttribute="top" secondItem="3ad-VX-N93" secondAttribute="top" id="rlp-gf-UfW"/>
+                                                    <constraint firstItem="taz-9n-V8m" firstAttribute="width" secondItem="OAC-Tb-nRE" secondAttribute="width" id="sN7-i2-MJi"/>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="height" secondItem="OAC-Tb-nRE" secondAttribute="height" id="sce-9m-AHd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="av0-T4-Z35" secondAttribute="trailing" id="tAC-Ou-GQY"/>
+                                                    <constraint firstItem="q3g-4T-xUo" firstAttribute="width" secondItem="OAC-Tb-nRE" secondAttribute="width" id="wKA-pm-CrL"/>
+                                                    <constraint firstItem="Rl4-l9-nXl" firstAttribute="leading" secondItem="fO5-xU-PPW" secondAttribute="trailing" id="xXx-d0-nvJ"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="gE9-pC-hPK"/>
+                                                        <exclude reference="k5a-pt-oR4"/>
+                                                        <exclude reference="NpK-fP-irl"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <outlet property="delegate" destination="aEQ-14-YwT" id="dgB-DS-snP"/>
+                                                </connections>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="3ad-VX-N93" firstAttribute="width" secondItem="gIN-OZ-AZ8" secondAttribute="width" id="GWM-x9-JBb"/>
+                                            <constraint firstItem="3ad-VX-N93" firstAttribute="centerY" secondItem="gIN-OZ-AZ8" secondAttribute="centerY" id="Jwe-Lj-X2V"/>
+                                            <constraint firstItem="3ad-VX-N93" firstAttribute="centerX" secondItem="gIN-OZ-AZ8" secondAttribute="centerX" id="RlL-Jq-8La"/>
+                                            <constraint firstItem="OAC-Tb-nRE" firstAttribute="width" secondItem="gIN-OZ-AZ8" secondAttribute="width" multiplier="1/3" constant="1" id="ZmG-nw-KyJ"/>
+                                            <constraint firstItem="OAC-Tb-nRE" firstAttribute="height" secondItem="gIN-OZ-AZ8" secondAttribute="height" id="hOW-Bz-2DP"/>
+                                            <constraint firstItem="3ad-VX-N93" firstAttribute="height" secondItem="gIN-OZ-AZ8" secondAttribute="height" id="irA-Dy-x45"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-lU-3je" customClass="ProgressLineView" customModule="Sandvik_365" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="698" width="200" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dX2-Nk-uNH"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wpE-lU-3je" secondAttribute="bottom" constant="20" id="4f4-cb-9Zv"/>
+                                    <constraint firstAttribute="trailing" secondItem="gIN-OZ-AZ8" secondAttribute="trailing" id="AHx-qQ-Nw5"/>
+                                    <constraint firstAttribute="trailing" secondItem="5GS-HB-eqC" secondAttribute="trailing" constant="85" id="CA8-2E-5eF"/>
+                                    <constraint firstAttribute="trailing" secondItem="5GS-HB-eqC" secondAttribute="trailing" constant="90" id="Lv9-1S-Rge"/>
+                                    <constraint firstItem="gIN-OZ-AZ8" firstAttribute="leading" secondItem="Alf-nK-65q" secondAttribute="leading" id="Osy-ao-0xy"/>
+                                    <constraint firstItem="5GS-HB-eqC" firstAttribute="leading" secondItem="Alf-nK-65q" secondAttribute="leading" constant="100" id="RdV-ic-ER2"/>
+                                    <constraint firstItem="gIN-OZ-AZ8" firstAttribute="top" secondItem="5GS-HB-eqC" secondAttribute="bottom" constant="25" id="a9d-4j-jCF"/>
+                                    <constraint firstItem="5GS-HB-eqC" firstAttribute="top" secondItem="Alf-nK-65q" secondAttribute="top" constant="75" id="cB7-1E-i4v"/>
+                                    <constraint firstAttribute="bottom" secondItem="gIN-OZ-AZ8" secondAttribute="bottom" id="kDB-qm-dks"/>
+                                    <constraint firstAttribute="height" constant="500" placeholder="YES" id="nkq-CJ-Ysi"/>
+                                    <constraint firstItem="wpE-lU-3je" firstAttribute="leading" secondItem="Alf-nK-65q" secondAttribute="leading" constant="200" id="tC4-X0-xpY"/>
+                                    <constraint firstAttribute="trailing" secondItem="wpE-lU-3je" secondAttribute="trailing" constant="200" id="vtA-Yo-Zhq"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nkq-CJ-Ysi"/>
+                                        <exclude reference="Lv9-1S-Rge"/>
+                                        <exclude reference="RdV-ic-ER2"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Alf-nK-65q" firstAttribute="width" secondItem="ftC-qy-FXx" secondAttribute="width" id="98v-Wa-qLM"/>
+                            <constraint firstItem="Alf-nK-65q" firstAttribute="height" secondItem="ftC-qy-FXx" secondAttribute="height" id="Pza-Uc-Inu"/>
+                            <constraint firstItem="Alf-nK-65q" firstAttribute="centerX" secondItem="ftC-qy-FXx" secondAttribute="centerX" id="jSB-M8-R4b"/>
+                            <constraint firstItem="Alf-nK-65q" firstAttribute="centerY" secondItem="ftC-qy-FXx" secondAttribute="centerY" id="lAP-4Z-mvi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuCountOnBox" destination="5GS-HB-eqC" id="RDu-Nb-7Ep"/>
+                        <outlet property="menuScrollView" destination="3ad-VX-N93" id="8g5-PH-j3j"/>
+                        <outlet property="progressView" destination="wpE-lU-3je" id="1tZ-fR-iME"/>
+                        <outletCollection property="mainMenuItemViews" destination="OAC-Tb-nRE" collectionClass="NSMutableArray" id="BPq-Mn-e8N"/>
+                        <outletCollection property="mainMenuItemViews" destination="taz-9n-V8m" collectionClass="NSMutableArray" id="cBE-0k-I4t"/>
+                        <outletCollection property="mainMenuItemViews" destination="fO5-xU-PPW" collectionClass="NSMutableArray" id="GhN-mU-OgW"/>
+                        <outletCollection property="mainMenuItemViews" destination="Rl4-l9-nXl" collectionClass="NSMutableArray" id="8Zj-2x-0DX"/>
+                        <outletCollection property="mainMenuItemViews" destination="q3g-4T-xUo" collectionClass="NSMutableArray" id="e33-lv-0K5"/>
+                        <outletCollection property="mainMenuItemViews" destination="av0-T4-Z35" collectionClass="NSMutableArray" id="f8w-PY-fLC"/>
+                        <segue destination="i8i-Vk-v9G" kind="show" identifier="PartsAndServicesViewController" id="BTk-ks-6Xn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEF-k5-5Ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2317" y="688"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="1LX-Wf-Rut">
@@ -603,7 +777,7 @@ UPDATE NOW</string>
                 <viewControllerPlaceholder storyboardName="Tutorial" id="89S-xf-ced" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gs-on-dms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="1509"/>
+            <point key="canvasLocation" x="1912.5" y="1262"/>
         </scene>
     </scenes>
     <resources>
@@ -612,6 +786,7 @@ UPDATE NOW</string>
         <image name="service-awareness-underground-2048" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Fv-Ab-Okl"/>
+        <segue reference="qVp-SC-fM8"/>
+        <segue reference="FqL-Zk-5qX"/>
     </inferredMetricsTieBreakers>
 </document>
