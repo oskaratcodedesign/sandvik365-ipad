@@ -52,6 +52,7 @@ class Video: NSObject {
         didSet {
             let sd = NSUserDefaults.standardUserDefaults()
             sd.setBool(isFavorite, forKey: self.videoName)
+            sd.synchronize()
         }
     }
     
