@@ -105,6 +105,7 @@
 		F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */; };
 		F7A46EBD1C3D923E00CCB4B7 /* GraphWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */; };
 		F7A46EBF1C3EA00C00CCB4B7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */; };
+		F7AF2A831C9AC7F900EBEDFD /* ROITopCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF2A821C9AC7F900EBEDFD /* ROITopCenter.swift */; };
 		F7C05FF41BF9D9ED00E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */; };
 		F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */; };
@@ -252,6 +253,7 @@
 		F7A46EBA1C3D922600CCB4B7 /* GraphWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphWithLabel.swift; sourceTree = "<group>"; };
 		F7A46EBC1C3D923E00CCB4B7 /* GraphWithLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphWithLabel.xib; sourceTree = "<group>"; };
 		F7A46EBE1C3EA00C00CCB4B7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
+		F7AF2A821C9AC7F900EBEDFD /* ROITopCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROITopCenter.swift; sourceTree = "<group>"; };
 		F7C05FF31BF9D9ED00E09456 /* SelectionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionInput.swift; sourceTree = "<group>"; };
 		F7C7C7CD1B8CEE34005A6953 /* PartsAndServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesViewController.swift; sourceTree = "<group>"; };
 		F7C958FE1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSuppressionResultViewController.swift; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				F77D5EA41C745AA5002A5867 /* ROIRockDrillInput.swift */,
 				F7EC8DB91C282DDD00A8DF3C /* ROIGetInput.swift */,
 				F77D5EAC1C749E2D002A5867 /* ROIEDVInput.swift */,
+				F7AF2A821C9AC7F900EBEDFD /* ROITopCenter.swift */,
 			);
 			name = Roi;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				F77D5EA51C745AA5002A5867 /* ROIRockDrillInput.swift in Sources */,
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */,
+				F7AF2A831C9AC7F900EBEDFD /* ROITopCenter.swift in Sources */,
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
