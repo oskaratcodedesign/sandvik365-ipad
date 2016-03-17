@@ -159,6 +159,24 @@ enum BusinessType: UInt32 {
             }
         }
         
+        var defaultImage: UIImage? {
+            switch self {
+            case RockDrillTool, CrusherTool, EDVTool, GetTool:
+                return UIImage(named: "calculator-x1")
+            case FireSuppressionTool:
+                return UIImage(named: "options-x1")
+            }
+        }
+        
+        var highlightImage: UIImage? {
+            switch self {
+            case RockDrillTool, CrusherTool, EDVTool, GetTool:
+                return UIImage(named: "calculator-inverted-x1")
+            case FireSuppressionTool:
+                return UIImage(named: "options-inverted-x1")
+            }
+        }
+        
         var selectionInput: SelectionInput? {
             switch self {
             case RockDrillTool:

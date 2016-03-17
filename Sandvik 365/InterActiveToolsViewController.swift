@@ -32,8 +32,10 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ToolsCollectionViewCell
-        let title = self.data[indexPath.row].title
-        cell.button.setTitle(title, forState: .Normal)
+        let tool = self.data[indexPath.row]
+        cell.button.setTitle(tool.title, forState: .Normal)
+        cell.button.setBackgroundImage(tool.defaultImage, forState: .Normal)
+        cell.button.setBackgroundImage(tool.highlightImage, forState: .Highlighted)
         return cell
     }
 
