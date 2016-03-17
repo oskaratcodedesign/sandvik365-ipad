@@ -18,7 +18,7 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
         self.navigationItem.title = "SANDVIK 365 – INTERACTIVE TOOLS"
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
-            view.setImageBG("Cover-frederik")
+            view.setImageBG(BusinessType.All.backgroundImageName)
         }
     }
     
