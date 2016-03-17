@@ -51,7 +51,7 @@ class RoiEDVResultViewController: RoiResultViewController {
         
         if let total = selectedInput.total() {
             var multiplier = Double(total) / (selectedInput.maxTotal())
-            multiplier = max(multiplier, 0.001)
+            multiplier = max(multiplier, 0.0001)
             self.graphViewHeightConstraint.active = false
             self.graphViewHeightConstraint = self.graphViewHeightConstraint.newMultiplier(CGFloat(multiplier))
             self.graphViewHeightConstraint.active = true
