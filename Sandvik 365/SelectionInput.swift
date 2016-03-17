@@ -27,7 +27,7 @@ enum InputAbbreviation: String {
     case TonPerHour = "t/h"
     case Gram = "g"
     case Kilo = "kg"
-    case Meter = "meters"
+    case Meter = "m"
     case Year = "/year"
     case Minutes = "min"
     

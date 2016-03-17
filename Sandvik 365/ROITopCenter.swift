@@ -75,7 +75,7 @@ class ROITopCenterInput: ROICalculatorInput {
     var costTypes: Set<ROITopCenterCostType> = Set<ROITopCenterCostType>()
     
     func allInputs() -> [ROITopCenterInputValue] {
-        return [drillRigCost, regrindCost, drilledMeters, drilledMeters, bitPrice, serviceLife, noOfBitRegrinds]
+        return [drillRigCost, regrindCost, bitChangeTime, drilledMeters, bitPrice, serviceLife, noOfBitRegrinds]
     }
     
     override func allTitles() -> [String] {
