@@ -311,7 +311,7 @@ class JSONManager {
                     }
                 }
                 /* serviceHandlerImages */
-                if let serviceHandlerImages = data.objectForKey("serviceHandlerImages") as? NSDictionary {
+                /*if let serviceHandlerImages = data.objectForKey("serviceHandlerImages") as? NSDictionary {
                     let scale = UIScreen.mainScreen().scale
                     for (key, obj) in serviceHandlerImages {
                         if let k = key as? String where (k.rangeOfString("x"+String(scale)) != nil) {
@@ -322,7 +322,7 @@ class JSONManager {
                             }
                         }
                     }
-                }
+                }*/
             }
         }
         /* firesuppression images arent used yet else if let parts = endPointData as? FireSuppressionInput {
