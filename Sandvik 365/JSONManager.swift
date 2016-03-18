@@ -312,15 +312,9 @@ class JSONManager {
                 }
                 /* serviceHandlerImages */
                 if let serviceHandlerImages = data.objectForKey("serviceHandlerImages") as? NSDictionary {
-                    var scale = UIScreen.mainScreen().scale
-                    if scale >= 2 {
-                        if UIScreen.mainScreen().bounds.size.height == 1366 || UIScreen.mainScreen().bounds.size.width == 1366 {
-                            //ipadpro
-                            scale = 3
-                        }
-                    }
+                    let scale = UIScreen.mainScreen().scale
                     for (key, obj) in serviceHandlerImages {
-                        if let k = key as? String where (k.rangeOfString("x"+String("scale")) != nil) {
+                        if let k = key as? String where (k.rangeOfString("x"+String(scale)) != nil) {
                             if let image = obj.objectForKey("encodedUrl") as? String, let imageUrl = NSURL(string: image) {
                                 NSUserDefaults.standardUserDefaults().setURL(imageUrl, forKey: JSONManager.serviceHandlerImageKey)
                                 NSUserDefaults.standardUserDefaults().synchronize()
