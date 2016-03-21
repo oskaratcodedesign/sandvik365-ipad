@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "160314-s365-app-tools-icons-calculator-x1.png",
+      "filename" : "160316-s365-app-tools-icons-calculator-x1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "160314-s365-app-tools-icons-calculator-x2.png",
+      "filename" : "160316-s365-app-tools-icons-calculator-x2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "160314-s365-app-tools-icons-calculator-x3.png",
       "scale" : "3x"
     }
   ],

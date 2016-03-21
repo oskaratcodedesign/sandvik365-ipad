@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-KQ-QE7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-KQ-QE7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-Yh-GKN">
@@ -967,6 +967,7 @@ PROGRAMS</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="2048" height="600"/>
                     <connections>
+                        <outlet property="compareProgramsImageView" destination="p9V-vN-zoN" id="eTy-NN-9MR"/>
                         <outlet property="conditionButton" destination="N4N-Vd-EON" id="V4N-4C-w4X"/>
                         <outlet property="detailsContainerView" destination="1S0-U8-O1m" id="56h-ko-dsg"/>
                         <outlet property="graphContainerView" destination="nou-UF-7fh" id="HE7-h1-Hcm"/>

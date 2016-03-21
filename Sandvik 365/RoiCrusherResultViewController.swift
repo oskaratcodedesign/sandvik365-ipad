@@ -17,6 +17,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
     @IBOutlet weak var protectiveButton: UIButton!
     private var selectedButton: UIButton?
     
+    @IBOutlet weak var compareProgramsImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var graphLabel: UILabel!
     @IBOutlet weak var graphView: UIView!
@@ -28,6 +29,11 @@ class RoiCrusherResultViewController: RoiResultViewController {
         let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
         attrString.appendAttributedString(NSAttributedString(string: "\nCOVERAGE ON CAPITAL\nSPARE PARTS", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         self.graphLabel.attributedText = attrString
+        if let imageurl = NSUserDefaults.standardUserDefaults().URLForKey(JSONManager.serviceHandlerImageKey) {
+            if let image = ImageCache.getImage(imageurl) {
+                self.compareProgramsImageView.image = image
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

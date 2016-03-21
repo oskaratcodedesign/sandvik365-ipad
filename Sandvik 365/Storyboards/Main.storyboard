@@ -71,27 +71,7 @@ YOU CAN COUNT ON</string>
                                         <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
-                                        <rect key="frame" x="100" y="25" width="37" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
-                                        <state key="normal" image="sandvik-icons_info-btn">
-                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="MUS-dT-mdX"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
-                                        </connections>
-                                    </button>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-hR-t0y">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-hR-t0y">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-IU-jbo">
@@ -276,6 +256,26 @@ AREAS</string>
                                             </mask>
                                         </variation>
                                     </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-4S-QLF">
+                                        <rect key="frame" x="100" y="25" width="37" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="MUS-dT-mdX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="10"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                                        <state key="normal" image="sandvik-icons_info-btn">
+                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MUS-dT-mdX"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="jzx-rd-u6m" kind="show" id="T5Z-1s-Fyx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
