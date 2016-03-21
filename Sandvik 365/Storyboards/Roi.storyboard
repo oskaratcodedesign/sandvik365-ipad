@@ -163,10 +163,10 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ah-fO-PXD">
-                                                <rect key="frame" x="70" y="471" width="460" height="109"/>
+                                                <rect key="frame" x="80" y="471" width="440" height="109"/>
                                                 <subviews>
                                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-V3-Kiy">
-                                                        <rect key="frame" x="200" y="0.0" width="60" height="109"/>
+                                                        <rect key="frame" x="190" y="0.0" width="60" height="109"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-T4-S4q" customClass="RoiSelectionButton" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="-20" y="0.0" width="100" height="109"/>
@@ -214,7 +214,7 @@
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-bc-FmT">
-                                                <rect key="frame" x="530" y="534" width="70" height="46"/>
+                                                <rect key="frame" x="520" y="534" width="70" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="IPV-Ag-afG"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LLN-T7-Glv"/>
@@ -244,7 +244,7 @@
                                             <constraint firstAttribute="bottom" secondItem="8ah-fO-PXD" secondAttribute="bottom" constant="20" id="NVG-XF-0t8"/>
                                             <constraint firstItem="tVa-ib-G4a" firstAttribute="centerY" secondItem="fsC-Yh-GKN" secondAttribute="centerY" id="TEB-YV-Z4B"/>
                                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="height" secondItem="fsC-Yh-GKN" secondAttribute="height" multiplier="0.3" id="VSq-66-QVp"/>
-                                            <constraint firstAttribute="trailing" secondItem="Jep-bc-FmT" secondAttribute="trailing" id="Wad-1A-KxS"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jep-bc-FmT" secondAttribute="trailing" constant="10" id="Wad-1A-KxS"/>
                                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerX" secondItem="fsC-Yh-GKN" secondAttribute="centerX" id="a4M-Fu-jy6"/>
                                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="fsC-Yh-GKN" secondAttribute="leading" id="adh-aD-v9G"/>
                                             <constraint firstAttribute="bottom" secondItem="Jep-bc-FmT" secondAttribute="bottom" constant="20" id="hJS-0V-3Z6"/>
@@ -1442,9 +1442,9 @@ PROGRAMS</string>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="Fvb-wT-iU2"/>
+                                                        <exclude reference="v3g-1I-Uf0"/>
                                                         <exclude reference="GpL-jk-Zmk"/>
                                                         <exclude reference="PfT-rO-G5s"/>
-                                                        <exclude reference="v3g-1I-Uf0"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2704,8 +2704,8 @@ PROFIT BY UP TO</string>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
-                                                                <exclude reference="8aU-rn-0fL"/>
                                                                 <exclude reference="7of-73-rmo"/>
+                                                                <exclude reference="8aU-rn-0fL"/>
                                                             </mask>
                                                         </variation>
                                                     </view>
