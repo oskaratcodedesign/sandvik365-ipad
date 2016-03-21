@@ -122,10 +122,12 @@ enum BusinessType: UInt32 {
         }
     }
     
-    var interActiveTools: [InterActiveTools]? {
+    var interActiveTools: [InterActiveTool]? {
         switch self {
-        case ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+        case ExplorationDrillRigs, MechanicalCutting:
             return nil
+        case UndergroundDrillingAndBolting:
+            return [.TopCenterTool]
         case SurfaceDrilling:
             return [.RockDrillTool]
         case CrusherAndScreening:
@@ -133,16 +135,17 @@ enum BusinessType: UInt32 {
         case UndergroundLoadingAndHauling:
             return [.GetTool, .FireSuppressionTool]
         case All:
-            return [.RockDrillTool, .CrusherTool, .FireSuppressionTool, .EDVTool, .GetTool]
+            return [.RockDrillTool, .CrusherTool, .FireSuppressionTool, .EDVTool, .GetTool, .TopCenterTool]
         }
     }
     
-    enum InterActiveTools {
+    enum InterActiveTool {
         case RockDrillTool
         case CrusherTool
         case FireSuppressionTool
         case EDVTool
         case GetTool
+        case TopCenterTool
         
         var title: String! {
             switch self {
@@ -156,12 +159,14 @@ enum BusinessType: UInt32 {
                 return "Electric dump valve calculator"
             case GetTool:
                 return "Ground Engaging Tools (GET) calculator"
+            case .TopCenterTool:
+                return "Top center calculator"
             }
         }
         
         var defaultImage: UIImage? {
             switch self {
-            case RockDrillTool, CrusherTool, EDVTool, GetTool:
+            case RockDrillTool, CrusherTool, EDVTool, GetTool, TopCenterTool:
                 return UIImage(named: "calculator-x1")
             case FireSuppressionTool:
                 return UIImage(named: "options-x1")
@@ -170,7 +175,7 @@ enum BusinessType: UInt32 {
         
         var highlightImage: UIImage? {
             switch self {
-            case RockDrillTool, CrusherTool, EDVTool, GetTool:
+            case RockDrillTool, CrusherTool, EDVTool, GetTool, TopCenterTool:
                 return UIImage(named: "calculator-inverted-x1")
             case FireSuppressionTool:
                 return UIImage(named: "options-inverted-x1")
@@ -189,6 +194,8 @@ enum BusinessType: UInt32 {
                 return ROIEDVInput()
             case GetTool:
                 return ROIGetInput()
+            case TopCenterTool:
+                return ROITopCenterInput()
             }
         }
     }

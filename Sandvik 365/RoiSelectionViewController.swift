@@ -228,6 +228,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
+                else if let input = input as? ROITopCenterInput {
+                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiTopCenterResultViewController") as! RoiTopCenterResultViewController
+                    pageItemController.selectedInput = input
+                    return pageItemController
+                }
             }
             else if let input = selectedInput as? FireSuppressionInput {
                 let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("FireSuppressionResultViewController") as! FireSuppressionResultViewController

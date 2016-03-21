@@ -11,7 +11,7 @@ import UIKit
 class InterActiveToolsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let data: [BusinessType.InterActiveTools] = BusinessType.All.interActiveTools!
+    let data: [BusinessType.InterActiveTool] = BusinessType.All.interActiveTools!
     private var selectedIndexPath: NSIndexPath?
     
     override func viewDidLoad() {

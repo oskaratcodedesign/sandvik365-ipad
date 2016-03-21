@@ -1,15 +1,16 @@
 //
-//  RoiEDVResultViewController.swift
+//  RoiTopCenterViewController.swift
 //  Sandvik 365
 //
-//  Created by Oskar Hakansson on 18/02/16.
+//  Created by Oskar Hakansson on 17/03/16.
 //  Copyright © 2016 Commind. All rights reserved.
 //
+
 import UIKit
 
-class RoiEDVResultViewController: RoiResultViewController {
+class RoiTopCenterResultViewController: RoiResultViewController {
     
-    var selectedInput: ROIEDVInput!
+    var selectedInput: ROITopCenterInput!
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
@@ -20,7 +21,7 @@ class RoiEDVResultViewController: RoiResultViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = NSLocalizedString("COST PER\nBREAKDOWN", comment: "")
+        titleLabel.text = NSLocalizedString("TOTAL BIT ECONOMY", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,19 +31,19 @@ class RoiEDVResultViewController: RoiResultViewController {
     }
     
     @IBAction func firstAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ExtraCost, selectedButton: sender)
+        controlInput(selectedInput, selectedService: ROITopCenterCostType.SavedBitCost, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
     @IBAction func secondAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ServiceCost, selectedButton: sender)
+        controlInput(selectedInput, selectedService: ROITopCenterCostType.SavedGrindingCost, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
     @IBAction func thirdAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ProductivityLoss, selectedButton: sender)
+        controlInput(selectedInput, selectedService: ROITopCenterCostType.SavedValueCost, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
@@ -67,12 +68,11 @@ class RoiEDVResultViewController: RoiResultViewController {
         }
     }
     @IBAction func seeDetailAction(sender: UIButton) {
-        detailsContainerView.addSubview(RoiEDVDetailView(frame: detailsContainerView.bounds, input: selectedInput))
+        detailsContainerView.addSubview(RoiTopCenterDetailView(frame: detailsContainerView.bounds, input: selectedInput))
         detailsContainerView.hidden = false
     }
     
-    private func controlInput(input: ROIEDVInput, selectedService: ROIEDVCostType, selectedButton: UIButton) {
-        //self.selectedButton?.selected = false
+    private func controlInput(input: ROITopCenterInput, selectedService: ROITopCenterCostType, selectedButton: UIButton) {
         self.selectedButton = selectedButton
         self.selectedButton?.selected = !selectedButton.selected
         
@@ -100,4 +100,3 @@ class RoiEDVResultViewController: RoiResultViewController {
         }
     }
 }
-
