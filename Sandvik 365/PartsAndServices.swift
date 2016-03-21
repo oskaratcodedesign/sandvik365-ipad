@@ -124,10 +124,12 @@ enum BusinessType: UInt32 {
     
     var interActiveTools: [InterActiveTool]? {
         switch self {
-        case ExplorationDrillRigs, MechanicalCutting, UndergroundDrillingAndBolting:
+        case ExplorationDrillRigs, MechanicalCutting:
             return nil
+        case UndergroundDrillingAndBolting:
+            return [.TopCenterTool]
         case SurfaceDrilling:
-            return [.RockDrillTool, .TopCenterTool]
+            return [.RockDrillTool]
         case CrusherAndScreening:
             return [.CrusherTool, .EDVTool]
         case UndergroundLoadingAndHauling:
