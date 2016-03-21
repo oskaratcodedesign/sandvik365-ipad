@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let jsonManager = JSONManager()
         jsonManager.copyPreloadedFiles()
-        jsonManager.checkforUpdate({ (success, lastModified) -> () in
+        /*jsonManager.checkforUpdate({ (success, lastModified) -> () in
             print("checkforUpdate. Last modified: %@", lastModified)
-        })
+        })*/
         
         //always read
         jsonManager.readJSONFromFileAsync(JSONManager.EndPoint.CONTENT_URL, completion: { (success) -> () in
