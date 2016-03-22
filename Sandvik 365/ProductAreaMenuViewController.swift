@@ -16,7 +16,7 @@ class ProductAreaMenuViewController: UIViewController, UIScrollViewDelegate, Pro
     @IBOutlet weak var menuCountOnBox: MenuCountOnBox!
     
     override func viewDidLoad() {
-        navigationItem.title = String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICES YOU CAN COUNT ON")
+        navigationItem.title = String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICE YOU CAN COUNT ON")
         super.viewDidLoad()
         for view in mainMenuItemViews {
             view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)

@@ -58,6 +58,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         else if segue.identifier == "ShowVideoCenterViewController" {
             if let vc = segue.destinationViewController as? VideoCenterViewController {
                 vc.selectedBusinessType = self.selectedPartsAndServices.businessType
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, vc.selectedBusinessType.mediaCenterTitle!.uppercaseString)
             }
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {
