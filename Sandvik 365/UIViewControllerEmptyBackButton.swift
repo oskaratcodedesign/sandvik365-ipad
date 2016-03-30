@@ -16,8 +16,8 @@ extension UIViewController {
             static var onceToken : dispatch_once_t = 0
         }
         dispatch_once(&Static.onceToken) {
-            let originalSelector = Selector("viewDidLoad")
-            let swizzledSelector = Selector("mob_viewDidLoad")
+            let originalSelector = #selector(viewDidLoad)
+            let swizzledSelector = #selector(mob_viewDidLoad)
             
             let originalMethod : Method = class_getInstanceMethod(self, originalSelector);
             let swizzledMethod : Method = class_getInstanceMethod(self, swizzledSelector);

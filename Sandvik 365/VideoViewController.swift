@@ -37,7 +37,7 @@ class VideoViewController: UIViewController {
             player.repeatMode = MPMovieRepeatMode.None
             player.play()
             self.view.addSubview(player.view)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "doneButtonClick:", name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(doneButtonClick(_:)), name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
             
             let views = ["player": player.view]
             self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))

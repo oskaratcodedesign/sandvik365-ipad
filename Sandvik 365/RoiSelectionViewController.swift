@@ -47,7 +47,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         pageContentView.bringSubviewToFront(viewResultButton)
         
         selectionButtons.append(currentSelectionButton)
-        currentSelectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("handleButtonSelect:")))
+        currentSelectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(handleButtonSelect(_:))))
         currentSelectionButton.fillDot()
         prevButton.hidden = true
         loadSelectionButtons()
@@ -198,7 +198,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         NSLayoutConstraint.deactivateConstraints([currentTrailingConstraint])
         NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
         currentTrailingConstraint = trailConstraint
-        selectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("handleButtonSelect:")))
+        selectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(handleButtonSelect(_:))))
         selectionButtons.append(selectionButton)
         return selectionButton
     }

@@ -50,12 +50,13 @@ class FireSuppressionResultViewController: UIViewController {
         }
     }
     
-    private func addBody(content: Content.Body, var prevView: UIView?) -> UIView? {
-        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: false)
+    private func addBody(content: Content.Body, prevView: UIView?) -> UIView? {
+        let prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: false)
         return prevView
     }
     
-    private func addTitlesTextList(content: [Content.TitleTextOrList], var prevView: UIView?, isLead: Bool) -> UIView? {
+    private func addTitlesTextList(content: [Content.TitleTextOrList], prevView: UIView?, isLead: Bool) -> UIView? {
+        var prevView = prevView
         var top:CGFloat = 0
         for titlesTextList in content {
             switch titlesTextList {

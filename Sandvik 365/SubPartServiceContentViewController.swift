@@ -57,19 +57,19 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         var previousView: UIView = paddingView
         for obj in content.contentList {
             if let value = obj as? Content.Lead {
-                previousView = addLead(value, images: content.images, prevView: previousView)
+                previousView = addLead(value, images: content.images, previousView: previousView)
             }
             else if let value = obj as? Content.Body {
-                previousView = addBody(value, prevView: previousView)
+                previousView = addBody(value, previousView: previousView)
             }
             else if let value = obj as? Content.KeyFeatureListContent {
-                previousView = addKeyFeatureList(value, prevView: previousView)
+                previousView = addKeyFeatureList(value, previousView: previousView)
             }
             else if let value = obj as? Content.CountOnBoxContent {
                 previousView = addColumns(value, prevView: previousView)
             }
             else if let value = obj as? Content.TabbedContent {
-                previousView = addTabbedContent(value, prevView: previousView)
+                previousView = addTabbedContent(value, previousView: previousView)
             }
         }
         previousView = addStripesImage(previousView)
@@ -120,12 +120,13 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         addViewAndConstraints(subContentView, fromView: fromView, toView: toView, topConstant: topConstant, leftConstant: leftConstant)
     }
     
-    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, var topConstant: CGFloat, leftConstant: CGFloat) {
+    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
+        var top = topConstant
         if(changedTopConstant > 0) {
-            topConstant = changedTopConstant
+            top = changedTopConstant
             changedTopConstant = 0
         }
-        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
+        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: top)
         let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
@@ -135,9 +136,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     
-    private func addLead(content: Content.Lead, images: [NSURL], var prevView: UIView) -> UIView {
-
-        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: true)
+    private func addLead(content: Content.Lead, images: [NSURL], previousView: UIView) -> UIView {
+        var prevView = previousView
+        prevView = addTitlesTextList(content.titleOrTextOrList, previousView: prevView, isLead: true)
         
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -165,12 +166,13 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return prevView
     }
     
-    private func addBody(content: Content.Body, var prevView: UIView) -> UIView {
-        prevView = addTitlesTextList(content.titleOrTextOrList, prevView: prevView, isLead: false)
+    private func addBody(content: Content.Body, previousView: UIView) -> UIView {
+        let prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
         return prevView
     }
     
-    private func addTitlesTextList(content: [Content.TitleTextOrList], var prevView: UIView, isLead: Bool) -> UIView {
+    private func addTitlesTextList(content: [Content.TitleTextOrList], previousView: UIView, isLead: Bool) -> UIView {
+        var prevView = previousView
         var top:CGFloat = 45
         for titlesTextList in content {
             switch titlesTextList {
@@ -207,8 +209,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return prevView
     }
     
-    private func addKeyFeatureList(content: Content.KeyFeatureListContent, var prevView: UIView) -> UIView {
+    private func addKeyFeatureList(content: Content.KeyFeatureListContent, previousView: UIView) -> UIView {
         var top:CGFloat = 45
+        var prevView = previousView
         if let title = content.title {
             let label = genericTitleLabel(title)
             addViewAndConstraints(label, toView: prevView, topConstant: top)
@@ -227,8 +230,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return view
     }
     
-    private func addTabbedContent(content: Content.TabbedContent, var prevView: UIView) -> UIView {
-        var label = prevView
+    private func addTabbedContent(content: Content.TabbedContent, previousView: UIView) -> UIView {
+        var label = previousView
+        var prevView = previousView
         
         if let tabs = content.tabs {
             var top:CGFloat = 45

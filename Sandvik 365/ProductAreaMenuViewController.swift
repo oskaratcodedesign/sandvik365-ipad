@@ -19,7 +19,7 @@ class ProductAreaMenuViewController: UIViewController, UIScrollViewDelegate, Pro
         navigationItem.title = String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICE YOU CAN COUNT ON")
         super.viewDidLoad()
         for view in mainMenuItemViews {
-            view.button.addTarget(self, action: Selector("pressAction:"), forControlEvents: .TouchUpInside)
+            view.button.addTarget(self, action:#selector(pressAction(_:)), forControlEvents: .TouchUpInside)
         }
         self.scrollViewDidScroll(menuScrollView)
         progressView.delegate = self

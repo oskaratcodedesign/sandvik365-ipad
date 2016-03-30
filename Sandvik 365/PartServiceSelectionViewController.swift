@@ -44,7 +44,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 
                 if !firstSectionButtonAdded {
                     lastSectionButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
-                    lastSectionButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                    lastSectionButton.sectionButton.addTarget(self, action:#selector(handleButtonSelect(_:)), forControlEvents: .TouchUpInside)
                     sectionDescriptionLabel.text = ps.description
                     lastSectionButton.buttonMultiplierWidth = 0.5
                     firstSectionButtonAdded = true
@@ -52,7 +52,7 @@ class PartServiceSelectionViewController: UIViewController, UIScrollViewDelegate
                 else {
                     let selButton = SectionSelectionButton(frame: CGRectZero)
                     selButton.sectionButton.setTitle(ps.title.uppercaseString, forState: .Normal)
-                    selButton.sectionButton.addTarget(self, action: "handleButtonSelect:", forControlEvents: .TouchUpInside)
+                    selButton.sectionButton.addTarget(self, action:#selector(handleButtonSelect(_:)), forControlEvents: .TouchUpInside)
                     
                     let topConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
                     let botConstraint = NSLayoutConstraint(item: selButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: sectionScrollViewContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)

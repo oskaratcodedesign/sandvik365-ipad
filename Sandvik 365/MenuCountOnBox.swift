@@ -31,7 +31,7 @@ protocol MenuCountOnBoxDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         getParts()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getParts", name: JSONManager.newDataAvailable, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(getParts), name: JSONManager.newDataAvailable, object: nil)
     }
     
     func getParts() {
@@ -64,7 +64,7 @@ protocol MenuCountOnBoxDelegate {
                         }
                     }
                 }
-                count++
+                count += 1
             }
         }
         loadNewInfo()
@@ -103,7 +103,7 @@ protocol MenuCountOnBoxDelegate {
                     }
                 }
                 else { print("subpartServices not found") }
-                count++
+                count += 1
             }
         }
     }

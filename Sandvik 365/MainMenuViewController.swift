@@ -33,7 +33,7 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         }
         videoButton.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(checkUpdateAvailble), name: JSONManager.updateAvailable, object: nil)
         if NSUserDefaults.standardUserDefaults().objectForKey("firstStart") == nil {
             
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstStart")

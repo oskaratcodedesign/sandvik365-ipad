@@ -23,7 +23,7 @@ enum BusinessType: UInt32 {
     private static let _count: BusinessType.RawValue = {
         // find the maximum enum value
         var maxValue: UInt32 = 0
-        while let _ = BusinessType(rawValue: ++maxValue) { }
+        while let _ = BusinessType(rawValue: maxValue) { maxValue += 1 }
         return maxValue - 1 //dont include All
     }()
     

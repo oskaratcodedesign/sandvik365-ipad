@@ -230,7 +230,8 @@ class JSONManager {
                         print(error)
                     }
                     }.main {
-                        let allDownloaded = (--downloadCount == 0)
+                        downloadCount -= 1
+                        let allDownloaded = (downloadCount == 0)
                         completion(success: success, lastModified: endPoint.jsonLastModifiedDate(), allDownloaded: allDownloaded)
                 }
                 }.resume()
