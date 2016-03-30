@@ -35,8 +35,10 @@ enum BusinessType: UInt32 {
     
     var videos: [Video]? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs:
             return nil
+        case .CrusherAndScreening:
+            return [Videos.EDV_FINAL.video]
         case UndergroundLoadingAndHauling:
             return [
                 Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video
@@ -51,16 +53,16 @@ enum BusinessType: UInt32 {
             return [Videos.REBUILDS.video]
         case All:
             return [
-                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video, Videos.EDV_FINAL.video
             ]
         }
     }
     
     var mediaCenterTitle: String? {
         switch self {
-        case ExplorationDrillRigs, CrusherAndScreening:
+        case ExplorationDrillRigs:
             return nil
-        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
+        case CrusherAndScreening, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
             return "Videos & Animations"
         }
     }

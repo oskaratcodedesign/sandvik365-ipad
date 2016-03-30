@@ -18,6 +18,7 @@ enum Videos{
     case ECLIPSE
     case ROCK_DRILL_KITS
     case ROCK_DRILLS
+    case EDV_FINAL
     
     var video: Video! {
         switch self {
@@ -39,6 +40,8 @@ enum Videos{
             return Video(videoName: "Rock drill kits - Standardize your repairs", ext: "mp4", title: "Rock drill kits - Standardize your repairs", image: "rockdrillkits")
         case ROCK_DRILLS:
             return Video(videoName: "Rock drills - Modernize your drilling", ext: "mp4", title: "Rock drills - Modernize your drilling", image: "rockdrill")
+        case EDV_FINAL:
+            return Video(videoName: "edv_final_160229_1", ext: "mp4", title: "Electric Dump Valve", image: "x1-365-EDV-film")
         }
     }
 }
