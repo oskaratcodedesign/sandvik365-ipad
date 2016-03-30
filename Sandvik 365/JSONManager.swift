@@ -158,7 +158,7 @@ class JSONManager {
     func isUpdateAvailable() -> Bool {
         for endPoint in self.endPoints {
             if endPoint.isUpdateAvailable() {
-                return false
+                return true
             }
         }
         return false
