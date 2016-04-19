@@ -48,7 +48,7 @@ protocol MenuCountOnBoxDelegate {
                             for sp in subPartServices {
                                 let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
                                 if let countonBox = countOnBoxes.first {
-                                    if let number = countonBox.midText, let botText = countonBox.bottomText {
+                                    if let number = countonBox.largestBox()?.text, let botText = countonBox.allSmallTextBelowLargest() {
                                         self.numberLabel.text = number
                                         self.textLabel.text = botText
                                         self.partsAndServices = partsAndServices
@@ -88,7 +88,7 @@ protocol MenuCountOnBoxDelegate {
                         let countonBoxes = subpartService.content.contentList.flatMap(({ $0 as? Content.CountOnBoxContent}))
                         if countonBoxes.count > 0 {
                             let countonBox = countonBoxes[Int(arc4random_uniform(UInt32(countonBoxes.count)))]
-                            if let number = countonBox.midText, let botText = countonBox.bottomText {
+                            if let number = countonBox.largestBox()?.text, let botText = countonBox.allSmallTextBelowLargest() {
                                 self.numberLabel.text = number
                                 self.textLabel.text = botText
                                 self.partsAndServices = ps
