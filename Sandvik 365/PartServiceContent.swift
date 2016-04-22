@@ -50,6 +50,7 @@ class Content {
     var subtitle: String? = nil
     var contentList: [AnyObject] = []
     var images: [NSURL] = []
+    var pdfs: [Pdf] = []
     
     init(content: NSDictionary){
         if let title = content.objectForKey("title") as? String {
@@ -62,10 +63,10 @@ class Content {
             for part in html {
                 if let type = part.objectForKey("type") as? String {
                     if type == "lead", let value = part.objectForKey("value") as? [NSDictionary] {
-                        contentList.append(Lead(content: value))
+                        contentList.append(Lead(content: parseTitleTextList(value)))
                     }
                     else if type == "body", let value = part.objectForKey("value") as? [NSDictionary] {
-                        contentList.append(Body(content: value))
+                        contentList.append(Body(content: parseTitleTextList(value)))
                     }
                     else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
                         contentList.append(KeyFeatureListContent(content: value))
@@ -91,10 +92,10 @@ class Content {
         for part in content {
             if let type = part.objectForKey("type") as? String {
                 if type == "lead", let value = part.objectForKey("value") as? [NSDictionary] {
-                    contentList.append(Lead(content: value))
+                    contentList.append(Lead(content: parseTitleTextList(value)))
                 }
                 else if type == "body", let value = part.objectForKey("value") as? [NSDictionary] {
-                    contentList.append(Body(content: value))
+                    contentList.append(Body(content: parseTitleTextList(value)))
                 }
                 else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
                     contentList.append(KeyFeatureListContent(content: value))
@@ -241,23 +242,49 @@ class Content {
     class Lead {
         let titleOrTextOrList: [TitleTextOrList]
         
-        init(content: [NSDictionary]) {
-            self.titleOrTextOrList = Content.parseTitleTextList(content)
+        init(content: [TitleTextOrList]) {
+            self.titleOrTextOrList = content
         }
     }
     
     class Body {
         let titleOrTextOrList: [TitleTextOrList]
-        init(content: [NSDictionary]) {
-            self.titleOrTextOrList = Content.parseTitleTextList(content)
+        init(content: [TitleTextOrList]) {
+            self.titleOrTextOrList = content
         }
     }
     
-    private static func parseTitleTextList(content: [NSDictionary]) -> [TitleTextOrList] {
+    class Pdf {
+        let title: String
+        let url: NSURL
+        
+        init(title: String, url: NSURL){
+            self.title = title
+            self.url = url
+        }
+    }
+    
+    private func parseTitleTextList(content: [NSDictionary]) -> [TitleTextOrList] {
         var titleOrTextOrList: [TitleTextOrList] = []
         for part in content {
             if let type = part.objectForKey("element") as? String {
                 if type == "p", let value = part.objectForKey("html") as? String {
+                    do {
+                        let doc = try HTMLDocument(string: value)
+                        if let href = doc.root?.firstChild(xpath: "//a") {
+                            if let link = href.attr("href") {
+                                if link.hasSuffix("pdf") {
+                                    let title = href.stringValue
+                                    if let url = NSURL(string: link) {
+                                        self.pdfs.append(Pdf(title: title, url: url))
+                                        continue
+                                    }
+                                }
+                            }
+                        }
+                    } catch {
+                        print("failed to parse pdf")
+                    }
                     let string = value.stripHTML()
                     if(string.characters.count > 0 && string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0) {
                         titleOrTextOrList.append(.Text(string))
