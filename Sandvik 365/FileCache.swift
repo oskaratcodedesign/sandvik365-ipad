@@ -38,7 +38,7 @@ class FileCache {
     static func getStoredFileURL(urlPath: NSURL) -> NSURL? {
         do {
             let path = try self.pathForUrl(urlPath)
-            return NSURL(string: path)
+            return NSURL(fileURLWithPath: path)
         } catch {
             return nil
         }

@@ -10,7 +10,7 @@ import UIKit
 
 let didTapNotificationKey = "didTapNotificationKey"
 
-class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate, ContactUsViewDelegate, RegionSelectorDelegate {
+class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegate, ContactUsViewDelegate, RegionSelectorDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIDocumentInteractionControllerDelegate {
 
     var selectedPartsAndServices: PartsAndServices!
     var selectedContent: Content!
@@ -18,20 +18,20 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var contactusTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var contactUsView: ContactUsView!
     @IBOutlet var paddingView: UIView!
     @IBOutlet var subContentView: UIView!
     @IBOutlet var stripeImageView: UIImageView!
+    @IBOutlet weak var filesCollectionView: UICollectionView!
+    @IBOutlet weak var filesCollectionViewHeight: NSLayoutConstraint!
     private let topConstant: CGFloat = 20
     private var changedTopConstant: CGFloat = 0
     
     private var alignCountOnBoxRight: Bool = true
     private var regionSelector: RegionSelector?
     
+    @IBOutlet weak var documentsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,12 +72,29 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 previousView = addTabbedContent(value, previousView: previousView)
             }
         }
-        previousView = addStripesImage(previousView)
-        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.LessThanOrEqual, toItem: subContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -50)
+        //previousView = addStripesImage(previousView)
+        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         previousView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.deactivateConstraints([bottomConstraint])
+        //NSLayoutConstraint.deactivateConstraints([bottomConstraint])
         NSLayoutConstraint.activateConstraints([newbottomConstraint])
         self.contactUsView.delegate = self
+        self.filesCollectionView.hidden = true
+        self.documentsLabel.hidden = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if self.selectedContent.pdfs.count > 0 {
+            self.filesCollectionView.hidden = false
+            self.documentsLabel.hidden = false;
+            let contentsize = self.filesCollectionView.contentSize
+            if contentsize.height > 0 {
+                filesCollectionViewHeight.constant = contentsize.height
+            }
+        }
+        else {
+            filesCollectionViewHeight.constant = 0
+        }
     }
     
     private func addStripesImage(prevView: UIView) -> UIView {
@@ -109,7 +126,6 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         regionSelector!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(regionSelector!)
         NSLayoutConstraint.activateConstraints(constraints)
-        
     }
     
     private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
@@ -349,6 +365,52 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         }
         
         targetContentOffset.memory = target
+    }
+    
+    //file collectionview
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return selectedContent.pdfs.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ToolsCollectionViewCell
+        let pdf = selectedContent.pdfs[indexPath.row]
+        cell.button.setTitle(pdf.title, forState: .Normal)
+        return cell
+    }
+    
+    @IBAction func documentAction(sender: UIButton) {
+        let r = self.filesCollectionView.convertRect(sender.bounds, fromView: sender)
+        if let indexPath = self.filesCollectionView.indexPathForItemAtPoint(r.origin) {
+            let pdf = selectedContent.pdfs[indexPath.row]
+            if let url = FileCache.getStoredFileURL(pdf.url) {
+                let vc = UIDocumentInteractionController(URL: url)
+                vc.delegate = self
+                vc.presentPreviewAnimated(true)
+            }
+        }
+    }
+    
+    func documentInteractionControllerViewForPreview(controller: UIDocumentInteractionController) -> UIView? {
+        return nil
+    }
+    
+    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+    
+    func documentInteractionControllerDidEndPreview(controller: UIDocumentInteractionController) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.showLogoView()
+    }
+    
+    func documentInteractionControllerWillBeginPreview(controller: UIDocumentInteractionController) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.hideLogoView()
     }
 
 }
