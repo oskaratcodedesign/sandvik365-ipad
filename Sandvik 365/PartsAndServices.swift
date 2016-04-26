@@ -22,7 +22,7 @@ enum BusinessType: UInt32 {
     
     static func randomBusinessType() -> BusinessType {
         // pick and return a new value
-        let count = All.rawValue - 1
+        let count = All.rawValue
         let rand = arc4random_uniform(count)
         return BusinessType(rawValue: rand)!
     }
