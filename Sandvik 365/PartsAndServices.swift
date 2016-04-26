@@ -20,16 +20,10 @@ enum BusinessType: UInt32 {
     case UndergroundLoadingAndHauling
     case All
     
-    private static let _count: BusinessType.RawValue = {
-        // find the maximum enum value
-        var maxValue: UInt32 = 0
-        while let _ = BusinessType(rawValue: maxValue) { maxValue += 1 }
-        return maxValue - 1 //dont include All
-    }()
-    
     static func randomBusinessType() -> BusinessType {
         // pick and return a new value
-        let rand = arc4random_uniform(_count)
+        let count = All.rawValue - 1
+        let rand = arc4random_uniform(count)
         return BusinessType(rawValue: rand)!
     }
     
