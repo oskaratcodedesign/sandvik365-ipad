@@ -153,8 +153,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     
     
     private func addLead(content: Content.Lead, images: [NSURL], previousView: UIView) -> UIView {
-        var prevView = previousView
-        prevView = addTitlesTextList(content.titleOrTextOrList, previousView: prevView, isLead: true)
+        var prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: true)
         
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -183,8 +182,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     private func addBody(content: Content.Body, previousView: UIView) -> UIView {
-        let prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
-        return prevView
+        return addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
     }
     
     private func addTitlesTextList(content: [Content.TitleTextOrList], previousView: UIView, isLead: Bool) -> UIView {
