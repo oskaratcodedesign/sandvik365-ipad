@@ -85,6 +85,15 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.selectedContent.pdfs.count > 0 {
+            let contentsize = self.filesCollectionView.contentSize
+            if contentsize.height != self.filesCollectionView.bounds.size.height {
+                self.view.setNeedsUpdateConstraints()
+            }
+        }
+    }
+    
+    override func updateViewConstraints() {
+        if self.selectedContent.pdfs.count > 0 {
             self.filesCollectionView.hidden = false
             self.documentsLabel.hidden = false;
             let contentsize = self.filesCollectionView.contentSize
@@ -95,6 +104,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         else {
             filesCollectionViewHeight.constant = 0
         }
+        super.updateViewConstraints()
     }
     
     private func addStripesImage(prevView: UIView) -> UIView {
