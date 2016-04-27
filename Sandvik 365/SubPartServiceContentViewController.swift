@@ -292,6 +292,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         let container = UIView()
         var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Horizontal)
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Vertical)
         listlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(listlabel)
         
