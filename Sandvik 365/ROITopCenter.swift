@@ -114,7 +114,7 @@ class ROITopCenterInput: ROICalculatorInput {
         return 0
     }
     
-    private func timeSavedCost() -> Double {
+    func timeSavedCost() -> Double {
         if let bc = bitChangeTime.value as? Double, dm = drilledMeters.value as? UInt, sl = serviceLife.value as? UInt, nr = noOfBitRegrinds.value as? Double  {
             return bc / 3 * Double(dm) / Double(sl) * (nr + 1) / 60
         }
