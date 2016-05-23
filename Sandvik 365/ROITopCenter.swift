@@ -50,7 +50,7 @@ enum ROITopCenterInputValue {
         case BitChangeTime:
             return NSLocalizedString("State the time required to change each bit. I.e. total time divided by two if two bits are changed.", comment: "")
         case DrilledMeters:
-            return NSLocalizedString("For all drill rigs using this bit", comment: "")
+            return NSLocalizedString("For all drill rigs using this bit.", comment: "")
         }
     }
     
