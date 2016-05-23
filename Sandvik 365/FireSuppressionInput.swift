@@ -70,8 +70,8 @@ class FireSuppressionInput: SelectionInput {
         return [selectedProductGroup, selectedEquipmentType, selectedModel, selectedTemperature]
     }
     
-    override func allTitles() -> [String] {
-        return [NSLocalizedString("Product group", comment: ""), NSLocalizedString("Equipment type", comment: ""), NSLocalizedString("Model", comment: ""), NSLocalizedString("Lowest temperature", comment: "")]
+    override func allTitles() -> [NSAttributedString] {
+        return [NSAttributedString(string:NSLocalizedString("Product group", comment: "")), NSAttributedString(string:NSLocalizedString("Equipment type", comment: "")), NSAttributedString(string:NSLocalizedString("Model", comment: "")), NSAttributedString(string:NSLocalizedString("Lowest temperature", comment: ""))]
     }
     
     override func changeInput(atIndex :Int, change : ChangeInput) -> String {

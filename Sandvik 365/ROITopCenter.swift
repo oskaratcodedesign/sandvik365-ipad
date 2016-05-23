@@ -204,7 +204,7 @@ class ROITopCenterInput: ROICalculatorInput {
         case .DrillRigCost:
             return InputAbbreviation.USDHour
         case .RegrindCost:
-            return InputAbbreviation.USDRegrind
+            return InputAbbreviation.USD
         case .BitChangeTime:
             return InputAbbreviation.Minutes
         case .DrilledMeters:
