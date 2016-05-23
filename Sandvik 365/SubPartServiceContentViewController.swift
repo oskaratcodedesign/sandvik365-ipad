@@ -85,6 +85,15 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.selectedContent.pdfs.count > 0 {
+            let contentsize = self.filesCollectionView.contentSize
+            if contentsize.height != self.filesCollectionView.bounds.size.height {
+                self.view.setNeedsUpdateConstraints()
+            }
+        }
+    }
+    
+    override func updateViewConstraints() {
+        if self.selectedContent.pdfs.count > 0 {
             self.filesCollectionView.hidden = false
             self.documentsLabel.hidden = false;
             let contentsize = self.filesCollectionView.contentSize
@@ -95,6 +104,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         else {
             filesCollectionViewHeight.constant = 0
         }
+        super.updateViewConstraints()
     }
     
     private func addStripesImage(prevView: UIView) -> UIView {
@@ -153,8 +163,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     
     
     private func addLead(content: Content.Lead, images: [NSURL], previousView: UIView) -> UIView {
-        var prevView = previousView
-        prevView = addTitlesTextList(content.titleOrTextOrList, previousView: prevView, isLead: true)
+        var prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: true)
         
         for url in images {
             if let image = ImageCache.getImage(url) {
@@ -183,8 +192,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     private func addBody(content: Content.Body, previousView: UIView) -> UIView {
-        let prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
-        return prevView
+        return addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
     }
     
     private func addTitlesTextList(content: [Content.TitleTextOrList], previousView: UIView, isLead: Bool) -> UIView {
@@ -284,6 +292,9 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         let container = UIView()
         var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Horizontal)
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Vertical)
         listlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(listlabel)
         

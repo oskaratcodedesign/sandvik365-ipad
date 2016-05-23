@@ -11,6 +11,10 @@ target 'Sandvik 365' do
 end
 
 target 'Sandvik 365Tests' do
-
+    pod 'NibDesignable'
+    pod 'AHEasing'
+    pod 'CryptoSwift'
+    pod 'AsyncSwift'
+    pod 'Fuzi', '~> 0.2.0'
 end
 

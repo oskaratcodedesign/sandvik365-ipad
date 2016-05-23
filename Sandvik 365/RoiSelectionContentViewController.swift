@@ -135,7 +135,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
                 contentOffsetLast = scrollView.contentOffset
             }
             else if dy < -swipeOffset {
-                toggleUpMove()
+                toggleDownMove()
                 contentOffsetLast = scrollView.contentOffset
             }
         }
@@ -153,13 +153,13 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     
     @IBAction func toggleUp(sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleDownMove), userInfo: nil, repeats: true)
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleUpMove), userInfo: nil, repeats: true)
         }
     }
     
     @IBAction func toggleDown(sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleUpMove), userInfo: nil, repeats: true)
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleDownMove), userInfo: nil, repeats: true)
         }
     }
    
