@@ -170,7 +170,7 @@ class ROITopCenterInput: ROICalculatorInput {
                 return true
             }
         case .DrilledMeters:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 drilledMeters = .DrilledMeters(number.unsignedLongValue)
                 return true
             }
@@ -180,7 +180,7 @@ class ROITopCenterInput: ROICalculatorInput {
                 return true
             }
         case .ServiceLife:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 serviceLife = .ServiceLife(number.unsignedLongValue)
                 return true
             }
@@ -203,11 +203,11 @@ class ROITopCenterInput: ROICalculatorInput {
         case .BitChangeTime:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(bitChangeTime.value as! Double)
         case .DrilledMeters:
-            return NSNumberFormatter().stringFromNumber(drilledMeters.value as! UInt)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(drilledMeters.value as! UInt)
         case .BitPrice:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(bitPrice.value as! Double)
         case .ServiceLife:
-            return NSNumberFormatter().stringFromNumber(serviceLife.value as! UInt)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(serviceLife.value as! UInt)
         case .NoOfBitRegrinds:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(noOfBitRegrinds.value as! Double)
         }
