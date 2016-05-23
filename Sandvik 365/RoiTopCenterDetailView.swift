@@ -25,7 +25,7 @@ class RoiTopCenterDetailView: NibDesignable {
         extraCost.text = fmt.formatToUSD(input.savedBitCost())
         serviceCost.text = fmt.formatToUSD(input.savedGrindingCost())
         prodCost.text = fmt.formatToUSD(input.savedValueCost())
-        timeSavedLabel.text = String(Int(round(input.timeSavedCost())))
+        timeSavedLabel.text = String(Int(round(input.timeSavedCost()))) + "h"
         totalLabel.text = fmt.formatToUSD(input.maxTotal())
     }
     
