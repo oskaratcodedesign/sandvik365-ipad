@@ -11,6 +11,7 @@ import UIKit
 class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate, RoiSelectionContentViewControllerDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var currentSelectionButton: RoiSelectionButton!
     @IBOutlet weak var currentTrailingConstraint: NSLayoutConstraint!
@@ -26,6 +27,7 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     private var pageViewController: UIPageViewController?
     private var viewControllers: [UIViewController]! = [UIViewController]()
     private var titles = [String]()
+    private var descriptions = [String]()
     private var hasVisitedLastPage: Bool = false
     var selectedInput: SelectionInput!
     var selectedBusinessType: BusinessType!
@@ -52,6 +54,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         prevButton.hidden = true
         loadSelectionButtons()
         titleLabel.text = titles[0].uppercaseString
+        if descriptions.count > 0 {
+            descriptionLabel.text = descriptions[0].uppercaseString
+        }
     }
     
     private func setupDependingOnInput(){
@@ -61,6 +66,9 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         switch selectedInput {
         case is ROICalculatorInput:
             titles.append(NSLocalizedString("How it plays out for you", comment: ""))
+            if let selectedInput = selectedInput as? ROITopCenterInput {
+                descriptions = selectedInput.allDescriptions()
+            }
         case is FireSuppressionInput:
             titles.append(NSLocalizedString("RECOMMENDED FIRE SUPPRESSION SYSTEM", comment: ""))
         default:
@@ -166,6 +174,13 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             hasVisitedLastPage = true
         }
         titleLabel.text = titles[itemIndex].uppercaseString
+        if descriptions.count > itemIndex && descriptions[itemIndex].characters.count > 0 {
+            descriptionLabel.text = descriptions[itemIndex]
+            descriptionLabel.hidden = false
+        }
+        else {
+            descriptionLabel.hidden = true
+        }
     }
     
     private func loadSelectionButtons() {

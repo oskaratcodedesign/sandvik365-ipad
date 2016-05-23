@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uD9-aW-1nI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -77,6 +77,7 @@
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -101,6 +102,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsz-tO-ijf">
                                                 <rect key="frame" x="0.0" y="90" width="600" height="29"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLH-4O-xQ1">
+                                                <rect key="frame" x="150" y="119" width="300" height="20"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -241,19 +248,32 @@
                                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerY" secondItem="fsC-Yh-GKN" secondAttribute="centerY" id="45e-o0-5qc"/>
                                             <constraint firstItem="d7a-fs-vKI" firstAttribute="centerY" secondItem="fsC-Yh-GKN" secondAttribute="centerY" id="CAB-QO-MDK"/>
                                             <constraint firstItem="xsz-tO-ijf" firstAttribute="centerX" secondItem="fsC-Yh-GKN" secondAttribute="centerX" id="DGg-TC-2Tg"/>
+                                            <constraint firstItem="qLH-4O-xQ1" firstAttribute="leading" secondItem="xsz-tO-ijf" secondAttribute="leading" id="E4M-L6-YqX"/>
                                             <constraint firstAttribute="bottom" secondItem="8ah-fO-PXD" secondAttribute="bottom" constant="20" id="NVG-XF-0t8"/>
+                                            <constraint firstItem="qLH-4O-xQ1" firstAttribute="centerX" secondItem="fsC-Yh-GKN" secondAttribute="centerX" id="Oop-35-lCT"/>
                                             <constraint firstItem="tVa-ib-G4a" firstAttribute="centerY" secondItem="fsC-Yh-GKN" secondAttribute="centerY" id="TEB-YV-Z4B"/>
                                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="height" secondItem="fsC-Yh-GKN" secondAttribute="height" multiplier="0.3" id="VSq-66-QVp"/>
                                             <constraint firstAttribute="trailing" secondItem="Jep-bc-FmT" secondAttribute="trailing" constant="10" id="Wad-1A-KxS"/>
+                                            <constraint firstItem="qLH-4O-xQ1" firstAttribute="top" secondItem="xsz-tO-ijf" secondAttribute="bottom" id="Zgf-b7-yK1"/>
                                             <constraint firstItem="Pfv-Rj-qtp" firstAttribute="centerX" secondItem="fsC-Yh-GKN" secondAttribute="centerX" id="a4M-Fu-jy6"/>
                                             <constraint firstItem="xsz-tO-ijf" firstAttribute="leading" secondItem="fsC-Yh-GKN" secondAttribute="leading" id="adh-aD-v9G"/>
+                                            <constraint firstItem="qLH-4O-xQ1" firstAttribute="leading" secondItem="fsC-Yh-GKN" secondAttribute="leading" constant="100" id="hFA-jn-v6O"/>
                                             <constraint firstAttribute="bottom" secondItem="Jep-bc-FmT" secondAttribute="bottom" constant="20" id="hJS-0V-3Z6"/>
                                             <constraint firstItem="8ah-fO-PXD" firstAttribute="centerX" secondItem="fsC-Yh-GKN" secondAttribute="centerX" id="hYp-jf-I04"/>
+                                            <constraint firstItem="qLH-4O-xQ1" firstAttribute="width" secondItem="fsC-Yh-GKN" secondAttribute="width" multiplier="0.5" id="o3r-XF-IZL"/>
                                             <constraint firstAttribute="trailing" secondItem="xsz-tO-ijf" secondAttribute="trailing" id="vZx-3q-Z15"/>
                                             <constraint firstItem="d7a-fs-vKI" firstAttribute="leading" secondItem="fsC-Yh-GKN" secondAttribute="leading" id="xix-mf-sb4"/>
                                             <constraint firstAttribute="trailing" secondItem="tVa-ib-G4a" secondAttribute="trailing" id="xtZ-31-lxf"/>
+                                            <constraint firstAttribute="trailing" secondItem="qLH-4O-xQ1" secondAttribute="trailing" constant="100" id="zbR-dU-MGu"/>
                                             <constraint firstItem="xsz-tO-ijf" firstAttribute="top" secondItem="fsC-Yh-GKN" secondAttribute="top" constant="90" id="zgM-JW-Eiy"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="E4M-L6-YqX"/>
+                                                <exclude reference="hFA-jn-v6O"/>
+                                                <exclude reference="zbR-dU-MGu"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-38-zGS">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -382,6 +402,7 @@
                     <connections>
                         <outlet property="currentSelectionButton" destination="WUG-T4-S4q" id="kML-Hs-JRh"/>
                         <outlet property="currentTrailingConstraint" destination="EHF-CQ-P1W" id="8Ik-d7-R0I"/>
+                        <outlet property="descriptionLabel" destination="qLH-4O-xQ1" id="avr-e6-ynh"/>
                         <outlet property="introLabel" destination="50S-4Z-yCn" id="HZq-35-Pw4"/>
                         <outlet property="nextButton" destination="tVa-ib-G4a" id="9fQ-5J-rJv"/>
                         <outlet property="pageContentView" destination="fsC-Yh-GKN" id="ycT-3j-2Km"/>

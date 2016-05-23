@@ -123,7 +123,7 @@ enum BusinessType: UInt32 {
         case ExplorationDrillRigs, MechanicalCutting:
             return nil
         case UndergroundDrillingAndBolting:
-            return nil//[.TopCenterTool]
+            return [.TopCenterTool]
         case SurfaceDrilling:
             return nil//[.RockDrillTool]
         case CrusherAndScreening:
@@ -131,7 +131,7 @@ enum BusinessType: UInt32 {
         case UndergroundLoadingAndHauling:
             return [.GetTool/*, .FireSuppressionTool*/]
         case All:
-            return [/*.RockDrillTool, .FireSuppressionTool, .TopCenterTool, */ .CrusherTool, .EDVTool, .GetTool]
+            return [/*.RockDrillTool, .FireSuppressionTool,*/ .TopCenterTool, .CrusherTool, .EDVTool, .GetTool]
         }
     }
     
@@ -141,16 +141,16 @@ enum BusinessType: UInt32 {
         //case FireSuppressionTool
         case EDVTool
         case GetTool
-        //case TopCenterTool
+        case TopCenterTool
         
         var title: String! {
             switch self {
             /*case RockDrillTool:
                 return "Rock drill upgrade simulator"
             case FireSuppressionTool:
-                return "Fire suppression tool"
+                return "Fire suppression tool"*/
             case .TopCenterTool:
-                return "Top center calculator"*/
+                return "Top center calculator"
             case CrusherTool:
                 return "Lifecycle program calculator"
             case EDVTool:
@@ -162,7 +162,7 @@ enum BusinessType: UInt32 {
         
         var defaultImage: UIImage? {
             switch self {
-            case /*RockDrillTool, TopCenterTool,*/ CrusherTool, EDVTool, GetTool:
+            case /*RockDrillTool,*/ TopCenterTool, CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-x1")
             /*case FireSuppressionTool:
                 return UIImage(named: "options-x1")*/
@@ -171,7 +171,7 @@ enum BusinessType: UInt32 {
         
         var highlightImage: UIImage? {
             switch self {
-            case /*RockDrillTool, TopCenterTool:*/CrusherTool, EDVTool, GetTool:
+            case /*RockDrillTool,*/ TopCenterTool, CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-inverted-x1")
             /*case FireSuppressionTool:
                 return UIImage(named: "options-inverted-x1")*/
@@ -183,9 +183,9 @@ enum BusinessType: UInt32 {
             /*case RockDrillTool:
                 return ROIRockDrillInput()
             case FireSuppressionTool:
-                return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
+                return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput*/
             case TopCenterTool:
-                return ROITopCenterInput()*/
+                return ROITopCenterInput()
             case CrusherTool:
                 return ROICrusherInput()
             case EDVTool:

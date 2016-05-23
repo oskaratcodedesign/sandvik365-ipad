@@ -31,15 +31,26 @@ enum ROITopCenterInputValue {
         case RegrindCost:
             return NSLocalizedString("Regrind cost", comment: "")
         case BitChangeTime:
-            return NSLocalizedString("Bit change time", comment: "")
+            return NSLocalizedString("Time to change bit", comment: "")
         case DrilledMeters:
-            return NSLocalizedString("Drilled meters", comment: "")
+            return NSLocalizedString("Drill meters per year", comment: "")
         case BitPrice:
-            return NSLocalizedString("Bit price", comment: "")
+            return NSLocalizedString("Bit price for current bit", comment: "")
         case ServiceLife:
-            return NSLocalizedString("Bit service life", comment: "")
+            return NSLocalizedString("Bit service life for current bit", comment: "")
         case NoOfBitRegrinds:
-            return NSLocalizedString("Number of regrinds/bit", comment: "")
+            return NSLocalizedString("Number of regrinds/current bit", comment: "")
+        }
+    }
+    
+    var description :String {
+        switch self {
+        case DrillRigCost, RegrindCost, BitPrice, ServiceLife, NoOfBitRegrinds:
+            return ""
+        case BitChangeTime:
+            return NSLocalizedString("State the time required to change each bit. I.e. total time divided by two if two bits are changed.", comment: "")
+        case DrilledMeters:
+            return NSLocalizedString("For all drill rigs using this bit.", comment: "")
         }
     }
     
@@ -81,6 +92,10 @@ class ROITopCenterInput: ROICalculatorInput {
     override func allTitles() -> [String] {
         return allInputs().flatMap({ $0.title })
     }
+    
+    func allDescriptions() -> [String] {
+        return allInputs().flatMap({ $0.description })
+    }
 
     func savedBitCost() -> Double {
         if let dm = drilledMeters.value as? UInt, sl = serviceLife.value as? UInt,
@@ -99,7 +114,7 @@ class ROITopCenterInput: ROICalculatorInput {
         return 0
     }
     
-    private func timeSavedCost() -> Double {
+    func timeSavedCost() -> Double {
         if let bc = bitChangeTime.value as? Double, dm = drilledMeters.value as? UInt, sl = serviceLife.value as? UInt, nr = noOfBitRegrinds.value as? Double  {
             return bc / 3 * Double(dm) / Double(sl) * (nr + 1) / 60
         }
@@ -155,7 +170,7 @@ class ROITopCenterInput: ROICalculatorInput {
                 return true
             }
         case .DrilledMeters:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 drilledMeters = .DrilledMeters(number.unsignedLongValue)
                 return true
             }
@@ -165,7 +180,7 @@ class ROITopCenterInput: ROICalculatorInput {
                 return true
             }
         case .ServiceLife:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
+            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
                 serviceLife = .ServiceLife(number.unsignedLongValue)
                 return true
             }
@@ -188,11 +203,11 @@ class ROITopCenterInput: ROICalculatorInput {
         case .BitChangeTime:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(bitChangeTime.value as! Double)
         case .DrilledMeters:
-            return NSNumberFormatter().stringFromNumber(drilledMeters.value as! UInt)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(drilledMeters.value as! UInt)
         case .BitPrice:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(bitPrice.value as! Double)
         case .ServiceLife:
-            return NSNumberFormatter().stringFromNumber(serviceLife.value as! UInt)
+            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(serviceLife.value as! UInt)
         case .NoOfBitRegrinds:
             return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(noOfBitRegrinds.value as! Double)
         }
@@ -204,7 +219,7 @@ class ROITopCenterInput: ROICalculatorInput {
         case .DrillRigCost:
             return InputAbbreviation.USDHour
         case .RegrindCost:
-            return InputAbbreviation.USDRegrind
+            return InputAbbreviation.USD
         case .BitChangeTime:
             return InputAbbreviation.Minutes
         case .DrilledMeters:

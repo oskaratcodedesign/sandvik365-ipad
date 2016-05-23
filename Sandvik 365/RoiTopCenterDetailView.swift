@@ -16,6 +16,7 @@ class RoiTopCenterDetailView: NibDesignable {
     @IBOutlet weak var serviceCost: UILabel!
     @IBOutlet weak var prodCost: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var timeSavedLabel: UILabel!
     
     init(frame: CGRect, input: ROITopCenterInput) {
         super.init(frame: frame)
@@ -24,6 +25,7 @@ class RoiTopCenterDetailView: NibDesignable {
         extraCost.text = fmt.formatToUSD(input.savedBitCost())
         serviceCost.text = fmt.formatToUSD(input.savedGrindingCost())
         prodCost.text = fmt.formatToUSD(input.savedValueCost())
+        timeSavedLabel.text = String(Int(round(input.timeSavedCost()))) + "h"
         totalLabel.text = fmt.formatToUSD(input.maxTotal())
     }
     
