@@ -45,12 +45,12 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         spinnerScrollView.contentOffset = CGPointMake(0, spinnerScrollView.contentSize.height/2)
         spinnerScrollView.delegate = self
         contentOffsetLast = spinnerScrollView.contentOffset
-        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+        let recognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(_:)))
 
         spinnerScrollView.addGestureRecognizer(recognizer)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
         percentPPMControl.hidden = true
         
         if let input = selectedInput as? ROICrusherInput {
@@ -131,11 +131,11 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         if dy != 0 && scrollView.contentOffset.y > 0{
             
             if dy > swipeOffset {
-                toggleUp()
+                toggleUpMove()
                 contentOffsetLast = scrollView.contentOffset
             }
             else if dy < -swipeOffset {
-                toggleDown()
+                toggleDownMove()
                 contentOffsetLast = scrollView.contentOffset
             }
         }
@@ -153,13 +153,13 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     
     @IBAction func toggleUp(sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleUp"), userInfo: nil, repeats: true)
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleUpMove), userInfo: nil, repeats: true)
         }
     }
     
     @IBAction func toggleDown(sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("toggleDown"), userInfo: nil, repeats: true)
+            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleDownMove), userInfo: nil, repeats: true)
         }
     }
    
@@ -177,7 +177,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }
     }
     
-    func toggleDown() {
+    func toggleDownMove() {
         if let numberView = roiContentView{
             numberView.decreaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {
@@ -192,7 +192,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }*/
     }
     
-    func toggleUp() {
+    func toggleUpMove() {
         if let numberView = roiContentView{
             numberView.increaseNumber(itemIndex, selectionInput: selectedInput)
             if let delegate = self.delegate {

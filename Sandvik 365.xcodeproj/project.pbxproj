@@ -26,6 +26,7 @@
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
 		98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */; };
+		CDBC4888D46B67B19DC02EB7 /* Pods_Sandvik_365Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */; };
 		F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D0B1BE36D2D00A6B3C6 /* KeyFeatureList.xib */; };
 		F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D0D1BE36D4100A6B3C6 /* KeyFeatureList.swift */; };
 		F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D0F1BE36FAE00A6B3C6 /* KeyFeatureItem.xib */; };
@@ -35,6 +36,10 @@
 		F7019D181BE74EA400A6B3C6 /* CountOnBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D171BE74EA400A6B3C6 /* CountOnBox.xib */; };
 		F7019D1A1BE8CD5700A6B3C6 /* ViewWithBGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */; };
 		F7019D1C1BE8CF0800A6B3C6 /* ViewWithBGImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */; };
+		F70515E71CC62075000786E2 /* CountOnBoxBigLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70515E61CC62075000786E2 /* CountOnBoxBigLabel.xib */; };
+		F70515E91CC62211000786E2 /* CountOnBoxBigLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70515E81CC62211000786E2 /* CountOnBoxBigLabel.swift */; };
+		F70515EC1CC622F3000786E2 /* CountOnBoxSmallLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70515EA1CC622F3000786E2 /* CountOnBoxSmallLabel.xib */; };
+		F70515ED1CC622F3000786E2 /* CountOnBoxSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70515EB1CC622F3000786E2 /* CountOnBoxSmallLabel.swift */; };
 		F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867B51BCE7DDA00033AB5 /* JSONManager.swift */; };
 		F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */; };
 		F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867BC1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift */; };
@@ -53,6 +58,7 @@
 		F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */; };
 		F72657651C7B8664006A2C75 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */; };
 		F72657731C7CB6FA006A2C75 /* GradientHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */; };
+		F72AF7A61CABFB36005CED71 /* edv_final_160229_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F72AF7A51CABFB36005CED71 /* edv_final_160229_1.mp4 */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
 		F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */; };
 		F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E9B3A1C43E7B900742EBD /* Video.swift */; };
@@ -65,7 +71,6 @@
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
 		F741E21B1B8DD4A700E0C80C /* Dalton Maag - Aktiv Grotesk Corp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */; };
-		F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */ = {isa = PBXBuildFile; fileRef = F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */; };
 		F74D78571C7B2F65007F95F5 /* GET - Bucket Shroud Wear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */; };
 		F74D78581C7B2F68007F95F5 /* GET - Corner Shroud Installation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */; };
 		F74D78591C7B2F6A007F95F5 /* GET - MHS Removal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78551C7B2F60007F95F5 /* GET - MHS Removal.mp4 */; };
@@ -73,6 +78,7 @@
 		F74D785B1C7B2F6F007F95F5 /* GET - Sectional Shroud Installation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D78561C7B2F60007F95F5 /* GET - Sectional Shroud Installation.mp4 */; };
 		F74D78621C7B3BCF007F95F5 /* Rock drill kits - Standardize your repairs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D785D1C7B313D007F95F5 /* Rock drill kits - Standardize your repairs.mp4 */; };
 		F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F74D785E1C7B313D007F95F5 /* Rock drills - Modernize your drilling.mp4 */; };
+		F761F5A01CCA0DAF00E4F91B /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761F59F1CCA0DAF00E4F91B /* FileCache.swift */; };
 		F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7620B821C48FBB700B0A6D8 /* VideoButton.swift */; };
 		F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7620B841C48FBC800B0A6D8 /* VideoButton.xib */; };
 		F7672EE91BA998EE000ABBEF /* ROICrusherInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */; };
@@ -136,6 +142,7 @@
 		F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
+		F7FB1A571CCF7B61001E6885 /* PartsAndServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,8 +183,10 @@
 		48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dalton Maag - Aktiv Grotesk Corp.ttf"; sourceTree = "<group>"; };
 		48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.release.xcconfig"; sourceTree = "<group>"; };
 		98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
+		EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sandvik_365Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7019D0B1BE36D2D00A6B3C6 /* KeyFeatureList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyFeatureList.xib; sourceTree = "<group>"; };
 		F7019D0D1BE36D4100A6B3C6 /* KeyFeatureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFeatureList.swift; sourceTree = "<group>"; };
 		F7019D0F1BE36FAE00A6B3C6 /* KeyFeatureItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyFeatureItem.xib; sourceTree = "<group>"; };
@@ -187,6 +196,10 @@
 		F7019D171BE74EA400A6B3C6 /* CountOnBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountOnBox.xib; sourceTree = "<group>"; };
 		F7019D191BE8CD5700A6B3C6 /* ViewWithBGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithBGImage.swift; sourceTree = "<group>"; };
 		F7019D1B1BE8CF0800A6B3C6 /* ViewWithBGImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewWithBGImage.xib; sourceTree = "<group>"; };
+		F70515E61CC62075000786E2 /* CountOnBoxBigLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountOnBoxBigLabel.xib; sourceTree = "<group>"; };
+		F70515E81CC62211000786E2 /* CountOnBoxBigLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountOnBoxBigLabel.swift; sourceTree = "<group>"; };
+		F70515EA1CC622F3000786E2 /* CountOnBoxSmallLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountOnBoxSmallLabel.xib; sourceTree = "<group>"; };
+		F70515EB1CC622F3000786E2 /* CountOnBoxSmallLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountOnBoxSmallLabel.swift; sourceTree = "<group>"; };
 		F70867B51BCE7DDA00033AB5 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		F70867B91BD0F66400033AB5 /* PartsAndServices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PartsAndServices.storyboard; sourceTree = "<group>"; };
 		F70867BC1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartServiceSelectionViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +218,7 @@
 		F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eclipse - Fluorine-free fire suppression system.mp4"; sourceTree = "<group>"; };
 		F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Sandvik_365.framework; path = "Pods/../build/Debug-iphoneos/Pods_Sandvik_365.framework"; sourceTree = "<group>"; };
 		F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientHorizontalView.swift; sourceTree = "<group>"; };
+		F72AF7A51CABFB36005CED71 /* edv_final_160229_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = edv_final_160229_1.mp4; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
 		F73E9B301C43E49C00742EBD /* VideoCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCenterViewController.swift; sourceTree = "<group>"; };
 		F73E9B3A1C43E7B900742EBD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -214,7 +228,6 @@
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
-		F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegionContactsHandler.json; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
 		F74D78541C7B2F60007F95F5 /* GET - MHS Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - MHS Installation.mp4"; sourceTree = "<group>"; };
@@ -222,6 +235,7 @@
 		F74D78561C7B2F60007F95F5 /* GET - Sectional Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Sectional Shroud Installation.mp4"; sourceTree = "<group>"; };
 		F74D785D1C7B313D007F95F5 /* Rock drill kits - Standardize your repairs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rock drill kits - Standardize your repairs.mp4"; sourceTree = "<group>"; };
 		F74D785E1C7B313D007F95F5 /* Rock drills - Modernize your drilling.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rock drills - Modernize your drilling.mp4"; sourceTree = "<group>"; };
+		F761F59F1CCA0DAF00E4F91B /* FileCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
 		F7620B821C48FBB700B0A6D8 /* VideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
 		F7620B841C48FBC800B0A6D8 /* VideoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoButton.xib; sourceTree = "<group>"; };
 		F7672EE81BA998EE000ABBEF /* ROICrusherInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROICrusherInput.swift; sourceTree = "<group>"; };
@@ -286,6 +300,8 @@
 		F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
+		F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesTests.swift; sourceTree = "<group>"; };
+		FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBC4888D46B67B19DC02EB7 /* Pods_Sandvik_365Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +352,7 @@
 				F70867B51BCE7DDA00033AB5 /* JSONManager.swift */,
 				48E088911BE7859900F763BB /* ImageCache.swift */,
 				F79203691C46DA5A00CF4E3F /* Region.swift */,
+				F761F59F1CCA0DAF00E4F91B /* FileCache.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -394,6 +412,7 @@
 				48FDEAAC1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift */,
 				48FDEAAA1B5F8CEC00C5AFE6 /* Supporting Files */,
 				48FCED561B78C907002D45A0 /* ROICalculatorTests.swift */,
+				F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */,
 			);
 			path = "Sandvik 365Tests";
 			sourceTree = "<group>";
@@ -414,7 +433,6 @@
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
-				F7422C2E1C6A04F60081DBCF /* RegionContactsHandler.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -452,6 +470,7 @@
 				F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */,
 				F741D99C1B84783D00010E71 /* MediaPlayer.framework */,
 				2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */,
+				EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -461,6 +480,8 @@
 			children = (
 				DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */,
 				215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */,
+				FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */,
+				7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -474,6 +495,10 @@
 				F7019D0D1BE36D4100A6B3C6 /* KeyFeatureList.swift */,
 				F7019D151BE74E8900A6B3C6 /* CountOnBox.swift */,
 				F7019D171BE74EA400A6B3C6 /* CountOnBox.xib */,
+				F70515E61CC62075000786E2 /* CountOnBoxBigLabel.xib */,
+				F70515E81CC62211000786E2 /* CountOnBoxBigLabel.swift */,
+				F70515EA1CC622F3000786E2 /* CountOnBoxSmallLabel.xib */,
+				F70515EB1CC622F3000786E2 /* CountOnBoxSmallLabel.swift */,
 			);
 			name = ContentParts;
 			sourceTree = "<group>";
@@ -529,6 +554,7 @@
 			children = (
 				F797D9501BB40AD1000FF5F3 /* Sandvik365_Extern_150917.m4v */,
 				F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */,
+				F72AF7A51CABFB36005CED71 /* edv_final_160229_1.mp4 */,
 				F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */,
 				F74D785F1C7B3141007F95F5 /* rockdrill */,
 				F73E9B331C43E4DC00742EBD /* get */,
@@ -734,9 +760,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48FDEAB31B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365Tests" */;
 			buildPhases = (
+				5DE3DD99254D368067416FEB /* Check Pods Manifest.lock */,
 				48FDEAA21B5F8CEC00C5AFE6 /* Sources */,
 				48FDEAA31B5F8CEC00C5AFE6 /* Frameworks */,
 				48FDEAA41B5F8CEC00C5AFE6 /* Resources */,
+				6249CE46DC3138D861F1C696 /* Embed Pods Frameworks */,
+				7C12CBCD63DF583AE387DE0E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -800,6 +829,7 @@
 				F70867BA1BD0F66400033AB5 /* PartsAndServices.storyboard in Resources */,
 				F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */,
 				F74D78631C7B3BD2007F95F5 /* Rock drills - Modernize your drilling.mp4 in Resources */,
+				F72AF7A61CABFB36005CED71 /* edv_final_160229_1.mp4 in Resources */,
 				F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */,
 				F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */,
 				F7E2C0461C15C445009D290B /* DownloadingView.xib in Resources */,
@@ -819,8 +849,8 @@
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
 				486F88831B736AE80084211F /* MainMenuItemView.xib in Resources */,
 				F74D78591C7B2F6A007F95F5 /* GET - MHS Removal.mp4 in Resources */,
+				F70515E71CC62075000786E2 /* CountOnBoxBigLabel.xib in Resources */,
 				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
-				F7422C2F1C6A04F60081DBCF /* RegionContactsHandler.json in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
 				F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
@@ -833,6 +863,7 @@
 				F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */,
 				F77D5E641C6CD8F5002A5867 /* Tutorial.xcassets in Resources */,
 				F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */,
+				F70515EC1CC622F3000786E2 /* CountOnBoxSmallLabel.xib in Resources */,
 				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
@@ -880,6 +911,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5DE3DD99254D368067416FEB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6249CE46DC3138D861F1C696 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62BD000F96246D9300F3E87D /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -893,6 +954,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C12CBCD63DF583AE387DE0E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -924,6 +1000,7 @@
 				48E088921BE7859900F763BB /* ImageCache.swift in Sources */,
 				F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */,
 				98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */,
+				F761F5A01CCA0DAF00E4F91B /* FileCache.swift in Sources */,
 				F7019D161BE74E8900A6B3C6 /* CountOnBox.swift in Sources */,
 				F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */,
 				486F887C1B72397B0084211F /* MainMenuViewController.swift in Sources */,
@@ -948,6 +1025,7 @@
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
+				F70515E91CC62211000786E2 /* CountOnBoxBigLabel.swift in Sources */,
 				F77D5E691C710AE3002A5867 /* TutorialContentViewController.swift in Sources */,
 				F7019D121BE36FAE00A6B3C6 /* KeyFeatureItem.swift in Sources */,
 				F7620B831C48FBB700B0A6D8 /* VideoButton.swift in Sources */,
@@ -962,6 +1040,7 @@
 				F73E9B3E1C43F4A100742EBD /* VideoCell.swift in Sources */,
 				F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */,
 				486F887A1B7238630084211F /* SplashViewController.swift in Sources */,
+				F70515ED1CC622F3000786E2 /* CountOnBoxSmallLabel.swift in Sources */,
 				F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */,
 				F7E69A7D1B7DE187004FA708 /* RoiSelectionButton.swift in Sources */,
 				F77D5EA51C745AA5002A5867 /* ROIRockDrillInput.swift in Sources */,
@@ -991,6 +1070,7 @@
 				F7C05FF51BF9DDB200E09456 /* SelectionInput.swift in Sources */,
 				48FDEAAD1B5F8CEC00C5AFE6 /* Sandvik_365Tests.swift in Sources */,
 				48FCED581B78CBCB002D45A0 /* ROICalculatorInput.swift in Sources */,
+				F7FB1A571CCF7B61001E6885 /* PartsAndServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1126,6 +1206,7 @@
 		};
 		48FDEAB41B5F8CEC00C5AFE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1143,6 +1224,7 @@
 		};
 		48FDEAB51B5F8CEC00C5AFE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

@@ -31,7 +31,7 @@ protocol MenuCountOnBoxDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         getParts()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getParts", name: JSONManager.newDataAvailable, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(getParts), name: JSONManager.newDataAvailable, object: nil)
     }
     
     func getParts() {
@@ -48,7 +48,7 @@ protocol MenuCountOnBoxDelegate {
                             for sp in subPartServices {
                                 let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
                                 if let countonBox = countOnBoxes.first {
-                                    if let number = countonBox.midText, let botText = countonBox.bottomText {
+                                    if let number = countonBox.largestBox()?.text, let botText = countonBox.allSmallTextBelowLargest() {
                                         self.numberLabel.text = number
                                         self.textLabel.text = botText
                                         self.partsAndServices = partsAndServices
@@ -64,7 +64,7 @@ protocol MenuCountOnBoxDelegate {
                         }
                     }
                 }
-                count++
+                count += 1
             }
         }
         loadNewInfo()
@@ -88,7 +88,7 @@ protocol MenuCountOnBoxDelegate {
                         let countonBoxes = subpartService.content.contentList.flatMap(({ $0 as? Content.CountOnBoxContent}))
                         if countonBoxes.count > 0 {
                             let countonBox = countonBoxes[Int(arc4random_uniform(UInt32(countonBoxes.count)))]
-                            if let number = countonBox.midText, let botText = countonBox.bottomText {
+                            if let number = countonBox.largestBox()?.text, let botText = countonBox.allSmallTextBelowLargest() {
                                 self.numberLabel.text = number
                                 self.textLabel.text = botText
                                 self.partsAndServices = ps
@@ -103,7 +103,7 @@ protocol MenuCountOnBoxDelegate {
                     }
                 }
                 else { print("subpartServices not found") }
-                count++
+                count += 1
             }
         }
     }

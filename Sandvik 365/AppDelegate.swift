@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.logoButton!.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(self.logoButton!)
             NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint])
-            self.logoButton?.addTarget(self, action: Selector("popToRootAction"), forControlEvents: .TouchUpInside)
+            self.logoButton?.addTarget(self, action:#selector(popToRootAction), forControlEvents: .TouchUpInside)
         }
         return self.logoButton
     }

@@ -48,7 +48,7 @@ class KeyFeatureItem: NibDesignable {
             textLabel.text = text
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tapDidHappen", name: didTapNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(tapDidHappen), name: didTapNotificationKey, object: nil)
     }
     
     func tapDidHappen() {

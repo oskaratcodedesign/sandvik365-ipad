@@ -17,6 +17,9 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var gradientView: GradientHorizontalView!
     
     override func viewDidLoad() {
+        if self.selectedBusinessType == .All {
+            self.navigationItem.title = "SANDVIK 365 – VIDEOS & ANIMATIONS"
+        }
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
             view.setImageBG(self.selectedBusinessType.backgroundImageName)

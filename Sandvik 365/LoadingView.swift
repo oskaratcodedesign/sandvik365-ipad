@@ -45,7 +45,7 @@ class LoadingView : NibDesignable {
         
         self.circlePathLayer.addAnimation(animation, forKey: "strokeEnd")
         
-        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0 / 60.0, target: self, selector: "updateLabel", userInfo: nil, repeats: true)
+        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0 / 60.0, target: self, selector:#selector(updateLabel), userInfo: nil, repeats: true)
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {

@@ -28,13 +28,13 @@ class RoiRockDrillResultViewController: RoiResultViewController {
     }
     
     @IBAction func RD520Action(sender: UIButton) {
-        controlRockDrillProducts(selectedInput, selectedProduct: .RD520, selectedButton: sender)
+        controlRockDrillProducts(selectedInput, selectedProductConst: .RD520, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
     @IBAction func RD525Action(sender: UIButton) {
-        controlRockDrillProducts(selectedInput, selectedProduct: .RD525, selectedButton: sender)
+        controlRockDrillProducts(selectedInput, selectedProductConst: .RD525, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
@@ -49,7 +49,8 @@ class RoiRockDrillResultViewController: RoiResultViewController {
         detailsContainerView.hidden = false
     }
     
-    private func controlRockDrillProducts(input: ROIRockDrillInput, var selectedProduct: ROIRockDrillProduct, selectedButton: UIButton) {
+    private func controlRockDrillProducts(input: ROIRockDrillInput, selectedProductConst: ROIRockDrillProduct, selectedButton: UIButton) {
+        var selectedProduct = selectedProductConst
         selectedButton.selected = !selectedButton.selected
         
         if selectedProduct == .RD520 {

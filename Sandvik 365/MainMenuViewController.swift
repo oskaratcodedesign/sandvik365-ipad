@@ -33,7 +33,6 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         }
         videoButton.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkUpdateAvailble", name: JSONManager.updateAvailable, object: nil)
         if NSUserDefaults.standardUserDefaults().objectForKey("firstStart") == nil {
             
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstStart")
@@ -48,10 +47,14 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.disableLogoButton()
         checkUpdateAvailble()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(checkUpdateAvailble), name: JSONManager.updateAvailable, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
         self.navigationController?.navigationBarHidden = false
         if showBackButton {
             self.backButtonBg.alpha = 0.0
@@ -104,7 +107,7 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
             if let vc = segue.destinationViewController as? PartsAndServicesViewController {
                 if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
                     vc.mainTitle = "PARTS &\nSERVICES"
-                    MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: .All, json: json), navTitle: String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICES YOU CAN COUNT ON"))
+                    MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: .All, json: json), navTitle: String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICE YOU CAN COUNT ON"))
                 }
             }
         }
@@ -115,7 +118,4 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
         vc.navigationItem.title = navTitle
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 }

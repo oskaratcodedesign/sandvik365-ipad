@@ -230,7 +230,8 @@ class JSONManager {
                         print(error)
                     }
                     }.main {
-                        let allDownloaded = (--downloadCount == 0)
+                        downloadCount -= 1
+                        let allDownloaded = (downloadCount == 0)
                         completion(success: success, lastModified: endPoint.jsonLastModifiedDate(), allDownloaded: allDownloaded)
                 }
                 }.resume()
@@ -301,11 +302,17 @@ class JSONManager {
                                 for image in subPartService.content.images {
                                     downloadImage(baseUrl, imageUrl: image)
                                 }
+                                for pdf in subPartService.content.pdfs {
+                                    downloadFile(baseUrl, imageUrl: pdf.url)
+                                }
                             }
                         }
                         else if let content = partService.content {
                             for image in content.images {
                                 downloadImage(baseUrl, imageUrl: image)
+                            }
+                            for pdf in content.pdfs {
+                                downloadFile(baseUrl, imageUrl: pdf.url)
                             }
                         }
                     }
@@ -342,10 +349,20 @@ class JSONManager {
         }*/
     }
     
+    private func downloadFile(baseUrl: NSURL, imageUrl: NSURL?) {
+        if imageUrl != nil {
+            do {
+                try FileCache.storeFile(baseUrl, urlPath: imageUrl!)
+            } catch {
+                print("Failed to download image: %@", imageUrl)
+            }
+        }
+    }
+    
     private func downloadImage(baseUrl: NSURL, imageUrl: NSURL?) {
         if imageUrl != nil {
             do {
-                try ImageCache.storeImage(baseUrl, urlPath: imageUrl!)
+                try ImageCache.storeFile(baseUrl, urlPath: imageUrl!)
             } catch {
                 print("Failed to download image: %@", imageUrl)
             }

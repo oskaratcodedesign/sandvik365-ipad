@@ -20,23 +20,19 @@ enum BusinessType: UInt32 {
     case UndergroundLoadingAndHauling
     case All
     
-    private static let _count: BusinessType.RawValue = {
-        // find the maximum enum value
-        var maxValue: UInt32 = 0
-        while let _ = BusinessType(rawValue: ++maxValue) { }
-        return maxValue - 1 //dont include All
-    }()
-    
     static func randomBusinessType() -> BusinessType {
         // pick and return a new value
-        let rand = arc4random_uniform(_count)
+        let count = All.rawValue
+        let rand = arc4random_uniform(count)
         return BusinessType(rawValue: rand)!
     }
     
     var videos: [Video]? {
         switch self {
-        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs, CrusherAndScreening:
+        case /*BulkMaterialHandling, ConveyorComponents,*/ ExplorationDrillRigs:
             return nil
+        case .CrusherAndScreening:
+            return [Videos.EDV_FINAL.video]
         case UndergroundLoadingAndHauling:
             return [
                 Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video
@@ -51,16 +47,16 @@ enum BusinessType: UInt32 {
             return [Videos.REBUILDS.video]
         case All:
             return [
-                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video
+                Videos.GET_BUCKET_SHROUD.video, Videos.GET_CORNER_SHROUD.video, Videos.GET_MHS_INSTALL.video, Videos.GET_MHS_REMOVAL.video, Videos.GET_SECTIONAL_SHROUD.video, Videos.ECLIPSE.video, Videos.REBUILDS.video,  Videos.ROCK_DRILL_KITS.video, Videos.ROCK_DRILLS.video, Videos.EDV_FINAL.video
             ]
         }
     }
     
     var mediaCenterTitle: String? {
         switch self {
-        case ExplorationDrillRigs, CrusherAndScreening:
+        case ExplorationDrillRigs:
             return nil
-        case UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
+        case CrusherAndScreening, UndergroundLoadingAndHauling, UndergroundDrillingAndBolting, MechanicalCutting, SurfaceDrilling, All:
             return "Videos & Animations"
         }
     }
@@ -127,75 +123,75 @@ enum BusinessType: UInt32 {
         case ExplorationDrillRigs, MechanicalCutting:
             return nil
         case UndergroundDrillingAndBolting:
-            return [.TopCenterTool]
+            return nil//[.TopCenterTool]
         case SurfaceDrilling:
-            return [.RockDrillTool]
+            return nil//[.RockDrillTool]
         case CrusherAndScreening:
             return [.CrusherTool, .EDVTool]
         case UndergroundLoadingAndHauling:
-            return [.GetTool, .FireSuppressionTool]
+            return [.GetTool/*, .FireSuppressionTool*/]
         case All:
-            return [.RockDrillTool, .CrusherTool, .FireSuppressionTool, .EDVTool, .GetTool, .TopCenterTool]
+            return [/*.RockDrillTool, .FireSuppressionTool, .TopCenterTool, */ .CrusherTool, .EDVTool, .GetTool]
         }
     }
     
     enum InterActiveTool {
-        case RockDrillTool
+        //case RockDrillTool
         case CrusherTool
-        case FireSuppressionTool
+        //case FireSuppressionTool
         case EDVTool
         case GetTool
-        case TopCenterTool
+        //case TopCenterTool
         
         var title: String! {
             switch self {
-            case RockDrillTool:
+            /*case RockDrillTool:
                 return "Rock drill upgrade simulator"
-            case CrusherTool:
-                return "Lifecycle program calculator"
             case FireSuppressionTool:
                 return "Fire suppression tool"
+            case .TopCenterTool:
+                return "Top center calculator"*/
+            case CrusherTool:
+                return "Lifecycle program calculator"
             case EDVTool:
                 return "Electric dump valve calculator"
             case GetTool:
                 return "Ground Engaging Tools (GET) calculator"
-            case .TopCenterTool:
-                return "Top center calculator"
             }
         }
         
         var defaultImage: UIImage? {
             switch self {
-            case RockDrillTool, CrusherTool, EDVTool, GetTool, TopCenterTool:
+            case /*RockDrillTool, TopCenterTool,*/ CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-x1")
-            case FireSuppressionTool:
-                return UIImage(named: "options-x1")
+            /*case FireSuppressionTool:
+                return UIImage(named: "options-x1")*/
             }
         }
         
         var highlightImage: UIImage? {
             switch self {
-            case RockDrillTool, CrusherTool, EDVTool, GetTool, TopCenterTool:
+            case /*RockDrillTool, TopCenterTool:*/CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-inverted-x1")
-            case FireSuppressionTool:
-                return UIImage(named: "options-inverted-x1")
+            /*case FireSuppressionTool:
+                return UIImage(named: "options-inverted-x1")*/
             }
         }
         
         var selectionInput: SelectionInput? {
             switch self {
-            case RockDrillTool:
+            /*case RockDrillTool:
                 return ROIRockDrillInput()
-            case CrusherTool:
-                return ROICrusherInput()
             case FireSuppressionTool:
                 return JSONManager.getData(JSONManager.EndPoint.FIRESUPPRESSION_URL) as? FireSuppressionInput
+            case TopCenterTool:
+                return ROITopCenterInput()*/
+            case CrusherTool:
+                return ROICrusherInput()
             case EDVTool:
                 return ROIEDVInput()
             case GetTool:
                 return ROIGetInput()
-            case TopCenterTool:
-                return ROITopCenterInput()
             }
         }
     }
