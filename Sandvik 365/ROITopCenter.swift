@@ -31,15 +31,26 @@ enum ROITopCenterInputValue {
         case RegrindCost:
             return NSLocalizedString("Regrind cost", comment: "")
         case BitChangeTime:
-            return NSLocalizedString("Bit change time", comment: "")
+            return NSLocalizedString("Time to change bit", comment: "")
         case DrilledMeters:
-            return NSLocalizedString("Drilled meters", comment: "")
+            return NSLocalizedString("Drill meters per year", comment: "")
         case BitPrice:
-            return NSLocalizedString("Bit price", comment: "")
+            return NSLocalizedString("Bit price for current bit", comment: "")
         case ServiceLife:
-            return NSLocalizedString("Bit service life", comment: "")
+            return NSLocalizedString("Bit service life for current bit", comment: "")
         case NoOfBitRegrinds:
-            return NSLocalizedString("Number of regrinds/bit", comment: "")
+            return NSLocalizedString("Number of regrinds/current bit", comment: "")
+        }
+    }
+    
+    var description :String {
+        switch self {
+        case DrillRigCost, RegrindCost, BitPrice, ServiceLife, NoOfBitRegrinds:
+            return ""
+        case BitChangeTime:
+            return NSLocalizedString("State the time required to change each bit. I.e. total time divided by two if two bits are changed.", comment: "")
+        case DrilledMeters:
+            return NSLocalizedString("For all drill rigs using this bit", comment: "")
         }
     }
     
@@ -80,6 +91,10 @@ class ROITopCenterInput: ROICalculatorInput {
     
     override func allTitles() -> [String] {
         return allInputs().flatMap({ $0.title })
+    }
+    
+    func allDescriptions() -> [String] {
+        return allInputs().flatMap({ $0.description })
     }
 
     func savedBitCost() -> Double {
