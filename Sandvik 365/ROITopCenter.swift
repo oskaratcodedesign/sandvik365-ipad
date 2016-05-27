@@ -29,7 +29,7 @@ enum ROITopCenterInputValue {
         case DrillRigCost:
             return NSLocalizedString("Drill rig cost", comment: "")
         case RegrindCost:
-            return NSLocalizedString("Regrind cost", comment: "")
+            return NSLocalizedString("Cost per regrind", comment: "")
         case BitChangeTime:
             return NSLocalizedString("Time to change bit", comment: "")
         case DrilledMeters:
@@ -37,7 +37,7 @@ enum ROITopCenterInputValue {
         case BitPrice:
             return NSLocalizedString("Bit price for current bit", comment: "")
         case ServiceLife:
-            return NSLocalizedString("Bit service life for current bit", comment: "")
+            return NSLocalizedString("Service life for current bit", comment: "")
         case NoOfBitRegrinds:
             return NSLocalizedString("Number of regrinds/current bit", comment: "")
         }
