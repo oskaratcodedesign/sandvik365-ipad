@@ -131,7 +131,7 @@ enum BusinessType: UInt32 {
         case UndergroundLoadingAndHauling:
             return [.GetTool/*, .FireSuppressionTool*/]
         case All:
-            return [/*.RockDrillTool, .FireSuppressionTool,*/ .TopCenterTool, .CrusherTool, .EDVTool, .GetTool]
+            return [/*.RockDrillTool, .FireSuppressionTool,*/ .TopCenterTool, .CrusherTool, .EDVTool, .GetTool, .ServiceKitQuantifier]
         }
     }
     
@@ -142,6 +142,7 @@ enum BusinessType: UInt32 {
         case EDVTool
         case GetTool
         case TopCenterTool
+        case ServiceKitQuantifier
         
         var title: String! {
             switch self {
@@ -157,6 +158,8 @@ enum BusinessType: UInt32 {
                 return "Electric dump valve calculator"
             case GetTool:
                 return "Ground Engaging Tools (GET) calculator"
+            case ServiceKitQuantifier:
+                return "Service kit quantifier"
             }
         }
         
@@ -164,8 +167,8 @@ enum BusinessType: UInt32 {
             switch self {
             case /*RockDrillTool,*/ TopCenterTool, CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-x1")
-            /*case FireSuppressionTool:
-                return UIImage(named: "options-x1")*/
+            case ServiceKitQuantifier /*FireSuppressionTool*/:
+                return UIImage(named: "options-x1")
             }
         }
         
@@ -173,12 +176,12 @@ enum BusinessType: UInt32 {
             switch self {
             case /*RockDrillTool,*/ TopCenterTool, CrusherTool, EDVTool, GetTool:
                 return UIImage(named: "calculator-inverted-x1")
-            /*case FireSuppressionTool:
-                return UIImage(named: "options-inverted-x1")*/
+            case ServiceKitQuantifier /*FireSuppressionTool*/:
+                return UIImage(named: "options-inverted-x1")
             }
         }
         
-        var selectionInput: SelectionInput? {
+        var selectionInput: AnyObject? {
             switch self {
             /*case RockDrillTool:
                 return ROIRockDrillInput()
@@ -192,6 +195,8 @@ enum BusinessType: UInt32 {
                 return ROIEDVInput()
             case GetTool:
                 return ROIGetInput()
+            case ServiceKitQuantifier:
+                return ServiceKitData()
             }
         }
     }

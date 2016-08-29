@@ -67,7 +67,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                 if let index = bType.interActiveTools?.indexOf({ $0.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame}) {
                     let interActiveTool = bType.interActiveTools![index]
                     vc.selectedBusinessType = bType
-                    vc.selectedInput = interActiveTool.selectionInput
+                    vc.selectedInput = interActiveTool.selectionInput as! SelectionInput
                     vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, interActiveTool.title.uppercaseString)
                 }
             }
