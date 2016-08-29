@@ -70,6 +70,9 @@
 		F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B471C44FDD100742EBD /* ContactUsView.xib */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
+		F741DC421D742DF40014C623 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC411D742DF40014C623 /* EquipmentViewController.swift */; };
+		F741DC451D744E3A0014C623 /* EqFoooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */; };
+		F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
@@ -233,6 +236,9 @@
 		F73E9B471C44FDD100742EBD /* ContactUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsView.xib; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F741DC411D742DF40014C623 /* EquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
+		F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqFoooterTableViewCell.swift; sourceTree = "<group>"; };
+		F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqStandardTableViewCell.swift; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
@@ -448,6 +454,7 @@
 		48FDEABA1B5F901100C5AFE6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F741DC431D744DF50014C623 /* ServiceKitQuantifier */,
 				F73E9B441C44FD7D00742EBD /* ContactUs */,
 				F73E9B3C1C43F47F00742EBD /* MediaCenter */,
 				F7C05FF11BF9D45800E09456 /* PartsAndServices */,
@@ -547,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */,
+				F741DC411D742DF40014C623 /* EquipmentViewController.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -626,6 +634,15 @@
 				F792035E1C46309B00CF4E3F /* RegionSelector.swift */,
 			);
 			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		F741DC431D744DF50014C623 /* ServiceKitQuantifier */ = {
+			isa = PBXGroup;
+			children = (
+				F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */,
+				F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */,
+			);
+			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
 		};
 		F74D785F1C7B3141007F95F5 /* rockdrill */ = {
@@ -1022,6 +1039,7 @@
 				F77D5EAD1C749E2D002A5867 /* ROIEDVInput.swift in Sources */,
 				F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
+				F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */,
 				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
 				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
@@ -1051,6 +1069,7 @@
 				F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */,
 				F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */,
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
+				F741DC421D742DF40014C623 /* EquipmentViewController.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
 				F70515E91CC62211000786E2 /* CountOnBoxBigLabel.swift in Sources */,
@@ -1075,6 +1094,7 @@
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */,
 				F7AF2A831C9AC7F900EBEDFD /* ROITopCenter.swift in Sources */,
+				F741DC451D744E3A0014C623 /* EqFoooterTableViewCell.swift in Sources */,
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
