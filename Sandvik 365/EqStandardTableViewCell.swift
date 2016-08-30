@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol EqStandardCellDelegate {
+    func didPressRemove(sender: EqStandardTableViewCell)
+}
+
 class EqStandardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var serialNo: UILabel!
     @IBOutlet weak var model: UILabel!
+    var delegate: EqStandardCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +30,6 @@ class EqStandardTableViewCell: UITableViewCell {
     }
 
     @IBAction func removeAction(sender: UIButton) {
+        self.delegate?.didPressRemove(self)
     }
 }

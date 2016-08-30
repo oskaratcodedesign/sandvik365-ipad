@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate {
+class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate, EqStandardCellDelegate {
     private var addedServiceKitData = [ServiceKitData]()
 
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +34,7 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let  cell = tableView.dequeueReusableCellWithIdentifier("EqStandardCell") as! EqStandardTableViewCell
         cell.backgroundColor = UIColor.clearColor()
+        cell.delegate = self
         return cell
     }
     
@@ -53,6 +54,13 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
             self.addedServiceKitData.append(data)
             self.tableView.reloadData()
             textField.text = ""
+        }
+    }
+    
+    func didPressRemove(sender: EqStandardTableViewCell) {
+        if let indexPath = self.tableView.indexPathForCell(sender) {
+            self.addedServiceKitData.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
         }
     }
     
