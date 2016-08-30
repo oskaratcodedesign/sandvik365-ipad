@@ -23,10 +23,9 @@ class EqStandardTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureView(data: ServiceKitData){
+        self.serialNo.text = data.serialNo
+        self.model.text = data.model ?? ""
     }
 
     @IBAction func removeAction(sender: UIButton) {

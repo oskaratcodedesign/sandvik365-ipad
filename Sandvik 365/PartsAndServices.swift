@@ -196,7 +196,7 @@ enum BusinessType: UInt32 {
             case GetTool:
                 return ROIGetInput()
             case ServiceKitQuantifier:
-                return ServiceKitData()
+                return nil
             }
         }
     }

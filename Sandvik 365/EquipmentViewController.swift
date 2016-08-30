@@ -10,13 +10,16 @@ import UIKit
 
 class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate, EqStandardCellDelegate {
     private var addedServiceKitData = [ServiceKitData]()
-
+    private var serviceKitData: [String: ServiceKitData]?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: EqFoooterView!
     override func viewDidLoad() {
         super.viewDidLoad()
         footerView.configureView(addedServiceKitData.isEmpty)
         footerView.delegate = self
+        
+        self.serviceKitData = ServiceKitData.getAllData()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
@@ -34,6 +37,7 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let  cell = tableView.dequeueReusableCellWithIdentifier("EqStandardCell") as! EqStandardTableViewCell
         cell.backgroundColor = UIColor.clearColor()
+        cell.configureView(self.addedServiceKitData[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -50,10 +54,12 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func didAddSerialNo(textField: UITextField) {
         if let text = textField.text {
-            let data = ServiceKitData()
-            self.addedServiceKitData.append(data)
-            self.tableView.reloadData()
-            textField.text = ""
+            if let obj = self.serviceKitData![text] {
+                //let data = ServiceKitData()
+                self.addedServiceKitData.append(obj)
+                self.tableView.reloadData()
+                textField.text = ""
+            }
         }
     }
     

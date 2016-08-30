@@ -36,10 +36,10 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
         cell.button.setTitle(tool.title, forState: .Normal)
         cell.button.setBackgroundImage(tool.defaultImage, forState: .Normal)
         cell.button.setBackgroundImage(tool.highlightImage, forState: .Highlighted)
-        if tool.selectionInput is SelectionInput {
+        if ((tool.selectionInput as? SelectionInput) != nil) {
             cell.button.addTarget(self, action: #selector(roiButtonClick), forControlEvents: .TouchUpInside)
         }
-        else if tool.selectionInput is ServiceKitData {
+        else if tool == .ServiceKitQuantifier {
             cell.button.addTarget(self, action: #selector(serviceKitButtonClick), forControlEvents: .TouchUpInside)
         }
         return cell
