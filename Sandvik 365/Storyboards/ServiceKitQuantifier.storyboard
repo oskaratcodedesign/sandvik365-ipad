@@ -287,32 +287,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-PC-74I">
-                                <rect key="frame" x="170" y="193" width="260" height="17"/>
+                                <rect key="frame" x="170" y="196" width="260" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SERIAL NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-la-jQk">
-                                        <rect key="frame" x="9" y="0.0" width="250" height="17"/>
+                                        <rect key="frame" x="9" y="0.0" width="220" height="14"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="Q4m-Sa-G5s"/>
+                                            <constraint firstAttribute="width" constant="220" id="Q4m-Sa-G5s"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZh-i2-Fnu">
-                                        <rect key="frame" x="267" y="0.0" width="200" height="17"/>
+                                        <rect key="frame" x="237" y="0.0" width="200" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="P3A-Cx-yRu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZi-4X-YBR">
-                                        <rect key="frame" x="475" y="0.0" width="200" height="17"/>
+                                        <rect key="frame" x="445" y="0.0" width="200" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="NPp-l0-pgf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -471,27 +471,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14D439-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0T-7D-4dM">
-                                                    <rect key="frame" x="8" y="9" width="250" height="26"/>
+                                                    <rect key="frame" x="8" y="11" width="220" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="250" id="idE-rR-5tH"/>
+                                                        <constraint firstAttribute="width" constant="220" id="idE-rR-5tH"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                                                     <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LH514" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euz-SN-zdN">
-                                                    <rect key="frame" x="268" y="9" width="200" height="26"/>
+                                                    <rect key="frame" x="238" y="11" width="200" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="OcQ-d3-5Bw"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSw-BC-g66" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
-                                                    <rect key="frame" x="182" y="9" width="70" height="26"/>
+                                                    <rect key="frame" x="192" y="12" width="60" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="Kqe-S7-FBR"/>
+                                                        <constraint firstAttribute="width" constant="60" id="Kqe-S7-FBR"/>
+                                                        <constraint firstAttribute="height" constant="20" id="iwO-Ou-cEW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
                                                     <state key="normal" title="REMOVE">
