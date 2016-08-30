@@ -71,7 +71,7 @@
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
 		F741DC421D742DF40014C623 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC411D742DF40014C623 /* EquipmentViewController.swift */; };
-		F741DC451D744E3A0014C623 /* EqFoooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */; };
+		F741DC451D744E3A0014C623 /* EqFoooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC441D744E3A0014C623 /* EqFoooterView.swift */; };
 		F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
@@ -237,7 +237,7 @@
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F741DC411D742DF40014C623 /* EquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
-		F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqFoooterTableViewCell.swift; sourceTree = "<group>"; };
+		F741DC441D744E3A0014C623 /* EqFoooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqFoooterView.swift; sourceTree = "<group>"; };
 		F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqStandardTableViewCell.swift; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
@@ -640,7 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */,
-				F741DC441D744E3A0014C623 /* EqFoooterTableViewCell.swift */,
+				F741DC441D744E3A0014C623 /* EqFoooterView.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -1094,7 +1094,7 @@
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */,
 				F7AF2A831C9AC7F900EBEDFD /* ROITopCenter.swift in Sources */,
-				F741DC451D744E3A0014C623 /* EqFoooterTableViewCell.swift in Sources */,
+				F741DC451D744E3A0014C623 /* EqFoooterView.swift in Sources */,
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,

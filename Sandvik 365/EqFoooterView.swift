@@ -8,23 +8,21 @@
 
 import UIKit
 
-class EqFoooterTableViewCell: UITableViewCell {
+protocol EqFoooterDelegate {
+    func didAddSerialNo(textField: UITextField)
+}
+
+class EqFoooterView: UIView, UITextViewDelegate {
 
     @IBOutlet weak var addView: UIView!
     @IBOutlet weak var enterView: UIView!
     @IBOutlet weak var enterText: UITextField!
+    var delegate: EqFoooterDelegate?
     
-    @IBOutlet weak var openButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         enterText.attributedPlaceholder = NSAttributedString(string:"Enter here",attributes:[NSForegroundColorAttributeName: Theme.bluePrimaryColor])
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureView(showEnterView: Bool){
@@ -35,14 +33,19 @@ class EqFoooterTableViewCell: UITableViewCell {
     @IBAction func closeAction(sender: UIButton) {
         self.addView.hidden = false
         self.enterView.hidden = true
+        self.enterText.resignFirstResponder()
     }
     
     @IBAction func openAction(sender: UIButton) {
         self.addView.hidden = true
         self.enterView.hidden = false
     }
+    
     @IBAction func addAction(sender: UIButton) {
         self.addView.hidden = false
         self.enterView.hidden = true
+        delegate?.didAddSerialNo(self.enterText)
+        
+        self.enterText.resignFirstResponder()
     }
 }

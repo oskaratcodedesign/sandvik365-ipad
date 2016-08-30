@@ -10,6 +10,8 @@ import UIKit
 
 class EqStandardTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var serialNo: UILabel!
+    @IBOutlet weak var model: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,6 @@ class EqStandardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func removeAction(sender: UIButton) {
+    }
 }
