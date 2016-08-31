@@ -74,6 +74,8 @@
 		F741DC451D744E3A0014C623 /* EqFoooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC441D744E3A0014C623 /* EqFoooterView.swift */; };
 		F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */; };
 		F741DC491D75A8240014C623 /* servicekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F741DC481D75A8240014C623 /* servicekit.json */; };
+		F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */; };
+		F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
@@ -241,6 +243,8 @@
 		F741DC441D744E3A0014C623 /* EqFoooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqFoooterView.swift; sourceTree = "<group>"; };
 		F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqStandardTableViewCell.swift; sourceTree = "<group>"; };
 		F741DC481D75A8240014C623 /* servicekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = servicekit.json; sourceTree = "<group>"; };
+		F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraEquipmentViewController.swift; sourceTree = "<group>"; };
+		F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqExtraTableViewCell.swift; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
@@ -558,6 +562,7 @@
 			children = (
 				F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */,
 				F741DC411D742DF40014C623 /* EquipmentViewController.swift */,
+				F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 			children = (
 				F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */,
 				F741DC441D744E3A0014C623 /* EqFoooterView.swift */,
+				F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -1043,6 +1049,7 @@
 				F77D5EAD1C749E2D002A5867 /* ROIEDVInput.swift in Sources */,
 				F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
+				F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */,
 				F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */,
 				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
 				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
@@ -1069,6 +1076,7 @@
 				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
+				F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */,
 				F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */,

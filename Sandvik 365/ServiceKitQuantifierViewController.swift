@@ -20,8 +20,7 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
     
     private var pageViewController: UIPageViewController?
     private var viewControllers: [UIViewController]! = [UIViewController]()
-    private var titles = ["Please enter your serial number",
-                          "Your equipment",
+    private var titles = ["Your equipment",
                           "PLEASE ENTER THE NUMBER OF HOURS THAT YOU WANT TO ESTIMATE MAINTENANCE KITS FOR. ALSO ENTER THE WORKING CONDITIONS THAT THE EQUIPMENT WILL RUN IN.",
                           "This is your suggested offer"]
     
@@ -94,7 +93,15 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
     
     private func getItemController(itemIndex: Int) -> UIViewController? {
         if(itemIndex < titles.count - 1){
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("EquipmentViewController") as! EquipmentViewController
+            var pageItemController: UIViewController?
+            switch itemIndex {
+            case 0:
+                pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("EquipmentViewController") as! EquipmentViewController
+            case 1:
+                pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ExtraEquipmentViewController") as! ExtraEquipmentViewController
+            default: break
+                
+            }
             //pageItemController.selectedInput = input
             return pageItemController
         }
