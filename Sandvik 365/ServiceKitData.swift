@@ -30,6 +30,7 @@ class ServiceKitData {
     }
     
     static func getAllData() -> [String: ServiceKitData]? {
+        MaintenanceServiceKitData.getAllData()
         if ServiceKitData.allData != nil && !ServiceKitData.allData!.isEmpty {
             return ServiceKitData.allData
         }
@@ -43,5 +44,62 @@ class ServiceKitData {
             ServiceKitData.allData = allData
         }
         return ServiceKitData.allData
+    }
+}
+
+class MaintenanceServiceKitData {
+    private static var allData: [String: MaintenanceServiceKitData.Parent]?
+
+    static func getAllData() -> [String: MaintenanceServiceKitData.Parent]? {
+        if MaintenanceServiceKitData.allData != nil && !MaintenanceServiceKitData.allData!.isEmpty {
+            return MaintenanceServiceKitData.allData
+        }
+        if let json = JSONManager.readJSONFromFile("maintenancekit") {
+            var allData = [String: Parent]()
+            for obj in json {
+                if let type = obj.objectForKey("Parent / Component") as? String {
+                    if type == "Parent" {
+                        if let sno = obj.objectForKey("Parent") as? String {
+                            allData[sno] = Parent(serialNo: sno, dic: obj)
+                        }
+                    }
+                    else if type == "Component" {
+                        if let sno = obj.objectForKey("Parent") as? String {
+                            if let parent = allData[sno] {
+                                parent.components.append(Component(serialNo: sno, dic: obj))
+                            } else {
+                                print("ERROR component has no parent!")
+                            }
+                        }
+                    }
+                }
+            }
+            MaintenanceServiceKitData.allData = allData
+        }
+        return MaintenanceServiceKitData.allData
+    }
+    
+    class Parent {
+        var serialNo: String
+        var description: String?
+        var components: [Component]
+        
+        init(serialNo: String, dic: NSDictionary){
+            self.serialNo = serialNo
+            self.description = dic.objectForKey("Item Description") as? String
+            self.components = [Component]()
+        }
+    }
+    
+    class Component {
+        var serialNo: String
+        var description: String?
+        var quantity: Int?
+        
+        init(serialNo: String, dic: NSDictionary){
+            self.serialNo = serialNo
+            self.description = dic.objectForKey("Item Description") as? String
+            self.quantity = dic.objectForKey("Quantity") as? Int
+        }
     }
 }

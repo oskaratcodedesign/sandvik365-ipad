@@ -76,6 +76,7 @@
 		F741DC491D75A8240014C623 /* servicekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F741DC481D75A8240014C623 /* servicekit.json */; };
 		F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */; };
 		F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */; };
+		F741DC4F1D76FC4B0014C623 /* maintenancekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F741DC4E1D76FC4B0014C623 /* maintenancekit.json */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
@@ -245,6 +246,7 @@
 		F741DC481D75A8240014C623 /* servicekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = servicekit.json; sourceTree = "<group>"; };
 		F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraEquipmentViewController.swift; sourceTree = "<group>"; };
 		F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqExtraTableViewCell.swift; sourceTree = "<group>"; };
+		F741DC4E1D76FC4B0014C623 /* maintenancekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maintenancekit.json; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
 				F741DC481D75A8240014C623 /* servicekit.json */,
+				F741DC4E1D76FC4B0014C623 /* maintenancekit.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */,
 				F70515EC1CC622F3000786E2 /* CountOnBoxSmallLabel.xib in Resources */,
 				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
+				F741DC4F1D76FC4B0014C623 /* maintenancekit.json in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 				F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */,
