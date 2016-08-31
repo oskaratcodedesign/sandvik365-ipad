@@ -10,6 +10,8 @@ import UIKit
 
 class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var addedServiceKitData: [ServiceKitData]?
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return addedServiceKitData?.count ?? 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -30,7 +32,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         
         let  cell = tableView.dequeueReusableCellWithIdentifier("EqExtraCell") as! EqExtraTableViewCell
         cell.backgroundColor = UIColor.clearColor()
-        //cell.configureView(self.addedServiceKitData[indexPath.row])
+        cell.configureView(self.addedServiceKitData![indexPath.row])
         //cell.delegate = self
         return cell
     }

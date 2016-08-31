@@ -9,7 +9,7 @@
 import UIKit
 
 class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate, EqStandardCellDelegate {
-    private var addedServiceKitData = [ServiceKitData]()
+    var addedServiceKitData = [ServiceKitData]()
     private var serviceKitData: [String: ServiceKitData]?
     
     @IBOutlet weak var tableView: UITableView!

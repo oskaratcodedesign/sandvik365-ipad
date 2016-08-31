@@ -26,8 +26,18 @@ class EqExtraTableViewCell: UITableViewCell {
         self.model.text = data.model ?? ""
     }
     @IBAction func increaseHoursAction(sender: UIButton) {
+        let text = hours.text ?? "0"
+        if var v = Int(text) {
+            v = v + 1
+            hours.text = String(v)
+        }
     }
     
     @IBAction func decreaseHoursAction(sender: UIButton) {
+        let text = hours.text ?? "0"
+        if var v = Int(text) {
+            v = v - 1
+            hours.text = String(max(v, 0))
+        }
     }
 }
