@@ -25,9 +25,9 @@
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
-            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -55,8 +55,8 @@
                                         <rect key="frame" x="0.0" y="600" width="600" height="600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6q-N8-bib">
-                                                <rect key="frame" x="150" y="90" width="300" height="29"/>
-                                                <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="25"/>
+                                                <rect key="frame" x="150" y="110" width="300" height="18"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -128,7 +128,7 @@
                                             <constraint firstAttribute="trailing" secondItem="G8I-If-yMa" secondAttribute="trailing" id="asP-7o-3FD"/>
                                             <constraint firstItem="ZPk-Zr-ofl" firstAttribute="centerY" secondItem="27t-MO-Wyh" secondAttribute="centerY" id="baY-61-u14"/>
                                             <constraint firstItem="ZPk-Zr-ofl" firstAttribute="leading" secondItem="27t-MO-Wyh" secondAttribute="leading" id="cpR-6R-QBd"/>
-                                            <constraint firstItem="T6q-N8-bib" firstAttribute="top" secondItem="27t-MO-Wyh" secondAttribute="top" constant="90" id="czc-DX-Qte"/>
+                                            <constraint firstItem="T6q-N8-bib" firstAttribute="top" secondItem="27t-MO-Wyh" secondAttribute="top" constant="110" id="czc-DX-Qte"/>
                                             <constraint firstItem="G8I-If-yMa" firstAttribute="centerY" secondItem="27t-MO-Wyh" secondAttribute="centerY" id="jjt-7C-tpn"/>
                                             <constraint firstItem="3Gc-4e-8sP" firstAttribute="centerX" secondItem="27t-MO-Wyh" secondAttribute="centerX" id="yvL-GL-Zk9"/>
                                         </constraints>
@@ -294,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-PC-74I">
-                                <rect key="frame" x="170" y="196" width="684" height="14"/>
+                                <rect key="frame" x="170" y="186" width="684" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SERIAL NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-la-jQk">
                                         <rect key="frame" x="9" y="0.0" width="200" height="14"/>
@@ -325,7 +325,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oic-bJ-9nx">
-                                <rect key="frame" x="170" y="210" width="684" height="390"/>
+                                <rect key="frame" x="170" y="200" width="684" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -549,13 +549,15 @@
                         <constraints>
                             <constraint firstItem="Oic-bJ-9nx" firstAttribute="leading" secondItem="Cf7-0d-lyU" secondAttribute="leadingMargin" constant="150" id="2DK-uM-UKv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0u-PC-74I" secondAttribute="trailing" constant="150" id="3Xz-ZW-W5N"/>
-                            <constraint firstItem="Oic-bJ-9nx" firstAttribute="top" secondItem="5e7-l9-xpU" secondAttribute="bottom" constant="190" id="OEe-5j-rSI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oic-bJ-9nx" secondAttribute="trailing" constant="150" id="XfD-0o-n2F"/>
+                            <constraint firstItem="Oic-bJ-9nx" firstAttribute="top" secondItem="Cf7-0d-lyU" secondAttribute="top" constant="200" id="abx-6C-X2J"/>
                             <constraint firstItem="g0u-PC-74I" firstAttribute="leading" secondItem="Cf7-0d-lyU" secondAttribute="leadingMargin" constant="150" id="ka2-E9-w9c"/>
                             <constraint firstItem="EpZ-qq-zhI" firstAttribute="top" secondItem="Oic-bJ-9nx" secondAttribute="bottom" id="nhD-i4-SSj"/>
                             <constraint firstItem="Oic-bJ-9nx" firstAttribute="top" secondItem="g0u-PC-74I" secondAttribute="bottom" id="qhu-om-pEB"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="600"/>
                     <connections>
@@ -565,6 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFh-9a-305" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="338" y="402"/>
         </scene>
         <!--Extra Equipment View Controller-->
         <scene sceneID="Qbu-CN-xsP">
@@ -579,7 +582,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwG-WQ-eam">
-                                <rect key="frame" x="170" y="196" width="694" height="14"/>
+                                <rect key="frame" x="170" y="186" width="694" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SERIAL NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j16-LN-wws">
                                         <rect key="frame" x="9" y="0.0" width="200" height="14"/>
@@ -638,7 +641,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yZ8-Gv-Cdd">
-                                <rect key="frame" x="170" y="210" width="694" height="390"/>
+                                <rect key="frame" x="170" y="200" width="694" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -780,12 +783,18 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="dwG-WQ-eam" secondAttribute="trailing" constant="140" id="2yA-ep-efe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yZ8-Gv-Cdd" secondAttribute="trailing" constant="140" id="9jN-bg-Aee"/>
+                            <constraint firstItem="yZ8-Gv-Cdd" firstAttribute="top" secondItem="gzZ-af-C89" secondAttribute="top" constant="200" id="aRh-kf-jaV"/>
                             <constraint firstItem="yZ8-Gv-Cdd" firstAttribute="leading" secondItem="gzZ-af-C89" secondAttribute="leadingMargin" constant="150" id="cWM-Ge-iRH"/>
                             <constraint firstItem="yZ8-Gv-Cdd" firstAttribute="top" secondItem="dwG-WQ-eam" secondAttribute="bottom" id="gKn-hO-gV5"/>
                             <constraint firstItem="yZ8-Gv-Cdd" firstAttribute="top" secondItem="s82-zL-5dJ" secondAttribute="bottom" constant="190" id="kqy-tc-46m"/>
                             <constraint firstItem="Cgs-7m-PV8" firstAttribute="top" secondItem="yZ8-Gv-Cdd" secondAttribute="bottom" id="sub-W4-EVl"/>
                             <constraint firstItem="dwG-WQ-eam" firstAttribute="leading" secondItem="gzZ-af-C89" secondAttribute="leadingMargin" constant="150" id="xJ5-sk-Gjn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kqy-tc-46m"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="600"/>
@@ -795,6 +804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rv6-AB-JMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="338" y="1062"/>
         </scene>
     </scenes>
     <resources>
