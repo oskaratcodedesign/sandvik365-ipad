@@ -1,3 +1,4 @@
+
 //
 //  EqExtraTableViewCell.swift
 //  Sandvik 365
@@ -8,36 +9,50 @@
 
 import Foundation
 
-class EqExtraTableViewCell: UITableViewCell {
+class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var hours: UITextField!
     @IBOutlet weak var serialNo: UILabel!
     @IBOutlet weak var model: UILabel!
-    //var delegate: EqStandardCellDelegate?
     @IBOutlet weak var workingCondition: UISegmentedControl!
+    private var data: ExtraEquipmentData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.hours.delegate = self
     }
     
-    func configureView(data: ServiceKitData){
-        self.serialNo.text = data.serialNo
-        self.model.text = data.model ?? ""
+    func configureView(data: ExtraEquipmentData){
+        self.serialNo.text = data.serviceKitData.serialNo
+        self.model.text = data.serviceKitData.model ?? ""
+        self.hours.text = String(data.hours)
+        self.workingCondition.selectedSegmentIndex = data.workingConditionExtreme ? 1 : 0
+        self.data = data
     }
+    
     @IBAction func increaseHoursAction(sender: UIButton) {
-        let text = hours.text ?? "0"
-        if var v = Int(text) {
-            v = v + 1
+        if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
+            v = v + 125
             hours.text = String(v)
         }
     }
     
     @IBAction func decreaseHoursAction(sender: UIButton) {
-        let text = hours.text ?? "0"
-        if var v = Int(text) {
-            v = v - 1
+        if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
+            v = v - 125
             hours.text = String(max(v, 0))
         }
+    }
+    
+    @IBAction func workingConditionChanged(sender: UISegmentedControl) {
+        self.data?.workingConditionExtreme = sender.selectedSegmentIndex == 0 ? false : true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if let no = (hours.text != nil) ? Int(hours.text! + string) : 0 {
+            self.data?.hours = no
+            return true
+        }
+        return false
     }
 }

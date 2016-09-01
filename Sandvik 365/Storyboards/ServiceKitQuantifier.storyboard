@@ -741,6 +741,9 @@
                                                         <segment title="EXTREME"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="workingConditionChanged:" destination="KO0-8H-w1b" eventType="valueChanged" id="3Vz-b5-Hws"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

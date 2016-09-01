@@ -64,12 +64,13 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
             let nextIndex = left ? currentIndex - 1 : currentIndex + 1
                 if viewControllers.count > nextIndex && nextIndex >= 0 {
                     let nextController = viewControllers[nextIndex]
-                    if let cv = currentController as? EquipmentViewController, let ncv = nextController as? ExtraEquipmentViewController {
-                        ncv.addedServiceKitData = cv.addedServiceKitData
-                    }
+
                     let nextViewControllers: [UIViewController] = [nextController]
                     pageViewController?.setViewControllers(nextViewControllers, direction: left ?UIPageViewControllerNavigationDirection.Reverse: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
                     configureData(nextIndex)
+                    if let cv = currentController as? EquipmentViewController, let ncv = nextController as? ExtraEquipmentViewController {
+                        ncv.addedServiceKitData = cv.addedServiceKitData
+                    }
                 }
             }
         }
