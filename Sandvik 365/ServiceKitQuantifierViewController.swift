@@ -51,7 +51,7 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
         if titles.count < itemIndex {
             return
         }
-        nextButton.hidden = false
+        nextButton.hidden = (itemIndex == titles.count - 1)
         prevButton.hidden = (itemIndex == 0)
         
         titleLabel.text = titles[itemIndex].uppercaseString
@@ -62,7 +62,7 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
         {
             if let currentIndex = self.viewControllers.indexOf(currentController) {
             let nextIndex = left ? currentIndex - 1 : currentIndex + 1
-                if viewControllers.count > nextIndex && nextIndex >= 0 {
+                if viewControllers.count >= nextIndex && nextIndex >= 0 {
                     let nextController = viewControllers[nextIndex]
 
                     let nextViewControllers: [UIViewController] = [nextController]
@@ -70,6 +70,9 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
                     configureData(nextIndex)
                     if let cv = currentController as? EquipmentViewController, let ncv = nextController as? ExtraEquipmentViewController {
                         ncv.addedServiceKitData = cv.addedServiceKitData
+                    }
+                    else if let cv = currentController as? ExtraEquipmentViewController, let ncv = nextController as? MaintenanceKitResultViewController {
+                        ncv.addedExtraEquipmentData = cv.addedExtraEquipmentData
                     }
                 }
             }
@@ -96,17 +99,18 @@ class ServiceKitQuantifierViewController: UIViewController, UIGestureRecognizerD
     }
     
     private func getItemController(itemIndex: Int) -> UIViewController? {
-        if(itemIndex < titles.count - 1){
+        if(itemIndex < titles.count){
             var pageItemController: UIViewController?
             switch itemIndex {
             case 0:
                 pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("EquipmentViewController") as! EquipmentViewController
             case 1:
                 pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ExtraEquipmentViewController") as! ExtraEquipmentViewController
+            case 2:
+                pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("MaintenanceKitResultViewController") as! MaintenanceKitResultViewController
             default: break
                 
             }
-            //pageItemController.selectedInput = input
             return pageItemController
         }
         return nil

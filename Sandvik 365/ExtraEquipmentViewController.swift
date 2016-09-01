@@ -28,7 +28,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    var addedExtraEquipmentData: [ExtraEquipmentData] = [ExtraEquipmentData]()
+    var addedExtraEquipmentData = [ExtraEquipmentData]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

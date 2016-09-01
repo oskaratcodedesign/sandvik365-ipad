@@ -77,6 +77,7 @@
 		F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */; };
 		F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */; };
 		F741DC4F1D76FC4B0014C623 /* maintenancekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F741DC4E1D76FC4B0014C623 /* maintenancekit.json */; };
+		F741DC511D78645F0014C623 /* MaintenanceKitResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
@@ -247,6 +248,7 @@
 		F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraEquipmentViewController.swift; sourceTree = "<group>"; };
 		F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqExtraTableViewCell.swift; sourceTree = "<group>"; };
 		F741DC4E1D76FC4B0014C623 /* maintenancekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maintenancekit.json; sourceTree = "<group>"; };
+		F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceKitResultViewController.swift; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */,
 				F741DC411D742DF40014C623 /* EquipmentViewController.swift */,
 				F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */,
+				F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -1074,6 +1077,7 @@
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */,
+				F741DC511D78645F0014C623 /* MaintenanceKitResultViewController.swift in Sources */,
 				F7D6C1E31C974E0D00E933D8 /* Theme.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */,

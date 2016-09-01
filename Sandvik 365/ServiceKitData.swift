@@ -30,7 +30,6 @@ class ServiceKitData {
     }
     
     static func getAllData() -> [String: ServiceKitData]? {
-        MaintenanceServiceKitData.getAllData()
         if ServiceKitData.allData != nil && !ServiceKitData.allData!.isEmpty {
             return ServiceKitData.allData
         }
@@ -48,25 +47,25 @@ class ServiceKitData {
 }
 
 class MaintenanceServiceKitData {
-    private static var allData: [String: MaintenanceServiceKitData.Parent]?
+    private static var allData: [String: MaintenanceServiceKitParent]?
 
-    static func getAllData() -> [String: MaintenanceServiceKitData.Parent]? {
+    static func getAllData() -> [String: MaintenanceServiceKitParent]? {
         if MaintenanceServiceKitData.allData != nil && !MaintenanceServiceKitData.allData!.isEmpty {
             return MaintenanceServiceKitData.allData
         }
         if let json = JSONManager.readJSONFromFile("maintenancekit") {
-            var allData = [String: Parent]()
+            var allData = [String: MaintenanceServiceKitParent]()
             for obj in json {
                 if let type = obj.objectForKey("Parent / Component") as? String {
                     if type == "Parent" {
                         if let sno = obj.objectForKey("Parent") as? String {
-                            allData[sno] = Parent(serialNo: sno, dic: obj)
+                            allData[sno] = MaintenanceServiceKitParent(serialNo: sno, dic: obj)
                         }
                     }
                     else if type == "Component" {
                         if let sno = obj.objectForKey("Parent") as? String {
                             if let parent = allData[sno] {
-                                parent.components.append(Component(serialNo: sno, dic: obj))
+                                parent.components.append(MaintenanceServiceKitComponent(serialNo: sno, dic: obj))
                             } else {
                                 print("ERROR component has no parent!")
                             }
@@ -78,28 +77,29 @@ class MaintenanceServiceKitData {
         }
         return MaintenanceServiceKitData.allData
     }
+}
+
+
+class MaintenanceServiceKitParent {
+    var serialNo: String
+    var description: String?
+    var components: [MaintenanceServiceKitComponent]
     
-    class Parent {
-        var serialNo: String
-        var description: String?
-        var components: [Component]
-        
-        init(serialNo: String, dic: NSDictionary){
-            self.serialNo = serialNo
-            self.description = dic.objectForKey("Item Description") as? String
-            self.components = [Component]()
-        }
+    init(serialNo: String, dic: NSDictionary){
+        self.serialNo = serialNo
+        self.description = dic.objectForKey("Item Description") as? String
+        self.components = [MaintenanceServiceKitComponent]()
     }
+}
+
+class MaintenanceServiceKitComponent {
+    var serialNo: String
+    var description: String?
+    var quantity: Int?
     
-    class Component {
-        var serialNo: String
-        var description: String?
-        var quantity: Int?
-        
-        init(serialNo: String, dic: NSDictionary){
-            self.serialNo = serialNo
-            self.description = dic.objectForKey("Item Description") as? String
-            self.quantity = dic.objectForKey("Quantity") as? Int
-        }
+    init(serialNo: String, dic: NSDictionary){
+        self.serialNo = serialNo
+        self.description = dic.objectForKey("Item Description") as? String
+        self.quantity = dic.objectForKey("Quantity") as? Int
     }
 }
