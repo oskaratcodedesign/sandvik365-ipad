@@ -20,6 +20,16 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         footerView.delegate = self
         
         self.serviceKitData = ServiceKitData.getAllData()
+        //DEBUG
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
+        addedServiceKitData.append(serviceKitData!["L203D812"]!)
+        addedServiceKitData.append(serviceKitData!["L203E103"]!)
+        addedServiceKitData.append(serviceKitData!["L407D619"]!)
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
+        addedServiceKitData.append(serviceKitData!["L003D636"]!)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);

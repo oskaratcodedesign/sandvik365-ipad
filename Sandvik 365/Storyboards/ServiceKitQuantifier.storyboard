@@ -17,8 +17,12 @@
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
+            <string>AktivGroteskCorp-Light</string>
+            <string>AktivGroteskCorp-Light</string>
+            <string>AktivGroteskCorp-Light</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
@@ -315,8 +319,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="514" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AM-b0-gGu">
-                                                                    <rect key="frame" x="8" y="11" width="52" height="23"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AM-b0-gGu">
+                                                                    <rect key="frame" x="8" y="8" width="52" height="28"/>
                                                                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                                                                     <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -332,7 +336,7 @@
                                                                                 <action selector="decreaseAmountAction:" destination="0Ln-wK-2pp" eventType="touchUpInside" id="3ZF-hD-M2r"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-zU-cFa">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-zU-cFa">
                                                                             <rect key="frame" x="29" y="3" width="12" height="23"/>
                                                                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                                                                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -361,13 +365,20 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="9AM-b0-gGu" secondAttribute="bottom" id="6zP-z4-WWZ"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="5fu-fj-G1y" secondAttribute="trailing" id="8Ab-xT-p6T"/>
                                                                 <constraint firstItem="5fu-fj-G1y" firstAttribute="top" secondItem="Fac-NE-jSg" secondAttribute="topMargin" id="OUs-eF-S8L"/>
                                                                 <constraint firstItem="9AM-b0-gGu" firstAttribute="leading" secondItem="Fac-NE-jSg" secondAttribute="leadingMargin" id="eeA-eE-oOl"/>
                                                                 <constraint firstItem="9AM-b0-gGu" firstAttribute="centerY" secondItem="Fac-NE-jSg" secondAttribute="centerY" id="iB0-05-QBU"/>
                                                                 <constraint firstItem="5fu-fj-G1y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9AM-b0-gGu" secondAttribute="trailing" constant="10" id="onI-Sm-GNf"/>
+                                                                <constraint firstItem="9AM-b0-gGu" firstAttribute="top" secondItem="Fac-NE-jSg" secondAttribute="topMargin" id="vIX-s0-301"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="5fu-fj-G1y" secondAttribute="bottom" id="xrW-QT-Tqb"/>
                                                             </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="iB0-05-QBU"/>
+                                                                </mask>
+                                                            </variation>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="amount" destination="yVI-zU-cFa" id="5my-5I-gOh"/>
@@ -380,15 +391,133 @@
                                                     <outlet property="delegate" destination="PCd-cn-6Bn" id="ONN-Uc-HR0"/>
                                                 </connections>
                                             </tableView>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9b-iZ-0WQ" customClass="MaintenanceKitInfoView" customModule="Sandvik_365" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="34" width="514" height="336"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYu-OD-Oh6">
+                                                        <rect key="frame" x="10" y="30" width="52" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAINS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJz-4O-nc8">
+                                                        <rect key="frame" x="10" y="83" width="59" height="14"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="QsV-O2-VMF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="QsV-O2-VMF"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </label>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="20" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-p9-6Ex">
+                                                        <rect key="frame" x="79" y="80" width="335" height="256"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MaintenanceKitInfoCell" id="BxD-cL-ptI" customClass="MaintenanceKitInfoCell" customModule="Sandvik_365" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="335" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BxD-cL-ptI" id="RGD-dc-Krg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L47-LH-n9H">
+                                                                            <rect key="frame" x="8" y="10" width="0.0" height="0.0"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="200" id="PSK-nk-TcX"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <variation key="default">
+                                                                                <mask key="constraints">
+                                                                                    <exclude reference="PSK-nk-TcX"/>
+                                                                                </mask>
+                                                                            </variation>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mI-Bx-74Y">
+                                                                            <rect key="frame" x="327" y="10" width="0.0" height="0.0"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="200" id="QOp-C9-oBM"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <variation key="default">
+                                                                                <mask key="constraints">
+                                                                                    <exclude reference="QOp-C9-oBM"/>
+                                                                                </mask>
+                                                                            </variation>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="L47-LH-n9H" firstAttribute="leading" secondItem="RGD-dc-Krg" secondAttribute="leadingMargin" id="0fW-cV-U6s"/>
+                                                                        <constraint firstItem="3mI-Bx-74Y" firstAttribute="centerY" secondItem="RGD-dc-Krg" secondAttribute="centerY" id="Hmt-Rj-6SB"/>
+                                                                        <constraint firstAttribute="trailingMargin" secondItem="3mI-Bx-74Y" secondAttribute="trailing" id="pKT-aV-2wu"/>
+                                                                        <constraint firstItem="L47-LH-n9H" firstAttribute="centerY" secondItem="RGD-dc-Krg" secondAttribute="centerY" id="xG9-mn-lSO"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="name" destination="L47-LH-n9H" id="Md3-hk-vvX"/>
+                                                                    <outlet property="quantity" destination="3mI-Bx-74Y" id="xZC-6g-0aE"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="K9b-iZ-0WQ" id="Vd6-0Y-VXi"/>
+                                                            <outlet property="delegate" destination="K9b-iZ-0WQ" id="1iu-eM-2V8"/>
+                                                        </connections>
+                                                    </tableView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av2-Th-4Z1">
+                                                        <rect key="frame" x="434" y="10" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="0bj-l7-lIE"/>
+                                                            <constraint firstAttribute="width" constant="60" id="LWb-DO-pGa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="66"/>
+                                                        <state key="normal" title="×">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="closeAction:" destination="K9b-iZ-0WQ" eventType="touchUpInside" id="zqB-oh-gNA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="av2-Th-4Z1" firstAttribute="leading" secondItem="fhL-p9-6Ex" secondAttribute="trailing" constant="20" id="Aie-5n-4JP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="av2-Th-4Z1" secondAttribute="trailing" constant="20" id="K52-ei-ado"/>
+                                                    <constraint firstItem="CJz-4O-nc8" firstAttribute="leading" secondItem="K9b-iZ-0WQ" secondAttribute="leading" constant="10" id="OBQ-aJ-lAj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fhL-p9-6Ex" secondAttribute="bottom" id="S04-uv-sXJ"/>
+                                                    <constraint firstItem="oYu-OD-Oh6" firstAttribute="top" secondItem="K9b-iZ-0WQ" secondAttribute="top" constant="30" id="Ysd-9E-kaw"/>
+                                                    <constraint firstItem="av2-Th-4Z1" firstAttribute="top" secondItem="K9b-iZ-0WQ" secondAttribute="top" constant="10" id="ZxK-Dr-2nS"/>
+                                                    <constraint firstItem="fhL-p9-6Ex" firstAttribute="leading" secondItem="CJz-4O-nc8" secondAttribute="trailing" constant="10" id="jvz-CL-dwx"/>
+                                                    <constraint firstItem="CJz-4O-nc8" firstAttribute="top" secondItem="oYu-OD-Oh6" secondAttribute="bottom" constant="30" id="kG5-DL-mCy"/>
+                                                    <constraint firstItem="oYu-OD-Oh6" firstAttribute="leading" secondItem="K9b-iZ-0WQ" secondAttribute="leading" constant="10" id="sQF-BN-4yu"/>
+                                                    <constraint firstItem="fhL-p9-6Ex" firstAttribute="top" secondItem="CJz-4O-nc8" secondAttribute="top" constant="-3" id="w84-8W-H5C"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="name" destination="oYu-OD-Oh6" id="Bey-8l-4IG"/>
+                                                    <outlet property="tableView" destination="fhL-p9-6Ex" id="MzE-r0-DEc"/>
+                                                </connections>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="K9b-iZ-0WQ" firstAttribute="top" secondItem="9je-tm-u92" secondAttribute="top" id="3Oa-Hh-A9q"/>
                                             <constraint firstItem="9je-tm-u92" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="leading" id="7yn-lt-SpW"/>
                                             <constraint firstAttribute="trailing" secondItem="SJ3-bl-0pd" secondAttribute="trailing" constant="20" id="D74-Ut-j28"/>
+                                            <constraint firstAttribute="trailing" secondItem="K9b-iZ-0WQ" secondAttribute="trailing" id="E6V-8Q-UYd"/>
                                             <constraint firstItem="esO-aN-m4M" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="leading" constant="8" id="LgV-iy-QgL"/>
                                             <constraint firstItem="esO-aN-m4M" firstAttribute="top" secondItem="afw-jq-Y5y" secondAttribute="top" id="RHO-zg-Q4V"/>
                                             <constraint firstItem="9je-tm-u92" firstAttribute="top" secondItem="esO-aN-m4M" secondAttribute="bottom" constant="20" id="cB9-ZT-sGu"/>
+                                            <constraint firstItem="K9b-iZ-0WQ" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="leading" id="dMb-Fr-tHP"/>
                                             <constraint firstItem="SJ3-bl-0pd" firstAttribute="top" secondItem="afw-jq-Y5y" secondAttribute="top" id="dmF-LL-UDg"/>
+                                            <constraint firstAttribute="bottom" secondItem="K9b-iZ-0WQ" secondAttribute="bottom" constant="50" id="hrN-vG-ifq"/>
                                             <constraint firstAttribute="bottom" secondItem="9je-tm-u92" secondAttribute="bottom" id="l0z-C5-rRh"/>
                                             <constraint firstAttribute="trailing" secondItem="9je-tm-u92" secondAttribute="trailing" id="mL8-TE-mpk"/>
                                         </constraints>
@@ -433,6 +562,7 @@
                     <size key="freeformSize" width="1024" height="600"/>
                     <connections>
                         <outlet property="contactUsView" destination="4Rc-US-Ofr" id="vgD-dI-Hox"/>
+                        <outlet property="infoView" destination="K9b-iZ-0WQ" id="T7A-wk-zpX"/>
                         <outlet property="tableView" destination="9je-tm-u92" id="RrZ-MT-Yy1"/>
                     </connections>
                 </viewController>

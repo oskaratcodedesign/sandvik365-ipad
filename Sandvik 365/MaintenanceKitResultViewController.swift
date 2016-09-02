@@ -22,6 +22,7 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
     
     @IBOutlet weak var contactUsView: ContactUsView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var infoView: MaintenanceKitInfoView!
     
     var addedExtraEquipmentData: [ExtraEquipmentData]? {
         didSet {
@@ -66,6 +67,11 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         cell.backgroundColor = UIColor.clearColor()
         cell.configureView(self.maintenanceOfferData[indexPath.row])
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        self.infoView.data = maintenanceOfferData[indexPath.row].maintenanceServiceKitParent
+        self.infoView.hidden = false
     }
     
     private func setData() {
