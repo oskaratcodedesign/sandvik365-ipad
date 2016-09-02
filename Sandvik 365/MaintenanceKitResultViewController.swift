@@ -10,17 +10,18 @@ import UIKit
 
 class MaintenanceOfferData {
     let maintenanceServiceKitParent: MaintenanceServiceKitParent
-    var hours: Int
+    var amount: Int
     
-    init(maintenanceServiceKitParent: MaintenanceServiceKitParent, hours: Int){
+    init(maintenanceServiceKitParent: MaintenanceServiceKitParent, amount: Int){
         self.maintenanceServiceKitParent = maintenanceServiceKitParent
-        self.hours = hours
+        self.amount = amount
     }
 }
 
-class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegate, RegionSelectorDelegate {
+class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegate, RegionSelectorDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var contactUsView: ContactUsView!
+    @IBOutlet weak var tableView: UITableView!
     
     var addedExtraEquipmentData: [ExtraEquipmentData]? {
         didSet {
@@ -51,29 +52,50 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         NSLayoutConstraint.activateConstraints(constraints)
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return maintenanceOfferData.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("MaintenanceTableViewCell") as! MaintenanceTableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        cell.configureView(self.maintenanceOfferData[indexPath.row])
+        return cell
+    }
+    
     private func setData() {
         if let alldata = MaintenanceServiceKitData.getAllData(), let input = self.addedExtraEquipmentData {
-            
+            self.maintenanceOfferData = [MaintenanceOfferData]()
             for obj in input {
                 if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKitNo {
-                    addMaintenanceKit(alldata, id: id, extraEquipmentData: obj)
+                    let amount = obj.hours / 125
+                    addMaintenanceKit(alldata, id: id, amount: amount)
                 }
                 if let id = obj.serviceKitData.H250ServiceKitNo {
-                    addMaintenanceKit(alldata, id: id, extraEquipmentData: obj)
+                    let amount = obj.hours / 250
+                    addMaintenanceKit(alldata, id: id, amount: amount)
                 }
                 if let id = obj.serviceKitData.H500ServiceKitNo {
-                    addMaintenanceKit(alldata, id: id, extraEquipmentData: obj)
+                    let amount = obj.hours / 500
+                    addMaintenanceKit(alldata, id: id, amount: amount)
                 }
                 if let id = obj.serviceKitData.H1000ServiceKitNo {
-                    addMaintenanceKit(alldata, id: id, extraEquipmentData: obj)
+                    let amount = obj.hours / 1000
+                    addMaintenanceKit(alldata, id: id, amount: amount)
                 }
             }
+            self.tableView.reloadData()
         }
     }
     
-    private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], id: String, extraEquipmentData: ExtraEquipmentData) {
+    private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], id: String, amount: Int) {
         if let data = allData[id] {
-            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, hours: extraEquipmentData.hours))
+            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: amount))
         }
     }
 }

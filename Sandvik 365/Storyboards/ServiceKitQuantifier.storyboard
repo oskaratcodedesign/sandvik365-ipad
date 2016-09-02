@@ -27,6 +27,8 @@
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
             <string>AktivGroteskCorp-Regular</string>
@@ -277,30 +279,125 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqM-9z-Kd9">
-                                <rect key="frame" x="170" y="130" width="764" height="470"/>
+                                <rect key="frame" x="160" y="130" width="774" height="470"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SERIAL NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esO-aN-m4M">
-                                        <rect key="frame" x="9" y="0.0" width="200" height="14"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="2O2-hb-gjY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ3-bl-0pd">
-                                        <rect key="frame" x="217" y="0.0" width="170" height="14"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="Rh6-kn-z39"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rc-US-Ofr" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
-                                        <rect key="frame" x="544" y="0.0" width="220" height="91"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afw-jq-Y5y">
+                                        <rect key="frame" x="0.0" y="50" width="514" height="420"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esO-aN-m4M">
+                                                <rect key="frame" x="8" y="0.0" width="34" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="2O2-hb-gjY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="2O2-hb-gjY"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ3-bl-0pd">
+                                                <rect key="frame" x="443" y="0.0" width="51" height="14"/>
+                                                <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9je-tm-u92">
+                                                <rect key="frame" x="0.0" y="34" width="514" height="386"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MaintenanceTableViewCell" id="0Ln-wK-2pp" customClass="MaintenanceTableViewCell" customModule="Sandvik_365" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="514" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Ln-wK-2pp" id="Fac-NE-jSg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="514" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AM-b0-gGu">
+                                                                    <rect key="frame" x="8" y="11" width="52" height="23"/>
+                                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
+                                                                    <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-fj-G1y">
+                                                                    <rect key="frame" x="435" y="8" width="71" height="28"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odB-y0-M26">
+                                                                            <rect key="frame" x="0.0" y="2" width="24" height="24"/>
+                                                                            <state key="normal" image="m_antal"/>
+                                                                            <state key="highlighted" image="m_antal_aktiv"/>
+                                                                            <connections>
+                                                                                <action selector="decreaseAmountAction:" destination="0Ln-wK-2pp" eventType="touchUpInside" id="3ZF-hD-M2r"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-zU-cFa">
+                                                                            <rect key="frame" x="29" y="3" width="12" height="23"/>
+                                                                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
+                                                                            <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wai-gF-zKd">
+                                                                            <rect key="frame" x="46" y="2" width="25" height="24"/>
+                                                                            <state key="normal" image="h_antal"/>
+                                                                            <state key="highlighted" image="h_antal_aktiv"/>
+                                                                            <connections>
+                                                                                <action selector="increaseAmountAction:" destination="0Ln-wK-2pp" eventType="touchUpInside" id="puz-0H-oDs"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="Wai-gF-zKd" secondAttribute="trailing" id="5JQ-sU-96L"/>
+                                                                        <constraint firstItem="yVI-zU-cFa" firstAttribute="leading" secondItem="odB-y0-M26" secondAttribute="trailing" constant="5" id="8w2-6k-4l2"/>
+                                                                        <constraint firstItem="Wai-gF-zKd" firstAttribute="leading" secondItem="yVI-zU-cFa" secondAttribute="trailing" constant="5" id="LSx-RL-aSc"/>
+                                                                        <constraint firstItem="odB-y0-M26" firstAttribute="leading" secondItem="5fu-fj-G1y" secondAttribute="leading" id="brH-kL-XaM"/>
+                                                                        <constraint firstItem="Wai-gF-zKd" firstAttribute="centerY" secondItem="5fu-fj-G1y" secondAttribute="centerY" id="cbx-q7-KMh"/>
+                                                                        <constraint firstItem="odB-y0-M26" firstAttribute="centerY" secondItem="5fu-fj-G1y" secondAttribute="centerY" id="kan-4w-8v4"/>
+                                                                        <constraint firstItem="yVI-zU-cFa" firstAttribute="centerY" secondItem="5fu-fj-G1y" secondAttribute="centerY" id="uSa-ti-xnX"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="5fu-fj-G1y" secondAttribute="trailing" id="8Ab-xT-p6T"/>
+                                                                <constraint firstItem="5fu-fj-G1y" firstAttribute="top" secondItem="Fac-NE-jSg" secondAttribute="topMargin" id="OUs-eF-S8L"/>
+                                                                <constraint firstItem="9AM-b0-gGu" firstAttribute="leading" secondItem="Fac-NE-jSg" secondAttribute="leadingMargin" id="eeA-eE-oOl"/>
+                                                                <constraint firstItem="9AM-b0-gGu" firstAttribute="centerY" secondItem="Fac-NE-jSg" secondAttribute="centerY" id="iB0-05-QBU"/>
+                                                                <constraint firstItem="5fu-fj-G1y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9AM-b0-gGu" secondAttribute="trailing" constant="10" id="onI-Sm-GNf"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="5fu-fj-G1y" secondAttribute="bottom" id="xrW-QT-Tqb"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="amount" destination="yVI-zU-cFa" id="5my-5I-gOh"/>
+                                                            <outlet property="name" destination="9AM-b0-gGu" id="md8-ay-DBz"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="PCd-cn-6Bn" id="Vc2-sj-YSF"/>
+                                                    <outlet property="delegate" destination="PCd-cn-6Bn" id="ONN-Uc-HR0"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="9je-tm-u92" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="leading" id="7yn-lt-SpW"/>
+                                            <constraint firstAttribute="trailing" secondItem="SJ3-bl-0pd" secondAttribute="trailing" constant="20" id="D74-Ut-j28"/>
+                                            <constraint firstItem="esO-aN-m4M" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="leading" constant="8" id="LgV-iy-QgL"/>
+                                            <constraint firstItem="esO-aN-m4M" firstAttribute="top" secondItem="afw-jq-Y5y" secondAttribute="top" id="RHO-zg-Q4V"/>
+                                            <constraint firstItem="9je-tm-u92" firstAttribute="top" secondItem="esO-aN-m4M" secondAttribute="bottom" constant="20" id="cB9-ZT-sGu"/>
+                                            <constraint firstItem="SJ3-bl-0pd" firstAttribute="top" secondItem="afw-jq-Y5y" secondAttribute="top" id="dmF-LL-UDg"/>
+                                            <constraint firstAttribute="bottom" secondItem="9je-tm-u92" secondAttribute="bottom" id="l0z-C5-rRh"/>
+                                            <constraint firstAttribute="trailing" secondItem="9je-tm-u92" secondAttribute="trailing" id="mL8-TE-mpk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rc-US-Ofr" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
+                                        <rect key="frame" x="554" y="50" width="220" height="400"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" placeholder="YES" id="FRm-nI-Rcy"/>
                                             <constraint firstAttribute="width" constant="220" id="NJt-aG-uUj"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="WD7-o2-gJJ"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="wVN-ym-47V"/>
@@ -315,26 +412,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="esO-aN-m4M" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="top" id="9TV-c1-VyB"/>
-                                    <constraint firstItem="esO-aN-m4M" firstAttribute="leading" secondItem="BqM-9z-Kd9" secondAttribute="leading" constant="9" id="Czf-H4-oVE"/>
-                                    <constraint firstItem="4Rc-US-Ofr" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="top" id="FBe-7C-fsb"/>
-                                    <constraint firstAttribute="bottom" secondItem="SJ3-bl-0pd" secondAttribute="bottom" id="IEk-5j-AOJ"/>
-                                    <constraint firstItem="SJ3-bl-0pd" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="top" id="TiG-UC-TSy"/>
-                                    <constraint firstAttribute="bottom" secondItem="esO-aN-m4M" secondAttribute="bottom" id="f3b-OO-hvi"/>
-                                    <constraint firstItem="SJ3-bl-0pd" firstAttribute="leading" secondItem="esO-aN-m4M" secondAttribute="trailing" constant="8" id="hV1-xD-GrJ"/>
+                                    <constraint firstItem="4Rc-US-Ofr" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="top" constant="50" id="FBe-7C-fsb"/>
+                                    <constraint firstItem="4Rc-US-Ofr" firstAttribute="leading" secondItem="afw-jq-Y5y" secondAttribute="trailing" constant="40" id="KjP-1u-LAg"/>
+                                    <constraint firstAttribute="bottom" secondItem="afw-jq-Y5y" secondAttribute="bottom" id="TV2-aI-iUR"/>
+                                    <constraint firstItem="afw-jq-Y5y" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="top" constant="50" id="kI1-ve-ZNb"/>
+                                    <constraint firstItem="afw-jq-Y5y" firstAttribute="leading" secondItem="BqM-9z-Kd9" secondAttribute="leading" id="qwv-By-msA"/>
                                     <constraint firstAttribute="trailing" secondItem="4Rc-US-Ofr" secondAttribute="trailing" id="rQU-7d-BAW"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="f3b-OO-hvi"/>
-                                        <exclude reference="IEk-5j-AOJ"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BqM-9z-Kd9" firstAttribute="leading" secondItem="FrR-cW-SkE" secondAttribute="leadingMargin" constant="150" id="V2D-4e-H1g"/>
+                            <constraint firstItem="BqM-9z-Kd9" firstAttribute="leading" secondItem="FrR-cW-SkE" secondAttribute="leadingMargin" constant="140" id="V2D-4e-H1g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BqM-9z-Kd9" secondAttribute="trailing" constant="70" id="cSa-88-6do"/>
                             <constraint firstItem="BqM-9z-Kd9" firstAttribute="top" secondItem="FrR-cW-SkE" secondAttribute="top" constant="130" id="fUX-zG-Ix7"/>
                             <constraint firstItem="1oo-AK-JML" firstAttribute="top" secondItem="BqM-9z-Kd9" secondAttribute="bottom" id="uiD-Iz-c5H"/>
@@ -344,6 +433,7 @@
                     <size key="freeformSize" width="1024" height="600"/>
                     <connections>
                         <outlet property="contactUsView" destination="4Rc-US-Ofr" id="vgD-dI-Hox"/>
+                        <outlet property="tableView" destination="9je-tm-u92" id="RrZ-MT-Yy1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxM-n8-SvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -880,6 +970,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="h_antal" width="25" height="24"/>
+        <image name="h_antal_aktiv" width="25" height="24"/>
+        <image name="m_antal" width="24" height="24"/>
+        <image name="m_antal_aktiv" width="25" height="24"/>
         <image name="sandvik_arrow_down" width="65" height="32"/>
         <image name="sandvik_arrow_left" width="32" height="64"/>
         <image name="sandvik_arrow_right" width="32" height="64"/>

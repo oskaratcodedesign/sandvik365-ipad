@@ -105,6 +105,7 @@
 		F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */; };
 		F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */; };
 		F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */; };
+		F77FEB831D7961A100911537 /* MaintenanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */; };
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
@@ -273,6 +274,7 @@
 		F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVResultViewController.swift; sourceTree = "<group>"; };
 		F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiEDVDetailView.xib; sourceTree = "<group>"; };
 		F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVDetailView.swift; sourceTree = "<group>"; };
+		F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceTableViewCell.swift; sourceTree = "<group>"; };
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */,
 				F741DC441D744E3A0014C623 /* EqFoooterView.swift */,
 				F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */,
+				F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */,
 			);
 			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
@@ -1073,6 +1076,7 @@
 				F7AF2A891C9ADDCC00EBEDFD /* RoiTopCenterDetailView.swift in Sources */,
 				F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */,
 				F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */,
+				F77FEB831D7961A100911537 /* MaintenanceTableViewCell.swift in Sources */,
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,

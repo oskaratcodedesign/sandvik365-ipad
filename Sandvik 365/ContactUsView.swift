@@ -22,6 +22,10 @@ class ContactUsView : NibDesignable {
     private var allRegions: [RegionData]?
     private var selectedRegionData: RegionData?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.allRegions = JSONManager.getData(JSONManager.EndPoint.CONTACT_US) as? [RegionData]
