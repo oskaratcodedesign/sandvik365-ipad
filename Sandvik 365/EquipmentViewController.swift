@@ -62,15 +62,21 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.contentInset = UIEdgeInsetsZero
     }
     
-    func didAddSerialNo(textField: UITextField) {
+    func didAddSerialNo(textField: UITextField) -> Bool {
         if let text = textField.text {
             if let obj = self.serviceKitData![text] {
                 //let data = ServiceKitData()
                 self.addedServiceKitData.append(obj)
                 self.tableView.reloadData()
                 textField.text = ""
+                return true
             }
         }
+        return false
+    }
+    
+    func getSupport() {
+        
     }
     
     func didPressRemove(sender: EqStandardTableViewCell) {

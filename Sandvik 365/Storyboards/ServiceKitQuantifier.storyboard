@@ -32,8 +32,11 @@
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
+            <string>AktivGroteskCorp-Regular</string>
+            <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
             <string>AktivGroteskCorp-Regular</string>
@@ -774,16 +777,135 @@
                                                 </mask>
                                             </variation>
                                         </view>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdm-se-NwC">
+                                            <rect key="frame" x="120" y="0.0" width="444" height="294"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJt-al-3yt">
+                                                    <rect key="frame" x="0.0" y="40" width="444" height="214"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="INVALID SERIAL NUMBER. PLEASE CONTACT SANDVIK IF PROBLEM PERSISTS." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2N-BS-ePF">
+                                                            <rect key="frame" x="42" y="54" width="361" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="kaa-p1-gPE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="10"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="kaa-p1-gPE"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="y55-lt-urI">
+                                                            <rect key="frame" x="215" y="86" width="15" height="55"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="55" id="aW3-9l-5V4"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="48"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="aW3-9l-5V4"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ9-J8-DTB" customClass="HighlightButton" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <rect key="frame" x="137" y="151" width="170" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="M5a-59-wMW"/>
+                                                                <constraint firstAttribute="width" constant="170" id="clh-ik-cLH"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="16"/>
+                                                            <state key="normal" title="GET SUPPORT">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted">
+                                                                <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightBgColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                    <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="getSupportAction:" destination="qBW-E3-z4e" eventType="touchUpInside" id="olg-zZ-cnM"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="H2N-BS-ePF" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="49s-G0-5TX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qQ9-J8-DTB" secondAttribute="bottom" constant="-102" id="C6z-qb-wDc"/>
+                                                        <constraint firstItem="y55-lt-urI" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="DUy-yF-f44"/>
+                                                        <constraint firstItem="H2N-BS-ePF" firstAttribute="top" secondItem="CJt-al-3yt" secondAttribute="top" constant="54" id="GSA-ai-tle"/>
+                                                        <constraint firstItem="qQ9-J8-DTB" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="Vfr-Wh-lhe"/>
+                                                        <constraint firstItem="qQ9-J8-DTB" firstAttribute="top" secondItem="y55-lt-urI" secondAttribute="bottom" constant="10" id="Wmt-Hj-YTa"/>
+                                                        <constraint firstItem="y55-lt-urI" firstAttribute="top" secondItem="H2N-BS-ePF" secondAttribute="bottom" constant="20" id="iHe-QA-8gR"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                            <color key="value" red="0.8901960784313725" green="0.43137254901960786" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="C6z-qb-wDc"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-XL-IHG">
+                                                    <rect key="frame" x="181" y="0.0" width="81" height="82"/>
+                                                    <state key="normal" image="equipment_close"/>
+                                                    <connections>
+                                                        <action selector="closeErrorAction:" destination="qBW-E3-z4e" eventType="touchUpInside" id="wID-SG-8Wc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="CJt-al-3yt" secondAttribute="trailing" id="AOP-Yj-hXr"/>
+                                                <constraint firstItem="CJt-al-3yt" firstAttribute="leading" secondItem="sdm-se-NwC" secondAttribute="leading" id="FGA-je-gIl"/>
+                                                <constraint firstAttribute="height" constant="300" id="NzP-Mc-5Qq"/>
+                                                <constraint firstItem="CJt-al-3yt" firstAttribute="top" secondItem="sdm-se-NwC" secondAttribute="top" constant="40" id="UZH-Of-xzF"/>
+                                                <constraint firstAttribute="height" constant="200" id="eDv-jQ-jhN"/>
+                                                <constraint firstItem="jM2-XL-IHG" firstAttribute="centerX" secondItem="sdm-se-NwC" secondAttribute="centerX" id="jrS-gN-OgO"/>
+                                                <constraint firstItem="jM2-XL-IHG" firstAttribute="top" secondItem="sdm-se-NwC" secondAttribute="top" id="ne2-IQ-aPy"/>
+                                                <constraint firstAttribute="bottom" secondItem="CJt-al-3yt" secondAttribute="bottom" constant="40" id="pCq-yn-na9"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="NzP-Mc-5Qq"/>
+                                                    <exclude reference="eDv-jQ-jhN"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="6Np-Ue-ieO" firstAttribute="leading" secondItem="qBW-E3-z4e" secondAttribute="leading" constant="120" id="4kk-vB-bJi"/>
+                                        <constraint firstItem="sdm-se-NwC" firstAttribute="width" secondItem="6Np-Ue-ieO" secondAttribute="width" id="50M-GB-eK5"/>
+                                        <constraint firstItem="sdm-se-NwC" firstAttribute="top" secondItem="6Np-Ue-ieO" secondAttribute="top" id="7Cu-GF-isF"/>
                                         <constraint firstItem="5cL-c5-HGE" firstAttribute="leading" secondItem="qBW-E3-z4e" secondAttribute="leading" id="EBi-Mi-gM4"/>
                                         <constraint firstItem="5cL-c5-HGE" firstAttribute="height" secondItem="qBW-E3-z4e" secondAttribute="height" id="IuS-Th-fai"/>
                                         <constraint firstAttribute="bottom" secondItem="6Np-Ue-ieO" secondAttribute="bottom" id="S70-9g-W1P"/>
                                         <constraint firstAttribute="bottom" secondItem="6Np-Ue-ieO" secondAttribute="bottom" id="SRl-pZ-z5T"/>
                                         <constraint firstAttribute="trailing" secondItem="5cL-c5-HGE" secondAttribute="trailing" id="alu-fL-14F"/>
+                                        <constraint firstItem="sdm-se-NwC" firstAttribute="leading" secondItem="6Np-Ue-ieO" secondAttribute="leading" id="g8J-pF-M80"/>
                                         <constraint firstAttribute="trailing" secondItem="6Np-Ue-ieO" secondAttribute="trailing" constant="120" id="jjn-BE-Jig"/>
+                                        <constraint firstItem="sdm-se-NwC" firstAttribute="height" secondItem="6Np-Ue-ieO" secondAttribute="height" id="lby-rl-V7f"/>
                                         <constraint firstItem="5cL-c5-HGE" firstAttribute="top" secondItem="qBW-E3-z4e" secondAttribute="top" id="seH-yI-bMa"/>
                                         <constraint firstItem="6Np-Ue-ieO" firstAttribute="top" secondItem="qBW-E3-z4e" secondAttribute="top" id="xef-s3-BRG"/>
                                     </constraints>
@@ -796,6 +918,8 @@
                                         <outlet property="addView" destination="5cL-c5-HGE" id="3Ba-oZ-edn"/>
                                         <outlet property="enterText" destination="uwQ-7W-3x0" id="DHr-0H-Xz7"/>
                                         <outlet property="enterView" destination="6Np-Ue-ieO" id="MZw-Z2-w4e"/>
+                                        <outlet property="errorText" destination="y55-lt-urI" id="cfU-qP-UQ7"/>
+                                        <outlet property="errorView" destination="sdm-se-NwC" id="keo-js-PPS"/>
                                     </connections>
                                 </view>
                                 <prototypes>

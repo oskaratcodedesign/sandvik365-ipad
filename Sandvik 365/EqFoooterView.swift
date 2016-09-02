@@ -9,14 +9,18 @@
 import UIKit
 
 protocol EqFoooterDelegate {
-    func didAddSerialNo(textField: UITextField)
+    func didAddSerialNo(textField: UITextField) -> Bool
+    func getSupport()
 }
 
 class EqFoooterView: UIView, UITextViewDelegate {
 
     @IBOutlet weak var addView: UIView!
     @IBOutlet weak var enterView: UIView!
+    @IBOutlet weak var errorView: UIView!
+    
     @IBOutlet weak var enterText: UITextField!
+    @IBOutlet weak var errorText: UITextField!
     var delegate: EqFoooterDelegate?
     
     override func awakeFromNib() {
@@ -42,10 +46,24 @@ class EqFoooterView: UIView, UITextViewDelegate {
     }
     
     @IBAction func addAction(sender: UIButton) {
-        self.addView.hidden = false
-        self.enterView.hidden = true
-        delegate?.didAddSerialNo(self.enterText)
+        if let del = self.delegate {
+            if !del.didAddSerialNo(self.enterText) {
+                self.errorText.text = self.enterText.text
+                self.errorView.hidden = false
+            } else {
+                self.addView.hidden = false
+                self.enterView.hidden = true
+            }
+        }
         
         self.enterText.resignFirstResponder()
+    }
+    
+    @IBAction func closeErrorAction(sender: UIButton) {
+        self.errorView.hidden = true
+    }
+    
+    @IBAction func getSupportAction(sender: UIButton) {
+        self.delegate?.getSupport()
     }
 }
