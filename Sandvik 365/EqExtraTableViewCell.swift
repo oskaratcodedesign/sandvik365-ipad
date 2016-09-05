@@ -33,6 +33,7 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func increaseHoursAction(sender: UIButton) {
         if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
             v = v + 125
+            self.data?.hours = v
             hours.text = String(v)
         }
     }
@@ -40,7 +41,9 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func decreaseHoursAction(sender: UIButton) {
         if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
             v = v - 125
-            hours.text = String(max(v, 0))
+            v = max(v, 0)
+            self.data?.hours = v
+            hours.text = String(v)
         }
     }
     

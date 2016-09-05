@@ -1146,16 +1146,18 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2i6-kY-RXx">
-                                                    <rect key="frame" x="481" y="5" width="32" height="34"/>
+                                                    <rect key="frame" x="481" y="-2" width="32" height="48"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcu-Gv-QNn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="24"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="LW6-Qv-40U"/>
-                                                                <constraint firstAttribute="height" constant="16" id="hXK-VT-cfB"/>
+                                                                <constraint firstAttribute="height" constant="24" id="hXK-VT-cfB"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="30"/>
-                                                            <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                            <inset key="contentEdgeInsets" minX="3" minY="8" maxX="3" maxY="8"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="-2"/>
                                                             <state key="normal" image="sandvik_arrow_up">
                                                                 <color key="titleColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -1164,13 +1166,14 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTn-a4-Qvv">
-                                                            <rect key="frame" x="0.0" y="18" width="32" height="16"/>
+                                                            <rect key="frame" x="0.0" y="24" width="32" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="CAW-6r-G8Y"/>
-                                                                <constraint firstAttribute="height" constant="16" id="b5I-br-VLu"/>
+                                                                <constraint firstAttribute="height" constant="24" id="b5I-br-VLu"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="30"/>
-                                                            <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                            <inset key="contentEdgeInsets" minX="3" minY="8" maxX="3" maxY="8"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="-2" maxX="0.0" maxY="2"/>
                                                             <state key="normal" image="sandvik_arrow_down">
                                                                 <color key="titleColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -1212,11 +1215,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="2i6-kY-RXx" firstAttribute="top" secondItem="D0Q-4k-7RI" secondAttribute="topMargin" constant="-3" id="5RE-Z6-wyi"/>
+                                                <constraint firstItem="2i6-kY-RXx" firstAttribute="top" secondItem="D0Q-4k-7RI" secondAttribute="topMargin" constant="-10" id="5RE-Z6-wyi"/>
                                                 <constraint firstItem="TBx-sv-a99" firstAttribute="centerY" secondItem="D0Q-4k-7RI" secondAttribute="centerY" id="6vS-d9-Mgb"/>
                                                 <constraint firstItem="imc-K1-3yN" firstAttribute="centerY" secondItem="D0Q-4k-7RI" secondAttribute="centerY" id="J83-ud-QVl"/>
                                                 <constraint firstItem="2i6-kY-RXx" firstAttribute="leading" secondItem="Sst-ES-T78" secondAttribute="trailing" constant="5" id="Rry-Rn-SY1"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="2i6-kY-RXx" secondAttribute="bottom" constant="-3" id="Ugi-ej-uik"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2i6-kY-RXx" secondAttribute="bottom" constant="-10" id="Ugi-ej-uik"/>
                                                 <constraint firstItem="Mv7-YE-hSn" firstAttribute="centerY" secondItem="D0Q-4k-7RI" secondAttribute="centerY" id="XQA-HQ-5Gd"/>
                                                 <constraint firstItem="Sst-ES-T78" firstAttribute="centerY" secondItem="D0Q-4k-7RI" secondAttribute="centerY" id="YOg-Uj-xxf"/>
                                                 <constraint firstItem="Sst-ES-T78" firstAttribute="leading" secondItem="Mv7-YE-hSn" secondAttribute="trailing" constant="10" id="lEV-me-YgP"/>
