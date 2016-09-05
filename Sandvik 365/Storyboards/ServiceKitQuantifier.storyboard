@@ -333,7 +333,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-fj-G1y">
-                                                                    <rect key="frame" x="435" y="8" width="71" height="28"/>
+                                                                    <rect key="frame" x="423" y="8" width="83" height="28"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odB-y0-M26">
                                                                             <rect key="frame" x="0.0" y="2" width="24" height="24"/>
@@ -343,14 +343,17 @@
                                                                                 <action selector="decreaseAmountAction:" destination="0Ln-wK-2pp" eventType="touchUpInside" id="3ZF-hD-M2r"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-zU-cFa">
-                                                                            <rect key="frame" x="29" y="3" width="12" height="23"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-zU-cFa">
+                                                                            <rect key="frame" x="29" y="3" width="24" height="23"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="jI8-PZ-rP3"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="20"/>
                                                                             <color key="textColor" red="0.08235294118" green="0.67843137249999996" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wai-gF-zKd">
-                                                                            <rect key="frame" x="46" y="2" width="25" height="24"/>
+                                                                            <rect key="frame" x="58" y="2" width="25" height="24"/>
                                                                             <state key="normal" image="h_antal"/>
                                                                             <state key="highlighted" image="h_antal_aktiv"/>
                                                                             <connections>
