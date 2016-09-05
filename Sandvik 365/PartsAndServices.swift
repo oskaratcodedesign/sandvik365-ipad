@@ -159,7 +159,7 @@ enum BusinessType: UInt32 {
             case GetTool:
                 return "Ground Engaging Tools (GET) calculator"
             case ServiceKitQuantifier:
-                return "Service kit quantifier"
+                return "Maintenance kit quantifier"
             }
         }
         
