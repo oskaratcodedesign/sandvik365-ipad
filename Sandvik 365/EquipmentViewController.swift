@@ -8,9 +8,10 @@
 
 import UIKit
 
-class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate, EqStandardCellDelegate {
+class EquipmentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EqFoooterDelegate, EqStandardCellDelegate, RegionSelectorDelegate {
     var addedServiceKitData = [ServiceKitData]()
     private var serviceKitData: [String: ServiceKitData]?
+    private var regionSelector: RegionSelector?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: EqFoooterView!
@@ -65,7 +66,6 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
     func didAddSerialNo(textField: UITextField) -> Bool {
         if let text = textField.text {
             if let obj = self.serviceKitData![text] {
-                //let data = ServiceKitData()
                 self.addedServiceKitData.append(obj)
                 self.tableView.reloadData()
                 textField.text = ""
@@ -75,8 +75,21 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         return false
     }
     
+    func didSelectRegion() {
+        if let regionSelector = self.regionSelector {
+            regionSelector.removeFromSuperview()
+            self.regionSelector = nil
+        }
+    }
+    
     func getSupport() {
-        
+        if let regions = JSONManager.getData(JSONManager.EndPoint.CONTACT_US) as? [RegionData] {
+            regionSelector = RegionSelector(del: self, allRegions: regions)
+            let constraints = regionSelector!.fillConstraints(self.view, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
+            regionSelector!.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(regionSelector!)
+            NSLayoutConstraint.activateConstraints(constraints)
+        }
     }
     
     func didPressRemove(sender: EqStandardTableViewCell) {
