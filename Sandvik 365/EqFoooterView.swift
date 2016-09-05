@@ -27,6 +27,12 @@ class EqFoooterView: UIView, UITextViewDelegate {
         super.awakeFromNib()
         // Initialization code
         enterText.attributedPlaceholder = NSAttributedString(string:"Enter here",attributes:[NSForegroundColorAttributeName: Theme.bluePrimaryColor])
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleErrorTap))
+        errorView.addGestureRecognizer(tap)
+    }
+    
+    func handleErrorTap() {
+        self.errorView.hidden = true
     }
     
     func configureView(showEnterView: Bool){
