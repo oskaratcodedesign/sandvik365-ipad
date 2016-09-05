@@ -121,15 +121,15 @@ enum BusinessType: UInt32 {
     var interActiveTools: [InterActiveTool]? {
         switch self {
         case ExplorationDrillRigs, MechanicalCutting:
-            return nil
+            return [.ServiceKitQuantifier]
         case UndergroundDrillingAndBolting:
-            return [.TopCenterTool]
+            return [.TopCenterTool, .ServiceKitQuantifier]
         case SurfaceDrilling:
-            return nil//[.RockDrillTool]
+            return [.ServiceKitQuantifier]//[.RockDrillTool]
         case CrusherAndScreening:
-            return [.CrusherTool, .EDVTool]
+            return [.CrusherTool, .EDVTool, .ServiceKitQuantifier]
         case UndergroundLoadingAndHauling:
-            return [.GetTool/*, .FireSuppressionTool*/]
+            return [.GetTool/*, .FireSuppressionTool*/, .ServiceKitQuantifier]
         case All:
             return [/*.RockDrillTool, .FireSuppressionTool,*/ .TopCenterTool, .CrusherTool, .EDVTool, .GetTool, .ServiceKitQuantifier]
         }

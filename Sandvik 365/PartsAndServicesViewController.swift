@@ -34,9 +34,14 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     func didSelectSection(sectionTitle: String) {
         
         selectedSectionTitle = sectionTitle
-        let iatTitles = self.selectedPartsAndServices.businessType.interActiveTools?.flatMap({$0.title.lowercaseString})
-        if let titles = iatTitles where titles.contains(sectionTitle.lowercaseString) {
-            performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
+        if let index = self.selectedPartsAndServices.businessType.interActiveTools?.indexOf({ $0.title.caseInsensitiveCompare(sectionTitle) == .OrderedSame}) {
+            let tool = self.selectedPartsAndServices.businessType.interActiveTools![index]
+            if ((tool.selectionInput as? SelectionInput) != nil) {
+                performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
+            }
+            else if tool == .ServiceKitQuantifier {
+                self.performSegueWithIdentifier("ServiceKitQuantifierViewController", sender: self)
+            }
         }
         else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
             performSegueWithIdentifier("ShowVideoCenterViewController", sender: self)
@@ -70,6 +75,13 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
                     vc.selectedInput = interActiveTool.selectionInput as! SelectionInput
                     vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, interActiveTool.title.uppercaseString)
                 }
+            }
+        }
+        else if segue.identifier == "ServiceKitQuantifierViewController" {
+            if let vc = segue.destinationViewController as? ServiceKitQuantifierViewController {
+                vc.selectedBusinessType = .All
+                let tool: BusinessType.InterActiveTool = .ServiceKitQuantifier
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, tool.title.uppercaseString)
             }
         }
     }
