@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class MaintenanceOfferData {
     let maintenanceServiceKitParent: MaintenanceServiceKitParent
@@ -18,7 +19,7 @@ class MaintenanceOfferData {
     }
 }
 
-class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegate, RegionSelectorDelegate, UITableViewDelegate, UITableViewDataSource {
+class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegate, RegionSelectorDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var contactUsView: ContactUsView!
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +52,53 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         regionSelector!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(regionSelector!)
         NSLayoutConstraint.activateConstraints(constraints)
+    }
+    
+    func didPressEmail(email: String) -> Bool {
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setSubject("Maintenance Kits Request – 365 APP")
+        mail.setToRecipients([email])
+        var html = "<!DOCTYPE html>"
+        html = html + "<html>"
+        html = html + "<body>"
+/*  html = html + "<table><tr><td>My name is: </td><td><input type='text' name='name' placeholder='Please enter your name here'></td></tr>"
+ html = html + "<br><tr><td>I work at : </td><td><input type='text' name='work' placeholder='Please enter your company here'></td></tr>"
+ html = html + "<br><tr><td>Reach me at: </td><td><input type='text' name='phone' placeholder='Please enter your phone number and verify your e-mail address here'></td></tr></table>"*/
+        html = html + "Thank you for using our Maintenance kits tool, please enter your contact information below and send the request. We will gladly come back to your shortly. Please note that you will need to have internet connection to send the request."
+        html = html + "<br><br>My name is:"
+        html = html + "<br>I work at :"
+        html = html + "<br>Reach me at:"
+        html = html + "<br><br>--- MACHINES & REQUESTED KITS ---<br>"
+        html = html + "<br>Kits Part number and quantity:<br>"
+        html = html + "<ul>"
+        for data in self.maintenanceOfferData {
+            html = html + "<li>"
+            html = html + data.maintenanceServiceKitParent.description + " " + String(data.amount)
+            html = html + "</li>"
+        }
+        html = html + "</ul>"
+        
+        if let addedExtraEquipmentData = self.addedExtraEquipmentData {
+            html = html + "Machine(s) and serial number(s):<br>"
+            html = html + "<ul>"
+            for data in addedExtraEquipmentData {
+                html = html + "<li>"
+                html = html + (data.serviceKitData.model ?? "") + " " + data.serviceKitData.serialNo
+                html = html + "</li>"
+            }
+            html = html + "</ul>"
+        }
+        
+        html = html + "</body>"
+        html = html + "</html>"
+        mail.setMessageBody(html, isHTML: true)
+        self.presentViewController(mail, animated: true, completion: nil)
+        return true
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

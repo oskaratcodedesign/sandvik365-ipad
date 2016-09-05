@@ -58,8 +58,8 @@ class MaintenanceServiceKitData {
             for obj in json {
                 if let type = obj.objectForKey("Parent / Component") as? String {
                     if type == "Parent" {
-                        if let sno = obj.objectForKey("Parent") as? String {
-                            allData[sno] = MaintenanceServiceKitParent(serialNo: sno, dic: obj)
+                        if let sno = obj.objectForKey("Parent") as? String, let desc = obj.objectForKey("Item Description") as? String {
+                            allData[sno] = MaintenanceServiceKitParent(serialNo: sno, desc: desc)
                         }
                     }
                     else if type == "Component" {
@@ -82,12 +82,12 @@ class MaintenanceServiceKitData {
 
 class MaintenanceServiceKitParent {
     var serialNo: String
-    var description: String?
+    var description: String
     var components: [MaintenanceServiceKitComponent]
     
-    init(serialNo: String, dic: NSDictionary){
+    init(serialNo: String, desc: String){
         self.serialNo = serialNo
-        self.description = dic.objectForKey("Item Description") as? String
+        self.description = desc
         self.components = [MaintenanceServiceKitComponent]()
     }
 }

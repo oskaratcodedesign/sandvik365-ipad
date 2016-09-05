@@ -10,22 +10,26 @@ class MaintenanceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var amount: UILabel!
+    private var data: MaintenanceOfferData!
     
     @IBAction func decreaseAmountAction(sender: UIButton) {
         if var v = (amount.text != nil) ? Int(amount.text!) : 0 {
             v = v - 1
-            amount.text = String(max(v, 0))
+            data.amount = max(v, 0)
+            amount.text = String(data.amount)
         }
     }
     
     @IBAction func increaseAmountAction(sender: UIButton) {
         if var v = (amount.text != nil) ? Int(amount.text!) : 0 {
             v = v + 1
+            data.amount = v
             amount.text = String(v)
         }
     }
     
     func configureView(data: MaintenanceOfferData) {
+        self.data = data
         self.name.text = data.maintenanceServiceKitParent.description
         self.amount.text = String(data.amount)
     }
