@@ -497,7 +497,7 @@ TO ROTATE</string>
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.8901960784313725" green="0.43137254901960786" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
