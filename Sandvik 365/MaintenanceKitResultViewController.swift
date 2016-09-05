@@ -126,21 +126,26 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         if let alldata = MaintenanceServiceKitData.getAllData(), let input = self.addedExtraEquipmentData {
             self.maintenanceOfferData = [MaintenanceOfferData]()
             for obj in input {
-                if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKitNo {
-                    let amount = obj.hours / 125
-                    addMaintenanceKit(alldata, id: id, amount: amount)
-                }
-                if let id = obj.serviceKitData.H250ServiceKitNo {
-                    let amount = obj.hours / 250
-                    addMaintenanceKit(alldata, id: id, amount: amount)
-                }
-                if let id = obj.serviceKitData.H500ServiceKitNo {
-                    let amount = obj.hours / 500
-                    addMaintenanceKit(alldata, id: id, amount: amount)
-                }
-                if let id = obj.serviceKitData.H1000ServiceKitNo {
+                var alreadyCountedService = 0
+                if let id = obj.serviceKitData.H1000ServiceKitNo where !id.isEmpty {
                     let amount = obj.hours / 1000
+                    alreadyCountedService = amount
                     addMaintenanceKit(alldata, id: id, amount: amount)
+                }
+                
+                if let id = obj.serviceKitData.H500ServiceKitNo where !id.isEmpty {
+                    let amount = obj.hours / 500
+                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
+                    alreadyCountedService = amount
+                }
+                if let id = obj.serviceKitData.H250ServiceKitNo where !id.isEmpty {
+                    let amount = obj.hours / 250
+                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
+                    alreadyCountedService = amount
+                }
+                if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKitNo where !id.isEmpty {
+                    let amount = obj.hours / 125
+                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
                 }
             }
             self.tableView.reloadData()
@@ -149,7 +154,7 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
     
     private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], id: String, amount: Int) {
         if let data = allData[id] {
-            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: amount))
+            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: max(0, amount)))
         }
     }
 }
