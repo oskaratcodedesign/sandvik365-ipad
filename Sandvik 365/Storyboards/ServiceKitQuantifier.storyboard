@@ -422,14 +422,14 @@
                                                         </variation>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="20" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-p9-6Ex">
-                                                        <rect key="frame" x="79" y="80" width="335" height="256"/>
+                                                        <rect key="frame" x="79" y="80" width="398" height="256"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MaintenanceKitInfoCell" id="BxD-cL-ptI" customClass="MaintenanceKitInfoCell" customModule="Sandvik_365" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="335" height="20"/>
+                                                                <rect key="frame" x="0.0" y="28" width="398" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BxD-cL-ptI" id="RGD-dc-Krg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L47-LH-n9H">
@@ -447,7 +447,7 @@
                                                                             </variation>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mI-Bx-74Y">
-                                                                            <rect key="frame" x="327" y="10" width="0.0" height="0.0"/>
+                                                                            <rect key="frame" x="390" y="10" width="0.0" height="0.0"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="200" id="QOp-C9-oBM"/>
                                                                             </constraints>
@@ -502,11 +502,17 @@
                                                     <constraint firstAttribute="bottom" secondItem="fhL-p9-6Ex" secondAttribute="bottom" id="S04-uv-sXJ"/>
                                                     <constraint firstItem="oYu-OD-Oh6" firstAttribute="top" secondItem="K9b-iZ-0WQ" secondAttribute="top" constant="30" id="Ysd-9E-kaw"/>
                                                     <constraint firstItem="av2-Th-4Z1" firstAttribute="top" secondItem="K9b-iZ-0WQ" secondAttribute="top" constant="10" id="ZxK-Dr-2nS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fhL-p9-6Ex" secondAttribute="trailing" constant="37" id="bo5-9Q-PZ2"/>
                                                     <constraint firstItem="fhL-p9-6Ex" firstAttribute="leading" secondItem="CJz-4O-nc8" secondAttribute="trailing" constant="10" id="jvz-CL-dwx"/>
                                                     <constraint firstItem="CJz-4O-nc8" firstAttribute="top" secondItem="oYu-OD-Oh6" secondAttribute="bottom" constant="30" id="kG5-DL-mCy"/>
                                                     <constraint firstItem="oYu-OD-Oh6" firstAttribute="leading" secondItem="K9b-iZ-0WQ" secondAttribute="leading" constant="10" id="sQF-BN-4yu"/>
                                                     <constraint firstItem="fhL-p9-6Ex" firstAttribute="top" secondItem="CJz-4O-nc8" secondAttribute="top" constant="-3" id="w84-8W-H5C"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Aie-5n-4JP"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <outlet property="name" destination="oYu-OD-Oh6" id="Bey-8l-4IG"/>
                                                     <outlet property="tableView" destination="fhL-p9-6Ex" id="MzE-r0-DEc"/>
