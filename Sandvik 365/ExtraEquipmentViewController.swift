@@ -27,13 +27,14 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
             setData()
         }
     }
+    private var maintenanceServiceKitData: [String: MaintenanceServiceKitParent]?
     
     var addedExtraEquipmentData = [ExtraEquipmentData]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       self.maintenanceServiceKitData = MaintenanceServiceKitData.getAllData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
     }
@@ -63,13 +64,53 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         return 1
     }
     
+    private func findServiceKit(obj: ExtraEquipmentData) -> Bool {
+        if let id = obj.serviceKitData.H1000ServiceKitNo where !id.isEmpty {
+            if findIdInData(id) {
+                return true
+            }
+        }
+        if let id = obj.serviceKitData.H500ServiceKitNo where !id.isEmpty {
+            if findIdInData(id) {
+                return true
+            }
+        }
+        if let id = obj.serviceKitData.H250ServiceKitNo where !id.isEmpty {
+            if findIdInData(id) {
+                return true
+            }
+        }
+        if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKitNo where !id.isEmpty {
+            if findIdInData(id) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func findIdInData(id: String) -> Bool {
+        if let data = self.maintenanceServiceKitData {
+            if data[id] != nil {
+                return true
+            }
+        }
+        return false
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("EqExtraCell") as! EqExtraTableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        cell.configureView(self.addedExtraEquipmentData[indexPath.row])
-        //cell.delegate = self
-        return cell
+        let data = self.addedExtraEquipmentData[indexPath.row]
+        if findServiceKit(data) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EqExtraCell") as! EqExtraTableViewCell
+            cell.backgroundColor = UIColor.clearColor()
+            cell.configureView(data)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EqExtraNoKitCell") as! EqExtraNoKitTableViewCell
+            cell.backgroundColor = UIColor.clearColor()
+            cell.configureView(data)
+            return cell
+        }
     }
     
     func getAllCellData() -> [ExtraEquipmentData]? {

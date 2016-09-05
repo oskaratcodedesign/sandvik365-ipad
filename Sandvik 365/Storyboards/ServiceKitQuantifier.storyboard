@@ -19,8 +19,11 @@
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
             <string>AktivGroteskCorp-Light</string>
+            <string>AktivGroteskCorp-Light</string>
         </mutableArray>
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp Medium.ttf">
+            <string>AktivGroteskCorpMedium-Regular</string>
+            <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
             <string>AktivGroteskCorpMedium-Regular</string>
@@ -1240,6 +1243,63 @@
                                             <outlet property="model" destination="Sst-ES-T78" id="SfJ-QL-z4s"/>
                                             <outlet property="serialNo" destination="Mv7-YE-hSn" id="3DJ-hW-7fz"/>
                                             <outlet property="workingCondition" destination="TBx-sv-a99" id="RX6-4R-1rh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EqExtraNoKitCell" id="aK6-qw-srv" customClass="EqExtraNoKitTableViewCell" customModule="Sandvik_365" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="694" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aK6-qw-srv" id="GBL-PG-ces">
+                                            <rect key="frame" x="0.0" y="0.0" width="694" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui4-C6-YRD">
+                                                    <rect key="frame" x="8" y="22" width="200" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="4rA-54-6xe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keF-KM-1Gf">
+                                                    <rect key="frame" x="218" y="22" width="170" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="170" id="Aeg-vm-Agf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No maintenance kit found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-zN-gkt">
+                                                    <rect key="frame" x="396" y="12" width="290" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="170" id="1wm-qQ-3H6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="1wm-qQ-3H6"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="hcr-zN-gkt" firstAttribute="leading" secondItem="keF-KM-1Gf" secondAttribute="trailing" constant="8" id="1tt-DV-CjI"/>
+                                                <constraint firstItem="ui4-C6-YRD" firstAttribute="centerY" secondItem="GBL-PG-ces" secondAttribute="centerY" id="JZA-WI-m6I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hcr-zN-gkt" secondAttribute="trailing" id="NZp-4S-TbE"/>
+                                                <constraint firstItem="keF-KM-1Gf" firstAttribute="centerY" secondItem="GBL-PG-ces" secondAttribute="centerY" id="d4g-nF-eGL"/>
+                                                <constraint firstItem="ui4-C6-YRD" firstAttribute="leading" secondItem="GBL-PG-ces" secondAttribute="leadingMargin" id="esF-rl-9dP"/>
+                                                <constraint firstItem="keF-KM-1Gf" firstAttribute="leading" secondItem="ui4-C6-YRD" secondAttribute="trailing" constant="10" id="kzo-FU-lpb"/>
+                                                <constraint firstItem="hcr-zN-gkt" firstAttribute="centerY" secondItem="GBL-PG-ces" secondAttribute="centerY" id="qhu-M2-wJD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="model" destination="keF-KM-1Gf" id="bYu-38-hIK"/>
+                                            <outlet property="serialNo" destination="ui4-C6-YRD" id="ZZz-n3-3d3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

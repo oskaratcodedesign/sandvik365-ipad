@@ -9,6 +9,16 @@
 
 import Foundation
 
+class EqExtraNoKitTableViewCell: UITableViewCell {
+    @IBOutlet weak var serialNo: UILabel!
+    @IBOutlet weak var model: UILabel!
+    
+    func configureView(data: ExtraEquipmentData){
+        self.serialNo.text = data.serviceKitData.serialNo
+        self.model.text = data.serviceKitData.model ?? ""
+    }
+}
+
 class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var hours: UITextField!
