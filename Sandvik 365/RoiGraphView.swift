@@ -34,7 +34,7 @@ class RoiGraphView: UIView {
             view.removeFromSuperview()
         }
         drawGraph(selectedROIInput.calculatedTotal(), color: Theme.orangePrimaryColor)
-        drawGraph(selectedROIInput.originalTotal(), color: UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000))
+        drawGraph(selectedROIInput.originalTotal(), color: Theme.bluePrimaryColor)
     }
     
     private func drawGraph(values: [Int], color: UIColor)

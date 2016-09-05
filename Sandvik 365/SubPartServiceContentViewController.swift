@@ -336,7 +336,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 17.0)
-        label.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
+        label.textColor = Theme.bluePrimaryColor
         
         label.text = string.uppercaseString
         return label
