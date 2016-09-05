@@ -29,6 +29,12 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleMainTap))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    func handleMainTap() {
+        self.footerView.enterText.resignFirstResponder()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
