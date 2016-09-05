@@ -821,7 +821,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted">
-                                                                <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -834,7 +834,7 @@
                                                                     <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                    <color key="value" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="value" red="0.96078431372549022" green="0.50980392156862742" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
@@ -842,7 +842,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="H2N-BS-ePF" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="49s-G0-5TX"/>
                                                         <constraint firstAttribute="bottom" secondItem="qQ9-J8-DTB" secondAttribute="bottom" constant="-102" id="C6z-qb-wDc"/>
@@ -868,7 +868,7 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-XL-IHG">
                                                     <rect key="frame" x="181" y="0.0" width="81" height="82"/>
-                                                    <state key="normal" image="equipment_close"/>
+                                                    <state key="normal" image="equipment_orange"/>
                                                     <connections>
                                                         <action selector="closeErrorAction:" destination="qBW-E3-z4e" eventType="touchUpInside" id="wID-SG-8Wc"/>
                                                     </connections>
@@ -1278,6 +1278,7 @@
         <image name="equipment" width="86" height="86"/>
         <image name="equipment_aktiv" width="82" height="82"/>
         <image name="equipment_close" width="81" height="82"/>
+        <image name="equipment_orange" width="81" height="82"/>
         <image name="h_antal" width="25" height="24"/>
         <image name="h_antal_aktiv" width="25" height="24"/>
         <image name="m_antal" width="24" height="24"/>
