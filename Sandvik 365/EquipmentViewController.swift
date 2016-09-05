@@ -66,11 +66,13 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func didAddSerialNo(textField: UITextField) -> Bool {
         if let text = textField.text {
-            if let obj = self.serviceKitData![text] {
-                self.addedServiceKitData.append(obj)
-                self.tableView.reloadData()
-                textField.text = ""
-                return true
+            for (key, value) in self.serviceKitData! {
+                if text.caseInsensitiveCompare(key) == .OrderedSame {
+                    self.addedServiceKitData.append(value)
+                    self.tableView.reloadData()
+                    textField.text = ""
+                    return true
+                }
             }
         }
         return false
