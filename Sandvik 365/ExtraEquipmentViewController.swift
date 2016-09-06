@@ -37,6 +37,12 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
        self.maintenanceServiceKitData = MaintenanceServiceKitData.getAllData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleMainTap))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    func handleMainTap() {
+        self.view.endEditing(true)
     }
     
     private func setData() {
