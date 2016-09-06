@@ -71,13 +71,16 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         html = html + "<br>Reach me at:"
         html = html + "<br><br>--- MACHINES & REQUESTED KITS ---<br>"
         html = html + "<br>Kits Part number and quantity:<br>"
-        html = html + "<ul>"
+        html = html + "<table style='border: 1px solid black; border-collapse: collapse;'>"
+        html = html + "<tr style='border: 1px solid black;' bgcolor='#000'>"
+        html = html + "<td style='padding-right: 30px;'><b><font color='#fff'>KIT NUMBER</font></b></td><td style='padding-right: 30px;'><b><font color='#fff'>KIT DESCRIPTION</font></b></td><td><b><font color='#fff'>KIT QUANTITY</font></b></td>"
+        html = html + "</tr>"
         for data in self.maintenanceOfferData {
-            html = html + "<li>"
-            html = html + data.maintenanceServiceKitParent.description + " " + String(data.amount)
-            html = html + "</li>"
+            html = html + "<tr style='border: 1px solid black;'><td style='padding-right: 30px;'><b>"
+            html = html + data.maintenanceServiceKitParent.serialNo + "</b></td><td style='padding-right: 30px;'>" + data.maintenanceServiceKitParent.description + "</td><td>" + String(data.amount) + " KITS</td>"
+            html = html + "</tr>"
         }
-        html = html + "</ul>"
+        html = html + "</table><br>"
         
         if let addedExtraEquipmentData = self.addedExtraEquipmentData {
             html = html + "Machine(s) and serial number(s):<br>"
