@@ -13,7 +13,7 @@ protocol EqFoooterDelegate {
     func getSupport()
 }
 
-class EqFoooterView: UIView, UITextViewDelegate {
+class EqFoooterView: UIView {
 
     @IBOutlet weak var addView: UIView!
     @IBOutlet weak var enterView: UIView!
@@ -28,7 +28,13 @@ class EqFoooterView: UIView, UITextViewDelegate {
         // Initialization code
         enterText.attributedPlaceholder = NSAttributedString(string:"Enter here",attributes:[NSForegroundColorAttributeName: Theme.bluePrimaryColor])
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleErrorTap))
-        errorView.addGestureRecognizer(tap)
+        self.errorView.addGestureRecognizer(tap)
+        self.enterText.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        self.enterText.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        self.enterText.text = textField.text?.uppercaseString
     }
     
     func handleErrorTap() {

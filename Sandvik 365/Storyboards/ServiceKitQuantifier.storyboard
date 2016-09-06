@@ -694,7 +694,7 @@
                                                             </variation>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter here" textAlignment="center" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-7W-3x0">
-                                                            <rect key="frame" x="104" y="86" width="237" height="55"/>
+                                                            <rect key="frame" x="0.0" y="86" width="444" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="55" id="9X0-1o-cOu"/>
                                                             </constraints>
@@ -742,6 +742,8 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Cbm-Cy-vLk" secondAttribute="bottom" constant="-102" id="2Om-f1-tjt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uwQ-7W-3x0" secondAttribute="trailing" id="AgA-Pl-zqR"/>
+                                                        <constraint firstItem="uwQ-7W-3x0" firstAttribute="leading" secondItem="7Vc-Yx-Bwr" secondAttribute="leading" id="LWk-Te-9dO"/>
                                                         <constraint firstItem="kPQ-JK-Clk" firstAttribute="centerX" secondItem="7Vc-Yx-Bwr" secondAttribute="centerX" id="NuN-sz-weP"/>
                                                         <constraint firstItem="uwQ-7W-3x0" firstAttribute="top" secondItem="kPQ-JK-Clk" secondAttribute="bottom" constant="20" id="cze-fG-btO"/>
                                                         <constraint firstItem="kPQ-JK-Clk" firstAttribute="top" secondItem="7Vc-Yx-Bwr" secondAttribute="top" constant="54" id="gs7-0m-XB7"/>
@@ -810,7 +812,7 @@
                                                             </variation>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="y55-lt-urI">
-                                                            <rect key="frame" x="215" y="86" width="15" height="55"/>
+                                                            <rect key="frame" x="0.0" y="86" width="444" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="55" id="aW3-9l-5V4"/>
                                                             </constraints>
@@ -856,6 +858,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="y55-lt-urI" firstAttribute="leading" secondItem="CJt-al-3yt" secondAttribute="leading" id="1mk-F7-oR8"/>
                                                         <constraint firstItem="H2N-BS-ePF" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="49s-G0-5TX"/>
                                                         <constraint firstAttribute="bottom" secondItem="qQ9-J8-DTB" secondAttribute="bottom" constant="-102" id="C6z-qb-wDc"/>
                                                         <constraint firstItem="y55-lt-urI" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="DUy-yF-f44"/>
@@ -863,6 +866,7 @@
                                                         <constraint firstItem="qQ9-J8-DTB" firstAttribute="centerX" secondItem="CJt-al-3yt" secondAttribute="centerX" id="Vfr-Wh-lhe"/>
                                                         <constraint firstItem="qQ9-J8-DTB" firstAttribute="top" secondItem="y55-lt-urI" secondAttribute="bottom" constant="10" id="Wmt-Hj-YTa"/>
                                                         <constraint firstItem="y55-lt-urI" firstAttribute="top" secondItem="H2N-BS-ePF" secondAttribute="bottom" constant="20" id="iHe-QA-8gR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="y55-lt-urI" secondAttribute="trailing" id="y4y-Kb-bEq"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
