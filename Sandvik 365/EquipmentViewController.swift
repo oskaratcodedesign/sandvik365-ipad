@@ -102,4 +102,8 @@ class EquipmentViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 }

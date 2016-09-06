@@ -143,4 +143,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         self.tableView.contentInset = UIEdgeInsetsZero
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }

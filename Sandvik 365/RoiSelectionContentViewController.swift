@@ -229,5 +229,9 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         // Pass the selected object to the new view controller.
     }
     */
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
 }
