@@ -12,10 +12,10 @@ class ServiceKitData {
     var model: String?
     var serialNo: String
     var countryCode: String?
-    var H125ServiceKit: [String: String]?
-    var H250ServiceKit: [String: String]?
-    var H500ServiceKit: [String: String]?
-    var H1000ServiceKit: [String: String]?
+    var H125ServiceKit: (pno: String, description: String)?
+    var H250ServiceKit: (pno: String, description: String)?
+    var H500ServiceKit: (pno: String, description: String)?
+    var H1000ServiceKit: (pno: String, description: String)?
     
     private static var allData: [String: ServiceKitData]?
 
@@ -23,16 +23,16 @@ class ServiceKitData {
         self.serialNo = serialNo
         self.model = dic.objectForKey("Model") as? String
         if let pno = dic.objectForKey("125H") as? String where !pno.isEmpty, let desc = dic.objectForKey("125HDescription") as? String {
-            self.H125ServiceKit = [pno: desc]
+            self.H125ServiceKit = (pno, desc)
         }
         if let pno = dic.objectForKey("250H") as? String where !pno.isEmpty, let desc = dic.objectForKey("250HDescription") as? String {
-            self.H250ServiceKit = [pno: desc]
+            self.H250ServiceKit = (pno, desc)
         }
         if let pno = dic.objectForKey("500H") as? String where !pno.isEmpty, let desc = dic.objectForKey("500HDescription") as? String {
-            self.H500ServiceKit = [pno: desc]
+            self.H500ServiceKit = (pno, desc)
         }
         if let pno = dic.objectForKey("1000H") as? String where !pno.isEmpty, let desc = dic.objectForKey("1000HDescription") as? String {
-            self.H1000ServiceKit = [pno: desc]
+            self.H1000ServiceKit = (pno, desc)
         }
     }
     

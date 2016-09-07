@@ -71,22 +71,22 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     private func findServiceKit(obj: ExtraEquipmentData) -> Bool {
-        if let id = obj.serviceKitData.H1000ServiceKit?.keys.first where !id.isEmpty {
+        if let id = obj.serviceKitData.H1000ServiceKit?.pno where !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if let id = obj.serviceKitData.H500ServiceKit?.keys.first where !id.isEmpty {
+        if let id = obj.serviceKitData.H500ServiceKit?.pno where !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if let id = obj.serviceKitData.H250ServiceKit?.keys.first where !id.isEmpty {
+        if let id = obj.serviceKitData.H250ServiceKit?.pno where !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKit?.keys.first where !id.isEmpty {
+        if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKit?.pno where !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
