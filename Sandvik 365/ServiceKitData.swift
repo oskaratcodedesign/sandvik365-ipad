@@ -12,21 +12,28 @@ class ServiceKitData {
     var model: String?
     var serialNo: String
     var countryCode: String?
-    var H125ServiceKitNo: String?
-    var H250ServiceKitNo: String?
-    var H500ServiceKitNo: String?
-    var H1000ServiceKitNo: String?
+    var H125ServiceKit: [String: String]?
+    var H250ServiceKit: [String: String]?
+    var H500ServiceKit: [String: String]?
+    var H1000ServiceKit: [String: String]?
     
     private static var allData: [String: ServiceKitData]?
 
     init(serialNo: String, dic: NSDictionary){
         self.serialNo = serialNo
         self.model = dic.objectForKey("Model") as? String
-        self.countryCode = dic.objectForKey("Country") as? String
-        self.H125ServiceKitNo = dic.objectForKey("125H") as? String
-        self.H250ServiceKitNo = dic.objectForKey("250H") as? String
-        self.H500ServiceKitNo = dic.objectForKey("500H") as? String
-        self.H1000ServiceKitNo = dic.objectForKey("1000H") as? String
+        if let pno = dic.objectForKey("125H") as? String where !pno.isEmpty, let desc = dic.objectForKey("125HDescription") as? String {
+            self.H125ServiceKit = [pno: desc]
+        }
+        if let pno = dic.objectForKey("250H") as? String where !pno.isEmpty, let desc = dic.objectForKey("250HDescription") as? String {
+            self.H250ServiceKit = [pno: desc]
+        }
+        if let pno = dic.objectForKey("500H") as? String where !pno.isEmpty, let desc = dic.objectForKey("500HDescription") as? String {
+            self.H500ServiceKit = [pno: desc]
+        }
+        if let pno = dic.objectForKey("1000H") as? String where !pno.isEmpty, let desc = dic.objectForKey("1000HDescription") as? String {
+            self.H1000ServiceKit = [pno: desc]
+        }
     }
     
     static func getAllData() -> [String: ServiceKitData]? {
@@ -58,8 +65,8 @@ class MaintenanceServiceKitData {
             for obj in json {
                 if let type = obj.objectForKey("Parent / Component") as? String {
                     if type == "Parent" {
-                        if let sno = obj.objectForKey("Parent") as? String, let desc = obj.objectForKey("Item Description") as? String {
-                            allData[sno] = MaintenanceServiceKitParent(serialNo: sno, desc: desc)
+                        if let sno = obj.objectForKey("Parent") as? String {
+                            allData[sno] = MaintenanceServiceKitParent(serialNo: sno)
                         }
                     }
                     else if type == "Component" {
@@ -82,12 +89,10 @@ class MaintenanceServiceKitData {
 
 class MaintenanceServiceKitParent {
     var serialNo: String
-    var description: String
     var components: [MaintenanceServiceKitComponent]
     
-    init(serialNo: String, desc: String){
+    init(serialNo: String){
         self.serialNo = serialNo
-        self.description = desc
         self.components = [MaintenanceServiceKitComponent]()
     }
 }

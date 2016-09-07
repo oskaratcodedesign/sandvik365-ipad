@@ -30,7 +30,7 @@ class MaintenanceTableViewCell: UITableViewCell {
     
     func configureView(data: MaintenanceOfferData) {
         self.data = data
-        self.name.text = data.maintenanceServiceKitParent.description
+        self.name.text = data.description
         self.amount.text = String(data.amount)
     }
     

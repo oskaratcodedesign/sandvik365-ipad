@@ -11,11 +11,13 @@ import MessageUI
 
 class MaintenanceOfferData {
     let maintenanceServiceKitParent: MaintenanceServiceKitParent
+    let description: String
     var amount: Int
     
-    init(maintenanceServiceKitParent: MaintenanceServiceKitParent, amount: Int){
+    init(maintenanceServiceKitParent: MaintenanceServiceKitParent, amount: Int, desc: String){
         self.maintenanceServiceKitParent = maintenanceServiceKitParent
         self.amount = amount
+        self.description = desc
     }
 }
 
@@ -77,7 +79,7 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         html = html + "</tr>"
         for data in self.maintenanceOfferData {
             html = html + "<tr style='border: 1px solid black;'><td style='padding-right: 30px;'><b>"
-            html = html + data.maintenanceServiceKitParent.serialNo + "</b></td><td style='padding-right: 30px;'>" + data.maintenanceServiceKitParent.description + "</td><td>" + String(data.amount) + " KITS</td>"
+            html = html + data.maintenanceServiceKitParent.serialNo + "</b></td><td style='padding-right: 30px;'>" + data.description + "</td><td>" + String(data.amount) + " KITS</td>"
             html = html + "</tr>"
         }
         html = html + "</table><br>"
@@ -121,7 +123,7 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
     }
     
     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        self.infoView.data = maintenanceOfferData[indexPath.row].maintenanceServiceKitParent
+        self.infoView.data = maintenanceOfferData[indexPath.row]
         self.infoView.hidden = false
     }
     
@@ -130,34 +132,34 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
             self.maintenanceOfferData = [MaintenanceOfferData]()
             for obj in input {
                 var alreadyCountedService = 0
-                if let id = obj.serviceKitData.H1000ServiceKitNo where !id.isEmpty {
+                if let dic = obj.serviceKitData.H1000ServiceKit {
                     let amount = obj.hours / 1000
                     alreadyCountedService = amount
-                    addMaintenanceKit(alldata, id: id, amount: amount)
+                    addMaintenanceKit(alldata, dic: dic, amount: amount)
                 }
                 
-                if let id = obj.serviceKitData.H500ServiceKitNo where !id.isEmpty {
+                if let dic = obj.serviceKitData.H500ServiceKit {
                     let amount = obj.hours / 500
-                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
+                    addMaintenanceKit(alldata, dic: dic, amount: amount-alreadyCountedService)
                     alreadyCountedService = amount
                 }
-                if let id = obj.serviceKitData.H250ServiceKitNo where !id.isEmpty {
+                if let dic = obj.serviceKitData.H250ServiceKit {
                     let amount = obj.hours / 250
-                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
+                    addMaintenanceKit(alldata, dic: dic, amount: amount-alreadyCountedService)
                     alreadyCountedService = amount
                 }
-                if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKitNo where !id.isEmpty {
+                if obj.workingConditionExtreme, let dic = obj.serviceKitData.H125ServiceKit {
                     let amount = obj.hours / 125
-                    addMaintenanceKit(alldata, id: id, amount: amount-alreadyCountedService)
+                    addMaintenanceKit(alldata, dic: dic, amount: amount-alreadyCountedService)
                 }
             }
             self.tableView.reloadData()
         }
     }
     
-    private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], id: String, amount: Int) {
-        if let data = allData[id] {
-            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: max(0, amount)))
+    private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], dic: [String: String], amount: Int) {
+        if let data = allData[dic.keys.first!] {
+            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: max(0, amount), desc: dic.values.first!))
         }
     }
 }

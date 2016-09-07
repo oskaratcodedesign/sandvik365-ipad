@@ -15,7 +15,7 @@ class MaintenanceKitInfoView: UIView, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var name: UILabel!
     
-    var data: MaintenanceServiceKitParent? {
+    var data: MaintenanceOfferData? {
         didSet {
             self.setData()
         }
@@ -27,7 +27,7 @@ class MaintenanceKitInfoView: UIView, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.components.count ?? 0
+        return data?.maintenanceServiceKitParent.components.count ?? 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -38,8 +38,8 @@ class MaintenanceKitInfoView: UIView, UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MaintenanceKitInfoCell") as! MaintenanceKitInfoCell
         cell.backgroundColor = UIColor.clearColor()
-        cell.name.text = data!.components[indexPath.row].description
-        if let q = data!.components[indexPath.row].quantity {
+        cell.name.text = data!.maintenanceServiceKitParent.components[indexPath.row].description
+        if let q = data!.maintenanceServiceKitParent.components[indexPath.row].quantity {
             cell.quantity.text = String(q)
         }
         return cell
