@@ -159,7 +159,13 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
     
     private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], dic: (pno: String, description: String), amount: Int) {
         if let data = allData[dic.pno] {
-            self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: max(0, amount), desc: dic.description))
+            if let index = self.maintenanceOfferData.indexOf({$0.maintenanceServiceKitParent.serialNo == dic.pno}) {
+                //already added
+                let data = self.maintenanceOfferData[index]
+                data.amount += amount
+            } else {
+                self.maintenanceOfferData.append(MaintenanceOfferData(maintenanceServiceKitParent: data, amount: max(0, amount), desc: dic.description))
+            }
         }
     }
 }
