@@ -85,11 +85,11 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         html = html + "</table><br>"
         
         if let addedExtraEquipmentData = self.addedExtraEquipmentData {
-            html = html + "Machine(s) and serial number(s):<br>"
+            html = html + "Machine(s), serial number(s) and hours:<br>"
             html = html + "<ul>"
             for data in addedExtraEquipmentData {
                 html = html + "<li>"
-                html = html + (data.serviceKitData.model ?? "") + " " + data.serviceKitData.serialNo
+                html = html + (data.serviceKitData.model ?? "") + " " + data.serviceKitData.serialNo + " " + String(data.hours) + "h"
                 html = html + "</li>"
             }
             html = html + "</ul>"
