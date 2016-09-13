@@ -51,7 +51,7 @@ class RoiInputView: NibDesignable {
         
         /* ugh bug? need to set thid after setting text */
         textView.textAlignment = .Center
-        textView.textColor = UIColor(red: 0.082, green: 0.678, blue: 0.929, alpha: 1.000)
+        textView.textColor = Theme.bluePrimaryColor
     }
     
     func setAttributedStringWithString(string: String) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Dalton Maag - Aktiv Grotesk Corp.ttf">
@@ -23,20 +23,18 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSO-pU-1t0">
                     <rect key="frame" x="253" y="252" width="95" height="95"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="95" id="b7C-7V-A2a"/>
                         <constraint firstAttribute="width" constant="95" id="uTp-H2-Z52"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="24"/>
-                    <color key="textColor" red="0.8901960784313725" green="0.43137254901960786" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-LG-fCV">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-LG-fCV">
                     <rect key="frame" x="153" y="246" width="295" height="108"/>
                 </imageView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="iSO-pU-1t0" secondAttribute="centerX" id="JwG-EA-AxX"/>
@@ -48,6 +46,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logo" width="295" height="108"/>
+        <image name="logo" width="141" height="51"/>
     </resources>
 </document>

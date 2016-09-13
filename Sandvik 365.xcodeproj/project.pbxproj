@@ -47,6 +47,9 @@
 		F70867C11BD4CBDE00033AB5 /* SelectionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */; };
 		F70867C61BD4DEF000033AB5 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */; };
 		F70E7E221C088A2C00310AF7 /* NSNumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */; };
+		F71DE5311D7414F80004ABE3 /* ServiceKitQuantifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71DE5301D7414F80004ABE3 /* ServiceKitQuantifier.storyboard */; };
+		F71DE5331D7417160004ABE3 /* ServiceKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71DE5321D7417160004ABE3 /* ServiceKitData.swift */; };
+		F71DE5361D7417450004ABE3 /* ServiceKitQuantifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */; };
 		F72231DD1C982CAC004D911F /* InterActiveTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */; };
 		F72231DF1C982CEA004D911F /* InterActiveToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */; };
 		F72231E11C982D10004D911F /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */; };
@@ -67,6 +70,13 @@
 		F73E9B481C44FDD100742EBD /* ContactUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B471C44FDD100742EBD /* ContactUsView.xib */; };
 		F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741D9981B8475C400010E71 /* VideoViewController.swift */; };
 		F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F741D99C1B84783D00010E71 /* MediaPlayer.framework */; };
+		F741DC421D742DF40014C623 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC411D742DF40014C623 /* EquipmentViewController.swift */; };
+		F741DC451D744E3A0014C623 /* EqFoooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC441D744E3A0014C623 /* EqFoooterView.swift */; };
+		F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */; };
+		F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */; };
+		F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */; };
+		F741DC4F1D76FC4B0014C623 /* maintenancekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F741DC4E1D76FC4B0014C623 /* maintenancekit.json */; };
+		F741DC511D78645F0014C623 /* MaintenanceKitResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */; };
 		F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */; };
 		F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */; };
 		F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */; };
@@ -94,6 +104,8 @@
 		F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */; };
 		F77D5EB21C7A35E4002A5867 /* RoiEDVDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */; };
 		F77D5EB31C7A35E4002A5867 /* RoiEDVDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */; };
+		F77FEB831D7961A100911537 /* MaintenanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */; };
+		F77FEB851D79873500911537 /* MaintenanceKitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77FEB841D79873500911537 /* MaintenanceKitInfoView.swift */; };
 		F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */; };
 		F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */; };
 		F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */; };
@@ -140,6 +152,7 @@
 		F7EC8DC01C298FCD00A8DF3C /* RoiGetResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */; };
 		F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */; };
 		F7EC8DC41C31693E00A8DF3C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */; };
+		F7EDAEE21D8045A100AFECD6 /* servicekit.json in Resources */ = {isa = PBXBuildFile; fileRef = F7EDAEE11D8045A100AFECD6 /* servicekit.json */; };
 		F7F705DF1BEA2716003D6289 /* SectionSelectionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */; };
 		F7F705E11BEA2739003D6289 /* SectionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */; };
 		F7FB1A571CCF7B61001E6885 /* PartsAndServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */; };
@@ -207,6 +220,9 @@
 		F70867C01BD4CBDE00033AB5 /* SelectionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWheel.swift; sourceTree = "<group>"; };
 		F70867C51BD4DEF000033AB5 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		F70E7E211C088A2C00310AF7 /* NSNumberFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberFormatterExtension.swift; sourceTree = "<group>"; };
+		F71DE5301D7414F80004ABE3 /* ServiceKitQuantifier.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ServiceKitQuantifier.storyboard; sourceTree = "<group>"; };
+		F71DE5321D7417160004ABE3 /* ServiceKitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceKitData.swift; sourceTree = "<group>"; };
+		F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceKitQuantifierViewController.swift; sourceTree = "<group>"; };
 		F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterActiveTools.storyboard; sourceTree = "<group>"; };
 		F72231DE1C982CEA004D911F /* InterActiveToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterActiveToolsViewController.swift; sourceTree = "<group>"; };
 		F72231E01C982D10004D911F /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +243,13 @@
 		F73E9B471C44FDD100742EBD /* ContactUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsView.xib; sourceTree = "<group>"; };
 		F741D9981B8475C400010E71 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F741D99C1B84783D00010E71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F741DC411D742DF40014C623 /* EquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
+		F741DC441D744E3A0014C623 /* EqFoooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqFoooterView.swift; sourceTree = "<group>"; };
+		F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqStandardTableViewCell.swift; sourceTree = "<group>"; };
+		F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraEquipmentViewController.swift; sourceTree = "<group>"; };
+		F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqExtraTableViewCell.swift; sourceTree = "<group>"; };
+		F741DC4E1D76FC4B0014C623 /* maintenancekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = maintenancekit.json; sourceTree = "<group>"; };
+		F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceKitResultViewController.swift; sourceTree = "<group>"; };
 		F741E2171B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEmptyBackButton.swift; sourceTree = "<group>"; };
 		F74D78521C7B2F60007F95F5 /* GET - Bucket Shroud Wear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Bucket Shroud Wear.mp4"; sourceTree = "<group>"; };
 		F74D78531C7B2F60007F95F5 /* GET - Corner Shroud Installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET - Corner Shroud Installation.mp4"; sourceTree = "<group>"; };
@@ -251,6 +274,8 @@
 		F77D5EAE1C75DED6002A5867 /* RoiEDVResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVResultViewController.swift; sourceTree = "<group>"; };
 		F77D5EB01C7A35E4002A5867 /* RoiEDVDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoiEDVDetailView.xib; sourceTree = "<group>"; };
 		F77D5EB11C7A35E4002A5867 /* RoiEDVDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiEDVDetailView.swift; sourceTree = "<group>"; };
+		F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceTableViewCell.swift; sourceTree = "<group>"; };
+		F77FEB841D79873500911537 /* MaintenanceKitInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceKitInfoView.swift; sourceTree = "<group>"; };
 		F78DA4D71C27E56C00DB6E16 /* Disclaimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		F78DA4D91C27E5A200DB6E16 /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		F78DA4DB1C27EDF300DB6E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -298,6 +323,7 @@
 		F7EC8DBF1C298FCD00A8DF3C /* RoiGetResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiGetResultViewController.swift; sourceTree = "<group>"; };
 		F7EC8DC11C2991E000A8DF3C /* RoiResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiResultViewController.swift; sourceTree = "<group>"; };
 		F7EC8DC31C31693E00A8DF3C /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		F7EDAEE11D8045A100AFECD6 /* servicekit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = servicekit.json; sourceTree = "<group>"; };
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
 		F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesTests.swift; sourceTree = "<group>"; };
@@ -328,6 +354,7 @@
 		486F88781B72383C0084211F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F71DE5341D7417210004ABE3 /* ServiceKitQuantifier */,
 				F77D5E671C710AC2002A5867 /* Tutorial */,
 				F73E9B2F1C43E42600742EBD /* MediaCenter */,
 				F70867BB1BD0F9B500033AB5 /* PartsAndServices */,
@@ -345,6 +372,7 @@
 		48FCED531B78C01B002D45A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F71DE52F1D740F540004ABE3 /* ServiceKitQuantifier */,
 				F73E9B391C43E7A700742EBD /* MediaCenter */,
 				F79E328E1BFB28CE00CB3654 /* FireSuppressionTool */,
 				F7C05FF21BF9D4F100E09456 /* Roi */,
@@ -433,6 +461,8 @@
 				48FDEAB71B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Light.ttf */,
 				48FDEAB81B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf */,
 				48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */,
+				F7EDAEE11D8045A100AFECD6 /* servicekit.json */,
+				F741DC4E1D76FC4B0014C623 /* maintenancekit.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -440,6 +470,7 @@
 		48FDEABA1B5F901100C5AFE6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F741DC431D744DF50014C623 /* ServiceKitQuantifier */,
 				F73E9B441C44FD7D00742EBD /* ContactUs */,
 				F73E9B3C1C43F47F00742EBD /* MediaCenter */,
 				F7C05FF11BF9D45800E09456 /* PartsAndServices */,
@@ -527,6 +558,25 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		F71DE52F1D740F540004ABE3 /* ServiceKitQuantifier */ = {
+			isa = PBXGroup;
+			children = (
+				F71DE5321D7417160004ABE3 /* ServiceKitData.swift */,
+			);
+			name = ServiceKitQuantifier;
+			sourceTree = "<group>";
+		};
+		F71DE5341D7417210004ABE3 /* ServiceKitQuantifier */ = {
+			isa = PBXGroup;
+			children = (
+				F71DE5351D7417450004ABE3 /* ServiceKitQuantifierViewController.swift */,
+				F741DC411D742DF40014C623 /* EquipmentViewController.swift */,
+				F741DC4A1D76B0ED0014C623 /* ExtraEquipmentViewController.swift */,
+				F741DC501D78645F0014C623 /* MaintenanceKitResultViewController.swift */,
+			);
+			name = ServiceKitQuantifier;
+			sourceTree = "<group>";
+		};
 		F7227B8C1B7A04F5002354B1 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +586,7 @@
 				F7227B911B7A0616002354B1 /* Roi.storyboard */,
 				F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */,
 				F72231DC1C982CAC004D911F /* InterActiveTools.storyboard */,
+				F71DE5301D7414F80004ABE3 /* ServiceKitQuantifier.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -601,6 +652,18 @@
 				F792035E1C46309B00CF4E3F /* RegionSelector.swift */,
 			);
 			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		F741DC431D744DF50014C623 /* ServiceKitQuantifier */ = {
+			isa = PBXGroup;
+			children = (
+				F741DC461D744EE10014C623 /* EqStandardTableViewCell.swift */,
+				F741DC441D744E3A0014C623 /* EqFoooterView.swift */,
+				F741DC4C1D76B2840014C623 /* EqExtraTableViewCell.swift */,
+				F77FEB821D7961A100911537 /* MaintenanceTableViewCell.swift */,
+				F77FEB841D79873500911537 /* MaintenanceKitInfoView.swift */,
+			);
+			name = ServiceKitQuantifier;
 			sourceTree = "<group>";
 		};
 		F74D785F1C7B3141007F95F5 /* rockdrill */ = {
@@ -844,6 +907,7 @@
 				F741E21A1B8DD4A400E0C80C /* Dalton Maag - Aktiv Grotesk Corp Medium.ttf in Resources */,
 				F7227B8E1B7A04F5002354B1 /* Main.storyboard in Resources */,
 				F78DA4DA1C27E5A200DB6E16 /* Disclaimer.xib in Resources */,
+				F71DE5311D7414F80004ABE3 /* ServiceKitQuantifier.storyboard in Resources */,
 				F7AF2A881C9ADDCC00EBEDFD /* RoiTopCenterDetailView.xib in Resources */,
 				48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */,
 				48FCED521B74CB79002D45A0 /* ProgressLineView.xib in Resources */,
@@ -852,6 +916,7 @@
 				F70515E71CC62075000786E2 /* CountOnBoxBigLabel.xib in Resources */,
 				F7C959041C5F8A1400756CB0 /* FireSuppressionKeyFeatureItem.xib in Resources */,
 				F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */,
+				F7EDAEE21D8045A100AFECD6 /* servicekit.json in Resources */,
 				F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */,
 				F7227B921B7A0616002354B1 /* Roi.storyboard in Resources */,
 				F741E2191B8DD4A200E0C80C /* Dalton Maag - Aktiv Grotesk Corp Light.ttf in Resources */,
@@ -865,6 +930,7 @@
 				F77D5EA81C745ACF002A5867 /* RoiRockDrillDetailView.xib in Resources */,
 				F70515EC1CC622F3000786E2 /* CountOnBoxSmallLabel.xib in Resources */,
 				F77D5E661C710359002A5867 /* Tutorial.storyboard in Resources */,
+				F741DC4F1D76FC4B0014C623 /* maintenancekit.json in Resources */,
 				F7E344C91C3EA605003B7C67 /* MenuCountOnBox.xib in Resources */,
 				F7CAE07D1BB3D4DF0098389F /* RoiCrusherDetailView.xib in Resources */,
 				F7620B851C48FBC800B0A6D8 /* VideoButton.xib in Resources */,
@@ -979,7 +1045,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7227B941B7A0964002354B1 /* RoiSelectionContentViewController.swift in Sources */,
+				F71DE5361D7417450004ABE3 /* ServiceKitQuantifierViewController.swift in Sources */,
 				F7A46EBF1C3EA00C00CCB4B7 /* HighlightButton.swift in Sources */,
+				F71DE5331D7417160004ABE3 /* ServiceKitData.swift in Sources */,
 				F7C7C7CE1B8CEE34005A6953 /* PartsAndServicesViewController.swift in Sources */,
 				F792036A1C46DA5A00CF4E3F /* Region.swift in Sources */,
 				F78DA4DC1C27EDF300DB6E16 /* UIViewExtension.swift in Sources */,
@@ -994,6 +1062,8 @@
 				F77D5EAD1C749E2D002A5867 /* ROIEDVInput.swift in Sources */,
 				F77D5EAF1C75DED6002A5867 /* RoiEDVResultViewController.swift in Sources */,
 				48FCED501B74CB5E002D45A0 /* ProgressLineView.swift in Sources */,
+				F741DC4D1D76B2840014C623 /* EqExtraTableViewCell.swift in Sources */,
+				F741DC471D744EE10014C623 /* EqStandardTableViewCell.swift in Sources */,
 				F7E344C71C3EA5D5003B7C67 /* MenuCountOnBox.swift in Sources */,
 				F77D5EA91C745ACF002A5867 /* RoiRockDrillDetailView.swift in Sources */,
 				F7CB9D191B8C517200C1B3A1 /* PartsAndServices.swift in Sources */,
@@ -1009,20 +1079,24 @@
 				F7AF2A891C9ADDCC00EBEDFD /* RoiTopCenterDetailView.swift in Sources */,
 				F79203671C46680000CF4E3F /* ColorCodingLookup.m in Sources */,
 				F7EC8DC21C2991E000A8DF3C /* RoiResultViewController.swift in Sources */,
+				F77FEB831D7961A100911537 /* MaintenanceTableViewCell.swift in Sources */,
 				F7EA86CB1B85DC35003E1AA6 /* RoiGraphView.swift in Sources */,
 				F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */,
 				F741D9991B8475C400010E71 /* VideoViewController.swift in Sources */,
 				F73E9B461C44FD9600742EBD /* ContactUsView.swift in Sources */,
+				F741DC511D78645F0014C623 /* MaintenanceKitResultViewController.swift in Sources */,
 				F7D6C1E31C974E0D00E933D8 /* Theme.swift in Sources */,
 				48FDEA971B5F8CEC00C5AFE6 /* AppDelegate.swift in Sources */,
 				F79576921C97088E002ACBB3 /* ProductAreaMenuViewController.swift in Sources */,
 				F7EA86C91B84955B003E1AA6 /* RoiCrusherResultViewController.swift in Sources */,
 				48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */,
 				F795F8011BE0FFAE0086197B /* SubPartServiceContentViewController.swift in Sources */,
+				F741DC4B1D76B0ED0014C623 /* ExtraEquipmentViewController.swift in Sources */,
 				48FCED4E1B74C293002D45A0 /* GradientView.swift in Sources */,
 				F7EC8DBA1C282DDD00A8DF3C /* ROIGetInput.swift in Sources */,
 				F792035F1C46309B00CF4E3F /* RegionSelector.swift in Sources */,
 				F79E32931BFB322500CB3654 /* FireSuppressionInput.swift in Sources */,
+				F741DC421D742DF40014C623 /* EquipmentViewController.swift in Sources */,
 				F70867BF1BD0FCDD00033AB5 /* SubPartServiceSelectionViewController.swift in Sources */,
 				F73E9B3B1C43E7B900742EBD /* Video.swift in Sources */,
 				F70515E91CC62211000786E2 /* CountOnBoxBigLabel.swift in Sources */,
@@ -1047,12 +1121,14 @@
 				486F88851B736AF50084211F /* MainMenuItemView.swift in Sources */,
 				F77D5EAB1C745B63002A5867 /* RoiRockDrillResultViewController.swift in Sources */,
 				F7AF2A831C9AC7F900EBEDFD /* ROITopCenter.swift in Sources */,
+				F741DC451D744E3A0014C623 /* EqFoooterView.swift in Sources */,
 				F70867BD1BD0FC0200033AB5 /* PartServiceSelectionViewController.swift in Sources */,
 				48FCED551B78C02E002D45A0 /* ROICalculatorInput.swift in Sources */,
 				F7E2C0441C15C42C009D290B /* DownloadingView.swift in Sources */,
 				F78DA4D81C27E56C00DB6E16 /* Disclaimer.swift in Sources */,
 				F70867B61BCE7DDA00033AB5 /* JSONManager.swift in Sources */,
 				F73E9B311C43E49C00742EBD /* VideoCenterViewController.swift in Sources */,
+				F77FEB851D79873500911537 /* MaintenanceKitInfoView.swift in Sources */,
 				F7C958FF1C5F5FE900756CB0 /* FireSuppressionResultViewController.swift in Sources */,
 				F7A46EBB1C3D922600CCB4B7 /* GraphWithLabel.swift in Sources */,
 				F741E2181B8DC9D800E0C80C /* UIViewControllerEmptyBackButton.swift in Sources */,

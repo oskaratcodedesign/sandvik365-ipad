@@ -9,8 +9,15 @@
 import Foundation
 import NibDesignable
 
+extension ContactUsViewDelegate {
+    func didPressEmail(email: String) -> Bool {
+        return false
+    }
+}
+
 protocol ContactUsViewDelegate {
     func showRegionAction(allRegions: [RegionData])
+    func didPressEmail(email: String) -> Bool
 }
 
 class ContactUsView : NibDesignable {
@@ -21,6 +28,10 @@ class ContactUsView : NibDesignable {
     var delegate: ContactUsViewDelegate?
     private var allRegions: [RegionData]?
     private var selectedRegionData: RegionData?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -38,7 +49,10 @@ class ContactUsView : NibDesignable {
     }
     @IBAction func emailAction(sender: AnyObject) {
         if let email = self.selectedRegionData?.contactCountry?.email {
-            if let url = NSURL(string: "mailto://\(email)") {
+            if let del = self.delegate where del.didPressEmail(email) {
+                //del was handled
+            }
+            else if let url = NSURL(string: "mailto://\(email)") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }

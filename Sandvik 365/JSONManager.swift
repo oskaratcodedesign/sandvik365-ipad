@@ -368,4 +368,22 @@ class JSONManager {
             }
         }
     }
+    
+    static func readJSONFromFile(fileName: String) -> [NSDictionary]? {
+        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+        {
+            if let d = NSData(contentsOfFile: path)
+            {
+                do {
+                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? [NSDictionary] {
+                        return json
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }
+        return nil
+    }
 }

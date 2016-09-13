@@ -36,7 +36,21 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
         cell.button.setTitle(tool.title, forState: .Normal)
         cell.button.setBackgroundImage(tool.defaultImage, forState: .Normal)
         cell.button.setBackgroundImage(tool.highlightImage, forState: .Highlighted)
+        if ((tool.selectionInput as? SelectionInput) != nil) {
+            cell.button.addTarget(self, action: #selector(roiButtonClick), forControlEvents: .TouchUpInside)
+        }
+        else if tool == .ServiceKitQuantifier {
+            cell.button.addTarget(self, action: #selector(serviceKitButtonClick), forControlEvents: .TouchUpInside)
+        }
         return cell
+    }
+    
+    func roiButtonClick(sender: UIButton) {
+        self.performSegueWithIdentifier("RoiSelectionViewController", sender: sender)
+    }
+    
+    func serviceKitButtonClick(sender: UIButton) {
+        self.performSegueWithIdentifier("ServiceKitQuantifierViewController", sender: sender)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -46,7 +60,19 @@ class InterActiveToolsViewController: UIViewController, UICollectionViewDataSour
                     let r = self.collectionView.convertRect(b.bounds, fromView: b)
                     if let indexPath = self.collectionView.indexPathForItemAtPoint(r.origin) {
                         let input = self.data[indexPath.row]
-                        vc.selectedInput = input.selectionInput
+                        vc.selectedInput = input.selectionInput as! SelectionInput
+                        vc.selectedBusinessType = .All
+                        vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercaseString)
+                    }
+                }
+            }
+        }
+        else if segue.identifier == "ServiceKitQuantifierViewController" {
+            if let vc = segue.destinationViewController as? ServiceKitQuantifierViewController {
+                if let b = sender as? UIButton {
+                    let r = self.collectionView.convertRect(b.bounds, fromView: b)
+                    if let indexPath = self.collectionView.indexPathForItemAtPoint(r.origin) {
+                        let input = self.data[indexPath.row]
                         vc.selectedBusinessType = .All
                         vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercaseString)
                     }

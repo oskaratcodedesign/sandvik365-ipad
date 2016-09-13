@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QLr-DO-bh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QLr-DO-bh8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="width" constant="400" id="Rxa-ed-wzO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="65"/>
-                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -68,7 +68,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
                                         <state key="normal" image="sandvik_arrow_left">
-                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="default">
@@ -128,7 +128,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
                                         <state key="normal" image="sandvik_arrow_right">
-                                            <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="default">
@@ -256,7 +256,7 @@
                                     <constraint firstAttribute="width" constant="400" id="LdI-rm-Nqf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="65"/>
-                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -318,6 +318,7 @@ TO ROTATE</string>
                         <segue destination="Sf0-zf-aAn" kind="show" identifier="ShowRoiSelectionViewController" id="nyc-ET-tIb"/>
                         <segue destination="bso-iy-e8Z" kind="show" identifier="ShowVideoCenterViewController" id="Wfu-N7-93e"/>
                         <segue destination="sGm-gi-5PH" kind="show" identifier="ShowInterActiveToolsViewController" id="9kH-Kv-qxG"/>
+                        <segue destination="oen-4V-jF4" kind="show" identifier="ServiceKitQuantifierViewController" id="HY4-ah-APe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BI-K1-Zki" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +343,7 @@ TO ROTATE</string>
                                     <constraint firstAttribute="width" constant="400" id="YoY-C5-edz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="65"/>
-                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -359,7 +360,7 @@ TO ROTATE</string>
                                             <constraint firstAttribute="width" constant="400" id="Tsh-wK-BSf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="25"/>
-                                        <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -380,7 +381,7 @@ TO ROTATE</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
                                                 <state key="normal" image="sandvik_arrow_left">
-                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="default">
@@ -441,7 +442,7 @@ TO ROTATE</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
                                                 <state key="normal" image="sandvik_arrow_right">
-                                                    <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="default">
@@ -496,7 +497,7 @@ TO ROTATE</string>
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.8901960784313725" green="0.43137254901960786" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -555,6 +556,14 @@ TO ROTATE</string>
             </objects>
             <point key="canvasLocation" x="582" y="-95"/>
         </scene>
+        <!--ServiceKitQuantifierViewController-->
+        <scene sceneID="2dP-Ji-C8a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ServiceKitQuantifier" referencedIdentifier="ServiceKitQuantifierViewController" id="oen-4V-jF4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ay-5U-6va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.5" y="778"/>
+        </scene>
         <!--Sub Part Service Content View Controller-->
         <scene sceneID="Sax-Oq-kxF">
             <objects>
@@ -567,7 +576,7 @@ TO ROTATE</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBo-ST-VW3">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBo-ST-VW3">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-Zp-aX7">
@@ -577,14 +586,14 @@ TO ROTATE</string>
                                                 <rect key="frame" x="100" y="80" width="300" height="58"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Light" family="Aktiv Grotesk Corp" pointSize="50"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="﹀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bca-y5-26w">
                                                 <rect key="frame" x="269" y="527" width="63" height="73"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="63"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -598,21 +607,21 @@ TO ROTATE</string>
                                             <constraint firstAttribute="trailing" secondItem="ny2-qP-7E6" secondAttribute="trailing" constant="200" id="tDg-Y9-bby"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-sa-F0D">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-sa-F0D">
                                         <rect key="frame" x="0.0" y="580" width="600" height="1660"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-jh-3yi">
                                                 <rect key="frame" x="0.0" y="203" width="600" height="1457"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-jQ-fwY">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-jQ-fwY">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1660"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-Uo-XL0">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-3R-8rA">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-3R-8rA">
                                                         <rect key="frame" x="100" y="203" width="210" height="0.0"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pei-pB-EfP">
@@ -630,10 +639,10 @@ TO ROTATE</string>
                                                             <constraint firstItem="pei-pB-EfP" firstAttribute="leading" secondItem="2Id-3R-8rA" secondAttribute="leading" id="upN-xg-gjZ"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-9B-2ky">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-9B-2ky">
                                                         <rect key="frame" x="360" y="306" width="220" height="1051"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-G6-P3a" customClass="ContactUsView" customModule="Sandvik_365" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
@@ -648,13 +657,13 @@ TO ROTATE</string>
                                                                     </mask>
                                                                 </variation>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="DOCUMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-oE-KsR">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="DOCUMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-oE-KsR">
                                                                 <rect key="frame" x="0.0" y="20" width="111" height="21"/>
                                                                 <fontDescription key="fontDescription" name="AktivGroteskCorp-Regular" family="Aktiv Grotesk Corp" pointSize="18"/>
-                                                                <color key="textColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pla-3A-Tbw">
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pla-3A-Tbw">
                                                                 <rect key="frame" x="0.0" y="51" width="140" height="1000"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
@@ -680,7 +689,7 @@ TO ROTATE</string>
                                                                                     <fontDescription key="fontDescription" name="AktivGroteskCorpMedium-Regular" family="Aktiv Grotesk Corp Medium" pointSize="14"/>
                                                                                     <inset key="titleEdgeInsets" minX="10" minY="70" maxX="10" maxY="0.0"/>
                                                                                     <state key="normal" backgroundImage="pdf-x1">
-                                                                                        <color key="titleColor" red="0.89019607840000003" green="0.43137254899999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <color key="titleColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     </state>
                                                                                     <state key="highlighted" backgroundImage="pdf-inverted-x1">
                                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -721,7 +730,7 @@ TO ROTATE</string>
                                                             <constraint firstItem="CWC-oE-KsR" firstAttribute="top" secondItem="3b8-G6-P3a" secondAttribute="bottom" constant="20" id="Xkt-Jb-2cf"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="tag-BK-44h">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sandvik_stripes_bg" translatesAutoresizingMaskIntoConstraints="NO" id="tag-BK-44h">
                                                         <rect key="frame" x="0.0" y="1407" width="600" height="203"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </imageView>

@@ -61,7 +61,7 @@ class RoiSelectionButton: NibDesignable {
     private func setupSelectionDot() {
         dot.layer.cornerRadius = dot.bounds.width/2
         dot.layer.masksToBounds = true
-        dot.layer.borderColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000).CGColor
+        dot.layer.borderColor = Theme.bluePrimaryColor.CGColor
         dot.layer.borderWidth = 2
     }
     
@@ -72,6 +72,6 @@ class RoiSelectionButton: NibDesignable {
     
     
     func fillDot() {
-        dot.backgroundColor = UIColor(red: 0.082, green:0.678, blue:0.929, alpha:1.000)
+        dot.backgroundColor = Theme.bluePrimaryColor
     }
 }
