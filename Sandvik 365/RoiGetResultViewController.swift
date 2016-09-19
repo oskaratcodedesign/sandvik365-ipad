@@ -87,15 +87,15 @@ class RoiGetResultViewController: RoiResultViewController {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(number: 0)
         }
     }
     
     fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
             let percentages = ROIGetCalculationType.costPerHour.percentages
-            profitLabel.text = NumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
-            weldProfitLabel.text = NumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
+            profitLabel.text = NumberFormatter().formatToUSD(number: NSNumber(value: Double(sum) * (100 - percentages.last!) / 100))
+            weldProfitLabel.text = NumberFormatter().formatToUSD(number: NSNumber(value: Double(sum) * (100 - percentages[percentages.count-2])/100))
         }
     }
 }

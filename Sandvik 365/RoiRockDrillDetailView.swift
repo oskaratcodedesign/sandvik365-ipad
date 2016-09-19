@@ -26,21 +26,21 @@ class RoiRockDrillDetailView: NibDesignable {
         let fmt = NumberFormatter()
         fmt.numberStyle = .decimal
         
-        metersBeforeLabel.text = fmt.string(from: NSNumber(Int(input.metersDrilledYearlyBefore())))! + "m"
-        metersAfterLabel.text = fmt.string(from: NSNumber(Int(input.metersDrilledYearlyAfter())))! + "m"
+        metersBeforeLabel.text = fmt.string(from: NSNumber(value: Int(input.metersDrilledYearlyBefore())))! + "m"
+        metersAfterLabel.text = fmt.string(from: NSNumber(value: Int(input.metersDrilledYearlyAfter())))! + "m"
         
-        tonnageBeforeLabel.text = fmt.string(from: NSNumber(Int(input.tonnageOutputBefore())))! + "t"
-        tonnageAfterLabel.text = fmt.string(from: NSNumber(Int(input.tonnageOutputAfter())))! + "t"
+        tonnageBeforeLabel.text = fmt.string(from: NSNumber(value: Int(input.tonnageOutputBefore())))! + "t"
+        tonnageAfterLabel.text = fmt.string(from: NSNumber(value: Int(input.tonnageOutputAfter())))! + "t"
         
         if let total = input.total() {
             let shanksAndBitsSavings = Int(input.shanksAndBitsSavings())
-            oreOutPutLabel.text = "$" + fmt.string(from: total - shanksAndBitsSavings)!
-            shanksLabel.text = "$" + fmt.string(from: NSNumber(shanksAndBitsSavings))!
-            totalLabel.text = "$" + fmt.string(from: NSNumber(total))!
+            oreOutPutLabel.text = "$" + fmt.string(from: NSNumber(value: total - shanksAndBitsSavings))!
+            shanksLabel.text = "$" + fmt.string(from: NSNumber(value: shanksAndBitsSavings))!
+            totalLabel.text = "$" + fmt.string(from: NSNumber(value: total))!
         }
     }
     
-    @IBAction func closeAction(_ sender: AnyObject) {
+    @IBAction func closeAction(sender: AnyObject) {
         if let superview = self.superview {
             self.removeFromSuperview()
             superview.isHidden = true

@@ -11,7 +11,7 @@ import UIKit
 import NibDesignable
 
 
-class LoadingView : NibDesignable {
+class LoadingView : NibDesignable, CAAnimationDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
@@ -48,7 +48,7 @@ class LoadingView : NibDesignable {
         self.progressTimer = Timer.scheduledTimer(timeInterval: 1.0 / 60.0, target: self, selector:#selector(updateLabel), userInfo: nil, repeats: true)
     }
     
-    override func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.progressTimer?.invalidate()
         let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -63,7 +63,7 @@ class LoadingView : NibDesignable {
     }
     
     func updateLabel() {
-        if let presentationLayer = self.circlePathLayer.presentation() as? CAShapeLayer {
+        if let presentationLayer = self.circlePathLayer.presentation() {
             numberLabel.text = Int64(round(365.0 * presentationLayer.strokeEnd)).description
         }
     }

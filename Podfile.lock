@@ -1,22 +1,33 @@
 PODS:
   - AHEasing (1.2)
-  - AsyncSwift (1.7.2)
-  - CryptoSwift (0.2.3)
-  - Fuzi (0.2.0)
+  - CryptoSwift (0.6.0)
+  - Fuzi (1.0.0)
   - NibDesignable (2.3.0)
 
 DEPENDENCIES:
   - AHEasing
-  - AsyncSwift
   - CryptoSwift
-  - Fuzi (~> 0.2.0)
-  - NibDesignable
+  - Fuzi (~> 1.0.0)
+  - NibDesignable (from `https://github.com/sstadelman/NibDesignable.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  NibDesignable:
+    :branch: master
+    :git: https://github.com/sstadelman/NibDesignable.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  NibDesignable:
+    :commit: 26d99bf0f12985df30a6cbf7ed14cc07e3ffcbf1
+    :git: https://github.com/sstadelman/NibDesignable.git
+    :submodules: true
 
 SPEC CHECKSUMS:
   AHEasing: 847f583bcd83a2bb850e38ccdb26d22e2593f34d
-  AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
-  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
-  Fuzi: 3f495a9b1f5f0a34eb809442be314d6cce3ce4cb
+  CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
+  Fuzi: e88177b7cfdf3aa2b828c096c73551232a7f5c72
   NibDesignable: 10eb4480cab249bb5d5ba273061b026df824087b
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 84a752de3be6c109c452846ddc773c688be60171
+
+COCOAPODS: 1.0.1

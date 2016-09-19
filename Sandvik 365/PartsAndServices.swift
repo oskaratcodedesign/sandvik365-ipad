@@ -207,7 +207,7 @@ class PartsAndServicesJSONParts {
     
     init(json: NSDictionary) {
         //parse out relevant parts:
-        parseMainSections(json)
+        parseMainSections(json: json)
     }
     
     fileprivate func sectionTitle(_ dic: NSDictionary) -> String? {
@@ -218,15 +218,15 @@ class PartsAndServicesJSONParts {
         return dic.value(forKey: "description") as? String
     }
     
-    fileprivate func mainSections(_ json: NSDictionary) -> [NSDictionary]? {
-        if let sections = json.value(forKey: "items")?[0].value(forKey: "children") as? [NSDictionary] {
+    fileprivate func mainSections(json: NSDictionary) -> [NSDictionary]? {
+        if let sections = json.value(forKey: "items") as? [NSDictionary], ((sections[0].value(forKey: "children") as? [NSDictionary]) != nil) {
             return sections
         }
         return nil
     }
     
-    fileprivate func parseMainSections(_ json: NSDictionary) {
-        if let sections = mainSections(json) {
+    fileprivate func parseMainSections(json: NSDictionary) {
+        if let sections = mainSections(json: json) {
             for dic in sections {
                 if let title = sectionTitle(dic) {
                     let partServiceContent = PartServiceContent(title: title)

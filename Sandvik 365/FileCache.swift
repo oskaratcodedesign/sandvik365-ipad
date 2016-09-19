@@ -53,9 +53,8 @@ class FileCache {
         var cacheKey = url.absoluteString.sha1()
         
         // If the URL contains an extension, let's use that one in the cache as well
-        if let ext = url.pathExtension {
-            cacheKey = cacheKey.stringByAppendingFormat(".%@", ext)
-        }
+        let ext = url.pathExtension
+        cacheKey = cacheKey.appendingFormat(".%@", ext)
         return cacheKey
     }
     

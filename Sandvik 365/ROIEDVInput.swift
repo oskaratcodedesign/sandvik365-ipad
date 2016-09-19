@@ -172,7 +172,7 @@ class ROIEDVInput: ROICalculatorInput {
         case .oreGrade:
             if var number = NumberFormatter().formatterDecimalWith2Fractions().number(from: stringValue) {
                 if usePPM {
-                    number = number.doubleValue/10000
+                    number = NSNumber(value: number.doubleValue / 10000)
                 }
                 oreGrade = .oreGrade(number.doubleValue)
                 return true
@@ -201,27 +201,27 @@ class ROIEDVInput: ROICalculatorInput {
         let input = allInputs()[atIndex]
         switch input {
         case .extraCost:
-            return NumberFormatter().string(from: NSNumber(extraCost.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: extraCost.value as! UInt))
         case .repairHours:
-            return NumberFormatter().string(from: NSNumber(repairHours.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: repairHours.value as! UInt))
         case .numberOfTechnicians:
-            return NumberFormatter().string(from: NSNumber(numberOfTechnicians.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: numberOfTechnicians.value as! UInt))
         case .technicianCost:
-            return NumberFormatter().string(from: NSNumber(technicianCost.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: technicianCost.value as! UInt))
         case .standingStill:
-            return NumberFormatter().string(from: NSNumber(standingStill.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: standingStill.value as! UInt))
         case .oreGrade:
             var value = oreGrade.value as! Double
             if usePPM {
                 value = 10000 * value
             }
-            return NumberFormatter().formatterDecimalWith2Fractions().string(from: value)
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: NSNumber(value: value))
         case .capacity:
-            return NumberFormatter().string(from: NSNumber(capacity.value as! UInt))
+            return NumberFormatter().string(from: NSNumber(value: capacity.value as! UInt))
         case .recoveryRate:
-            return NumberFormatter().formatterDecimalWith2Fractions().string(from: recoveryRate.value as! Double)
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: NSNumber(value:recoveryRate.value as! Double))
         case .orePrice:
-            return NumberFormatter().formatterDecimalWith2Fractions().string(from: orePrice.value as! UInt)
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: NSNumber(value:orePrice.value as! UInt))
         }
     }
     

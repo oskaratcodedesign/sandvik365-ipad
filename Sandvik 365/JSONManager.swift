@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Async
 
 class JSONManager {
     static let updateAvailable = "updateAvailableKey"
@@ -169,7 +168,8 @@ class JSONManager {
             let url = endPoint.buildUrl()
             URLSession.shared.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
                 var success = false
-                Async.userInitiated {
+                
+                DispatchQueue.global().async {
                     do {
                         if let d = data {
                             if let json = try JSONSerialization.jsonObject(with: d, options: .mutableContainers) as? NSDictionary {
@@ -192,8 +192,10 @@ class JSONManager {
                     catch {
                         print(error)
                     }
-                }.main {
-                    completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
+                    
+                    DispatchQueue.main.async {
+                        completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
+                    }
                 }
             } as! (Data?, URLResponse?, Error?) -> Void) .resume()
         }
@@ -207,7 +209,7 @@ class JSONManager {
             
             URLSession.shared.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
                 var success = false
-                Async.userInitiated {
+                DispatchQueue.global().async {
                     do {
                         if let d = data {
                             if let json = try JSONSerialization.jsonObject(with: d, options: .mutableContainers) as? NSDictionary {
@@ -229,10 +231,11 @@ class JSONManager {
                     catch {
                         print(error)
                     }
-                    }.main {
+                    DispatchQueue.main.async {
                         downloadCount -= 1
                         let allDownloaded = (downloadCount == 0)
                         completion(success: success, lastModified: endPoint.jsonLastModifiedDate(), allDownloaded: allDownloaded)
+                    }
                 }
                 } as! (Data?, URLResponse?, Error?) -> Void) .resume()
         }

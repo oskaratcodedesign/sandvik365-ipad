@@ -16,7 +16,7 @@ extension NumberFormatter {
         return self
     }
     
-    func formatToUSD(_ number: NSNumber) -> String {
+    func formatToUSD(number: NSNumber) -> String {
         self.numberStyle = .currency
         self.currencyCode = "USD"
         self.maximumFractionDigits = 0

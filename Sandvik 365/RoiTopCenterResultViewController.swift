@@ -90,13 +90,13 @@ class RoiTopCenterResultViewController: RoiResultViewController {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(number: 0)
         }
     }
     
     fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            profitLabel.text = NumberFormatter().formatToUSD(sum)
+            profitLabel.text = NumberFormatter().formatToUSD(number: NSNumber(value: sum))
         }
     }
 }
