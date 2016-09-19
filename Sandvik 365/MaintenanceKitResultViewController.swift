@@ -32,8 +32,8 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
             setData()
         }
     }
-    private var maintenanceOfferData = [MaintenanceOfferData]()
-    private var regionSelector: RegionSelector?
+    fileprivate var maintenanceOfferData = [MaintenanceOfferData]()
+    fileprivate var regionSelector: RegionSelector?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +48,15 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         self.contactUsView.didSelectRegion()
     }
     
-    func showRegionAction(allRegions: [RegionData]) {
+    func showRegionAction(_ allRegions: [RegionData]) {
         regionSelector = RegionSelector(del: self, allRegions: allRegions)
         let constraints = regionSelector!.fillConstraints(self.view, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
         regionSelector!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(regionSelector!)
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
     }
     
-    func didPressEmail(email: String) -> Bool {
+    func didPressEmail(_ email: String) -> Bool {
         let mail = MFMailComposeViewController()
         mail.mailComposeDelegate = self
         mail.setSubject("Maintenance Kits Request – 365 APP")
@@ -98,36 +98,36 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         html = html + "</body>"
         html = html + "</html>"
         mail.setMessageBody(html, isHTML: true)
-        self.presentViewController(mail, animated: true, completion: nil)
+        self.present(mail, animated: true, completion: nil)
         return true
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return maintenanceOfferData.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MaintenanceTableViewCell") as! MaintenanceTableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        cell.configureView(self.maintenanceOfferData[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MaintenanceTableViewCell") as! MaintenanceTableViewCell
+        cell.backgroundColor = UIColor.clear
+        cell.configureView(self.maintenanceOfferData[(indexPath as NSIndexPath).row])
         return cell
     }
     
-    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        self.infoView.data = maintenanceOfferData[indexPath.row]
-        self.infoView.hidden = false
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        self.infoView.data = maintenanceOfferData[(indexPath as NSIndexPath).row]
+        self.infoView.isHidden = false
     }
     
-    private func setData() {
+    fileprivate func setData() {
         if let alldata = MaintenanceServiceKitData.getAllData(), let input = self.addedExtraEquipmentData {
             self.maintenanceOfferData = [MaintenanceOfferData]()
             for obj in input {
@@ -157,9 +157,9 @@ class MaintenanceKitResultViewController: UIViewController, ContactUsViewDelegat
         }
     }
     
-    private func addMaintenanceKit(allData: [String: MaintenanceServiceKitParent], dic: (pno: String, description: String), amount: Int) {
+    fileprivate func addMaintenanceKit(_ allData: [String: MaintenanceServiceKitParent], dic: (pno: String, description: String), amount: Int) {
         if let data = allData[dic.pno] {
-            if let index = self.maintenanceOfferData.indexOf({$0.maintenanceServiceKitParent.serialNo == dic.pno}) {
+            if let index = self.maintenanceOfferData.index(where: {$0.maintenanceServiceKitParent.serialNo == dic.pno}) {
                 //already added
                 let data = self.maintenanceOfferData[index]
                 data.amount += amount

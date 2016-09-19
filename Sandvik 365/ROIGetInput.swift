@@ -10,60 +10,60 @@ import Foundation
 import UIKit
 
 enum ROIGetCalculationType {
-    case WearLife
-    case CostPerHour
-    case RevenueLoss
-    case Availability
-    case MaintenanceTime
+    case wearLife
+    case costPerHour
+    case revenueLoss
+    case availability
+    case maintenanceTime
     
     var percentages: [Double] {
         switch self {
-        case WearLife:
+        case .wearLife:
             return [100, 140, 215]
-        case CostPerHour:
+        case .costPerHour:
             return [100, 80, 60]
-        case RevenueLoss:
+        case .revenueLoss:
             return [100, 30, 7]
-        case Availability:
+        case .availability:
             return [96, 98, 99.55]
-        case MaintenanceTime:
+        case .maintenanceTime:
             return [100, 65, 25]
         }
     }
 }
 
 enum ROIGetInputValue {
-    case Loaders(UInt)
-    case LipsUsed(UInt)
-    case LipReplacementCost(Double)
+    case loaders(UInt)
+    case lipsUsed(UInt)
+    case lipReplacementCost(Double)
     
     var title :String {
         switch self {
-        case Loaders:
+        case .loaders:
             return NSLocalizedString("Number of loaders", comment: "")
-        case LipsUsed:
+        case .lipsUsed:
             return NSLocalizedString("Number of lips/cutting edges used during 4000 h/loader", comment: "")
-        case LipReplacementCost:
+        case .lipReplacementCost:
             return NSLocalizedString("Lip replacement cost/change", comment: "")
         }
     }
     
     var value: Any {
         switch self {
-        case Loaders(let value):
+        case .loaders(let value):
             return value
-        case LipsUsed(let value):
+        case .lipsUsed(let value):
             return value
-        case LipReplacementCost(let value):
+        case .lipReplacementCost(let value):
             return value
         }
     }
 }
 
 class ROIGetInput: ROICalculatorInput {
-    var loaders: ROIGetInputValue = .Loaders(1)
-    var lipsUsed: ROIGetInputValue = .LipsUsed(6)
-    var lipReplacementCost: ROIGetInputValue = .LipReplacementCost(2500)
+    var loaders: ROIGetInputValue = .loaders(1)
+    var lipsUsed: ROIGetInputValue = .lipsUsed(6)
+    var lipReplacementCost: ROIGetInputValue = .lipReplacementCost(2500)
     var calculationType: ROIGetCalculationType?
     
     func allInputs() -> [ROIGetInputValue] {
@@ -93,22 +93,22 @@ class ROIGetInput: ROICalculatorInput {
         return 0
     }
     
-    override func setInput(atIndex :Int, stringValue :String) -> Bool {
+    override func setInput(_ atIndex :Int, stringValue :String) -> Bool {
         let input = allInputs()[atIndex]
         switch input {
-        case .Loaders:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                loaders = .Loaders(number.unsignedLongValue)
+        case .loaders:
+            if let number = NumberFormatter().number(from: stringValue) {
+                loaders = .loaders(number.uintValue)
                 return true
             }
-        case .LipsUsed:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                lipsUsed = .LipsUsed(number.unsignedLongValue)
+        case .lipsUsed:
+            if let number = NumberFormatter().number(from: stringValue) {
+                lipsUsed = .lipsUsed(number.uintValue)
                 return true
             }
-        case .LipReplacementCost:
-            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
-                lipReplacementCost = .LipReplacementCost(number.doubleValue)
+        case .lipReplacementCost:
+            if let number = NumberFormatter().formatterDecimalWith2Fractions().number(from: stringValue) {
+                lipReplacementCost = .lipReplacementCost(number.doubleValue)
                 return true
             }
         }
@@ -116,53 +116,53 @@ class ROIGetInput: ROICalculatorInput {
         return false
     }
     
-    override func getInputAsString(atIndex :Int) -> String? {
+    override func getInputAsString(_ atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
-        case .Loaders:
-            return NSNumberFormatter().stringFromNumber(loaders.value as! UInt)
-        case .LipsUsed:
-            return NSNumberFormatter().stringFromNumber(lipsUsed.value as! UInt)
-        case .LipReplacementCost:
-            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(lipReplacementCost.value as! Double)
+        case .loaders:
+            return NumberFormatter().string(from: NSNumber(loaders.value as! UInt))
+        case .lipsUsed:
+            return NumberFormatter().string(from: NSNumber(lipsUsed.value as! UInt))
+        case .lipReplacementCost:
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: lipReplacementCost.value as! Double)
         }
     }
     
-    override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+    override func getInputAbbreviation(_ atIndex :Int) -> InputAbbreviation? {
         let input = allInputs()[atIndex]
         switch input {
-        case .Loaders:
+        case .loaders:
             return nil
-        case .LipsUsed:
+        case .lipsUsed:
             return nil
-        case .LipReplacementCost:
+        case .lipReplacementCost:
             return InputAbbreviation.USD
         }
     }
     
     
-    override func changeInput(atIndex :Int, change :ChangeInput) -> String {
+    override func changeInput(_ atIndex :Int, change :ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
-        case .Loaders:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+        case .loaders:
+            if change != ChangeInput.load {
+                let value = Int(input.value as! UInt) + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    loaders = .Loaders(UInt(value))
+                    loaders = .loaders(UInt(value))
                 }
             }
-        case .LipsUsed:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+        case .lipsUsed:
+            if change != ChangeInput.load {
+                let value = Int(input.value as! UInt) + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    lipsUsed = .LipsUsed(UInt(value))
+                    lipsUsed = .lipsUsed(UInt(value))
                 }
             }
-        case .LipReplacementCost:
-            if change != ChangeInput.Load {
-                let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
+        case .lipReplacementCost:
+            if change != ChangeInput.load {
+                let value = input.value as! Double + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    lipReplacementCost = .LipReplacementCost(value)
+                    lipReplacementCost = .lipReplacementCost(value)
                 }
             }
         }

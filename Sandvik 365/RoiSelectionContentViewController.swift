@@ -9,8 +9,8 @@
 import UIKit
 
 protocol RoiSelectionContentViewControllerDelegate {
-    func roiValueDidChange(itemIndex: Int, object :AnyObject)
-    func percentPPMchange(percent: Bool, object :AnyObject)
+    func roiValueDidChange(_ itemIndex: Int, object :AnyObject)
+    func percentPPMchange(_ percent: Bool, object :AnyObject)
 }
 
 class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
@@ -25,51 +25,51 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     var roiContentView: RoiInputView!
     var delegate: RoiSelectionContentViewControllerDelegate?
     
-    private var toggleTimer: NSTimer?
-    private var contentOffsetLast: CGPoint?
-    private let swipeOffset: CGFloat = 10
-    private var isKeyBoardShowing: Bool = false
+    fileprivate var toggleTimer: Timer?
+    fileprivate var contentOffsetLast: CGPoint?
+    fileprivate let swipeOffset: CGFloat = 10
+    fileprivate var isKeyBoardShowing: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let numberView = RoiInputView(frame: CGRectZero, selectionInput: selectedInput)
+        let numberView = RoiInputView(frame: CGRect.zero, selectionInput: selectedInput)
         containerView.addSubview(numberView)
         
         numberView.loadNumber(itemIndex, selectionInput: selectedInput)
         numberView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateConstraints(numberView.fillConstraints(containerView))
+        NSLayoutConstraint.activate(numberView.fillConstraints(containerView))
         roiContentView = numberView;
         roiContentView.textView.delegate = self
-        spinnerScrollView.contentSize = CGSizeMake(spinnerScrollView.frame.width, spinnerScrollView.frame.height*40)
-        spinnerScrollView.contentOffset = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+        spinnerScrollView.contentSize = CGSize(width: spinnerScrollView.frame.width, height: spinnerScrollView.frame.height*40)
+        spinnerScrollView.contentOffset = CGPoint(x: 0, y: spinnerScrollView.contentSize.height/2)
         spinnerScrollView.delegate = self
         contentOffsetLast = spinnerScrollView.contentOffset
         let recognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(_:)))
 
         spinnerScrollView.addGestureRecognizer(recognizer)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
-        percentPPMControl.hidden = true
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        percentPPMControl.isHidden = true
         
         if let input = selectedInput as? ROICrusherInput {
             switch input.allInputs()[itemIndex] {
-            case .OreGrade:
-                percentPPMControl.hidden = false
+            case .oreGrade:
+                percentPPMControl.isHidden = false
             default: break
             }
         }
         else if let input = selectedInput as? ROIEDVInput {
             switch input.allInputs()[itemIndex] {
-            case .OreGrade:
-                percentPPMControl.hidden = false
+            case .oreGrade:
+                percentPPMControl.isHidden = false
             default: break
             }
         }
     }
     
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if let value = selectedInput.getInputAsString(itemIndex) {
             roiContentView.setAttributedStringWithString(value)
             return true
@@ -77,17 +77,17 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         return false
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         if !selectedInput.setInput(itemIndex, stringValue: textView.attributedText!.string) {
-            let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Wrong input", message: "Please enter a valid number", preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
             }
             alertController.addAction(okAction)
             
             roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load old value
             // Present Alert Controller
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         else {
             roiContentView.loadNumber(itemIndex, selectionInput: selectedInput)//load new value
@@ -97,7 +97,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
             return false
@@ -105,28 +105,28 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         return true
     }
     
-    func handleTap(recognizer: UIGestureRecognizer) {
+    func handleTap(_ recognizer: UIGestureRecognizer) {
         if let value = selectedInput.getInputAsString(itemIndex) {
             roiContentView.setAttributedStringWithString(value)
             roiContentView.textView.becomeFirstResponder()
         }
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        let info : NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
-        let y = CGRectGetMaxY(containerView.frame)
+    func keyboardWillShow(_ notification: Notification) {
+        let info : NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let y = containerView.frame.maxY
         let diff = y - keyboardSize!.height
         containerViewCenterY.constant += diff
         isKeyBoardShowing = true
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         containerViewCenterY.constant = 0
         isKeyBoardShowing = false
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let dy = scrollView.contentOffset.y - contentOffsetLast!.y
         if dy != 0 && scrollView.contentOffset.y > 0{
             
@@ -141,29 +141,29 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        scrollView.bounds.origin = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.bounds.origin = CGPoint(x: 0, y: spinnerScrollView.contentSize.height/2)
         contentOffsetLast = scrollView.contentOffset
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        spinnerScrollView.bounds.origin = CGPointMake(0, spinnerScrollView.contentSize.height/2)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        spinnerScrollView.bounds.origin = CGPoint(x: 0, y: spinnerScrollView.contentSize.height/2)
         contentOffsetLast = spinnerScrollView.contentOffset
     }
     
-    @IBAction func toggleUp(sender: UIButton) {
+    @IBAction func toggleUp(_ sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleUpMove), userInfo: nil, repeats: true)
+            toggleTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(toggleUpMove), userInfo: nil, repeats: true)
         }
     }
     
-    @IBAction func toggleDown(sender: UIButton) {
+    @IBAction func toggleDown(_ sender: UIButton) {
         if !isKeyBoardShowing {
-            toggleTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(toggleDownMove), userInfo: nil, repeats: true)
+            toggleTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(toggleDownMove), userInfo: nil, repeats: true)
         }
     }
    
-    @IBAction func segmentChangedAction(sender: UISegmentedControl) {
+    @IBAction func segmentChangedAction(_ sender: UISegmentedControl) {
         let isLeft = sender.selectedSegmentIndex == 0 ? true : false
         if let input = selectedInput as? ROICrusherInput {
             input.usePPM = !isLeft
@@ -207,7 +207,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
         }*/
     }
     
-    @IBAction func releaseAction(sender: UIButton) {
+    @IBAction func releaseAction(_ sender: UIButton) {
         toggleTimer?.fire()
         toggleTimer?.invalidate()
         toggleTimer = nil
@@ -231,7 +231,7 @@ class RoiSelectionContentViewController: UIViewController, UIScrollViewDelegate,
     */
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
 }

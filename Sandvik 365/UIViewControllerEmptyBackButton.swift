@@ -13,7 +13,7 @@ extension UIViewController {
     
     public class func swizzleViewDidLoad() {
         struct Static {
-            static var onceToken : dispatch_once_t = 0
+            static var onceToken : Int = 0
         }
         dispatch_once(&Static.onceToken) {
             let originalSelector = #selector(viewDidLoad)
@@ -38,17 +38,17 @@ extension UIViewController {
     }
     
     func styleNavBar() {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         if let navController = self.navigationController {
-            let label = UILabel(frame: CGRectMake(0, 0, navController.navigationBar.frame.size.width-200, navController.navigationBar.frame.size.height))
-            label.textAlignment = .Left
-            label.textColor = UIColor.whiteColor()
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: navController.navigationBar.frame.size.width-200, height: navController.navigationBar.frame.size.height))
+            label.textAlignment = .left
+            label.textColor = UIColor.white
             if let title = self.navigationItem.title {
                 let attrString = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 13)!])
-                if let range = title.rangeOfString("| ") {
+                if let range = title.range(of: "| ") {
                     if let lastIndex = range.last {
-                        let subTitle = title.substringFromIndex(lastIndex)
+                        let subTitle = title.substring(from: lastIndex)
                         attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "AktivGroteskCorp-Light", size: 13.0)!, range: NSRange(location: attrString.length-subTitle.characters.count,length: subTitle.characters.count))
                     }
                 }

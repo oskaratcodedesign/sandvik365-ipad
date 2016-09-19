@@ -10,14 +10,14 @@ import Foundation
 import NibDesignable
 
 extension ContactUsViewDelegate {
-    func didPressEmail(email: String) -> Bool {
+    func didPressEmail(_ email: String) -> Bool {
         return false
     }
 }
 
 protocol ContactUsViewDelegate {
-    func showRegionAction(allRegions: [RegionData])
-    func didPressEmail(email: String) -> Bool
+    func showRegionAction(_ allRegions: [RegionData])
+    func didPressEmail(_ email: String) -> Bool
 }
 
 class ContactUsView : NibDesignable {
@@ -26,8 +26,8 @@ class ContactUsView : NibDesignable {
     @IBOutlet weak var phoneButton: UIButton!
     
     var delegate: ContactUsViewDelegate?
-    private var allRegions: [RegionData]?
-    private var selectedRegionData: RegionData?
+    fileprivate var allRegions: [RegionData]?
+    fileprivate var selectedRegionData: RegionData?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,36 +35,36 @@ class ContactUsView : NibDesignable {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.allRegions = JSONManager.getData(JSONManager.EndPoint.CONTACT_US) as? [RegionData]
+        self.allRegions = JSONManager.getData(JSONManager.EndPoint.contact_US) as? [RegionData]
         self.didSelectRegion()
     }
     
-    @IBAction func phoneAction(sender: AnyObject) {
+    @IBAction func phoneAction(_ sender: AnyObject) {
         if var phone = self.selectedRegionData?.contactCountry?.phone {
-            phone = phone.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "0123456789-+()").invertedSet).joinWithSeparator("")
-            if let url = NSURL(string: "tel://\(phone)") {
-                UIApplication.sharedApplication().openURL(url)
+            phone = phone.components(separatedBy: CharacterSet(charactersIn: "0123456789-+()").inverted).joined(separator: "")
+            if let url = URL(string: "tel://\(phone)") {
+                UIApplication.shared.openURL(url)
             }
         }
     }
-    @IBAction func emailAction(sender: AnyObject) {
+    @IBAction func emailAction(_ sender: AnyObject) {
         if let email = self.selectedRegionData?.contactCountry?.email {
-            if let del = self.delegate where del.didPressEmail(email) {
+            if let del = self.delegate , del.didPressEmail(email) {
                 //del was handled
             }
-            else if let url = NSURL(string: "mailto://\(email)") {
-                UIApplication.sharedApplication().openURL(url)
+            else if let url = URL(string: "mailto://\(email)") {
+                UIApplication.shared.openURL(url)
             }
         }
     }
-    @IBAction func visitAction(sender: AnyObject) {
+    @IBAction func visitAction(_ sender: AnyObject) {
         if let url = self.selectedRegionData?.contactCountry?.url {
-            if let url = NSURL(string: url) {
-                UIApplication.sharedApplication().openURL(url)
+            if let url = URL(string: url) {
+                UIApplication.shared.openURL(url)
             }
         }
     }
-    @IBAction func showRegionAction(sender: AnyObject) {
+    @IBAction func showRegionAction(_ sender: AnyObject) {
         if let allRegions = self.allRegions {
             self.delegate?.showRegionAction(allRegions)
         }
@@ -76,7 +76,7 @@ class ContactUsView : NibDesignable {
             self.mapImageView.image = region.smallMap
             if let regionData = region.getRegionData(allRegions) {
                 self.regionLabel.text = regionData.contactCountry?.name
-                self.phoneButton.setTitle(regionData.contactCountry?.phone, forState: .Normal)
+                self.phoneButton.setTitle(regionData.contactCountry?.phone, for: UIControlState())
                 self.selectedRegionData = regionData
             }
         }

@@ -16,7 +16,7 @@ class ImageCache : FileCache {
         return "images"
     }
     
-    class func getImage(urlPath: NSURL) -> UIImage? {
+    class func getImage(_ urlPath: URL) -> UIImage? {
         do {
             let path = try self.pathForUrl(urlPath)
             return UIImage(contentsOfFile: path)

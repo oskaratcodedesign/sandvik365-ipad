@@ -13,7 +13,7 @@ class RoiEDVResultViewController: RoiResultViewController {
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
-    private var selectedButton: UIButton?
+    fileprivate var selectedButton: UIButton?
     
     @IBOutlet weak var graphView: UIView!
     @IBOutlet var graphViewHeightConstraint: NSLayoutConstraint!
@@ -23,60 +23,60 @@ class RoiEDVResultViewController: RoiResultViewController {
         titleLabel.text = NSLocalizedString("COST PER\nBREAKDOWN", comment: "")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func firstAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ExtraCost, selectedButton: sender)
+    @IBAction func firstAction(_ sender: UIButton) {
+        controlInput(selectedInput, selectedService: ROIEDVCostType.extraCost, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func secondAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ServiceCost, selectedButton: sender)
+    @IBAction func secondAction(_ sender: UIButton) {
+        controlInput(selectedInput, selectedService: ROIEDVCostType.serviceCost, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func thirdAction(sender: UIButton) {
-        controlInput(selectedInput, selectedService: ROIEDVCostType.ProductivityLoss, selectedButton: sender)
+    @IBAction func thirdAction(_ sender: UIButton) {
+        controlInput(selectedInput, selectedService: ROIEDVCostType.productivityLoss, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
-    private func setGraphValue() {
+    fileprivate func setGraphValue() {
         
         if let total = selectedInput.total() {
             var multiplier = Double(total) / (selectedInput.maxTotal())
             multiplier = max(multiplier, 0.0001)
-            self.graphViewHeightConstraint.active = false
+            self.graphViewHeightConstraint.isActive = false
             self.graphViewHeightConstraint = self.graphViewHeightConstraint.newMultiplier(CGFloat(multiplier))
-            self.graphViewHeightConstraint.active = true
-            UIView.animateWithDuration(0.25) {
+            self.graphViewHeightConstraint.isActive = true
+            UIView.animate(withDuration: 0.25, animations: {
                 self.view.layoutIfNeeded()
-            }
+            }) 
         }
     }
     
-    @IBAction func closeDetailAction(sender: UIButton) {
+    @IBAction func closeDetailAction(_ sender: UIButton) {
         for view in detailsContainerView.subviews {
             view.removeFromSuperview()
         }
     }
-    @IBAction func seeDetailAction(sender: UIButton) {
+    @IBAction func seeDetailAction(_ sender: UIButton) {
         detailsContainerView.addSubview(RoiEDVDetailView(frame: detailsContainerView.bounds, input: selectedInput))
-        detailsContainerView.hidden = false
+        detailsContainerView.isHidden = false
     }
     
-    private func controlInput(input: ROIEDVInput, selectedService: ROIEDVCostType, selectedButton: UIButton) {
+    fileprivate func controlInput(_ input: ROIEDVInput, selectedService: ROIEDVCostType, selectedButton: UIButton) {
         //self.selectedButton?.selected = false
         self.selectedButton = selectedButton
-        self.selectedButton?.selected = !selectedButton.selected
+        self.selectedButton?.isSelected = !selectedButton.isSelected
         
-        if selectedButton.selected {
+        if selectedButton.isSelected {
             input.costTypes.insert(selectedService)
         }
         else {
@@ -84,19 +84,19 @@ class RoiEDVResultViewController: RoiResultViewController {
         }
     }
     
-    private func setProfitLabel()
+    fileprivate func setProfitLabel()
     {
         if !self.selectedInput.costTypes.isEmpty {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NSNumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(0)
         }
     }
     
-    private func setProfitLabelFromInput() {
+    fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+            profitLabel.text = NumberFormatter().formatToUSD(sum)
         }
     }
 }

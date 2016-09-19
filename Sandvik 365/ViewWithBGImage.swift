@@ -20,12 +20,12 @@ class ViewWithBGImage: NibDesignable {
         }
     }
     
-    func setImageBG(imageName: String) {
+    func setImageBG(_ imageName: String) {
         if let image = UIImage(named: imageName) {
             self.imageView.image = image
         }
         if let subview = self.subviews.last {
-            self.sendSubviewToBack(subview)
+            self.sendSubview(toBack: subview)
         }
     }
 }

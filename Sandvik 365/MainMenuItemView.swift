@@ -26,10 +26,10 @@ class MainMenuItemView : NibDesignable {
     
     @IBInspectable var partBridgeType: NSNumber! {
         didSet {
-            self.businessType = BusinessType(rawValue: partBridgeType.unsignedIntValue)
-            self.button.imageView?.contentMode = .ScaleAspectFill
+            self.businessType = BusinessType(rawValue: partBridgeType.uint32Value)
+            self.button.imageView?.contentMode = .scaleAspectFill
             if let image = UIImage(named: self.businessType.backgroundImageName + "-slice") {
-                self.button.setImage(image, forState: .Normal)
+                self.button.setImage(image, for: UIControlState())
             }
         }
     }
@@ -50,14 +50,14 @@ class MainMenuItemView : NibDesignable {
             // calc scale between unfocusZoomLevel and focusZoomLevel
             let scale = self.unfocusZoomLevel + (self.focusZoomLevel - self.unfocusZoomLevel) * easeInOut(max(inverseOffset, 0) / midScrollView)
             
-            self.button.transform = CGAffineTransformMakeScale(scale, scale)
+            self.button.transform = CGAffineTransform(scaleX: scale, y: scale)
         }
     }
     
     // Modeled after the piecewise quadratic
     // y = (1/2)((2x)^2)             ; [0, 0.5)
     // y = -(1/2)((2x-1)*(2x-3) - 1) ; [0.5, 1]
-    func easeInOut(value: CGFloat) -> CGFloat {
+    func easeInOut(_ value: CGFloat) -> CGFloat {
         if value < 0.5 {
             return 2 * value * value
         } else {

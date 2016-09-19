@@ -11,44 +11,44 @@ import UIKit
 
 extension CALayer {
     
-    func roundCALayer(frame: CGRect, fill: Bool, color: UIColor) -> CALayer? {
+    func roundCALayer(_ frame: CGRect, fill: Bool, color: UIColor) -> CALayer? {
         self.frame = frame
         self.cornerRadius = frame.size.width/2
         self.masksToBounds = true
         if fill {
-            self.backgroundColor = color.CGColor
+            self.backgroundColor = color.cgColor
         }
         else {
             self.borderWidth = 1
-            self.borderColor = color.CGColor
+            self.borderColor = color.cgColor
         }
         return self
     }
     
-    func roundCALayer(frame: CGRect, border: CGFloat, color: UIColor) -> CALayer? {
+    func roundCALayer(_ frame: CGRect, border: CGFloat, color: UIColor) -> CALayer? {
         self.frame = frame
         self.cornerRadius = frame.size.width/2
         self.masksToBounds = true
         self.borderWidth = border
-        self.borderColor = color.CGColor
+        self.borderColor = color.cgColor
         return self
     }
     
-    func roundImage(frame: CGRect, fill: Bool, color: UIColor) -> UIImage? {
+    func roundImage(_ frame: CGRect, fill: Bool, color: UIColor) -> UIImage? {
         roundCALayer(frame, fill: fill, color: color)
         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0);
-        self.renderInContext(UIGraphicsGetCurrentContext()!)
+        self.render(in: UIGraphicsGetCurrentContext()!)
         let roundedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return roundedImage
     }
     
     func borderUIColor() -> UIColor? {
-        return borderColor != nil ? UIColor(CGColor: borderColor!) : nil
+        return borderColor != nil ? UIColor(cgColor: borderColor!) : nil
     }
 
-    func setBorderUIColor(color: UIColor) {
-        borderColor = color.CGColor
+    func setBorderUIColor(_ color: UIColor) {
+        borderColor = color.cgColor
     }
     
 }

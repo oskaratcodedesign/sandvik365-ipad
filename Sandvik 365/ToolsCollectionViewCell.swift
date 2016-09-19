@@ -13,7 +13,7 @@ class ToolsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var button: UIButton! {
         didSet {
             self.button.titleLabel?.numberOfLines = 3
-            self.button.titleLabel?.textAlignment = .Center
+            self.button.titleLabel?.textAlignment = .center
         }
     }
 }

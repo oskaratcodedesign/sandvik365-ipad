@@ -14,8 +14,8 @@ class PartsServicesMenuViewController: UIViewController, SelectionWheelDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         var titles: [String] = ["Interactive tools"]
-        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
-            let allPartsAndServices = PartsAndServices(businessType: .All, json: json)
+        if let json = JSONManager.getData(JSONManager.EndPoint.content_URL) as? PartsAndServicesJSONParts {
+            let allPartsAndServices = PartsAndServices(businessType: .all, json: json)
             let partServiceTitles = allPartsAndServices.mainSectionTitles()
             titles += partServiceTitles
         }
@@ -23,7 +23,7 @@ class PartsServicesMenuViewController: UIViewController, SelectionWheelDelegate 
         selectionWheel.delegate = self
     }
     
-    func didSelectSection(sectionTitle: String) {
+    func didSelectSection(_ sectionTitle: String) {
         
     }
 

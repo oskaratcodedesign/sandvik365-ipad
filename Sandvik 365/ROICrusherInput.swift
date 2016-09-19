@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum ROICrusherService: UInt {
-    case RampUp = 14
-    case ConditionInspection = 1
-    case MaintenancePlanning = 7
+    case rampUp = 14
+    case conditionInspection = 1
+    case maintenancePlanning = 7
     //case Protective
 }
 
@@ -22,49 +22,49 @@ enum OperationType: String {
 }
 
 enum ROICrusherInputValue {
-    case Operation(OperationType)
-    case Capacity(UInt)
-    case OreGrade(Double)
-    case RecoveryRate(Double)
-    case OrePrice(UInt)
+    case operation(OperationType)
+    case capacity(UInt)
+    case oreGrade(Double)
+    case recoveryRate(Double)
+    case orePrice(UInt)
 
     var title :String {
         switch self {
-        case Operation:
+        case .operation:
             return NSLocalizedString("Operation", comment: "")
-        case OreGrade:
+        case .oreGrade:
             return NSLocalizedString("Ore grade", comment: "")
-        case Capacity:
+        case .capacity:
             return NSLocalizedString("Crushing capacity", comment: "")
-        case RecoveryRate:
+        case .recoveryRate:
             return NSLocalizedString("Recovery rate", comment: "")
-        case OrePrice:
+        case .orePrice:
             return NSLocalizedString("Market price", comment: "")
         }
     }
     
     var value: Any {
         switch self {
-        case Operation(let value):
+        case .operation(let value):
             return value
-        case OreGrade(let value):
+        case .oreGrade(let value):
             return value
-        case Capacity(let value):
+        case .capacity(let value):
             return value
-        case RecoveryRate(let value):
+        case .recoveryRate(let value):
             return value
-        case OrePrice(let value):
+        case .orePrice(let value):
             return value
         }
     }
 }
 
 class ROICrusherInput: ROICalculatorInput {
-    var operation: ROICrusherInputValue = .Operation(OperationType.New)
-    var oreGrade: ROICrusherInputValue = .OreGrade(2.0) //%
-    var capacity: ROICrusherInputValue = .Capacity(1200) //m t/hr
-    var recoveryRate: ROICrusherInputValue = .RecoveryRate(85) //%
-    var orePrice: ROICrusherInputValue = .OrePrice(5500) //USD/m t
+    var operation: ROICrusherInputValue = .operation(OperationType.New)
+    var oreGrade: ROICrusherInputValue = .oreGrade(2.0) //%
+    var capacity: ROICrusherInputValue = .capacity(1200) //m t/hr
+    var recoveryRate: ROICrusherInputValue = .recoveryRate(85) //%
+    var orePrice: ROICrusherInputValue = .orePrice(5500) //USD/m t
     var services: Set<ROICrusherService> = Set<ROICrusherService>()
     var usePPM: Bool = false //otherwise percent
     let months: UInt = 12
@@ -78,32 +78,32 @@ class ROICrusherInput: ROICalculatorInput {
         return allInputs().flatMap({ $0.title })
     }
     
-    override func setInput(atIndex :Int, stringValue :String) -> Bool {
+    override func setInput(_ atIndex :Int, stringValue :String) -> Bool {
         let input = allInputs()[atIndex]
         switch input {
-        case .Operation:
+        case .operation:
             return false
-        case .OreGrade:
-            if var number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
+        case .oreGrade:
+            if var number = NumberFormatter().formatterDecimalWith2Fractions().number(from: stringValue) {
                 if usePPM {
                     number = number.doubleValue/10000
                 }
-                oreGrade = .OreGrade(number.doubleValue)
+                oreGrade = .oreGrade(number.doubleValue)
                 return true
             }
-        case .Capacity:
-            if let number = NSNumberFormatter().numberFromString(stringValue) {
-                capacity = .Capacity(number.unsignedLongValue)
+        case .capacity:
+            if let number = NumberFormatter().number(from: stringValue) {
+                capacity = .capacity(number.uintValue)
                 return true
             }
-        case .RecoveryRate:
-            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
-                recoveryRate = .RecoveryRate(number.doubleValue)
+        case .recoveryRate:
+            if let number = NumberFormatter().formatterDecimalWith2Fractions().number(from: stringValue) {
+                recoveryRate = .recoveryRate(number.doubleValue)
                 return true
             }
-        case .OrePrice:
-            if let number = NSNumberFormatter().formatterDecimalWith2Fractions().numberFromString(stringValue) {
-                orePrice = .OrePrice(number.unsignedLongValue)
+        case .orePrice:
+            if let number = NumberFormatter().formatterDecimalWith2Fractions().number(from: stringValue) {
+                orePrice = .orePrice(number.uintValue)
                 return true
             }
         }
@@ -111,94 +111,94 @@ class ROICrusherInput: ROICalculatorInput {
         return false
     }
     
-    override func getInputAsString(atIndex :Int) -> String? {
+    override func getInputAsString(_ atIndex :Int) -> String? {
         let input = allInputs()[atIndex]
         switch input {
-        case .Operation:
+        case .operation:
             return nil
-        case .OreGrade:
+        case .oreGrade:
             var value = oreGrade.value as! Double
             if usePPM {
                 value = 10000 * value
             }
-            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(value)
-        case .Capacity:
-            return NSNumberFormatter().stringFromNumber(capacity.value as! UInt)
-        case .RecoveryRate:
-            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(recoveryRate.value as! Double)
-        case .OrePrice:
-            return NSNumberFormatter().formatterDecimalWith2Fractions().stringFromNumber(orePrice.value as! UInt)
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: value)
+        case .capacity:
+            return NumberFormatter().string(from: NSNumber(capacity.value as! UInt))
+        case .recoveryRate:
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: recoveryRate.value as! Double)
+        case .orePrice:
+            return NumberFormatter().formatterDecimalWith2Fractions().string(from: orePrice.value as! UInt)
         }
     }
     
-    override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+    override func getInputAbbreviation(_ atIndex :Int) -> InputAbbreviation? {
         let input = allInputs()[atIndex]
         switch input {
-        case .Operation:
+        case .operation:
             return nil
-        case .OreGrade:
+        case .oreGrade:
             return usePPM ? InputAbbreviation.PPM : InputAbbreviation.Percent
-        case .Capacity:
+        case .capacity:
             return InputAbbreviation.TonPerDay
-        case .RecoveryRate:
+        case .recoveryRate:
             return InputAbbreviation.Percent
-        case .OrePrice:
+        case .orePrice:
             return usePPM ? InputAbbreviation.USDOunce : InputAbbreviation.USDton
         }
     }
 
     
-    override func changeInput(atIndex :Int, change :ChangeInput) -> String {
+    override func changeInput(_ atIndex :Int, change :ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
-        case .Operation:
+        case .operation:
             let value = operation.value as! OperationType
-            if change != ChangeInput.Load {
+            if change != ChangeInput.load {
                 if value == .New {
-                    operation = .Operation(.Established)
+                    operation = .operation(.Established)
                 }
                 else {
-                    operation = .Operation(.New)
+                    operation = .operation(.New)
                 }
                 self.services.removeAll() //clear when operation change
             }
             return (operation.value as! OperationType).rawValue
-        case .OreGrade:
-            if change != ChangeInput.Load {
+        case .oreGrade:
+            if change != ChangeInput.load {
                 var value = oreGrade.value as! Double
                 
                 if usePPM {
                     value = value * 10000
-                    value = value + (change == ChangeInput.Increase ? 1 : 1)
+                    value = value + (change == ChangeInput.increase ? 1 : 1)
                     value = value/10000
                 }
                 else {
-                    value = value + (change == ChangeInput.Increase ? 0.10 : -0.10)
+                    value = value + (change == ChangeInput.increase ? 0.10 : -0.10)
                 }
                 
                 if value >= 0 {
-                    oreGrade = .OreGrade(value)
+                    oreGrade = .oreGrade(value)
                 }
             }
-        case .Capacity:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+        case .capacity:
+            if change != ChangeInput.load {
+                let value = Int(input.value as! UInt) + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    capacity = .Capacity(UInt(value))
+                    capacity = .capacity(UInt(value))
                 }
             }
-        case .RecoveryRate:
-            if change != ChangeInput.Load {
-                let value = input.value as! Double + (change == ChangeInput.Increase ? 1 : -1)
+        case .recoveryRate:
+            if change != ChangeInput.load {
+                let value = input.value as! Double + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    recoveryRate = .RecoveryRate(value)
+                    recoveryRate = .recoveryRate(value)
                 }
             }
-        case .OrePrice:
-            if change != ChangeInput.Load {
-                let value = Int(input.value as! UInt) + (change == ChangeInput.Increase ? 1 : -1)
+        case .orePrice:
+            if change != ChangeInput.load {
+                let value = Int(input.value as! UInt) + (change == ChangeInput.increase ? 1 : -1)
                 if value >= 0 {
-                    orePrice = .OrePrice(UInt(value))
+                    orePrice = .orePrice(UInt(value))
                 }
             }
         }
@@ -226,7 +226,7 @@ class ROICrusherInput: ROICalculatorInput {
     
     override func maxTotal() -> Double {
         let currentServices = services
-        services = [.RampUp]
+        services = [.rampUp]
         var result = 0.0
         if let total = total() {
             result = Double(total)

@@ -17,65 +17,65 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
     
     @IBOutlet weak var firstContainer: UIView!
     @IBOutlet weak var videoButton: VideoButton!
-    private var backButtonBg: UIImageView!
-    private var showBackButton: Bool = true
+    fileprivate var backButtonBg: UIImageView!
+    fileprivate var showBackButton: Bool = true
     
     override func viewDidLoad() {
         if let navigationController = self.navigationController {
-            navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             navigationController.navigationBar.shadowImage = UIImage()
-            navigationController.navigationBar.translucent = true
-            navigationController.navigationBar.tintColor = UIColor.blackColor()
-            navigationController.view.backgroundColor = UIColor.clearColor()
+            navigationController.navigationBar.isTranslucent = true
+            navigationController.navigationBar.tintColor = UIColor.black
+            navigationController.view.backgroundColor = UIColor.clear
             
             backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn"))
-            navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+            navigationController.navigationBar.insertSubview(backButtonBg!, at: 0)
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         videoButton.delegate = self
-        if NSUserDefaults.standardUserDefaults().objectForKey("firstStart") == nil {
+        if UserDefaults.standard.object(forKey: "firstStart") == nil {
             
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstStart")
-            self.performSegueWithIdentifier("PresentTutorial", sender: self)
+            UserDefaults.standard.set(true, forKey: "firstStart")
+            self.performSegue(withIdentifier: "PresentTutorial", sender: self)
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        backButtonBg.hidden = true
-        self.navigationController?.navigationBarHidden = true
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        backButtonBg.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.disableLogoButton()
         checkUpdateAvailble()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(checkUpdateAvailble), name: JSONManager.updateAvailable, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(checkUpdateAvailble), name: NSNotification.Name(rawValue: JSONManager.updateAvailable), object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        self.navigationController?.navigationBarHidden = false
+        NotificationCenter.default.removeObserver(self)
+        self.navigationController?.isNavigationBarHidden = false
         if showBackButton {
             self.backButtonBg.alpha = 0.0
-            self.backButtonBg.hidden = false
-            UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.backButtonBg.isHidden = false
+            UIView.animate(withDuration: 0.25, animations: { () -> Void in
                 self.backButtonBg.alpha = 1.0
                 }, completion: { (finished: Bool) -> Void in
             })
         }
         showBackButton = true
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.enableLogoButton()
     }
     
     func didTouchEnded() {
-        self.performSegueWithIdentifier("VideoViewController", sender: self)
+        self.performSegue(withIdentifier: "VideoViewController", sender: self)
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        let point = touch.locationInView(self.scrollViewContentView)
-        if CGRectContainsPoint(self.videoButton.frame, point) {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let point = touch.location(in: self.scrollViewContentView)
+        if self.videoButton.frame.contains(point) {
             return false
         }
         return true
@@ -83,37 +83,37 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
     
     func checkUpdateAvailble(){
         if JSONManager().isUpdateAvailable() {
-            self.infoButton.setTitle(NSLocalizedString("UPDATE AVAILABLE", comment: ""), forState: .Normal)
+            self.infoButton.setTitle(NSLocalizedString("UPDATE AVAILABLE", comment: ""), for: UIControlState())
         }
         else {
-            self.infoButton.setTitle("", forState: .Normal)
+            self.infoButton.setTitle("", for: UIControlState())
         }
     }
     
-    @IBAction func showSecondScreen(sender: AnyObject) {
-        scrollView.setContentOffset(CGPointMake(0, scrollView.frame.height), animated: true)
+    @IBAction func showSecondScreen(_ sender: AnyObject) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: scrollView.frame.height), animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "VideoViewController" {
-            if let vc = segue.destinationViewController as? VideoViewController {
-                if let path = NSBundle.mainBundle().pathForResource("Sandvik365_Extern_150917", ofType:"m4v") {
-                    vc.videoUrl = NSURL.fileURLWithPath(path)
+            if let vc = segue.destination as? VideoViewController {
+                if let path = Bundle.main.path(forResource: "Sandvik365_Extern_150917", ofType:"m4v") {
+                    vc.videoUrl = URL(fileURLWithPath: path)
                 }
                 showBackButton = false
             }
         }
         else if segue.identifier == "PartsAndServicesViewController" {
-            if let vc = segue.destinationViewController as? PartsAndServicesViewController {
-                if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
+            if let vc = segue.destination as? PartsAndServicesViewController {
+                if let json = JSONManager.getData(JSONManager.EndPoint.content_URL) as? PartsAndServicesJSONParts {
                     vc.mainTitle = "PARTS &\nSERVICES"
-                    MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: .All, json: json), navTitle: String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICE YOU CAN COUNT ON"))
+                    MainMenuViewController.setPartsAndServicesViewController(vc, selectedPartsAndServices: PartsAndServices(businessType: .all, json: json), navTitle: String(format: "%@ | %@", "SANDVIK 365", "PARTS AND SERVICE YOU CAN COUNT ON"))
                 }
             }
         }
     }
     
-    static func setPartsAndServicesViewController(vc: PartsAndServicesViewController, selectedPartsAndServices: PartsAndServices, navTitle: String?) {
+    static func setPartsAndServicesViewController(_ vc: PartsAndServicesViewController, selectedPartsAndServices: PartsAndServices, navTitle: String?) {
         vc.selectedPartsAndServices = selectedPartsAndServices
         vc.navigationItem.title = navTitle
     }

@@ -21,31 +21,31 @@ class MaintenanceKitInfoView: UIView, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    private func setData() {
+    fileprivate func setData() {
         self.name.text = data!.description
         self.tableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data?.maintenanceServiceKitParent.components.count ?? 0
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MaintenanceKitInfoCell") as! MaintenanceKitInfoCell
-        cell.backgroundColor = UIColor.clearColor()
-        cell.name.text = data!.maintenanceServiceKitParent.components[indexPath.row].description
-        if let q = data!.maintenanceServiceKitParent.components[indexPath.row].quantity {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MaintenanceKitInfoCell") as! MaintenanceKitInfoCell
+        cell.backgroundColor = UIColor.clear
+        cell.name.text = data!.maintenanceServiceKitParent.components[(indexPath as NSIndexPath).row].description
+        if let q = data!.maintenanceServiceKitParent.components[(indexPath as NSIndexPath).row].quantity {
             cell.quantity.text = String(q)
         }
         return cell
     }
     
-    @IBAction func closeAction(sender: UIButton) {
-        self.hidden = true
+    @IBAction func closeAction(_ sender: UIButton) {
+        self.isHidden = true
     }
 }

@@ -13,11 +13,11 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
 
     @IBOutlet weak var collectionView: UICollectionView!
     var selectedBusinessType: BusinessType!
-    private var videos: [Video]!
+    fileprivate var videos: [Video]!
     @IBOutlet weak var gradientView: GradientHorizontalView!
     
     override func viewDidLoad() {
-        if self.selectedBusinessType == .All {
+        if self.selectedBusinessType == .all {
             self.navigationItem.title = "SANDVIK 365 – VIDEOS & ANIMATIONS"
         }
         super.viewDidLoad()
@@ -34,49 +34,49 @@ class VideoCenterViewController: UIViewController, UICollectionViewDataSource, U
         let xOffset = self.collectionView.contentSize.width
         let width = self.collectionView.frame.size.width
         if xOffset > width {
-            self.gradientView.hidden = false
+            self.gradientView.isHidden = false
         }
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.videos.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VideoCell
-        let video = self.videos[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VideoCell
+        let video = self.videos[(indexPath as NSIndexPath).row]
         cell.videoButton.configure(video, delegate: self)
         return cell
     }
     
-    func favoriteAction(video: Video) {
-        let currentIndex = self.videos.indexOf(video)
+    func favoriteAction(_ video: Video) {
+        let currentIndex = self.videos.index(of: video)
         sortVideos()
-        let nextIndex = self.videos.indexOf(video)
+        let nextIndex = self.videos.index(of: video)
         if currentIndex != nil && nextIndex != nil {
-            self.collectionView.moveItemAtIndexPath(NSIndexPath(forRow: currentIndex!, inSection: 0), toIndexPath: NSIndexPath(forRow: nextIndex!, inSection: 0))
+            self.collectionView.moveItem(at: IndexPath(row: currentIndex!, section: 0), to: IndexPath(row: nextIndex!, section: 0))
         }
     }
     
-    private func sortVideos() {
-        let favorites = self.videos.filter({$0.isFavorite}).sort({ (v1: Video, v2: Video) -> Bool in
-            v1.title!.caseInsensitiveCompare(v2.title!) == .OrderedAscending
+    fileprivate func sortVideos() {
+        let favorites = self.videos.filter({$0.isFavorite}).sorted(by: { (v1: Video, v2: Video) -> Bool in
+            v1.title!.caseInsensitiveCompare(v2.title!) == .orderedAscending
         })
-        let rest = self.videos.filter({!$0.isFavorite}).sort({ (v1: Video, v2: Video) -> Bool in
-            v1.title!.caseInsensitiveCompare(v2.title!) == .OrderedAscending
+        let rest = self.videos.filter({!$0.isFavorite}).sorted(by: { (v1: Video, v2: Video) -> Bool in
+            v1.title!.caseInsensitiveCompare(v2.title!) == .orderedAscending
         })
         self.videos = favorites + rest
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "VideoViewController" {
-            if let vc = segue.destinationViewController as? VideoViewController {
-                if let indexPath = self.collectionView.indexPathsForSelectedItems()?.first {
-                    vc.videoUrl = self.videos[indexPath.row].videoUrl
+            if let vc = segue.destination as? VideoViewController {
+                if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+                    vc.videoUrl = self.videos[(indexPath as NSIndexPath).row].videoUrl
                 }
             }
         }

@@ -11,16 +11,16 @@ import MediaPlayer
 
 class VideoViewController: UIViewController {
 
-    private var moviePlayer : MPMoviePlayerController!
-    var videoUrl: NSURL!
+    fileprivate var moviePlayer : MPMoviePlayerController!
+    var videoUrl: URL!
     
-    override func viewWillAppear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.hideLogoView()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    override func viewWillDisappear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.showLogoView()
     }
     
@@ -30,23 +30,23 @@ class VideoViewController: UIViewController {
         self.moviePlayer = MPMoviePlayerController(contentURL: self.videoUrl)
         if let player = self.moviePlayer {
             player.view.translatesAutoresizingMaskIntoConstraints = false
-            player.scalingMode = MPMovieScalingMode.AspectFit
-            player.fullscreen = true
-            player.controlStyle = MPMovieControlStyle.Fullscreen
-            player.movieSourceType = MPMovieSourceType.File
-            player.repeatMode = MPMovieRepeatMode.None
+            player.scalingMode = MPMovieScalingMode.aspectFit
+            player.isFullscreen = true
+            player.controlStyle = MPMovieControlStyle.fullscreen
+            player.movieSourceType = MPMovieSourceType.file
+            player.repeatMode = MPMovieRepeatMode.none
             player.play()
             self.view.addSubview(player.view)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(doneButtonClick(_:)), name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector:#selector(doneButtonClick(_:)), name: NSNotification.Name.MPMoviePlayerPlaybackDidFinish, object: nil)
             
             let views = ["player": player.view]
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[player]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         }
     }
     
-    func doneButtonClick(sender:NSNotification?){
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func doneButtonClick(_ sender:Notification?){
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +55,6 @@ class VideoViewController: UIViewController {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }

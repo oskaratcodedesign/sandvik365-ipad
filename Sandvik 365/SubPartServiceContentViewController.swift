@@ -25,11 +25,11 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     @IBOutlet var stripeImageView: UIImageView!
     @IBOutlet weak var filesCollectionView: UICollectionView!
     @IBOutlet weak var filesCollectionViewHeight: NSLayoutConstraint!
-    private let topConstant: CGFloat = 20
-    private var changedTopConstant: CGFloat = 0
+    fileprivate let topConstant: CGFloat = 20
+    fileprivate var changedTopConstant: CGFloat = 0
     
-    private var alignCountOnBoxRight: Bool = true
-    private var regionSelector: RegionSelector?
+    fileprivate var alignCountOnBoxRight: Bool = true
+    fileprivate var regionSelector: RegionSelector?
     
     @IBOutlet weak var documentsLabel: UILabel!
     override func viewDidLoad() {
@@ -37,8 +37,8 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         
         if let image = UIImage(named: "sandvik_stripes_bg_mask") {
             let mask = CALayer()
-            mask.frame = CGRectMake(0, 0, image.size.width, image.size.height)
-            mask.contents = image.CGImage
+            mask.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+            mask.contents = image.cgImage
             
             //stripeImageView.layer.masksToBounds = true
             stripeImageView.layer.mask = mask
@@ -48,16 +48,16 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
             view.setImageBG(self.selectedPartsAndServices.businessType.backgroundImageName)
         }
         let content = selectedContent
-        if var title = content.title {
-            if let subtitle = content.subtitle {
+        if var title = content?.title {
+            if let subtitle = content?.subtitle {
                 title += "\n" + subtitle
             }
-            titleLabel.text = title.uppercaseString
+            titleLabel.text = title.uppercased()
         }
         var previousView: UIView = paddingView
-        for obj in content.contentList {
+        for obj in (content?.contentList)! {
             if let value = obj as? Content.Lead {
-                previousView = addLead(value, images: content.images, previousView: previousView)
+                previousView = addLead(value, images: content?.images as! [URL], previousView: previousView)
             }
             else if let value = obj as? Content.Body {
                 previousView = addBody(value, previousView: previousView)
@@ -73,13 +73,13 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
             }
         }
         //previousView = addStripesImage(previousView)
-        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: subContentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let newbottomConstraint = NSLayoutConstraint(item: previousView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: subContentView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         previousView.translatesAutoresizingMaskIntoConstraints = false
         //NSLayoutConstraint.deactivateConstraints([bottomConstraint])
-        NSLayoutConstraint.activateConstraints([newbottomConstraint])
+        NSLayoutConstraint.activate([newbottomConstraint])
         self.contactUsView.delegate = self
-        self.filesCollectionView.hidden = true
-        self.documentsLabel.hidden = true
+        self.filesCollectionView.isHidden = true
+        self.documentsLabel.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,8 +94,8 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     
     override func updateViewConstraints() {
         if self.selectedContent.pdfs.count > 0 {
-            self.filesCollectionView.hidden = false
-            self.documentsLabel.hidden = false;
+            self.filesCollectionView.isHidden = false
+            self.documentsLabel.isHidden = false;
             let contentsize = self.filesCollectionView.contentSize
             if contentsize.height > 0 {
                 filesCollectionViewHeight.constant = contentsize.height
@@ -107,15 +107,15 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         super.updateViewConstraints()
     }
     
-    private func addStripesImage(prevView: UIView) -> UIView {
+    fileprivate func addStripesImage(_ prevView: UIView) -> UIView {
         let view = UIImageView(image: UIImage(named: "sandvik_stripes_bg"))
-        view.contentMode = UIViewContentMode.ScaleAspectFill
+        view.contentMode = UIViewContentMode.scaleAspectFill
         addViewAndConstraints(contentView, fromView: view, toView: prevView, topConstant: 50, leftConstant: 0)
         return view
     }
     
-    @IBAction func handleTap(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(didTapNotificationKey, object: self)
+    @IBAction func handleTap(_ sender: AnyObject) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: didTapNotificationKey), object: self)
         
         if self.scrollView.contentOffset.y < self.scrollView.bounds.size.height {
             self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
@@ -130,39 +130,39 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         self.contactUsView.didSelectRegion()
     }
     
-    func showRegionAction(allRegions: [RegionData]) {
+    func showRegionAction(_ allRegions: [RegionData]) {
         regionSelector = RegionSelector(del: self, allRegions: allRegions)
         let constraints = regionSelector!.fillConstraints(self.view, topBottomConstant: 0, leadConstant: 0, trailConstant: 0)
         regionSelector!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(regionSelector!)
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
     }
     
-    private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat) {
+    fileprivate func addViewAndConstraints(_ fromView: UIView, toView: UIView, topConstant: CGFloat) {
         addViewAndConstraints(fromView, toView: toView, topConstant: topConstant, leftConstant: 0)
     }
     
-    private func addViewAndConstraints(fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
+    fileprivate func addViewAndConstraints(_ fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
         addViewAndConstraints(subContentView, fromView: fromView, toView: toView, topConstant: topConstant, leftConstant: leftConstant)
     }
     
-    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
+    fileprivate func addViewAndConstraints(_ superView: UIView, fromView: UIView, toView: UIView, topConstant: CGFloat, leftConstant: CGFloat) {
         var top = topConstant
         if(changedTopConstant > 0) {
             top = changedTopConstant
             changedTopConstant = 0
         }
-        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: top)
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
+        let topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: toView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: top)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: superView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: superView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: leftConstant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(fromView)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, leadConstraint])
+        NSLayoutConstraint.activate([topConstraint, trailConstraint, leadConstraint])
     }
     
     
-    private func addLead(content: Content.Lead, images: [NSURL], previousView: UIView) -> UIView {
+    fileprivate func addLead(_ content: Content.Lead, images: [URL], previousView: UIView) -> UIView {
         var prevView = addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: true)
         
         for url in images {
@@ -175,14 +175,14 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                     imgHeight = maxHeight
                 }
                 let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
-                let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgWidth)
-                let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: imgHeight)
-                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: prevView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50)
+                imageView.contentMode = UIViewContentMode.scaleAspectFit
+                let widthConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: imgWidth)
+                let heightConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: imgHeight)
+                let centerX = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: prevView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+                let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: prevView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 subContentView.addSubview(imageView)
-                NSLayoutConstraint.activateConstraints([widthConstraint, centerX, heightConstraint, topConstraint])
+                NSLayoutConstraint.activate([widthConstraint, centerX, heightConstraint, topConstraint])
                 prevView = imageView
                 changedTopConstant = 50
             }
@@ -191,20 +191,20 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return prevView
     }
     
-    private func addBody(content: Content.Body, previousView: UIView) -> UIView {
+    fileprivate func addBody(_ content: Content.Body, previousView: UIView) -> UIView {
         return addTitlesTextList(content.titleOrTextOrList, previousView: previousView, isLead: false)
     }
     
-    private func addTitlesTextList(content: [Content.TitleTextOrList], previousView: UIView, isLead: Bool) -> UIView {
+    fileprivate func addTitlesTextList(_ content: [Content.TitleTextOrList], previousView: UIView, isLead: Bool) -> UIView {
         var prevView = previousView
         var top:CGFloat = 45
         for titlesTextList in content {
             switch titlesTextList {
-            case .Title(let value):
+            case .title(let value):
                 let label = genericTitleLabel(value)
                 addViewAndConstraints(label, toView: prevView, topConstant: top)
                 prevView = label
-            case .Text(let value):
+            case .text(let value):
                 let label = genericTextLabel(value)
                 if isLead {
                     top = 0
@@ -212,7 +212,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 else {
                     top = content.filter({
                         switch $0 {
-                        case .Title:
+                        case .title:
                             return true
                         default:
                         return false
@@ -220,7 +220,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
                 }
                 addViewAndConstraints(label, toView: prevView, topConstant: top)
                 prevView = label
-            case .List(let value):
+            case .list(let value):
                 for titleText in value {
                     let view = listLabels(titleText)
                     addViewAndConstraints(view, toView: prevView, topConstant: topConstant)
@@ -233,7 +233,7 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return prevView
     }
     
-    private func addKeyFeatureList(content: Content.KeyFeatureListContent, previousView: UIView) -> UIView {
+    fileprivate func addKeyFeatureList(_ content: Content.KeyFeatureListContent, previousView: UIView) -> UIView {
         var top:CGFloat = 45
         var prevView = previousView
         if let title = content.title {
@@ -242,19 +242,19 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
             prevView = label
             top = topConstant
         }
-        let view = KeyFeatureList(frame: CGRectZero, keyFeatureList: content)
+        let view = KeyFeatureList(frame: CGRect.zero, keyFeatureList: content)
         addViewAndConstraints(view, toView: prevView, topConstant: top)
         return view
     }
     
-    private func addColumns(content: Content.CountOnBoxContent, prevView: UIView) -> UIView {
-        let view = CountOnBox(frame: CGRectZero, countOnBox: content, alignRight: alignCountOnBoxRight)
+    fileprivate func addColumns(_ content: Content.CountOnBoxContent, prevView: UIView) -> UIView {
+        let view = CountOnBox(frame: CGRect.zero, countOnBox: content, alignRight: alignCountOnBoxRight)
         addViewAndConstraints(view, toView: prevView, topConstant: 45)
         alignCountOnBoxRight = !alignCountOnBoxRight
         return view
     }
     
-    private func addTabbedContent(content: Content.TabbedContent, previousView: UIView) -> UIView {
+    fileprivate func addTabbedContent(_ content: Content.TabbedContent, previousView: UIView) -> UIView {
         var label = previousView
         var prevView = previousView
         
@@ -277,72 +277,72 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
         return label
     }
     
-    private func leadLabel(string: String) -> UILabel {
+    fileprivate func leadLabel(_ string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: 16.0)
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         //label.textAlignment = .Center
         label.text = string
         return label
     }
     
-    private func listLabels(titleAndText: Content.TitleAndText) -> UIView {
+    fileprivate func listLabels(_ titleAndText: Content.TitleAndText) -> UIView {
         let listlabel = genericTextLabel("-")
         let container = UIView()
-        var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        var topConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: container, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        var leadConstraint = NSLayoutConstraint(item: listlabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: container, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         
-        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Horizontal)
-        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Vertical)
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.horizontal)
+        listlabel.setContentHuggingPriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.vertical)
         listlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(listlabel)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint])
+        NSLayoutConstraint.activate([topConstraint, leadConstraint])
         let mutString = NSMutableAttributedString()
         if titleAndText.title != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
+            mutString.append(NSAttributedString(string: titleAndText.title!+"\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         if titleAndText.text != nil {
-            mutString.appendAttributedString(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
+            mutString.append(NSAttributedString(string: titleAndText.text!, attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         }
         
         let textlabel = genericTextLabel("")
         textlabel.attributedText = mutString
-        topConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        leadConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: listlabel, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 10)
-        let trailConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        let botConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: container, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        topConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: container, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        leadConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: listlabel, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+        let trailConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: container, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        let botConstraint = NSLayoutConstraint(item: textlabel, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: container, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         
         textlabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(textlabel)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, leadConstraint, botConstraint, trailConstraint])
+        NSLayoutConstraint.activate([topConstraint, leadConstraint, botConstraint, trailConstraint])
         
         return container
     }
     
-    private func genericTextLabel(string: String) -> UILabel {
+    fileprivate func genericTextLabel(_ string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorp-Light", size: 16.0)
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         
         label.text = string
         return label
     }
     
-    private func genericTitleLabel(string: String) -> UILabel {
+    fileprivate func genericTitleLabel(_ string: String) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: "AktivGroteskCorp-Regular", size: 17.0)
         label.textColor = Theme.bluePrimaryColor
         
-        label.text = string.uppercaseString
+        label.text = string.uppercased()
         return label
     }
 
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate {
             return
         }
@@ -361,13 +361,13 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
     }
     
     
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if velocity == CGPointZero {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity == CGPoint.zero {
             return
         }
         
         let height = scrollView.bounds.height
-        var target = targetContentOffset.memory
+        var target = targetContentOffset.pointee
         
         if target.y < height / 2 {
             target.y = 0
@@ -375,52 +375,52 @@ class SubPartServiceContentViewController: UIViewController, UIScrollViewDelegat
             target.y = height
         }
         
-        targetContentOffset.memory = target
+        targetContentOffset.pointee = target
     }
     
     //file collectionview
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedContent.pdfs.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ToolsCollectionViewCell
-        let pdf = selectedContent.pdfs[indexPath.row]
-        cell.button.setTitle(pdf.title, forState: .Normal)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToolsCollectionViewCell
+        let pdf = selectedContent.pdfs[(indexPath as NSIndexPath).row]
+        cell.button.setTitle(pdf.title, for: UIControlState())
         return cell
     }
     
-    @IBAction func documentAction(sender: UIButton) {
-        let r = self.filesCollectionView.convertRect(sender.bounds, fromView: sender)
-        if let indexPath = self.filesCollectionView.indexPathForItemAtPoint(r.origin) {
-            let pdf = selectedContent.pdfs[indexPath.row]
+    @IBAction func documentAction(_ sender: UIButton) {
+        let r = self.filesCollectionView.convert(sender.bounds, from: sender)
+        if let indexPath = self.filesCollectionView.indexPathForItem(at: r.origin) {
+            let pdf = selectedContent.pdfs[(indexPath as NSIndexPath).row]
             if let url = FileCache.getStoredFileURL(pdf.url) {
-                let vc = UIDocumentInteractionController(URL: url)
+                let vc = UIDocumentInteractionController(url: url)
                 vc.delegate = self
-                vc.presentPreviewAnimated(true)
+                vc.presentPreview(animated: true)
             }
         }
     }
     
-    func documentInteractionControllerViewForPreview(controller: UIDocumentInteractionController) -> UIView? {
+    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
         return nil
     }
     
-    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         return self
     }
     
-    func documentInteractionControllerDidEndPreview(controller: UIDocumentInteractionController) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func documentInteractionControllerDidEndPreview(_ controller: UIDocumentInteractionController) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.showLogoView()
     }
     
-    func documentInteractionControllerWillBeginPreview(controller: UIDocumentInteractionController) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func documentInteractionControllerWillBeginPreview(_ controller: UIDocumentInteractionController) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.hideLogoView()
     }
 

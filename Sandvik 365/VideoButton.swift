@@ -10,8 +10,8 @@ import Foundation
 import NibDesignable
 
 @objc protocol VideoButtonDelegate {
-    optional func didTouchEnded()
-    optional func favoriteAction(video :Video)
+    @objc optional func didTouchEnded()
+    @objc optional func favoriteAction(_ video :Video)
 }
 
 class VideoButton : NibDesignable {
@@ -21,7 +21,7 @@ class VideoButton : NibDesignable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     var delegate: VideoButtonDelegate?
-    private var video: Video!
+    fileprivate var video: Video!
     
     @IBInspectable var videoImage: UIImage? {
         didSet {
@@ -35,37 +35,37 @@ class VideoButton : NibDesignable {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.highlightView(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.highlightView(false)
-        super.touchesEnded(touches, withEvent: event)
+        super.touchesEnded(touches, with: event)
         self.delegate?.didTouchEnded?()
     }
     
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.highlightView(false)
-        super.touchesCancelled(touches, withEvent: event)
+        super.touchesCancelled(touches, with: event)
     }
     
-    private func highlightView(highlight: Bool) {
-        self.playButton.highlighted = highlight
+    fileprivate func highlightView(_ highlight: Bool) {
+        self.playButton.isHighlighted = highlight
         if highlight {
             self.backgroundColor = Theme.orangePrimaryColor
-            self.titleLabel.textColor = UIColor.blackColor()
+            self.titleLabel.textColor = UIColor.black
         } else {
-            self.backgroundColor = UIColor.clearColor()
+            self.backgroundColor = UIColor.clear
             self.titleLabel.textColor = Theme.orangePrimaryColor
         }
     }
     
-    func configure(video: Video, delegate: VideoButtonDelegate?) {
-        self.favoriteButton.hidden = false
+    func configure(_ video: Video, delegate: VideoButtonDelegate?) {
+        self.favoriteButton.isHidden = false
         self.video = video
-        self.favoriteButton.selected = video.isFavorite
+        self.favoriteButton.isSelected = video.isFavorite
         if let image = video.imageName {
             self.imageView.image = UIImage(named: image)
         }
@@ -73,9 +73,9 @@ class VideoButton : NibDesignable {
         self.delegate = delegate
     }
     
-    @IBAction func favoriteAction(sender: UIButton) {
-        sender.selected = !sender.selected
-        self.video.isFavorite = sender.selected
+    @IBAction func favoriteAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        self.video.isFavorite = sender.isSelected
         self.delegate?.favoriteAction?(self.video)
     }
     

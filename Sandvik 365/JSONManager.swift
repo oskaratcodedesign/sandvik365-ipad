@@ -13,142 +13,142 @@ class JSONManager {
     static let updateAvailable = "updateAvailableKey"
     static let newDataAvailable = "newDataAvailableKey"
     static let serviceHandlerImageKey = "serviceHandlerImageKey"
-    private let endPoints: [EndPoint] = [.CONTENT_URL, .FIRESUPPRESSION_URL, .CONTACT_US]
+    fileprivate let endPoints: [EndPoint] = [.content_URL, .firesuppression_URL, .contact_US]
     
     enum EndPoint {
-        case CONTENT_URL
-        case FIRESUPPRESSION_URL
-        case CONTACT_US
+        case content_URL
+        case firesuppression_URL
+        case contact_US
         
-        private static var partsAndServicesJSONParts: PartsAndServicesJSONParts? = nil
-        private static var fireSuppressionInput: FireSuppressionInput? = nil
-        private static var contactUsData: [RegionData]? = nil
+        fileprivate static var partsAndServicesJSONParts: PartsAndServicesJSONParts? = nil
+        fileprivate static var fireSuppressionInput: FireSuppressionInput? = nil
+        fileprivate static var contactUsData: [RegionData]? = nil
         
-        func setDataFromJson(json: NSDictionary) {
+        func setDataFromJson(_ json: NSDictionary) {
             switch self {
-            case .CONTENT_URL:
+            case .content_URL:
                 EndPoint.partsAndServicesJSONParts = PartsAndServicesJSONParts(json: json)
-            case .FIRESUPPRESSION_URL:
+            case .firesuppression_URL:
                 EndPoint.fireSuppressionInput = FireSuppressionInput(json: json)
-            case .CONTACT_US:
+            case .contact_US:
                 EndPoint.contactUsData = Region.getAllRegionsWithData(json)
             }
         }
         
         var data: AnyObject? {
             switch self {
-            case .CONTENT_URL:
+            case .content_URL:
                 return EndPoint.partsAndServicesJSONParts
-            case .FIRESUPPRESSION_URL:
+            case .firesuppression_URL:
                 return EndPoint.fireSuppressionInput
-            case .CONTACT_US:
-                return EndPoint.contactUsData
+            case .contact_US:
+                return EndPoint.contactUsData as AnyObject?
             }
         }
         
-        var url: NSURL! {
+        var url: URL! {
             switch self {
-            case .CONTENT_URL:
-                return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
-            case .FIRESUPPRESSION_URL:
-                return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Products/FireSuppressionHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
-            case .CONTACT_US:
-                return NSURL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Contact/RegionContactsHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
+            case .content_URL:
+                return URL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Services/ServicesHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
+            case .firesuppression_URL:
+                return URL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Products/FireSuppressionHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
+            case .contact_US:
+                return URL(string: "https://mining.sandvik.com/_layouts/15/Sibp/Contact/RegionContactsHandler.ashx?client=5525EAB6-6401-4CAA-A5C9-CC8A484638ED")!
             }
         }
         
         var lastModifiedKey: String! {
             switch self {
-            case .CONTENT_URL:
+            case .content_URL:
                 return "contentLastModified"
-            case .FIRESUPPRESSION_URL:
+            case .firesuppression_URL:
                 return "fireLastModified"
-            case .CONTACT_US:
+            case .contact_US:
                 return "contactUsLastModified"
             }
         }
         
         var updateAvailableKey: String! {
             switch self {
-            case .CONTENT_URL:
+            case .content_URL:
                 return "contentUpdateAvailableKey"
-            case .FIRESUPPRESSION_URL:
+            case .firesuppression_URL:
                 return "fireUpdateAvailableKey"
-            case .CONTACT_US:
+            case .contact_US:
                 return "contactUsAvailableKey"
             }
         }
         
         var fileName: String! {
             switch self {
-            case .CONTENT_URL:
+            case .content_URL:
                 return "contentData.dat"
-            case .FIRESUPPRESSION_URL:
+            case .firesuppression_URL:
                 return "fireData.dat"
-            case .CONTACT_US:
+            case .contact_US:
                 return "contactUs.dat"
             }
         }
         
-        func buildUrl() -> NSURL {
+        func buildUrl() -> URL {
             var jsonUrl = self.url
-            if let jsonLastModifiedDate = self.jsonLastModifiedDateString(), let components = NSURLComponents(URL: self.url, resolvingAgainstBaseURL: false) {
-                var queryItems = [NSURLQueryItem(name: "ifModifiedSince", value: jsonLastModifiedDate)]
+            if let jsonLastModifiedDate = self.jsonLastModifiedDateString(), let components = URLComponents(url: self.url, resolvingAgainstBaseURL: false) {
+                var queryItems = [URLQueryItem(name: "ifModifiedSince", value: jsonLastModifiedDate)]
                 if let oldQueryItems = components.queryItems {
-                    queryItems.appendContentsOf(oldQueryItems)
+                    queryItems.append(contentsOf: oldQueryItems)
                 }
                 components.queryItems = queryItems
-                if let newUrl = components.URL {
+                if let newUrl = components.url {
                     jsonUrl = newUrl
                 }
             }
             
-            return jsonUrl
+            return jsonUrl!
         }
         
         func cacheFilePath() -> String {
-            let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+            let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationSupportDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
             // Create directory if it does not exist
             do {
-                if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
-                    try NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+                if (!FileManager.default.fileExists(atPath: path)) {
+                    try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
                 }
             } catch {
                 print("Failed to create Application Support directory.", error)
             }
             
-            return path.stringByAppendingFormat("/%@", self.fileName)
+            return path.appendingFormat("/%@", self.fileName)
         }
         
-        func saveUpdateAvailable(updateAvailable: Bool) {
-            NSUserDefaults.standardUserDefaults().setBool(updateAvailable, forKey: self.updateAvailableKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
+        func saveUpdateAvailable(_ updateAvailable: Bool) {
+            UserDefaults.standard.set(updateAvailable, forKey: self.updateAvailableKey)
+            UserDefaults.standard.synchronize()
         }
         
         func isUpdateAvailable() -> Bool {
-            return NSUserDefaults.standardUserDefaults().boolForKey(self.updateAvailableKey)
+            return UserDefaults.standard.bool(forKey: self.updateAvailableKey)
         }
 
-        func saveJsonLastModifiedDateString(lastMotified: String) {
-            NSUserDefaults.standardUserDefaults().setObject(lastMotified, forKey: self.lastModifiedKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
+        func saveJsonLastModifiedDateString(_ lastMotified: String) {
+            UserDefaults.standard.set(lastMotified, forKey: self.lastModifiedKey)
+            UserDefaults.standard.synchronize()
         }
         
         func jsonLastModifiedDateString() -> String? {
-            return NSUserDefaults.standardUserDefaults().stringForKey(self.lastModifiedKey)
+            return UserDefaults.standard.string(forKey: self.lastModifiedKey)
         }
         
-        func jsonLastModifiedDate() -> NSDate? {
+        func jsonLastModifiedDate() -> Date? {
             if let dateString = self.jsonLastModifiedDateString() {
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.'SSSZZZ'Z'"
-                return dateFormatter.dateFromString(dateString)
+                return dateFormatter.date(from: dateString)
             }
             return nil
         }
     }
     
-    static func getData(endPoint: EndPoint) -> AnyObject? {
+    static func getData(_ endPoint: EndPoint) -> AnyObject? {
         if endPoint.data == nil {
             JSONManager().parseJSONFromFileAndSetData(endPoint)
         }
@@ -164,24 +164,24 @@ class JSONManager {
         return false
     }
     
-    func checkforUpdate(completion: (success: Bool, lastModified: NSDate?) ->()) {
+    func checkforUpdate(_ completion: @escaping (_ success: Bool, _ lastModified: Date?) ->()) {
         for endPoint in self.endPoints {
             let url = endPoint.buildUrl()
-            NSURLSession.sharedSession().dataTaskWithURL(url) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            URLSession.shared.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
                 var success = false
                 Async.userInitiated {
                     do {
                         if let d = data {
-                            if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                                if let status = json.objectForKey("status") as? String {
+                            if let json = try JSONSerialization.jsonObject(with: d, options: .mutableContainers) as? NSDictionary {
+                                if let status = json.object(forKey: "status") as? String {
                                     if status == "success" {
-                                        if let message = json.objectForKey("message") as? String {
+                                        if let message = json.object(forKey: "message") as? String {
                                             endPoint.saveUpdateAvailable(false)
                                             print("Received message instead of data: %@, %@", message, endPoint.fileName)
-                                        } else if (json.objectForKey("data") as? NSDictionary) != nil {
+                                        } else if (json.object(forKey: "data") as? NSDictionary) != nil {
                                             //update available
                                             endPoint.saveUpdateAvailable(true)
-                                            NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.updateAvailable, object: self)
+                                            NotificationCenter.default.post(name: Notification.Name(rawValue: JSONManager.updateAvailable), object: self)
                                         }
                                         success = true
                                     }
@@ -195,30 +195,30 @@ class JSONManager {
                 }.main {
                     completion(success: success, lastModified: endPoint.jsonLastModifiedDate())
                 }
-            }.resume()
+            } as! (Data?, URLResponse?, Error?) -> Void) .resume()
         }
     }
     
-    func downloadAllJSON(completion: (success: Bool, lastModified: NSDate?, allDownloaded: Bool) ->()) {
+    func downloadAllJSON(_ completion: @escaping (_ success: Bool, _ lastModified: Date?, _ allDownloaded: Bool) ->()) {
         let endpoints = self.endPoints.filter({$0.isUpdateAvailable()})
         var downloadCount = endpoints.count
         for endPoint in endpoints {
             let url = endPoint.buildUrl()
             
-            NSURLSession.sharedSession().dataTaskWithURL(url) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            URLSession.shared.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
                 var success = false
                 Async.userInitiated {
                     do {
                         if let d = data {
-                            if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? NSDictionary {
-                                if let status = json.objectForKey("status") as? String {
+                            if let json = try JSONSerialization.jsonObject(with: d, options: .mutableContainers) as? NSDictionary {
+                                if let status = json.object(forKey: "status") as? String {
                                     if status == "success" {
-                                        if let message = json.objectForKey("message") as? String {
+                                        if let message = json.object(forKey: "message") as? String {
                                             print("Received message instead of data: %@, %@", message, endPoint.fileName)
-                                        } else if let data = json.objectForKey("data") as? NSDictionary {
+                                        } else if let data = json.object(forKey: "data") as? NSDictionary {
                                             self.parseAndHandleJsonAndSetData(data, endpoint: endPoint)
                                             endPoint.saveUpdateAvailable(false)
-                                            NSNotificationCenter.defaultCenter().postNotificationName(JSONManager.newDataAvailable, object: self)
+                                            NotificationCenter.default.post(name: Notification.Name(rawValue: JSONManager.newDataAvailable), object: self)
                                         }
                                         success = true
                                     }
@@ -234,11 +234,11 @@ class JSONManager {
                         let allDownloaded = (downloadCount == 0)
                         completion(success: success, lastModified: endPoint.jsonLastModifiedDate(), allDownloaded: allDownloaded)
                 }
-                }.resume()
+                } as! (Data?, URLResponse?, Error?) -> Void) .resume()
         }
     }
     
-    func readJSONFromFileAsync(endPoint: EndPoint, completion: (success: Bool) ->()) {
+    func readJSONFromFileAsync(_ endPoint: EndPoint, completion: @escaping (_ success: Bool) ->()) {
         var success = false
         Async.userInitiated {
             success = self.parseJSONFromFileAndSetData(endPoint)
@@ -247,14 +247,14 @@ class JSONManager {
         }
     }
     
-    private func parseJSONFromFileAndSetData(endPoint: EndPoint) -> Bool {
+    fileprivate func parseJSONFromFileAndSetData(_ endPoint: EndPoint) -> Bool {
         print("Reading file")
-        if let data = NSKeyedUnarchiver.unarchiveObjectWithFile(endPoint.cacheFilePath()) as? NSDictionary {
+        if let data = NSKeyedUnarchiver.unarchiveObject(withFile: endPoint.cacheFilePath()) as? NSDictionary {
             print("Parsing json" + endPoint.fileName)
-            let start = NSDate()
+            let start = Date()
             endPoint.setDataFromJson(data)
-            let end = NSDate()
-            print("Time to parse json: %@", end.timeIntervalSinceDate(start))
+            let end = Date()
+            print("Time to parse json: %@", end.timeIntervalSince(start))
             print("Finished parsing json")
             return true
         }
@@ -263,11 +263,11 @@ class JSONManager {
     
     func copyPreloadedFiles() {
         do {
-            let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
-            if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
-                if let preloadedPath = NSBundle.mainBundle().resourcePath?.stringByAppendingString("/Preloaded Resources") {
-                    try NSFileManager.defaultManager().copyItemAtPath(preloadedPath, toPath: path)
-                    try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
+            let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationSupportDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+            if (!FileManager.default.fileExists(atPath: path)) {
+                if let preloadedPath = (Bundle.main.resourcePath)! + "/Preloaded Resources" {
+                    try FileManager.default.copyItem(atPath: preloadedPath, toPath: path)
+                    try (URL(fileURLWithPath: path) as NSURL).setResourceValue(true, forKey: URLResourceKey.isExcludedFromBackupKey)
                 }
             }
         } catch {
@@ -275,8 +275,8 @@ class JSONManager {
         }
     }
     
-    private func parseAndHandleJsonAndSetData(data: NSDictionary, endpoint: EndPoint) {
-        if let lastModified = data.objectForKey("lastModified") as? String {
+    fileprivate func parseAndHandleJsonAndSetData(_ data: NSDictionary, endpoint: EndPoint) {
+        if let lastModified = data.object(forKey: "lastModified") as? String {
             endpoint.saveJsonLastModifiedDateString(lastModified)
         }
         
@@ -284,7 +284,7 @@ class JSONManager {
         NSKeyedArchiver.archiveRootObject(data, toFile: path)
         
         do {
-            try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
+            try (URL(fileURLWithPath: path) as NSURL).setResourceValue(true, forKey: URLResourceKey.isExcludedFromBackupKey)
         } catch {
             print("Failed to exclude json cache file from iCloud backup.", error)
         }
@@ -294,37 +294,37 @@ class JSONManager {
         let endPointData = endpoint.data
         
         if let parts = endPointData as? PartsAndServicesJSONParts {
-            if let strUrl = data.objectForKey("baseUrl") as? String, let baseUrl = NSURL(string: strUrl) {
+            if let strUrl = data.object(forKey: "baseUrl") as? String, let baseUrl = URL(string: strUrl) {
                 for part in parts.partsServicesContent {
                     for partService in part.partsServices {
                         if let subPartServices = partService.subPartsServices {
                             for subPartService in subPartServices {
                                 for image in subPartService.content.images {
-                                    downloadImage(baseUrl, imageUrl: image)
+                                    downloadImage(baseUrl, imageUrl: image as URL)
                                 }
                                 for pdf in subPartService.content.pdfs {
-                                    downloadFile(baseUrl, imageUrl: pdf.url)
+                                    downloadFile(baseUrl, imageUrl: pdf.url as URL)
                                 }
                             }
                         }
                         else if let content = partService.content {
                             for image in content.images {
-                                downloadImage(baseUrl, imageUrl: image)
+                                downloadImage(baseUrl, imageUrl: image as URL)
                             }
                             for pdf in content.pdfs {
-                                downloadFile(baseUrl, imageUrl: pdf.url)
+                                downloadFile(baseUrl, imageUrl: pdf.url as URL)
                             }
                         }
                     }
                 }
                 /* serviceHandlerImages */
-                if let serviceHandlerImages = data.objectForKey("serviceHandlerImages") as? NSDictionary {
-                    let scale = UIScreen.mainScreen().scale
+                if let serviceHandlerImages = data.object(forKey: "serviceHandlerImages") as? NSDictionary {
+                    let scale = UIScreen.main.scale
                     for (key, obj) in serviceHandlerImages {
-                        if let k = key as? String where k.rangeOfString("x"+String(Int(scale))) != nil {
-                            if let image = obj.objectForKey("encodedUrl") as? String, let imageUrl = NSURL(string: image) {
-                                NSUserDefaults.standardUserDefaults().setURL(imageUrl, forKey: JSONManager.serviceHandlerImageKey)
-                                NSUserDefaults.standardUserDefaults().synchronize()
+                        if let k = key as? String , k.range(of: "x"+String(Int(scale))) != nil {
+                            if let image = (obj as AnyObject).object(forKey: "encodedUrl") as? String, let imageUrl = URL(string: image) {
+                                UserDefaults.standard.set(imageUrl, forKey: JSONManager.serviceHandlerImageKey)
+                                UserDefaults.standard.synchronize()
                                 downloadImage(baseUrl, imageUrl: imageUrl)
                                 break
                             }
@@ -349,7 +349,7 @@ class JSONManager {
         }*/
     }
     
-    private func downloadFile(baseUrl: NSURL, imageUrl: NSURL?) {
+    fileprivate func downloadFile(_ baseUrl: URL, imageUrl: URL?) {
         if imageUrl != nil {
             do {
                 try FileCache.storeFile(baseUrl, urlPath: imageUrl!)
@@ -359,7 +359,7 @@ class JSONManager {
         }
     }
     
-    private func downloadImage(baseUrl: NSURL, imageUrl: NSURL?) {
+    fileprivate func downloadImage(_ baseUrl: URL, imageUrl: URL?) {
         if imageUrl != nil {
             do {
                 try ImageCache.storeFile(baseUrl, urlPath: imageUrl!)
@@ -369,13 +369,13 @@ class JSONManager {
         }
     }
     
-    static func readJSONFromFile(fileName: String) -> [NSDictionary]? {
-        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+    static func readJSONFromFile(_ fileName: String) -> [NSDictionary]? {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json")
         {
-            if let d = NSData(contentsOfFile: path)
+            if let d = try? Data(contentsOf: URL(fileURLWithPath: path))
             {
                 do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(d, options: .MutableContainers) as? [NSDictionary] {
+                    if let json = try JSONSerialization.jsonObject(with: d, options: .mutableContainers) as? [NSDictionary] {
                         return json
                     }
                 }

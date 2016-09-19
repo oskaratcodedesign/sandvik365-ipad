@@ -10,7 +10,7 @@ import Foundation
 import NibDesignable
 
 protocol MenuCountOnBoxDelegate {
-    func didTapMenuCountOnBox(partsAndServices: PartsAndServices, partService: PartService, subPartService: SubPartService, mainSectionTitle: String)
+    func didTapMenuCountOnBox(_ partsAndServices: PartsAndServices, partService: PartService, subPartService: SubPartService, mainSectionTitle: String)
 }
 
 @IBDesignable class MenuCountOnBox: NibDesignable {
@@ -19,10 +19,10 @@ protocol MenuCountOnBoxDelegate {
     @IBOutlet weak var textLabel: UILabel!
     var delegate: MenuCountOnBoxDelegate?
     
-    private var partsAndServices: PartsAndServices?
-    private var mainSectiontTile: String?
-    private var partService: PartService?
-    private var subPartService: SubPartService?
+    fileprivate var partsAndServices: PartsAndServices?
+    fileprivate var mainSectiontTile: String?
+    fileprivate var partService: PartService?
+    fileprivate var subPartService: SubPartService?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +31,11 @@ protocol MenuCountOnBoxDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         getParts()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(getParts), name: JSONManager.newDataAvailable, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(getParts), name: NSNotification.Name(rawValue: JSONManager.newDataAvailable), object: nil)
     }
     
     func getParts() {
-        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
+        if let json = JSONManager.getData(JSONManager.EndPoint.content_URL) as? PartsAndServicesJSONParts {
             //find first
             var count = 0
             while count < 1000 {
@@ -44,7 +44,7 @@ protocol MenuCountOnBoxDelegate {
                 
                 for pc in json.partsServicesContent  {
                     for ps in pc.partsServices {
-                        if partsAndServices.shouldPartServiceBeShown(ps), let subPartServices = ps.subPartsServices?.filter({partsAndServices.shouldSubPartServiceBeShown($0)}) where subPartServices.count > 0 {
+                        if partsAndServices.shouldPartServiceBeShown(ps), let subPartServices = ps.subPartsServices?.filter({partsAndServices.shouldSubPartServiceBeShown($0)}) , subPartServices.count > 0 {
                             for sp in subPartServices {
                                 let countOnBoxes = sp.content.contentList.flatMap({ $0 as? Content.CountOnBoxContent})
                                 if let countonBox = countOnBoxes.first {
@@ -71,7 +71,7 @@ protocol MenuCountOnBoxDelegate {
     }
     
     func loadNewInfo() {
-        if let json = JSONManager.getData(JSONManager.EndPoint.CONTENT_URL) as? PartsAndServicesJSONParts {
+        if let json = JSONManager.getData(JSONManager.EndPoint.content_URL) as? PartsAndServicesJSONParts {
             var count = 0
             while count < 1000 {
                 //random buisnessType
@@ -82,7 +82,7 @@ protocol MenuCountOnBoxDelegate {
                 if partServices.count > 0 {
                     let rand = arc4random_uniform(UInt32(partServices.count))
                     let partService = partServices[Int(rand)]
-                    if let subpartServices = partService.subPartsServices?.filter({ps.shouldSubPartServiceBeShown($0)}) where subpartServices.count > 0 {
+                    if let subpartServices = partService.subPartsServices?.filter({ps.shouldSubPartServiceBeShown($0)}) , subpartServices.count > 0 {
                         let sub_rand = arc4random_uniform(UInt32(subpartServices.count))
                         let subpartService = subpartServices[Int(sub_rand)]
                         let countonBoxes = subpartService.content.contentList.flatMap(({ $0 as? Content.CountOnBoxContent}))
@@ -108,13 +108,13 @@ protocol MenuCountOnBoxDelegate {
         }
     }
     
-    @IBAction func tapAction(sender: AnyObject) {
+    @IBAction func tapAction(_ sender: AnyObject) {
         if let ps = self.partService, let pas = self.partsAndServices, let sps = self.subPartService, let title = self.mainSectiontTile {
             self.delegate?.didTapMenuCountOnBox(pas, partService: ps, subPartService: sps, mainSectionTitle: title)
         }
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }

@@ -7,6 +7,26 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class RoiGraphView: UIView {
     
@@ -28,7 +48,7 @@ class RoiGraphView: UIView {
         drawGraphs()
     }
     
-    private func drawGraphs() {
+    fileprivate func drawGraphs() {
         
         for view in graphView.subviews {
             view.removeFromSuperview()
@@ -37,7 +57,7 @@ class RoiGraphView: UIView {
         drawGraph(selectedROIInput.originalTotal(), color: Theme.bluePrimaryColor)
     }
     
-    private func drawGraph(values: [Int], color: UIColor)
+    fileprivate func drawGraph(_ values: [Int], color: UIColor)
     {
         if values.isEmpty {
             return
@@ -54,22 +74,22 @@ class RoiGraphView: UIView {
             //straight
             x = 0
         }
-        path.moveToPoint(CGPointMake(0, height))
+        path.move(to: CGPoint(x: 0, y: height))
         for value in values {
             if value >= 0 {
                 let y = value == 0 ? height : height / selectedROIInput.graphScale() - (CGFloat(value) * yPValue)
-                path.addLineToPoint(CGPointMake(x, y))
+                path.addLine(to: CGPoint(x: x, y: y))
             }
             else {
-                path.moveToPoint(CGPointMake(x+xSpace, height))//move forward so we can produce a straight line once value is changed
+                path.move(to: CGPoint(x: x+xSpace, y: height))//move forward so we can produce a straight line once value is changed
             }
             x += xSpace
         }
-        path.addLineToPoint(CGPointMake(x-xSpace, height))
-        path.closePath()
+        path.addLine(to: CGPoint(x: x-xSpace, y: height))
+        path.close()
         let shapeLAyer = CAShapeLayer()
-        shapeLAyer.path = path.CGPath
-        shapeLAyer.fillColor = color.CGColor
+        shapeLAyer.path = path.cgPath
+        shapeLAyer.fillColor = color.cgColor
         let view = UIView()
         view.layer.addSublayer(shapeLAyer)
         graphView.addSubview(view)
@@ -77,7 +97,7 @@ class RoiGraphView: UIView {
     }
     
     
-    private func addYInterValLines() {
+    fileprivate func addYInterValLines() {
         for view in yGraph.subviews {
             view.removeFromSuperview()
         }
@@ -85,14 +105,14 @@ class RoiGraphView: UIView {
         let space = height*0.2
         var y = space
         while y < height-2 {
-            let imageView = UIImageView(frame: CGRectMake(-10, y, 10, 2))
-            imageView.backgroundColor = UIColor.whiteColor()
+            let imageView = UIImageView(frame: CGRect(x: -10, y: y, width: 10, height: 2))
+            imageView.backgroundColor = UIColor.white
             yGraph.addSubview(imageView)
             y += space
         }
     }
     
-    private func addXInterValLines() {
+    fileprivate func addXInterValLines() {
         for view in xGraph.subviews {
             view.removeFromSuperview()
         }
@@ -100,8 +120,8 @@ class RoiGraphView: UIView {
         let space = lenght*0.1
         var x = space
         while x < lenght-2 {
-            let imageView = UIImageView(frame: CGRectMake(x, 0, 2, 10))
-            imageView.backgroundColor = UIColor.whiteColor()
+            let imageView = UIImageView(frame: CGRect(x: x, y: 0, width: 2, height: 10))
+            imageView.backgroundColor = UIColor.white
             xGraph.addSubview(imageView)
             x += space
         }

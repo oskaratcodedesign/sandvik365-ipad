@@ -14,7 +14,7 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
     @IBOutlet weak var sectionLabel: UILabel!
     var selectedPartsAndServices: PartsAndServices!
     var mainTitle: String?
-    private var selectedSectionTitle: String!
+    fileprivate var selectedSectionTitle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,62 +31,62 @@ class PartsAndServicesViewController: UIViewController, SelectionWheelDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func didSelectSection(sectionTitle: String) {
+    func didSelectSection(_ sectionTitle: String) {
         
         selectedSectionTitle = sectionTitle
-        if let index = self.selectedPartsAndServices.businessType.interActiveTools?.indexOf({ $0.title.caseInsensitiveCompare(sectionTitle) == .OrderedSame}) {
+        if let index = self.selectedPartsAndServices.businessType.interActiveTools?.index(where: { $0.title.caseInsensitiveCompare(sectionTitle) == .orderedSame}) {
             let tool = self.selectedPartsAndServices.businessType.interActiveTools![index]
             if ((tool.selectionInput as? SelectionInput) != nil) {
-                performSegueWithIdentifier("ShowRoiSelectionViewController", sender: self)
+                performSegue(withIdentifier: "ShowRoiSelectionViewController", sender: self)
             }
-            else if tool == .ServiceKitQuantifier {
-                self.performSegueWithIdentifier("ServiceKitQuantifierViewController", sender: self)
+            else if tool == .serviceKitQuantifier {
+                self.performSegue(withIdentifier: "ServiceKitQuantifierViewController", sender: self)
             }
         }
-        else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
-            performSegueWithIdentifier("ShowVideoCenterViewController", sender: self)
+        else if self.selectedPartsAndServices.businessType.mediaCenterTitle?.caseInsensitiveCompare(sectionTitle) == .orderedSame {
+            performSegue(withIdentifier: "ShowVideoCenterViewController", sender: self)
         }
-        else if self.selectedPartsAndServices.businessType.interActiveToolsTitle?.caseInsensitiveCompare(sectionTitle) == .OrderedSame {
-            performSegueWithIdentifier("ShowInterActiveToolsViewController", sender: self)
+        else if self.selectedPartsAndServices.businessType.interActiveToolsTitle?.caseInsensitiveCompare(sectionTitle) == .orderedSame {
+            performSegue(withIdentifier: "ShowInterActiveToolsViewController", sender: self)
         }
         else {
-            performSegueWithIdentifier("ShowPartServiceSelectionViewController", sender: self)
+            performSegue(withIdentifier: "ShowPartServiceSelectionViewController", sender: self)
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowPartServiceSelectionViewController" {
-            if let vc = segue.destinationViewController as? PartServiceSelectionViewController {
+            if let vc = segue.destination as? PartServiceSelectionViewController {
                 PartsAndServicesViewController.setPartServiceSelectionViewController(vc, selectedPartsAndServices: selectedPartsAndServices, mainSectionTitle: selectedSectionTitle, navTitle: self.navigationItem.title)
             }
         }
         else if segue.identifier == "ShowVideoCenterViewController" {
-            if let vc = segue.destinationViewController as? VideoCenterViewController {
+            if let vc = segue.destination as? VideoCenterViewController {
                 vc.selectedBusinessType = self.selectedPartsAndServices.businessType
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, vc.selectedBusinessType.mediaCenterTitle!.uppercaseString)
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, vc.selectedBusinessType.mediaCenterTitle!.uppercased())
             }
         }
         else if segue.identifier == "ShowRoiSelectionViewController" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+            if let vc = segue.destination as? RoiSelectionViewController {
                 let bType = selectedPartsAndServices.businessType
-                if let index = bType.interActiveTools?.indexOf({ $0.title.caseInsensitiveCompare(selectedSectionTitle) == .OrderedSame}) {
+                if let index = bType.interActiveTools?.index(where: { $0.title.caseInsensitiveCompare(selectedSectionTitle) == .orderedSame}) {
                     let interActiveTool = bType.interActiveTools![index]
                     vc.selectedBusinessType = bType
                     vc.selectedInput = interActiveTool.selectionInput as! SelectionInput
-                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, interActiveTool.title.uppercaseString)
+                    vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, interActiveTool.title.uppercased())
                 }
             }
         }
         else if segue.identifier == "ServiceKitQuantifierViewController" {
-            if let vc = segue.destinationViewController as? ServiceKitQuantifierViewController {
-                vc.selectedBusinessType = .All
-                let tool: BusinessType.InterActiveTool = .ServiceKitQuantifier
-                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, tool.title.uppercaseString)
+            if let vc = segue.destination as? ServiceKitQuantifierViewController {
+                vc.selectedBusinessType = .all
+                let tool: BusinessType.InterActiveTool = .serviceKitQuantifier
+                vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, tool.title.uppercased())
             }
         }
     }
     
-    static func setPartServiceSelectionViewController(vc: PartServiceSelectionViewController, selectedPartsAndServices: PartsAndServices, mainSectionTitle: String, navTitle: String?) {
+    static func setPartServiceSelectionViewController(_ vc: PartServiceSelectionViewController, selectedPartsAndServices: PartsAndServices, mainSectionTitle: String, navTitle: String?) {
         vc.selectedPartsAndServices = selectedPartsAndServices
         vc.mainSectionTitle = mainSectionTitle
         vc.navigationItem.title = navTitle

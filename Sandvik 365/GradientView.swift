@@ -8,25 +8,25 @@
 
 import UIKit
 
-@IBDesignable public class GradientView: UIView {
-    @IBInspectable public var topColor: UIColor? {
+@IBDesignable open class GradientView: UIView {
+    @IBInspectable open var topColor: UIColor? {
         didSet {
             configureView()
         }
     }
-    @IBInspectable public var bottomColor: UIColor? {
-        didSet {
-            configureView()
-        }
-    }
-    
-    @IBInspectable public var fillColor: UIColor? {
+    @IBInspectable open var bottomColor: UIColor? {
         didSet {
             configureView()
         }
     }
     
-    override public class func layerClass() -> AnyClass {
+    @IBInspectable open var fillColor: UIColor? {
+        didSet {
+            configureView()
+        }
+    }
+    
+    override open class var layerClass : AnyClass {
         return CAGradientLayer.self
     }
     
@@ -40,7 +40,7 @@ import UIKit
         configureView()
     }
     
-    public override func tintColorDidChange() {
+    open override func tintColorDidChange() {
         super.tintColorDidChange()
         configureView()
     }
@@ -52,10 +52,10 @@ import UIKit
         else{
             let layer = self.layer as! CAGradientLayer
             let locations = [ 0.0, 1.0 ]
-            layer.locations = locations
+            layer.locations = locations as [NSNumber]?
             let color1 = topColor ?? self.tintColor as UIColor
-            let color2 = bottomColor ?? UIColor.blackColor() as UIColor
-            let colors: Array <AnyObject> = [ color1.CGColor, color2.CGColor ]
+            let color2 = bottomColor ?? UIColor.black as UIColor
+            let colors: Array <AnyObject> = [ color1.cgColor, color2.cgColor ]
             layer.colors = colors
         }
     }

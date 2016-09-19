@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EqStandardCellDelegate {
-    func didPressRemove(sender: EqStandardTableViewCell)
+    func didPressRemove(_ sender: EqStandardTableViewCell)
 }
 
 class EqStandardTableViewCell: UITableViewCell {
@@ -23,12 +23,12 @@ class EqStandardTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configureView(data: ServiceKitData){
+    func configureView(_ data: ServiceKitData){
         self.serialNo.text = data.serialNo
         self.model.text = data.model ?? ""
     }
 
-    @IBAction func removeAction(sender: UIButton) {
+    @IBAction func removeAction(_ sender: UIButton) {
         self.delegate?.didPressRemove(self)
     }
 }

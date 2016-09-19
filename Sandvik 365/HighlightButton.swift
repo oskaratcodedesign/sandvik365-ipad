@@ -13,9 +13,9 @@ import UIKit
     @IBInspectable internal var highlightBgColor: UIColor?
     @IBInspectable internal var bgColor: UIColor?
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            if highlighted {
+            if isHighlighted {
                 self.backgroundColor = highlightBgColor
             } else {
                 self.backgroundColor = bgColor
@@ -26,7 +26,7 @@ import UIKit
     @IBInspectable var centerText: Bool = false {
         didSet {
             if centerText {
-                self.titleLabel?.textAlignment = .Center
+                self.titleLabel?.textAlignment = .center
             }
         }
     }

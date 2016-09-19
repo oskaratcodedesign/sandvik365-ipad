@@ -21,70 +21,70 @@ class RoiRockDrillResultViewController: RoiResultViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func RD520Action(sender: UIButton) {
-        controlRockDrillProducts(selectedInput, selectedProductConst: .RD520, selectedButton: sender)
+    @IBAction func RD520Action(_ sender: UIButton) {
+        controlRockDrillProducts(selectedInput, selectedProductConst: .rd520, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func RD525Action(sender: UIButton) {
-        controlRockDrillProducts(selectedInput, selectedProductConst: .RD525, selectedButton: sender)
+    @IBAction func RD525Action(_ sender: UIButton) {
+        controlRockDrillProducts(selectedInput, selectedProductConst: .rd525, selectedButton: sender)
         setGraphValue()
         setProfitLabel()
     }
     
-    private func setGraphValue() {
+    fileprivate func setGraphValue() {
         
         roiGraphView.selectedROIInput = selectedInput
     }
     
-    @IBAction func seeDetailAction(sender: UIButton) {
+    @IBAction func seeDetailAction(_ sender: UIButton) {
         detailsContainerView.addSubview(RoiRockDrillDetailView(frame: detailsContainerView.bounds, input: selectedInput))
-        detailsContainerView.hidden = false
+        detailsContainerView.isHidden = false
     }
     
-    private func controlRockDrillProducts(input: ROIRockDrillInput, selectedProductConst: ROIRockDrillProduct, selectedButton: UIButton) {
+    fileprivate func controlRockDrillProducts(_ input: ROIRockDrillInput, selectedProductConst: ROIRockDrillProduct, selectedButton: UIButton) {
         var selectedProduct = selectedProductConst
-        selectedButton.selected = !selectedButton.selected
+        selectedButton.isSelected = !selectedButton.isSelected
         
-        if selectedProduct == .RD520 {
-            RD525Buttton.selected = false
+        if selectedProduct == .rd520 {
+            RD525Buttton.isSelected = false
         }
-        else if selectedProduct == .RD525 {
-            RD520Button.selected = false
+        else if selectedProduct == .rd525 {
+            RD520Button.isSelected = false
         }
         
-        if !selectedButton.selected {
-            selectedProduct = .None
-            profitLabel.hidden = true
+        if !selectedButton.isSelected {
+            selectedProduct = .none
+            profitLabel.isHidden = true
         }
         else {
-            profitLabel.hidden = false
+            profitLabel.isHidden = false
         }
         
         input.product = selectedProduct
         roiGraphView.selectedROIInput = input
     }
     
-    private func setProfitLabel()
+    fileprivate func setProfitLabel()
     {
-        if selectedInput.product != .None {
+        if selectedInput.product != .none {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NSNumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(0)
         }
     }
     
-    private func setProfitLabelFromInput() {
+    fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+            profitLabel.text = NumberFormatter().formatToUSD(sum)
         }
     }
 }

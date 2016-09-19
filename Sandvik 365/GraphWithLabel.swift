@@ -18,7 +18,7 @@ class GraphWithLabel: NibDesignable {
     @IBOutlet weak var graphHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
 
-    func updateHeightAndSetText(multiplier: Double, string: String)
+    func updateHeightAndSetText(_ multiplier: Double, string: String)
     {
         self.graphHeightConstraint = self.graphHeightConstraint.changeMultiplier(CGFloat(multiplier))
         let newHeight = self.frame.size.height * CGFloat(multiplier)

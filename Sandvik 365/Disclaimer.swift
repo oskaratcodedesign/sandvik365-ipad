@@ -17,48 +17,48 @@ class Disclaimer: NibDesignable {
     @IBOutlet weak var showButton: UIButton!
     @IBOutlet weak var showContainer: UIView!
     
-    private func addDisclaimerButtonPath() {
+    fileprivate func addDisclaimerButtonPath() {
         let view = showContainer
-        if let sublayers = view.layer.sublayers?.flatMap({ $0 as? CAShapeLayer}) {
+        if let sublayers = view?.layer.sublayers?.flatMap({ $0 as? CAShapeLayer}) {
             for layer in sublayers {
                 layer.removeFromSuperlayer()
             }
         }
         
-        let frame = view.frame
+        let frame = view?.frame
         let sectionPath = UIBezierPath()
-        sectionPath.moveToPoint(CGPointMake(0, frame.size.height))
-        sectionPath.addLineToPoint(CGPointMake(0, 0))
-        sectionPath.addLineToPoint(CGPointMake(frame.width-5, 4))
-        sectionPath.addLineToPoint(CGPointMake(frame.width, frame.size.height))
-        sectionPath.closePath()
+        sectionPath.move(to: CGPoint(x: 0, y: (frame?.size.height)!))
+        sectionPath.addLine(to: CGPoint(x: 0, y: 0))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!-5, y: 4))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!, y: (frame?.size.height)!))
+        sectionPath.close()
         let shapeLAyer = CAShapeLayer()
-        shapeLAyer.path = sectionPath.CGPath
-        shapeLAyer.fillColor = Theme.orangePrimaryColor.CGColor
-        view.layer.insertSublayer(shapeLAyer, atIndex: 0)
+        shapeLAyer.path = sectionPath.cgPath
+        shapeLAyer.fillColor = Theme.orangePrimaryColor.cgColor
+        view?.layer.insertSublayer(shapeLAyer, at: 0)
     }
     
-    private func addCloseButtonPath() {
+    fileprivate func addCloseButtonPath() {
         let view = disclaimerContainer
-        if let sublayers = view.layer.sublayers?.flatMap({ $0 as? CAShapeLayer}) {
+        if let sublayers = view?.layer.sublayers?.flatMap({ $0 as? CAShapeLayer}) {
             for layer in sublayers {
                 layer.removeFromSuperlayer()
             }
         }
         
-        let frame = view.frame
+        let frame = view?.frame
         let sectionPath = UIBezierPath()
-        sectionPath.moveToPoint(CGPointMake(0, frame.size.height))
-        sectionPath.addLineToPoint(CGPointMake(0, frame.size.height/5))
-        sectionPath.addLineToPoint(CGPointMake(frame.width-frame.width/2.5, 0))
-        sectionPath.addLineToPoint(CGPointMake(frame.width-50, frame.size.height/6))
-        sectionPath.addLineToPoint(CGPointMake(frame.width, frame.size.height-frame.size.height/3))
-        sectionPath.addLineToPoint(CGPointMake(frame.width, frame.size.height))
-        sectionPath.closePath()
+        sectionPath.move(to: CGPoint(x: 0, y: (frame?.size.height)!))
+        sectionPath.addLine(to: CGPoint(x: 0, y: (frame?.size.height)!/5))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!-(frame?.width)!/2.5, y: 0))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!-50, y: (frame?.size.height)!/6))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!, y: (frame?.size.height)!-(frame?.size.height)!/3))
+        sectionPath.addLine(to: CGPoint(x: (frame?.width)!, y: (frame?.size.height)!))
+        sectionPath.close()
         let shapeLAyer = CAShapeLayer()
-        shapeLAyer.path = sectionPath.CGPath
-        shapeLAyer.fillColor = Theme.orangePrimaryColor.CGColor
-        view.layer.insertSublayer(shapeLAyer, atIndex: 0)
+        shapeLAyer.path = sectionPath.cgPath
+        shapeLAyer.fillColor = Theme.orangePrimaryColor.cgColor
+        view?.layer.insertSublayer(shapeLAyer, at: 0)
     }
     
     override func layoutSubviews() {
@@ -66,21 +66,21 @@ class Disclaimer: NibDesignable {
         addDisclaimerButtonPath()
     }
     
-    @IBAction func showDisclaimerAction(sender: UIButton) {
+    @IBAction func showDisclaimerAction(_ sender: UIButton) {
         self.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.disclaimerContainer.hidden = false
+        self.disclaimerContainer.isHidden = false
     }
-    @IBAction func closeDisclaimerAction(sender: AnyObject) {
-        self.backgroundColor = UIColor.clearColor()
-        self.disclaimerContainer.hidden = true
+    @IBAction func closeDisclaimerAction(_ sender: AnyObject) {
+        self.backgroundColor = UIColor.clear
+        self.disclaimerContainer.isHidden = true
     }
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, withEvent: event)
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
         if view == self.showButton || view == self.closeButton {
             return view
         }
-        else if !self.disclaimerContainer.hidden {
+        else if !self.disclaimerContainer.isHidden {
             return self.disclaimerContainer
         }
         return nil

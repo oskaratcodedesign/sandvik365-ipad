@@ -7,6 +7,26 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class ExtraEquipmentData {
     var serviceKitData: ServiceKitData
@@ -27,7 +47,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
             setData()
         }
     }
-    private var maintenanceServiceKitData: [String: MaintenanceServiceKitParent]?
+    fileprivate var maintenanceServiceKitData: [String: MaintenanceServiceKitParent]?
     
     var addedExtraEquipmentData = [ExtraEquipmentData]()
     @IBOutlet weak var tableView: UITableView!
@@ -35,8 +55,8 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
        self.maintenanceServiceKitData = MaintenanceServiceKitData.getAllData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleMainTap))
         self.view.addGestureRecognizer(tap)
     }
@@ -45,11 +65,11 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         self.view.endEditing(true)
     }
     
-    private func setData() {
+    fileprivate func setData() {
 
         var tempData = [ExtraEquipmentData]()
         for obj in self.addedServiceKitData! {
-            if let index = self.addedExtraEquipmentData.indexOf({obj.serialNo == $0.serviceKitData.serialNo}) {
+            if let index = self.addedExtraEquipmentData.index(where: {obj.serialNo == $0.serviceKitData.serialNo}) {
                 tempData.append(self.addedExtraEquipmentData[index])
             } else {
                 //default
@@ -62,31 +82,31 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addedExtraEquipmentData.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    private func findServiceKit(obj: ExtraEquipmentData) -> Bool {
-        if let id = obj.serviceKitData.H1000ServiceKit?.pno where !id.isEmpty {
+    fileprivate func findServiceKit(_ obj: ExtraEquipmentData) -> Bool {
+        if let id = obj.serviceKitData.H1000ServiceKit?.pno , !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if let id = obj.serviceKitData.H500ServiceKit?.pno where !id.isEmpty {
+        if let id = obj.serviceKitData.H500ServiceKit?.pno , !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if let id = obj.serviceKitData.H250ServiceKit?.pno where !id.isEmpty {
+        if let id = obj.serviceKitData.H250ServiceKit?.pno , !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
         }
-        if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKit?.pno where !id.isEmpty {
+        if obj.workingConditionExtreme, let id = obj.serviceKitData.H125ServiceKit?.pno , !id.isEmpty {
             if findIdInData(id) {
                 return true
             }
@@ -94,7 +114,7 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         return false
     }
     
-    private func findIdInData(id: String) -> Bool {
+    fileprivate func findIdInData(_ id: String) -> Bool {
         if let data = self.maintenanceServiceKitData {
             if data[id] != nil {
                 return true
@@ -103,17 +123,17 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         return false
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let data = self.addedExtraEquipmentData[indexPath.row]
+        let data = self.addedExtraEquipmentData[(indexPath as NSIndexPath).row]
         if findServiceKit(data) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EqExtraCell") as! EqExtraTableViewCell
-            cell.backgroundColor = UIColor.clearColor()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EqExtraCell") as! EqExtraTableViewCell
+            cell.backgroundColor = UIColor.clear
             cell.configureView(data)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EqExtraNoKitCell") as! EqExtraNoKitTableViewCell
-            cell.backgroundColor = UIColor.clearColor()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EqExtraNoKitCell") as! EqExtraNoKitTableViewCell
+            cell.backgroundColor = UIColor.clear
             cell.configureView(data)
             return cell
         }
@@ -122,8 +142,8 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
     func getAllCellData() -> [ExtraEquipmentData]? {
         if self.addedServiceKitData?.count > 0 {
             var extraData = [ExtraEquipmentData]()
-            for (index, value) in self.addedServiceKitData!.enumerate() {
-                if let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 1)) as? EqExtraTableViewCell {
+            for (index, value) in self.addedServiceKitData!.enumerated() {
+                if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 1)) as? EqExtraTableViewCell {
                     let data = ExtraEquipmentData(serviceKitData: value, hours: Int(cell.hours.text ?? "0")!, workingConditionExtreme: cell.workingCondition.selectedSegmentIndex == 0 ? false : true)
                     extraData.append(data)
                 }
@@ -133,17 +153,17 @@ class ExtraEquipmentViewController: UIViewController, UITableViewDelegate, UITab
         return nil
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        let info : NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+    func keyboardWillShow(_ notification: Notification) {
+        let info : NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + 60, 0.0)
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        self.tableView.contentInset = UIEdgeInsetsZero
+    func keyboardWillHide(_ notification: Notification) {
+        self.tableView.contentInset = UIEdgeInsets.zero
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }

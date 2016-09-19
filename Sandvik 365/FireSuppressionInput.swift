@@ -16,12 +16,12 @@ enum TemperatureType: String {
 
 class TitleAndImage {
     var title: String
-    var image: NSURL?
+    var image: URL?
     
     init(title: String, image: String?) {
         self.title = title
         if let imageurl = image {
-            self.image = NSURL(string: imageurl)
+            self.image = URL(string: imageurl)
         }
     }
 }
@@ -40,7 +40,7 @@ class Model: TitleAndImage {
 }
 
 class BelowAboveOutPut {
-    var image: NSURL?
+    var image: URL?
     var quantity: Int?
     var partNumbers: [String]?
     var sizes: [String]?
@@ -48,11 +48,11 @@ class BelowAboveOutPut {
     
     init(content: NSDictionary){
         if let imageurl = FireSuppressionInput.image(content) {
-            self.image = NSURL(string: imageurl)
+            self.image = URL(string: imageurl)
         }
-        self.quantity = content.objectForKey("quantity") as? Int
-        self.partNumbers = content.objectForKey("partNumbers") as? [String]
-        self.sizes = content.objectForKey("sizes") as? [String]
+        self.quantity = content.object(forKey: "quantity") as? Int
+        self.partNumbers = content.object(forKey: "partNumbers") as? [String]
+        self.sizes = content.object(forKey: "sizes") as? [String]
         self.content = Content(content: content)
     }
 }
@@ -74,7 +74,7 @@ class FireSuppressionInput: SelectionInput {
         return [NSLocalizedString("Product group", comment: ""), NSLocalizedString("Equipment type", comment: ""), NSLocalizedString("Model", comment: ""), NSLocalizedString("Lowest temperature", comment: "")]
     }
     
-    override func changeInput(atIndex :Int, change : ChangeInput) -> String {
+    override func changeInput(_ atIndex :Int, change : ChangeInput) -> String {
         let input = allInputs()[atIndex]
         switch input {
         case let value as ProductGroup:
@@ -93,7 +93,7 @@ class FireSuppressionInput: SelectionInput {
             }
             return selectedModel.title
         case let value as TemperatureType:
-            if change != ChangeInput.Load {
+            if change != ChangeInput.load {
                 selectedTemperature = value == .Above ? .Below : .Above
             }
             return selectedTemperature.rawValue
@@ -103,8 +103,8 @@ class FireSuppressionInput: SelectionInput {
         }
     }
     
-    private func getNextIndexFromArray(array: [TitleAndImage], title: String, change : ChangeInput) -> Int? {
-        if let index = array.indexOf({ $0.title == title }) {
+    fileprivate func getNextIndexFromArray(_ array: [TitleAndImage], title: String, change : ChangeInput) -> Int? {
+        if let index = array.index(where: { $0.title == title }) {
             var newindex = index + change.rawValue
             newindex = newindex >= array.count ? 0 : (newindex < 0 ? array.count-1 : newindex)
             return newindex
@@ -115,30 +115,30 @@ class FireSuppressionInput: SelectionInput {
         return nil
     }
     
-    override func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+    override func getInputAbbreviation(_ atIndex :Int) -> InputAbbreviation? {
         return nil
     }
     
-    override func setInput(atIndex :Int, stringValue :String) -> Bool {
+    override func setInput(_ atIndex :Int, stringValue :String) -> Bool {
         return false
     }
     
-    override func getInputAsString(atIndex :Int) -> String? {
+    override func getInputAsString(_ atIndex :Int) -> String? {
         return nil
     }
     
     init(json: NSDictionary) {
         super.init()
-        if let sections = json.valueForKey("items")?[0].valueForKey("children") as? [NSDictionary] {
+        if let sections = json.value(forKey: "items")?[0].value(forKey: "children") as? [NSDictionary] {
             parseProductGroup(sections)
         }
     }
     
-    private func parseProductGroup(sections: [NSDictionary]) {
+    fileprivate func parseProductGroup(_ sections: [NSDictionary]) {
         for section in sections {
             if let title = title(section) {
                 let productGroup = ProductGroup(title: title, image: FireSuppressionInput.image(section))
-                if let children = section.valueForKey("children") as? [NSDictionary] {
+                if let children = section.value(forKey: "children") as? [NSDictionary] {
                     parseEquipmentType(children, productGroup: productGroup)
                 }
                 allProductGroups.append(productGroup)
@@ -146,11 +146,11 @@ class FireSuppressionInput: SelectionInput {
         }
     }
     
-    private func parseEquipmentType(sections: [NSDictionary], productGroup: ProductGroup) {
+    fileprivate func parseEquipmentType(_ sections: [NSDictionary], productGroup: ProductGroup) {
         for section in sections {
             if let title = title(section) {
                 let equipmentType = EquipmentType(title: title, image: FireSuppressionInput.image(section))
-                if let children = section.valueForKey("children") as? [NSDictionary] {
+                if let children = section.value(forKey: "children") as? [NSDictionary] {
                     parseModels(children, equipmentType: equipmentType)
                 }
                 productGroup.equipmentTypes.append(equipmentType)
@@ -158,24 +158,24 @@ class FireSuppressionInput: SelectionInput {
         }
     }
     
-    private func parseModels(sections: [NSDictionary], equipmentType: EquipmentType) {
+    fileprivate func parseModels(_ sections: [NSDictionary], equipmentType: EquipmentType) {
         for section in sections {
             if let title = title(section) {
                 let model = Model(title: title, image: FireSuppressionInput.image(section))
                 equipmentType.models.append(model)
-                if let aboveZero = section.valueForKey("aboveZero") as? NSDictionary {
+                if let aboveZero = section.value(forKey: "aboveZero") as? NSDictionary {
                     model.aboveZero = BelowAboveOutPut(content: aboveZero)
                 }
             }
         }
     }
     
-    private func title(dic: NSDictionary) -> String? {
-        return dic.valueForKey("title") as? String
+    fileprivate func title(_ dic: NSDictionary) -> String? {
+        return dic.value(forKey: "title") as? String
     }
     
-    static func image(dic: NSDictionary) -> String? {
-        return dic.valueForKey("thumbnail") as? String
+    static func image(_ dic: NSDictionary) -> String? {
+        return dic.value(forKey: "thumbnail") as? String
     }
     
 }

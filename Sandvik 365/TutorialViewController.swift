@@ -26,48 +26,48 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         "S365-Ext-App-tutorial-screen-9-1024x768",
         "S365-Ext-App-tutorial-screen-11-1024x768"]
     
-    private var pageViewController: UIPageViewController?
+    fileprivate var pageViewController: UIPageViewController?
     var shouldShowCloseButton = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createPageViewController()
         self.pageControl.numberOfPages = imageNames.count
-        self.view.bringSubviewToFront(self.pageControl)
-        self.view.bringSubviewToFront(self.closeButton)
+        self.view.bringSubview(toFront: self.pageControl)
+        self.view.bringSubview(toFront: self.closeButton)
         if self.shouldShowCloseButton {
-            self.closeButton.hidden = false
+            self.closeButton.isHidden = false
         }
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.logoButton?.hidden = true
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.logoButton?.isHidden = true
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.logoButton?.hidden = false
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.logoButton?.isHidden = false
     }
     
-    @IBAction func closeAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeAction(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    private func createPageViewController() {
+    fileprivate func createPageViewController() {
         
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        let pageController = self.storyboard!.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         pageController.dataSource = self
         pageController.delegate = self
         
         let firstController = getItemController(0)!
-        pageController.setViewControllers([firstController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        pageController.setViewControllers([firstController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
         pageViewController = pageController
         addChildViewController(pageViewController!)
         self.view.addSubview(pageViewController!.view)
-        pageViewController!.didMoveToParentViewController(self)
+        pageViewController!.didMove(toParentViewController: self)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! TutorialContentViewController
         
@@ -78,7 +78,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         return nil
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! TutorialContentViewController
         
@@ -89,10 +89,10 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         return nil
     }
     
-    private func getItemController(itemIndex: Int) -> TutorialContentViewController? {
+    fileprivate func getItemController(_ itemIndex: Int) -> TutorialContentViewController? {
         
         if itemIndex <= imageNames.count {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("TutorialContentViewController") as! TutorialContentViewController
+            let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "TutorialContentViewController") as! TutorialContentViewController
             pageItemController.itemIndex = itemIndex
             if itemIndex < imageNames.count {
                 pageItemController.imageName = imageNames[itemIndex]
@@ -103,19 +103,19 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource, 
         return nil
     }
     
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         let itemViewController =  pendingViewControllers.last as! TutorialContentViewController
         if itemViewController.itemIndex == imageNames.count {
-            self.pageControl.hidden = true
-            self.closeButton.hidden = true
+            self.pageControl.isHidden = true
+            self.closeButton.isHidden = true
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let itemViewController =  pageViewController.viewControllers!.last as! TutorialContentViewController
         self.pageControl.currentPage = itemViewController.itemIndex
         if itemViewController.itemIndex == imageNames.count {
-            self.dismissViewControllerAnimated(false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
     }
 }

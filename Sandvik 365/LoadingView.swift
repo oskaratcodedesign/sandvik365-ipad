@@ -16,20 +16,20 @@ class LoadingView : NibDesignable {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     let circlePathLayer = CAShapeLayer()
-    var progressTimer: NSTimer?
+    var progressTimer: Timer?
     
     override func layoutSubviews() {
         super.layoutSubviews()
         addCircleLayer()
     }
     
-    private func addCircleLayer() {
+    fileprivate func addCircleLayer() {
         circlePathLayer.removeFromSuperlayer()
         circlePathLayer.frame = numberLabel.bounds
         circlePathLayer.lineWidth = 2
-        circlePathLayer.fillColor = UIColor.clearColor().CGColor
-        circlePathLayer.strokeColor = Theme.orangePrimaryColor.CGColor
-        circlePathLayer.path = UIBezierPath(ovalInRect: circlePathLayer.frame).CGPath
+        circlePathLayer.fillColor = UIColor.clear.cgColor
+        circlePathLayer.strokeColor = Theme.orangePrimaryColor.cgColor
+        circlePathLayer.path = UIBezierPath(ovalIn: circlePathLayer.frame).cgPath
         circlePathLayer.transform = CATransform3DMakeRotation(CGFloat(-90.0 / 180.0 * M_PI), 0.0, 0.0, 1.0);
         numberLabel.layer.addSublayer(circlePathLayer)
     }
@@ -40,32 +40,30 @@ class LoadingView : NibDesignable {
         animation.toValue = 1.0
         animation.duration = 2.0
         animation.fillMode = kCAFillModeForwards
-        animation.removedOnCompletion = false
+        animation.isRemovedOnCompletion = false
         animation.delegate = self
         
-        self.circlePathLayer.addAnimation(animation, forKey: "strokeEnd")
+        self.circlePathLayer.add(animation, forKey: "strokeEnd")
         
-        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0 / 60.0, target: self, selector:#selector(updateLabel), userInfo: nil, repeats: true)
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 1.0 / 60.0, target: self, selector:#selector(updateLabel), userInfo: nil, repeats: true)
     }
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    override func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.progressTimer?.invalidate()
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64(0.5 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.numberLabel.hidden = true
-            self.circlePathLayer.hidden = true
-            self.logoImageView.hidden = false
-            let newdelayTime = dispatch_time(DISPATCH_TIME_NOW,
-                Int64(1 * Double(NSEC_PER_SEC)))
-            dispatch_after(newdelayTime, dispatch_get_main_queue()) {
+        let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            self.numberLabel.isHidden = true
+            self.circlePathLayer.isHidden = true
+            self.logoImageView.isHidden = false
+            let newdelayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: newdelayTime) {
                 self.removeFromSuperview()
             }
         }
     }
     
     func updateLabel() {
-        if let presentationLayer = self.circlePathLayer.presentationLayer() as? CAShapeLayer {
+        if let presentationLayer = self.circlePathLayer.presentation() as? CAShapeLayer {
             numberLabel.text = Int64(round(365.0 * presentationLayer.strokeEnd)).description
         }
     }

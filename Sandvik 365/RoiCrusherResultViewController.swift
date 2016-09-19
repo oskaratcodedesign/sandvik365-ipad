@@ -15,7 +15,7 @@ class RoiCrusherResultViewController: RoiResultViewController {
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var maintenenceButton: UIButton!
     @IBOutlet weak var protectiveButton: UIButton!
-    private var selectedButton: UIButton?
+    fileprivate var selectedButton: UIButton?
     
     @IBOutlet weak var compareProgramsImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -27,128 +27,128 @@ class RoiCrusherResultViewController: RoiResultViewController {
         super.viewDidLoad()
         titleLabel.text = NSLocalizedString("INCREASED\nVALUE BY UP TO", comment: "")
         let attrString = NSMutableAttributedString(string: "+ 80%", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 64.0)!])
-        attrString.appendAttributedString(NSAttributedString(string: "\nCOVERAGE ON CAPITAL\nSPARE PARTS", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
+        attrString.append(NSAttributedString(string: "\nCOVERAGE ON CAPITAL\nSPARE PARTS", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 16.0)!]))
         self.graphLabel.attributedText = attrString
-        if let imageurl = NSUserDefaults.standardUserDefaults().URLForKey(JSONManager.serviceHandlerImageKey) {
+        if let imageurl = UserDefaults.standard.url(forKey: JSONManager.serviceHandlerImageKey) {
             if let image = ImageCache.getImage(imageurl) {
                 self.compareProgramsImageView.image = image
             }
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGraphValue()
         setProfitLabel()
         if self.selectedInput.services.isEmpty {
-            self.selectedButton?.selected = false
+            self.selectedButton?.isSelected = false
         }
-        conditionButton.hidden = false
-        maintenenceButton.hidden = false
-        protectiveButton.hidden = false
-        rampUpButton.hidden = false
+        conditionButton.isHidden = false
+        maintenenceButton.isHidden = false
+        protectiveButton.isHidden = false
+        rampUpButton.isHidden = false
         if selectedInput.operation.value as! OperationType == OperationType.New {
-            conditionButton.hidden = true
-            maintenenceButton.hidden = true
-            protectiveButton.hidden = true
+            conditionButton.isHidden = true
+            maintenenceButton.isHidden = true
+            protectiveButton.isHidden = true
         }
         else {
-            rampUpButton.hidden = true
+            rampUpButton.isHidden = true
         }
     }
     
-    @IBAction func rampUpAction(sender: UIButton) {
-        controlCrusherServices(selectedInput, selectedService: .RampUp, selectedButton: sender)
-        self.graphLabel.hidden = true
+    @IBAction func rampUpAction(_ sender: UIButton) {
+        controlCrusherServices(selectedInput, selectedService: .rampUp, selectedButton: sender)
+        self.graphLabel.isHidden = true
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func conditionAction(sender: UIButton) {
-        controlCrusherServices(selectedInput, selectedService: .ConditionInspection, selectedButton: sender)
-        self.graphLabel.hidden = true
+    @IBAction func conditionAction(_ sender: UIButton) {
+        controlCrusherServices(selectedInput, selectedService: .conditionInspection, selectedButton: sender)
+        self.graphLabel.isHidden = true
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func maintenanceAction(sender: UIButton) {
-        controlCrusherServices(selectedInput, selectedService: .MaintenancePlanning, selectedButton: sender)
-        self.graphLabel.hidden = true
+    @IBAction func maintenanceAction(_ sender: UIButton) {
+        controlCrusherServices(selectedInput, selectedService: .maintenancePlanning, selectedButton: sender)
+        self.graphLabel.isHidden = true
         setGraphValue()
         setProfitLabel()
     }
     
-    @IBAction func protectiveAction(sender: UIButton) {
-        controlCrusherServices(selectedInput, selectedService: .MaintenancePlanning, selectedButton: sender)
+    @IBAction func protectiveAction(_ sender: UIButton) {
+        controlCrusherServices(selectedInput, selectedService: .maintenancePlanning, selectedButton: sender)
         setGraphValue()
-        self.graphLabel.hidden = false
+        self.graphLabel.isHidden = false
         setProfitLabel()
     }
     
-    @IBAction func scrollLeftAction(sender: AnyObject) {
+    @IBAction func scrollLeftAction(_ sender: AnyObject) {
         self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x:0, y: 0), size: scrollView.bounds.size), animated: true)
-        if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
-            vc.selectionContainer.hidden = false
-            vc.titleLabel.hidden = false
+        if let vc = self.parent?.parent as? RoiSelectionViewController {
+            vc.selectionContainer.isHidden = false
+            vc.titleLabel.isHidden = false
         }
     }
     
-    @IBAction func scrollRightAction(sender: AnyObject) {
+    @IBAction func scrollRightAction(_ sender: AnyObject) {
         self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: self.scrollView.bounds.size.width, y: 0), size: scrollView.bounds.size), animated: true)
         
-        if let vc = self.parentViewController?.parentViewController as? RoiSelectionViewController {
-            vc.selectionContainer.hidden = true
-            vc.titleLabel.hidden = true
+        if let vc = self.parent?.parent as? RoiSelectionViewController {
+            vc.selectionContainer.isHidden = true
+            vc.titleLabel.isHidden = true
         }
     }
     
-    private func setGraphValue() {
+    fileprivate func setGraphValue() {
         
-        self.graphView.hidden = true
+        self.graphView.isHidden = true
         if let total = selectedInput.total() {
             let multiplier = Double(total) / (selectedInput.maxTotal())
             if multiplier > 0 {
-                self.graphView.hidden = false
+                self.graphView.isHidden = false
                 self.graphViewHeightConstraint = self.graphViewHeightConstraint.changeMultiplier(CGFloat(multiplier))
             }
         }
     }
     
-    @IBAction func closeDetailAction(sender: UIButton) {
+    @IBAction func closeDetailAction(_ sender: UIButton) {
         for view in detailsContainerView.subviews {
             view.removeFromSuperview()
         }
     }
-    @IBAction func seeDetailAction(sender: UIButton) {
+    @IBAction func seeDetailAction(_ sender: UIButton) {
         detailsContainerView.addSubview(RoiCrusherDetailView(frame: detailsContainerView.bounds, input: selectedInput))
-        detailsContainerView.hidden = false
+        detailsContainerView.isHidden = false
     }
     
-    private func controlCrusherServices(input: ROICrusherInput, selectedService: ROICrusherService, selectedButton: UIButton) {
-        self.selectedButton?.selected = false
+    fileprivate func controlCrusherServices(_ input: ROICrusherInput, selectedService: ROICrusherService, selectedButton: UIButton) {
+        self.selectedButton?.isSelected = false
         self.selectedButton = selectedButton
-        self.selectedButton?.selected = !selectedButton.selected
+        self.selectedButton?.isSelected = !selectedButton.isSelected
         
         input.services.removeAll()
         
-        if selectedButton.selected {
+        if selectedButton.isSelected {
             input.services.insert(selectedService)
         }
     }
     
-    private func setProfitLabel()
+    fileprivate func setProfitLabel()
     {
         if !selectedInput.services.isEmpty {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NSNumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(0)
         }
     }
     
-    private func setProfitLabelFromInput() {
+    fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            profitLabel.text = NSNumberFormatter().formatToUSD(sum)
+            profitLabel.text = NumberFormatter().formatToUSD(sum)
         }
     }
 }

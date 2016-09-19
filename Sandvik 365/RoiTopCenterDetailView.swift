@@ -21,7 +21,7 @@ class RoiTopCenterDetailView: NibDesignable {
     init(frame: CGRect, input: ROITopCenterInput) {
         super.init(frame: frame)
         
-        let fmt = NSNumberFormatter()
+        let fmt = NumberFormatter()
         extraCost.text = fmt.formatToUSD(input.savedBitCost())
         serviceCost.text = fmt.formatToUSD(input.savedGrindingCost())
         prodCost.text = fmt.formatToUSD(input.savedValueCost())
@@ -29,10 +29,10 @@ class RoiTopCenterDetailView: NibDesignable {
         totalLabel.text = fmt.formatToUSD(input.maxTotal())
     }
     
-    @IBAction func closeAction(sender: AnyObject) {
+    @IBAction func closeAction(_ sender: AnyObject) {
         if let superview = self.superview {
             self.removeFromSuperview()
-            superview.hidden = true
+            superview.isHidden = true
         }
     }
     

@@ -11,70 +11,70 @@ import UIKit
 class InterActiveToolsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let data: [BusinessType.InterActiveTool] = BusinessType.All.interActiveTools!
-    private var selectedIndexPath: NSIndexPath?
+    let data: [BusinessType.InterActiveTool] = BusinessType.all.interActiveTools!
+    fileprivate var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         self.navigationItem.title = "SANDVIK 365 – INTERACTIVE TOOLS"
         super.viewDidLoad()
         if let view = self.view as? ViewWithBGImage {
-            view.setImageBG(BusinessType.All.backgroundImageName)
+            view.setImageBG(BusinessType.all.backgroundImageName)
         }
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ToolsCollectionViewCell
-        let tool = self.data[indexPath.row]
-        cell.button.setTitle(tool.title, forState: .Normal)
-        cell.button.setBackgroundImage(tool.defaultImage, forState: .Normal)
-        cell.button.setBackgroundImage(tool.highlightImage, forState: .Highlighted)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToolsCollectionViewCell
+        let tool = self.data[(indexPath as NSIndexPath).row]
+        cell.button.setTitle(tool.title, for: UIControlState())
+        cell.button.setBackgroundImage(tool.defaultImage, for: UIControlState())
+        cell.button.setBackgroundImage(tool.highlightImage, for: .highlighted)
         if ((tool.selectionInput as? SelectionInput) != nil) {
-            cell.button.addTarget(self, action: #selector(roiButtonClick), forControlEvents: .TouchUpInside)
+            cell.button.addTarget(self, action: #selector(roiButtonClick), for: .touchUpInside)
         }
-        else if tool == .ServiceKitQuantifier {
-            cell.button.addTarget(self, action: #selector(serviceKitButtonClick), forControlEvents: .TouchUpInside)
+        else if tool == .serviceKitQuantifier {
+            cell.button.addTarget(self, action: #selector(serviceKitButtonClick), for: .touchUpInside)
         }
         return cell
     }
     
-    func roiButtonClick(sender: UIButton) {
-        self.performSegueWithIdentifier("RoiSelectionViewController", sender: sender)
+    func roiButtonClick(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "RoiSelectionViewController", sender: sender)
     }
     
-    func serviceKitButtonClick(sender: UIButton) {
-        self.performSegueWithIdentifier("ServiceKitQuantifierViewController", sender: sender)
+    func serviceKitButtonClick(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "ServiceKitQuantifierViewController", sender: sender)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RoiSelectionViewController" {
-            if let vc = segue.destinationViewController as? RoiSelectionViewController {
+            if let vc = segue.destination as? RoiSelectionViewController {
                 if let b = sender as? UIButton {
-                    let r = self.collectionView.convertRect(b.bounds, fromView: b)
-                    if let indexPath = self.collectionView.indexPathForItemAtPoint(r.origin) {
-                        let input = self.data[indexPath.row]
+                    let r = self.collectionView.convert(b.bounds, from: b)
+                    if let indexPath = self.collectionView.indexPathForItem(at: r.origin) {
+                        let input = self.data[(indexPath as NSIndexPath).row]
                         vc.selectedInput = input.selectionInput as! SelectionInput
-                        vc.selectedBusinessType = .All
-                        vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercaseString)
+                        vc.selectedBusinessType = .all
+                        vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercased())
                     }
                 }
             }
         }
         else if segue.identifier == "ServiceKitQuantifierViewController" {
-            if let vc = segue.destinationViewController as? ServiceKitQuantifierViewController {
+            if let vc = segue.destination as? ServiceKitQuantifierViewController {
                 if let b = sender as? UIButton {
-                    let r = self.collectionView.convertRect(b.bounds, fromView: b)
-                    if let indexPath = self.collectionView.indexPathForItemAtPoint(r.origin) {
-                        let input = self.data[indexPath.row]
-                        vc.selectedBusinessType = .All
-                        vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercaseString)
+                    let r = self.collectionView.convert(b.bounds, from: b)
+                    if let indexPath = self.collectionView.indexPathForItem(at: r.origin) {
+                        let input = self.data[(indexPath as NSIndexPath).row]
+                        vc.selectedBusinessType = .all
+                        vc.navigationItem.title = String(format: "%@ | %@", self.navigationItem.title!, input.title.uppercased())
                     }
                 }
             }

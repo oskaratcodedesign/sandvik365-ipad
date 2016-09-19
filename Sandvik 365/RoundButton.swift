@@ -22,14 +22,14 @@ import UIKit
         }
     }
     
-    private func configure() {
+    fileprivate func configure() {
         let height = borderHeight !=  nil ? CGFloat(borderHeight!.floatValue) : self.bounds.size.height
-        let color = borderColor ?? UIColor.whiteColor()
-        let borderimage = CALayer().roundImage(CGRectMake(0, 0, height, height), fill: false, color: color)
-        self.setImage(borderimage, forState: .Normal)
-        let fillimage = CALayer().roundImage(CGRectMake(0, 0, height, height), fill: true, color: color)
-        self.setImage(fillimage, forState: .Highlighted)
-        self.setImage(fillimage, forState: .Selected)
+        let color = borderColor ?? UIColor.white
+        let borderimage = CALayer().roundImage(CGRect(x: 0, y: 0, width: height, height: height), fill: false, color: color)
+        self.setImage(borderimage, for: UIControlState())
+        let fillimage = CALayer().roundImage(CGRect(x: 0, y: 0, width: height, height: height), fill: true, color: color)
+        self.setImage(fillimage, for: .highlighted)
+        self.setImage(fillimage, for: .selected)
     }
 
 }

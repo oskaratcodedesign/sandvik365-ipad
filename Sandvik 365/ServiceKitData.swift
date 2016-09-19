@@ -17,21 +17,21 @@ class ServiceKitData {
     var H500ServiceKit: (pno: String, description: String)?
     var H1000ServiceKit: (pno: String, description: String)?
     
-    private static var allData: [String: ServiceKitData]?
+    fileprivate static var allData: [String: ServiceKitData]?
 
     init(serialNo: String, dic: NSDictionary){
         self.serialNo = serialNo
-        self.model = dic.objectForKey("Model") as? String
-        if let pno = dic.objectForKey("125H") as? String where !pno.isEmpty, let desc = dic.objectForKey("125HDescription") as? String {
+        self.model = dic.object(forKey: "Model") as? String
+        if let pno = dic.object(forKey: "125H") as? String , !pno.isEmpty, let desc = dic.object(forKey: "125HDescription") as? String {
             self.H125ServiceKit = (pno, desc)
         }
-        if let pno = dic.objectForKey("250H") as? String where !pno.isEmpty, let desc = dic.objectForKey("250HDescription") as? String {
+        if let pno = dic.object(forKey: "250H") as? String , !pno.isEmpty, let desc = dic.object(forKey: "250HDescription") as? String {
             self.H250ServiceKit = (pno, desc)
         }
-        if let pno = dic.objectForKey("500H") as? String where !pno.isEmpty, let desc = dic.objectForKey("500HDescription") as? String {
+        if let pno = dic.object(forKey: "500H") as? String , !pno.isEmpty, let desc = dic.object(forKey: "500HDescription") as? String {
             self.H500ServiceKit = (pno, desc)
         }
-        if let pno = dic.objectForKey("1000H") as? String where !pno.isEmpty, let desc = dic.objectForKey("1000HDescription") as? String {
+        if let pno = dic.object(forKey: "1000H") as? String , !pno.isEmpty, let desc = dic.object(forKey: "1000HDescription") as? String {
             self.H1000ServiceKit = (pno, desc)
         }
     }
@@ -43,7 +43,7 @@ class ServiceKitData {
         if let json = JSONManager.readJSONFromFile("servicekit") {
             var allData = [String: ServiceKitData]()
             for obj in json {
-                if let sno = obj.objectForKey("SNo") as? String {
+                if let sno = obj.object(forKey: "SNo") as? String {
                     allData[sno] = ServiceKitData(serialNo: sno, dic: obj)
                 }
             }
@@ -54,7 +54,7 @@ class ServiceKitData {
 }
 
 class MaintenanceServiceKitData {
-    private static var allData: [String: MaintenanceServiceKitParent]?
+    fileprivate static var allData: [String: MaintenanceServiceKitParent]?
 
     static func getAllData() -> [String: MaintenanceServiceKitParent]? {
         if MaintenanceServiceKitData.allData != nil && !MaintenanceServiceKitData.allData!.isEmpty {
@@ -63,14 +63,14 @@ class MaintenanceServiceKitData {
         if let json = JSONManager.readJSONFromFile("maintenancekit") {
             var allData = [String: MaintenanceServiceKitParent]()
             for obj in json {
-                if let type = obj.objectForKey("Parent / Component") as? String {
+                if let type = obj.object(forKey: "Parent / Component") as? String {
                     if type == "Parent" {
-                        if let sno = obj.objectForKey("Parent") as? String {
+                        if let sno = obj.object(forKey: "Parent") as? String {
                             allData[sno] = MaintenanceServiceKitParent(serialNo: sno)
                         }
                     }
                     else if type == "Component" {
-                        if let sno = obj.objectForKey("Parent") as? String {
+                        if let sno = obj.object(forKey: "Parent") as? String {
                             if let parent = allData[sno] {
                                 parent.components.append(MaintenanceServiceKitComponent(serialNo: sno, dic: obj))
                             } else {
@@ -104,7 +104,7 @@ class MaintenanceServiceKitComponent {
     
     init(serialNo: String, dic: NSDictionary){
         self.serialNo = serialNo
-        self.description = dic.objectForKey("Item Description") as? String
-        self.quantity = dic.objectForKey("Quantity") as? Int
+        self.description = dic.object(forKey: "Item Description") as? String
+        self.quantity = dic.object(forKey: "Quantity") as? Int
     }
 }

@@ -28,46 +28,46 @@ class RoiSelectionButton: NibDesignable {
     }
     
     func isSelected() -> Bool {
-        return !button.hidden
+        return !button.isHidden
     }
     
     func setUnSelected() {
-        button.hidden = true
-        label.hidden = true
-        line.hidden = true
+        button.isHidden = true
+        label.isHidden = true
+        line.isHidden = true
     }
     
-    func setSelected(index: Int, text: String) {
-        button.hidden = false
-        label.hidden = false
+    func setSelected(_ index: Int, text: String) {
+        button.isHidden = false
+        label.isHidden = false
         label.text = text
         if index % 2 == 0 {
             buttonTopConstraint.constant = 1000 //minimize
         }
         else {
-            line.hidden = false
+            line.isHidden = false
             buttonTopConstraint.constant = 0
         }
-        dot.backgroundColor = UIColor.clearColor()
+        dot.backgroundColor = UIColor.clear
     }
 
-    private func setUp() {
-        button.hidden = true
-        label.hidden = true
-        line.hidden = true
+    fileprivate func setUp() {
+        button.isHidden = true
+        label.isHidden = true
+        line.isHidden = true
         setupSelectionDot()
     }
     
-    private func setupSelectionDot() {
+    fileprivate func setupSelectionDot() {
         dot.layer.cornerRadius = dot.bounds.width/2
         dot.layer.masksToBounds = true
-        dot.layer.borderColor = Theme.bluePrimaryColor.CGColor
+        dot.layer.borderColor = Theme.bluePrimaryColor.cgColor
         dot.layer.borderWidth = 2
     }
     
     
     func unFillDot() {
-        dot.backgroundColor = UIColor.clearColor()
+        dot.backgroundColor = UIColor.clear
     }
     
     

@@ -20,17 +20,17 @@ class RoiEDVDetailView: NibDesignable {
     init(frame: CGRect, input: ROIEDVInput) {
         super.init(frame: frame)
         
-        let fmt = NSNumberFormatter()
+        let fmt = NumberFormatter()
         extraCost.text = fmt.formatToUSD(input.totalExtraCost())
         serviceCost.text = fmt.formatToUSD(input.totalServiceCostPerBreakDown())
         prodCost.text = fmt.formatToUSD(input.totalProductivityLoss())
         totalLabel.text = fmt.formatToUSD(input.maxTotal())
     }
     
-    @IBAction func closeAction(sender: AnyObject) {
+    @IBAction func closeAction(_ sender: AnyObject) {
         if let superview = self.superview {
             self.removeFromSuperview()
-            superview.hidden = true
+            superview.isHidden = true
         }
     }
     

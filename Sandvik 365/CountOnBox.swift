@@ -40,28 +40,28 @@ class CountOnBox: NibDesignable {
             prevView = view
         }
         if let prevView = prevView {
-            let newbottomConstraint = NSLayoutConstraint(item: prevView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: bottomLine, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 3)
+            let newbottomConstraint = NSLayoutConstraint(item: prevView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: bottomLine, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 3)
             prevView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.deactivateConstraints([topConstraint])
-            NSLayoutConstraint.activateConstraints([newbottomConstraint])
+            NSLayoutConstraint.deactivate([topConstraint])
+            NSLayoutConstraint.activate([newbottomConstraint])
         }
         
     }
     
-    private func addViewAndConstraints(superView: UIView, fromView: UIView, toView: UIView?, topConstant: CGFloat, leftConstant: CGFloat) {
+    fileprivate func addViewAndConstraints(_ superView: UIView, fromView: UIView, toView: UIView?, topConstant: CGFloat, leftConstant: CGFloat) {
         let topConstraint: NSLayoutConstraint
         if toView == nil {
-            topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: topConstant)
+            topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: superView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: topConstant)
         }
         else{
-            topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: toView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: topConstant)
+            topConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: toView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: topConstant)
         }
-        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: superView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: leftConstant)
+        let trailConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: superView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        let leadConstraint = NSLayoutConstraint(item: fromView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: superView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: leftConstant)
         fromView.translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(fromView)
         
-        NSLayoutConstraint.activateConstraints([topConstraint, trailConstraint, leadConstraint])
+        NSLayoutConstraint.activate([topConstraint, trailConstraint, leadConstraint])
     }
     
     required init?(coder aDecoder: NSCoder) {

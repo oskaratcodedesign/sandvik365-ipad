@@ -49,61 +49,61 @@ class Content {
     var title: String? = nil
     var subtitle: String? = nil
     var contentList: [AnyObject] = []
-    var images: [NSURL] = []
+    var images: [URL] = []
     var pdfs: [Pdf] = []
     
     init(content: NSDictionary){
-        if let title = content.objectForKey("title") as? String {
+        if let title = content.object(forKey: "title") as? String {
             self.title = title.stripHTML()
-            if let subtitle = content.objectForKey("subTitle") as? String {
+            if let subtitle = content.object(forKey: "subTitle") as? String {
                 self.subtitle = subtitle.stripHTML()
             }
         }
-        if let html = content.objectForKey("content") as? [NSDictionary] {
+        if let html = content.object(forKey: "content") as? [NSDictionary] {
             for part in html {
-                if let type = part.objectForKey("type") as? String {
-                    if type == "lead", let value = part.objectForKey("value") as? [NSDictionary] {
+                if let type = part.object(forKey: "type") as? String {
+                    if type == "lead", let value = part.object(forKey: "value") as? [NSDictionary] {
                         contentList.append(Lead(content: parseTitleTextList(value)))
                     }
-                    else if type == "body", let value = part.objectForKey("value") as? [NSDictionary] {
+                    else if type == "body", let value = part.object(forKey: "value") as? [NSDictionary] {
                         contentList.append(Body(content: parseTitleTextList(value)))
                     }
-                    else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
+                    else if type == "key-feature-list", let value = part.object(forKey: "value") as? NSDictionary {
                         contentList.append(KeyFeatureListContent(content: value))
                     }
-                    else if type == "columns", let value = part.objectForKey("value") as? [NSDictionary] {
+                    else if type == "columns", let value = part.object(forKey: "value") as? [NSDictionary] {
                         parseColumns(value)
                     }
-                    else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
+                    else if type == "tabbed-content", let value = part.object(forKey: "value") as? NSDictionary {
                         contentList.append(TabbedContent(content: value))
                     }
                 }
             }
         }
         
-        if let images = content.objectForKey("images") as? NSDictionary, let heroImage = images.objectForKey("hero") as? String {
-            if let imageUrl = NSURL(string: heroImage) {
+        if let images = content.object(forKey: "images") as? NSDictionary, let heroImage = images.object(forKey: "hero") as? String {
+            if let imageUrl = URL(string: heroImage) {
                 self.images.append(imageUrl)
             }
         }
     }
     
-    private func parseColumns(content: [NSDictionary]){
+    fileprivate func parseColumns(_ content: [NSDictionary]){
         for part in content {
-            if let type = part.objectForKey("type") as? String {
-                if type == "lead", let value = part.objectForKey("value") as? [NSDictionary] {
+            if let type = part.object(forKey: "type") as? String {
+                if type == "lead", let value = part.object(forKey: "value") as? [NSDictionary] {
                     contentList.append(Lead(content: parseTitleTextList(value)))
                 }
-                else if type == "body", let value = part.objectForKey("value") as? [NSDictionary] {
+                else if type == "body", let value = part.object(forKey: "value") as? [NSDictionary] {
                     contentList.append(Body(content: parseTitleTextList(value)))
                 }
-                else if type == "key-feature-list", let value = part.objectForKey("value") as? NSDictionary {
+                else if type == "key-feature-list", let value = part.object(forKey: "value") as? NSDictionary {
                     contentList.append(KeyFeatureListContent(content: value))
                 }
-                else if type == "content", let value = part.objectForKey("value") as? [NSDictionary] {
+                else if type == "content", let value = part.object(forKey: "value") as? [NSDictionary] {
                     contentList.append(CountOnBoxContent(content: value))
                 }
-                else if type == "tabbed-content", let value = part.objectForKey("value") as? NSDictionary {
+                else if type == "tabbed-content", let value = part.object(forKey: "value") as? NSDictionary {
                     contentList.append(TabbedContent(content: value))
                 }
             }
@@ -126,7 +126,7 @@ class Content {
         }
         
         internal func largestBox() -> CountOnBoxText?{
-            let largestBox = texts.maxElement({ (a, b) -> Bool in
+            let largestBox = texts.max(by: { (a, b) -> Bool in
                 return a.size < b.size
             })
             return largestBox
@@ -141,8 +141,8 @@ class Content {
                     continue
                 }
                 if largestFound && !c.isLargest {
-                    let t = c.text.stringByTrimmingCharactersInSet(
-                        NSCharacterSet.whitespaceAndNewlineCharacterSet()
+                    let t = c.text.trimmingCharacters(
+                        in: CharacterSet.whitespacesAndNewlines
                     )
                     text = text == nil ? t : (text! + " " + t)
                 }
@@ -152,15 +152,15 @@ class Content {
         
         init(content: [NSDictionary]){
             for part in content {
-                if let type = part.objectForKey("type") as? String {
+                if let type = part.object(forKey: "type") as? String {
                     /*if type.caseInsensitiveCompare("body") == .OrderedSame, let title = part.objectForKey("value") as? String {
                         self.title = title.stripHTML()
                     }*/
-                    if type.caseInsensitiveCompare("count-on") == .OrderedSame, let value = part.objectForKey("value") as? NSDictionary {
-                        if let config = value.objectForKey("config") as? NSDictionary {
-                            if let columns = config.objectForKey("columns") as? [NSDictionary] {
+                    if type.caseInsensitiveCompare("count-on") == .orderedSame, let value = part.object(forKey: "value") as? NSDictionary {
+                        if let config = value.object(forKey: "config") as? NSDictionary {
+                            if let columns = config.object(forKey: "columns") as? [NSDictionary] {
                                 //print("columns count", columns.count) //can it be more than one?
-                                if let rows = columns.first?.objectForKey("rows") as? [NSDictionary] {
+                                if let rows = columns.first?.object(forKey: "rows") as? [NSDictionary] {
                                     setTexts(rows)
                                 }
                             }
@@ -170,9 +170,9 @@ class Content {
             }
         }
         
-        private func setTexts(rows: [NSDictionary]) {
+        fileprivate func setTexts(_ rows: [NSDictionary]) {
             for row in rows {
-                if let text = textFromObj(row), let size = row.objectForKey("size") as? Int {
+                if let text = textFromObj(row), let size = row.object(forKey: "size") as? Int {
                     texts.append(CountOnBoxText(text: text, size: size))
                 }
             }
@@ -181,8 +181,8 @@ class Content {
             }
         }
         
-        private func textFromObj(obj: NSDictionary) -> String? {
-            if let string = obj.objectForKey("text") as? String {
+        fileprivate func textFromObj(_ obj: NSDictionary) -> String? {
+            if let string = obj.object(forKey: "text") as? String {
                 return string.stripHTML()
             }
             return nil
@@ -194,10 +194,10 @@ class Content {
         var texts: [TitleAndText]? = nil
         
         init(content: NSDictionary) {
-            if let title = content.objectForKey("title") as? String {
+            if let title = content.object(forKey: "title") as? String {
                 self.title = title.stripHTML()
             }
-            if let featureList = content.objectForKey("config") as? [String] {
+            if let featureList = content.object(forKey: "config") as? [String] {
                 self.texts = []
                 for feature in featureList {
                     do {
@@ -219,14 +219,14 @@ class Content {
         var tabs: [TitleAndText]? = nil
         
         init(content: NSDictionary) {
-            if let tabs = content.objectForKey("config") as? [NSDictionary] {
+            if let tabs = content.object(forKey: "config") as? [NSDictionary] {
                 self.tabs = []
                 for tab in tabs {
-                    if let title = tab.objectForKey("text") as? String {
-                        if let content = tab.objectForKey("content") as? [NSDictionary] {
+                    if let title = tab.object(forKey: "text") as? String {
+                        if let content = tab.object(forKey: "content") as? [NSDictionary] {
                             var string: String = ""
                             for text in content {
-                                if let t = text.objectForKey("text") as? String {
+                                if let t = text.object(forKey: "text") as? String {
                                     string += t
                                     //TODO can it loop ?
                                 }
@@ -256,26 +256,26 @@ class Content {
     
     class Pdf {
         let title: String
-        let url: NSURL
+        let url: URL
         
-        init(title: String, url: NSURL){
+        init(title: String, url: URL){
             self.title = title
             self.url = url
         }
     }
     
-    private func parseTitleTextList(content: [NSDictionary]) -> [TitleTextOrList] {
+    fileprivate func parseTitleTextList(_ content: [NSDictionary]) -> [TitleTextOrList] {
         var titleOrTextOrList: [TitleTextOrList] = []
         for part in content {
-            if let type = part.objectForKey("element") as? String {
-                if type == "p", let value = part.objectForKey("html") as? String {
+            if let type = part.object(forKey: "element") as? String {
+                if type == "p", let value = part.object(forKey: "html") as? String {
                     do {
                         let doc = try HTMLDocument(string: value)
                         if let href = doc.root?.firstChild(xpath: "//a") {
                             if let link = href.attr("href") {
                                 if link.hasSuffix("pdf") {
                                     let title = href.stringValue
-                                    if let url = NSURL(string: link) {
+                                    if let url = URL(string: link) {
                                         self.pdfs.append(Pdf(title: title, url: url))
                                         continue
                                     }
@@ -286,14 +286,14 @@ class Content {
                         print("failed to parse pdf")
                     }
                     let string = value.stripHTML()
-                    if(string.characters.count > 0 && string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0) {
-                        titleOrTextOrList.append(.Text(string))
+                    if(string.characters.count > 0 && string.trimmingCharacters(in: CharacterSet.whitespaces).characters.count > 0) {
+                        titleOrTextOrList.append(.text(string))
                     }
                 }
-                else if ["h1", "h2", "h3", "h4", "h5", "h6"].contains(type), let value = part.objectForKey("html") as? String {
-                    titleOrTextOrList.append(.Title(value.stripHTML()))
+                else if ["h1", "h2", "h3", "h4", "h5", "h6"].contains(type), let value = part.object(forKey: "html") as? String {
+                    titleOrTextOrList.append(.title(value.stripHTML()))
                 }
-                else if type == "ul", let value = part.objectForKey("items") as? [String] {
+                else if type == "ul", let value = part.object(forKey: "items") as? [String] {
                     var titleText = [TitleAndText]()
                     for string in value {
                         do {
@@ -314,7 +314,7 @@ class Content {
                         }
                     }
                     if titleText.count > 0 {
-                        titleOrTextOrList.append(.List(titleText))
+                        titleOrTextOrList.append(.list(titleText))
                     }
                 }
             }
@@ -323,9 +323,9 @@ class Content {
     }
     
     enum TitleTextOrList {
-        case Title(String)
-        case Text(String)
-        case List([TitleAndText])
+        case title(String)
+        case text(String)
+        case list([TitleAndText])
     }
     
     class TitleAndText {

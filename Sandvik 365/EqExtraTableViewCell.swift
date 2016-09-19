@@ -13,7 +13,7 @@ class EqExtraNoKitTableViewCell: UITableViewCell {
     @IBOutlet weak var serialNo: UILabel!
     @IBOutlet weak var model: UILabel!
     
-    func configureView(data: ExtraEquipmentData){
+    func configureView(_ data: ExtraEquipmentData){
         self.serialNo.text = data.serviceKitData.serialNo
         self.model.text = data.serviceKitData.model ?? ""
     }
@@ -25,14 +25,14 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var serialNo: UILabel!
     @IBOutlet weak var model: UILabel!
     @IBOutlet weak var workingCondition: UISegmentedControl!
-    private var data: ExtraEquipmentData?
+    fileprivate var data: ExtraEquipmentData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.hours.delegate = self
     }
     
-    func configureView(data: ExtraEquipmentData){
+    func configureView(_ data: ExtraEquipmentData){
         self.serialNo.text = data.serviceKitData.serialNo
         self.model.text = data.serviceKitData.model ?? ""
         self.hours.text = String(data.hours)
@@ -40,7 +40,7 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
         self.data = data
     }
     
-    @IBAction func increaseHoursAction(sender: UIButton) {
+    @IBAction func increaseHoursAction(_ sender: UIButton) {
         if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
             v = v + 125
             self.data?.hours = v
@@ -48,7 +48,7 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
-    @IBAction func decreaseHoursAction(sender: UIButton) {
+    @IBAction func decreaseHoursAction(_ sender: UIButton) {
         if var v = (hours.text != nil) ? Int(hours.text!) : 0 {
             v = v - 125
             v = max(v, 0)
@@ -57,11 +57,11 @@ class EqExtraTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
-    @IBAction func workingConditionChanged(sender: UISegmentedControl) {
+    @IBAction func workingConditionChanged(_ sender: UISegmentedControl) {
         self.data?.workingConditionExtreme = sender.selectedSegmentIndex == 0 ? false : true
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let no = (hours.text != nil) ? Int(hours.text! + string) : 0 {
             self.data?.hours = no
             return true

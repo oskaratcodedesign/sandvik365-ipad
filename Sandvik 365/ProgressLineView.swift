@@ -12,7 +12,7 @@ import NibDesignable
 
 protocol ProgressLineDelegate {
     
-    func updatedProgress(progress: CGFloat)
+    func updatedProgress(_ progress: CGFloat)
     
 }
 
@@ -25,7 +25,7 @@ class ProgressLineView : NibDesignable {
     @IBInspectable var color: UIColor? {
         didSet {
             line.backgroundColor = color
-            circle.layer.borderColor = color?.CGColor
+            circle.layer.borderColor = color?.cgColor
         }
     }
     
@@ -35,13 +35,13 @@ class ProgressLineView : NibDesignable {
         }
     }
     
-    @IBAction func circleAction(sender: AnyObject) {
+    @IBAction func circleAction(_ sender: AnyObject) {
         let recognizer:UIPanGestureRecognizer = sender as! UIPanGestureRecognizer
-        let translation = recognizer.translationInView(self)
+        let translation = recognizer.translation(in: self)
         if let view = recognizer.view {
             let newOrigin = (view.frame.origin.x + translation.x)
             self.delegate?.updatedProgress(min(frame.width - circle.frame.width, max(0.0, newOrigin))/(frame.width - circle.frame.width))
         }
-        recognizer.setTranslation(CGPointZero, inView: self)
+        recognizer.setTranslation(CGPoint.zero, in: self)
     }
 }

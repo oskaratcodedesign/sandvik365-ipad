@@ -15,9 +15,9 @@ class SectionSelectionButton: NibDesignable {
     
     var buttonMultiplierWidth: CGFloat! = 0.0 {
         didSet {
-            let widthConstraint = NSLayoutConstraint(item: sectionButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: sectionButton.superview, attribute: NSLayoutAttribute.Width, multiplier: buttonMultiplierWidth, constant: 0)
+            let widthConstraint = NSLayoutConstraint(item: sectionButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: sectionButton.superview, attribute: NSLayoutAttribute.width, multiplier: buttonMultiplierWidth, constant: 0)
             sectionButton.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activateConstraints([widthConstraint])
+            NSLayoutConstraint.activate([widthConstraint])
         }
     }
 
@@ -31,7 +31,7 @@ class SectionSelectionButton: NibDesignable {
         setUp()
     }
     
-    private func setUp() {
-        sectionButton.titleLabel?.textAlignment = .Center
+    fileprivate func setUp() {
+        sectionButton.titleLabel?.textAlignment = .center
     }
 }

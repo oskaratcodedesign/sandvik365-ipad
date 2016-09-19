@@ -16,10 +16,10 @@ class RoiCrusherDetailView: NibDesignable {
         super.init(frame: frame)
     }
 
-    @IBAction func closeAction(sender: AnyObject) {
+    @IBAction func closeAction(_ sender: AnyObject) {
         if let superview = self.superview {
             self.removeFromSuperview()
-            superview.hidden = true
+            superview.isHidden = true
         }
     }
     required init?(coder aDecoder: NSCoder) {

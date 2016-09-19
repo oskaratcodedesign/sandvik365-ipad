@@ -8,19 +8,19 @@
 
 import UIKit
 
-@IBDesignable public class GradientHorizontalView: UIView {
-    @IBInspectable public var leftColor: UIColor? {
+@IBDesignable open class GradientHorizontalView: UIView {
+    @IBInspectable open var leftColor: UIColor? {
         didSet {
             configureView()
         }
     }
-    @IBInspectable public var rightColor: UIColor? {
+    @IBInspectable open var rightColor: UIColor? {
         didSet {
             configureView()
         }
     }
     
-    override public class func layerClass() -> AnyClass {
+    override open class var layerClass : AnyClass {
         return CAGradientLayer.self
     }
     
@@ -34,7 +34,7 @@ import UIKit
         configureView()
     }
     
-    public override func tintColorDidChange() {
+    open override func tintColorDidChange() {
         super.tintColorDidChange()
         configureView()
     }
@@ -42,10 +42,10 @@ import UIKit
     func configureView() {
         let layer = self.layer as! CAGradientLayer
         let locations = [ 0.0, 1.0 ]
-        layer.locations = locations
+        layer.locations = locations as [NSNumber]?
         let color1 = leftColor ?? self.tintColor as UIColor
-        let color2 = rightColor ?? UIColor.blackColor() as UIColor
-        let colors: Array <AnyObject> = [ color1.CGColor, color2.CGColor ]
+        let color2 = rightColor ?? UIColor.black as UIColor
+        let colors: Array <AnyObject> = [ color1.cgColor, color2.cgColor ]
         layer.startPoint = CGPoint(x: 0.0, y: 0.5)
         layer.endPoint = CGPoint(x: 1.0, y: 0.5)
         layer.colors = colors

@@ -26,42 +26,42 @@ class RoiInputView: NibDesignable {
             textView.textContainer.maximumNumberOfLines = 1
         }
         
-        textView.textContainer.lineBreakMode = .ByTruncatingTail
+        textView.textContainer.lineBreakMode = .byTruncatingTail
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadNumber(itemIndex: Int, selectionInput: SelectionInput) {
-        setText(itemIndex, selectionInput: selectionInput, change: .Load)
+    func loadNumber(_ itemIndex: Int, selectionInput: SelectionInput) {
+        setText(itemIndex, selectionInput: selectionInput, change: .load)
     }
     
-    func increaseNumber(itemIndex: Int, selectionInput: SelectionInput) {
-        setText(itemIndex, selectionInput: selectionInput, change: .Increase)
+    func increaseNumber(_ itemIndex: Int, selectionInput: SelectionInput) {
+        setText(itemIndex, selectionInput: selectionInput, change: .increase)
     }
     
-    func decreaseNumber(itemIndex: Int, selectionInput: SelectionInput) {
-        setText(itemIndex, selectionInput: selectionInput, change: .Decrease)
+    func decreaseNumber(_ itemIndex: Int, selectionInput: SelectionInput) {
+        setText(itemIndex, selectionInput: selectionInput, change: .decrease)
     }
     
-    private func setAttributedString(attributedString: NSAttributedString) {
+    fileprivate func setAttributedString(_ attributedString: NSAttributedString) {
         
         self.textView.attributedText = attributedString
         
         /* ugh bug? need to set thid after setting text */
-        textView.textAlignment = .Center
+        textView.textAlignment = .center
         textView.textColor = Theme.bluePrimaryColor
     }
     
-    func setAttributedStringWithString(string: String) {
+    func setAttributedStringWithString(_ string: String) {
         //setting uitextview attributed string or text changes the font, base it on the current attributes */
         let mutString = NSMutableAttributedString(attributedString: textView.attributedText)
-        mutString.replaceCharactersInRange(NSRange(location: 0, length: textView.attributedText.length), withString: string)
+        mutString.replaceCharacters(in: NSRange(location: 0, length: textView.attributedText.length), with: string)
         self.textView.attributedText = mutString
     }
     
-    private func setText(itemIndex: Int, selectionInput: SelectionInput, change: ChangeInput) {
+    fileprivate func setText(_ itemIndex: Int, selectionInput: SelectionInput, change: ChangeInput) {
         let text = selectionInput.changeInput(itemIndex, change: change)
         let font = UIFont(name: "AktivGroteskCorpMedium-Regular", size: self.textView.font!.pointSize)
         if let abr = selectionInput.getInputAbbreviation(itemIndex) {

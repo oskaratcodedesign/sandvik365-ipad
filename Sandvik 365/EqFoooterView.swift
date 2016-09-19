@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EqFoooterDelegate {
-    func didAddSerialNo(textField: UITextField) -> Bool
+    func didAddSerialNo(_ textField: UITextField) -> Bool
     func getSupport()
 }
 
@@ -29,53 +29,53 @@ class EqFoooterView: UIView {
         enterText.attributedPlaceholder = NSAttributedString(string:"Enter here",attributes:[NSForegroundColorAttributeName: Theme.bluePrimaryColor])
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleErrorTap))
         self.errorView.addGestureRecognizer(tap)
-        self.enterText.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
-        self.enterText.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        self.enterText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        self.enterText.autocapitalizationType = UITextAutocapitalizationType.allCharacters
     }
     
-    func textFieldDidChange(textField: UITextField) {
-        self.enterText.text = textField.text?.uppercaseString
+    func textFieldDidChange(_ textField: UITextField) {
+        self.enterText.text = textField.text?.uppercased()
     }
     
     func handleErrorTap() {
-        self.errorView.hidden = true
+        self.errorView.isHidden = true
     }
     
-    func configureView(showEnterView: Bool){
-        self.addView.hidden = showEnterView
-        self.enterView.hidden = !showEnterView
+    func configureView(_ showEnterView: Bool){
+        self.addView.isHidden = showEnterView
+        self.enterView.isHidden = !showEnterView
     }
 
-    @IBAction func closeAction(sender: UIButton) {
-        self.addView.hidden = false
-        self.enterView.hidden = true
+    @IBAction func closeAction(_ sender: UIButton) {
+        self.addView.isHidden = false
+        self.enterView.isHidden = true
         self.enterText.resignFirstResponder()
     }
     
-    @IBAction func openAction(sender: UIButton) {
-        self.addView.hidden = true
-        self.enterView.hidden = false
+    @IBAction func openAction(_ sender: UIButton) {
+        self.addView.isHidden = true
+        self.enterView.isHidden = false
     }
     
-    @IBAction func addAction(sender: UIButton) {
+    @IBAction func addAction(_ sender: UIButton) {
         if let del = self.delegate {
             if !del.didAddSerialNo(self.enterText) {
                 self.errorText.text = self.enterText.text
-                self.errorView.hidden = false
+                self.errorView.isHidden = false
             } else {
-                self.addView.hidden = false
-                self.enterView.hidden = true
+                self.addView.isHidden = false
+                self.enterView.isHidden = true
             }
         }
         
         self.enterText.resignFirstResponder()
     }
     
-    @IBAction func closeErrorAction(sender: UIButton) {
-        self.errorView.hidden = true
+    @IBAction func closeErrorAction(_ sender: UIButton) {
+        self.errorView.isHidden = true
     }
     
-    @IBAction func getSupportAction(sender: UIButton) {
+    @IBAction func getSupportAction(_ sender: UIButton) {
         self.delegate?.getSupport()
     }
 }

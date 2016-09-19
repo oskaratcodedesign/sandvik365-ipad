@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum ChangeInput: Int{
-    case Increase = 1
-    case Decrease = -1
-    case Load = 0
+    case increase = 1
+    case decrease = -1
+    case load = 0
 }
 
 enum InputAbbreviation: String {
@@ -30,11 +30,11 @@ enum InputAbbreviation: String {
     case Year = "/year"
     case Minutes = "min"
     
-    func addAbbreviation(value: String, valueFont: UIFont, abbreviationFont: UIFont) ->  NSAttributedString{
+    func addAbbreviation(_ value: String, valueFont: UIFont, abbreviationFont: UIFont) ->  NSAttributedString{
         let attrString = NSMutableAttributedString(string: value, attributes: [NSFontAttributeName:valueFont])
         switch self {
         case .Percent, .PPM, .USD,.USDOunce, .USDton, .TonPerDay, .TonPerHour, .Gram, .Kilo, .Meter, .Year, .USDHour, .Minutes:
-            attrString.appendAttributedString(NSAttributedString(string: self.rawValue, attributes: [NSFontAttributeName:abbreviationFont]))
+            attrString.append(NSAttributedString(string: self.rawValue, attributes: [NSFontAttributeName:abbreviationFont]))
         }
         return attrString
     }
@@ -46,21 +46,21 @@ class SelectionInput {
         preconditionFailure("This method must be overridden")
     }
     
-    func changeInput(atIndex :Int, change : ChangeInput) -> String {
+    func changeInput(_ atIndex :Int, change : ChangeInput) -> String {
         preconditionFailure("This method must be overridden")
     }
     
-    func getInputAbbreviation(atIndex :Int) -> InputAbbreviation? {
+    func getInputAbbreviation(_ atIndex :Int) -> InputAbbreviation? {
         preconditionFailure("This method must be overridden")
     }
     
     /* returns false if setting input from string fails */
-    func setInput(atIndex :Int, stringValue :String) -> Bool {
+    func setInput(_ atIndex :Int, stringValue :String) -> Bool {
         preconditionFailure("This method must be overridden")
     }
     
     /* returns nil if input cant be modified */
-    func getInputAsString(atIndex :Int) -> String? {
+    func getInputAsString(_ atIndex :Int) -> String? {
         preconditionFailure("This method must be overridden")
     }
     

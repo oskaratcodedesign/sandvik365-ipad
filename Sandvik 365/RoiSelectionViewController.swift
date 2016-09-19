@@ -23,12 +23,12 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var introLabel: UILabel!
     
-    private var selectionButtons = [RoiSelectionButton]()
-    private var pageViewController: UIPageViewController?
-    private var viewControllers: [UIViewController]! = [UIViewController]()
-    private var titles = [String]()
-    private var descriptions = [String]()
-    private var hasVisitedLastPage: Bool = false
+    fileprivate var selectionButtons = [RoiSelectionButton]()
+    fileprivate var pageViewController: UIPageViewController?
+    fileprivate var viewControllers: [UIViewController]! = [UIViewController]()
+    fileprivate var titles = [String]()
+    fileprivate var descriptions = [String]()
+    fileprivate var hasVisitedLastPage: Bool = false
     var selectedInput: SelectionInput!
     var selectedBusinessType: BusinessType!
 
@@ -38,28 +38,28 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             view.setImageBG(selectedBusinessType.backgroundImageName)
         }
         let attrString = NSMutableAttributedString(string: "Welcome\n", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorpMedium-Regular", size: 25.0)!])
-        attrString.appendAttributedString(NSAttributedString(string: "Here is a handy tool that generates personalized recommendations for you. Just enter your data on the following pages and we will do the rest. You can enter data by clicking the up and down arrows, swiping vertically or clicking once to enter data using the keyboard. Navigate to the next screen by clicking the right arrow, and you can always change the data by clicking the options at the bottom.", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 25.0)!]))
+        attrString.append(NSAttributedString(string: "Here is a handy tool that generates personalized recommendations for you. Just enter your data on the following pages and we will do the rest. You can enter data by clicking the up and down arrows, swiping vertically or clicking once to enter data using the keyboard. Navigate to the next screen by clicking the right arrow, and you can always change the data by clicking the options at the bottom.", attributes: [NSFontAttributeName:UIFont(name: "AktivGroteskCorp-Light", size: 25.0)!]))
         self.introLabel.attributedText = attrString
         setupDependingOnInput()
         loadPageController()
         
-        pageContentView.bringSubviewToFront(selectionContainer.superview!)
-        pageContentView.bringSubviewToFront(nextButton)
-        pageContentView.bringSubviewToFront(prevButton)
-        pageContentView.bringSubviewToFront(viewResultButton)
+        pageContentView.bringSubview(toFront: selectionContainer.superview!)
+        pageContentView.bringSubview(toFront: nextButton)
+        pageContentView.bringSubview(toFront: prevButton)
+        pageContentView.bringSubview(toFront: viewResultButton)
         
         selectionButtons.append(currentSelectionButton)
         currentSelectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(handleButtonSelect(_:))))
         currentSelectionButton.fillDot()
-        prevButton.hidden = true
+        prevButton.isHidden = true
         loadSelectionButtons()
-        titleLabel.text = titles[0].uppercaseString
+        titleLabel.text = titles[0].uppercased()
         if descriptions.count > 0 {
-            descriptionLabel.text = descriptions[0].uppercaseString
+            descriptionLabel.text = descriptions[0].uppercased()
         }
     }
     
-    private func setupDependingOnInput(){
+    fileprivate func setupDependingOnInput(){
         
         titles = selectedInput.allTitles()
         
@@ -76,36 +76,36 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
         
         let widthConstraint = buttonwidthConstraint(currentSelectionButton, to: selectionContainer.superview)
-        NSLayoutConstraint.deactivateConstraints([selectionButtonWidthConstraint])
-        NSLayoutConstraint.activateConstraints([widthConstraint])
+        NSLayoutConstraint.deactivate([selectionButtonWidthConstraint])
+        NSLayoutConstraint.activate([widthConstraint])
     }
 
-    @IBAction func nextAction(sender: UIButton) {
+    @IBAction func nextAction(_ sender: UIButton) {
         toggleLeftRight(false)
     }
-    @IBAction func prevAction(sender: UIButton) {
+    @IBAction func prevAction(_ sender: UIButton) {
         toggleLeftRight(true)
     }
-    @IBAction func viewResultAction(sender: UIButton) {
+    @IBAction func viewResultAction(_ sender: UIButton) {
         goToPage(viewControllers.count-1)
     }
     
-    @IBAction func handleTap(sender: AnyObject) {
+    @IBAction func handleTap(_ sender: AnyObject) {
         if self.scrollView.contentOffset.y < self.scrollView.bounds.size.height {
             self.scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: self.scrollView.bounds.size.height), size: scrollView.bounds.size), animated: true)
         }
     }
     
-    private func toggleLeftRight(left: Bool) {
+    fileprivate func toggleLeftRight(_ left: Bool) {
         if let currentController = pageViewController?.viewControllers!.last as? RoiSelectionContentViewController
         {
             let nextIndex = left ? currentController.itemIndex - 1 : currentController.itemIndex + 1
             if viewControllers.count > nextIndex && nextIndex >= 0 {
                 let nextController = viewControllers[nextIndex]
                 let nextViewControllers: [UIViewController] = [nextController]
-                pageViewController?.setViewControllers(nextViewControllers, direction: left ?UIPageViewControllerNavigationDirection.Reverse: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+                pageViewController?.setViewControllers(nextViewControllers, direction: left ?UIPageViewControllerNavigationDirection.reverse: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
                 if !left {
-                    selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1].uppercaseString)
+                    selectionButtons[nextIndex-1].setSelected(nextIndex-1, text: titles[nextIndex-1].uppercased())
                 }
                 if let numberView = currentController.roiContentView {
                     roiValueDidChange(currentController.itemIndex, object: numberView.textView.attributedText!)
@@ -115,25 +115,25 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
-    func handleButtonSelect(recognizer: UIGestureRecognizer) {
+    func handleButtonSelect(_ recognizer: UIGestureRecognizer) {
         if let selectionButton = recognizer.view as? RoiSelectionButton {
-            if selectionButton.isSelected(), let index = selectionButtons.indexOf(selectionButton) {
+            if selectionButton.isSelected(), let index = selectionButtons.index(of: selectionButton) {
                 goToPage(index)
             }
         }
     }
     
-    private func goToPage(index: Int) {
+    fileprivate func goToPage(_ index: Int) {
         if viewControllers.count > index {
             let nextController = viewControllers[index]
             let nextViewControllers: [UIViewController] = [nextController]
-            pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageViewController?.setViewControllers(nextViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
             showSelectedInput(index)
         }
     }
     
-    private func loadPageController() {
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiPageController") as! UIPageViewController
+    fileprivate func loadPageController() {
+        let pageController = self.storyboard!.instantiateViewController(withIdentifier: "RoiPageController") as! UIPageViewController
         
         for i in 0..<titles.count {
             if let vc = getItemController(i) {
@@ -141,26 +141,26 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             }
         }
         let startingViewControllers: [UIViewController] = [viewControllers[0]]
-        pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
         pageViewController = pageController
         addChildViewController(pageViewController!)
         pageContentView.addSubview(pageViewController!.view)
         pageViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateConstraints(pageViewController!.view.fillConstraints(pageContentView))
-        pageViewController!.didMoveToParentViewController(self)
+        NSLayoutConstraint.activate(pageViewController!.view.fillConstraints(pageContentView))
+        pageViewController!.didMove(toParentViewController: self)
     }
     
-    private func showSelectedInput(itemIndex: Int) {
+    fileprivate func showSelectedInput(_ itemIndex: Int) {
         
         if selectionButtons.count < itemIndex {
             return
         }
-        nextButton.hidden = false
-        prevButton.hidden = (itemIndex == 0)
+        nextButton.isHidden = false
+        prevButton.isHidden = (itemIndex == 0)
 
         if hasVisitedLastPage {
-            viewResultButton.hidden = false
+            viewResultButton.isHidden = false
         }
         currentSelectionButton.unFillDot()
         if(itemIndex < selectionButtons.count) {
@@ -168,50 +168,50 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             currentSelectionButton = selectionButtons[itemIndex]
         }
         else {
-            nextButton.hidden = true
-            prevButton.hidden = true
-            viewResultButton.hidden = true
+            nextButton.isHidden = true
+            prevButton.isHidden = true
+            viewResultButton.isHidden = true
             hasVisitedLastPage = true
         }
-        titleLabel.text = titles[itemIndex].uppercaseString
+        titleLabel.text = titles[itemIndex].uppercased()
         if descriptions.count > itemIndex && descriptions[itemIndex].characters.count > 0 {
             descriptionLabel.text = descriptions[itemIndex]
-            descriptionLabel.hidden = false
+            descriptionLabel.isHidden = false
         }
         else {
-            descriptionLabel.hidden = true
+            descriptionLabel.isHidden = true
         }
     }
     
-    private func loadSelectionButtons() {
+    fileprivate func loadSelectionButtons() {
         var currentButton = currentSelectionButton
         for _ in 1...titles.count-2 {
-            currentButton = addRoiSelectionButton(currentButton)
+            currentButton = addRoiSelectionButton(currentButton!)
         }
     }
     
-    private func buttonwidthConstraint(from: AnyObject, to: AnyObject?) -> NSLayoutConstraint {
+    fileprivate func buttonwidthConstraint(_ from: AnyObject, to: AnyObject?) -> NSLayoutConstraint {
         
         let w = max(1/Double(titles.count-1), 0.1222)
-        let widthConstraint = NSLayoutConstraint(item: from, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: to, attribute: NSLayoutAttribute.Width, multiplier:CGFloat(w), constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: from, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: to, attribute: NSLayoutAttribute.width, multiplier:CGFloat(w), constant: 0)
         
         return widthConstraint
     }
     
-    private func addRoiSelectionButton(currentButton: RoiSelectionButton) -> RoiSelectionButton {
+    fileprivate func addRoiSelectionButton(_ currentButton: RoiSelectionButton) -> RoiSelectionButton {
         let selectionButton = RoiSelectionButton(frame: currentButton.bounds)
         
-        let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: selectionContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: selectionContainer, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: selectionContainer, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         let widthConstraint = buttonwidthConstraint(selectionButton, to: selectionContainer.superview)
-        let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: selectionButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
-        let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: currentButton, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        let trailConstraint = NSLayoutConstraint(item: selectionContainer, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: selectionButton, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
+        let leadingConstraint = NSLayoutConstraint(item: selectionButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: currentButton, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: currentTrailingConstraint.constant)
         
         selectionButton.translatesAutoresizingMaskIntoConstraints = false
         selectionContainer.addSubview(selectionButton)
         
-        NSLayoutConstraint.deactivateConstraints([currentTrailingConstraint])
-        NSLayoutConstraint.activateConstraints([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
+        NSLayoutConstraint.deactivate([currentTrailingConstraint])
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, widthConstraint, trailConstraint, leadingConstraint])
         currentTrailingConstraint = trailConstraint
         selectionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(handleButtonSelect(_:))))
         selectionButtons.append(selectionButton)
@@ -219,44 +219,44 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     
 
-    private func getItemController(itemIndex: Int) -> UIViewController? {
+    fileprivate func getItemController(_ itemIndex: Int) -> UIViewController? {
         
         if itemIndex == titles.count-1 {
             if let input = selectedInput as? ROICalculatorInput {
                 if let input = input as? ROICrusherInput {
-                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiCrusherResultViewController") as! RoiCrusherResultViewController
+                    let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiCrusherResultViewController") as! RoiCrusherResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
                 else if let input = input as? ROIGetInput {
-                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiGetResultViewController") as! RoiGetResultViewController
+                    let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiGetResultViewController") as! RoiGetResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
                 else if let input = input as? ROIRockDrillInput {
-                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiRockDrillResultViewController") as! RoiRockDrillResultViewController
+                    let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiRockDrillResultViewController") as! RoiRockDrillResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
                 else if let input = input as? ROIEDVInput {
-                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiEDVResultViewController") as! RoiEDVResultViewController
+                    let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiEDVResultViewController") as! RoiEDVResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
                 else if let input = input as? ROITopCenterInput {
-                    let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiTopCenterResultViewController") as! RoiTopCenterResultViewController
+                    let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiTopCenterResultViewController") as! RoiTopCenterResultViewController
                     pageItemController.selectedInput = input
                     return pageItemController
                 }
             }
             else if let input = selectedInput as? FireSuppressionInput {
-                let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("FireSuppressionResultViewController") as! FireSuppressionResultViewController
+                let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "FireSuppressionResultViewController") as! FireSuppressionResultViewController
                 pageItemController.selectedInput = input
                 return pageItemController
             }
         }
         else if itemIndex < titles.count-1 {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("RoiSelectionContentViewController") as! RoiSelectionContentViewController
+            let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "RoiSelectionContentViewController") as! RoiSelectionContentViewController
             pageItemController.itemIndex = itemIndex
             pageItemController.selectedInput = selectedInput
             pageItemController.delegate = self
@@ -265,33 +265,33 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         return nil
     }
     
-    func roiValueDidChange(itemIndex: Int, object: AnyObject) {
+    func roiValueDidChange(_ itemIndex: Int, object: AnyObject) {
         if itemIndex < selectionButtons.count {
             let selectedButton = selectionButtons[itemIndex]
             //change to button font size:
             let attString = changeNSAttributedStringFontSize((object as? NSAttributedString)!, fontSize: (selectedButton.button.titleLabel?.font.pointSize)!)
-            selectedButton.button.setAttributedTitle(attString, forState: .Normal)
+            selectedButton.button.setAttributedTitle(attString, for: UIControlState())
             clearItemsToTheRight(itemIndex)
         }
     }
     
-    func percentPPMchange(percent: Bool, object: AnyObject) {
+    func percentPPMchange(_ percent: Bool, object: AnyObject) {
         let index = selectionButtons.count-1
         let selectedButton = selectionButtons[index]
         
         if let abr = selectedInput.getInputAbbreviation(index) {
-            let text = selectedInput.changeInput(index, change: .Load)
-            if let string = selectedButton.button.attributedTitleForState(.Normal) {
+            let text = selectedInput.changeInput(index, change: .load)
+            if let string = selectedButton.button.attributedTitle(for: UIControlState()) {
                 let fonts = getNSAttributedStringFonts(string)
                 if fonts.count > 1 {
                     let attString = abr.addAbbreviation(text, valueFont: UIFont(name: fonts[0].fontName, size: (selectedButton.button.titleLabel?.font.pointSize)!)!, abbreviationFont: UIFont(name: fonts[1].fontName, size: (selectedButton.button.titleLabel?.font.pointSize)!)!)
-                    selectedButton.button.setAttributedTitle(attString, forState: .Normal)
+                    selectedButton.button.setAttributedTitle(attString, for: UIControlState())
                 }
             }
         }
     }
     
-    private func clearItemsToTheRight(itemIndex: Int) {
+    fileprivate func clearItemsToTheRight(_ itemIndex: Int) {
         if selectedInput is FireSuppressionInput {
             //clear items to the right
             var itemsCleared = false
@@ -306,14 +306,14 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
             }
             if itemsCleared {
                 hasVisitedLastPage = false
-                viewResultButton.hidden = true
+                viewResultButton.isHidden = true
             }
         }
     }
     
-    private func getNSAttributedStringFonts(attrString: NSAttributedString) -> [UIFont] {
+    fileprivate func getNSAttributedStringFonts(_ attrString: NSAttributedString) -> [UIFont] {
         var fonts: [UIFont] = []
-        attrString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, attrString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
+        attrString.enumerateAttribute(NSFontAttributeName, in: NSMakeRange(0, attrString.length), options: NSAttributedString.EnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
             if let font = value as? UIFont {
                 fonts.append(font)
             }
@@ -321,11 +321,11 @@ class RoiSelectionViewController: UIViewController, UIGestureRecognizerDelegate,
         return fonts
     }
     
-    private func changeNSAttributedStringFontSize(attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {
+    fileprivate func changeNSAttributedStringFontSize(_ attrString: NSAttributedString, fontSize: CGFloat) -> NSAttributedString {
         let mutString : NSMutableAttributedString = NSMutableAttributedString(attributedString: attrString)
-        mutString.enumerateAttribute(NSFontAttributeName, inRange: NSMakeRange(0, mutString.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
+        mutString.enumerateAttribute(NSFontAttributeName, in: NSMakeRange(0, mutString.length), options: NSAttributedString.EnumerationOptions(rawValue: 0)) { (value, range, stop) -> Void in
             if let oldFont = value as? UIFont {
-                let newFont = oldFont.fontWithSize(fontSize)
+                let newFont = oldFont.withSize(fontSize)
                 mutString.removeAttribute(NSFontAttributeName, range: range)
                 mutString.addAttribute(NSFontAttributeName, value: newFont, range: range)
             }

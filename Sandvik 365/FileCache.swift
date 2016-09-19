@@ -13,7 +13,7 @@ class FileCache {
     static func clearCache() {
         do {
             let path = try self.cachePath()
-            try NSFileManager.defaultManager().removeItemAtPath(path)
+            try FileManager.default.removeItem(atPath: path)
         } catch {
             print("Failed to clear \(cacheDir()) cache")
         }
@@ -23,33 +23,33 @@ class FileCache {
         return "files"
     }
     
-    static func storeFile(baseUrl: NSURL, urlPath: NSURL) throws {
+    static func storeFile(_ baseUrl: URL, urlPath: URL) throws {
         let path = try self.pathForUrl(urlPath)
         
-        if let url = NSURL(string: urlPath.absoluteString, relativeToURL: baseUrl) {
-            let request = NSURLRequest(URL: url)
-            let data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        if let url = URL(string: urlPath.absoluteString, relativeTo: baseUrl) {
+            let request = URLRequest(url: url)
+            let data = try NSURLConnection.sendSynchronousRequest(request, returning: nil)
             
-            data.writeToFile(path, atomically: true)
-            try NSURL(fileURLWithPath: path).setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey)
+            try? data.write(to: URL(fileURLWithPath: path), options: [.atomic])
+            try (URL(fileURLWithPath: path) as NSURL).setResourceValue(true, forKey: URLResourceKey.isExcludedFromBackupKey)
         }
     }
     
-    static func getStoredFileURL(urlPath: NSURL) -> NSURL? {
+    static func getStoredFileURL(_ urlPath: URL) -> URL? {
         do {
             let path = try self.pathForUrl(urlPath)
-            return NSURL(fileURLWithPath: path)
+            return URL(fileURLWithPath: path)
         } catch {
             return nil
         }
     }
     
-    static func pathForUrl(url: NSURL) throws -> String {
+    static func pathForUrl(_ url: URL) throws -> String {
         let key = cacheKeyForUrl(url)
         return try pathForCacheKey(key)
     }
     
-    private static func cacheKeyForUrl(url: NSURL) -> String {
+    fileprivate static func cacheKeyForUrl(_ url: URL) -> String {
         var cacheKey = url.absoluteString.sha1()
         
         // If the URL contains an extension, let's use that one in the cache as well
@@ -59,18 +59,18 @@ class FileCache {
         return cacheKey
     }
     
-    private static func pathForCacheKey(cacheKey: String) throws -> String {
+    fileprivate static func pathForCacheKey(_ cacheKey: String) throws -> String {
         let cachePath = try self.cachePath()
-        return cachePath.stringByAppendingFormat("/%@", cacheKey)
+        return cachePath.appendingFormat("/%@", cacheKey)
     }
     
-    private static func cachePath() throws -> String {
-        var path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
-        path = path.stringByAppendingFormat("/%@", cacheDir())
+    fileprivate static func cachePath() throws -> String {
+        var path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationSupportDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+        path = path.appendingFormat("/%@", cacheDir())
         
         // Create directory if it does not exist
-        if (!NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            try NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+        if (!FileManager.default.fileExists(atPath: path)) {
+            try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         }
         return path
     }

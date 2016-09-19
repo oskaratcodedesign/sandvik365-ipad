@@ -23,7 +23,7 @@ class RoiGetResultViewController: RoiResultViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setProfitLabel()
     }
@@ -33,37 +33,37 @@ class RoiGetResultViewController: RoiResultViewController {
         selectionAction(selectedButton)
     }
 
-    @IBAction func detailsShowAction(sender: AnyObject) {
-        self.detailsContainerView.hidden = false
+    @IBAction func detailsShowAction(_ sender: AnyObject) {
+        self.detailsContainerView.isHidden = false
     }
     
-    @IBAction func detailCloseAction(sender: AnyObject) {
-        self.detailsContainerView.hidden = true
+    @IBAction func detailCloseAction(_ sender: AnyObject) {
+        self.detailsContainerView.isHidden = true
     }
 
-    @IBAction func selectionAction(sender: UIButton) {
-        self.selectedButton?.selected = false
+    @IBAction func selectionAction(_ sender: UIButton) {
+        self.selectedButton?.isSelected = false
         self.selectedButton = sender
-        self.selectedButton?.selected = !sender.selected
+        self.selectedButton?.isSelected = !sender.isSelected
         
         switch sender.tag {
         case 0:
-            self.selectedInput.calculationType = .WearLife
+            self.selectedInput.calculationType = .wearLife
         case 1:
-            self.selectedInput.calculationType = .CostPerHour
+            self.selectedInput.calculationType = .costPerHour
         case 2:
-            self.selectedInput.calculationType = .RevenueLoss
+            self.selectedInput.calculationType = .revenueLoss
         case 3:
-            self.selectedInput.calculationType = .Availability
+            self.selectedInput.calculationType = .availability
         case 4:
-            self.selectedInput.calculationType = .MaintenanceTime
+            self.selectedInput.calculationType = .maintenanceTime
         default:
             break
         }
         
         if let percentages = self.selectedInput.calculationType?.percentages {
-            if let max = percentages.maxElement() {
-                for (i, value) in percentages.enumerate() {
+            if let max = percentages.max() {
+                for (i, value) in percentages.enumerated() {
                     let multiplier = value / max
                     switch i {
                     case 0:
@@ -81,21 +81,21 @@ class RoiGetResultViewController: RoiResultViewController {
         setProfitLabel()
     }
     
-    private func setProfitLabel()
+    fileprivate func setProfitLabel()
     {
         if selectedInput.calculationType != nil {
             setProfitLabelFromInput()
         }
         else {
-            profitLabel.text = NSNumberFormatter().formatToUSD(0)
+            profitLabel.text = NumberFormatter().formatToUSD(0)
         }
     }
     
-    private func setProfitLabelFromInput() {
+    fileprivate func setProfitLabelFromInput() {
         if let sum = selectedInput.total() {
-            let percentages = ROIGetCalculationType.CostPerHour.percentages
-            profitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
-            weldProfitLabel.text = NSNumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
+            let percentages = ROIGetCalculationType.costPerHour.percentages
+            profitLabel.text = NumberFormatter().formatToUSD(Double(sum) * (100 - percentages.last!)/100)
+            weldProfitLabel.text = NumberFormatter().formatToUSD(Double(sum) * (100 - percentages[percentages.count-2])/100)
         }
     }
 }
