@@ -26,7 +26,8 @@
 		48FDEABC1B5F902C00C5AFE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */; };
 		48FDEABE1B5F904100C5AFE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */; };
 		98DDC2FF1BB92C21004E5574 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */; };
-		CDBC4888D46B67B19DC02EB7 /* Pods_Sandvik_365Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */; };
+		BEB64301516AC1257BED74C6 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C48F980F186239771B47B9 /* Pods_Sandvik_365.framework */; };
+		C00C188CB3F18FFC2C3548FB /* Pods_Sandvik_365Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A6FA9F8B7FF7D2BD78A7DA /* Pods_Sandvik_365Tests.framework */; };
 		F7019D0C1BE36D2D00A6B3C6 /* KeyFeatureList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D0B1BE36D2D00A6B3C6 /* KeyFeatureList.xib */; };
 		F7019D0E1BE36D4100A6B3C6 /* KeyFeatureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7019D0D1BE36D4100A6B3C6 /* KeyFeatureList.swift */; };
 		F7019D111BE36FAE00A6B3C6 /* KeyFeatureItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7019D0F1BE36FAE00A6B3C6 /* KeyFeatureItem.xib */; };
@@ -59,7 +60,6 @@
 		F7227B961B7A0E21002354B1 /* RoiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */; };
 		F724CED31C7B428C00BC92AC /* Rebuilds and Major Components.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */; };
 		F724CED51C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */; };
-		F72657651C7B8664006A2C75 /* Pods_Sandvik_365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */; };
 		F72657731C7CB6FA006A2C75 /* GradientHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */; };
 		F72AF7A61CABFB36005CED71 /* edv_final_160229_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F72AF7A51CABFB36005CED71 /* edv_final_160229_1.mp4 */; };
 		F73E9B2E1C43E3FC00742EBD /* MediaCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */; };
@@ -169,8 +169,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.release.xcconfig"; sourceTree = "<group>"; };
-		2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sandvik_365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0468E4949DEC27A221EAB99B /* Pods-Sandvik 365Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4842CE711BEB798E00D39F5F /* Preloaded Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preloaded Resources"; sourceTree = "<group>"; };
 		486F88791B7238630084211F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		486F887B1B72397B0084211F /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -196,10 +195,12 @@
 		48FDEAB91B5F8D6100C5AFE6 /* Dalton Maag - Aktiv Grotesk Corp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dalton Maag - Aktiv Grotesk Corp.ttf"; sourceTree = "<group>"; };
 		48FDEABB1B5F902C00C5AFE6 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		48FDEABD1B5F904100C5AFE6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.release.xcconfig"; sourceTree = "<group>"; };
+		96DDEC383B54E9198CF357F0 /* Pods-Sandvik 365Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		98DDC2FE1BB92C21004E5574 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
-		DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
-		EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sandvik_365Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A37FBA2FE7199CC38EEAC73E /* Pods-Sandvik 365.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.release.xcconfig"; sourceTree = "<group>"; };
+		B4C48F980F186239771B47B9 /* Pods_Sandvik_365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sandvik_365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7A6FA9F8B7FF7D2BD78A7DA /* Pods_Sandvik_365Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sandvik_365Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0CA8375CB395619896F67C2 /* Pods-Sandvik 365.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365.debug.xcconfig"; sourceTree = "<group>"; };
 		F7019D0B1BE36D2D00A6B3C6 /* KeyFeatureList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyFeatureList.xib; sourceTree = "<group>"; };
 		F7019D0D1BE36D4100A6B3C6 /* KeyFeatureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFeatureList.swift; sourceTree = "<group>"; };
 		F7019D0F1BE36FAE00A6B3C6 /* KeyFeatureItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyFeatureItem.xib; sourceTree = "<group>"; };
@@ -232,7 +233,6 @@
 		F7227B951B7A0E21002354B1 /* RoiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoiSelectionViewController.swift; sourceTree = "<group>"; };
 		F724CED21C7B428C00BC92AC /* Rebuilds and Major Components.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rebuilds and Major Components.mp4"; sourceTree = "<group>"; };
 		F724CED41C7B429500BC92AC /* Eclipse - Fluorine-free fire suppression system.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eclipse - Fluorine-free fire suppression system.mp4"; sourceTree = "<group>"; };
-		F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Sandvik_365.framework; path = "Pods/../build/Debug-iphoneos/Pods_Sandvik_365.framework"; sourceTree = "<group>"; };
 		F72657721C7CB6FA006A2C75 /* GradientHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientHorizontalView.swift; sourceTree = "<group>"; };
 		F72AF7A51CABFB36005CED71 /* edv_final_160229_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = edv_final_160229_1.mp4; sourceTree = "<group>"; };
 		F73E9B2D1C43E3FC00742EBD /* MediaCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MediaCenter.storyboard; sourceTree = "<group>"; };
@@ -327,7 +327,6 @@
 		F7F705DE1BEA2716003D6289 /* SectionSelectionButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionSelectionButton.xib; sourceTree = "<group>"; };
 		F7F705E01BEA2739003D6289 /* SectionSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSelectionButton.swift; sourceTree = "<group>"; };
 		F7FB1A561CCF7B61001E6885 /* PartsAndServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsAndServicesTests.swift; sourceTree = "<group>"; };
-		FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sandvik 365Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,8 +334,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72657651C7B8664006A2C75 /* Pods_Sandvik_365.framework in Frameworks */,
 				F741D99D1B84783D00010E71 /* MediaPlayer.framework in Frameworks */,
+				BEB64301516AC1257BED74C6 /* Pods_Sandvik_365.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +343,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDBC4888D46B67B19DC02EB7 /* Pods_Sandvik_365Tests.framework in Frameworks */,
+				C00C188CB3F18FFC2C3548FB /* Pods_Sandvik_365Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +390,8 @@
 				48FDEA931B5F8CEC00C5AFE6 /* Sandvik 365 */,
 				48FDEAA91B5F8CEC00C5AFE6 /* Sandvik 365Tests */,
 				48FDEA921B5F8CEC00C5AFE6 /* Products */,
-				958934FA16051C5BDA4AC6BF /* Pods */,
 				7825D85B7F7737ED3755B819 /* Frameworks */,
+				96FC597FFFF5BC4BD7357FAC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -498,21 +497,20 @@
 		7825D85B7F7737ED3755B819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F72657641C7B8664006A2C75 /* Pods_Sandvik_365.framework */,
 				F741D99C1B84783D00010E71 /* MediaPlayer.framework */,
-				2B75B580A17414C6419F58BB /* Pods_Sandvik_365.framework */,
-				EEBE020EDB655B0F8B54BA44 /* Pods_Sandvik_365Tests.framework */,
+				B4C48F980F186239771B47B9 /* Pods_Sandvik_365.framework */,
+				E7A6FA9F8B7FF7D2BD78A7DA /* Pods_Sandvik_365Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		958934FA16051C5BDA4AC6BF /* Pods */ = {
+		96FC597FFFF5BC4BD7357FAC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */,
-				215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */,
-				FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */,
-				7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */,
+				F0CA8375CB395619896F67C2 /* Pods-Sandvik 365.debug.xcconfig */,
+				A37FBA2FE7199CC38EEAC73E /* Pods-Sandvik 365.release.xcconfig */,
+				96DDEC383B54E9198CF357F0 /* Pods-Sandvik 365Tests.debug.xcconfig */,
+				0468E4949DEC27A221EAB99B /* Pods-Sandvik 365Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -803,12 +801,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48FDEAB01B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365" */;
 			buildPhases = (
-				198230111A45D0AB509BE98E /* Check Pods Manifest.lock */,
+				03ED0A27CFD8AE0C47F08AEA /* [CP] Check Pods Manifest.lock */,
 				48FDEA8D1B5F8CEC00C5AFE6 /* Sources */,
 				48FDEA8E1B5F8CEC00C5AFE6 /* Frameworks */,
 				48FDEA8F1B5F8CEC00C5AFE6 /* Resources */,
-				62BD000F96246D9300F3E87D /* Embed Pods Frameworks */,
-				495D16048189F0B33D77DD71 /* Copy Pods Resources */,
+				80D1C0846DCA4C05F9BBA721 /* [CP] Embed Pods Frameworks */,
+				00F2745221D2C87B2080E582 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -823,12 +821,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48FDEAB31B5F8CEC00C5AFE6 /* Build configuration list for PBXNativeTarget "Sandvik 365Tests" */;
 			buildPhases = (
-				5DE3DD99254D368067416FEB /* Check Pods Manifest.lock */,
+				A39CD9FD7927E9D4F2E20ACB /* [CP] Check Pods Manifest.lock */,
 				48FDEAA21B5F8CEC00C5AFE6 /* Sources */,
 				48FDEAA31B5F8CEC00C5AFE6 /* Frameworks */,
 				48FDEAA41B5F8CEC00C5AFE6 /* Resources */,
-				6249CE46DC3138D861F1C696 /* Embed Pods Frameworks */,
-				7C12CBCD63DF583AE387DE0E /* Copy Pods Resources */,
+				4664457128594C23E8431BF4 /* [CP] Embed Pods Frameworks */,
+				E35CC9FDC3DB72859A788144 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -947,29 +945,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		198230111A45D0AB509BE98E /* Check Pods Manifest.lock */ = {
+		00F2745221D2C87B2080E582 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		495D16048189F0B33D77DD71 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,14 +960,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DE3DD99254D368067416FEB /* Check Pods Manifest.lock */ = {
+		03ED0A27CFD8AE0C47F08AEA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -992,14 +975,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6249CE46DC3138D861F1C696 /* Embed Pods Frameworks */ = {
+		4664457128594C23E8431BF4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1007,14 +990,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365Tests/Pods-Sandvik 365Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62BD000F96246D9300F3E87D /* Embed Pods Frameworks */ = {
+		80D1C0846DCA4C05F9BBA721 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1022,14 +1005,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sandvik 365/Pods-Sandvik 365-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C12CBCD63DF583AE387DE0E /* Copy Pods Resources */ = {
+		A39CD9FD7927E9D4F2E20ACB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E35CC9FDC3DB72859A788144 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1204,6 +1202,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sandvik 365/Sandvik_365-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -1242,6 +1241,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sandvik 365/Sandvik_365-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1249,7 +1249,7 @@
 		};
 		48FDEAB11B5F8CEC00C5AFE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DED92FA08FB958C30B401FE4 /* Pods-Sandvik 365.debug.xcconfig */;
+			baseConfigurationReference = F0CA8375CB395619896F67C2 /* Pods-Sandvik 365.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1266,7 +1266,7 @@
 		};
 		48FDEAB21B5F8CEC00C5AFE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 215DDB2C2223D77EC9C18831 /* Pods-Sandvik 365.release.xcconfig */;
+			baseConfigurationReference = A37FBA2FE7199CC38EEAC73E /* Pods-Sandvik 365.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1282,7 +1282,7 @@
 		};
 		48FDEAB41B5F8CEC00C5AFE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC9A9E45DDEFECFCF903EB1A /* Pods-Sandvik 365Tests.debug.xcconfig */;
+			baseConfigurationReference = 96DDEC383B54E9198CF357F0 /* Pods-Sandvik 365Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1300,7 +1300,7 @@
 		};
 		48FDEAB51B5F8CEC00C5AFE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AC7D42141CFE725F2E1D655 /* Pods-Sandvik 365Tests.release.xcconfig */;
+			baseConfigurationReference = 0468E4949DEC27A221EAB99B /* Pods-Sandvik 365Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

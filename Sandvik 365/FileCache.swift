@@ -26,7 +26,7 @@ class FileCache {
     static func storeFile(baseUrl: NSURL, urlPath: NSURL) throws {
         let path = try self.pathForUrl(urlPath)
         
-        if let url = NSURL(string: urlPath.absoluteString, relativeToURL: baseUrl) {
+        if let url = NSURL(string: urlPath.absoluteString!, relativeToURL: baseUrl) {
             let request = NSURLRequest(URL: url)
             let data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
             
@@ -50,7 +50,7 @@ class FileCache {
     }
     
     private static func cacheKeyForUrl(url: NSURL) -> String {
-        var cacheKey = url.absoluteString.sha1()
+        var cacheKey = url.absoluteString!.sha1()
         
         // If the URL contains an extension, let's use that one in the cache as well
         if let ext = url.pathExtension {

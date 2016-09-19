@@ -197,7 +197,7 @@ class SelectionWheel: UIView {
                     let p = touch.locationInView(wheelContainer)
                     
                     for layer in sectionLayers {
-                        if CGPathContainsPoint(layer.path,
+                        if CGPathContainsPoint(layer.path!,
                             nil, p, false) {
                             touchedLayer = layer
                             break
@@ -225,7 +225,7 @@ class SelectionWheel: UIView {
         if touchedLayer != nil, let touch = touches.first, let delegate = self.delegate {
             fillTouchedLayer()
             if let layer = touchedLayer as? CAShapeLayer{
-                if CGPathContainsPoint(layer.path,
+                if CGPathContainsPoint(layer.path!,
                     nil, touch.locationInView(wheelContainer), false) {
                         if let title = getTextLayer(layer).string as? String {
                             delegate.didSelectSection(title)

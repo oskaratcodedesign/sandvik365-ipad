@@ -48,7 +48,7 @@ class VideoButton : NibDesignable {
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         self.highlightView(false)
-        super.touchesCancelled(touches, withEvent: event)
+        super.touchesCancelled(touches!, withEvent: event)
     }
     
     private func highlightView(highlight: Bool) {

@@ -30,6 +30,8 @@ class MainMenuViewController : UIViewController, VideoButtonDelegate, UIGestureR
             
             backButtonBg = UIImageView(image: UIImage(named: "sandvik_back_btn"))
             navigationController.navigationBar.insertSubview(backButtonBg!, atIndex: 0)
+            //tag it so it can be found
+            backButtonBg.tag = 99
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         }
         videoButton.delegate = self
